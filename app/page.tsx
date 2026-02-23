@@ -13,7 +13,8 @@ export default function Home() {
     livestock: false,
     physicalAbility: 'Average',
     proficiency: 'Intermediate',
-    harvestObjective: 'Mature Buck/Bull'
+    harvestObjective: 'Mature Buck/Bull',
+    notes: '' // NEW: Custom Intel field
   });
   
   const [macroResult, setMacroResult] = useState('');
@@ -22,7 +23,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [betaCode, setBetaCode] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
     setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
@@ -135,6 +136,17 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* NEW: CUSTOM INTEL FIELD */}
+              <div className="space-y-1">
+                <label className="text-stone-500 text-[9px] uppercase font-black tracking-widest">Additional Intel / Field Notes</label>
+                <textarea 
+                  name="notes"
+                  placeholder="EX: TRAIL CAM SPOTS, SPECIFIC DRAINAGES, GEAR LIMITATIONS..."
+                  className="w-full bg-[#0c0a09] p-3 h-24 rounded-none border border-stone-800 text-xs font-bold text-white uppercase outline-none focus:border-[#00eadc] resize-none placeholder:text-stone-700"
+                  onChange={handleChange}
+                />
+              </div>
+
               <button 
                 onClick={handleMacro} 
                 disabled={loading} 
@@ -148,17 +160,12 @@ export default function Home() {
 
         {/* OUTPUT AREA */}
         <div className="lg:col-span-3 space-y-8 print:col-span-4">
-          
-          {/* I. STRATEGIC UNIT BRIEF */}
+          {/* Output sections remain the same... */}
           {macroResult && (
             <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in fade-in print:bg-white print:border-black print:shadow-none">
               <div className="flex justify-between items-center mb-8 border-b border-stone-800 pb-4 print:border-black">
                 <h2 className="text-[#00eadc] font-black uppercase text-2xl tracking-tight print:text-black">I. STRATEGIC UNIT BRIEF</h2>
-                <a 
-                  href={getMapLink()}
-                  target="_blank"
-                  className="text-[10px] font-black uppercase bg-[#0c0a09] border border-stone-700 px-5 py-2 hover:text-[#00eadc] transition-all text-white tracking-widest print:hidden"
-                >
+                <a href={getMapLink()} target="_blank" className="text-[10px] font-black uppercase bg-[#0c0a09] border border-stone-700 px-5 py-2 hover:text-[#00eadc] transition-all text-white tracking-widest print:hidden">
                   VIEW REGION IN GOOGLE EARTH ↗
                 </a>
               </div>
@@ -168,7 +175,6 @@ export default function Home() {
             </div>
           )}
 
-          {/* II. TACTICAL HUNT PLAN */}
           {microResult && (
             <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#00eadc] shadow-2xl animate-in slide-in-from-bottom-6 print:bg-white print:border-black print:shadow-none">
               <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4 print:text-black print:border-black">II. TACTICAL HUNT PLAN</h2>
@@ -178,7 +184,6 @@ export default function Home() {
             </div>
           )}
 
-          {/* III. FINALIZED LOADOUT */}
           {gearResult && (
             <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in slide-in-from-bottom-6 print:bg-white print:border-black print:shadow-none">
               <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4 print:text-black print:border-black">III. FINALIZED LOADOUT</h2>
@@ -190,30 +195,17 @@ export default function Home() {
         </div>
       </div>
 
-      {/* STICKY COMMAND BAR - HIDDEN DURING PRINT */}
+      {/* STICKY COMMAND BAR */}
       {macroResult && (
         <div className="fixed bottom-0 left-0 right-0 bg-[#1c1917]/98 backdrop-blur-xl border-t-4 border-[#c5a358] p-5 z-50 print:hidden">
           <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-end gap-6">
-            
-            <button 
-              onClick={handlePrint}
-              className="w-full md:w-auto bg-stone-800 text-[#00eadc] font-black py-5 px-8 rounded-none uppercase text-[12px] tracking-[0.15em] border border-[#00eadc]/30 hover:bg-stone-700 transition-all shadow-xl"
-            >
-              PRINT/PDF PLAN (PDF)
+            <button onClick={handlePrint} className="w-full md:w-auto bg-stone-800 text-[#00eadc] font-black py-5 px-8 rounded-none uppercase text-[12px] tracking-[0.15em] border border-[#00eadc]/30 hover:bg-stone-700 transition-all shadow-xl">
+              PRINT/PDF PLAN
             </button>
-
-            <button 
-              onClick={() => handleDeepDive('MICRO')} 
-              disabled={loading}
-              className="w-full md:w-80 bg-[#00eadc] text-[#1c1917] font-black py-5 rounded-none uppercase text-[12px] tracking-[0.15em] hover:bg-[#33f0e5] transition-all disabled:opacity-50 shadow-xl"
-            >
+            <button onClick={() => handleDeepDive('MICRO')} disabled={loading} className="w-full md:w-80 bg-[#00eadc] text-[#1c1917] font-black py-5 rounded-none uppercase text-[12px] tracking-[0.15em] hover:bg-[#33f0e5] transition-all disabled:opacity-50 shadow-xl">
               {loading ? "CALCULATING..." : "GENERATE 3-DAY HUNT PLAN"}
             </button>
-            <button 
-              onClick={() => handleDeepDive('GEAR')} 
-              disabled={loading}
-              className="w-full md:w-80 bg-[#c5a358] text-[#1c1917] font-black py-5 rounded-none uppercase text-[12px] tracking-[0.15em] hover:bg-[#d4b97a] transition-all disabled:opacity-50 shadow-xl"
-            >
+            <button onClick={() => handleDeepDive('GEAR')} disabled={loading} className="w-full md:w-80 bg-[#c5a358] text-[#1c1917] font-black py-5 rounded-none uppercase text-[12px] tracking-[0.15em] hover:bg-[#d4b97a] transition-all disabled:opacity-50 shadow-xl">
               {loading ? "CALCULATING..." : "GENERATE GEAR LIST"}
             </button>
           </div>
