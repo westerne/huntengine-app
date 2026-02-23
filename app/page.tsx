@@ -146,7 +146,7 @@ export default function Home() {
           {macroResult && (
             <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in fade-in">
               <div className="flex justify-between items-center mb-8 border-b border-stone-800 pb-4">
-                <h2 className="text-[#00eadc] font-black uppercase text-2xl tracking-tight">I. STRATEGIC UNIT BRIEF</h2>
+                <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight">I. STRATEGIC UNIT BRIEF</h2>
                 <a 
                   href={getMapLink()}
                   target="_blank"
@@ -164,14 +164,14 @@ export default function Home() {
           {/* II. TACTICAL HUNT PLAN */}
           {microResult && (
             <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#00eadc] shadow-2xl animate-in slide-in-from-bottom-6">
-              <h2 className="text-[#00eadc] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">II. TACTICAL HUNT PLAN</h2>
+              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">II. TACTICAL HUNT PLAN</h2>
               <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">
                 {scrub(microResult)}
               </div>
             </div>
           )}
 
-          {/* III. FINALIZED LOADOUT */}
+          {/* III. RECOMMENDED GEAR LIST */}
           {gearResult && (
             <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in slide-in-from-bottom-6">
               <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">III. FINALIZED LOADOUT</h2>
