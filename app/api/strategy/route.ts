@@ -25,9 +25,10 @@ export async function POST(req: Request) {
     // 2. CONSOLIDATED GUARDRAILS
     const geographicGuardrails = `
       CRITICAL: DO NOT USE MARKDOWN. 
-      - NO asterisks (**), NO hashtags (#). 
-      - Use ALL CAPS for headers. Use dashes (-) for lists.
-      - USE PLAIN TEXT ONLY.
+      - Section titles should be ALL CAPS on their own line.
+      - The body text MUST use standard Sentence case (normal capitalization). 
+      - DO NOT use all caps for paragraphs or descriptions.
+      - Don't use asterisks or emojis. Keep it clean and professional.
 
       VAGUENESS KILLER:
       - AVOID generic phrases like "diverse flora" or "challenging terrain."
