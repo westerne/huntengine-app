@@ -68,11 +68,12 @@ export default function Home() {
   // CLEANING FUNCTION: Removes AI Markdown artifacts (asterisks)
   const scrub = (text: string) => text.replace(/\*/g, '');
 
-  // UPDATED GOOGLE EARTH LOGIC: Forces Satellite view and encodes location accurately
+// UPDATED GOOGLE EARTH LOGIC: Removed hardcoded coordinates to prevent "Kansas Jump"
   const getMapLink = () => {
-    const query = encodeURIComponent(`${formData.state} Unit ${formData.unit} hunting`);
-    // This string uses the google.com/maps search format with satellite toggle (1e3)
-    return `https://www.google.com/maps/search/${query}/@39.8283,-98.5795,5z/data=!3m1!1e3`;
+    const query = encodeURIComponent(`${formData.state} Unit ${formData.unit} hunting area`);
+    // 't=k' forces Satellite view
+    // Removing the @coordinates allows Google to auto-center on your specific search query
+    return `https://www.google.com/maps/search/${query}?t=k`;
   };
 
   return (
