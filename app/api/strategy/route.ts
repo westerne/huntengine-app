@@ -1,5 +1,37 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { HUNT_DATA } from './data';
+
+export async function POST(req: Request) {
+  try {
+    const { mode, formData, context = '' } = await req.json();
+
+    // 1. Create a key like "UTAH_ELK"
+    const lookupKey = `${formData.state.toUpperCase()}_${formData.species.toUpperCase()}`;
+    const stateDataset = HUNT_DATA[lookupKey] || {};
+
+    // 2. Find the specific unit in that state's data
+    const unitKey = Object.keys(stateDataset).find(key => 
+      formData.unit.toLowerCase().includes(key.toLowerCase())
+    );
+    
+    const unitStats = unitKey ? stateDataset[unitKey] : { 
+      typical: "Check local harvest reports", 
+      topEnd: "Unit-specific outlier", 
+      trait: "Regional standard" 
+    };
+
+    const geographicGuardrails = `
+      CRITICAL: You are a Lead Scout. Use these HARD STATS for ${formData.unit}:
+      - TYPICAL MATURE: ${unitStats.typical}
+      - TOP-END POTENTIAL: ${unitStats.topEnd}
+      - KEY TRAIT: ${unitStats.trait}
+      
+      If these stats are "Check local", provide a conservative estimate based on the state average.
+      DO NOT USE MARKDOWN. NO ASTERISKS.
+    `;
+
+    // ... continue with OpenAI call ...
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
