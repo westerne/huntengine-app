@@ -43,6 +43,7 @@ export async function POST(req: Request) {
            - Base this on recent harvest data and biological potential of the region.
            - a 180 mule deer buck is a big buck, the very best units have 190+ potential.
            - a 350 elk bull is a big bull, the very best units have 380+ potential.
+           - list the trophy range, with top end potential (that 1:200 type animal) and the typical mature range (what a good hunter can expect with solid effort).
         
         4. SUCCESSFUL STYLES: Infrastructure-based style (Backcountry, Base Camp, or Hotel).
         5. DURATION RECOMMENDATION: Recommended days to hunt this terrain.
