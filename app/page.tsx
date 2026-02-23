@@ -65,8 +65,15 @@ export default function Home() {
     setLoading(false);
   };
 
-  // Helper to scrub asterisks
+  // CLEANING FUNCTION: Removes AI Markdown artifacts (asterisks)
   const scrub = (text: string) => text.replace(/\*/g, '');
+
+  // UPDATED GOOGLE EARTH LOGIC: Forces Satellite view and encodes location accurately
+  const getMapLink = () => {
+    const query = encodeURIComponent(`${formData.state} Unit ${formData.unit} hunting`);
+    // This string uses the google.com/maps search format with satellite toggle (1e3)
+    return `https://www.google.com/maps/search/${query}/@39.8283,-98.5795,5z/data=!3m1!1e3`;
+  };
 
   return (
     <main className="min-h-screen bg-[#00eadc] text-[#1c1917] p-6 pb-32 font-sans antialiased">
@@ -76,7 +83,7 @@ export default function Home() {
         <div className="lg:col-span-1 space-y-6">
           <div className="bg-[#1c1917] p-6 rounded-none border-b-4 border-[#c5a358] shadow-2xl">
             <h2 className="text-[#00eadc] font-black uppercase text-[12px] tracking-[0.2em] border-b border-stone-800 pb-3 mb-6 flex justify-between items-center">
-              <span>MISSION INPUT</span>
+              <span>HUNT INFO, PREFERENCES, AND PLANS</span>
               <span className="w-2 h-2 bg-[#00eadc] rounded-full animate-pulse"></span>
             </h2>
             
@@ -130,7 +137,7 @@ export default function Home() {
                 disabled={loading} 
                 className="w-full bg-[#c5a358] text-[#1c1917] font-black py-4 rounded-none uppercase text-[12px] tracking-[0.1em] hover:bg-[#d4b97a] transition-all shadow-lg disabled:opacity-50"
               >
-                {loading && !macroResult ? 'PROCESSING...' : 'START YOUR HUNT PLAN'}
+                {loading && !macroResult ? '...CONNECTING TO HUNTENGINE.AI...' : 'START YOUR HUNT PLAN'}
               </button>
             </div>
           </div>
@@ -143,11 +150,11 @@ export default function Home() {
               <div className="flex justify-between items-center mb-8 border-b border-stone-800 pb-4">
                 <h2 className="text-[#00eadc] font-black uppercase text-2xl tracking-tight">I. STRATEGIC UNIT BRIEF</h2>
                 <a 
-                  href={`https://www.google.com/maps/search/${formData.state}+Unit+${formData.unit}+hunting+area`}
+                  href={getMapLink()}
                   target="_blank"
                   className="text-[10px] font-black uppercase bg-[#0c0a09] border border-stone-700 px-5 py-2 hover:text-[#00eadc] transition-all text-white tracking-widest"
                 >
-                  SATELLITE UPLINK ↗
+                  VIEW REGION IN GOOGLE EARTH ↗
                 </a>
               </div>
               <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">
@@ -158,7 +165,7 @@ export default function Home() {
 
           {microResult && (
             <div className="bg-[#1c1917] p-10 rounded-none border-l-8 border-[#00eadc] shadow-2xl animate-in slide-in-from-bottom-6">
-              <h2 className="text-[#00eadc] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">II. TACTICAL MISSION PLAN</h2>
+              <h2 className="text-[#00eadc] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">II. TACTICAL HUNT PLAN</h2>
               <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">
                 {scrub(microResult)}
               </div>
@@ -185,14 +192,14 @@ export default function Home() {
               disabled={loading}
               className="w-full md:w-80 bg-[#00eadc] text-[#1c1917] font-black py-5 rounded-none uppercase text-[12px] tracking-[0.15em] hover:bg-[#33f0e5] transition-all disabled:opacity-50 shadow-xl"
             >
-              {loading ? "CALCULATING..." : "DEPLOY TACTICAL 72"}
+              {loading ? "CALCULATING..." : "GENERATE 3-DAY HUNT PLAN"}
             </button>
             <button 
               onClick={() => handleDeepDive('GEAR')} 
               disabled={loading}
               className="w-full md:w-80 bg-[#c5a358] text-[#1c1917] font-black py-5 rounded-none uppercase text-[12px] tracking-[0.15em] hover:bg-[#d4b97a] transition-all disabled:opacity-50 shadow-xl"
             >
-              {loading ? "CALCULATING..." : "FINALIZE LOADOUT"}
+              {loading ? "CALCULATING..." : "GENERATE GEAR LIST"}
             </button>
           </div>
         </div>
