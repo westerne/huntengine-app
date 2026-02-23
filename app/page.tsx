@@ -65,15 +65,11 @@ export default function Home() {
     setLoading(false);
   };
 
-  // CLEANING FUNCTION: Removes AI Markdown artifacts (asterisks)
   const scrub = (text: string) => text.replace(/\*/g, '');
 
-// UPDATED GOOGLE EARTH LOGIC: Removed hardcoded coordinates to prevent "Kansas Jump"
   const getMapLink = () => {
     const query = encodeURIComponent(`${formData.state} Unit ${formData.unit} hunting area`);
-    // 't=k' forces Satellite view
-    // Removing the @coordinates allows Google to auto-center on your specific search query
-    return `https://www.google.com/maps/search/${query}?t=k`;
+    return `https://www.google.com/maps/search/${query}/?api=1&force=satellite&t=k`;
   };
 
   return (
@@ -146,6 +142,7 @@ export default function Home() {
 
         {/* OUTPUT AREA */}
         <div className="lg:col-span-3 space-y-8">
+          {/* I. STRATEGIC UNIT BRIEF */}
           {macroResult && (
             <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in fade-in">
               <div className="flex justify-between items-center mb-8 border-b border-stone-800 pb-4">
@@ -164,8 +161,9 @@ export default function Home() {
             </div>
           )}
 
+          {/* II. TACTICAL HUNT PLAN */}
           {microResult && (
-            <div className="bg-[#1c1917] p-10 rounded-none border-l-8 border-[#00eadc] shadow-2xl animate-in slide-in-from-bottom-6">
+            <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#00eadc] shadow-2xl animate-in slide-in-from-bottom-6">
               <h2 className="text-[#00eadc] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">II. TACTICAL HUNT PLAN</h2>
               <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">
                 {scrub(microResult)}
@@ -173,10 +171,11 @@ export default function Home() {
             </div>
           )}
 
+          {/* III. FINALIZED LOADOUT */}
           {gearResult && (
-            <div className="bg-[#0c0a09] p-10 rounded-none border-l-8 border-[#c5a358] shadow-2xl animate-in slide-in-from-bottom-6">
+            <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in slide-in-from-bottom-6">
               <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">III. FINALIZED LOADOUT</h2>
-              <div className="whitespace-pre-wrap leading-[1.7] text-stone-400 text-lg font-medium">
+              <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">
                 {scrub(gearResult)}
               </div>
             </div>

@@ -22,11 +22,23 @@ export async function POST(req: Request) {
 
     let systemPrompt = "";
 
-    if (mode === 'MACRO') {
+   if (mode === 'MACRO') {
       systemPrompt = `
         ${geographicGuardrails}
-        You are a Lead Strategist for HuntEngine.ai. Generate a 6-Point Macro Unit Brief for ${formData.species} in ${formData.state} Unit ${formData.unit}.
-        SECTIONS: 1. UNIT OVERVIEW, 2. POPULATION AUDIT, 3. TROPHY POTENTIAL, 4. SUCCESSFUL STYLES, 5. DURATION RECOMMENDATION, 6. GEAR AUDIT.
+        You are a Lead Strategist for HuntEngine.ai. Generate a 6-Point Strategic Unit Brief for ${formData.species} in ${formData.state} Unit ${formData.unit}.
+        
+        SECTIONS:
+        1. UNIT OVERVIEW: Terrain personality and landscape features.
+        2. POPULATION AUDIT: Herd health and density for ${formData.species}.
+        
+        3. TROPHY POTENTIAL (SCORE AUDIT): 
+           - Provide realistic score ranges in inches for ${formData.species}.
+           - Categorize by: 'Typical Mature' (what a good hunter expects) and 'Top-End' (unit outliers).
+           - BE CONSERVATIVE. Do not be overly generous. Base this on recent harvest data and biological potential of the region.
+        
+        4. SUCCESSFUL STYLES: Infrastructure-based style (Backcountry, Base Camp, or Hotel).
+        5. DURATION RECOMMENDATION: Recommended days to hunt this terrain.
+        6. GEAR AUDIT: High-level unit-specific gear needs.
       `;
     } else if (mode === 'GEAR') {
       systemPrompt = `
