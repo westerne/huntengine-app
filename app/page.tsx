@@ -79,7 +79,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#1c1917] text-[#e7e5e4] p-6 pb-32 font-sans antialiased print:bg-white print:text-black print:p-0">
+    <main className="min-h-screen bg-stone-50 text-stone-900 p-6 pb-32 font-sans antialiased print:bg-white print:text-black print:p-0">
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
         
         {/* SIDEBAR - HIDDEN DURING PRINT */}
