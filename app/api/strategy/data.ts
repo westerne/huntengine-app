@@ -14,6 +14,7 @@ export const HUNT_DATA: Record<string, Record<string, UnitStats>> = {
     "Fillmore, Pahvant": { typical: '340-355"', topEnd: '385"', trait: "High symmetry; the gold standard for clean 6x6s." },
     "San Juan": { typical: '345-365"', topEnd: '400"+', trait: "The best genetics in the West; massive 5th/6th points." },
     "Book Cliffs, Little Creek": { typical: '320-340"', topEnd: '360"', trait: "Roadless backcountry; high age class but moderate mass." },
+    "Oak Creek": { typical: '165-180"', topEnd: '210"', trait: "High density; excellent for seeing many 170+ class bucks." },
 
     // --- TIER 2: HIGH QUALITY (Age Objective 6.5 - 7.0) ---
     "Monroe": { typical: '330-350"', topEnd: '380"', trait: "Incredible royal (4th) points; very steep terrain." },
