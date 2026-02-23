@@ -14,6 +14,12 @@ export async function POST(req: Request) {
       - Use PLAIN TEXT ONLY.
       - For headers, simply type the title in ALL CAPS on its own line.
       - Use simple dashes (-) for bullet points.
+
+      CRITICAL: AVOID GENERIC LANGUAGE.
+      - DO NOT use phrases like "diverse flora and fauna," "challenging terrain", or "bring high-quality optics."
+      - BE SPECIFIC: Name actual drainages, peaks, or ridges within ${formData.state} Unit ${formData.unit}.
+      - DATA-DRIVEN: Mention specific forage (e.g., Mountain Mahogany, Basin Big Sagebrush) and specific water sources.
+      - FORMATTING: NO MARKDOWN. Use ALL CAPS for headers. Use dashes (-) for lists.
       
       GEOGRAPHIC ACCURACY:
       - Verify all landmarks are strictly within ${formData.state} Unit ${formData.unit}.
@@ -25,33 +31,40 @@ export async function POST(req: Request) {
    if (mode === 'MACRO') {
       systemPrompt = `
         ${geographicGuardrails}
-        You are a Lead Strategist for HuntEngine.ai. Generate a 6-Point Strategic Unit Brief for ${formData.species} in ${formData.state} Unit ${formData.unit}.
-        
+        You are a Lead Strategist for HuntEngine.ai. Generate a Rugged STRATEGIC BRIEF for ${formData.species} in ${formData.state} Unit ${formData.unit}.
+        Based on but not limited to the following context:
         SECTIONS:
         1. UNIT OVERVIEW: Terrain personality and landscape features.
-        2. POPULATION AUDIT: Herd health and density for ${formData.species}.
+        2. POPULATION AUDIT: Herd health and density for ${formData.species}. Use recent information to say whether the herd is trending up, trending down, or stable.
         
-        3. TROPHY POTENTIAL (SCORE AUDIT): 
+        3. TROPHY AUDIT/POTENTIAL (SCORE AUDIT): 
            - Provide realistic score ranges in inches for ${formData.species}.
            - Categorize by: 'Typical Mature' (what a good hunter expects) and 'Top-End' (unit outliers).
-           - BE CONSERVATIVE. Do not be overly generous. Base this on recent harvest data and biological potential of the region.
+           - Base this on recent harvest data and biological potential of the region.
+           - a 180 mule deer buck is a big buck, the very best units have 190+ potential.
+           - a 350 elk bull is a big bull, the very best units have 380+ potential.
         
         4. SUCCESSFUL STYLES: Infrastructure-based style (Backcountry, Base Camp, or Hotel).
         5. DURATION RECOMMENDATION: Recommended days to hunt this terrain.
         6. GEAR AUDIT: High-level unit-specific gear needs.
+        7. TERRAIN & ACCESS: Identify the primary access roads and the specific "pinch points" created by the topography.
+        8. HERD BEHAVIOR: Where is the ${formData.species} density right now based on ${formData.huntDates}? Mention elevation bands (e.g., 7,500ft - 9,000ft).
+        9. SURVIVAL & LOGISTICS: Identify the nearest reliable fuel/comms and the specific weather threat for this unit.
       `;
     } else if (mode === 'GEAR') {
       systemPrompt = `
         ${geographicGuardrails}
         Generate a HYPER-DETAILED GEAR AUDIT for ${formData.species} in ${formData.state} Unit ${formData.unit}.
         Weapon: ${formData.weapon} | Group: ${formData.groupSize}.
+        Focus on: The exact boot stiffness recommended for this rock type, the specific glassing tripod height for this brush height, and the localized calorie needs.
       `;
     } else {
       systemPrompt = `
         ${geographicGuardrails}
         You are in DEEP DIVE TACTICAL mode. Context: ${context}
-        Generate a MISSION PLAN for a ${formData.groupSize}-person team. 
-        TITLES: 1. THE TACTICAL 72 HOUR PLAN, 2. WEATHER PIVOTS, 3. PLAN B, 4. REMOTE & LESS-PRESSURED AREAS, 5. LOGISTICS.
+        provide a 72 hour, day by day action plan. Generate a MISSION PLAN for a ${formData.groupSize}-person team. 
+        Suggested: Day 1: specific morning glassing point and evening ambush spot, Day 2: mid-day canyon push or move to a new area, Day 3: Keep moving to new area until target buck is located, etc.
+        Suggested TITLES: 1. THE TACTICAL 72 HOUR PLAN, 2. WEATHER PIVOTS, 3. PLAN B, 4. REMOTE & LESS-PRESSURED AREAS, 5. LOGISTICS.
       `;
     }
 

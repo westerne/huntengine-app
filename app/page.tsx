@@ -28,6 +28,12 @@ export default function Home() {
     setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
+  // --- HANDLERS ---
+  
+  const handlePrint = () => {
+    window.print();
+  };
+
   const handleMacro = async () => {
     if (betaCode !== 'SCOUT2026') { 
       alert("Invalid Beta Access Code.");
@@ -73,11 +79,11 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#00eadc] text-[#1c1917] p-6 pb-32 font-sans antialiased">
+    <main className="min-h-screen bg-[#1c1917] text-[#e7e5e4] p-6 pb-32 font-sans antialiased print:bg-white print:text-black print:p-0">
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
         
-        {/* SIDEBAR */}
-        <div className="lg:col-span-1 space-y-6">
+        {/* SIDEBAR - HIDDEN DURING PRINT */}
+        <div className="lg:col-span-1 space-y-6 print:hidden">
           <div className="bg-[#1c1917] p-6 rounded-none border-b-4 border-[#c5a358] shadow-2xl">
             <h2 className="text-[#00eadc] font-black uppercase text-[12px] tracking-[0.2em] border-b border-stone-800 pb-3 mb-6 flex justify-between items-center">
               <span>HUNT INFO, PREFERENCES, AND PLANS</span>
@@ -141,21 +147,22 @@ export default function Home() {
         </div>
 
         {/* OUTPUT AREA */}
-        <div className="lg:col-span-3 space-y-8">
+        <div className="lg:col-span-3 space-y-8 print:col-span-4">
+          
           {/* I. STRATEGIC UNIT BRIEF */}
           {macroResult && (
-            <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in fade-in">
-              <div className="flex justify-between items-center mb-8 border-b border-stone-800 pb-4">
-                <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight">I. STRATEGIC UNIT BRIEF</h2>
+            <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in fade-in print:bg-white print:border-black print:shadow-none">
+              <div className="flex justify-between items-center mb-8 border-b border-stone-800 pb-4 print:border-black">
+                <h2 className="text-[#00eadc] font-black uppercase text-2xl tracking-tight print:text-black">I. STRATEGIC UNIT BRIEF</h2>
                 <a 
                   href={getMapLink()}
                   target="_blank"
-                  className="text-[10px] font-black uppercase bg-[#0c0a09] border border-stone-700 px-5 py-2 hover:text-[#00eadc] transition-all text-white tracking-widest"
+                  className="text-[10px] font-black uppercase bg-[#0c0a09] border border-stone-700 px-5 py-2 hover:text-[#00eadc] transition-all text-white tracking-widest print:hidden"
                 >
                   VIEW REGION IN GOOGLE EARTH ↗
                 </a>
               </div>
-              <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">
+              <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium print:text-black">
                 {scrub(macroResult)}
               </div>
             </div>
@@ -163,19 +170,19 @@ export default function Home() {
 
           {/* II. TACTICAL HUNT PLAN */}
           {microResult && (
-            <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#00eadc] shadow-2xl animate-in slide-in-from-bottom-6">
-              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">II. TACTICAL HUNT PLAN</h2>
-              <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">
+            <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#00eadc] shadow-2xl animate-in slide-in-from-bottom-6 print:bg-white print:border-black print:shadow-none">
+              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4 print:text-black print:border-black">II. TACTICAL HUNT PLAN</h2>
+              <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium print:text-black">
                 {scrub(microResult)}
               </div>
             </div>
           )}
 
-          {/* III. RECOMMENDED GEAR LIST */}
+          {/* III. FINALIZED LOADOUT */}
           {gearResult && (
-            <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in slide-in-from-bottom-6">
-              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">III. FINALIZED LOADOUT</h2>
-              <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">
+            <div className="bg-[#1c1917] p-10 rounded-none border-t-8 border-[#c5a358] shadow-2xl animate-in slide-in-from-bottom-6 print:bg-white print:border-black print:shadow-none">
+              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4 print:text-black print:border-black">III. FINALIZED LOADOUT</h2>
+              <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium print:text-black">
                 {scrub(gearResult)}
               </div>
             </div>
@@ -183,10 +190,18 @@ export default function Home() {
         </div>
       </div>
 
-      {/* STICKY COMMAND BAR */}
+      {/* STICKY COMMAND BAR - HIDDEN DURING PRINT */}
       {macroResult && (
-        <div className="fixed bottom-0 left-0 right-0 bg-[#1c1917]/98 backdrop-blur-xl border-t-4 border-[#c5a358] p-5 z-50">
+        <div className="fixed bottom-0 left-0 right-0 bg-[#1c1917]/98 backdrop-blur-xl border-t-4 border-[#c5a358] p-5 z-50 print:hidden">
           <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-end gap-6">
+            
+            <button 
+              onClick={handlePrint}
+              className="w-full md:w-auto bg-stone-800 text-[#00eadc] font-black py-5 px-8 rounded-none uppercase text-[12px] tracking-[0.15em] border border-[#00eadc]/30 hover:bg-stone-700 transition-all shadow-xl"
+            >
+              PRINT/PDF PLAN (PDF)
+            </button>
+
             <button 
               onClick={() => handleDeepDive('MICRO')} 
               disabled={loading}
