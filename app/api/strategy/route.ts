@@ -30,7 +30,7 @@ export async function POST(req: Request) {
     const lookupKey = `${formData.state.toUpperCase()}_${speciesKey}`;
     const stateDataset = HUNT_DATA[lookupKey] || {};
     const unitKey = Object.keys(stateDataset).find(key => 
-      formData.unit.toLowerCase().includes(key.toLowerCase())
+      key.toLowerCase() === formData.unit.trim().toLowerCase()
     );
     
     const hasData = !!unitKey;
