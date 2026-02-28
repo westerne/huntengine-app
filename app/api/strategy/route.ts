@@ -39,7 +39,7 @@ export async function POST(req: Request) {
     // HALLUCINATION KILLER: Forces AI to the correct mountains
     const geoAnchor = unitStats?.description 
       ? `GEOGRAPHIC ANCHOR: This unit is strictly located in: ${unitStats.description}.` 
-      : `LOCATION: Analyze ${formData.state} Unit ${formData.unit}. Focus on its specific mountain ranges and high-desert basins.`;
+      : `LOCATION: Analyze ${formData.state} Unit ${formData.unit}. Focus on its specific unit number associated mountain ranges and/or high-desert basins.`;
 
     const trophyInstruction = hasData 
       ? `PRIMARY TRUTH DATA: Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}.`
