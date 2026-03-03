@@ -3,8 +3,6 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 
 // DYNAMIC IMPORT: Loads the map only when needed to save bandwidth
-// Note: We assume MapView.tsx is in the 'app' folder. 
-// If you put it in 'app/api/strategy', change this path to './api/strategy/MapView'
 const MapView = dynamic(() => import('./MapView'), { 
   ssr: false,
   loading: () => <div className="w-full h-full bg-[#0c0a09] animate-pulse" />
@@ -15,7 +13,8 @@ export default function Home() {
     state: '', unit: '', species: '', weapon: 'Rifle',
     huntDates: '', groupSize: '1', atv: false, livestock: false,
     physicalAbility: 'Average', proficiency: 'Intermediate',
-    harvestObjective: 'Mature Buck/Bull', notes: '' 
+    harvestObjective: 'Mature Buck/Bull', notes: '',
+    residency: 'Non-Resident' // NEW: Residency tracking
   });
   
   const [macroResult, setMacroResult] = useState('');
@@ -95,6 +94,15 @@ export default function Home() {
                 <input name="unit" placeholder="UNIT" className="bg-[#0c0a09] p-3 border border-stone-800 text-xs font-bold text-white uppercase outline-none focus:border-[#00eadc]" onChange={handleChange} />
               </div>
 
+              {/* NEW: RESIDENCY DROPDOWN */}
+              <div className="space-y-1">
+                <label className="text-stone-500 text-[9px] uppercase font-black tracking-widest px-1">Residency Status</label>
+                <select name="residency" className="w-full bg-[#0c0a09] p-3 border border-stone-800 text-xs font-bold text-white uppercase outline-none focus:border-[#00eadc]" onChange={handleChange}>
+                  <option value="Non-Resident">Non-Resident</option>
+                  <option value="Resident">Resident</option>
+                </select>
+              </div>
+
               <input name="species" placeholder="TARGET SPECIES" className="w-full bg-[#0c0a09] p-3 border border-stone-800 text-xs font-bold text-white uppercase outline-none focus:border-[#00eadc]" onChange={handleChange} />
 
               <div className="grid grid-cols-2 gap-2">
@@ -128,8 +136,8 @@ export default function Home() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-stone-500 text-[9px] uppercase font-black tracking-widest px-1">Field Notes / User Intel</label>
-                <textarea name="notes" placeholder="EX: TRAIL CAM SPOTS, SPECIFIC CREEKS..." className="w-full bg-[#0c0a09] p-3 h-24 border border-stone-800 text-xs font-bold text-white uppercase outline-none focus:border-[#00eadc] resize-none" onChange={handleChange} />
+                <label className="text-stone-500 text-[9px] uppercase font-black tracking-widest px-1">Other Inputs:</label>
+                <textarea name="notes" placeholder="EX: Trailheads, Drainages, Access Points, Any Additional Information For a Custom Hunt Plan..." className="w-full bg-[#0c0a09] p-3 h-24 border border-stone-800 text-xs font-bold text-white uppercase outline-none focus:border-[#00eadc] resize-none" onChange={handleChange} />
               </div>
 
               <button onClick={handleMacro} disabled={loading} className="w-full bg-[#c5a358] text-[#1c1917] font-black py-4 uppercase text-xs tracking-widest hover:bg-[#d4b97a] transition-all shadow-lg disabled:opacity-50">
@@ -151,11 +159,10 @@ export default function Home() {
             </div>
           )}
 
-          {/* THE NEW TACTICAL MAP VIEW */}
           {macroResult && (
             <div className="bg-[#1c1917] p-4 border border-stone-800 shadow-xl print:hidden animate-in fade-in">
               <h3 className="text-[#c5a358] font-black text-[11px] tracking-widest uppercase mb-3 px-2 flex items-center gap-2">
-                 <span className="w-2 h-2 bg-red-600 rounded-full animate-ping"></span> Live Satellite Uplink // {formData.species} Unit {formData.unit}
+                 <span className="w-2 h-2 bg-red-600 rounded-full animate-ping"></span> HUNT AREA INTERACTIVE MAP // {formData.species} Unit {formData.unit}
               </h3>
               <div className="w-full h-[550px] bg-stone-900 border border-stone-800 relative">
                  {unitCoords ? (

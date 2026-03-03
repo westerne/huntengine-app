@@ -1,59 +1,91 @@
 "use client";
+import { useEffect, useRef } from "react";
+import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
+
+setOptions({
+  apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
+  version: "weekly",
+});
 
 interface MapViewProps {
   coords: { lat: number; lng: number };
-  label: string;
+  label: string; // e.g., "Wyoming 143"
 }
 
 export default function MapView({ coords, label }: MapViewProps) {
-  // Use the environment variable
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
-  
-  if (!apiKey) {
-    return (
-      <div className="w-full h-full bg-[#0c0a09] flex items-center justify-center border border-stone-800">
-        <span className="text-red-500 font-mono text-xs">MISSING MAP API KEY</span>
-      </div>
-    );
-  }
+  const mapRef = useRef<HTMLDivElement>(null);
 
-  const { lat, lng } = coords;
-  const zoom = 11;
-  const size = "640x640";
+  // 1. Stabilize primitives to prevent React Hook re-render loops
+  const lat = coords?.lat ?? 42.5;
+  const lng = coords?.lng ?? -108.5;
 
-  const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=${zoom}&size=${size}&maptype=satellite&key=${apiKey}&scale=2`;
-  const interactiveLink = `https://www.google.com/maps/@${lat},${lng},${zoom}z/data=!3m1!1e3`;
+  useEffect(() => {
+    const startUplink = async () => {
+      try {
+        const { Map } = await importLibrary("maps") as google.maps.MapsLibrary;
+
+        if (mapRef.current) {
+          // 2. Initialize the Map
+          const map = new Map(mapRef.current, {
+            center: { lat, lng },
+            zoom: 10,
+            mapTypeId: "satellite",
+            tilt: 45,
+          });
+
+          // 3. Load the GeoJSON file
+          map.data.loadGeoJson("/Wyoming_Deer_Areas.geojson");
+
+          // 4. AUTO-ZOOM LOGIC: Fly to the unit polygon once it's found
+          map.data.addListener('addfeature', () => {
+            const bounds = new window.google.maps.LatLngBounds();
+            let hasMatch = false;
+            
+            map.data.forEach((feature) => {
+              const featureUnit = String(feature.getProperty("HUNTAREA") || feature.getProperty("NAME") || "");
+              const currentSearch = label.split(" ").pop() || "";
+              
+              if (featureUnit !== "" && featureUnit === currentSearch) {
+                hasMatch = true;
+                feature.getGeometry().forEachLatLng((ll) => {
+                  bounds.extend(ll);
+                });
+              }
+            });
+
+            if (hasMatch) {
+              map.fitBounds(bounds);
+            }
+          });
+
+          // 5. HIGHLIGHTING LOGIC: Neon cyan for the active unit
+          map.data.setStyle((feature) => {
+            const featureUnit = String(feature.getProperty("HUNTAREA") || feature.getProperty("NAME") || "");
+            const currentSearch = label.split(" ").pop() || "";
+            const isActive = featureUnit !== "" && featureUnit === currentSearch;
+
+            return {
+              fillColor: isActive ? "#00eadc" : "transparent",
+              fillOpacity: isActive ? 0.25 : 0,
+              strokeColor: isActive ? "#00eadc" : "#ffffff",
+              strokeWeight: isActive ? 3 : 0.5,
+              strokeOpacity: isActive ? 1 : 0.2,
+              visible: true,
+            };
+          });
+        }
+      } catch (error) {
+        console.error("Satellite Uplink Failed:", error);
+      }
+    };
+
+    startUplink();
+  }, [lat, lng, label]);
 
   return (
-    <div className="w-full h-full bg-[#0c0a09] border border-stone-800 relative group overflow-hidden">
-      <a href={interactiveLink} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src={staticMapUrl} 
-          alt={`Satellite view of ${label}`} 
-          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 grayscale-[20%] group-hover:grayscale-0"
-        />
-        
-        <div className="absolute top-4 left-4 flex flex-col gap-1 pointer-events-none">
-           <span className="text-[10px] font-mono text-red-500 font-bold bg-black/70 px-2 py-1 border-l-2 border-red-500 backdrop-blur-sm">
-             LIVE SATELLITE FEED // ACTIVE
-           </span>
-           <span className="text-[9px] font-mono text-stone-300 bg-black/70 px-2 py-1 backdrop-blur-sm">
-             LAT: {lat.toFixed(4)} // LNG: {lng.toFixed(4)}
-           </span>
-        </div>
-
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
-            <div className="w-[1px] h-20 bg-white/50"></div>
-            <div className="w-20 h-[1px] bg-white/50 absolute"></div>
-        </div>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/40">
-             <span className="bg-[#c5a358] text-[#1c1917] px-6 py-3 text-xs font-black uppercase tracking-widest shadow-[0_0_20px_rgba(197,163,88,0.4)] transform translate-y-4 group-hover:translate-y-0 transition-transform border border-[#c5a358]">
-                LAUNCH INTERACTIVE MAP ↗
-             </span>
-        </div>
-      </a>
-    </div>
+    <div 
+      ref={mapRef} 
+      className="w-full h-full min-h-[550px] rounded-lg border border-white/10 bg-stone-950 shadow-2xl" 
+    />
   );
 }
