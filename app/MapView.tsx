@@ -15,7 +15,7 @@ const loader = new Loader({
 setOptions({
   key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
   version: "weekly",
-});
+} as any);
 
 interface MapViewProps {
   coords: { lat: number; lng: number };
