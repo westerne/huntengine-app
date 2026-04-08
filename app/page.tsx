@@ -188,14 +188,14 @@ export default function Home() {
 
           {microResult && (
             <div className="bg-[#1c1917] p-10 border-t-8 border-[#00eadc] shadow-2xl animate-in slide-in-from-bottom-6">
-              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">II. TACTICAL HUNT PLAN</h2>
+              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">II. QUICK HUNT PLAN</h2>
               <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">{scrub(microResult)}</div>
             </div>
           )}
 
           {gearResult && (
             <div className="bg-[#1c1917] p-10 border-t-8 border-[#c5a358] shadow-2xl animate-in slide-in-from-bottom-6">
-              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">III. FINALIZED LOADOUT</h2>
+              <h2 className="text-[#c5a358] font-black uppercase text-2xl tracking-tight mb-8 border-b border-stone-800 pb-4">III. CUSTOM GEAR LIST</h2>
               <div className="whitespace-pre-wrap leading-[1.7] text-stone-200 text-lg font-medium">{scrub(gearResult)}</div>
             </div>
           )}
@@ -207,7 +207,7 @@ export default function Home() {
         <div className="fixed bottom-0 left-0 right-0 bg-[#1c1917]/95 border-t-4 border-[#c5a358] p-5 z-50 print:hidden shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
           <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-end gap-6">
             <button onClick={handlePrint} className="text-[#00eadc] font-black px-8 py-5 border border-[#00eadc]/30 hover:bg-stone-800 text-xs tracking-widest transition-all">PRINT/PDF</button>
-            <button onClick={() => handleDeepDive('MICRO')} disabled={loading} className="w-full md:w-80 bg-[#00eadc] text-[#1c1917] font-black py-5 uppercase text-xs tracking-widest hover:bg-[#33f0e5] disabled:opacity-50 transition-all">GENERATE 72-HOUR PLAN</button>
+            <button onClick={() => handleDeepDive('MICRO')} disabled={loading} className="w-full md:w-80 bg-[#00eadc] text-[#1c1917] font-black py-5 uppercase text-xs tracking-widest hover:bg-[#33f0e5] disabled:opacity-50 transition-all">CREATE CUSTOM 3-DAY HUNT PLAN</button>
             <button onClick={() => handleDeepDive('GEAR')} disabled={loading} className="w-full md:w-80 bg-[#c5a358] text-[#1c1917] font-black py-5 uppercase text-xs tracking-widest hover:bg-[#d4b97a] disabled:opacity-50 transition-all">GENERATE GEAR LIST</button>
           </div>
         </div>
