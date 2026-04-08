@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
 
 setOptions({
-  googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
+  key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
   version: "weekly",
 });
 
