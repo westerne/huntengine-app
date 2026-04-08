@@ -1,6 +1,16 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
+import { Loader } from "@googlemaps/js-api-loader";
+
+const loader = new Loader({
+  apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
+  version: "weekly",
+  libraries: ["places"] // Add any libraries you need here
+});
+
+// Then use it in your component:
+// loader.load().then(() => { ... })
 
 setOptions({
   key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
