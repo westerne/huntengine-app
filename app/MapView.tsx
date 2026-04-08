@@ -57,9 +57,9 @@ export default function MapView({ coords, label }: MapViewProps) {
               
               if (featureUnit !== "" && featureUnit === currentSearch) {
                 hasMatch = true;
-                feature.getGeometry().forEachLatLng((ll) => {
-                  bounds.extend(ll);
-                });
+                feature.getGeometry()?.forEachLatLng((ll) => {
+  bounds.extend(ll);
+});
               }
             });
 
