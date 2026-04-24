@@ -169,7 +169,7 @@ export async function POST(req: Request) {
           }).filter(Boolean)
 
         : isWyoming && isElk
-        ? Object.entries(WYOMING_ELK_UNITS).map(([unitName, unit]) => {
+        ? Object.entries(WYOMING_ELK_UNITS).map(([unitName, unit]: [string, any]) => {
             try {
               const history = [...(unit.drawHistory ?? [])].sort((a, b) => b.year - a.year);
               const latest = history[0] ?? null;
