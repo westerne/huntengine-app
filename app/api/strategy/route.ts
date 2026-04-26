@@ -197,7 +197,6 @@ export async function POST(req: Request) {
                 trait: unit.trait ?? '',
                 description: unit.description ?? '',
                 tier: unit.tier ?? '',
-                seasons: unit.seasons ?? {},
                 areaPattern,           // NEW: GENERAL_ONLY | HYBRID | LQ_ONLY | NR_REGION
                 hybridUpgradeNote,     // NEW: explanation of upgrade for HYBRID areas
                 residentOdds: latest?.resident?.approxOdds ?? 'N/A',
