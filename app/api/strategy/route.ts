@@ -7,6 +7,8 @@ import {
   buildWyomingDeerScoutDataset,
   resolveWyoDeerUnit,
 } from './wyodeerScoutAdapter';
+import { getWildernessInfo } from './wyodeerWildernessClassification';
+import { getElkAreaInfo } from './wyoElkAreaClassification';
 import { buildScoutPrompt, ScoutPromptParams } from './promptBuilder';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -177,6 +179,14 @@ export async function POST(req: Request) {
               const prior = history[1] ?? null;
               const huntTypeCode = unitName.includes('-') ? unitName.split('-')[1] : unitName;
               const unitNumber = unitName.includes('-') ? unitName.split('-')[0] : unitName;
+              // Look up area pattern (GENERAL_ONLY / HYBRID / LQ_ONLY) from
+              // the WGFD Chapter 7 classification. Region E/S/W entries are
+              // NR-only constructs and don't map to a single area pattern;
+              // mark them as 'NR_REGION'.
+              const isNRRegion = unitName.startsWith('Region ');
+              const areaInfo = isNRRegion ? null : getElkAreaInfo(unitNumber);
+              const areaPattern = isNRRegion ? 'NR_REGION' : (areaInfo?.pattern ?? 'LQ_ONLY');
+              const hybridUpgradeNote = areaInfo?.hybridUpgradeNote ?? null;
               return {
                 unit: unitName,
                 unitNumber,
@@ -187,7 +197,9 @@ export async function POST(req: Request) {
                 trait: unit.trait ?? '',
                 description: unit.description ?? '',
                 tier: unit.tier ?? '',
-                seasons: (unit as any).seasons ?? {},
+                seasons: unit.seasons ?? {},
+                areaPattern,           // NEW: GENERAL_ONLY | HYBRID | LQ_ONLY | NR_REGION
+                hybridUpgradeNote,     // NEW: explanation of upgrade for HYBRID areas
                 residentOdds: latest?.resident?.approxOdds ?? 'N/A',
                 residentOdds2025: latest?.resident?.approxOdds ?? 'N/A',
                 residentOdds2024: prior?.resident?.approxOdds ?? 'N/A',
@@ -215,6 +227,9 @@ export async function POST(req: Request) {
           })
           .filter((entry): entry is NonNullable<typeof entry> => {
             if (!entry) return false;
+            // Hide NR Region General entries from resident hunters — those
+            // are NR-only constructs that don't apply to residents.
+            if (isResident && entry.areaPattern === 'NR_REGION') return false;
             const code = entry.huntTypeCode;
             if (code === '4' || code === '5') return false;
             if (code === 'general') return true;
@@ -373,15 +388,26 @@ export async function POST(req: Request) {
       ? `HABITAT METRICS: ${unitStats?.publicPct != null ? `${unitStats.publicPct}% public land` : ''}${unitStats?.wildernessPct ? `, ${unitStats.wildernessPct}% wilderness` : ''}${unitStats?.buckPerHundredDoe ? `, ${unitStats.buckPerHundredDoe}:100 buck-to-doe ratio` : ''}.${unitStats?.devNotes ? ` Notes: ${unitStats.devNotes}` : ''}`
       : '';
 
+    // Wilderness / guide context — only surfaced for NR hunters, and only for Wyoming deer V2 entries
+    let wildernessBlock = '';
+    if (!isResident && isWyoming && isDeer && wyoResolved.key) {
+      const wInfo = getWildernessInfo(wyoResolved.key);
+      if (wInfo.status !== 'NONE' && wInfo.guideRuleForNR) {
+        wildernessBlock = `WILDERNESS / GUIDE RULE (NR ONLY): ${wInfo.guideRuleForNR}`;
+      }
+    }
+
     const geographicGuardrails = `
       ${geoAnchor}
       ${trophyInstruction}
       ${habitatBlock}
+      ${wildernessBlock}
       ${drawSummary}
       USER STATUS: ${formData.residency}
       MANDATORY COMPLIANCE:
       1. NO MARKDOWN: section titles ALL CAPS. No asterisks. No hashtags.
       2. TRUTH ADHERENCE: You MUST use the exact numbers provided in the DATA blocks.
+      ${isResident ? '3. NO GUIDE/WILDERNESS RULES: This hunter is a Wyoming resident. Wyoming Statute 23-2-401 does NOT apply. Do not mention guide requirements, wilderness guide rules, or outfitter requirements anywhere in the output.' : ''}
     `;
 
     // ─── 8. BRIEF PROMPT ──────────────────────────────────────────────────────
