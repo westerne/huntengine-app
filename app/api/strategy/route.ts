@@ -187,7 +187,7 @@ export async function POST(req: Request) {
                 trait: unit.trait ?? '',
                 description: unit.description ?? '',
                 tier: unit.tier ?? '',
-                seasons: unit.seasons ?? {},
+                seasons: (unit as any).seasons ?? {},
                 residentOdds: latest?.resident?.approxOdds ?? 'N/A',
                 residentOdds2025: latest?.resident?.approxOdds ?? 'N/A',
                 residentOdds2024: prior?.resident?.approxOdds ?? 'N/A',
