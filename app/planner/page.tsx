@@ -34,11 +34,15 @@ type HuntPlannerState = {
     knownAreas: string;
     pastExperience: string;
     hunterContext: string;
+    includeSpecialDraw: boolean;   // WY only — special draw costs more but better odds
+    grizzlyComfort: boolean;       // WY/MT/ID only — willing to hunt grizzly country
   };
   drawReality: any | null;
   strategyPath: string | null;
   actionPlan: any | null;
   recommendations: any[];
+  drawableUnits: any[];
+  showDrawablePanel: boolean;
   unitBrief: string | null;
   huntPlan: any | null;
   gearList: any | null;
@@ -67,6 +71,12 @@ const SACRIFICE_OPTIONS = [
   { value: 'no', label: 'Holding out for a trophy unit' },
   { value: 'middle', label: 'Somewhere in between' },
 ];
+
+// States with grizzly bear populations relevant to hunting
+const GRIZZLY_STATES = ['WY', 'MT', 'ID'];
+
+// States with special draw pools (Wyoming only currently)
+const SPECIAL_DRAW_STATES = ['WY'];
 
 const STRATEGY_LABELS: Record<string, { label: string; color: string; description: string }> = {
   DRAW_NOW: { label: 'Draw Now', color: 'text-green-400', description: 'You have units you can draw this year.' },
@@ -98,11 +108,15 @@ export default function App() {
       knownAreas: '',
       pastExperience: 'First time hunting this species',
       hunterContext: '',
+      includeSpecialDraw: true,
+      grizzlyComfort: true,
     },
     drawReality: null,
     strategyPath: null,
     actionPlan: null,
     recommendations: [],
+    drawableUnits: [],
+    showDrawablePanel: false,
     unitBrief: null,
     huntPlan: null,
     gearList: null,
@@ -120,12 +134,16 @@ export default function App() {
     'Mountain Goat': null,
   };
 
+  const selState = state.profile.states[0];
+  const isWyResidentNoPoints = selState === 'WY' && state.profile.residency === 'Resident' && (state.profile.species === 'Mule Deer' || state.profile.species === 'Antelope' || state.profile.species === 'Elk');
+  const isIdaho = selState === 'ID';
+  const noPointSystem = isWyResidentNoPoints || isIdaho;
+  const showGrizzlyOption = GRIZZLY_STATES.includes(selState);
+  const showSpecialDrawOption = SPECIAL_DRAW_STATES.includes(selState) && state.profile.residency === 'Non-Resident';
+
   // Residency & Points logic
   useEffect(() => {
-    const selState = state.profile.states[0];
     if (!selState) return;
-    const isWyResidentNoPoints = selState === 'WY' && state.profile.residency === 'Resident' && (state.profile.species === 'Mule Deer' || state.profile.species === 'Antelope');
-    const isIdaho = selState === 'ID';
     if ((isWyResidentNoPoints || isIdaho) && state.profile.points[selState] !== 0) {
       setState(s => ({ ...s, profile: { ...s.profile, points: { ...s.profile.points, [selState]: 0 } } }));
     }
@@ -160,6 +178,7 @@ export default function App() {
       setState(s => ({
         ...s,
         recommendations: data.recommendations || [],
+        drawableUnits: data.drawableUnits || [],
         drawReality: data.drawReality || null,
         strategyPath: data.strategyPath || null,
         actionPlan: data.actionPlan || null,
@@ -222,10 +241,37 @@ export default function App() {
     </button>
   );
 
-  const selState = state.profile.states[0];
-  const isWyResidentNoPoints = selState === 'WY' && state.profile.residency === 'Resident' && (state.profile.species === 'Mule Deer' || state.profile.species === 'Antelope');
-  const isIdaho = selState === 'ID';
-  const noPointSystem = isWyResidentNoPoints || isIdaho;
+  // Toggle switch component for yes/no preferences
+  const ToggleSwitch = ({ 
+    label, 
+    sublabel, 
+    value, 
+    onChange,
+    warningLabel,
+  }: { 
+    label: string; 
+    sublabel?: string; 
+    value: boolean; 
+    onChange: (v: boolean) => void;
+    warningLabel?: string;
+  }) => (
+    <div className="flex items-center justify-between gap-4 p-4 bg-black rounded-xl border border-zinc-800">
+      <div className="flex-1">
+        <p className="text-[10px] font-black uppercase tracking-widest text-zinc-300">{label}</p>
+        {sublabel && <p className="text-[9px] text-zinc-600 font-bold uppercase mt-0.5">{sublabel}</p>}
+        {!value && warningLabel && (
+          <p className="text-[9px] text-amber-600 font-bold uppercase mt-1">{warningLabel}</p>
+        )}
+      </div>
+      <button
+        type="button"
+        onClick={() => onChange(!value)}
+        className={`relative w-12 h-6 rounded-full transition-all duration-200 shrink-0 ${value ? 'bg-amber-600' : 'bg-zinc-700'}`}
+      >
+        <span className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-all duration-200 ${value ? 'left-7' : 'left-1'}`} />
+      </button>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-amber-500/30">
@@ -236,10 +282,93 @@ export default function App() {
         </div>
       )}
 
+      {/* DRAWABLE UNITS PANEL */}
+      {state.showDrawablePanel && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-start justify-end">
+          <div className="h-full w-full max-w-xl bg-zinc-950 border-l border-zinc-800 flex flex-col shadow-2xl animate-in slide-in-from-right duration-300">
+            {/* Panel Header */}
+            <div className="flex items-center justify-between px-8 py-6 border-b border-zinc-800 shrink-0">
+              <div>
+                <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">All Drawable Units</p>
+                <h3 className="text-xl font-black italic uppercase text-green-400">{state.drawableUnits.length} Units You Can Draw Now</h3>
+              </div>
+              <button
+                onClick={() => setState(s => ({ ...s, showDrawablePanel: false }))}
+                className="text-zinc-500 hover:text-white transition-colors text-2xl font-black leading-none"
+              >×</button>
+            </div>
+
+            {/* Pool type legend */}
+            <div className="px-8 py-3 border-b border-zinc-800 flex gap-4 shrink-0">
+              <span className="flex items-center gap-1.5 text-[9px] font-black uppercase text-zinc-500">
+                <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />Regular Pool
+              </span>
+              <span className="flex items-center gap-1.5 text-[9px] font-black uppercase text-zinc-500">
+                <span className="w-2 h-2 rounded-full bg-amber-500 inline-block" />Special Pool
+              </span>
+              <span className="flex items-center gap-1.5 text-[9px] font-black uppercase text-zinc-500">
+                <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />OTC / General
+              </span>
+            </div>
+
+            {/* Scrollable unit list */}
+            <div className="flex-1 overflow-y-auto px-6 py-4 space-y-3">
+              {state.drawableUnits.map((unit: any, i: number) => (
+                <button
+                  key={unit.unit + i}
+                  onClick={() => {
+                    setState(s => ({ ...s, showDrawablePanel: false }));
+                    handlePlanSubmit({ ...state.profile, unit: unit.unit, selectedState: unit.state || state.profile.states[0] });
+                  }}
+                  className="w-full text-left bg-zinc-900 border border-zinc-800 rounded-xl p-4 hover:border-amber-700 hover:bg-zinc-800/60 transition-all group"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        {/* Pool type dot */}
+                        <span className={`w-2 h-2 rounded-full shrink-0 ${
+                          unit.poolType === 'OTC' ? 'bg-blue-500' :
+                          unit.poolType === 'Special' ? 'bg-amber-500' :
+                          'bg-green-500'
+                        }`} />
+                        <span className="text-amber-500 font-black text-[9px] uppercase tracking-widest">{unit.state || state.profile.states[0]}</span>
+                        <span className="text-[9px] text-zinc-600 font-black uppercase">{unit.poolType}</span>
+                      </div>
+                      <p className="text-lg font-black italic uppercase text-white leading-tight truncate">
+                        Unit {unit.unit}
+                      </p>
+                      <p className="text-[10px] text-zinc-500 font-bold mt-0.5 truncate">{unit.terrain}</p>
+                      <div className="flex items-center gap-3 mt-2">
+                        {unit.requiresGuide && (
+                          <span className="text-[8px] font-black uppercase text-orange-400 border border-orange-800/40 bg-orange-900/20 px-2 py-0.5 rounded-full">Guide Req.</span>
+                        )}
+                        {unit.grizzlyPresence && (
+                          <span className="text-[8px] font-black uppercase text-yellow-500 border border-yellow-800/40 bg-yellow-900/20 px-2 py-0.5 rounded-full">🐻 Grizzly</span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="text-[8px] uppercase text-zinc-600 font-black mb-0.5">Odds</p>
+                      <p className="text-lg font-black text-green-400">{unit.currentOdds}</p>
+                      <p className="text-[9px] text-zinc-500 font-bold">{unit.topEnd}</p>
+                      <p className="text-[8px] text-zinc-600 font-black uppercase mt-1 group-hover:text-amber-500 transition-colors">Build Plan →</p>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            <div className="px-8 py-4 border-t border-zinc-800 shrink-0">
+              <p className="text-[9px] text-zinc-600 font-bold uppercase text-center">Tap any unit to build a full tactical plan</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto px-6 py-12">
         {state.step !== 'entry' && (
           <div className="flex items-center justify-center space-x-4 mb-8 text-[10px] uppercase tracking-widest font-black">
-            <button className="text-zinc-600 hover:text-amber-500 transition-colors" onClick={() => setState(s => ({ ...s, step: 'entry', entryMode: null, unitBrief: null, recommendations: [], drawReality: null, actionPlan: null, strategyPath: null, error: null }))}>START OVER</button>
+            <button className="text-zinc-600 hover:text-amber-500 transition-colors" onClick={() => setState(s => ({ ...s, step: 'entry', entryMode: null, unitBrief: null, recommendations: [], drawableUnits: [], drawReality: null, actionPlan: null, strategyPath: null, showDrawablePanel: false, error: null }))}>START OVER</button>
             <span className="text-zinc-800">|</span>
             {['unit-brief', 'hunt-plan', 'gear-list', 'recommendations'].includes(state.step) && (
               <button className="text-zinc-500 hover:text-white" onClick={() => setState(s => ({ ...s, step: s.entryMode === 'has-tag' ? 'plan-4' : 'scout-4' }))}>BACK</button>
@@ -308,9 +437,21 @@ export default function App() {
                       <p className="text-[8px] text-amber-600/80 font-bold uppercase mt-1">No point system applicable for this combination</p>
                     </div>
                   ) : (
-                    <input type="number" className="bg-zinc-900 border border-zinc-700 w-full p-3 text-center rounded-xl text-amber-500 font-black text-2xl outline-none" value={state.profile.points[state.profile.states[0]] || 0} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, points: { ...s.profile.points, [state.profile.states[0]]: parseInt(e.target.value) || 0 } } }))} />
+                    <input type="number" className="bg-zinc-900 border border-zinc-700 w-full p-3 text-center rounded-xl text-amber-500 font-black text-2xl outline-none" value={state.profile.points[selState] || 0} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, points: { ...s.profile.points, [selState]: parseInt(e.target.value) || 0 } } }))} />
                   )}
                 </div>
+
+                {/* Special Draw toggle — WY Non-Resident only */}
+                {showSpecialDrawOption && (
+                  <ToggleSwitch
+                    label="Include Wyoming Special Draw"
+                    sublabel="Special draw has better odds but costs ~$50 more per application. Toggle off to see regular draw only."
+                    value={state.profile.includeSpecialDraw}
+                    onChange={(v) => setState(s => ({ ...s, profile: { ...s.profile, includeSpecialDraw: v } }))}
+                    warningLabel="Special draw excluded — recommendations will use regular and random pools only."
+                  />
+                )}
+
                 <div className="bg-black p-6 rounded-2xl border border-zinc-800">
                   <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">When do you want to hunt this?</label>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -321,6 +462,7 @@ export default function App() {
                   <p className="text-[9px] text-zinc-600 font-bold uppercase mt-4 text-center">Selecting a longer horizon allows the engine to suggest units with higher trophy potential.</p>
                 </div>
               </div>
+
               <div className="space-y-6">
                 <label className="block text-[10px] font-black uppercase text-zinc-500 tracking-widest">Minimum Trophy Goal</label>
                 {(() => {
@@ -338,6 +480,7 @@ export default function App() {
                   );
                 })()}
               </div>
+
               <div className="flex gap-4">
                 <button onClick={() => setState(s => ({ ...s, step: 'scout-1' }))} className="flex-1 border-2 border-zinc-700 py-4 font-black rounded-xl hover:bg-zinc-800 uppercase tracking-widest text-xs">Back</button>
                 <button onClick={() => setState(s => ({ ...s, step: 'scout-3' }))} className="flex-[2] bg-zinc-100 text-black py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-xs">Next Step</button>
@@ -361,6 +504,20 @@ export default function App() {
                   <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Fitness Level</label>
                   <div className="flex flex-wrap gap-2">{FITNESS_LEVELS.map(f => <TogglePill key={f} label={f} active={state.profile.fitness === f} onClick={() => setState(s => ({ ...s, profile: { ...s.profile, fitness: f } }))} />)}</div>
                 </div>
+
+                {/* Grizzly Country Toggle — WY, MT, ID only */}
+                {showGrizzlyOption && (
+                  <div>
+                    <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Grizzly Bear Country</label>
+                    <ToggleSwitch
+                      label="Comfortable hunting active grizzly habitat"
+                      sublabel="Several top units in WY/MT/ID have significant grizzly populations. Toggle off to exclude these units."
+                      value={state.profile.grizzlyComfort}
+                      onChange={(v) => setState(s => ({ ...s, profile: { ...s.profile, grizzlyComfort: v } }))}
+                      warningLabel="Grizzly units excluded — some top trophy units will not appear in your results."
+                    />
+                  </div>
+                )}
               </div>
               <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-8">
                 <div>
@@ -388,7 +545,6 @@ export default function App() {
             <p className="text-zinc-500 text-sm mb-8">The more you tell us, the more specific your recommendations will be. All fields optional.</p>
             <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-8">
 
-              {/* Experience */}
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Experience with this species</label>
                 <div className="flex flex-col gap-2">
@@ -398,7 +554,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Trophy vs Opportunity */}
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Trophy vs. Opportunity — what matters more?</label>
                 <div className="flex flex-col gap-2">
@@ -408,7 +563,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Known Areas */}
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-2 tracking-widest">Units or areas you already know</label>
                 <p className="text-[9px] text-zinc-600 font-bold uppercase mb-3">We'll weight familiar units higher in your recommendations.</p>
@@ -421,7 +575,6 @@ export default function App() {
                 />
               </div>
 
-              {/* Hunter Context */}
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-2 tracking-widest">Tell us about yourself as a hunter</label>
                 <p className="text-[9px] text-zinc-600 font-bold uppercase mb-3">Past hunts, what you're after, animals you've passed on, specific goals.</p>
@@ -442,7 +595,7 @@ export default function App() {
           </div>
         )}
 
-        {/* PLAN STEPS — unchanged */}
+        {/* PLAN STEPS */}
         {state.step === 'plan-1' && (
           <div className="max-w-2xl mx-auto text-left animate-in fade-in slide-in-from-bottom-4">
             <ProgressBar />
@@ -488,7 +641,7 @@ export default function App() {
                       <p className="text-[9px] text-amber-500 font-black uppercase tracking-widest leading-none">Random Draw</p>
                     </div>
                   ) : (
-                    <input type="number" className="bg-zinc-900 border border-zinc-700 w-24 p-3 text-center rounded-xl text-amber-500 font-black text-2xl outline-none" value={state.profile.points[state.profile.states[0]] || 0} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, points: { ...s.profile.points, [state.profile.states[0]]: parseInt(e.target.value) || 0 } } }))} />
+                    <input type="number" className="bg-zinc-900 border border-zinc-700 w-24 p-3 text-center rounded-xl text-amber-500 font-black text-2xl outline-none" value={state.profile.points[selState] || 0} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, points: { ...s.profile.points, [selState]: parseInt(e.target.value) || 0 } } }))} />
                   )}
                 </div>
               </div>
@@ -563,12 +716,68 @@ export default function App() {
           <div className="space-y-10 animate-in fade-in duration-500 text-left">
             <h2 className="text-4xl font-black italic uppercase text-center mb-8 tracking-tighter leading-none">Top Tier Selections</h2>
 
+            {/* ── INPUT OVERVIEW CARD ───────────────────────────────────────── */}
+            <div className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 mb-2">
+              <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-4">Your Search Parameters</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                <div>
+                  <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">State / Species</p>
+                  <p className="text-xs font-black text-zinc-200 uppercase">{state.profile.states[0]} / {state.profile.species}</p>
+                </div>
+                <div>
+                  <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">Residency</p>
+                  <p className="text-xs font-black text-zinc-200 uppercase">{state.profile.residency}</p>
+                </div>
+                <div>
+                  <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">Points</p>
+                  <p className="text-xs font-black text-amber-400 uppercase">
+                    {noPointSystem ? 'Random Draw' : `${state.profile.points[selState] || 0} pts`}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">Weapon / Season</p>
+                  <p className="text-xs font-black text-zinc-200 uppercase">{state.profile.weapons.join(', ')} / {state.profile.seasons.join(', ')}</p>
+                </div>
+                <div>
+                  <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">Trophy Floor</p>
+                  <p className="text-xs font-black text-amber-400 uppercase">
+                    {trophyConfig[state.profile.species] ? `${state.profile.trophyQuality}"` : 'Any'}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">Style / Fitness</p>
+                  <p className="text-xs font-black text-zinc-200 uppercase">{state.profile.huntStyles.join(', ')} / {state.profile.fitness}</p>
+                </div>
+              </div>
+
+              {/* Flags row — show active preference flags */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {showSpecialDrawOption && (
+                  <span className={`px-2 py-1 rounded-full text-[8px] font-black uppercase tracking-widest border ${state.profile.includeSpecialDraw ? 'bg-amber-900/20 border-amber-800/40 text-amber-400' : 'bg-zinc-800 border-zinc-700 text-zinc-500'}`}>
+                    {state.profile.includeSpecialDraw ? '✓ Special Draw Included' : '✕ Special Draw Excluded'}
+                  </span>
+                )}
+                {showGrizzlyOption && (
+                  <span className={`px-2 py-1 rounded-full text-[8px] font-black uppercase tracking-widest border ${state.profile.grizzlyComfort ? 'bg-zinc-800 border-zinc-700 text-zinc-400' : 'bg-red-900/20 border-red-800/40 text-red-400'}`}>
+                    {state.profile.grizzlyComfort ? '✓ Grizzly Country OK' : '✕ No Grizzly Units'}
+                  </span>
+                )}
+                {state.profile.knownAreas && (
+                  <span className="px-2 py-1 rounded-full text-[8px] font-black uppercase tracking-widest border bg-blue-900/20 border-blue-800/40 text-blue-400">
+                    Familiar: {state.profile.knownAreas.slice(0, 30)}{state.profile.knownAreas.length > 30 ? '...' : ''}
+                  </span>
+                )}
+                <span className="px-2 py-1 rounded-full text-[8px] font-black uppercase tracking-widest border bg-zinc-800 border-zinc-700 text-zinc-400">
+                  Timeline: {state.profile.drawTimeline}
+                </span>
+              </div>
+            </div>
+
             {/* Strategy Card */}
             {state.drawReality && state.actionPlan && state.strategyPath && (() => {
               const path = STRATEGY_LABELS[state.strategyPath] || { label: state.strategyPath, color: 'text-amber-400', description: '' };
               return (
                 <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl mb-10">
-                  {/* Header */}
                   <div className="bg-zinc-800/60 px-8 py-5 border-b border-zinc-700 flex items-center justify-between">
                     <div>
                       <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">Your Draw Reality</p>
@@ -580,13 +789,17 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Draw Reality Stats */}
                   <div className="grid grid-cols-3 divide-x divide-zinc-800 border-b border-zinc-800">
-                    <div className="px-6 py-4 text-center">
+                    <button
+                      className="px-6 py-4 text-center group hover:bg-zinc-800/50 transition-colors cursor-pointer w-full"
+                      onClick={() => state.drawableUnits.length > 0 && setState(s => ({ ...s, showDrawablePanel: true }))}
+                    >
                       <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">Drawable Now</p>
-                      <p className="text-2xl font-black text-green-400">{state.drawReality.regularPoolUnits}</p>
-                      <p className="text-[9px] text-zinc-600 font-bold uppercase">Regular Pool Units</p>
-                    </div>
+                      <p className="text-2xl font-black text-green-400 group-hover:text-green-300 transition-colors">{state.drawReality.regularPoolUnits || state.drawableUnits.length || 0}</p>
+                      <p className="text-[9px] font-bold uppercase text-zinc-600 group-hover:text-green-500 transition-colors">
+                        {state.drawableUnits.length > 0 ? 'Tap to see all →' : 'Regular Pool Units'}
+                      </p>
+                    </button>
                     <div className="px-6 py-4 text-center">
                       <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">Random Pool</p>
                       <p className="text-2xl font-black text-amber-400">{state.drawReality.randomPoolUnits}</p>
@@ -599,7 +812,6 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Action Steps */}
                   <div className="p-8 space-y-6">
                     <div>
                       <p className="text-amber-500 font-black uppercase text-xs tracking-widest mb-3">{state.actionPlan.headline}</p>
@@ -654,7 +866,13 @@ export default function App() {
                       <div>
                         <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">Season</p>
                         <p className="text-lg font-black italic text-zinc-100 uppercase">
-                          {typeof rec.season === 'string' ? rec.season : rec.season?.rifle ? `Rifle: ${rec.season.rifle.open} - ${rec.season.rifle.close}` : rec.season?.archery ? `Archery: ${rec.season.archery.open} - ${rec.season.archery.close}` : rec.seasonName || 'Oct 1-31'}
+                          {(() => {
+                            if (typeof rec.season === 'string') return rec.season;
+                            const parts = [];
+                            if (rec.season?.archery) parts.push(`Archery: ${rec.season.archery.open} - ${rec.season.archery.close}`);
+                            if (rec.season?.rifle) parts.push(`Rifle: ${rec.season.rifle.open} - ${rec.season.rifle.close}`);
+                            return parts.length > 0 ? parts.join(' | ') : rec.seasonName || 'Oct 1-31';
+                          })()}
                         </p>
                       </div>
                       <div>
@@ -662,13 +880,13 @@ export default function App() {
                         <p className="text-lg font-black italic capitalize">{rec.terrain || rec.terrainType}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">2025 Draw Odds</p>
+                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">Current Odds</p>
                         <p className="text-lg font-black italic text-green-500 uppercase">
-                          {isResidentProfile ? (rec.residentOdds2025 || rec.residentOdds || rec.currentOdds || 'N/A') : (rec.nrRandomOdds2025 || rec.nrRandomOdds || rec.currentOdds || 'N/A')}
+                          {rec.currentOdds || 'N/A'}
                         </p>
                       </div>
                       <div className="text-right">
-                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">2026 Predicted</p>
+                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">Predicted</p>
                         <p className={`text-lg font-black italic uppercase ${rec.oddsDirection === 'UP' ? 'text-green-400' : rec.oddsDirection === 'DOWN' ? 'text-red-400' : 'text-amber-400'}`}>
                           {rec.predictedOdds || 'N/A'}
                           {rec.oddsDirection === 'UP' && ' ↑'}

@@ -44,6 +44,10 @@ export type WyoElkUnit = {
   trait: string;
   description: string;
   tier: 'trophy' | 'mid' | 'accessible' | 'general' | 'antlerless';
+  requiresGuide?: boolean;   // NR hunters legally required to use licensed WY guide/outfitter
+  guideNote?: string;        // Explanation of guide requirement
+  grizzlyPresence?: boolean; // Unit has confirmed active grizzly bear population
+  publicLandPct?: number;    // Approximate % public land (added when data available)
   coords?: { lat: number; lng: number };
   drawHistory: ElkDrawHistory[];
 };
@@ -57,10 +61,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '1-1': {
     unit: '1', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Southeast Wyoming plains/timber transition',
-    description: 'Southeast Wyoming near Laramie Peak foothills. Limited NR quota with high point requirements. Strong resident demand.',
+    trait: 'Crook Unit — Black Hills, northeast Wyoming',
+    description: 'Northeast Wyoming, Black Hills country near Sundance. Timber and rolling terrain with good elk numbers. Limited NR quota with high point requirements.',
     tier: 'mid',
-    coords: { lat: 42.7, lng: -105.6 },
+    coords: { lat: 44.4, lng: -104.2 },
     drawHistory: [
       {
         year: 2024,
@@ -79,7 +83,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 1 antlerless elk. Moderate NR demand, reasonable odds.',
     tier: 'antlerless',
-    coords: { lat: 42.7, lng: -105.6 },
+    coords: { lat: 44.4, lng: -104.2 },
     drawHistory: [
       {
         year: 2024,
@@ -99,10 +103,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '6-1': {
     unit: '6', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '270-300"', topEnd: '330"+',
-    trait: 'Southeast Wyoming, moderate terrain',
-    description: 'Small quota unit in southeast Wyoming. High point requirements for NR regular pool.',
+    trait: 'Pole Mountain Unit — southeast Wyoming near Laramie',
+    description: 'Southeast Wyoming, Pole Mountain area near Laramie. Small quota unit with high point requirements for NR regular pool.',
     tier: 'mid',
-    coords: { lat: 42.5, lng: -105.4 },
+    coords: { lat: 41.1, lng: -105.4 },
     drawHistory: [
       {
         year: 2024,
@@ -121,7 +125,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 6 antlerless elk. Very low NR demand.',
     tier: 'antlerless',
-    coords: { lat: 42.5, lng: -105.4 },
+    coords: { lat: 41.1, lng: -105.4 },
     drawHistory: [
       {
         year: 2024,
@@ -144,7 +148,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Laramie Peak giants — one of Wyoming\'s most coveted elk units',
     description: 'Southeast Wyoming, Laramie Mountains. Mix of timber, meadows, and broken terrain. Strong resident population with consistent trophy bulls. High NR demand in all pools.',
     tier: 'trophy',
-    coords: { lat: 42.25, lng: -105.75 },
+    coords: { lat: 42.4, lng: -105.8 },
     drawHistory: [
       {
         year: 2024,
@@ -163,7 +167,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Five-point restriction — quality bull management',
     description: 'Unit 7 five-point antlered tag. Significant NR demand. Draws at 1 point in regular pool historically.',
     tier: 'mid',
-    coords: { lat: 42.25, lng: -105.75 },
+    coords: { lat: 42.4, lng: -105.8 },
     drawHistory: [
       {
         year: 2024,
@@ -182,7 +186,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'High quota antlerless — very drawable',
     description: 'Unit 7 antlerless elk. Massive quota with low NR demand. Essentially guaranteed for NR hunters with zero points.',
     tier: 'antlerless',
-    coords: { lat: 42.25, lng: -105.75 },
+    coords: { lat: 42.4, lng: -105.8 },
     drawHistory: [
       {
         year: 2024,
@@ -224,11 +228,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '11-1': {
     unit: '11', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '290-320"', topEnd: '350"+',
-    trait: 'Bighorn Mountains — solid bull numbers, high resident demand',
-    description: 'North-central Wyoming, Bighorn Mountains. Strong resident demand. NR regular pool draws at 11 points.',
+    typical: '280-310"', topEnd: '340"+',
+    trait: 'Medicine Bow River Unit — Elk Mountain area',
+    description: 'Southeast Wyoming, Medicine Bow River drainage near Elk Mountain. Solid elk country with strong resident demand. NR regular pool draws at 11 points.',
     tier: 'mid',
-    coords: { lat: 44.1, lng: -107.1 },
+    coords: { lat: 41.8, lng: -106.5 },
     drawHistory: [
       {
         year: 2024,
@@ -247,7 +251,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 11 antlerless elk. Low NR demand, very drawable.',
     tier: 'antlerless',
-    coords: { lat: 44.1, lng: -107.1 },
+    coords: { lat: 41.8, lng: -106.5 },
     drawHistory: [
       {
         year: 2024,
@@ -262,11 +266,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '11-9': {
     unit: '11', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
-    typical: '290-320"', topEnd: '350"+',
-    trait: 'Archery tag — Bighorn Mountains',
-    description: 'Unit 11 archery elk. Draws at 11 points in regular pool. Good archery terrain.',
+    typical: '280-310"', topEnd: '340"+',
+    trait: 'Medicine Bow River archery — Elk Mountain area',
+    description: 'Southeast Wyoming, Medicine Bow River area near Elk Mountain. Archery elk. Draws at 11 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.1, lng: -107.1 },
+    coords: { lat: 41.8, lng: -106.5 },
     drawHistory: [
       {
         year: 2024,
@@ -285,11 +289,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '16-1': {
     unit: '16', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '330-360"', topEnd: '390"+',
-    trait: 'Sunlight Basin and Clarks Fork — trophy bull country',
-    description: 'Northwest Wyoming, Sunlight Basin and Clarks Fork drainage. High alpine terrain with large bull populations. Premium trophy unit with brutal NR draw odds.',
+    typical: '280-310"', topEnd: '340"+',
+    trait: 'Shirley Mountain Unit — south-central Wyoming',
+    description: 'South-central Wyoming, Shirley Mountains near Medicine Bow. Sage and timber country with moderate elk populations. High point requirements for NR regular pool.',
     tier: 'trophy',
-    coords: { lat: 44.6, lng: -109.5 },
+    coords: { lat: 42.3, lng: -106.2 },
     drawHistory: [
       {
         year: 2024,
@@ -308,7 +312,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Sunlight Basin Type 2 tag — extremely high point requirement',
     description: 'Unit 16 Type 2 any elk. One of the hardest NR draws in Wyoming — requires 17+ points in regular pool.',
     tier: 'trophy',
-    coords: { lat: 44.6, lng: -109.5 },
+    coords: { lat: 42.3, lng: -106.2 },
     drawHistory: [
       {
         year: 2024,
@@ -327,7 +331,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 16 antlerless elk. Very drawable with zero points — good opportunity.',
     tier: 'antlerless',
-    coords: { lat: 44.6, lng: -109.5 },
+    coords: { lat: 42.3, lng: -106.2 },
     drawHistory: [
       {
         year: 2024,
@@ -346,11 +350,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '19-1': {
     unit: '19', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '290-320"', topEnd: '350"+',
-    trait: 'North Absaroka foothills — quality elk country',
-    description: 'Northwest Wyoming, north Absaroka foothills. Solid bull numbers. Draws at 11 points in regular pool.',
+    typical: '270-300"', topEnd: '320"+',
+    trait: 'Muddy Mountain Unit — central Wyoming near Casper',
+    description: 'Central Wyoming, Muddy Mountain area near Casper. Sage and mixed terrain elk unit. Draws at 11 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.8, lng: -109.2 },
+    coords: { lat: 42.8, lng: -106.5 },
     drawHistory: [
       {
         year: 2024,
@@ -369,7 +373,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'North Absaroka Type 2 — draws at 11 special points',
     description: 'Unit 19 Type 2 any elk. Draws at 11 points in regular, 11 in special pool.',
     tier: 'mid',
-    coords: { lat: 44.8, lng: -109.2 },
+    coords: { lat: 42.8, lng: -106.5 },
     drawHistory: [
       {
         year: 2024,
@@ -388,7 +392,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 19 antlerless elk. Zero NR demand — essentially guaranteed.',
     tier: 'antlerless',
-    coords: { lat: 44.8, lng: -109.2 },
+    coords: { lat: 42.8, lng: -106.5 },
     drawHistory: [
       {
         year: 2024,
@@ -407,7 +411,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 19 Type 5 antlerless elk. Very low demand, very drawable.',
     tier: 'antlerless',
-    coords: { lat: 44.8, lng: -109.2 },
+    coords: { lat: 42.8, lng: -106.5 },
     drawHistory: [
       {
         year: 2024,
@@ -426,11 +430,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '22-1': {
     unit: '22', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '310-340"', topEnd: '370"+',
-    trait: 'Bighorn Mountains core — demanding high country hunt',
-    description: 'North-central Wyoming, Bighorn Mountains. Rugged high-country terrain. Consistent trophy bulls but very limited NR quota and high point requirements.',
+    typical: '270-300"', topEnd: '320"+',
+    trait: 'Ferris Unit — south-central Wyoming near Rawlins',
+    description: 'South-central Wyoming, Ferris Mountains near Rawlins. Sage and rimrock country with limited elk. Very high point requirements in regular pool.',
     tier: 'trophy',
-    coords: { lat: 44.3, lng: -107.3 },
+    coords: { lat: 41.8, lng: -107.5 },
     drawHistory: [
       {
         year: 2024,
@@ -453,7 +457,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Greybull River area — mid-demand unit',
     description: 'North-central Wyoming. Draws at 12 points in regular pool. Moderate NR demand.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -108.5 },
+    coords: { lat: 42.9, lng: -106.3 },
     drawHistory: [
       {
         year: 2024,
@@ -472,7 +476,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 23 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.5, lng: -108.5 },
+    coords: { lat: 42.9, lng: -106.3 },
     drawHistory: [
       {
         year: 2024,
@@ -495,7 +499,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin foothills — high NR demand',
     description: 'North-central Wyoming, Bighorn Basin foothills. Draws at 16 points in regular pool. Very competitive.',
     tier: 'mid',
-    coords: { lat: 44.6, lng: -108.0 },
+    coords: { lat: 42.3, lng: -107.6 },
     drawHistory: [
       {
         year: 2024,
@@ -514,7 +518,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 24 antlerless elk. Low demand, very drawable.',
     tier: 'antlerless',
-    coords: { lat: 44.6, lng: -108.0 },
+    coords: { lat: 42.3, lng: -107.6 },
     drawHistory: [
       {
         year: 2024,
@@ -533,7 +537,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 24 Type 5 antlerless elk. Low demand.',
     tier: 'antlerless',
-    coords: { lat: 44.6, lng: -108.0 },
+    coords: { lat: 42.3, lng: -107.6 },
     drawHistory: [
       {
         year: 2024,
@@ -556,7 +560,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin north — high NR demand, tough draw',
     description: 'North-central Wyoming. Draws at 13 points in regular pool. Competitive NR unit.',
     tier: 'mid',
-    coords: { lat: 44.75, lng: -108.2 },
+    coords: { lat: 42.5, lng: -108.7 },
     drawHistory: [
       {
         year: 2024,
@@ -575,7 +579,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 25 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.75, lng: -108.2 },
+    coords: { lat: 42.5, lng: -108.7 },
     drawHistory: [
       {
         year: 2024,
@@ -594,7 +598,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 25 Type 5 antlerless elk.',
     tier: 'antlerless',
-    coords: { lat: 44.75, lng: -108.2 },
+    coords: { lat: 42.5, lng: -108.7 },
     drawHistory: [
       {
         year: 2024,
@@ -617,7 +621,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 27 antlerless elk. Zero NR demand — guaranteed draw.',
     tier: 'antlerless',
-    coords: { lat: 44.9, lng: -108.3 },
+    coords: { lat: 43.1, lng: -108.6 },
     drawHistory: [
       {
         year: 2024,
@@ -636,7 +640,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 28 antlerless elk. Very low NR demand, drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.95, lng: -108.0 },
+    coords: { lat: 42.5, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -655,11 +659,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '30-1': {
     unit: '30', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Washakie Wilderness — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
     typical: '320-350"', topEnd: '375"+',
     trait: 'South Fork and Thorofare — true wilderness elk',
     description: 'Northwest Wyoming, South Fork of the Shoshone and Thorofare country. One of the most remote elk hunts in the lower 48. Zero NR random quota — serious points build required.',
     tier: 'trophy',
-    coords: { lat: 44.0, lng: -109.8 },
+    coords: { lat: 41.6, lng: -109.5 },
     drawHistory: [
       {
         year: 2024,
@@ -674,11 +681,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '30-4': {
     unit: '30', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 30 antlerless elk. Very low NR demand.',
     tier: 'antlerless',
-    coords: { lat: 44.0, lng: -109.8 },
+    coords: { lat: 41.6, lng: -109.5 },
     drawHistory: [
       {
         year: 2024,
@@ -697,11 +705,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '31-1': {
     unit: '31', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'North Absaroka Wilderness — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
     typical: '320-355"', topEnd: '380"+',
     trait: 'North Fork Shoshone — premium Cody-area trophy unit',
     description: 'Northwest Wyoming, North Fork of the Shoshone River. Classic Cody-area elk country. High demand, zero NR random quota. One of Wyoming\'s most coveted resident draws.',
     tier: 'trophy',
-    coords: { lat: 44.45, lng: -109.6 },
+    coords: { lat: 41.7, lng: -109.1 },
     drawHistory: [
       {
         year: 2024,
@@ -716,11 +727,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '31-4': {
     unit: '31', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 31 antlerless elk. Moderate NR demand.',
     tier: 'antlerless',
-    coords: { lat: 44.45, lng: -109.6 },
+    coords: { lat: 41.7, lng: -109.1 },
     drawHistory: [
       {
         year: 2024,
@@ -739,11 +751,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '32-1': {
     unit: '32', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
     typical: '300-330"', topEnd: '360"+',
     trait: 'Cody area — high resident demand, tough NR draw',
     description: 'Northwest Wyoming near Cody. High resident demand. NR regular pool draws at 18 points.',
     tier: 'trophy',
-    coords: { lat: 44.5, lng: -109.2 },
+    coords: { lat: 41.8, lng: -109.2 },
     drawHistory: [
       {
         year: 2024,
@@ -758,11 +771,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '32-4': {
     unit: '32', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 32 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.5, lng: -109.2 },
+    coords: { lat: 41.8, lng: -109.2 },
     drawHistory: [
       {
         year: 2024,
@@ -777,11 +791,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '32-9': {
     unit: '32', huntType: '9', huntTypeLabel: 'Antlerless - Archery',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless archery tag',
     description: 'Unit 32 antlerless archery elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 44.5, lng: -109.2 },
+    coords: { lat: 41.8, lng: -109.2 },
     drawHistory: [
       {
         year: 2024,
@@ -801,10 +816,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '33-1': {
     unit: '33', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Greybull River north — moderate demand',
-    description: 'North-central Wyoming. Draws at 6 points in regular pool — accessible for moderate-point NR hunters.',
+    trait: 'Arch Creek Unit — north Wyoming near Kaycee',
+    description: 'North-central Wyoming, Arch Creek drainage near Kaycee. Timbered foothills country. Draws at 6 points in regular pool — accessible for moderate-point NR hunters.',
     tier: 'accessible',
-    coords: { lat: 44.6, lng: -108.7 },
+    coords: { lat: 43.7, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -823,7 +838,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 33 antlerless elk. Zero NR demand.',
     tier: 'antlerless',
-    coords: { lat: 44.6, lng: -108.7 },
+    coords: { lat: 43.7, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -843,10 +858,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '34-1': {
     unit: '34', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '300-330"', topEnd: '360"+',
-    trait: 'Wyoming Range foothills — accessible backcountry elk',
-    description: 'Southwest Wyoming, Wyoming Range foothills. Large quota unit with accessible terrain. One of the more drawable limited units — realistic for hunters with 7+ points.',
+    trait: 'Upper Powder River Unit — Buffalo/Kaycee area',
+    description: 'North-central Wyoming, upper Powder River drainage between Buffalo and Kaycee. Large quota unit with timbered mountain terrain and accessible roads. One of the more drawable limited units — realistic for hunters with 7+ points.',
     tier: 'mid',
-    coords: { lat: 42.4, lng: -110.8 },
+    coords: { lat: 43.9, lng: -106.9 },
     drawHistory: [
       {
         year: 2024,
@@ -866,10 +881,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '35-1': {
     unit: '35', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Wyoming Range east — moderate terrain, drawable',
-    description: 'Southwest Wyoming, east Wyoming Range. Draws at 8 points in regular pool with 20% odds. Accessible for moderate-point hunters.',
+    trait: 'Hunter Mesa Unit — Buffalo area, north Wyoming',
+    description: 'North-central Wyoming, Hunter Mesa near Buffalo. Timbered country with good elk numbers. Draws at 8 points in regular pool with 20% odds. Accessible for moderate-point NR hunters.',
     tier: 'accessible',
-    coords: { lat: 42.55, lng: -110.6 },
+    coords: { lat: 44.1, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -888,7 +903,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 35 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 42.55, lng: -110.6 },
+    coords: { lat: 44.1, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -904,10 +919,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '35-9': {
     unit: '35', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Wyoming Range archery — good bow terrain',
-    description: 'Unit 35 archery elk. Draws at 10 points in regular pool.',
+    trait: 'Hunter Mesa archery — Buffalo area, north Wyoming',
+    description: 'North-central Wyoming, Hunter Mesa near Buffalo. Timbered mountain archery country with good September rut activity. Draws at 10 points in regular pool — mid-tier difficulty for NR archery hunters.',
     tier: 'mid',
-    coords: { lat: 42.55, lng: -110.6 },
+    coords: { lat: 44.1, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -928,9 +943,9 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     unit: '36', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
-    description: 'Unit 36 antlerless elk. Very low NR demand, essentially guaranteed.',
+    description: 'Unit 36 antlerless elk. Northern Bighorn Mountains, Rock Creek drainage out of Buffalo. Very low NR demand, essentially guaranteed.',
     tier: 'antlerless',
-    coords: { lat: 42.65, lng: -110.5 },
+    coords: { lat: 44.3, lng: -106.9 },
     drawHistory: [
       {
         year: 2024,
@@ -946,10 +961,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '36-9': {
     unit: '36', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
     typical: '270-300"', topEnd: '330"+',
-    trait: 'Wyoming Range archery — low demand',
-    description: 'Unit 36 archery elk. Draws at 4 points in regular pool with 14.29% odds.',
+    trait: 'Northern Bighorn Mountains — Rock Creek drainage out of Buffalo',
+    description: 'North-central Wyoming, northern Bighorn Mountains in the Rock Creek drainage accessed out of Buffalo. Timbered mountain country with solid elk numbers and good September rut activity. Lower pressure than many Bighorn units. Draws at 4 points in the regular pool with 14.29% odds — one of the most accessible archery elk units in the Bighorns.',
     tier: 'accessible',
-    coords: { lat: 42.65, lng: -110.5 },
+    coords: { lat: 44.3, lng: -106.9 },
     drawHistory: [
       {
         year: 2024,
@@ -969,10 +984,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '37-9': {
     unit: '37', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
     typical: '275-305"', topEnd: '335"+',
-    trait: 'Wyoming Range south archery — moderate demand',
-    description: 'Unit 37 archery elk. Draws at 7 points in regular pool with 25% odds.',
+    trait: 'Clear Creek Unit — Buffalo area archery',
+    description: 'North-central Wyoming, Clear Creek drainage near Buffalo. Timbered mountain country with good September archery hunting and solid elk numbers. Draws at 7 points in regular pool — a mid-tier archery commitment for NR hunters.',
     tier: 'mid',
-    coords: { lat: 42.45, lng: -110.7 },
+    coords: { lat: 44.4, lng: -106.7 },
     drawHistory: [
       {
         year: 2024,
@@ -991,11 +1006,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '38-1': {
     unit: '38', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
     typical: '300-330"', topEnd: '360"+',
-    trait: 'Wapiti Valley — classic Cody elk country',
-    description: 'Northwest Wyoming, Wapiti Valley. Classic Cody-area elk hunt. Draws at 11 points in regular pool. High NR demand across all pools.',
+    trait: 'Piney Creek Unit — Sheridan area, north Bighorns',
+    description: 'North-central Wyoming, Piney Creek drainage near Sheridan. Premium trophy unit in the northern Bighorn Mountains. High NR demand across all pools. Draws at 11 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -109.8 },
+    coords: { lat: 44.6, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -1010,11 +1026,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '38-4': {
     unit: '38', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 38 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.5, lng: -109.8 },
+    coords: { lat: 44.6, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -1029,11 +1046,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '38-9': {
     unit: '38', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
+    grizzlyPresence: true,
     typical: '300-330"', topEnd: '360"+',
-    trait: 'Wapiti Valley archery — premium bow country, tough draw',
-    description: 'Unit 38 archery elk. Very high NR demand in all pools. Draws at 14 points in regular pool with 30.77% odds. One of Wyoming\'s most sought-after archery units.',
+    trait: 'Piney Creek archery — Sheridan area premium bow unit',
+    description: 'North-central Wyoming, Piney Creek drainage near Sheridan. Premium archery unit in the northern Bighorns with very high NR demand in all pools. Draws at 14 points in regular pool with 30.77% odds. One of Wyoming\'s most sought-after archery units.',
     tier: 'trophy',
-    coords: { lat: 44.5, lng: -109.8 },
+    coords: { lat: 44.6, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -1053,10 +1071,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '39-1': {
     unit: '39', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '285-315"', topEnd: '345"+',
-    trait: 'South Absaroka — accessible mountain elk',
-    description: 'North-central Wyoming, South Absaroka Mountains. Good resident draw odds and solid bull numbers. Draws at 9 points in regular pool.',
+    trait: 'Tongue River Unit — Sheridan area',
+    description: 'North-central Wyoming, Tongue River drainage near Sheridan. Solid elk numbers with good resident draw odds. Draws at 9 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 43.75, lng: -108.8 },
+    coords: { lat: 44.7, lng: -107.0 },
     drawHistory: [
       {
         year: 2024,
@@ -1075,7 +1093,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 39 antlerless elk. Low NR demand.',
     tier: 'antlerless',
-    coords: { lat: 43.75, lng: -108.8 },
+    coords: { lat: 44.7, lng: -107.0 },
     drawHistory: [
       {
         year: 2024,
@@ -1091,10 +1109,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '39-9': {
     unit: '39', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
     typical: '285-315"', topEnd: '345"+',
-    trait: 'South Absaroka archery — good bow country',
-    description: 'Unit 39 archery elk. Draws at 13 points in regular pool.',
+    trait: 'Tongue River archery — Sheridan area',
+    description: 'North-central Wyoming, Tongue River drainage near Sheridan. Remote timbered country with solid bull potential and good September archery hunting. Draws at 13 points in regular pool — serious commitment for NR hunters.',
     tier: 'mid',
-    coords: { lat: 43.75, lng: -108.8 },
+    coords: { lat: 44.7, lng: -107.0 },
     drawHistory: [
       {
         year: 2024,
@@ -1114,10 +1132,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '40-1': {
     unit: '40', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Bighorn Basin foothills — moderate demand',
-    description: 'North-central Wyoming. Draws at 10 points in regular pool with 25% odds.',
+    trait: 'Horse Creek Unit — Sheridan area',
+    description: 'North-central Wyoming, Horse Creek drainage near Sheridan. Timbered mountain country with good elk numbers. Draws at 10 points in regular pool with 25% odds.',
     tier: 'mid',
-    coords: { lat: 43.9, lng: -108.4 },
+    coords: { lat: 44.5, lng: -107.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1136,7 +1154,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 40 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 43.9, lng: -108.4 },
+    coords: { lat: 44.5, lng: -107.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1152,10 +1170,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '40-9': {
     unit: '40', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Bighorn Basin foothills archery',
-    description: 'Unit 40 archery elk. Draws at 10 points in regular pool with 33.33% odds.',
+    trait: 'Horse Creek archery — Sheridan area',
+    description: 'North-central Wyoming, Horse Creek drainage near Sheridan. Timbered mountain archery country with good September rut hunting. Draws at 10 points in regular pool — a mid-tier archery unit for NR hunters building a point bank.',
     tier: 'mid',
-    coords: { lat: 43.9, lng: -108.4 },
+    coords: { lat: 44.5, lng: -107.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1175,10 +1193,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '41-1': {
     unit: '41', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Bighorn Basin foothills — high resident success rate',
-    description: 'North-central Wyoming, Bighorn Basin foothills. Large quota unit with strong resident odds. NR hunters can draw with 9 points. Multiple season types available.',
+    trait: 'Medicine Lodge Unit — Shell/Hyattville area',
+    description: 'North-central Wyoming, Medicine Lodge drainage near Shell and Hyattville. Large quota unit with strong resident odds and good elk numbers. NR hunters can draw with 9 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.05, lng: -108.1 },
+    coords: { lat: 44.4, lng: -107.7 },
     drawHistory: [
       {
         year: 2024,
@@ -1197,7 +1215,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin Type 2 — drawable with 8 points',
     description: 'Unit 41 Type 2 any elk. Draws at 8 points in regular pool.',
     tier: 'accessible',
-    coords: { lat: 44.05, lng: -108.1 },
+    coords: { lat: 44.4, lng: -107.7 },
     drawHistory: [
       {
         year: 2024,
@@ -1216,7 +1234,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin Type 3 — very limited quota',
     description: 'Unit 41 Type 3 any elk. Very limited quota. Draws at 13 points.',
     tier: 'mid',
-    coords: { lat: 44.05, lng: -108.1 },
+    coords: { lat: 44.4, lng: -107.7 },
     drawHistory: [
       {
         year: 2024,
@@ -1235,7 +1253,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 41 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 44.05, lng: -108.1 },
+    coords: { lat: 44.4, lng: -107.7 },
     drawHistory: [
       {
         year: 2024,
@@ -1254,7 +1272,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin foothills archery — moderate demand',
     description: 'Unit 41 archery elk. Draws at 10 points in regular pool with 16.67% odds.',
     tier: 'mid',
-    coords: { lat: 44.05, lng: -108.1 },
+    coords: { lat: 44.4, lng: -107.7 },
     drawHistory: [
       {
         year: 2024,
@@ -1273,11 +1291,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '45-1': {
     unit: '45', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
     typical: '290-320"', topEnd: '350"+',
-    trait: 'Absaroka foothills — premium NW Wyoming unit',
-    description: 'Northwest Wyoming, Absaroka Range foothills east of Yellowstone. Good bull country with high NR demand. Draws at 12-13 points.',
+    trait: 'Paint Rock Unit — Greybull/Hyattville area',
+    description: 'North-central Wyoming, Paint Rock Creek drainage near Greybull and Hyattville. Quality elk country in the Bighorn Mountains foothills with high NR demand. Draws at 12-13 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.15, lng: -109.25 },
+    coords: { lat: 44.3, lng: -107.6 },
     drawHistory: [
       {
         year: 2024,
@@ -1292,11 +1311,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '45-4': {
     unit: '45', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 45 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.15, lng: -109.25 },
+    coords: { lat: 44.3, lng: -107.6 },
     drawHistory: [
       {
         year: 2024,
@@ -1311,11 +1331,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '45-5': {
     unit: '45', huntType: '5', huntTypeLabel: 'Antlerless - Rifle (Type 5)',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 45 Type 5 antlerless elk.',
     tier: 'antlerless',
-    coords: { lat: 44.15, lng: -109.25 },
+    coords: { lat: 44.3, lng: -107.6 },
     drawHistory: [
       {
         year: 2024,
@@ -1330,11 +1351,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '45-9': {
     unit: '45', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
+    grizzlyPresence: true,
     typical: '290-320"', topEnd: '350"+',
-    trait: 'Absaroka foothills archery — premium bow unit',
-    description: 'Unit 45 archery elk. Draws at 12 points in regular pool with 83.33% odds.',
+    trait: 'Paint Rock archery — Greybull/Hyattville area',
+    description: 'North-central Wyoming, Paint Rock Creek drainage near Greybull and Hyattville. Premium archery elk country in timbered Bighorn Mountain terrain. September archery hunting with good rut activity. Draws at 12 points in regular pool — a serious but achievable mid-tier commitment for NR hunters.',
     tier: 'mid',
-    coords: { lat: 44.15, lng: -109.25 },
+    coords: { lat: 44.3, lng: -107.6 },
     drawHistory: [
       {
         year: 2024,
@@ -1357,7 +1379,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River area — accessible, low demand',
     description: 'West-central Wyoming. Low NR demand — draws at 3 points in regular pool with 66.67% odds. Good option for lower-point hunters.',
     tier: 'accessible',
-    coords: { lat: 43.2, lng: -109.6 },
+    coords: { lat: 43.3, lng: -108.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1376,11 +1398,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '48-1': {
     unit: '48', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
     typical: '290-320"', topEnd: '350"+',
     trait: 'Wind River country — accessible mountain elk',
     description: 'West-central Wyoming, Wind River Range foothills. Solid elk numbers, accessible terrain, and drawable for moderate-point NR hunters at 7 points.',
     tier: 'mid',
-    coords: { lat: 43.05, lng: -109.35 },
+    coords: { lat: 44.0, lng: -107.4 },
     drawHistory: [
       {
         year: 2024,
@@ -1395,11 +1418,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '48-4': {
     unit: '48', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 48 antlerless elk. Zero NR demand.',
     tier: 'antlerless',
-    coords: { lat: 43.05, lng: -109.35 },
+    coords: { lat: 44.0, lng: -107.4 },
     drawHistory: [
       {
         year: 2024,
@@ -1422,7 +1446,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River south — moderate draw difficulty',
     description: 'West-central Wyoming. Draws at 9-10 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 42.95, lng: -109.2 },
+    coords: { lat: 43.9, lng: -107.2 },
     drawHistory: [
       {
         year: 2024,
@@ -1441,7 +1465,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 49 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 42.95, lng: -109.2 },
+    coords: { lat: 43.9, lng: -107.2 },
     drawHistory: [
       {
         year: 2024,
@@ -1460,11 +1484,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '51-1': {
     unit: '51', huntType: '1', huntTypeLabel: 'Any Elk - Rifle (South)',
-    typical: '280-310"', topEnd: '340"+',
-    trait: 'Upper Green River south — remote country',
-    description: 'West-central Wyoming, upper Green River south zone. Moderate NR demand. Draws at 12 points in regular pool.',
+    grizzlyPresence: true,
+    typical: '300-330"', topEnd: '360"+',
+    trait: 'Sunlight Unit — Cody area, Sunlight Basin',
+    description: 'Northwest Wyoming, Sunlight Basin north of Cody. Remote mountain country with quality bulls. Moderate NR demand. Draws at 12 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 43.0, lng: -109.8 },
+    coords: { lat: 44.6, lng: -109.3 },
     drawHistory: [
       {
         year: 2024,
@@ -1479,11 +1504,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '51-2': {
     unit: '51', huntType: '2', huntTypeLabel: 'Any Elk - Rifle (North)',
+    grizzlyPresence: true,
     typical: '280-310"', topEnd: '340"+',
     trait: 'Upper Green River north zone',
     description: 'Unit 51 North zone. Very limited quota, draws at 11 points.',
     tier: 'mid',
-    coords: { lat: 43.15, lng: -109.85 },
+    coords: { lat: 44.6, lng: -109.3 },
     drawHistory: [
       {
         year: 2024,
@@ -1498,11 +1524,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '51-4': {
     unit: '51', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 51 antlerless elk. Low NR demand.',
     tier: 'antlerless',
-    coords: { lat: 43.0, lng: -109.8 },
+    coords: { lat: 44.6, lng: -109.3 },
     drawHistory: [
       {
         year: 2024,
@@ -1517,11 +1544,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '51-9': {
     unit: '51', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
-    typical: '280-310"', topEnd: '340"+',
-    trait: 'Upper Green River archery',
-    description: 'Unit 51 archery elk. Moderate demand, draws at 8 points.',
+    grizzlyPresence: true,
+    typical: '300-330"', topEnd: '360"+',
+    trait: 'Sunlight Basin archery — Cody area',
+    description: 'Northwest Wyoming, Sunlight Basin north and east of Cody. Remote mountain archery country with quality bulls and good September rut hunting. Draws at 8 points in regular pool, accessible via special pool at 6 points.',
     tier: 'mid',
-    coords: { lat: 43.0, lng: -109.8 },
+    coords: { lat: 44.6, lng: -109.3 },
     drawHistory: [
       {
         year: 2024,
@@ -1540,11 +1568,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '54-1': {
     unit: '54', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '290-320"', topEnd: '350"+',
-    trait: 'Bridger Wilderness edge — remote elk country',
-    description: 'West-central Wyoming, Bridger Wilderness edge. Small quota with moderate point requirements.',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Teton Wilderness area — portions require a licensed Wyoming guide or outfitter for NR hunters.',
+    typical: '300-330"', topEnd: '360"+',
+    trait: 'Bald Ridge Unit — Cody area',
+    description: 'Northwest Wyoming, Bald Ridge drainage near Cody. Remote mountain country with quality bulls. Small quota with moderate point requirements.',
     tier: 'mid',
-    coords: { lat: 42.9, lng: -109.6 },
+    coords: { lat: 44.5, lng: -109.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1559,11 +1590,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '54-2': {
     unit: '54', huntType: '2', huntTypeLabel: 'Any Elk - Rifle (Type 2)',
+    grizzlyPresence: true,
     typical: '290-320"', topEnd: '350"+',
     trait: 'Bridger Wilderness edge Type 2',
     description: 'Unit 54 Type 2 elk. Draws at 11 points.',
     tier: 'mid',
-    coords: { lat: 42.9, lng: -109.6 },
+    coords: { lat: 44.5, lng: -109.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1578,11 +1610,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '54-3': {
     unit: '54', huntType: '3', huntTypeLabel: 'Any Elk - Rifle (Type 3)',
+    grizzlyPresence: true,
     typical: '280-310"', topEnd: '340"+',
     trait: 'Bridger Wilderness edge Type 3 — very limited',
     description: 'Unit 54 Type 3. Quota of 1 — essentially a raffle.',
     tier: 'mid',
-    coords: { lat: 42.9, lng: -109.6 },
+    coords: { lat: 44.5, lng: -109.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1597,11 +1630,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '54-9': {
     unit: '54', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Teton Wilderness area — portions require a licensed Wyoming guide or outfitter for NR hunters.',
     typical: '290-320"', topEnd: '350"+',
     trait: 'Bridger Wilderness archery — good bow country',
     description: 'Unit 54 archery elk. Draws at 12 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 42.9, lng: -109.6 },
+    coords: { lat: 44.5, lng: -109.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1620,11 +1656,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '55-1': {
     unit: '55', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '280-310"', topEnd: '340"+',
-    trait: 'Wind River south — small quota, moderate demand',
-    description: 'West-central Wyoming. Small quota with moderate NR demand. Draws at 13 points.',
+    grizzlyPresence: true,
+    typical: '300-330"', topEnd: '360"+',
+    trait: 'Grinnell Unit — Cody area',
+    description: 'Northwest Wyoming, Grinnell area near Cody. Remote mountain elk country with small quota. Draws at 13 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 42.8, lng: -109.5 },
+    coords: { lat: 44.4, lng: -109.0 },
     drawHistory: [
       {
         year: 2024,
@@ -1639,11 +1676,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '55-9': {
     unit: '55', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
+    grizzlyPresence: true,
     typical: '280-310"', topEnd: '340"+',
     trait: 'Wind River south archery',
     description: 'Unit 55 archery elk. Draws at 9 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 42.8, lng: -109.5 },
+    coords: { lat: 44.4, lng: -109.0 },
     drawHistory: [
       {
         year: 2024,
@@ -1662,11 +1700,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '56-1': {
     unit: '56', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Bridger Wilderness — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
     typical: '320-350"', topEnd: '380"+',
-    trait: 'Upper Green River — remote wilderness bulls',
-    description: 'West-central Wyoming, upper Green River drainage and Bridger Wilderness. Remote pack-in country with quality bulls. Minimal NR quota. Draws at 18 points with only 16.67% odds.',
+    trait: 'Wapiti Ridge Unit — Cody area trophy unit',
+    description: 'Northwest Wyoming, Wapiti Ridge near Cody. Remote pack-in country with quality trophy bulls. Minimal NR quota. Draws at 18 points with only 16.67% odds — one of the toughest draws near Cody.',
     tier: 'trophy',
-    coords: { lat: 43.1, lng: -109.7 },
+    coords: { lat: 44.5, lng: -109.6 },
     drawHistory: [
       {
         year: 2024,
@@ -1681,11 +1722,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '56-9': {
     unit: '56', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Bridger Wilderness — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
     typical: '310-340"', topEnd: '370"+',
-    trait: 'Upper Green River archery — wilderness bulls on the bow',
-    description: 'Unit 56 archery elk. Draws at 4 points in regular pool. Surprisingly accessible for what the area holds in trophy potential.',
+    trait: 'Wapiti Ridge archery — Cody area, surprisingly accessible',
+    description: 'Northwest Wyoming, Wapiti Ridge near Cody. Premium archery elk country with strong trophy potential. Draws at 4 points in regular pool — surprisingly accessible for what this area holds.',
     tier: 'accessible',
-    coords: { lat: 43.1, lng: -109.7 },
+    coords: { lat: 44.5, lng: -109.6 },
     drawHistory: [
       {
         year: 2024,
@@ -1704,11 +1748,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '58-1': {
     unit: '58', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Washakie/Teton Wilderness boundary — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
     typical: '310-340"', topEnd: '370"+',
-    trait: 'South Yellowstone area — high demand, low NR quota',
-    description: 'Northwest Wyoming, south Yellowstone area. Zero NR random quota. Draws at 18 points in both regular and special pools.',
+    trait: 'Ishawoa Unit — Cody area, high demand trophy unit',
+    description: 'Northwest Wyoming, Ishawoa drainage near Cody. High demand trophy elk country with zero NR random quota. Draws at 17-18 points in regular pool — serious long-term commitment required.',
     tier: 'trophy',
-    coords: { lat: 44.1, lng: -110.3 },
+    coords: { lat: 44.2, lng: -109.4 },
     drawHistory: [
       {
         year: 2024,
@@ -1723,11 +1770,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '59-1': {
     unit: '59', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
     typical: '310-340"', topEnd: '370"+',
-    trait: 'Yellowstone boundary — extremely tough NR draw',
-    description: 'Northwest Wyoming, Yellowstone boundary area. Tiny quota. Draws at 18 points with only 20% odds in regular pool.',
+    trait: 'Deer Creek Unit — Meeteetse area',
+    description: 'Northwest Wyoming, Deer Creek drainage near Meeteetse. Tiny NR quota with very high point requirements. Draws at 18 points with only 20% odds in regular pool.',
     tier: 'trophy',
-    coords: { lat: 44.3, lng: -110.5 },
+    coords: { lat: 44.1, lng: -108.9 },
     drawHistory: [
       {
         year: 2024,
@@ -1742,11 +1790,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '59-9': {
     unit: '59', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
+    grizzlyPresence: true,
     typical: '300-330"', topEnd: '360"+',
     trait: 'Yellowstone boundary archery',
     description: 'Unit 59 archery elk. Very small quota, moderate demand.',
     tier: 'mid',
-    coords: { lat: 44.3, lng: -110.5 },
+    coords: { lat: 44.1, lng: -108.9 },
     drawHistory: [
       {
         year: 2024,
@@ -1765,11 +1814,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '60-9': {
     unit: '60', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
-    typical: '290-320"', topEnd: '350"+',
-    trait: 'Jackson/Gros Ventre archery — premium bow country',
-    description: 'Northwest Wyoming near Gros Ventre. Archery only. Very small quota.',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Teton Wilderness — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
+    typical: '310-340"', topEnd: '370"+',
+    trait: 'Thorofare Unit — most remote elk hunt in the lower 48',
+    description: 'Northwest Wyoming, Thorofare country near Cody — one of the most remote wilderness areas in the lower 48. Pack-in only archery elk with exceptional trophy potential. Very small quota. Access via long trail from east side. A true bucket-list wilderness archery hunt.',
     tier: 'trophy',
-    coords: { lat: 43.55, lng: -110.6 },
+    coords: { lat: 43.9, lng: -110.1 },
     drawHistory: [
       {
         year: 2024,
@@ -1788,11 +1840,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '61-1': {
     unit: '61', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '285-315"', topEnd: '345"+',
-    trait: 'Wind River south — high resident demand',
-    description: 'South-central Wyoming. High resident demand. Draws at 11 points in regular pool with 20% odds.',
+    grizzlyPresence: true,
+    typical: '290-320"', topEnd: '350"+',
+    trait: 'North Greybull River Unit — Meeteetse area',
+    description: 'Northwest Wyoming, North Greybull River drainage near Meeteetse. Good elk country with high resident demand. Draws at 11 points in regular pool with 20% odds.',
     tier: 'mid',
-    coords: { lat: 42.65, lng: -109.1 },
+    coords: { lat: 44.3, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -1807,11 +1860,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '61-2': {
     unit: '61', huntType: '2', huntTypeLabel: 'Any Elk - Rifle (Type 2)',
+    grizzlyPresence: true,
     typical: '280-310"', topEnd: '340"+',
     trait: 'Wind River south Type 2 — very limited quota',
     description: 'Unit 61 Type 2. Zero NR quota issued in 2024.',
     tier: 'mid',
-    coords: { lat: 42.65, lng: -109.1 },
+    coords: { lat: 44.3, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -1826,11 +1880,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '61-4': {
     unit: '61', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 61 antlerless elk. Low demand, drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 42.65, lng: -109.1 },
+    coords: { lat: 44.3, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -1845,11 +1900,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '61-9': {
     unit: '61', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
+    grizzlyPresence: true,
     typical: '285-315"', topEnd: '345"+',
     trait: 'Wind River south archery',
     description: 'Unit 61 archery elk. Very low demand — essentially zero NR quota available.',
     tier: 'mid',
-    coords: { lat: 42.65, lng: -109.1 },
+    coords: { lat: 44.3, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -1868,11 +1924,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '62-1': {
     unit: '62', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '285-315"', topEnd: '345"+',
-    trait: 'Upper Wind River — high demand, tough draw',
-    description: 'West-central Wyoming. Draws at 14 points in regular pool. High NR demand.',
+    grizzlyPresence: true,
+    typical: '290-320"', topEnd: '350"+',
+    trait: 'South Greybull River Unit — Meeteetse area',
+    description: 'Northwest Wyoming, South Greybull River drainage near Meeteetse. High NR demand trophy elk country. Draws at 14 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 43.4, lng: -109.65 },
+    coords: { lat: 44.1, lng: -108.7 },
     drawHistory: [
       {
         year: 2024,
@@ -1887,11 +1944,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '62-4': {
     unit: '62', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 62 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 43.4, lng: -109.65 },
+    coords: { lat: 44.1, lng: -108.7 },
     drawHistory: [
       {
         year: 2024,
@@ -1906,11 +1964,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '62-5': {
     unit: '62', huntType: '5', huntTypeLabel: 'Antlerless - Rifle (Type 5)',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 62 Type 5 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 43.4, lng: -109.65 },
+    coords: { lat: 44.1, lng: -108.7 },
     drawHistory: [
       {
         year: 2024,
@@ -1929,11 +1988,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '63-1': {
     unit: '63', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
+    grizzlyPresence: true,
     typical: '290-320"', topEnd: '350"+',
-    trait: 'Dubois area — high demand trophy country',
-    description: 'West-central Wyoming, Dubois area. Very high NR demand. Draws at 15 points in regular pool with 50% odds.',
+    trait: 'Wood River Unit — Meeteetse area',
+    description: 'Northwest Wyoming, Wood River drainage near Meeteetse. Very high NR demand trophy elk country. Draws at 15 points in regular pool with 50% odds.',
     tier: 'trophy',
-    coords: { lat: 43.55, lng: -109.65 },
+    coords: { lat: 43.9, lng: -109.3 },
     drawHistory: [
       {
         year: 2024,
@@ -1948,11 +2008,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '63-2': {
     unit: '63', huntType: '2', huntTypeLabel: 'Any Elk - Rifle (Type 2)',
+    grizzlyPresence: true,
     typical: '290-320"', topEnd: '350"+',
     trait: 'Dubois area Type 2',
     description: 'Unit 63 Type 2 elk. Very small quota, draws at 5+ points.',
     tier: 'mid',
-    coords: { lat: 43.55, lng: -109.65 },
+    coords: { lat: 43.9, lng: -109.3 },
     drawHistory: [
       {
         year: 2024,
@@ -1967,11 +2028,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '63-3': {
     unit: '63', huntType: '3', huntTypeLabel: 'Any Elk - Rifle (Type 3)',
+    grizzlyPresence: true,
     typical: '285-315"', topEnd: '345"+',
     trait: 'Dubois area Type 3',
     description: 'Unit 63 Type 3 elk. Very high NR demand. Draws at 14 points in regular pool with 20% odds.',
     tier: 'mid',
-    coords: { lat: 43.55, lng: -109.65 },
+    coords: { lat: 43.9, lng: -109.3 },
     drawHistory: [
       {
         year: 2024,
@@ -1986,11 +2048,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '63-4': {
     unit: '63', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 63 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 43.55, lng: -109.65 },
+    coords: { lat: 43.9, lng: -109.3 },
     drawHistory: [
       {
         year: 2024,
@@ -2010,10 +2073,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '65-1': {
     unit: '65', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '270-300"', topEnd: '330"+',
-    trait: 'Remote west Wyoming — essentially no NR quota',
-    description: 'West Wyoming. Zero NR regular quota issued in 2024. Very difficult draw.',
+    trait: 'Northeast of Cody — remote Bighorn Basin fringe',
+    description: 'Northwest Wyoming, northeast of Cody in the drainages off the eastern Absaroka foothills. Remote terrain with limited road access. Zero NR regular quota issued in 2024 — essentially no regular pool draw opportunity for NR hunters.',
     tier: 'mid',
-    coords: { lat: 43.3, lng: -110.5 },
+    coords: { lat: 44.6, lng: -109.0 },
     drawHistory: [
       {
         year: 2024,
@@ -2030,9 +2093,9 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     unit: '65', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
-    description: 'Unit 65 antlerless elk. Very low demand.',
+    description: 'Unit 65 antlerless elk. Northeast of Cody, eastern Absaroka fringe. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 43.3, lng: -110.5 },
+    coords: { lat: 44.6, lng: -109.0 },
     drawHistory: [
       {
         year: 2024,
@@ -2051,11 +2114,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '67-4': {
     unit: '67', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'High quota antlerless — guaranteed draw',
-    description: 'West Wyoming. High antlerless quota with zero NR demand. Essentially a guaranteed tag.',
+    description: 'Northwest Wyoming, Park County near Cody/Wapiti corridor. High antlerless quota with zero NR demand. Essentially a guaranteed tag.',
     tier: 'antlerless',
-    coords: { lat: 43.5, lng: -110.8 },
+    coords: { lat: 43.7, lng: -109.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2070,11 +2134,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '67-9': {
     unit: '67', huntType: '9', huntTypeLabel: 'Any Elk - Archery',
+    grizzlyPresence: true,
     typical: '280-310"', topEnd: '340"+',
-    trait: 'West Wyoming archery — high NR demand',
-    description: 'Unit 67 archery elk. High NR demand. Draws at 6 points in regular pool with 50% odds.',
+    trait: 'Wiggins Fork Unit — Dubois area archery',
+    description: 'West Wyoming, Wiggins Fork drainage near Dubois. Timbered mountain country with solid September archery hunting and good elk numbers. Draws at 6 points in regular pool with 50% odds — high NR demand.',
     tier: 'mid',
-    coords: { lat: 43.5, lng: -110.8 },
+    coords: { lat: 43.7, lng: -109.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2093,11 +2158,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '75-4': {
     unit: '75', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 75 antlerless elk. Very small quota, moderate NR demand.',
     tier: 'antlerless',
-    coords: { lat: 44.0, lng: -110.7 },
+    coords: { lat: 43.8, lng: -110.6 },
     drawHistory: [
       {
         year: 2024,
@@ -2116,11 +2182,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '78-1': {
     unit: '78', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '275-305"', topEnd: '335"+',
-    trait: 'Wind River headwaters — remote, low demand',
-    description: 'West-central Wyoming, Wind River headwaters. Low NR demand. Draws at 7 points in regular pool.',
+    grizzlyPresence: true,
+    typical: '290-320"', topEnd: '350"+',
+    trait: 'Wilson Unit — Jackson area',
+    description: 'Northwest Wyoming, Wilson area near Jackson. Timbered country with good elk numbers and low NR demand. Draws at 7 points in regular pool.',
     tier: 'accessible',
-    coords: { lat: 43.55, lng: -109.85 },
+    coords: { lat: 43.5, lng: -110.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2135,11 +2202,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '78-2': {
     unit: '78', huntType: '2', huntTypeLabel: 'Any Elk - Rifle (Type 2)',
+    grizzlyPresence: true,
     typical: '270-300"', topEnd: '330"+',
     trait: 'Wind River headwaters Type 2 — very low demand',
     description: 'Unit 78 Type 2 elk. Very low NR demand. Draws at 1 point.',
     tier: 'accessible',
-    coords: { lat: 43.55, lng: -109.85 },
+    coords: { lat: 43.5, lng: -110.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2158,11 +2226,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '82-4': {
     unit: '82', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
-    description: 'Unit 82 antlerless elk. Low demand, drawable with 1 point.',
+    description: 'Unit 82 antlerless elk. Crystal Creek near Kelly/Jackson area. Low demand, drawable with 1 point.',
     tier: 'antlerless',
-    coords: { lat: 43.7, lng: -110.85 },
+    coords: { lat: 43.6, lng: -110.6 },
     drawHistory: [
       {
         year: 2024,
@@ -2181,11 +2250,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '84-1': {
     unit: '84', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '270-300"', topEnd: '330"+',
-    trait: 'South Wyoming Range — low pressure unit',
-    description: 'Southwest Wyoming. Low NR demand. Draws at 4 points in regular pool with 40% odds. Good for hunters building points.',
+    grizzlyPresence: true,
+    typical: '280-310"', topEnd: '340"+',
+    trait: 'Hoback Unit — Bondurant area',
+    description: 'West Wyoming, Hoback Basin near Bondurant. Good elk country with low NR demand. Draws at 4 points in regular pool with 40% odds — one of the more accessible draws in the area.',
     tier: 'accessible',
-    coords: { lat: 42.3, lng: -110.9 },
+    coords: { lat: 43.2, lng: -110.4 },
     drawHistory: [
       {
         year: 2024,
@@ -2204,11 +2274,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '87-1': {
     unit: '87', huntType: '1', huntTypeLabel: 'Antlered Elk - Rifle',
-    typical: '270-300"', topEnd: '330"+',
-    trait: 'Remote unit — very limited quota',
-    description: 'Small quota unit. Draws at 7 points in regular pool.',
+    grizzlyPresence: true,
+    typical: '280-310"', topEnd: '340"+',
+    trait: 'Raspberry Ridge Unit — Bondurant area',
+    description: 'West Wyoming, Raspberry Ridge near Bondurant. Limited antlered elk tag with small quota in timbered mountain country. Draws at 7 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 43.8, lng: -110.95 },
+    coords: { lat: 43.2, lng: -110.6 },
     drawHistory: [
       {
         year: 2024,
@@ -2228,10 +2299,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '88-1': {
     unit: '88', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '270-300"', topEnd: '330"+',
-    trait: 'Remote Wyoming unit — low demand, drawable',
-    description: 'Remote unit. Draws at 5 points in regular pool. Very low NR demand.',
+    trait: 'Greys Fork Unit — Alpine area',
+    description: 'West Wyoming, Greys Fork drainage near Alpine and the Snake River canyon. Timbered country with good road access and lower hunting pressure. Draws at 5 points in regular pool. Very low NR demand — a realistic draw for hunters building points.',
     tier: 'accessible',
-    coords: { lat: 43.9, lng: -110.95 },
+    coords: { lat: 43.1, lng: -110.9 },
     drawHistory: [
       {
         year: 2024,
@@ -2251,10 +2322,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '91-1': {
     unit: '91', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '275-305"', topEnd: '335"+',
-    trait: 'Sierra Madre foothills — moderate demand',
-    description: 'South-central Wyoming. Draws at 13 points in regular pool with 50% odds.',
+    trait: 'Salt River Unit — Afton/Thayne area',
+    description: 'West Wyoming, Salt River drainage near Afton and Thayne. Good elk country in the Salt River Range. Draws at 13 points in regular pool with 50% odds.',
     tier: 'mid',
-    coords: { lat: 41.3, lng: -107.3 },
+    coords: { lat: 42.6, lng: -110.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2274,10 +2345,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '93-1': {
     unit: '93', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '275-305"', topEnd: '335"+',
-    trait: 'Sierra Madre core — moderate points required',
-    description: 'South-central Wyoming, Sierra Madre. Draws at 6 points in regular pool with 40% odds. Good mid-range option.',
+    trait: 'Cottonwood-Belknap Unit — Big Piney area',
+    description: 'Southwest Wyoming, Cottonwood and Belknap drainages near Big Piney. Good elk country with moderate NR demand. Draws at 6 points in regular pool with 40% odds — a solid mid-range option.',
     tier: 'accessible',
-    coords: { lat: 41.2, lng: -107.0 },
+    coords: { lat: 42.5, lng: -110.1 },
     drawHistory: [
       {
         year: 2024,
@@ -2297,10 +2368,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '95-1': {
     unit: '95', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '285-315"', topEnd: '345"+',
-    trait: 'Sierra Madre — overlooked mid-tier trophy unit',
-    description: 'South-central Wyoming, Sierra Madre Range. Underrated unit with solid bulls and good drawable odds for NR hunters. Draws at 8 points in regular pool.',
+    trait: 'Green River Unit — Cora area',
+    description: 'West Wyoming, Green River drainage near Cora. Solid elk country with good drawable odds for NR hunters. Draws at 8 points in regular pool — an underrated mid-tier unit in the Pinedale area.',
     tier: 'mid',
-    coords: { lat: 41.2, lng: -107.1 },
+    coords: { lat: 43.0, lng: -109.9 },
     drawHistory: [
       {
         year: 2024,
@@ -2319,7 +2390,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Sierra Madre Type 2 — very drawable',
     description: 'Unit 95 Type 2 elk. Very low demand. Draws at 4 points with 40% odds.',
     tier: 'accessible',
-    coords: { lat: 41.2, lng: -107.1 },
+    coords: { lat: 43.0, lng: -109.9 },
     drawHistory: [
       {
         year: 2024,
@@ -2338,7 +2409,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 95 antlerless elk. Very low demand, drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 41.2, lng: -107.1 },
+    coords: { lat: 43.0, lng: -109.9 },
     drawHistory: [
       {
         year: 2024,
@@ -2357,7 +2428,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 95 Type 5 antlerless elk. Very small quota.',
     tier: 'antlerless',
-    coords: { lat: 41.2, lng: -107.1 },
+    coords: { lat: 43.0, lng: -109.9 },
     drawHistory: [
       {
         year: 2024,
@@ -2377,10 +2448,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '96-1': {
     unit: '96', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Medicine Bow — accessible lower elevation elk',
-    description: 'Southeast Wyoming, Medicine Bow Mountains. Lower elevation with good road access. One of the most drawable limited units in the state for NR hunters.',
+    trait: 'New Fork Unit — Pinedale area',
+    description: 'West Wyoming, New Fork drainage near Pinedale. Accessible elk country with good road access. One of the most drawable limited units for NR hunters in the Pinedale area.',
     tier: 'accessible',
-    coords: { lat: 41.5, lng: -106.2 },
+    coords: { lat: 42.9, lng: -109.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2399,7 +2470,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 96 antlerless elk. Essentially zero NR demand.',
     tier: 'antlerless',
-    coords: { lat: 41.5, lng: -106.2 },
+    coords: { lat: 42.9, lng: -109.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2419,10 +2490,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '97-1': {
     unit: '97', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '280-310"', topEnd: '340"+',
-    trait: 'Medicine Bow south — very drawable for NR hunters',
-    description: 'Southeast Wyoming. Very low NR demand. Draws at 4-5 points in regular pool.',
+    trait: 'Pinedale Unit — west Wyoming',
+    description: 'West Wyoming, Pinedale area. Good elk country with very low NR demand. Draws at 4-5 points in regular pool — very accessible for NR hunters.',
     tier: 'accessible',
-    coords: { lat: 41.3, lng: -106.1 },
+    coords: { lat: 42.8, lng: -109.9 },
     drawHistory: [
       {
         year: 2024,
@@ -2441,11 +2512,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '98-1': {
     unit: '98', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '290-320"', topEnd: '350"+',
-    trait: 'Snowy Range — high success rate, good access',
-    description: 'Southeast Wyoming, Snowy Range/Medicine Bow. Good bull density, high success rates, and accessible terrain. Drawable with 4-5 NR points.',
+    typical: '285-315"', topEnd: '345"+',
+    trait: 'Scab Creek Unit — Pinedale area',
+    description: 'West Wyoming, Scab Creek drainage near Pinedale. Solid elk country with good bull density and accessible terrain. Drawable with 4-5 NR points — a realistic option for hunters building a point bank.',
     tier: 'accessible',
-    coords: { lat: 41.35, lng: -106.35 },
+    coords: { lat: 42.7, lng: -109.7 },
     drawHistory: [
       {
         year: 2024,
@@ -2464,7 +2535,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 98 antlerless elk. Very low demand, essentially guaranteed.',
     tier: 'antlerless',
-    coords: { lat: 41.35, lng: -106.35 },
+    coords: { lat: 42.7, lng: -109.7 },
     drawHistory: [
       {
         year: 2024,
@@ -2483,11 +2554,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '99-1': {
     unit: '99', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '280-310"', topEnd: '340"+',
-    trait: 'Salt River Range — overlooked southwest Wyoming unit',
-    description: 'Southwest Wyoming, Salt River Range. Solid bull numbers and lower NR pressure than nearby units. Draws at 10 points in regular pool.',
+    typical: '275-305"', topEnd: '335"+',
+    trait: 'Big Sandy Unit — Farson area',
+    description: 'Southwest Wyoming, Big Sandy drainage near Farson. Solid elk numbers with lower NR pressure than nearby units. Draws at 10 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 42.6, lng: -110.9 },
+    coords: { lat: 42.1, lng: -109.2 },
     drawHistory: [
       {
         year: 2024,
@@ -2506,7 +2577,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 99 antlerless elk. Low demand.',
     tier: 'antlerless',
-    coords: { lat: 42.6, lng: -110.9 },
+    coords: { lat: 42.1, lng: -109.2 },
     drawHistory: [
       {
         year: 2024,
@@ -2529,7 +2600,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Desert elk on Wyoming\'s Red Desert — unique late-season bulls',
     description: 'Southwest Wyoming, Red Desert and surrounding sage/sand country. Desert elk hunt unlike anything else in the state. Enormous bulls. Draws at 18 points in regular pool with 62.50% odds. One of Wyoming\'s most unique and coveted tags.',
     tier: 'trophy',
-    coords: { lat: 41.85, lng: -108.95 },
+    coords: { lat: 41.6, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2548,7 +2619,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Red Desert Type 2 — slightly more accessible',
     description: 'Unit 100 Type 2 elk. Draws at 13 points in regular pool. Still a premium trophy opportunity.',
     tier: 'trophy',
-    coords: { lat: 41.85, lng: -108.95 },
+    coords: { lat: 41.6, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2567,7 +2638,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Red Desert antlerless — moderate demand',
     description: 'Unit 100 antlerless elk. Moderate NR demand relative to the unit\'s fame.',
     tier: 'antlerless',
-    coords: { lat: 41.85, lng: -108.95 },
+    coords: { lat: 41.6, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2586,7 +2657,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Red Desert antlerless Type 5',
     description: 'Unit 100 Type 5 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 41.85, lng: -108.95 },
+    coords: { lat: 41.6, lng: -108.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2606,10 +2677,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '106-1': {
     unit: '106', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '270-300"', topEnd: '330"+',
-    trait: 'Sweetwater area — low demand, accessible',
-    description: 'South-central Wyoming. Low NR demand. Draws at 9 points with 66.67% odds.',
+    trait: 'Little Mountain Unit — Rock Springs area',
+    description: 'Southwest Wyoming, Little Mountain near Rock Springs. Low NR demand elk unit. Draws at 9 points with 66.67% odds in regular pool.',
     tier: 'accessible',
-    coords: { lat: 42.05, lng: -108.5 },
+    coords: { lat: 41.8, lng: -109.1 },
     drawHistory: [
       {
         year: 2024,
@@ -2628,7 +2699,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 106 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 42.05, lng: -108.5 },
+    coords: { lat: 41.8, lng: -109.1 },
     drawHistory: [
       {
         year: 2024,
@@ -2649,9 +2720,9 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     unit: '107', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
-    description: 'Unit 107 antlerless elk. Very low demand.',
+    description: 'Unit 107 antlerless elk. Lower Sweetwater near Bairoil. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 42.15, lng: -108.3 },
+    coords: { lat: 42.4, lng: -107.3 },
     drawHistory: [
       {
         year: 2024,
@@ -2670,11 +2741,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '108-1': {
     unit: '108', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '275-305"', topEnd: '335"+',
-    trait: 'Wind River south — moderate demand',
-    description: 'West-central Wyoming. Draws at 12 points in regular pool with 50% odds.',
+    typical: '270-300"', topEnd: '330"+',
+    trait: 'Battle Creek Unit — Encampment area',
+    description: 'Southeast Wyoming, Battle Creek drainage near Encampment. Timbered Sierra Madre country. Draws at 12 points in regular pool with 50% odds.',
     tier: 'mid',
-    coords: { lat: 42.75, lng: -109.15 },
+    coords: { lat: 41.2, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2693,7 +2764,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 108 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 42.75, lng: -109.15 },
+    coords: { lat: 41.2, lng: -106.8 },
     drawHistory: [
       {
         year: 2024,
@@ -2712,11 +2783,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '111-1': {
     unit: '111', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '330-360"', topEnd: '390"+',
-    trait: 'Gros Ventre and upper Snake drainage — elite trophy potential',
-    description: 'Northwest Wyoming, Gros Ventre Wilderness and upper Snake River country. Remote backcountry with massive bulls. Essentially no NR random quota — points-only unit.',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Gros Ventre Wilderness — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
+    typical: '270-300"', topEnd: '320"+',
+    trait: 'Seminoe Unit — Sinclair/Rawlins area',
+    description: 'South-central Wyoming, Seminoe Mountains near Sinclair. Sage and rimrock terrain. Very limited NR quota — draws at 18 points with essentially 100% odds at minimum.',
     tier: 'trophy',
-    coords: { lat: 43.5, lng: -110.3 },
+    coords: { lat: 41.9, lng: -107.0 },
     drawHistory: [
       {
         year: 2024,
@@ -2731,11 +2805,12 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '111-4': {
     unit: '111', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 111 antlerless elk. Low demand.',
     tier: 'antlerless',
-    coords: { lat: 43.5, lng: -110.3 },
+    coords: { lat: 41.9, lng: -107.0 },
     drawHistory: [
       {
         year: 2024,
@@ -2754,11 +2829,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '113-3': {
     unit: '113', huntType: '3', huntTypeLabel: 'Spike or Antlerless - Rifle',
-    typical: '270-300"', topEnd: '320"+',
-    trait: 'Wyoming Range — steep canyon country',
-    description: 'Southwest Wyoming, Wyoming Range. Spike or antlerless management tag. Draws at 2 points in regular pool.',
+    typical: '270-295"', topEnd: '315"+',
+    trait: 'Rawlins Unit — south-central Wyoming',
+    description: 'South-central Wyoming near Rawlins. Spike or antlerless management tag in sage and rimrock country. Draws at 2 points in regular pool with high odds.',
     tier: 'mid',
-    coords: { lat: 42.7, lng: -110.5 },
+    coords: { lat: 41.8, lng: -107.2 },
     drawHistory: [
       {
         year: 2024,
@@ -2778,10 +2853,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '116-1': {
     unit: '116', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '275-305"', topEnd: '335"+',
-    trait: 'Wyoming Range north — moderate demand',
-    description: 'Southwest Wyoming, north Wyoming Range. Draws at 4 points in regular pool with 13.33% odds. Moderate NR competition.',
+    trait: 'North Black Hills Unit — Sundance area',
+    description: 'Northeast Wyoming, North Black Hills near Sundance. Timbered elk country with moderate NR demand. Draws at 4 points in regular pool with 13.33% odds.',
     tier: 'accessible',
-    coords: { lat: 42.85, lng: -110.55 },
+    coords: { lat: 44.4, lng: -104.1 },
     drawHistory: [
       {
         year: 2024,
@@ -2800,11 +2875,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '117-1': {
     unit: '117', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '290-320"', topEnd: '350"+',
-    trait: 'Wyoming Range south — solid bulls, moderate pressure',
-    description: 'Southwest Wyoming, southern Wyoming Range. Good bull numbers with moderate hunter pressure. Drawable for NR hunters with 8-9 points in the regular pool.',
+    typical: '275-305"', topEnd: '335"+',
+    trait: 'South Black Hills Unit — Newcastle area',
+    description: 'Northeast Wyoming, South Black Hills near Newcastle. Timbered elk country with solid bull numbers. Drawable for NR hunters with 8-9 points in the regular pool.',
     tier: 'mid',
-    coords: { lat: 42.2, lng: -110.6 },
+    coords: { lat: 43.8, lng: -104.3 },
     drawHistory: [
       {
         year: 2024,
@@ -2823,7 +2898,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Spike management tag — Wyoming Range south',
     description: 'Unit 117 limited quota spike tag. Very low NR demand. Essentially guaranteed draw.',
     tier: 'accessible',
-    coords: { lat: 42.2, lng: -110.6 },
+    coords: { lat: 43.8, lng: -104.3 },
     drawHistory: [
       {
         year: 2024,
@@ -2842,11 +2917,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '118-1': {
     unit: '118', huntType: '1', huntTypeLabel: 'Antlered Elk - Rifle',
-    typical: '290-320"', topEnd: '350"+',
-    trait: 'Wyoming Range west — antlered bull tag',
-    description: 'Southwest Wyoming. Antlered elk tag. Draws at 13 points in regular pool with 50% odds.',
+    typical: '275-305"', topEnd: '330"+',
+    trait: 'Beulah Unit — Sundance area, Black Hills',
+    description: 'Northeast Wyoming, Beulah area near Sundance. Antlered elk tag in Black Hills timber country. Draws at 13 points in regular pool with 50% odds.',
     tier: 'mid',
-    coords: { lat: 42.6, lng: -110.85 },
+    coords: { lat: 44.5, lng: -104.0 },
     drawHistory: [
       {
         year: 2024,
@@ -2865,7 +2940,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 118 antlerless elk. Zero demand — guaranteed draw.',
     tier: 'antlerless',
-    coords: { lat: 42.6, lng: -110.85 },
+    coords: { lat: 44.5, lng: -104.0 },
     drawHistory: [
       {
         year: 2024,
@@ -2884,11 +2959,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '120-1': {
     unit: '120', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '285-315"', topEnd: '345"+',
-    trait: 'Wyoming Range west — high demand',
-    description: 'Southwest Wyoming. High NR demand. Draws at 13 points in regular pool with 33.33% odds.',
+    typical: '270-300"', topEnd: '325"+',
+    trait: 'Rochelle Hills Unit — Wright area',
+    description: 'Northeast Wyoming, Rochelle Hills near Wright. Sage and pine terrain. Draws at 13 points in regular pool with 33.33% odds.',
     tier: 'mid',
-    coords: { lat: 42.7, lng: -110.75 },
+    coords: { lat: 43.9, lng: -105.2 },
     drawHistory: [
       {
         year: 2024,
@@ -2907,7 +2982,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 120 antlerless elk. Very low demand, drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 42.7, lng: -110.75 },
+    coords: { lat: 43.9, lng: -105.2 },
     drawHistory: [
       {
         year: 2024,
@@ -2926,11 +3001,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '122-1': {
     unit: '122', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '280-310"', topEnd: '340"+',
-    trait: 'Wyoming Range north — moderate demand',
-    description: 'Southwest Wyoming. Draws at 8 points in regular pool with 22.22% odds.',
+    typical: '265-295"', topEnd: '320"+',
+    trait: 'Pine Ridge Unit — Lusk area, east Wyoming',
+    description: 'East Wyoming, Pine Ridge near Lusk. Limited elk unit in pine and sage country. Draws at 8 points in regular pool with 22.22% odds.',
     tier: 'mid',
-    coords: { lat: 42.9, lng: -110.65 },
+    coords: { lat: 42.8, lng: -104.5 },
     drawHistory: [
       {
         year: 2024,
@@ -2949,7 +3024,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wyoming Range north five-point — essentially guaranteed draw',
     description: 'Unit 122 five-point antlered tag. Draws at 0 points. Very low NR demand.',
     tier: 'accessible',
-    coords: { lat: 42.9, lng: -110.65 },
+    coords: { lat: 42.8, lng: -104.5 },
     drawHistory: [
       {
         year: 2024,
@@ -2968,11 +3043,11 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '123-2': {
     unit: '123', huntType: '2', huntTypeLabel: 'Antlered Five-Point - Rifle',
-    typical: '280-310"', topEnd: '340"+',
-    trait: 'Hoback Basin five-point — accessible backcountry',
-    description: 'West-central Wyoming, Hoback Basin. Draws at 7 points in regular pool with 50% odds. Good option for moderate-point hunters.',
+    typical: '265-290"', topEnd: '315"+',
+    trait: 'Black Thunder Unit — Wright area',
+    description: 'Northeast Wyoming, Black Thunder area near Wright. Five-point antlered tag in sage and pine country. Draws at 7 points in regular pool with 50% odds.',
     tier: 'accessible',
-    coords: { lat: 43.1, lng: -110.1 },
+    coords: { lat: 43.6, lng: -105.3 },
     drawHistory: [
       {
         year: 2024,
@@ -2991,7 +3066,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 123 antlerless elk. Moderate demand, drawable with 1 point.',
     tier: 'antlerless',
-    coords: { lat: 43.1, lng: -110.1 },
+    coords: { lat: 43.6, lng: -105.3 },
     drawHistory: [
       {
         year: 2024,
@@ -3010,11 +3085,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '124-1': {
     unit: '124', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
-    typical: '340-370"', topEnd: '400"+',
-    trait: 'Jackson Hole — Wyoming\'s most prestigious elk tag',
-    description: 'Northwest Wyoming, Teton Wilderness and surrounding drainages. World-class trophy potential. Extremely limited NR quota. One of the hardest draws in the West. Draws at 18 points in regular pool with only 12% odds — the quintessential bucket-list Wyoming elk tag.',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Teton Wilderness — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
+    typical: '265-295"', topEnd: '320"+',
+    trait: 'Powder Rim Unit — Baggs area, south Wyoming',
+    description: 'Southwest Wyoming, Powder Rim near Baggs. Sage and rim country elk unit. Very high NR demand relative to quota. Draws at 18 points in regular pool.',
     tier: 'trophy',
-    coords: { lat: 43.85, lng: -110.5 },
+    coords: { lat: 41.5, lng: -107.8 },
     drawHistory: [
       {
         year: 2024,
@@ -3029,11 +3107,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
 
   '124-4': {
     unit: '124', huntType: '4', huntTypeLabel: 'Antlerless - Rifle',
+    grizzlyPresence: true,
+    requiresGuide: true,
+    guideNote: 'Teton Wilderness — NR hunters required by law to use a licensed Wyoming guide or outfitter.',
     typical: 'N/A', topEnd: 'N/A',
     trait: 'Antlerless management tag',
     description: 'Unit 124 antlerless elk. Moderate NR demand given the unit\'s fame. Drawable with 0 points.',
     tier: 'antlerless',
-    coords: { lat: 43.85, lng: -110.5 },
+    coords: { lat: 41.5, lng: -107.8 },
     drawHistory: [
       {
         year: 2024,
@@ -3053,10 +3134,10 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
   '125-1': {
     unit: '125', huntType: '1', huntTypeLabel: 'Any Elk - Rifle',
     typical: '275-305"', topEnd: '335"+',
-    trait: 'Commissary Ridge — drawable with low points',
-    description: 'Southwest Wyoming, Commissary Ridge area. One of the most accessible NR limited units for low-point hunters. Draws at 4 points in regular pool. Good while building points for a premium unit.',
+    trait: 'Elk Mountain Unit — southeast Wyoming',
+    description: 'Southeast Wyoming, Elk Mountain area. Good elk country near the Medicine Bow Range. One of the more accessible NR limited units. Draws at 4 points in regular pool — good while building points for a premium unit.',
     tier: 'accessible',
-    coords: { lat: 42.55, lng: -110.65 },
+    coords: { lat: 41.8, lng: -106.4 },
     drawHistory: [
       {
         year: 2024,
@@ -3115,14 +3196,14 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     unit: 'Region W', huntType: 'general', huntTypeLabel: 'General Region - Any Elk',
     typical: '265-305"', topEnd: '340"+',
     trait: 'General region — west Wyoming, largest NR quota in the state',
-    description: 'West Wyoming general elk region. Largest NR quota of any Wyoming elk hunt. Covers diverse terrain from sage foothills to high alpine. NR random pool odds at ~9.75%. Best general region for quality and opportunity combined.',
+    description: 'West Wyoming general elk region covering the entire west side of the state — Greys River drainage, Star Valley, upper Green River, Hoback, Wyoming Range foothills, Salt River Range, and surrounding drainages. Largest NR quota of any Wyoming elk hunt. Covers diverse terrain from sage foothills to high alpine timber. NR random pool odds at ~9.75%. Best general region for quality and opportunity combined. Hunters familiar with the Greys River corridor, Star Valley, or the Wyoming Range foothills are already hunting this region.',
     tier: 'general',
     coords: { lat: 42.8, lng: -110.4 },
     drawHistory: [
       {
         year: 2024,
         resident: { quota: 99999, firstChoiceApplicants: 1253, approxOdds: '100%' },
-        nr_regular: { quota: 1215, minPoints: 4, oddsAtMin: '57.63%' },
+        nr_regular: { quota: 1215, minPoints: 4, oddsAtMin: '57.63%', notes: 'Clears at 4 points — any NR hunter with 4+ points draws Region W guaranteed at ~100% effective odds since 4 is the minimum clearing point' },
         nr_special: { quota: 811, minPoints: 4, oddsAtMin: '91.56%' },
         nr_random: { quota: 405, firstChoiceApplicants: 4149, approxOdds: '9.76%' },
         nr_special_random: { quota: 270, firstChoiceApplicants: 1088, approxOdds: '24.82%' },
