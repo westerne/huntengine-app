@@ -78,6 +78,22 @@ const GRIZZLY_STATES = ['WY', 'MT', 'ID'];
 // States with special draw pools (Wyoming only currently)
 const SPECIAL_DRAW_STATES = ['WY'];
 
+// The beta access code is validated server-side. It is entered on the home
+// page, which stores it in sessionStorage; we replay it here as a header so
+// the planner can call the gated AI endpoints. If it is missing, the API
+// returns 401 and the user is told to enter it on the home page first.
+function betaHeaders(): Record<string, string> {
+  let code = '';
+  try { code = sessionStorage.getItem('hq_beta')?.trim() || ''; } catch {}
+  return { 'Content-Type': 'application/json', 'x-beta-code': code };
+}
+
+function messageForStatus(status: number): string {
+  if (status === 401) return 'Invalid beta access code — please re-enter it.';
+  if (status === 429) return 'Too many requests — please wait a few minutes and try again.';
+  return 'Engine error during analysis. Please try again.';
+}
+
 const STRATEGY_LABELS: Record<string, { label: string; color: string; description: string }> = {
   DRAW_NOW: { label: 'Draw Now', color: 'text-green-400', description: 'You have units you can draw this year.' },
   RANDOM_PLAY: { label: 'Random Pool Play', color: 'text-amber-400', description: 'Low points but viable random pool options exist.' },
@@ -141,6 +157,34 @@ export default function App() {
   const showGrizzlyOption = GRIZZLY_STATES.includes(selState);
   const showSpecialDrawOption = SPECIAL_DRAW_STATES.includes(selState) && state.profile.residency === 'Non-Resident';
 
+  // ─── Beta access gate ──────────────────────────────────────────────────────
+  // The AI endpoints require a beta code (sent as the x-beta-code header by
+  // betaHeaders()). We collect it on this landing page and persist it in
+  // sessionStorage. The code itself is validated server-side, not here.
+  const [betaReady, setBetaReady] = useState(false);
+  const [betaInput, setBetaInput] = useState('');
+
+  useEffect(() => {
+    try {
+      if ((sessionStorage.getItem('hq_beta') || '').trim()) setBetaReady(true);
+    } catch {}
+  }, []);
+
+  const submitBeta = () => {
+    const code = betaInput.trim();
+    if (!code) return;
+    try { sessionStorage.setItem('hq_beta', code); } catch {}
+    setState(s => ({ ...s, error: null }));
+    setBetaReady(true);
+  };
+
+  // If the server rejects the code (401), clear it and re-show the gate.
+  const resetBeta = () => {
+    try { sessionStorage.removeItem('hq_beta'); } catch {}
+    setBetaInput('');
+    setBetaReady(false);
+  };
+
   // Residency & Points logic
   useEffect(() => {
     if (!selState) return;
@@ -171,9 +215,14 @@ export default function App() {
     try {
       const res = await fetch('/api/strategy', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: betaHeaders(),
         body: JSON.stringify({ mode: 'SCOUT', formData: state.profile }),
       });
+      if (!res.ok) {
+        if (res.status === 401) resetBeta();
+        setState(s => ({ ...s, loading: false, error: messageForStatus(res.status) }));
+        return;
+      }
       const data = await res.json();
       setState(s => ({
         ...s,
@@ -186,7 +235,7 @@ export default function App() {
         loading: false,
       }));
     } catch (err) {
-      setState(s => ({ ...s, loading: false, error: 'Analysis failed.' }));
+      setState(s => ({ ...s, loading: false, error: 'Analysis failed — check your connection and try again.' }));
     }
   };
 
@@ -196,9 +245,14 @@ export default function App() {
     try {
       const res = await fetch('/api/strategy', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: betaHeaders(),
         body: JSON.stringify({ mode: 'FULL_SUITE', formData: dataToSubmit }),
       });
+      if (!res.ok) {
+        if (res.status === 401) resetBeta();
+        setState(s => ({ ...s, loading: false, error: messageForStatus(res.status) }));
+        return;
+      }
       const data = await res.json();
       setState(s => ({
         ...s,
@@ -209,7 +263,7 @@ export default function App() {
         loading: false,
       }));
     } catch (err) {
-      setState(s => ({ ...s, loading: false, error: 'Failed to build plan.' }));
+      setState(s => ({ ...s, loading: false, error: 'Failed to build plan — check your connection and try again.' }));
     }
   };
 
@@ -275,10 +329,51 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-amber-500/30">
+      {!betaReady && (
+        <div className="fixed inset-0 z-[70] bg-black flex flex-col items-center justify-center p-6 text-center">
+          <h1 className="text-amber-500 font-black uppercase tracking-[0.25em] text-3xl mb-1">HuntQuarters</h1>
+          <p className="text-zinc-500 text-[10px] uppercase tracking-[0.3em] font-bold mb-10">Western Big Game Intelligence — Beta</p>
+          <input
+            type="password"
+            autoFocus
+            value={betaInput}
+            onChange={(e) => setBetaInput(e.target.value)}
+            onKeyDown={(e) => { if (e.key === 'Enter') submitBeta(); }}
+            placeholder="ENTER BETA ACCESS CODE"
+            aria-label="Beta access code"
+            className="w-full max-w-xs bg-zinc-950 border border-amber-600/30 text-amber-400 text-center text-xs font-bold uppercase tracking-widest px-4 py-3 outline-none focus:border-amber-500"
+          />
+          <button
+            type="button"
+            onClick={submitBeta}
+            className="mt-4 w-full max-w-xs bg-amber-600 text-black font-black uppercase text-xs tracking-widest py-3 hover:bg-amber-500 transition-colors"
+          >
+            Enter
+          </button>
+          {state.error && (
+            <p role="alert" className="mt-5 text-red-400 text-[11px] font-bold uppercase tracking-wide max-w-xs leading-snug">{state.error}</p>
+          )}
+        </div>
+      )}
+
       {state.loading && (
         <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-6 text-center">
           <div className="w-12 h-12 border-4 border-amber-600/20 border-t-amber-600 rounded-full animate-spin mb-4" />
           <p className="text-amber-500 font-black uppercase tracking-[0.2em] animate-pulse text-xs">{state.loadingMessage}</p>
+        </div>
+      )}
+
+      {state.error && !state.loading && (
+        <div role="alert" className="fixed top-4 left-1/2 -translate-x-1/2 z-[60] max-w-md w-[calc(100%-2rem)] bg-red-950/90 border border-red-700 text-red-100 px-4 py-3 rounded-xl shadow-2xl backdrop-blur flex items-start gap-3">
+          <p className="flex-1 text-[11px] font-bold uppercase tracking-wide leading-snug">{state.error}</p>
+          <button
+            type="button"
+            aria-label="Dismiss error"
+            onClick={() => setState(s => ({ ...s, error: null }))}
+            className="text-red-300 hover:text-white font-black leading-none text-lg"
+          >
+            ×
+          </button>
         </div>
       )}
 

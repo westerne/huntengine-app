@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { HUNT_DATA } from '../strategy/data';
+import { hasValidBetaAccess } from '@/lib/betaAccess';
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -48,6 +50,21 @@ function buildUnitDataBlock(states: string[], species: string, residency: string
 
 export async function POST(req: Request) {
   try {
+    // Abuse guards — rate limit, then beta gate — before any OpenAI call.
+    const rl = checkRateLimit(getClientIp(req));
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { error: 'Rate limit exceeded. Please wait a few minutes and try again.' },
+        { status: 429, headers: { 'Retry-After': String(rl.retryAfterSec) } }
+      );
+    }
+    if (!hasValidBetaAccess(req)) {
+      return NextResponse.json(
+        { error: 'Invalid or missing beta access code.' },
+        { status: 401 }
+      );
+    }
+
     const body = await req.json();
     const { states, species, residency, points, weapon, huntStyle, fitness, goal, timeline, seasonPreference, notes } = body;
 

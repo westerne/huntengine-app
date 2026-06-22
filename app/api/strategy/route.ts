@@ -10,6 +10,8 @@ import {
 import { getWildernessInfo } from './wyodeerWildernessClassification';
 import { getElkAreaInfo } from './wyoElkAreaClassification';
 import { buildScoutPrompt, ScoutPromptParams } from './promptBuilder';
+import { hasValidBetaAccess } from '@/lib/betaAccess';
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -67,6 +69,23 @@ const utahUnitAliases: Record<string, string> = {
 
 export async function POST(req: Request) {
   try {
+    // ─── 0. ABUSE GUARDS — rate limit, then beta gate ────────────────────────
+    // These run before any OpenAI call so unauthenticated / abusive traffic
+    // never costs a token.
+    const rl = checkRateLimit(getClientIp(req));
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { error: 'Rate limit exceeded. Please wait a few minutes and try again.' },
+        { status: 429, headers: { 'Retry-After': String(rl.retryAfterSec) } }
+      );
+    }
+    if (!hasValidBetaAccess(req)) {
+      return NextResponse.json(
+        { error: 'Invalid or missing beta access code.' },
+        { status: 401 }
+      );
+    }
+
     const { mode, formData, context = '' } = await req.json();
 
     console.log("MODE RECEIVED:", mode);
@@ -378,9 +397,12 @@ export async function POST(req: Request) {
       ? `GEOGRAPHIC ANCHOR: This unit is strictly located in: ${unitStats.description}.`
       : `LOCATION: Analyze ${stateName} Unit ${unitResolved}.`;
 
-    const trophyInstruction = hasData
-      ? `PRIMARY TRUTH DATA: Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}.`
-      : `EXPERT MODE: Provide realistic trophy ranges for ${stateName} Unit ${unitResolved}.`;
+    const trophyEstimated = unitStats?.dataCompleteness === 'NEEDS_TROPHY_DATA';
+    const trophyInstruction = !hasData
+      ? `EXPERT MODE: Provide realistic trophy ranges for ${stateName} Unit ${unitResolved}.`
+      : trophyEstimated
+      ? `TROPHY ESTIMATE (region-level, not unit-sourced): Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}. Present these as an approximate regional estimate for this area — do NOT state them as precise, measured, unit-specific figures.`
+      : `PRIMARY TRUTH DATA: Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}.`;
 
     // Habitat metrics (V2) — pass through if available
     const habitatBlock = unitStats?.publicPct != null || unitStats?.buckPerHundredDoe != null
