@@ -10,6 +10,8 @@ import {
 import { getWildernessInfo } from './wyodeerWildernessClassification';
 import { getElkAreaInfo } from './wyoElkAreaClassification';
 import { buildScoutPrompt, ScoutPromptParams } from './promptBuilder';
+import { WYOMING_ANTELOPE_UNITS } from './wyoantelopedata';
+import { buildWyomingAntelopeScoutDataset } from './wyoantelopeScoutAdapter';
 import { hasValidBetaAccess } from '@/lib/betaAccess';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
@@ -106,6 +108,7 @@ export async function POST(req: Request) {
     const isWyoming = stateName === 'WYOMING';
     const isDeer = speciesKey === 'DEER';
     const isElk = speciesKey === 'ELK';
+    const isAntelope = speciesKey === 'ANTELOPE';
     const residencyRaw = (formData.residency || '').toLowerCase().trim();
     const isResident = (residencyRaw === 'resident' || residencyRaw === 'yes' || residencyRaw === 'true')
       && !residencyRaw.includes('non-resident')
@@ -129,6 +132,9 @@ export async function POST(req: Request) {
     const stateDataset: Record<string, any> = {
       ...(HUNT_DATA[lookupKey + '_ALL'] || {}),
       ...(HUNT_DATA[lookupKey] || {}),
+      // Wyoming antelope V2: merge the full area roster (with real draw history)
+      // so BRIEF can resolve antelope units from the same data SCOUT uses.
+      ...(isWyoming && isAntelope ? WYOMING_ANTELOPE_UNITS : {}),
       ...(wyoResolved.unit && wyoResolved.key
         ? { [wyoResolved.key]: wyoResolved.unit }
         : {}),
@@ -164,6 +170,9 @@ export async function POST(req: Request) {
         : isMuzzleHunter
         ? 'MUZZLELOADER (Type 1)'
         : 'RIFLE (Types 1, 2, 3)';
+
+      // Antelope weapon→type codes (1 rifle, 2 alt rifle, 9 archery, 0 muzzle/handgun).
+      const allowedAntelopeTypes = isArcheryHunter ? ['9'] : isMuzzleHunter ? ['0'] : ['1', '2'];
 
       // ── Season detection ──────────────────────────────────────────────────
       const seasonsRaw: string[] = (formData.seasons || []).map((s: string) => s.toLowerCase());
@@ -254,6 +263,9 @@ export async function POST(req: Request) {
             return allowedHuntTypeCodes.includes(code);
           })
 
+        : isWyoming && isAntelope
+        ? buildWyomingAntelopeScoutDataset(allowedAntelopeTypes)
+
         : Object.entries(stateDataset).map(([unitName, unit]: [string, any]) => ({
             unit: unitName,
             typical: unit.typical ?? 'N/A',
@@ -316,7 +328,10 @@ export async function POST(req: Request) {
     // `latest` is the newest year.
     let drawSummary = "NO OFFICIAL DATA AVAILABLE. Provide general draw advice only.";
 
-    const drawUnit = wyoResolved.drawSource;
+    // Deer resolves draw data via wyoResolved; antelope V2 units carry their own
+    // drawHistory on the resolved unitStats, so fall back to that.
+    const drawUnit = wyoResolved.drawSource
+      ?? ((isAntelope && unitStats?.drawHistory?.length) ? unitStats : null);
     if (drawUnit?.drawHistory?.length) {
       const sortedHistory = [...drawUnit.drawHistory].sort((a, b) => b.year - a.year);
       const latest = sortedHistory[0];
@@ -324,7 +339,7 @@ export async function POST(req: Request) {
       if (isResident) {
         drawSummary = `
           ### MANDATORY SOURCE OF TRUTH - WYOMING RESIDENT DRAW (${latest.year}) ###
-          - DRAW TYPE: Pure Random Draw — Wyoming residents do NOT use preference points for deer.
+          - DRAW TYPE: Pure Random Draw — Wyoming residents do NOT use preference points for ${isAntelope ? 'antelope' : 'deer'}.
           - RESIDENT QUOTA: ${latest.resident.quota} tags available.
           - FIRST-CHOICE APPLICANTS: ${latest.resident.firstChoiceApplicants}
           - APPROXIMATE ODDS: ${latest.resident.approxOdds ?? 'Unknown'}
