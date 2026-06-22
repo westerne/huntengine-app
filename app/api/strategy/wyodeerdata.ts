@@ -549,7 +549,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     publicPct: 62, wildernessPct: 0, buckPerHundredDoe: 34,
     devNotes: "High-tier desert group (10, 22, 34) per aggregated table.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "October 21" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 6, minPoints: 11, oddsAtMin: "33.33%" },
+        nr_special:        { quota: 4, minPoints: 9, oddsAtMin: "50.00%" },
+        nr_random:         { quota: 1, firstChoiceApplicants: 114, approxOdds: "0.88%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 29, approxOdds: "3.45%" },
+        resident:          { quota: 47, firstChoiceApplicants: 702, approxOdds: "6.70%" } },
+    ],
   },
 
   "60-1": {
@@ -559,7 +566,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     description: "Southeast Wyoming, Pole Mountain/Vedauwoo area east of Laramie. Ponderosa and granite outcrop country. 100-tag Type 1 any-deer.",
     coords: { lat: 41.2, lng: -105.4 }, huntType: "Type 1 — Any Deer",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 15", close: "November 5" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 9, minPoints: 4, oddsAtMin: "25.00%" },
+        nr_special:        { quota: 6, minPoints: 2, oddsAtMin: "50.00%" },
+        nr_random:         { quota: 3, firstChoiceApplicants: 43, approxOdds: "6.98%" },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 2, approxOdds: "~100%" },
+        resident:          { quota: 79, firstChoiceApplicants: 658, approxOdds: "12.01%" } },
+    ],
   },
 
   "60-2": {
@@ -569,7 +583,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     description: "Southeast Wyoming, Pole Mountain off-forest lands. 200-tag Type 2 any-deer off national forest.",
     coords: { lat: 41.2, lng: -105.4 }, huntType: "Type 2 — Any Deer off National Forest",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 15", close: "November 5" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 29, minPoints: 0, oddsAtMin: "72.22%" },
+        nr_special:        { quota: 12, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 9, firstChoiceApplicants: 5, approxOdds: "~100%" },
+        nr_special_random: { quota: 4, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 158, firstChoiceApplicants: 152, approxOdds: "~100%" } },
+    ],
   },
 
   "64-2": {
@@ -579,7 +600,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     description: "SE Wyoming, Laramie Peak Type 2 permit. 100 tags. Antlered mule deer or any whitetail. Oct 15–31 rifle.",
     coords: { lat: 42.3, lng: -105.5 }, huntType: "Type 2 — Antlered Mule Deer or any Whitetail",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 15", close: "October 31" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 13, minPoints: 3, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 6, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 4, firstChoiceApplicants: 48, approxOdds: "8.33%" },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 78, firstChoiceApplicants: 154, approxOdds: "50.65%" } },
+    ],
   },
 
   "84-1": {
@@ -591,7 +619,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     publicPct: 90, wildernessPct: 0, buckPerHundredDoe: 28,
     devNotes: "Baggs Area group per aggregated table. Major migration route.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "October 14" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 0, minPoints: null, oddsAtMin: null, notes: "No NR regular pool tags allocated in 2025" },
+        nr_special:        { quota: 1, minPoints: 7, oddsAtMin: "25.00%" },
+        nr_random:         { quota: 0, firstChoiceApplicants: 10, approxOdds: "0%" },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 2, approxOdds: "0%" },
+        resident:          { quota: 11, firstChoiceApplicants: 199, approxOdds: "5.53%" } },
+    ],
   },
 
   "79-1": {
@@ -602,7 +637,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 41.3, lng: -106.4 }, huntType: "Type 1 — Antlered Mule Deer or any Whitetail",
     devNotes: "Medicine Bow NF unit. Sublette Herd label from aggregated table is wrong (Sublette is Wyoming Range). Habitat metrics and draw data both NEEDED.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "October 14" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 21, minPoints: 4, oddsAtMin: "13.33%" },
+        nr_special:        { quota: 14, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 6, firstChoiceApplicants: 63, approxOdds: "9.52%" },
+        nr_special_random: { quota: 4, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 193, firstChoiceApplicants: 382, approxOdds: "50.52%" } },
+    ],
   },
 
   "80-1": {
@@ -613,7 +655,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 41.0, lng: -107.4 }, huntType: "Type 1 — Antlered Mule Deer or any Whitetail",
     devNotes: "Sierra Madre foothills unit. Sublette Herd label from aggregated table is wrong. Habitat metrics and draw data NEEDED.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "October 14" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 12, minPoints: 7, oddsAtMin: "33.33%" },
+        nr_special:        { quota: 9, minPoints: 3, oddsAtMin: "66.67%" },
+        nr_random:         { quota: 4, firstChoiceApplicants: 48, approxOdds: "8.33%" },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 12, approxOdds: "16.67%" },
+        resident:          { quota: 118, firstChoiceApplicants: 274, approxOdds: "43.07%" } },
+    ],
   },
 
   "116-1": {
@@ -625,7 +674,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     publicPct: 75, wildernessPct: 15, buckPerHundredDoe: 26,
     devNotes: "Bighorn Mtns foothills.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 15", close: "October 31" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 1, minPoints: 16, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 2, minPoints: 14, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 0, firstChoiceApplicants: 19, approxOdds: "0%" },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 6, approxOdds: "0%" },
+        resident:          { quota: 52, firstChoiceApplicants: 155, approxOdds: "33.55%" } },
+    ],
   },
 
   "117-1": {
@@ -637,7 +693,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     publicPct: 82, wildernessPct: 40, buckPerHundredDoe: 28,
     devNotes: "Absarokas group per aggregated table. Rugged; predator heavy.",
     seasons: { archery: { open: "September 1", close: "September 14" }, rifle: { open: "September 15", close: "October 15" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 3, minPoints: 8, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 3, minPoints: 3, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 1, firstChoiceApplicants: 29, approxOdds: "3.45%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 5, approxOdds: "20.00%" },
+        resident:          { quota: 40, firstChoiceApplicants: 277, approxOdds: "14.44%" } },
+    ],
   },
 
   "118-1": {
@@ -647,7 +710,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     description: "Bighorn Basin/Absaroka, Upper Gooseberry drainage. 25-tag Type 1.",
     coords: { lat: 43.9, lng: -108.8 }, huntType: "Type 1 — Antlered Mule Deer or any Whitetail",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 15", close: "October 31" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 3, minPoints: 12, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 2, minPoints: 4, oddsAtMin: "33.33%" },
+        nr_random:         { quota: 0, firstChoiceApplicants: 8, approxOdds: "0%" },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 6, approxOdds: "0%" },
+        resident:          { quota: 9, firstChoiceApplicants: 53, approxOdds: "16.98%" } },
+    ],
   },
 
   "119-1": {
@@ -657,7 +727,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     description: "Bighorn Basin, Anchor area near Meeteetse. 50-tag Type 1.",
     coords: { lat: 43.9, lng: -108.7 }, huntType: "Type 1 — Antlered Mule Deer or any Whitetail",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "November 1", close: "November 15" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 3, minPoints: 18, oddsAtMin: "42.86%" },
+        nr_special:        { quota: 2, minPoints: 16, oddsAtMin: "50.00%" },
+        nr_random:         { quota: 0, firstChoiceApplicants: 44, approxOdds: "0%" },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 18, approxOdds: "0%" },
+        resident:          { quota: 23, firstChoiceApplicants: 445, approxOdds: "5.17%" } },
+    ],
   },
 
   "119-2": {
@@ -667,19 +744,33 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     description: "Bighorn Basin, Anchor area near Meeteetse. 50-tag Type 2 with October season.",
     coords: { lat: 43.9, lng: -108.7 }, huntType: "Type 2 — Antlered Mule Deer or any Whitetail",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "October 15" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 3, minPoints: 12, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 3, minPoints: 15, oddsAtMin: "60.00%" },
+        nr_random:         { quota: 1, firstChoiceApplicants: 74, approxOdds: "1.35%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 19, approxOdds: "5.26%" },
+        resident:          { quota: 40, firstChoiceApplicants: 103, approxOdds: "38.83%" } },
+    ],
   },
 
-  "157-1": {
-    productType: "LIMITED_QUOTA", areaNumbers: [157], dataCompleteness: "NEEDS_FIELD_DATA",
+  "157-3": {
+    productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [157], dataCompleteness: "NEEDS_FIELD_DATA",
     typical: '135-155"', topEnd: '165"',
-    trait: "Boysen — Wind River Reservation adjacent public lands; 100-tag any-deer.",
-    description: "Central Wyoming, Boysen Reservoir area public lands. 100-tag Type 1 any-deer.",
-    coords: { lat: 43.3, lng: -108.1 }, huntType: "Type 1 — Any Deer",
+    trait: "Boysen — Wind River bottoms; Type 3 any-whitetail.",
+    description: "Central Wyoming, Boysen Reservoir area public lands. Type 3 any-whitetail tag.",
+    coords: { lat: 43.3, lng: -108.1 }, huntType: "Type 3 — Any Whitetail",
     publicPct: 45, wildernessPct: 0, buckPerHundredDoe: 20,
-    devNotes: "Boysen/Powell group per aggregated table. Low DIY score.",
+    devNotes: "Boysen whitetail. Renamed from legacy '157-1' (area 157 has no Type 1 tag — WGFD lists only Type 3 whitetail). Trophy figures are legacy mule-deer estimates; whitetail review recommended.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "October 31" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 24, minPoints: 0, oddsAtMin: "90.00%" },
+        nr_special:        { quota: 11, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 8, firstChoiceApplicants: 1, approxOdds: "~100%" },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 132, firstChoiceApplicants: 180, approxOdds: "73.33%" } },
+    ],
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -1776,7 +1867,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 43.2, lng: -104.5 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag of Region B (Powder River Basin).",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 45, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 19, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 15, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 6, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 160, firstChoiceApplicants: 85, approxOdds: "~100%" } },
+    ],
   },
   "23-26-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [23, 26], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1786,7 +1884,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 44.7, lng: -106.3 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag of Region C.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "November 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 228, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 92, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 76, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 30, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 400, firstChoiceApplicants: 121, approxOdds: "~100%" } },
+    ],
   },
   "59-64-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [59, 64], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1796,7 +1901,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 41.9, lng: -105.4 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag of Region J.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 36, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 15, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 12, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 199, firstChoiceApplicants: 196, approxOdds: "~100%" } },
+    ],
   },
   "65-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [65, 66], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1806,7 +1918,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 42.7, lng: -105.5 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag crossing Region J / Region D boundary.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 15", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 59, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 24, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 19, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 8, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 319, firstChoiceApplicants: 344, approxOdds: "92.73%" } },
+    ],
   },
   "66-88-89-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [66, 88, 89], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1816,7 +1935,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 42.9, lng: -106.5 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag crossing Region D and LQ Unit 89 boundary.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 15", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 15, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 6, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 4, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 80, firstChoiceApplicants: 241, approxOdds: "33.20%" } },
+    ],
   },
   "70-74-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [70, 74], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1826,7 +1952,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 41.9, lng: -106.4 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag of Region D.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "December 31" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 8, minPoints: 0, oddsAtMin: "83.33%" },
+        nr_special:        { quota: 3, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 2, firstChoiceApplicants: 1, approxOdds: "~100%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 40, firstChoiceApplicants: 53, approxOdds: "75.47%" } },
+    ],
   },
   "75-76-77-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [75, 76, 77], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1836,7 +1969,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 41.3, lng: -106.1 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag of Region D.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 12, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 5, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 3, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 60, firstChoiceApplicants: 89, approxOdds: "67.42%" } },
+    ],
   },
   "78-79-80-81-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [78, 79, 80, 81], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1846,7 +1986,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 41.3, lng: -106.7 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag across Sublette Herd LQ units.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "December 31" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 7, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 3, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 2, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 32, firstChoiceApplicants: 68, approxOdds: "47.06%" } },
+    ],
   },
   "92-94-160-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [92, 94, 160], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1856,7 +2003,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 42.5, lng: -108.7 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag of Region L.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 15, minPoints: 0, oddsAtMin: "73.68%" },
+        nr_special:        { quota: 6, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 5, firstChoiceApplicants: 5, approxOdds: "~100%" },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 80, firstChoiceApplicants: 139, approxOdds: "57.55%" } },
+    ],
   },
   "112-113-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [112, 113], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1866,7 +2020,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 44.0, lng: -109.7 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag of Region F.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 12, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 5, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 3, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 60, firstChoiceApplicants: 75, approxOdds: "80.00%" } },
+    ],
   },
   "116-117-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [116, 117], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1876,7 +2037,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 44.2, lng: -108.9 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag across LQ Units 116 and 117.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "November 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 11, minPoints: 0, oddsAtMin: "60.00%" },
+        nr_special:        { quota: 6, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 3, firstChoiceApplicants: 2, approxOdds: "~100%" },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 74, firstChoiceApplicants: 179, approxOdds: "41.34%" } },
+    ],
   },
   "119-120-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [119, 120], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1886,7 +2054,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 43.8, lng: -108.7 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag across LQ Units 119 and 120.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 14, minPoints: 0, oddsAtMin: "27.78%" },
+        nr_special:        { quota: 6, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 4, firstChoiceApplicants: 10, approxOdds: "40.00%" },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 72, firstChoiceApplicants: 80, approxOdds: "90.00%" } },
+    ],
   },
   "132-133-134-135-168-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [132, 133, 134, 135, 168], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1896,7 +2071,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 41.5, lng: -110.5 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag crossing Region K and Region G boundary.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 3, minPoints: 0, oddsAtMin: "25.00%" },
+        nr_special:        { quota: 2, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 0, firstChoiceApplicants: 3, approxOdds: "0%" },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: "0%" },
+        resident:          { quota: 17, firstChoiceApplicants: 64, approxOdds: "26.56%" } },
+    ],
   },
   "138-143-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [138, 139, 140, 142, 143], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1906,7 +2088,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 42.9, lng: -109.9 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag across Region H and Region G boundary.",
     seasons: { archery: { open: "September 1", close: "September 30" }, rifle: { open: "October 1", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 8, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 3, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 2, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 40, firstChoiceApplicants: 62, approxOdds: "64.52%" } },
+    ],
   },
   "148-156-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [148, 150, 151, 152, 155, 156], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1916,7 +2105,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 43.5, lng: -110.7 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag across Region H and Region L boundary.",
     seasons: { archery: { open: "September 1", close: "September 14" }, rifle: { open: "September 15", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 8, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 3, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 2, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        resident:          { quota: 40, firstChoiceApplicants: 62, approxOdds: "64.52%" } },
+    ],
   },
   "149-3": {
     productType: "LIMITED_QUOTA_WHITETAIL", areaNumbers: [149], dataCompleteness: "NEEDS_FIELD_DATA",
@@ -1926,7 +2122,14 @@ export const WYOMING_DEER_UNITS: Record<string, WyomingDeerUnit> = {
     coords: { lat: 44.0, lng: -110.9 }, huntType: "Type 3 — Any Whitetail",
     devNotes: "Whitetail sub-tag of Region H (Targhee unit).",
     seasons: { archery: { open: "September 1", close: "September 14" }, rifle: { open: "September 15", close: "November 30" } },
-    drawHistory: [],
+    drawHistory: [
+      { year: 2025,
+        nr_regular:        { quota: 3, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_special:        { quota: 2, minPoints: 0, oddsAtMin: "100.00%" },
+        nr_random:         { quota: 1, firstChoiceApplicants: 0, approxOdds: "~100%" },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: "0%" },
+        resident:          { quota: 20, firstChoiceApplicants: 19, approxOdds: "~100%" } },
+    ],
   },
 
 };

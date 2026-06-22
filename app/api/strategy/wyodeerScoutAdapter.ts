@@ -13,6 +13,7 @@
 // SCOUT sees real draw decisions, not geographic substructure.
 
 import { WYOMING_DEER_UNITS, WyomingDeerUnit } from "./wyodeerdata";
+import { getWildernessInfo, WildernessStatus } from "./wyodeerWildernessClassification";
 
 export type ScoutNotableUnit = {
   areaNumber: number;
@@ -24,6 +25,10 @@ export type ScoutNotableUnit = {
   publicPct?: number;
   wildernessPct?: number;
   buckPerHundredDoe?: number;
+  // True when this unit's typical/topEnd are a REGION-LEVEL estimate, not a
+  // unit-sourced figure (dataCompleteness === "NEEDS_TROPHY_DATA"). The prompt
+  // uses this to frame the numbers honestly rather than as precise unit truth.
+  trophyEstimated: boolean;
 };
 
 export type ScoutDeerEntry = {
@@ -65,6 +70,12 @@ export type ScoutDeerEntry = {
   // Geographic drill-down (only for GENERAL_REGION entries)
   notableUnits: ScoutNotableUnit[];
 
+  // Wilderness / guide rule (NR-only). Sourced from the authoritative
+  // WILDERNESS_CLASSIFICATION map — NOT inferred from wildernessPct.
+  wildernessStatus: WildernessStatus;   // "NONE" | "PARTIAL" | "PRIMARY"
+  wildernessAreas: string[];            // federal Wilderness Area names
+  guideRuleForNR: string | null;        // pre-written NR-facing explanation
+
   // Compatibility flags (carried through for SCOUT's guide/grizzly filters)
   requiresGuide: boolean;
   grizzlyPresence: boolean;
@@ -98,15 +109,6 @@ function inferGrizzlyPresence(unit: WyomingDeerUnit): boolean {
 }
 
 /**
- * For NR hunters, Wilderness Area units require a licensed guide (Wyoming
- * state law, not federal). This is a rough proxy — wildernessPct > 30
- * indicates a unit where wilderness access is non-trivial.
- */
-function inferRequiresGuide(unit: WyomingDeerUnit): boolean {
-  return (unit.wildernessPct ?? 0) >= 30;
-}
-
-/**
  * Sort drawHistory descending by year and return latest + prior.
  */
 function splitHistory(unit: WyomingDeerUnit) {
@@ -120,6 +122,7 @@ function splitHistory(unit: WyomingDeerUnit) {
  */
 function buildScoutEntry(key: string, unit: WyomingDeerUnit): ScoutDeerEntry {
   const { latest, prior } = splitHistory(unit);
+  const wInfo = getWildernessInfo(key);
 
   // Collect notable units if this is a GENERAL_REGION
   const notableUnits: ScoutNotableUnit[] = [];
@@ -140,6 +143,7 @@ function buildScoutEntry(key: string, unit: WyomingDeerUnit): ScoutDeerEntry {
           publicPct: childUnit.publicPct,
           wildernessPct: childUnit.wildernessPct,
           buckPerHundredDoe: childUnit.buckPerHundredDoe,
+          trophyEstimated: childUnit.dataCompleteness === "NEEDS_TROPHY_DATA",
         });
       }
     }
@@ -185,7 +189,14 @@ function buildScoutEntry(key: string, unit: WyomingDeerUnit): ScoutDeerEntry {
 
     notableUnits,
 
-    requiresGuide: inferRequiresGuide(unit),
+    // Wilderness/guide rule comes from the authoritative classification map,
+    // keyed by the same unit key. requiresGuide is true only when the unit is
+    // effectively defined by wilderness (PRIMARY) — PARTIAL units have
+    // DIY-legal non-wilderness country, so they are not "guide required".
+    wildernessStatus: wInfo.status,
+    wildernessAreas: wInfo.areas,
+    guideRuleForNR: wInfo.guideRuleForNR,
+    requiresGuide: wInfo.status === "PRIMARY",
     grizzlyPresence: inferGrizzlyPresence(unit),
   };
 }

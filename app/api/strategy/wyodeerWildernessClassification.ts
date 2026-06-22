@@ -163,10 +163,11 @@ export const WILDERNESS_CLASSIFICATION: Record<string, WildernessInfo> = {
     // 5-tag hunt is on non-wilderness BLM/state winter range.
 
   // ─── Rock Springs / Aspen Mountain (Region W-adjacent) ─────────────────────
-  "100-1": { status: "NONE", areas: [], guideRuleForNR: null },
+  "100-GEN": { status: "NONE", areas: [], guideRuleForNR: null },
   "101-1": { status: "NONE", areas: [], guideRuleForNR: null },
   "102-1": { status: "NONE", areas: [], guideRuleForNR: null },
     // All three are Red Desert / Aspen Mountain — BLM desert country.
+    // (Area 100 has no LQ tag — only the general "100-GEN" product.)
 
   // ─── Wyoming Range (Region G-adjacent) ─────────────────────────────────────
   "141-1": {
@@ -180,8 +181,9 @@ export const WILDERNESS_CLASSIFICATION: Record<string, WildernessInfo> = {
   // ─── Ferris / Rattlesnake / Seminoe (Region Q-adjacent) ────────────────────
   "87-1": { status: "NONE", areas: [], guideRuleForNR: null },
   "89-1": { status: "NONE", areas: [], guideRuleForNR: null },
-  "96-1": { status: "NONE", areas: [], guideRuleForNR: null },
+  "96-GEN": { status: "NONE", areas: [], guideRuleForNR: null },
     // All Carbon County Q country — Ferris Mts, Rattlesnake, no federal WA.
+    // (Area 96 Green Mountain has no LQ tag — only the general "96-GEN" product.)
 
   // ─── Medicine Bow / Sierra Madre LQ units ──────────────────────────────────
   "78-1": { status: "NONE", areas: [], guideRuleForNR: null },
@@ -198,7 +200,7 @@ export const WILDERNESS_CLASSIFICATION: Record<string, WildernessInfo> = {
   // ─── Bighorn Basin LQ units ────────────────────────────────────────────────
   "22-1":  { status: "NONE", areas: [], guideRuleForNR: null },
   "34-1":  { status: "NONE", areas: [], guideRuleForNR: null },
-  "35-1":  { status: "NONE", areas: [], guideRuleForNR: null },
+  "35-GEN": { status: "NONE", areas: [], guideRuleForNR: null },
   "36-1":  { status: "NONE", areas: [], guideRuleForNR: null },
   "116-1": { status: "NONE", areas: [], guideRuleForNR: null },
   "117-1": { status: "NONE", areas: [], guideRuleForNR: null },
@@ -206,7 +208,7 @@ export const WILDERNESS_CLASSIFICATION: Record<string, WildernessInfo> = {
   "119-1": { status: "NONE", areas: [], guideRuleForNR: null },
   "119-2": { status: "NONE", areas: [], guideRuleForNR: null },
   "120-1": { status: "NONE", areas: [], guideRuleForNR: null },
-  "124-1": { status: "NONE", areas: [], guideRuleForNR: null },
+  "124-GEN": { status: "NONE", areas: [], guideRuleForNR: null },
   "125-1": { status: "NONE", areas: [], guideRuleForNR: null },
   "157-1": { status: "NONE", areas: [], guideRuleForNR: null },
     // All Bighorn Basin off-forest — BLM, state, private checkerboard. No
@@ -220,6 +222,20 @@ export const WILDERNESS_CLASSIFICATION: Record<string, WildernessInfo> = {
   "84-1":  { status: "NONE", areas: [], guideRuleForNR: null },
     // Southeast Wyoming — Laramie Range foothills, Pole Mountain, etc.
     // No federal wilderness.
+
+  // ─── Clarks Fork / NW backcountry + Wind River Front LQ units ──────────────
+  "90-1":  { status: "NONE", areas: [], guideRuleForNR: null },
+    // Muskrat (Area 90) — sage/foothills along the Wind River Reservation
+    // boundary. Tribal land is not federal Wilderness; no guide rule applies.
+  "105-1": {
+    status: "PARTIAL",
+    areas: ["North Absaroka Wilderness"],
+    guideRuleForNR: partialRule(["North Absaroka Wilderness"]),
+  },
+    // Shared 105/106/109 late-Nov any-deer pool. Area 106 includes mule deer
+    // hunting inside the North Absaroka Wilderness (WGFD Ch. 6), but Sunlight
+    // Basin, the front face, and lower winter range are DIY-legal non-wilderness
+    // National Forest/BLM. Grizzly country — bear awareness applies.
 };
 
 // ─── Lookup helper ────────────────────────────────────────────────────────────
