@@ -129,12 +129,18 @@ export async function POST(req: Request) {
       ? resolveWyoDeerUnit(unitResolved)
       : { key: null, unit: null, drawSource: null };
 
+    const v2Species = isWyoming && (isAntelope || isElk);
     const stateDataset: Record<string, any> = {
       ...(HUNT_DATA[lookupKey + '_ALL'] || {}),
-      ...(HUNT_DATA[lookupKey] || {}),
-      // Wyoming antelope V2: merge the full area roster (with real draw history)
-      // so BRIEF can resolve antelope units from the same data SCOUT uses.
+      // For WY antelope/elk the V2 datasets below are authoritative and complete,
+      // so skip the legacy 3-4 unit HUNT_DATA stubs — those bare keys (e.g. "7",
+      // "57") lack draw history and would otherwise shadow the V2 "<area>-<type>"
+      // products during bare-number resolution.
+      ...(v2Species ? {} : (HUNT_DATA[lookupKey] || {})),
+      // Wyoming antelope/elk V2: merge the full roster (with real draw history)
+      // so BRIEF can resolve units from the same data SCOUT uses.
       ...(isWyoming && isAntelope ? WYOMING_ANTELOPE_UNITS : {}),
+      ...(isWyoming && isElk ? WYOMING_ELK_UNITS : {}),
       ...(wyoResolved.unit && wyoResolved.key
         ? { [wyoResolved.key]: wyoResolved.unit }
         : {}),
@@ -142,10 +148,14 @@ export async function POST(req: Request) {
 
     const unitKey = wyoResolved.key
       || Object.keys(stateDataset).find(key => key.toLowerCase() === unitResolved.toLowerCase())
-      // Antelope is keyed "<area>-<type>"; a bare area number ("107") resolves
-      // to that area's preferred product (rifle 1 > muzzle 0 > alt 2 > archery 9).
+      // Antelope/elk are keyed "<area>-<type>"; a bare area number ("107", "7")
+      // resolves to that area's preferred antlered product.
+      //   antelope: rifle 1 > muzzle 0 > alt 2 > archery 9
+      //   elk:      any-elk rifle 1 > archery 9 > type 2 > type 3
       || (isAntelope
         ? ['1', '0', '2', '9'].map(t => `${unitResolved}-${t}`).find(k => stateDataset[k])
+        : isElk
+        ? ['1', '9', '2', '3'].map(t => `${unitResolved}-${t}`).find(k => stateDataset[k])
         : undefined);
     const unitStats = unitKey ? stateDataset[unitKey] : null;
     const hasData = !!unitStats;
@@ -333,10 +343,10 @@ export async function POST(req: Request) {
     // `latest` is the newest year.
     let drawSummary = "NO OFFICIAL DATA AVAILABLE. Provide general draw advice only.";
 
-    // Deer resolves draw data via wyoResolved; antelope V2 units carry their own
-    // drawHistory on the resolved unitStats, so fall back to that.
+    // Deer resolves draw data via wyoResolved; antelope/elk V2 units carry their
+    // own drawHistory on the resolved unitStats, so fall back to that.
     const drawUnit = wyoResolved.drawSource
-      ?? ((isAntelope && unitStats?.drawHistory?.length) ? unitStats : null);
+      ?? (((isAntelope || isElk) && unitStats?.drawHistory?.length) ? unitStats : null);
     if (drawUnit?.drawHistory?.length) {
       const sortedHistory = [...drawUnit.drawHistory].sort((a, b) => b.year - a.year);
       const latest = sortedHistory[0];
@@ -344,7 +354,7 @@ export async function POST(req: Request) {
       if (isResident) {
         drawSummary = `
           ### MANDATORY SOURCE OF TRUTH - WYOMING RESIDENT DRAW (${latest.year}) ###
-          - DRAW TYPE: Pure Random Draw — Wyoming residents do NOT use preference points for ${isAntelope ? 'antelope' : 'deer'}.
+          - DRAW TYPE: Pure Random Draw — Wyoming residents do NOT use preference points for ${isAntelope ? 'antelope' : isElk ? 'elk' : 'deer'}.
           - RESIDENT QUOTA: ${latest.resident.quota} tags available.
           - FIRST-CHOICE APPLICANTS: ${latest.resident.firstChoiceApplicants}
           - APPROXIMATE ODDS: ${latest.resident.approxOdds ?? 'Unknown'}
