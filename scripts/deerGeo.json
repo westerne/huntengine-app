@@ -1,0 +1,637 @@
+{
+ "1": {
+  "lat": 44.7972,
+  "lng": -104.8013,
+  "name": "Crook"
+ },
+ "2": {
+  "lat": 44.7005,
+  "lng": -104.3505,
+  "name": "Bearlodge"
+ },
+ "3": {
+  "lat": 44.3939,
+  "lng": -104.7713,
+  "name": "Keyhole"
+ },
+ "4": {
+  "lat": 44.3323,
+  "lng": -104.1729,
+  "name": "Sand Creek"
+ },
+ "5": {
+  "lat": 44.2327,
+  "lng": -104.5182,
+  "name": "Inyan Kara"
+ },
+ "6": {
+  "lat": 44.0083,
+  "lng": -104.2778,
+  "name": "Skull Creek"
+ },
+ "7": {
+  "lat": 43.8813,
+  "lng": -104.5879,
+  "name": "South Osage"
+ },
+ "8": {
+  "lat": 43.9615,
+  "lng": -104.9063,
+  "name": "Upton-Four Horse"
+ },
+ "9": {
+  "lat": 43.6672,
+  "lng": -104.4119,
+  "name": "Blacktail Creek"
+ },
+ "10": {
+  "lat": 43.4631,
+  "lng": -105.1484,
+  "name": "Rochelle Hills"
+ },
+ "11": {
+  "lat": 43.4143,
+  "lng": -104.4486,
+  "name": "Mule Creek"
+ },
+ "12": {
+  "lat": 43.1067,
+  "lng": -104.285,
+  "name": "Hat Creek"
+ },
+ "13": {
+  "lat": 42.8725,
+  "lng": -104.5187,
+  "name": "Lusk"
+ },
+ "14": {
+  "lat": 43.0113,
+  "lng": -105.0225,
+  "name": "Twenty Mile"
+ },
+ "15": {
+  "lat": 41.9015,
+  "lng": -104.4918,
+  "name": "Southeast Wyoming"
+ },
+ "17": {
+  "lat": 44.6145,
+  "lng": -105.7579,
+  "name": "Northwest Gillette"
+ },
+ "18": {
+  "lat": 44.6011,
+  "lng": -105.2082,
+  "name": "Campbell"
+ },
+ "19": {
+  "lat": 43.9192,
+  "lng": -105.8339,
+  "name": "Pumpkin Buttes"
+ },
+ "21": {
+  "lat": 44.0002,
+  "lng": -105.2473,
+  "name": "Thunder Basin"
+ },
+ "22": {
+  "lat": 43.2055,
+  "lng": -105.7862,
+  "name": "Douglas"
+ },
+ "23": {
+  "lat": 44.8328,
+  "lng": -106.5541,
+  "name": "Clearmont"
+ },
+ "24": {
+  "lat": 44.7986,
+  "lng": -107.164,
+  "name": "Sheridan"
+ },
+ "25": {
+  "lat": 44.7215,
+  "lng": -107.4416,
+  "name": "Tongue-Goose"
+ },
+ "26": {
+  "lat": 44.4662,
+  "lng": -106.4124,
+  "name": "Ucross"
+ },
+ "27": {
+  "lat": 44.3682,
+  "lng": -106.8034,
+  "name": "Buffalo"
+ },
+ "28": {
+  "lat": 44.2766,
+  "lng": -106.9904,
+  "name": "Hunter Mesa"
+ },
+ "29": {
+  "lat": 43.9525,
+  "lng": -106.421,
+  "name": "Johnson"
+ },
+ "30": {
+  "lat": 44.0141,
+  "lng": -106.8321,
+  "name": "Upper Powder River"
+ },
+ "31": {
+  "lat": 43.5354,
+  "lng": -106.3257,
+  "name": "Salt Creek"
+ },
+ "32": {
+  "lat": 43.7567,
+  "lng": -107.0416,
+  "name": "Beartrap Creek"
+ },
+ "33": {
+  "lat": 43.6673,
+  "lng": -106.7737,
+  "name": "Red Fork"
+ },
+ "34": {
+  "lat": 43.2053,
+  "lng": -106.7858,
+  "name": "North Natrona"
+ },
+ "35": {
+  "lat": 43.5212,
+  "lng": -107.343,
+  "name": "Upper Nowood"
+ },
+ "36": {
+  "lat": 43.3152,
+  "lng": -107.7048,
+  "name": "Badwater"
+ },
+ "37": {
+  "lat": 43.6216,
+  "lng": -108.0202,
+  "name": "Copper Mountain"
+ },
+ "39": {
+  "lat": 43.6258,
+  "lng": -107.6587,
+  "name": "Bates Creek"
+ },
+ "40": {
+  "lat": 43.8661,
+  "lng": -107.3083,
+  "name": "Buffalo Creek"
+ },
+ "41": {
+  "lat": 44.1522,
+  "lng": -107.6356,
+  "name": "Lower Nowood"
+ },
+ "46": {
+  "lat": 44.3612,
+  "lng": -107.3059,
+  "name": "Cloud Peak"
+ },
+ "47": {
+  "lat": 44.4014,
+  "lng": -107.7434,
+  "name": "Webber Canyon"
+ },
+ "50": {
+  "lat": 44.6761,
+  "lng": -107.7078,
+  "name": "Upper Shell-Beaver Creek"
+ },
+ "51": {
+  "lat": 44.598,
+  "lng": -107.9057,
+  "name": "Beaver Creek"
+ },
+ "52": {
+  "lat": 44.7151,
+  "lng": -108.0488,
+  "name": "Crystal Creek"
+ },
+ "53": {
+  "lat": 44.9022,
+  "lng": -108.0285,
+  "name": "Devils Canyon"
+ },
+ "59": {
+  "lat": 41.5891,
+  "lng": -105.168,
+  "name": "South Laramie Mountains"
+ },
+ "60": {
+  "lat": 41.2424,
+  "lng": -105.2265,
+  "name": "Pole Mountain"
+ },
+ "61": {
+  "lat": 41.0986,
+  "lng": -105.2775,
+  "name": "Harriman"
+ },
+ "64": {
+  "lat": 42.1026,
+  "lng": -105.5897,
+  "name": "Laramie Peak"
+ },
+ "65": {
+  "lat": 42.595,
+  "lng": -105.6046,
+  "name": "South Converse"
+ },
+ "66": {
+  "lat": 42.602,
+  "lng": -106.35,
+  "name": "Bates Hole-Hat Six"
+ },
+ "67": {
+  "lat": 42.7638,
+  "lng": -106.3298,
+  "name": "Casper Mountain"
+ },
+ "70": {
+  "lat": 42.1391,
+  "lng": -106.5534,
+  "name": "Shirley Mountain"
+ },
+ "74": {
+  "lat": 41.6512,
+  "lng": -106.0477,
+  "name": "Kyle"
+ },
+ "75": {
+  "lat": 41.4565,
+  "lng": -106.1534,
+  "name": "Four Mile"
+ },
+ "76": {
+  "lat": 41.2038,
+  "lng": -106.0345,
+  "name": "Sheep Mountain"
+ },
+ "77": {
+  "lat": 41.1027,
+  "lng": -105.7347,
+  "name": "Boulder Ridge"
+ },
+ "78": {
+  "lat": 41.1911,
+  "lng": -106.4473,
+  "name": "French Creek"
+ },
+ "79": {
+  "lat": 41.6277,
+  "lng": -106.679,
+  "name": "Kennaday Peak"
+ },
+ "80": {
+  "lat": 41.4711,
+  "lng": -107.0235,
+  "name": "Spring Creek"
+ },
+ "81": {
+  "lat": 41.0935,
+  "lng": -106.7152,
+  "name": "Blackhall"
+ },
+ "82": {
+  "lat": 41.2118,
+  "lng": -107.3855,
+  "name": "Baggs"
+ },
+ "84": {
+  "lat": 41.5957,
+  "lng": -107.4793,
+  "name": "Atlantic Rim"
+ },
+ "87": {
+  "lat": 42.174,
+  "lng": -107.1266,
+  "name": "Ferris"
+ },
+ "88": {
+  "lat": 42.709,
+  "lng": -106.6388,
+  "name": "Kendrick"
+ },
+ "89": {
+  "lat": 42.8218,
+  "lng": -107.0095,
+  "name": "Rattlesnake"
+ },
+ "90": {
+  "lat": 42.9531,
+  "lng": -107.7987,
+  "name": "Muskrat"
+ },
+ "92": {
+  "lat": 42.6848,
+  "lng": -108.9138,
+  "name": "Table Mountain"
+ },
+ "94": {
+  "lat": 42.4835,
+  "lng": -108.4837,
+  "name": "Twin Creek"
+ },
+ "96": {
+  "lat": 42.3594,
+  "lng": -107.8434,
+  "name": "Green Mountain"
+ },
+ "97": {
+  "lat": 42.5927,
+  "lng": -107.618,
+  "name": "Sweetwater Rocks"
+ },
+ "98": {
+  "lat": 41.9595,
+  "lng": -107.6732,
+  "name": "Chain Lakes"
+ },
+ "100": {
+  "lat": 41.3417,
+  "lng": -108.0874,
+  "name": "South Wamsutter"
+ },
+ "101": {
+  "lat": 41.3483,
+  "lng": -108.7096,
+  "name": "Black Butte"
+ },
+ "102": {
+  "lat": 41.2448,
+  "lng": -109.185,
+  "name": "Aspen Mountain"
+ },
+ "105": {
+  "lat": 44.9287,
+  "lng": -109.4137,
+  "name": "Beartooth"
+ },
+ "106": {
+  "lat": 44.7778,
+  "lng": -109.688,
+  "name": "Crandall-Sunlight"
+ },
+ "109": {
+  "lat": 44.6885,
+  "lng": -109.2552,
+  "name": "Bald Ridge"
+ },
+ "110": {
+  "lat": 44.4738,
+  "lng": -109.8987,
+  "name": "Grinnell"
+ },
+ "111": {
+  "lat": 44.4717,
+  "lng": -109.5317,
+  "name": "Elk Fork"
+ },
+ "112": {
+  "lat": 44.2643,
+  "lng": -109.5703,
+  "name": "Ishawooa"
+ },
+ "113": {
+  "lat": 44.3101,
+  "lng": -109.2508,
+  "name": "Boulder"
+ },
+ "114": {
+  "lat": 43.9507,
+  "lng": -109.7089,
+  "name": "Wall Mountain"
+ },
+ "115": {
+  "lat": 44.1053,
+  "lng": -109.939,
+  "name": "Thorofare"
+ },
+ "116": {
+  "lat": 44.1362,
+  "lng": -109.078,
+  "name": "Meeteetse"
+ },
+ "117": {
+  "lat": 43.9847,
+  "lng": -109.3015,
+  "name": "Franc's Peak"
+ },
+ "118": {
+  "lat": 43.9828,
+  "lng": -108.8537,
+  "name": "Upper Gooseberry Creek"
+ },
+ "119": {
+  "lat": 43.8026,
+  "lng": -108.8478,
+  "name": "Anchor"
+ },
+ "120": {
+  "lat": 43.6295,
+  "lng": -108.5387,
+  "name": "Hamilton Dome"
+ },
+ "121": {
+  "lat": 44.7854,
+  "lng": -108.9844,
+  "name": "Heart Mountain"
+ },
+ "122": {
+  "lat": 44.7417,
+  "lng": -108.5693,
+  "name": "Shoshone River"
+ },
+ "123": {
+  "lat": 44.8933,
+  "lng": -108.251,
+  "name": "Yellowtail"
+ },
+ "124": {
+  "lat": 44.4654,
+  "lng": -108.3124,
+  "name": "Emblem"
+ },
+ "125": {
+  "lat": 44.1288,
+  "lng": -108.3381,
+  "name": "Fifteen Mile"
+ },
+ "127": {
+  "lat": 43.8205,
+  "lng": -108.3115,
+  "name": "Cottonwood"
+ },
+ "128": {
+  "lat": 43.5777,
+  "lng": -109.6397,
+  "name": "Wind River"
+ },
+ "130": {
+  "lat": 42.4136,
+  "lng": -109.2384,
+  "name": "Big Sandy"
+ },
+ "131": {
+  "lat": 41.9533,
+  "lng": -108.9003,
+  "name": "Steamboat"
+ },
+ "132": {
+  "lat": 41.2429,
+  "lng": -109.9452,
+  "name": "Cedar Mountain"
+ },
+ "133": {
+  "lat": 41.1544,
+  "lng": -110.7549,
+  "name": "Uinta"
+ },
+ "134": {
+  "lat": 41.6134,
+  "lng": -110.5324,
+  "name": "Bear River Divide"
+ },
+ "135": {
+  "lat": 42.0392,
+  "lng": -110.5025,
+  "name": "West Green River"
+ },
+ "138": {
+  "lat": 42.4568,
+  "lng": -109.7119,
+  "name": "Boulder"
+ },
+ "139": {
+  "lat": 42.8881,
+  "lng": -109.7153,
+  "name": "Pinedale"
+ },
+ "140": {
+  "lat": 43.0412,
+  "lng": -109.926,
+  "name": "New Fork"
+ },
+ "141": {
+  "lat": 43.2847,
+  "lng": -109.9553,
+  "name": "Green River"
+ },
+ "142": {
+  "lat": 42.8932,
+  "lng": -110.2856,
+  "name": "Piney-Horse Creek"
+ },
+ "143": {
+  "lat": 42.5393,
+  "lng": -110.3216,
+  "name": "South Piney"
+ },
+ "144": {
+  "lat": 42.9256,
+  "lng": -110.7454,
+  "name": "Greys River"
+ },
+ "145": {
+  "lat": 42.7862,
+  "lng": -110.9282,
+  "name": "Salt River"
+ },
+ "146": {
+  "lat": 43.5236,
+  "lng": -110.0919,
+  "name": "Fish Creek"
+ },
+ "148": {
+  "lat": 43.9657,
+  "lng": -110.2965,
+  "name": "Teton"
+ },
+ "149": {
+  "lat": 43.8582,
+  "lng": -110.9525,
+  "name": "Targhee"
+ },
+ "150": {
+  "lat": 43.5463,
+  "lng": -110.8312,
+  "name": "Wilson"
+ },
+ "151": {
+  "lat": 43.3399,
+  "lng": -110.9195,
+  "name": "Fall Creek"
+ },
+ "152": {
+  "lat": 43.31,
+  "lng": -110.594,
+  "name": "Lower Hoback"
+ },
+ "153": {
+  "lat": 43.1066,
+  "lng": -110.5032,
+  "name": "Monument Ridge"
+ },
+ "154": {
+  "lat": 43.1892,
+  "lng": -110.3101,
+  "name": "Raspberry Ridge"
+ },
+ "155": {
+  "lat": 43.4979,
+  "lng": -110.4456,
+  "name": "Crystal Peak"
+ },
+ "156": {
+  "lat": 43.7001,
+  "lng": -110.3249,
+  "name": "Spread Creek"
+ },
+ "157": {
+  "lat": 43.1603,
+  "lng": -108.4247,
+  "name": "Boysen"
+ },
+ "160": {
+  "lat": 42.7701,
+  "lng": -108.4172,
+  "name": "Beaver Creek"
+ },
+ "163": {
+  "lat": 43.5569,
+  "lng": -107.0108,
+  "name": "Middle Fork"
+ },
+ "164": {
+  "lat": 43.8737,
+  "lng": -107.8002,
+  "name": "Nowater"
+ },
+ "165": {
+  "lat": 44.3646,
+  "lng": -108.7883,
+  "name": "YU Bench"
+ },
+ "168": {
+  "lat": 41.3905,
+  "lng": -110.7104,
+  "name": "Medicine Butte"
+ },
+ "169": {
+  "lat": 43.4455,
+  "lng": -106.6118,
+  "name": "Tisdale Mountain"
+ },
+ "171": {
+  "lat": 43.2553,
+  "lng": -108.9746,
+  "name": "Crowheart Butte"
+ }
+}
