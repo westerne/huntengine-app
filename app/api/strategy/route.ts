@@ -141,7 +141,12 @@ export async function POST(req: Request) {
     };
 
     const unitKey = wyoResolved.key
-      || Object.keys(stateDataset).find(key => key.toLowerCase() === unitResolved.toLowerCase());
+      || Object.keys(stateDataset).find(key => key.toLowerCase() === unitResolved.toLowerCase())
+      // Antelope is keyed "<area>-<type>"; a bare area number ("107") resolves
+      // to that area's preferred product (rifle 1 > muzzle 0 > alt 2 > archery 9).
+      || (isAntelope
+        ? ['1', '0', '2', '9'].map(t => `${unitResolved}-${t}`).find(k => stateDataset[k])
+        : undefined);
     const unitStats = unitKey ? stateDataset[unitKey] : null;
     const hasData = !!unitStats;
     const fallbackCoords = { lat: 42.6542, lng: -110.8234 };
@@ -408,13 +413,17 @@ export async function POST(req: Request) {
     }
 
     // ─── 7. GUARDRAILS & TRUTH BLOCK ──────────────────────────────────────────
+    // The species the hunter is actually after — bind this everywhere so the
+    // brief never defaults to mule deer for an antelope/elk/etc. tag.
+    const speciesLabel = (formData.species && String(formData.species).trim()) || speciesKey;
+
     const geoAnchor = unitStats?.description
       ? `GEOGRAPHIC ANCHOR: This unit is strictly located in: ${unitStats.description}.`
-      : `LOCATION: Analyze ${stateName} Unit ${unitResolved}.`;
+      : `LOCATION: Analyze ${stateName} ${speciesLabel} Area ${unitResolved}.`;
 
     const trophyEstimated = unitStats?.dataCompleteness === 'NEEDS_TROPHY_DATA';
     const trophyInstruction = !hasData
-      ? `EXPERT MODE: Provide realistic trophy ranges for ${stateName} Unit ${unitResolved}.`
+      ? `EXPERT MODE: Provide realistic ${speciesLabel} trophy ranges for ${stateName} ${speciesLabel} Area ${unitResolved}.`
       : trophyEstimated
       ? `TROPHY ESTIMATE (region-level, not unit-sourced): Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}. Present these as an approximate regional estimate for this area — do NOT state them as precise, measured, unit-specific figures.`
       : `PRIMARY TRUTH DATA: Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}.`;
@@ -434,6 +443,7 @@ export async function POST(req: Request) {
     }
 
     const geographicGuardrails = `
+      SPECIES: This is a ${speciesLabel} hunt in ${stateName}. EVERY section must be about ${speciesLabel} specifically — trophy scores, behavior, terrain use, and rut timing must all match ${speciesLabel}. NEVER write about mule deer (or any other species) unless ${speciesLabel} IS that species.
       ${geoAnchor}
       ${trophyInstruction}
       ${habitatBlock}
@@ -443,14 +453,15 @@ export async function POST(req: Request) {
       MANDATORY COMPLIANCE:
       1. NO MARKDOWN: section titles ALL CAPS. No asterisks. No hashtags.
       2. TRUTH ADHERENCE: You MUST use the exact numbers provided in the DATA blocks.
-      ${isResident ? '3. NO GUIDE/WILDERNESS RULES: This hunter is a Wyoming resident. Wyoming Statute 23-2-401 does NOT apply. Do not mention guide requirements, wilderness guide rules, or outfitter requirements anywhere in the output.' : ''}
+      3. SPECIES ADHERENCE: This is a ${speciesLabel} hunt. Do not describe any other species.
+      ${isResident ? '4. NO GUIDE/WILDERNESS RULES: This hunter is a Wyoming resident. Wyoming Statute 23-2-401 does NOT apply. Do not mention guide requirements, wilderness guide rules, or outfitter requirements anywhere in the output.' : ''}
     `;
 
     // ─── 8. BRIEF PROMPT ──────────────────────────────────────────────────────
     const briefPrompt = `
 ${geographicGuardrails}
 
-You are a master western hunting guide with decades of boots-on-ground experience. A hunter has drawn a tag for ${stateName} Unit ${unitResolved} and is counting on you for the real intel — not a generic overview.
+You are a master western hunting guide with decades of boots-on-ground experience. A hunter has drawn a ${speciesLabel} tag for ${stateName} Area ${unitResolved} and is counting on you for the real intel — not a generic overview. This brief is about ${speciesLabel} — every section must reflect ${speciesLabel} biology, trophy scoring, and behavior.
 
 Write like a guide briefing a client the night before a hunt. Be direct, specific, and honest. If a unit has weaknesses, say so. If the draw odds are brutal, say so. Use plain language, not brochure language.
 
