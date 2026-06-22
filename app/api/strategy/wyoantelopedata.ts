@@ -18,10 +18,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "1-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [1], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 1. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Crook; sagebrush/desert antelope range.",
+    description: "Crook — Wyoming antelope Area 1. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.7972, lng: -104.8013 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -35,10 +35,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "2-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [2], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 2. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Bearlodge; sagebrush/desert antelope range.",
+    description: "Bearlodge — Wyoming antelope Area 2. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.7005, lng: -104.3505 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -52,10 +52,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "3-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [3], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 3. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Keyhole; sagebrush/desert antelope range.",
+    description: "Keyhole — Wyoming antelope Area 3. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.786, lng: -103.0037 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -69,10 +69,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "4-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [4], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 4. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Arch Creek; sagebrush/desert antelope range.",
+    description: "Arch Creek — Wyoming antelope Area 4. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.241, lng: -104.6126 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -86,10 +86,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "5-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [5], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 5. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Inyan Kara; sagebrush/desert antelope range.",
+    description: "Inyan Kara — Wyoming antelope Area 5. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.1604, lng: -104.2502 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -103,10 +103,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "6-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [6], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 6. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Newcastle; sagebrush/desert antelope range.",
+    description: "South Newcastle — Wyoming antelope Area 6. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.6673, lng: -104.4119 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -120,10 +120,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "7-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [7], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 7. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Upton; sagebrush/desert antelope range.",
+    description: "South Upton — Wyoming antelope Area 7. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.9272, lng: -104.7696 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -137,10 +137,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "8-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [8], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 8. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Niobrara; sagebrush/desert antelope range.",
+    description: "Niobrara — Wyoming antelope Area 8. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.3395, lng: -104.4146 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -154,10 +154,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "9-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [9], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 9. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Lance Creek; sagebrush/desert antelope range.",
+    description: "Lance Creek — Wyoming antelope Area 9. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.8982, lng: -104.4568 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -171,10 +171,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "10-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [10], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 10. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Lake De Smet; sagebrush/desert antelope range.",
+    description: "Lake De Smet — Wyoming antelope Area 10. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.5276, lng: -106.714 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -188,10 +188,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "11-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [11], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 11. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Rawhide Butte; sagebrush/desert antelope range.",
+    description: "Rawhide Butte — Wyoming antelope Area 11. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.4604, lng: -104.4899 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -205,10 +205,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "15-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [15], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 15. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Clearmont; sagebrush/desert antelope range.",
+    description: "Clearmont — Wyoming antelope Area 15. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.8328, lng: -106.5538 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -222,10 +222,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "16-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [16], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 16. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Ucross; sagebrush/desert antelope range.",
+    description: "Ucross — Wyoming antelope Area 16. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.4496, lng: -106.3308 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -239,10 +239,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "17-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [17], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 17. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Gillette; sagebrush/desert antelope range.",
+    description: "Gillette — Wyoming antelope Area 17. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.6155, lng: -105.7589 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -256,10 +256,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "18-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [18], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 18. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Rockypoint; sagebrush/desert antelope range.",
+    description: "Rockypoint — Wyoming antelope Area 18. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.7491, lng: -105.1912 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -273,10 +273,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "19-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [19], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 19. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Rozet; sagebrush/desert antelope range.",
+    description: "Rozet — Wyoming antelope Area 19. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.4047, lng: -105.235 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -290,10 +290,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "20-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [20], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 20. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Upper Powder River; sagebrush/desert antelope range.",
+    description: "Upper Powder River — Wyoming antelope Area 20. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.9117, lng: -106.8683 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -307,10 +307,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "21-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [21], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 21. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Middle Fork; sagebrush/desert antelope range.",
+    description: "Middle Fork — Wyoming antelope Area 21. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.5156, lng: -106.776 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -324,10 +324,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "22-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [22], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 22. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Crazy Woman; sagebrush/desert antelope range.",
+    description: "Crazy Woman — Wyoming antelope Area 22. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.9975, lng: -106.4264 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -341,10 +341,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "23-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [23], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 23. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Pumpkin Buttes; sagebrush/desert antelope range.",
+    description: "Pumpkin Buttes — Wyoming antelope Area 23. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.917, lng: -105.8395 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -358,10 +358,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "23-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [23], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 23. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Pumpkin Buttes; sagebrush/desert antelope range.",
+    description: "Pumpkin Buttes — Wyoming antelope Area 23. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.917, lng: -105.8395 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -375,10 +375,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "24-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [24], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 24. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Thunder Basin; sagebrush/desert antelope range.",
+    description: "Thunder Basin — Wyoming antelope Area 24. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.0002, lng: -105.2473 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -392,10 +392,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "24-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [24], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 24. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Thunder Basin; sagebrush/desert antelope range.",
+    description: "Thunder Basin — Wyoming antelope Area 24. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.0002, lng: -105.2473 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -409,10 +409,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "25-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [25], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 25. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Ormsby; sagebrush/desert antelope range.",
+    description: "Ormsby — Wyoming antelope Area 25. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.1155, lng: -106.1323 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -426,10 +426,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "26-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [26], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 26. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Bear Creek; sagebrush/desert antelope range.",
+    description: "Bear Creek — Wyoming antelope Area 26. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.2412, lng: -105.6492 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -443,10 +443,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "27-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [27], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 27. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Bill; sagebrush/desert antelope range.",
+    description: "Bill — Wyoming antelope Area 27. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.5378, lng: -105.2097 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -460,10 +460,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "29-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [29], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 29. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Shawneee; sagebrush/desert antelope range.",
+    description: "Shawneee — Wyoming antelope Area 29. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.0828, lng: -105.0242 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -477,10 +477,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "29-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [29], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 29. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Shawneee; sagebrush/desert antelope range.",
+    description: "Shawneee — Wyoming antelope Area 29. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.0828, lng: -105.0242 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -494,10 +494,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "30-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [30], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 30. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "LaPrele; sagebrush/desert antelope range.",
+    description: "LaPrele — Wyoming antelope Area 30. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.5899, lng: -105.6768 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -511,10 +511,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "31-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [31], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 31. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Hat Six; sagebrush/desert antelope range.",
+    description: "Hat Six — Wyoming antelope Area 31. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.7426, lng: -106.1378 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -528,10 +528,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "32-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [32], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 32. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Bates Creek; sagebrush/desert antelope range.",
+    description: "Bates Creek — Wyoming antelope Area 32. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.5456, lng: -106.4431 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -545,10 +545,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "34-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [34], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 34. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Goshen Hole; sagebrush/desert antelope range.",
+    description: "Goshen Hole — Wyoming antelope Area 34. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.649, lng: -104.4805 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -562,10 +562,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "37-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [37], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 37. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Harriman; sagebrush/desert antelope range.",
+    description: "Harriman — Wyoming antelope Area 37. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.0986, lng: -105.2775 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -579,10 +579,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "38-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [38], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 38. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Iron Mountain; sagebrush/desert antelope range.",
+    description: "Iron Mountain — Wyoming antelope Area 38. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.5771, lng: -105.2283 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -596,10 +596,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "38-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [38], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 38. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Iron Mountain; sagebrush/desert antelope range.",
+    description: "Iron Mountain — Wyoming antelope Area 38. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.5771, lng: -105.2283 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -613,10 +613,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "42-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [42], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 42. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Laramie Plains; sagebrush/desert antelope range.",
+    description: "Laramie Plains — Wyoming antelope Area 42. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.0449, lng: -105.7376 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -630,10 +630,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "43-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [43], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 43. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Cooper Lake; sagebrush/desert antelope range.",
+    description: "Cooper Lake — Wyoming antelope Area 43. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.5399, lng: -105.8669 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -647,10 +647,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "44-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [44], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 44. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Laramie; sagebrush/desert antelope range.",
+    description: "South Laramie — Wyoming antelope Area 44. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.0956, lng: -105.7753 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -664,10 +664,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "45-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [45], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 45. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "West Laramie; sagebrush/desert antelope range.",
+    description: "West Laramie — Wyoming antelope Area 45. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.3225, lng: -106.0283 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -681,10 +681,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "46-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [46], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 46. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Kyle; sagebrush/desert antelope range.",
+    description: "Kyle — Wyoming antelope Area 46. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.7751, lng: -106.2488 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -698,10 +698,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "46-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [46], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 46. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Kyle; sagebrush/desert antelope range.",
+    description: "Kyle — Wyoming antelope Area 46. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.7751, lng: -106.2488 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -715,10 +715,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "47-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [47], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 47. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Shirley Basin; sagebrush/desert antelope range.",
+    description: "Shirley Basin — Wyoming antelope Area 47. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.1679, lng: -106.2358 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -732,10 +732,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "47-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [47], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 47. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Shirley Basin; sagebrush/desert antelope range.",
+    description: "Shirley Basin — Wyoming antelope Area 47. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.1679, lng: -106.2358 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -749,10 +749,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "48-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [48], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 48. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Leo-Hanna; sagebrush/desert antelope range.",
+    description: "Leo-Hanna — Wyoming antelope Area 48. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.0481, lng: -106.7337 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -766,10 +766,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "48-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [48], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 48. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Leo-Hanna; sagebrush/desert antelope range.",
+    description: "Leo-Hanna — Wyoming antelope Area 48. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.0481, lng: -106.7337 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -783,10 +783,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "50-0": {
     productType: "LIMITED_QUOTA", areaNumbers: [50], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 50. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 0 — Any Antelope (Muzzleloader)",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Elk Mountain; sagebrush/desert antelope range.",
+    description: "Elk Mountain — Wyoming antelope Area 50. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.4349, lng: -106.5144 }, huntType: "Type 0 — Any Antelope (Muzzleloader)",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -800,10 +800,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "50-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [50], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 50. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Elk Mountain; sagebrush/desert antelope range.",
+    description: "Elk Mountain — Wyoming antelope Area 50. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.4349, lng: -106.5144 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -817,10 +817,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "51-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [51], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 51. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Big Creek; sagebrush/desert antelope range.",
+    description: "Big Creek — Wyoming antelope Area 51. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.1156, lng: -106.619 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -834,10 +834,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "52-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [52], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 52. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Spring Creek; sagebrush/desert antelope range.",
+    description: "Spring Creek — Wyoming antelope Area 52. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.3296, lng: -106.9515 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -851,10 +851,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "52-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [52], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 52. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Spring Creek; sagebrush/desert antelope range.",
+    description: "Spring Creek — Wyoming antelope Area 52. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.3296, lng: -106.9515 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -868,10 +868,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "53-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [53], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 53. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Baggs; sagebrush/desert antelope range.",
+    description: "Baggs — Wyoming antelope Area 53. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.2118, lng: -107.3854 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -885,10 +885,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "55-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [55], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 55. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Red Rim; sagebrush/desert antelope range.",
+    description: "Red Rim — Wyoming antelope Area 55. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.6357, lng: -107.5476 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -902,10 +902,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "56-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [56], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 56. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Iron Springs; sagebrush/desert antelope range.",
+    description: "Iron Springs — Wyoming antelope Area 56. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.6592, lng: -107.114 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -921,8 +921,8 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
     typical: "74-78\"", topEnd: "84\"+",
     trait: "Red Desert giants; long prongs.",
     description: "Southwest of Rawlins (South Wamsutter). Classic Red Desert sagebrush flats.",
-    coords: { lat: 41.6521, lng: -108.2145 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Trophy from V1 field estimate; habitat metrics pending.",
+    coords: { lat: 41.3417, lng: -108.0873 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Trophy from V1 field estimate; coords from WGFD KML; habitat metrics pending.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -936,10 +936,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "57-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [57], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 57. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Wamsutter; sagebrush/desert antelope range.",
+    description: "South Wamsutter — Wyoming antelope Area 57. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.3417, lng: -108.0873 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -953,10 +953,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "58-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [58], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 58. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Black Butte-Kenny Rim; sagebrush/desert antelope range.",
+    description: "Black Butte-Kenny Rim — Wyoming antelope Area 58. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.3484, lng: -108.7096 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -970,10 +970,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "59-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [59], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 59. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Aspen Mountain; sagebrush/desert antelope range.",
+    description: "Aspen Mountain — Wyoming antelope Area 59. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.3797, lng: -109.1877 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -989,8 +989,8 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
     typical: "72-76\"", topEnd: "82\"",
     trait: "High density; consistent horn length.",
     description: "Table Mountain area North of Rock Springs. Rolling sage hills.",
-    coords: { lat: 41.9214, lng: -109.0521 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Trophy from V1 field estimate; habitat metrics pending.",
+    coords: { lat: 41.9434, lng: -108.3825 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Trophy from V1 field estimate; coords from WGFD KML; habitat metrics pending.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1004,10 +1004,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "61-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [61], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 61. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Chain Lakes; sagebrush/desert antelope range.",
+    description: "Chain Lakes — Wyoming antelope Area 61. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.0011, lng: -107.6759 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1021,10 +1021,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "62-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [62], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 62. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Ferris; sagebrush/desert antelope range.",
+    description: "South Ferris — Wyoming antelope Area 62. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.0445, lng: -107.1563 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1038,10 +1038,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "63-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [63], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 63. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "North Ferris; sagebrush/desert antelope range.",
+    description: "North Ferris — Wyoming antelope Area 63. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.3717, lng: -107.0697 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1055,10 +1055,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "63-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [63], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 63. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "North Ferris; sagebrush/desert antelope range.",
+    description: "North Ferris — Wyoming antelope Area 63. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.3717, lng: -107.0697 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1072,10 +1072,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "64-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [64], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 64. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Bison Basin; sagebrush/desert antelope range.",
+    description: "Bison Basin — Wyoming antelope Area 64. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.327, lng: -108.2411 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1089,10 +1089,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "65-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [65], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 65. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Pass; sagebrush/desert antelope range.",
+    description: "South Pass — Wyoming antelope Area 65. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.6589, lng: -108.7448 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1106,10 +1106,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "66-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [66], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 66. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Lander; sagebrush/desert antelope range.",
+    description: "Lander — Wyoming antelope Area 66. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.77, lng: -108.4171 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1123,10 +1123,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "67-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [67], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 67. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Sand Draw; sagebrush/desert antelope range.",
+    description: "Sand Draw — Wyoming antelope Area 67. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.9521, lng: -107.9453 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1140,10 +1140,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "68-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [68], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 68. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Split Rock; sagebrush/desert antelope range.",
+    description: "Split Rock — Wyoming antelope Area 68. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.54, lng: -107.5056 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1157,10 +1157,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "69-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [69], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 69. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Rattlesnake; sagebrush/desert antelope range.",
+    description: "South Rattlesnake — Wyoming antelope Area 69. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.6597, lng: -107.0143 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1174,10 +1174,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "70-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [70], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 70. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Kendrick; sagebrush/desert antelope range.",
+    description: "Kendrick — Wyoming antelope Area 70. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.7814, lng: -106.5553 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1191,10 +1191,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "71-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [71], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 71. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "East Poison Spider; sagebrush/desert antelope range.",
+    description: "East Poison Spider — Wyoming antelope Area 71. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.9343, lng: -106.7588 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1208,10 +1208,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "72-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [72], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 72. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "West Poison Spider; sagebrush/desert antelope range.",
+    description: "West Poison Spider — Wyoming antelope Area 72. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.8571, lng: -107.0455 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1227,8 +1227,8 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
     typical: "72-77\"", topEnd: "81\"",
     trait: "Massive public access (BLM).",
     description: "North of Casper. Expansive sagebrush flats and rolling prairie.",
-    coords: { lat: 43.1524, lng: -106.3521 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Trophy from V1 field estimate; habitat metrics pending.",
+    coords: { lat: 43.2053, lng: -106.7858 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Trophy from V1 field estimate; coords from WGFD KML; habitat metrics pending.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1242,10 +1242,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "74-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [74], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 74. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Deer Creek; sagebrush/desert antelope range.",
+    description: "Deer Creek — Wyoming antelope Area 74. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.9677, lng: -107.5289 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1259,10 +1259,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "75-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [75], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 75. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Badwater; sagebrush/desert antelope range.",
+    description: "Badwater — Wyoming antelope Area 75. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.3194, lng: -107.705 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1276,10 +1276,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "76-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [76], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 76. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Copper Mountain; sagebrush/desert antelope range.",
+    description: "Copper Mountain — Wyoming antelope Area 76. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.6286, lng: -107.9394 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1293,10 +1293,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "77-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [77], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 77. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Fifteen Mile Creek; sagebrush/desert antelope range.",
+    description: "Fifteen Mile Creek — Wyoming antelope Area 77. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.1918, lng: -108.3503 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1310,10 +1310,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "78-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [78], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 78. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "McCullough Peaks; sagebrush/desert antelope range.",
+    description: "McCullough Peaks — Wyoming antelope Area 78. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.6086, lng: -108.4731 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1327,10 +1327,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "79-0": {
     productType: "LIMITED_QUOTA", areaNumbers: [79], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 79. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 0 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Big Horn; sagebrush/desert antelope range.",
+    description: "Big Horn — Wyoming antelope Area 79. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.4855, lng: -107.7904 }, huntType: "Type 0 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1344,10 +1344,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "79-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [79], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 79. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Big Horn; sagebrush/desert antelope range.",
+    description: "Big Horn — Wyoming antelope Area 79. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.4855, lng: -107.7904 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1361,10 +1361,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "79-9": {
     productType: "LIMITED_QUOTA", areaNumbers: [79], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 79. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 9 — Any Antelope (Archery)",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Big Horn; sagebrush/desert antelope range.",
+    description: "Big Horn — Wyoming antelope Area 79. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.4855, lng: -107.7904 }, huntType: "Type 9 — Any Antelope (Archery)",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1378,10 +1378,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "80-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [80], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 80. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Badger Basin; sagebrush/desert antelope range.",
+    description: "Badger Basin — Wyoming antelope Area 80. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.82, lng: -108.9785 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1395,10 +1395,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "80-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [80], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 80. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Badger Basin; sagebrush/desert antelope range.",
+    description: "Badger Basin — Wyoming antelope Area 80. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.82, lng: -108.9785 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1412,10 +1412,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "81-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [81], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 81. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Fork; sagebrush/desert antelope range.",
+    description: "South Fork — Wyoming antelope Area 81. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.3544, lng: -109.1902 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1429,10 +1429,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "82-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [82], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 82. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "North Greybull River; sagebrush/desert antelope range.",
+    description: "North Greybull River — Wyoming antelope Area 82. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.2045, lng: -109.0724 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1446,10 +1446,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "82-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [82], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 82. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "North Greybull River; sagebrush/desert antelope range.",
+    description: "North Greybull River — Wyoming antelope Area 82. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.2045, lng: -109.0724 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1463,10 +1463,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "83-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [83], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 83. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Owl Creek; sagebrush/desert antelope range.",
+    description: "Owl Creek — Wyoming antelope Area 83. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.747, lng: -108.574 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1480,10 +1480,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "84-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [84], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 84. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Wind River; sagebrush/desert antelope range.",
+    description: "Wind River — Wyoming antelope Area 84. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.5776, lng: -109.6396 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1497,10 +1497,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "87-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [87], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 87. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Pinedale; sagebrush/desert antelope range.",
+    description: "Pinedale — Wyoming antelope Area 87. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.0804, lng: -109.861 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1514,10 +1514,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "87-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [87], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 87. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Pinedale; sagebrush/desert antelope range.",
+    description: "Pinedale — Wyoming antelope Area 87. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.0804, lng: -109.861 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1531,10 +1531,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "88-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [88], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 88. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Beaver; sagebrush/desert antelope range.",
+    description: "Beaver — Wyoming antelope Area 88. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.8933, lng: -110.2867 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1548,10 +1548,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "89-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [89], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 89. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Piney; sagebrush/desert antelope range.",
+    description: "Piney — Wyoming antelope Area 89. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.5393, lng: -110.3208 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1565,10 +1565,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "89-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [89], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 89. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Piney; sagebrush/desert antelope range.",
+    description: "Piney — Wyoming antelope Area 89. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.5393, lng: -110.3208 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1582,10 +1582,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "90-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [90], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 90. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Square Top; sagebrush/desert antelope range.",
+    description: "Square Top — Wyoming antelope Area 90. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.6805, lng: -109.476 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1599,10 +1599,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "91-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [91], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 91. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Dry Sandy; sagebrush/desert antelope range.",
+    description: "Dry Sandy — Wyoming antelope Area 91. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.4134, lng: -109.2384 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1616,10 +1616,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "92-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [92], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 92. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Steamboat; sagebrush/desert antelope range.",
+    description: "Steamboat — Wyoming antelope Area 92. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.9778, lng: -109.0444 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1633,10 +1633,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "93-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [93], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 93. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "West Green River; sagebrush/desert antelope range.",
+    description: "West Green River — Wyoming antelope Area 93. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.0856, lng: -110.4525 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1650,10 +1650,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "94-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [94], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 94. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Carter Lease; sagebrush/desert antelope range.",
+    description: "Carter Lease — Wyoming antelope Area 94. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.5496, lng: -110.3341 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1667,10 +1667,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "95-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [95], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 95. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Cedar Mountain; sagebrush/desert antelope range.",
+    description: "Cedar Mountain — Wyoming antelope Area 95. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.2739, lng: -109.8401 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1684,10 +1684,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "96-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [96], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 96. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "West Farson; sagebrush/desert antelope range.",
+    description: "West Farson — Wyoming antelope Area 96. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.7735, lng: -109.7185 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1701,10 +1701,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "97-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [97], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 97. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Boysen; sagebrush/desert antelope range.",
+    description: "Boysen — Wyoming antelope Area 97. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.2233, lng: -108.4769 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1718,10 +1718,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "97-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [97], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 97. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Boysen; sagebrush/desert antelope range.",
+    description: "Boysen — Wyoming antelope Area 97. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.2233, lng: -108.4769 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1735,10 +1735,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "98-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [98], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 98. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Sage; sagebrush/desert antelope range.",
+    description: "Sage — Wyoming antelope Area 98. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.1564, lng: -110.8558 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1752,10 +1752,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "99-0": {
     productType: "LIMITED_QUOTA", areaNumbers: [99], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 99. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 0 — Any Antelope (Muzzleloader)",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Uinta; sagebrush/desert antelope range.",
+    description: "Uinta — Wyoming antelope Area 99. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.1424, lng: -110.6028 }, huntType: "Type 0 — Any Antelope (Muzzleloader)",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1769,10 +1769,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "99-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [99], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 99. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Uinta; sagebrush/desert antelope range.",
+    description: "Uinta — Wyoming antelope Area 99. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.1424, lng: -110.6028 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1786,10 +1786,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "99-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [99], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 99. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Uinta; sagebrush/desert antelope range.",
+    description: "Uinta — Wyoming antelope Area 99. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.1424, lng: -110.6028 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1803,10 +1803,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "100-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [100], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 100. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Bear River Divide; sagebrush/desert antelope range.",
+    description: "Bear River Divide — Wyoming antelope Area 100. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.5598, lng: -110.8285 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1820,10 +1820,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "101-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [101], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 101. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Yellow Point; sagebrush/desert antelope range.",
+    description: "Yellow Point — Wyoming antelope Area 101. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.2719, lng: -109.8197 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1837,10 +1837,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "102-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [102], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 102. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Buffalo; sagebrush/desert antelope range.",
+    description: "Buffalo — Wyoming antelope Area 102. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.3404, lng: -106.9102 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1854,10 +1854,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "103-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [103], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 103. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Dwyer; sagebrush/desert antelope range.",
+    description: "Dwyer — Wyoming antelope Area 103. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.3146, lng: -105.1298 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1871,10 +1871,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "106-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [106], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 106. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Long Creek; sagebrush/desert antelope range.",
+    description: "Long Creek — Wyoming antelope Area 106. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.5668, lng: -107.9965 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1888,10 +1888,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "107-0": {
     productType: "LIMITED_QUOTA", areaNumbers: [107], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 107. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 0 — Any Antelope (Handgun)",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Upper Sweetwater; sagebrush/desert antelope range.",
+    description: "Upper Sweetwater — Wyoming antelope Area 107. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.4439, lng: -108.8382 }, huntType: "Type 0 — Any Antelope (Handgun)",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1905,10 +1905,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "107-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [107], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 107. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Upper Sweetwater; sagebrush/desert antelope range.",
+    description: "Upper Sweetwater — Wyoming antelope Area 107. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 42.4439, lng: -108.8382 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1922,10 +1922,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "108-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [108], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 108. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Bridger Pass; sagebrush/desert antelope range.",
+    description: "Bridger Pass — Wyoming antelope Area 108. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.5159, lng: -107.3429 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1939,10 +1939,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "109-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [109], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 109. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Beckton; sagebrush/desert antelope range.",
+    description: "Beckton — Wyoming antelope Area 109. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 44.7989, lng: -107.1643 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1956,10 +1956,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "110-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [110], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 110. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "South Greybull River; sagebrush/desert antelope range.",
+    description: "South Greybull River — Wyoming antelope Area 110. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.9781, lng: -109.0719 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1973,10 +1973,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "111-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [111], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 111. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Chalk Bluffs; sagebrush/desert antelope range.",
+    description: "Chalk Bluffs — Wyoming antelope Area 111. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.0752, lng: -104.4492 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -1990,10 +1990,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "112-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [112], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 112. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Pine Mountain; sagebrush/desert antelope range.",
+    description: "Pine Mountain — Wyoming antelope Area 112. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 41.1312, lng: -109.1828 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -2007,10 +2007,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "113-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [113], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 113. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Salt Creek; sagebrush/desert antelope range.",
+    description: "Salt Creek — Wyoming antelope Area 113. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.5832, lng: -106.3608 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -2024,10 +2024,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "113-2": {
     productType: "LIMITED_QUOTA", areaNumbers: [113], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 113. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 2 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Salt Creek; sagebrush/desert antelope range.",
+    description: "Salt Creek — Wyoming antelope Area 113. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.5832, lng: -106.3608 }, huntType: "Type 2 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -2041,10 +2041,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "114-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [114], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 114. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Nowater; sagebrush/desert antelope range.",
+    description: "Nowater — Wyoming antelope Area 114. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.9553, lng: -107.7862 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,
@@ -2058,10 +2058,10 @@ export const WYOMING_ANTELOPE_UNITS: Record<string, WyomingDeerUnit> = {
   "115-1": {
     productType: "LIMITED_QUOTA", areaNumbers: [115], dataCompleteness: "NEEDS_TROPHY_DATA",
     typical: "70-75\"", topEnd: "80\"",
-    trait: "Sagebrush/desert antelope range.",
-    description: "Wyoming antelope Area 115. Per-area description not yet sourced.",
-    coords: { lat: 42.99, lng: -107.55 }, huntType: "Type 1 — Any Antelope",
-    devNotes: "Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.",
+    trait: "Upper Nowood; sagebrush/desert antelope range.",
+    description: "Upper Nowood — Wyoming antelope Area 115. Sage/desert country; terrain detail not yet sourced.",
+    coords: { lat: 43.7803, lng: -107.3354 }, huntType: "Type 1 — Any Antelope",
+    devNotes: "Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.",
     seasons: {},
     drawHistory: [
       { year: 2025,

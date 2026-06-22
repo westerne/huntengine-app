@@ -91,6 +91,10 @@ const KNOWN = {
 };
 const WY_CENTROID = { lat: 42.99, lng: -107.55 };
 
+// Per-area centroid + real WGFD name from the AntelopeHuntAreas KML.
+let GEO = {};
+try { GEO = JSON.parse(readFileSync(join(DIR, 'antelopeGeo.json'), 'utf8')); } catch {}
+
 // Collect every (area-type) key across all pools, antlered weapon types only.
 const ANTLERED = new Set(['0', '1', '2', '9']);
 const keys = new Set();
@@ -121,14 +125,21 @@ for (const k of sorted) {
   const known = KNOWN[k];
   const desc = huntDesc(area, type);
   const dh = drawHistory(k);
+  const geo = GEO[String(parseInt(area, 10))];
+  const geoName = geo?.name || '';
   const typical = known ? known.typical : '70-75"';
   const topEnd = known ? known.topEnd : '80"';
-  const trait = known ? known.trait : 'Sagebrush/desert antelope range.';
-  const description = known ? known.description : `Wyoming antelope Area ${area}. Per-area description not yet sourced.`;
-  const coords = known ? known.coords : WY_CENTROID;
+  // Coords: prefer the authoritative KML centroid; fall back to known/centroid.
+  const coords = geo ? { lat: geo.lat, lng: geo.lng } : (known ? known.coords : WY_CENTROID);
+  const trait = known ? known.trait
+    : geoName ? `${geoName}; sagebrush/desert antelope range.`
+    : 'Sagebrush/desert antelope range.';
+  const description = known ? known.description
+    : geoName ? `${geoName} — Wyoming antelope Area ${area}. Sage/desert country; terrain detail not yet sourced.`
+    : `Wyoming antelope Area ${area}. Per-area description not yet sourced.`;
   const completeness = known ? 'NEEDS_FIELD_DATA' : 'NEEDS_TROPHY_DATA';
-  const devNotes = known ? 'Trophy from V1 field estimate; habitat metrics pending.'
-    : 'Roster + draw data from 2025 WGFD demand reports. Trophy/coords/seasons are placeholders — per-area data not yet sourced.';
+  const devNotes = known ? 'Trophy from V1 field estimate; coords from WGFD KML; habitat metrics pending.'
+    : `Roster + draw data from 2025 WGFD demand reports; name + coords from WGFD AntelopeHuntAreas KML. Trophy/seasons placeholders — not yet sourced.`;
   body += `  ${q(k)}: {
     productType: "LIMITED_QUOTA", areaNumbers: [${parseInt(area, 10)}], dataCompleteness: ${q(completeness)},
     typical: ${q(typical)}, topEnd: ${q(topEnd)},

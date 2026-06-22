@@ -1,0 +1,512 @@
+{
+ "1": {
+  "lat": 44.7972,
+  "lng": -104.8013,
+  "name": "Crook"
+ },
+ "2": {
+  "lat": 44.7005,
+  "lng": -104.3505,
+  "name": "Bearlodge"
+ },
+ "3": {
+  "lat": 43.786,
+  "lng": -103.0037,
+  "name": "Keyhole"
+ },
+ "4": {
+  "lat": 44.241,
+  "lng": -104.6126,
+  "name": "Arch Creek"
+ },
+ "5": {
+  "lat": 44.1604,
+  "lng": -104.2502,
+  "name": "Inyan Kara"
+ },
+ "6": {
+  "lat": 43.6673,
+  "lng": -104.4119,
+  "name": "South Newcastle"
+ },
+ "7": {
+  "lat": 43.9272,
+  "lng": -104.7696,
+  "name": "South Upton"
+ },
+ "8": {
+  "lat": 43.3395,
+  "lng": -104.4146,
+  "name": "Niobrara"
+ },
+ "9": {
+  "lat": 42.8982,
+  "lng": -104.4568,
+  "name": "Lance Creek"
+ },
+ "10": {
+  "lat": 44.5276,
+  "lng": -106.714,
+  "name": "Lake De Smet"
+ },
+ "11": {
+  "lat": 42.4604,
+  "lng": -104.4899,
+  "name": "Rawhide Butte"
+ },
+ "15": {
+  "lat": 44.8328,
+  "lng": -106.5538,
+  "name": "Clearmont"
+ },
+ "16": {
+  "lat": 44.4496,
+  "lng": -106.3308,
+  "name": "Ucross"
+ },
+ "17": {
+  "lat": 44.6155,
+  "lng": -105.7589,
+  "name": "Gillette"
+ },
+ "18": {
+  "lat": 44.7491,
+  "lng": -105.1912,
+  "name": "Rockypoint"
+ },
+ "19": {
+  "lat": 44.4047,
+  "lng": -105.235,
+  "name": "Rozet"
+ },
+ "20": {
+  "lat": 43.9117,
+  "lng": -106.8683,
+  "name": "Upper Powder River"
+ },
+ "21": {
+  "lat": 43.5156,
+  "lng": -106.776,
+  "name": "Middle Fork"
+ },
+ "22": {
+  "lat": 43.9975,
+  "lng": -106.4264,
+  "name": "Crazy Woman"
+ },
+ "23": {
+  "lat": 43.917,
+  "lng": -105.8395,
+  "name": "Pumpkin Buttes"
+ },
+ "24": {
+  "lat": 44.0002,
+  "lng": -105.2473,
+  "name": "Thunder Basin"
+ },
+ "25": {
+  "lat": 43.1155,
+  "lng": -106.1323,
+  "name": "Ormsby"
+ },
+ "26": {
+  "lat": 43.2412,
+  "lng": -105.6492,
+  "name": "Bear Creek"
+ },
+ "27": {
+  "lat": 43.5378,
+  "lng": -105.2097,
+  "name": "Bill"
+ },
+ "29": {
+  "lat": 43.0828,
+  "lng": -105.0242,
+  "name": "Shawneee"
+ },
+ "30": {
+  "lat": 42.5899,
+  "lng": -105.6768,
+  "name": "LaPrele"
+ },
+ "31": {
+  "lat": 42.7426,
+  "lng": -106.1378,
+  "name": "Hat Six"
+ },
+ "32": {
+  "lat": 42.5456,
+  "lng": -106.4431,
+  "name": "Bates Creek"
+ },
+ "34": {
+  "lat": 41.649,
+  "lng": -104.4805,
+  "name": "Goshen Hole"
+ },
+ "37": {
+  "lat": 41.0986,
+  "lng": -105.2775,
+  "name": "Harriman"
+ },
+ "38": {
+  "lat": 41.5771,
+  "lng": -105.2283,
+  "name": "Iron Mountain"
+ },
+ "42": {
+  "lat": 42.0449,
+  "lng": -105.7376,
+  "name": "Laramie Plains"
+ },
+ "43": {
+  "lat": 41.5399,
+  "lng": -105.8669,
+  "name": "Cooper Lake"
+ },
+ "44": {
+  "lat": 41.0956,
+  "lng": -105.7753,
+  "name": "South Laramie"
+ },
+ "45": {
+  "lat": 41.3225,
+  "lng": -106.0283,
+  "name": "West Laramie"
+ },
+ "46": {
+  "lat": 41.7751,
+  "lng": -106.2488,
+  "name": "Kyle"
+ },
+ "47": {
+  "lat": 42.1679,
+  "lng": -106.2358,
+  "name": "Shirley Basin"
+ },
+ "48": {
+  "lat": 42.0481,
+  "lng": -106.7337,
+  "name": "Leo-Hanna"
+ },
+ "50": {
+  "lat": 41.4349,
+  "lng": -106.5144,
+  "name": "Elk Mountain"
+ },
+ "51": {
+  "lat": 41.1156,
+  "lng": -106.619,
+  "name": "Big Creek"
+ },
+ "52": {
+  "lat": 41.3296,
+  "lng": -106.9515,
+  "name": "Spring Creek"
+ },
+ "53": {
+  "lat": 41.2118,
+  "lng": -107.3854,
+  "name": "Baggs"
+ },
+ "55": {
+  "lat": 41.6357,
+  "lng": -107.5476,
+  "name": "Red Rim"
+ },
+ "56": {
+  "lat": 41.6592,
+  "lng": -107.114,
+  "name": "Iron Springs"
+ },
+ "57": {
+  "lat": 41.3417,
+  "lng": -108.0873,
+  "name": "South Wamsutter"
+ },
+ "58": {
+  "lat": 41.3484,
+  "lng": -108.7096,
+  "name": "Black Butte-Kenny Rim"
+ },
+ "59": {
+  "lat": 41.3797,
+  "lng": -109.1877,
+  "name": "Aspen Mountain"
+ },
+ "60": {
+  "lat": 41.9434,
+  "lng": -108.3825,
+  "name": "Table Rock"
+ },
+ "61": {
+  "lat": 42.0011,
+  "lng": -107.6759,
+  "name": "Chain Lakes"
+ },
+ "62": {
+  "lat": 42.0445,
+  "lng": -107.1563,
+  "name": "South Ferris"
+ },
+ "63": {
+  "lat": 42.3717,
+  "lng": -107.0697,
+  "name": "North Ferris"
+ },
+ "64": {
+  "lat": 42.327,
+  "lng": -108.2411,
+  "name": "Bison Basin"
+ },
+ "65": {
+  "lat": 42.6589,
+  "lng": -108.7448,
+  "name": "South Pass"
+ },
+ "66": {
+  "lat": 42.77,
+  "lng": -108.4171,
+  "name": "Lander"
+ },
+ "67": {
+  "lat": 42.9521,
+  "lng": -107.9453,
+  "name": "Sand Draw"
+ },
+ "68": {
+  "lat": 42.54,
+  "lng": -107.5056,
+  "name": "Split Rock"
+ },
+ "69": {
+  "lat": 42.6597,
+  "lng": -107.0143,
+  "name": "South Rattlesnake"
+ },
+ "70": {
+  "lat": 42.7814,
+  "lng": -106.5553,
+  "name": "Kendrick"
+ },
+ "71": {
+  "lat": 42.9343,
+  "lng": -106.7588,
+  "name": "East Poison Spider"
+ },
+ "72": {
+  "lat": 42.8571,
+  "lng": -107.0455,
+  "name": "West Poison Spider"
+ },
+ "73": {
+  "lat": 43.2053,
+  "lng": -106.7858,
+  "name": "North Natrona"
+ },
+ "74": {
+  "lat": 42.9677,
+  "lng": -107.5289,
+  "name": "Deer Creek"
+ },
+ "75": {
+  "lat": 43.3194,
+  "lng": -107.705,
+  "name": "Badwater"
+ },
+ "76": {
+  "lat": 43.6286,
+  "lng": -107.9394,
+  "name": "Copper Mountain"
+ },
+ "77": {
+  "lat": 44.1918,
+  "lng": -108.3503,
+  "name": "Fifteen Mile Creek"
+ },
+ "78": {
+  "lat": 44.6086,
+  "lng": -108.4731,
+  "name": "McCullough Peaks"
+ },
+ "79": {
+  "lat": 44.4855,
+  "lng": -107.7904,
+  "name": "Big Horn"
+ },
+ "80": {
+  "lat": 44.82,
+  "lng": -108.9785,
+  "name": "Badger Basin"
+ },
+ "81": {
+  "lat": 44.3544,
+  "lng": -109.1902,
+  "name": "South Fork"
+ },
+ "82": {
+  "lat": 44.2045,
+  "lng": -109.0724,
+  "name": "North Greybull River"
+ },
+ "83": {
+  "lat": 43.747,
+  "lng": -108.574,
+  "name": "Owl Creek"
+ },
+ "84": {
+  "lat": 43.5776,
+  "lng": -109.6396,
+  "name": "Wind River"
+ },
+ "85": {
+  "lat": 43.584,
+  "lng": -110.3317,
+  "name": "Gros Ventre"
+ },
+ "86": {
+  "lat": 43.2168,
+  "lng": -110.4631,
+  "name": "Hoback"
+ },
+ "87": {
+  "lat": 43.0804,
+  "lng": -109.861,
+  "name": "Pinedale"
+ },
+ "88": {
+  "lat": 42.8933,
+  "lng": -110.2867,
+  "name": "Beaver"
+ },
+ "89": {
+  "lat": 42.5393,
+  "lng": -110.3208,
+  "name": "Piney"
+ },
+ "90": {
+  "lat": 42.6805,
+  "lng": -109.476,
+  "name": "Square Top"
+ },
+ "91": {
+  "lat": 42.4134,
+  "lng": -109.2384,
+  "name": "Dry Sandy"
+ },
+ "92": {
+  "lat": 41.9778,
+  "lng": -109.0444,
+  "name": "Steamboat"
+ },
+ "93": {
+  "lat": 42.0856,
+  "lng": -110.4525,
+  "name": "West Green River"
+ },
+ "94": {
+  "lat": 41.5496,
+  "lng": -110.3341,
+  "name": "Carter Lease"
+ },
+ "95": {
+  "lat": 41.2739,
+  "lng": -109.8401,
+  "name": "Cedar Mountain"
+ },
+ "96": {
+  "lat": 41.7735,
+  "lng": -109.7185,
+  "name": "West Farson"
+ },
+ "97": {
+  "lat": 43.2233,
+  "lng": -108.4769,
+  "name": "Boysen"
+ },
+ "98": {
+  "lat": 42.1564,
+  "lng": -110.8558,
+  "name": "Sage"
+ },
+ "99": {
+  "lat": 41.1424,
+  "lng": -110.6028,
+  "name": "Uinta"
+ },
+ "100": {
+  "lat": 41.5598,
+  "lng": -110.8285,
+  "name": "Bear River Divide"
+ },
+ "101": {
+  "lat": 42.2719,
+  "lng": -109.8197,
+  "name": "Yellow Point"
+ },
+ "102": {
+  "lat": 44.3404,
+  "lng": -106.9102,
+  "name": "Buffalo"
+ },
+ "103": {
+  "lat": 42.3146,
+  "lng": -105.1298,
+  "name": "Dwyer"
+ },
+ "106": {
+  "lat": 42.5668,
+  "lng": -107.9965,
+  "name": "Long Creek"
+ },
+ "107": {
+  "lat": 42.4439,
+  "lng": -108.8382,
+  "name": "Upper Sweetwater"
+ },
+ "108": {
+  "lat": 41.5159,
+  "lng": -107.3429,
+  "name": "Bridger Pass"
+ },
+ "109": {
+  "lat": 44.7989,
+  "lng": -107.1643,
+  "name": "Beckton"
+ },
+ "110": {
+  "lat": 43.9781,
+  "lng": -109.0719,
+  "name": "South Greybull River"
+ },
+ "111": {
+  "lat": 41.0752,
+  "lng": -104.4492,
+  "name": "Chalk Bluffs"
+ },
+ "112": {
+  "lat": 41.1312,
+  "lng": -109.1828,
+  "name": "Pine Mountain"
+ },
+ "113": {
+  "lat": 43.5832,
+  "lng": -106.3608,
+  "name": "Salt Creek"
+ },
+ "114": {
+  "lat": 43.9553,
+  "lng": -107.7862,
+  "name": "Nowater"
+ },
+ "115": {
+  "lat": 43.7803,
+  "lng": -107.3354,
+  "name": "Upper Nowood"
+ },
+ "117": {
+  "lat": 43.2362,
+  "lng": -108.9162,
+  "name": "Crowheart Butte"
+ }
+}
