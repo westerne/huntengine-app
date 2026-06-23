@@ -64,8 +64,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Crook Unit — Black Hills, northeast Wyoming',
     description: 'Northeast Wyoming, Black Hills country near Sundance. Timber and rolling terrain with good elk numbers. Limited NR quota with high point requirements.',
     tier: 'mid',
-    coords: { lat: 44.4, lng: -104.2 },
+    coords: { lat: 44.3459, lng: -104.115 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 82, firstChoiceApplicants: 894, approxOdds: '9.17%' },
+        nr_regular: { quota: 6, minPoints: 16, oddsAtMin: '50.00%', notes: '322 applicants shut out below 16 pts' },
+        nr_special: { quota: 4, minPoints: 14, oddsAtMin: '8.33%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 323, approxOdds: '0.31%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 56, approxOdds: '1.79%' },
+      },
       {
         year: 2024,
         resident: { quota: 83, firstChoiceApplicants: 942, approxOdds: '8.81%' },
@@ -83,8 +91,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 1 antlerless elk. Moderate NR demand, reasonable odds.',
     tier: 'antlerless',
-    coords: { lat: 44.4, lng: -104.2 },
+    coords: { lat: 44.3459, lng: -104.115 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 63, firstChoiceApplicants: 81, approxOdds: '77.78%' },
+        nr_regular: { quota: 9, minPoints: 2, oddsAtMin: '33.33%', notes: '24 applicants shut out below 2 pts' },
+        nr_special: { quota: 4, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 29, approxOdds: '6.90%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 92, approxOdds: '68.48%' },
@@ -106,8 +122,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Pole Mountain Unit — southeast Wyoming near Laramie',
     description: 'Southeast Wyoming, Pole Mountain area near Laramie. Small quota unit with high point requirements for NR regular pool.',
     tier: 'mid',
-    coords: { lat: 41.1, lng: -105.4 },
+    coords: { lat: 41.4357, lng: -105.198 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 42, firstChoiceApplicants: 385, approxOdds: '10.91%' },
+        nr_regular: { quota: 2, minPoints: 11, oddsAtMin: '100.00%', notes: '54 applicants shut out below 11 pts' },
+        nr_special: { quota: 2, minPoints: 6, oddsAtMin: '40.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 54, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 12, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 40, firstChoiceApplicants: 368, approxOdds: '10.87%' },
@@ -125,8 +149,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 6 antlerless elk. Very low NR demand.',
     tier: 'antlerless',
-    coords: { lat: 41.1, lng: -105.4 },
+    coords: { lat: 41.4357, lng: -105.198 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 21, firstChoiceApplicants: 47, approxOdds: '44.68%' },
+        nr_regular: { quota: 3, minPoints: 0, oddsAtMin: '75.00%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 2, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 1, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 21, firstChoiceApplicants: 37, approxOdds: '56.76%' },
@@ -148,8 +180,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Laramie Peak giants — one of Wyoming\'s most coveted elk units',
     description: 'Southeast Wyoming, Laramie Mountains. Mix of timber, meadows, and broken terrain. Strong resident population with consistent trophy bulls. High NR demand in all pools.',
     tier: 'trophy',
-    coords: { lat: 42.4, lng: -105.8 },
+    coords: { lat: 42.2506, lng: -105.5741 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 1007, firstChoiceApplicants: 3496, approxOdds: '28.80%' },
+        nr_regular: { quota: 73, minPoints: 13, oddsAtMin: '29.55%', notes: '1095 applicants shut out below 13 pts' },
+        nr_special: { quota: 50, minPoints: 13, oddsAtMin: '74.29%' },
+        nr_random: { quota: 24, firstChoiceApplicants: 1126, approxOdds: '2.13%' },
+        nr_special_random: { quota: 16, firstChoiceApplicants: 358, approxOdds: '4.47%' },
+      },
       {
         year: 2024,
         resident: { quota: 1003, firstChoiceApplicants: 3669, approxOdds: '27.34%' },
@@ -167,8 +207,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Five-point restriction — quality bull management',
     description: 'Unit 7 five-point antlered tag. Significant NR demand. Draws at 1 point in regular pool historically.',
     tier: 'mid',
-    coords: { lat: 42.4, lng: -105.8 },
+    coords: { lat: 42.2506, lng: -105.5741 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 294, firstChoiceApplicants: 123, approxOdds: '~100%' },
+        nr_regular: { quota: 31, minPoints: 2, oddsAtMin: '66.67%', notes: '66 applicants shut out below 1 pts' },
+        nr_special: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 10, firstChoiceApplicants: 66, approxOdds: '15.15%' },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 294, firstChoiceApplicants: 69, approxOdds: '100%' },
@@ -186,7 +234,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'High quota antlerless — very drawable',
     description: 'Unit 7 antlerless elk. Massive quota with low NR demand. Essentially guaranteed for NR hunters with zero points.',
     tier: 'antlerless',
-    coords: { lat: 42.4, lng: -105.8 },
+    coords: { lat: 42.2506, lng: -105.5741 },
     drawHistory: [
       {
         year: 2024,
@@ -209,8 +257,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Southeast Wyoming, moderate demand',
     description: 'Southeast Wyoming. Moderate NR quota with mid-range point requirements.',
     tier: 'mid',
-    coords: { lat: 42.6, lng: -105.9 },
+    coords: { lat: 41.1027, lng: -105.7347 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 116, firstChoiceApplicants: 140, approxOdds: '82.86%' },
+        nr_regular: { quota: 12, minPoints: 1, oddsAtMin: '20.00%', notes: '23 applicants shut out below 1 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 31, approxOdds: '9.68%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 117, firstChoiceApplicants: 168, approxOdds: '69.64%' },
@@ -232,8 +288,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Medicine Bow River Unit — Elk Mountain area',
     description: 'Southeast Wyoming, Medicine Bow River drainage near Elk Mountain. Solid elk country with strong resident demand. NR regular pool draws at 11 points.',
     tier: 'mid',
-    coords: { lat: 41.8, lng: -106.5 },
+    coords: { lat: 41.6944, lng: -106.2348 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 154, firstChoiceApplicants: 875, approxOdds: '17.60%' },
+        nr_regular: { quota: 10, minPoints: 13, oddsAtMin: '66.67%', notes: '135 applicants shut out below 13 pts' },
+        nr_special: { quota: 8, minPoints: 12, oddsAtMin: '75.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 137, approxOdds: '2.19%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 20, approxOdds: '10.00%' },
+      },
       {
         year: 2024,
         resident: { quota: 150, firstChoiceApplicants: 913, approxOdds: '16.43%' },
@@ -251,8 +315,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 11 antlerless elk. Low NR demand, very drawable.',
     tier: 'antlerless',
-    coords: { lat: 41.8, lng: -106.5 },
+    coords: { lat: 41.6944, lng: -106.2348 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 45, approxOdds: '~100%' },
+        nr_regular: { quota: 12, minPoints: 0, oddsAtMin: '31.25%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 11, approxOdds: '27.27%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 45, approxOdds: '100%' },
@@ -270,8 +342,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Medicine Bow River archery — Elk Mountain area',
     description: 'Southeast Wyoming, Medicine Bow River area near Elk Mountain. Archery elk. Draws at 11 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 41.8, lng: -106.5 },
+    coords: { lat: 41.6944, lng: -106.2348 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 63, firstChoiceApplicants: 175, approxOdds: '36.00%' },
+        nr_regular: { quota: 6, minPoints: 12, oddsAtMin: '80.00%', notes: '43 applicants shut out below 12 pts' },
+        nr_special: { quota: 4, minPoints: 10, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 44, approxOdds: '2.27%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 32, approxOdds: '3.13%' },
+      },
       {
         year: 2024,
         resident: { quota: 62, firstChoiceApplicants: 145, approxOdds: '42.76%' },
@@ -293,8 +373,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Shirley Mountain Unit — south-central Wyoming',
     description: 'South-central Wyoming, Shirley Mountains near Medicine Bow. Sage and timber country with moderate elk populations. High point requirements for NR regular pool.',
     tier: 'trophy',
-    coords: { lat: 42.3, lng: -106.2 },
+    coords: { lat: 42.163, lng: -106.5561 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 183, firstChoiceApplicants: 1976, approxOdds: '9.26%' },
+        nr_regular: { quota: 12, minPoints: 18, oddsAtMin: '100.00%', notes: '471 applicants shut out below 17 pts' },
+        nr_special: { quota: 9, minPoints: 16, oddsAtMin: '20.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 471, approxOdds: '0.64%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 124, approxOdds: '1.61%' },
+      },
       {
         year: 2024,
         resident: { quota: 189, firstChoiceApplicants: 1818, approxOdds: '10.40%' },
@@ -312,8 +400,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Sunlight Basin Type 2 tag — extremely high point requirement',
     description: 'Unit 16 Type 2 any elk. One of the hardest NR draws in Wyoming — requires 17+ points in regular pool.',
     tier: 'trophy',
-    coords: { lat: 42.3, lng: -106.2 },
+    coords: { lat: 42.163, lng: -106.5561 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 77, firstChoiceApplicants: 703, approxOdds: '10.95%' },
+        nr_regular: { quota: 7, minPoints: 18, oddsAtMin: '55.56%', notes: '448 applicants shut out below 18 pts' },
+        nr_special: { quota: 6, minPoints: 16, oddsAtMin: '20.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 452, approxOdds: '0.44%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 43, approxOdds: '2.33%' },
+      },
       {
         year: 2024,
         resident: { quota: 74, firstChoiceApplicants: 722, approxOdds: '10.25%' },
@@ -331,8 +427,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 16 antlerless elk. Very drawable with zero points — good opportunity.',
     tier: 'antlerless',
-    coords: { lat: 42.3, lng: -106.2 },
+    coords: { lat: 42.163, lng: -106.5561 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 252, firstChoiceApplicants: 247, approxOdds: '~100%' },
+        nr_regular: { quota: 30, minPoints: 1, oddsAtMin: '76.19%', notes: '26 applicants shut out below 1 pts' },
+        nr_special: { quota: 15, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 9, firstChoiceApplicants: 29, approxOdds: '31.03%' },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 250, firstChoiceApplicants: 254, approxOdds: '98.43%' },
@@ -354,8 +458,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Muddy Mountain Unit — central Wyoming near Casper',
     description: 'Central Wyoming, Muddy Mountain area near Casper. Sage and mixed terrain elk unit. Draws at 11 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 42.8, lng: -106.5 },
+    coords: { lat: 42.6589, lng: -106.259 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 100, firstChoiceApplicants: 430, approxOdds: '23.26%' },
+        nr_regular: { quota: 9, minPoints: 12, oddsAtMin: '75.00%', notes: '118 applicants shut out below 11 pts' },
+        nr_special: { quota: 6, minPoints: 12, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 118, approxOdds: '1.69%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 35, approxOdds: '5.71%' },
+      },
       {
         year: 2024,
         resident: { quota: 104, firstChoiceApplicants: 484, approxOdds: '21.49%' },
@@ -373,8 +485,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'North Absaroka Type 2 — draws at 11 special points',
     description: 'Unit 19 Type 2 any elk. Draws at 11 points in regular, 11 in special pool.',
     tier: 'mid',
-    coords: { lat: 42.8, lng: -106.5 },
+    coords: { lat: 42.6589, lng: -106.259 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 139, firstChoiceApplicants: 353, approxOdds: '39.38%' },
+        nr_regular: { quota: 12, minPoints: 11, oddsAtMin: '12.50%', notes: '74 applicants shut out below 11 pts' },
+        nr_special: { quota: 9, minPoints: 10, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 81, approxOdds: '4.94%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 26, approxOdds: '7.69%' },
+      },
       {
         year: 2024,
         resident: { quota: 139, firstChoiceApplicants: 349, approxOdds: '39.83%' },
@@ -392,8 +512,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 19 antlerless elk. Zero NR demand — essentially guaranteed.',
     tier: 'antlerless',
-    coords: { lat: 42.8, lng: -106.5 },
+    coords: { lat: 42.6589, lng: -106.259 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 106, firstChoiceApplicants: 15, approxOdds: '~100%' },
+        nr_regular: { quota: 15, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 106, firstChoiceApplicants: 10, approxOdds: '100%' },
@@ -411,8 +539,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 19 Type 5 antlerless elk. Very low demand, very drawable.',
     tier: 'antlerless',
-    coords: { lat: 42.8, lng: -106.5 },
+    coords: { lat: 42.6589, lng: -106.259 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 114, firstChoiceApplicants: 13, approxOdds: '~100%' },
+        nr_regular: { quota: 15, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 118, firstChoiceApplicants: 11, approxOdds: '100%' },
@@ -434,8 +570,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Ferris Unit — south-central Wyoming near Rawlins',
     description: 'South-central Wyoming, Ferris Mountains near Rawlins. Sage and rimrock country with limited elk. Very high point requirements in regular pool.',
     tier: 'trophy',
-    coords: { lat: 41.8, lng: -107.5 },
+    coords: { lat: 42.3222, lng: -107.2544 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 57, firstChoiceApplicants: 614, approxOdds: '9.28%' },
+        nr_regular: { quota: 4, minPoints: 17, oddsAtMin: '16.67%', notes: '186 applicants shut out below 17 pts' },
+        nr_special: { quota: 3, minPoints: 18, oddsAtMin: '75.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 191, approxOdds: '0.52%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 127, approxOdds: '0.79%' },
+      },
       {
         year: 2024,
         resident: { quota: 57, firstChoiceApplicants: 605, approxOdds: '9.42%' },
@@ -457,8 +601,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Greybull River area — mid-demand unit',
     description: 'North-central Wyoming. Draws at 12 points in regular pool. Moderate NR demand.',
     tier: 'mid',
-    coords: { lat: 42.9, lng: -106.3 },
+    coords: { lat: 42.8074, lng: -106.9481 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 97, firstChoiceApplicants: 551, approxOdds: '17.60%' },
+        nr_regular: { quota: 8, minPoints: 13, oddsAtMin: '75.00%', notes: '141 applicants shut out below 12 pts' },
+        nr_special: { quota: 6, minPoints: 11, oddsAtMin: '33.33%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 141, approxOdds: '1.42%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 37, approxOdds: '5.41%' },
+      },
       {
         year: 2024,
         resident: { quota: 115, firstChoiceApplicants: 535, approxOdds: '21.50%' },
@@ -476,8 +628,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 23 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 42.9, lng: -106.3 },
+    coords: { lat: 42.8074, lng: -106.9481 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 171, firstChoiceApplicants: 22, approxOdds: '~100%' },
+        nr_regular: { quota: 22, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 10, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 7, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 178, firstChoiceApplicants: 8, approxOdds: '100%' },
@@ -499,8 +659,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin foothills — high NR demand',
     description: 'North-central Wyoming, Bighorn Basin foothills. Draws at 16 points in regular pool. Very competitive.',
     tier: 'mid',
-    coords: { lat: 42.3, lng: -107.6 },
+    coords: { lat: 42.3594, lng: -107.8435 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 155, firstChoiceApplicants: 1189, approxOdds: '13.04%' },
+        nr_regular: { quota: 9, minPoints: 16, oddsAtMin: '10.00%', notes: '168 applicants shut out below 16 pts' },
+        nr_special: { quota: 6, minPoints: 15, oddsAtMin: '28.57%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 177, approxOdds: '1.13%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 29, approxOdds: '6.90%' },
+      },
       {
         year: 2024,
         resident: { quota: 155, firstChoiceApplicants: 1071, approxOdds: '14.47%' },
@@ -518,8 +686,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 24 antlerless elk. Low demand, very drawable.',
     tier: 'antlerless',
-    coords: { lat: 42.3, lng: -107.6 },
+    coords: { lat: 42.3594, lng: -107.8435 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 63, firstChoiceApplicants: 87, approxOdds: '72.41%' },
+        nr_regular: { quota: 9, minPoints: 0, oddsAtMin: '66.67%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 4, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 2, approxOdds: '~100%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 73, approxOdds: '86.30%' },
@@ -537,8 +713,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 24 Type 5 antlerless elk. Low demand.',
     tier: 'antlerless',
-    coords: { lat: 42.3, lng: -107.6 },
+    coords: { lat: 42.3594, lng: -107.8435 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 147, firstChoiceApplicants: 151, approxOdds: '97.35%' },
+        nr_regular: { quota: 21, minPoints: 0, oddsAtMin: '76.47%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 9, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 7, firstChoiceApplicants: 4, approxOdds: '~100%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 147, firstChoiceApplicants: 110, approxOdds: '100%' },
@@ -560,8 +744,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin north — high NR demand, tough draw',
     description: 'North-central Wyoming. Draws at 13 points in regular pool. Competitive NR unit.',
     tier: 'mid',
-    coords: { lat: 42.5, lng: -108.7 },
+    coords: { lat: 42.5451, lng: -108.432 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 138, firstChoiceApplicants: 945, approxOdds: '14.60%' },
+        nr_regular: { quota: 14, minPoints: 11, oddsAtMin: '40.00%', notes: '123 applicants shut out below 11 pts' },
+        nr_special: { quota: 9, minPoints: 12, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 126, approxOdds: '3.17%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 42, approxOdds: '7.14%' },
+      },
       {
         year: 2024,
         resident: { quota: 141, firstChoiceApplicants: 771, approxOdds: '18.29%' },
@@ -579,8 +771,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 25 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 42.5, lng: -108.7 },
+    coords: { lat: 42.5451, lng: -108.432 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 83, firstChoiceApplicants: 48, approxOdds: '~100%' },
+        nr_regular: { quota: 12, minPoints: 0, oddsAtMin: '55.56%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 4, approxOdds: '~100%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 42, approxOdds: '100%' },
@@ -598,8 +798,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 25 Type 5 antlerless elk.',
     tier: 'antlerless',
-    coords: { lat: 42.5, lng: -108.7 },
+    coords: { lat: 42.5451, lng: -108.432 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 63, firstChoiceApplicants: 13, approxOdds: '~100%' },
+        nr_regular: { quota: 9, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 4, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 10, approxOdds: '100%' },
@@ -621,8 +829,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 27 antlerless elk. Zero NR demand — guaranteed draw.',
     tier: 'antlerless',
-    coords: { lat: 43.1, lng: -108.6 },
+    coords: { lat: 42.5098, lng: -108.9553 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 63, firstChoiceApplicants: 76, approxOdds: '82.89%' },
+        nr_regular: { quota: 9, minPoints: 0, oddsAtMin: '60.00%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 4, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 4, approxOdds: '75.00%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 59, approxOdds: '100%' },
@@ -640,8 +856,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 28 antlerless elk. Very low NR demand, drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 42.5, lng: -108.8 },
+    coords: { lat: 42.7227, lng: -108.9049 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 147, firstChoiceApplicants: 167, approxOdds: '88.02%' },
+        nr_regular: { quota: 21, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 9, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 7, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 147, firstChoiceApplicants: 178, approxOdds: '82.58%' },
@@ -666,8 +890,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'South Fork and Thorofare — true wilderness elk',
     description: 'Northwest Wyoming, South Fork of the Shoshone and Thorofare country. One of the most remote elk hunts in the lower 48. Zero NR random quota — serious points build required.',
     tier: 'trophy',
-    coords: { lat: 41.6, lng: -109.5 },
+    coords: { lat: 41.3797, lng: -109.1878 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 25, firstChoiceApplicants: 691, approxOdds: '3.62%' },
+        nr_regular: { quota: 3, minPoints: 19, oddsAtMin: '75.00%', notes: '68 applicants shut out below 19 pts' },
+        nr_special: { quota: 2, minPoints: 19, oddsAtMin: '50.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 69, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 25, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 24, firstChoiceApplicants: 600, approxOdds: '4.0%' },
@@ -686,8 +918,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 30 antlerless elk. Very low NR demand.',
     tier: 'antlerless',
-    coords: { lat: 41.6, lng: -109.5 },
+    coords: { lat: 41.3797, lng: -109.1878 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 151, approxOdds: '55.63%' },
+        nr_regular: { quota: 12, minPoints: 1, oddsAtMin: '12.50%', notes: '16 applicants shut out below 1 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 23, approxOdds: '13.04%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 139, approxOdds: '60.43%' },
@@ -712,8 +952,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'North Fork Shoshone — premium Cody-area trophy unit',
     description: 'Northwest Wyoming, North Fork of the Shoshone River. Classic Cody-area elk country. High demand, zero NR random quota. One of Wyoming\'s most coveted resident draws.',
     tier: 'trophy',
-    coords: { lat: 41.7, lng: -109.1 },
+    coords: { lat: 41.1603, lng: -109.3991 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 31, firstChoiceApplicants: 1104, approxOdds: '2.81%' },
+        nr_regular: { quota: 0, minPoints: null, oddsAtMin: null, notes: 'No NR pool tags allocated in 2025' },
+        nr_special: { quota: 0, minPoints: null, oddsAtMin: null },
+        nr_random: { quota: 0, firstChoiceApplicants: 102, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 14, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 40, firstChoiceApplicants: 1096, approxOdds: '3.65%' },
@@ -732,8 +980,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 31 antlerless elk. Moderate NR demand.',
     tier: 'antlerless',
-    coords: { lat: 41.7, lng: -109.1 },
+    coords: { lat: 41.1603, lng: -109.3991 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 189, approxOdds: '44.44%' },
+        nr_regular: { quota: 12, minPoints: 3, oddsAtMin: '100.00%', notes: '38 applicants shut out below 3 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 38, approxOdds: '7.89%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 147, firstChoiceApplicants: 253, approxOdds: '58.10%' },
@@ -756,8 +1012,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Cody area — high resident demand, tough NR draw',
     description: 'Northwest Wyoming near Cody. High resident demand. NR regular pool draws at 18 points.',
     tier: 'trophy',
-    coords: { lat: 41.8, lng: -109.2 },
+    coords: { lat: 41.1096, lng: -109.0222 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 32, firstChoiceApplicants: 665, approxOdds: '4.81%' },
+        nr_regular: { quota: 3, minPoints: 19, oddsAtMin: '100.00%', notes: '55 applicants shut out below 19 pts' },
+        nr_special: { quota: 2, minPoints: 18, oddsAtMin: '66.67%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 55, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 7, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 31, firstChoiceApplicants: 626, approxOdds: '4.95%' },
@@ -776,8 +1040,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 32 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 41.8, lng: -109.2 },
+    coords: { lat: 41.1096, lng: -109.0222 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 142, approxOdds: '88.73%' },
+        nr_regular: { quota: 17, minPoints: 0, oddsAtMin: '100.00%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 126, firstChoiceApplicants: 151, approxOdds: '83.44%' },
@@ -796,8 +1068,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless archery tag',
     description: 'Unit 32 antlerless archery elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 41.8, lng: -109.2 },
+    coords: { lat: 41.1096, lng: -109.0222 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 21, firstChoiceApplicants: 1, approxOdds: '~100%' },
+        nr_regular: { quota: 3, minPoints: 0, oddsAtMin: '33.33%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 2, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 1, approxOdds: '~100%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 21, firstChoiceApplicants: 1, approxOdds: '100%' },
@@ -819,8 +1099,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Arch Creek Unit — north Wyoming near Kaycee',
     description: 'North-central Wyoming, Arch Creek drainage near Kaycee. Timbered foothills country. Draws at 6 points in regular pool — accessible for moderate-point NR hunters.',
     tier: 'accessible',
-    coords: { lat: 43.7, lng: -106.8 },
+    coords: { lat: 43.5155, lng: -106.7758 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 163, firstChoiceApplicants: 146, approxOdds: '~100%' },
+        nr_regular: { quota: 13, minPoints: 6, oddsAtMin: '60.00%', notes: '45 applicants shut out below 6 pts' },
+        nr_special: { quota: 9, minPoints: 6, oddsAtMin: '83.33%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 47, approxOdds: '8.51%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 16, approxOdds: '18.75%' },
+      },
       {
         year: 2024,
         resident: { quota: 163, firstChoiceApplicants: 141, approxOdds: '100%' },
@@ -838,8 +1126,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 33 antlerless elk. Zero NR demand.',
     tier: 'antlerless',
-    coords: { lat: 43.7, lng: -106.8 },
+    coords: { lat: 43.5155, lng: -106.7758 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 141, firstChoiceApplicants: 1, approxOdds: '~100%' },
+        nr_regular: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 142, firstChoiceApplicants: 1, approxOdds: '100%' },
@@ -861,8 +1157,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Upper Powder River Unit — Buffalo/Kaycee area',
     description: 'North-central Wyoming, upper Powder River drainage between Buffalo and Kaycee. Large quota unit with timbered mountain terrain and accessible roads. One of the more drawable limited units — realistic for hunters with 7+ points.',
     tier: 'mid',
-    coords: { lat: 43.9, lng: -106.9 },
+    coords: { lat: 43.9139, lng: -106.8708 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 644, firstChoiceApplicants: 602, approxOdds: '~100%' },
+        nr_regular: { quota: 54, minPoints: 7, oddsAtMin: '6.25%', notes: '199 applicants shut out below 7 pts' },
+        nr_special: { quota: 36, minPoints: 5, oddsAtMin: '40.00%' },
+        nr_random: { quota: 18, firstChoiceApplicants: 214, approxOdds: '8.41%' },
+        nr_special_random: { quota: 12, firstChoiceApplicants: 43, approxOdds: '27.91%' },
+      },
       {
         year: 2024,
         resident: { quota: 648, firstChoiceApplicants: 624, approxOdds: '100%' },
@@ -884,8 +1188,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Hunter Mesa Unit — Buffalo area, north Wyoming',
     description: 'North-central Wyoming, Hunter Mesa near Buffalo. Timbered country with good elk numbers. Draws at 8 points in regular pool with 20% odds. Accessible for moderate-point NR hunters.',
     tier: 'accessible',
-    coords: { lat: 44.1, lng: -106.8 },
+    coords: { lat: 44.2643, lng: -106.9014 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 122, firstChoiceApplicants: 520, approxOdds: '23.46%' },
+        nr_regular: { quota: 10, minPoints: 10, oddsAtMin: '20.00%', notes: '111 applicants shut out below 10 pts' },
+        nr_special: { quota: 7, minPoints: 3, oddsAtMin: '33.33%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 115, approxOdds: '2.61%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 5, approxOdds: '40.00%' },
+      },
       {
         year: 2024,
         resident: { quota: 122, firstChoiceApplicants: 507, approxOdds: '24.06%' },
@@ -903,8 +1215,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 35 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.1, lng: -106.8 },
+    coords: { lat: 44.2643, lng: -106.9014 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 147, firstChoiceApplicants: 120, approxOdds: '~100%' },
+        nr_regular: { quota: 21, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 9, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 7, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 147, firstChoiceApplicants: 102, approxOdds: '100%' },
@@ -922,8 +1242,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Hunter Mesa archery — Buffalo area, north Wyoming',
     description: 'North-central Wyoming, Hunter Mesa near Buffalo. Timbered mountain archery country with good September rut activity. Draws at 10 points in regular pool — mid-tier difficulty for NR archery hunters.',
     tier: 'mid',
-    coords: { lat: 44.1, lng: -106.8 },
+    coords: { lat: 44.2643, lng: -106.9014 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 61, firstChoiceApplicants: 175, approxOdds: '34.86%' },
+        nr_regular: { quota: 6, minPoints: 11, oddsAtMin: '66.67%', notes: '51 applicants shut out below 10 pts' },
+        nr_special: { quota: 4, minPoints: 7, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 51, approxOdds: '1.96%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 15, approxOdds: '6.67%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 190, approxOdds: '33.16%' },
@@ -945,8 +1273,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 36 antlerless elk. Northern Bighorn Mountains, Rock Creek drainage out of Buffalo. Very low NR demand, essentially guaranteed.',
     tier: 'antlerless',
-    coords: { lat: 44.3, lng: -106.9 },
+    coords: { lat: 44.4326, lng: -106.9249 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 265, firstChoiceApplicants: 23, approxOdds: '~100%' },
+        nr_regular: { quota: 36, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 15, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 11, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 273, firstChoiceApplicants: 22, approxOdds: '100%' },
@@ -964,8 +1300,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Northern Bighorn Mountains — Rock Creek drainage out of Buffalo',
     description: 'North-central Wyoming, northern Bighorn Mountains in the Rock Creek drainage accessed out of Buffalo. Timbered mountain country with solid elk numbers and good September rut activity. Lower pressure than many Bighorn units. Draws at 4 points in the regular pool with 14.29% odds — one of the most accessible archery elk units in the Bighorns.',
     tier: 'accessible',
-    coords: { lat: 44.3, lng: -106.9 },
+    coords: { lat: 44.4326, lng: -106.9249 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 63, firstChoiceApplicants: 21, approxOdds: '~100%' },
+        nr_regular: { quota: 6, minPoints: 7, oddsAtMin: '100.00%', notes: '31 applicants shut out below 7 pts' },
+        nr_special: { quota: 4, minPoints: 4, oddsAtMin: '33.33%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 31, approxOdds: '3.23%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 3, approxOdds: '33.33%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 23, approxOdds: '100%' },
@@ -987,8 +1331,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Clear Creek Unit — Buffalo area archery',
     description: 'North-central Wyoming, Clear Creek drainage near Buffalo. Timbered mountain country with good September archery hunting and solid elk numbers. Draws at 7 points in regular pool — a mid-tier archery commitment for NR hunters.',
     tier: 'mid',
-    coords: { lat: 44.4, lng: -106.7 },
+    coords: { lat: 44.6643, lng: -107.1455 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 130, approxOdds: '96.92%' },
+        nr_regular: { quota: 11, minPoints: 7, oddsAtMin: '25.00%', notes: '63 applicants shut out below 7 pts' },
+        nr_special: { quota: 8, minPoints: 5, oddsAtMin: '60.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 69, approxOdds: '4.35%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 7, approxOdds: '28.57%' },
+      },
       {
         year: 2024,
         resident: { quota: 126, firstChoiceApplicants: 149, approxOdds: '84.56%' },
@@ -1011,8 +1363,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Piney Creek Unit — Sheridan area, north Bighorns',
     description: 'North-central Wyoming, Piney Creek drainage near Sheridan. Premium trophy unit in the northern Bighorn Mountains. High NR demand across all pools. Draws at 11 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.6, lng: -106.8 },
+    coords: { lat: 44.8571, lng: -107.5581 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 81, firstChoiceApplicants: 529, approxOdds: '15.31%' },
+        nr_regular: { quota: 7, minPoints: 14, oddsAtMin: '33.33%', notes: '334 applicants shut out below 14 pts' },
+        nr_special: { quota: 6, minPoints: 10, oddsAtMin: '80.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 338, approxOdds: '0.59%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 59, approxOdds: '1.69%' },
+      },
       {
         year: 2024,
         resident: { quota: 333, firstChoiceApplicants: 1076, approxOdds: '30.95%' },
@@ -1031,8 +1391,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 38 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.6, lng: -106.8 },
+    coords: { lat: 44.8571, lng: -107.5581 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 312, firstChoiceApplicants: 336, approxOdds: '92.86%' },
+        nr_regular: { quota: 40, minPoints: 1, oddsAtMin: '73.33%', notes: '42 applicants shut out below 1 pts' },
+        nr_special: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 13, firstChoiceApplicants: 50, approxOdds: '26.00%' },
+        nr_special_random: { quota: 6, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 459, firstChoiceApplicants: 461, approxOdds: '99.57%' },
@@ -1051,8 +1419,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Piney Creek archery — Sheridan area premium bow unit',
     description: 'North-central Wyoming, Piney Creek drainage near Sheridan. Premium archery unit in the northern Bighorns with very high NR demand in all pools. Draws at 14 points in regular pool with 30.77% odds. One of Wyoming\'s most sought-after archery units.',
     tier: 'trophy',
-    coords: { lat: 44.6, lng: -106.8 },
+    coords: { lat: 44.8571, lng: -107.5581 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 210, firstChoiceApplicants: 813, approxOdds: '25.83%' },
+        nr_regular: { quota: 18, minPoints: 15, oddsAtMin: '100.00%', notes: '330 applicants shut out below 15 pts' },
+        nr_special: { quota: 12, minPoints: 13, oddsAtMin: '11.76%' },
+        nr_random: { quota: 6, firstChoiceApplicants: 330, approxOdds: '1.82%' },
+        nr_special_random: { quota: 4, firstChoiceApplicants: 102, approxOdds: '3.92%' },
+      },
       {
         year: 2024,
         resident: { quota: 210, firstChoiceApplicants: 997, approxOdds: '21.06%' },
@@ -1074,8 +1450,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Tongue River Unit — Sheridan area',
     description: 'North-central Wyoming, Tongue River drainage near Sheridan. Solid elk numbers with good resident draw odds. Draws at 9 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.7, lng: -107.0 },
+    coords: { lat: 44.9022, lng: -108.0285 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 143, firstChoiceApplicants: 411, approxOdds: '34.79%' },
+        nr_regular: { quota: 12, minPoints: 10, oddsAtMin: '33.33%', notes: '140 applicants shut out below 10 pts' },
+        nr_special: { quota: 9, minPoints: 7, oddsAtMin: '42.86%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 144, approxOdds: '2.78%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 28, approxOdds: '10.71%' },
+      },
       {
         year: 2024,
         resident: { quota: 163, firstChoiceApplicants: 420, approxOdds: '38.81%' },
@@ -1093,8 +1477,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 39 antlerless elk. Low NR demand.',
     tier: 'antlerless',
-    coords: { lat: 44.7, lng: -107.0 },
+    coords: { lat: 44.9022, lng: -108.0285 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 140, approxOdds: '90.00%' },
+        nr_regular: { quota: 17, minPoints: 2, oddsAtMin: '46.15%', notes: '17 applicants shut out below 1 pts' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 23, approxOdds: '21.74%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 126, firstChoiceApplicants: 153, approxOdds: '82.35%' },
@@ -1112,8 +1504,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Tongue River archery — Sheridan area',
     description: 'North-central Wyoming, Tongue River drainage near Sheridan. Remote timbered country with solid bull potential and good September archery hunting. Draws at 13 points in regular pool — serious commitment for NR hunters.',
     tier: 'mid',
-    coords: { lat: 44.7, lng: -107.0 },
+    coords: { lat: 44.9022, lng: -108.0285 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 251, approxOdds: '33.47%' },
+        nr_regular: { quota: 7, minPoints: 14, oddsAtMin: '87.50%', notes: '96 applicants shut out below 14 pts' },
+        nr_special: { quota: 6, minPoints: 12, oddsAtMin: '85.71%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 96, approxOdds: '2.08%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 37, approxOdds: '2.70%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 227, approxOdds: '37.0%' },
@@ -1135,8 +1535,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Horse Creek Unit — Sheridan area',
     description: 'North-central Wyoming, Horse Creek drainage near Sheridan. Timbered mountain country with good elk numbers. Draws at 10 points in regular pool with 25% odds.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -107.1 },
+    coords: { lat: 44.6591, lng: -107.8955 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 147, firstChoiceApplicants: 459, approxOdds: '32.03%' },
+        nr_regular: { quota: 12, minPoints: 10, oddsAtMin: '44.44%', notes: '149 applicants shut out below 10 pts' },
+        nr_special: { quota: 8, minPoints: 9, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 154, approxOdds: '1.95%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 46, approxOdds: '4.35%' },
+      },
       {
         year: 2024,
         resident: { quota: 188, firstChoiceApplicants: 411, approxOdds: '45.74%' },
@@ -1154,8 +1562,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 40 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 44.5, lng: -107.1 },
+    coords: { lat: 44.6591, lng: -107.8955 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 105, firstChoiceApplicants: 84, approxOdds: '~100%' },
+        nr_regular: { quota: 14, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 105, firstChoiceApplicants: 56, approxOdds: '100%' },
@@ -1173,8 +1589,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Horse Creek archery — Sheridan area',
     description: 'North-central Wyoming, Horse Creek drainage near Sheridan. Timbered mountain archery country with good September rut hunting. Draws at 10 points in regular pool — a mid-tier archery unit for NR hunters building a point bank.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -107.1 },
+    coords: { lat: 44.6591, lng: -107.8955 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 63, firstChoiceApplicants: 128, approxOdds: '49.22%' },
+        nr_regular: { quota: 5, minPoints: 11, oddsAtMin: '100.00%', notes: '40 applicants shut out below 11 pts' },
+        nr_special: { quota: 3, minPoints: 7, oddsAtMin: '50.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 40, approxOdds: '2.50%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 29, approxOdds: '3.45%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 114, approxOdds: '73.68%' },
@@ -1196,8 +1620,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Medicine Lodge Unit — Shell/Hyattville area',
     description: 'North-central Wyoming, Medicine Lodge drainage near Shell and Hyattville. Large quota unit with strong resident odds and good elk numbers. NR hunters can draw with 9 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.4, lng: -107.7 },
+    coords: { lat: 44.4206, lng: -107.6741 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 206, firstChoiceApplicants: 307, approxOdds: '67.10%' },
+        nr_regular: { quota: 17, minPoints: 10, oddsAtMin: '66.67%', notes: '142 applicants shut out below 10 pts' },
+        nr_special: { quota: 12, minPoints: 6, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 145, approxOdds: '3.45%' },
+        nr_special_random: { quota: 4, firstChoiceApplicants: 29, approxOdds: '13.79%' },
+      },
       {
         year: 2024,
         resident: { quota: 226, firstChoiceApplicants: 380, approxOdds: '59.47%' },
@@ -1215,8 +1647,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin Type 2 — drawable with 8 points',
     description: 'Unit 41 Type 2 any elk. Draws at 8 points in regular pool.',
     tier: 'accessible',
-    coords: { lat: 44.4, lng: -107.7 },
+    coords: { lat: 44.4206, lng: -107.6741 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 57, firstChoiceApplicants: 114, approxOdds: '50.00%' },
+        nr_regular: { quota: 6, minPoints: 5, oddsAtMin: '100.00%', notes: '23 applicants shut out below 5 pts' },
+        nr_special: { quota: 4, minPoints: 6, oddsAtMin: '33.33%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 23, approxOdds: '4.35%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 13, approxOdds: '7.69%' },
+      },
       {
         year: 2024,
         resident: { quota: 79, firstChoiceApplicants: 102, approxOdds: '77.45%' },
@@ -1234,8 +1674,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin Type 3 — very limited quota',
     description: 'Unit 41 Type 3 any elk. Very limited quota. Draws at 13 points.',
     tier: 'mid',
-    coords: { lat: 44.4, lng: -107.7 },
+    coords: { lat: 44.4206, lng: -107.6741 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 17, firstChoiceApplicants: 37, approxOdds: '45.95%' },
+        nr_regular: { quota: 0, minPoints: null, oddsAtMin: null, notes: 'No NR pool tags allocated in 2025' },
+        nr_special: { quota: 1, minPoints: 8, oddsAtMin: '50.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 9, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 26, firstChoiceApplicants: 38, approxOdds: '68.42%' },
@@ -1253,8 +1701,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 41 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 44.4, lng: -107.7 },
+    coords: { lat: 44.4206, lng: -107.6741 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 316, firstChoiceApplicants: 54, approxOdds: '~100%' },
+        nr_regular: { quota: 42, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 14, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 294, firstChoiceApplicants: 52, approxOdds: '100%' },
@@ -1272,8 +1728,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bighorn Basin foothills archery — moderate demand',
     description: 'Unit 41 archery elk. Draws at 10 points in regular pool with 16.67% odds.',
     tier: 'mid',
-    coords: { lat: 44.4, lng: -107.7 },
+    coords: { lat: 44.4206, lng: -107.6741 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 231, approxOdds: '36.36%' },
+        nr_regular: { quota: 7, minPoints: 11, oddsAtMin: '50.00%', notes: '56 applicants shut out below 10 pts' },
+        nr_special: { quota: 6, minPoints: 9, oddsAtMin: '14.29%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 56, approxOdds: '3.57%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 24, approxOdds: '4.17%' },
+      },
       {
         year: 2024,
         resident: { quota: 104, firstChoiceApplicants: 255, approxOdds: '40.78%' },
@@ -1296,8 +1760,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Paint Rock Unit — Greybull/Hyattville area',
     description: 'North-central Wyoming, Paint Rock Creek drainage near Greybull and Hyattville. Quality elk country in the Bighorn Mountains foothills with high NR demand. Draws at 12-13 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.3, lng: -107.6 },
+    coords: { lat: 44.1893, lng: -107.4822 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 230, firstChoiceApplicants: 920, approxOdds: '25.00%' },
+        nr_regular: { quota: 21, minPoints: 12, oddsAtMin: '16.00%', notes: '199 applicants shut out below 12 pts' },
+        nr_special: { quota: 15, minPoints: 12, oddsAtMin: '83.33%' },
+        nr_random: { quota: 7, firstChoiceApplicants: 218, approxOdds: '3.21%' },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 42, approxOdds: '11.90%' },
+      },
       {
         year: 2024,
         resident: { quota: 268, firstChoiceApplicants: 919, approxOdds: '29.16%' },
@@ -1316,8 +1788,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 45 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.3, lng: -107.6 },
+    coords: { lat: 44.1893, lng: -107.4822 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 210, firstChoiceApplicants: 100, approxOdds: '~100%' },
+        nr_regular: { quota: 29, minPoints: 0, oddsAtMin: '25.00%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 12, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 9, firstChoiceApplicants: 18, approxOdds: '50.00%' },
+        nr_special_random: { quota: 4, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 210, firstChoiceApplicants: 84, approxOdds: '100%' },
@@ -1336,8 +1816,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 45 Type 5 antlerless elk.',
     tier: 'antlerless',
-    coords: { lat: 44.3, lng: -107.6 },
+    coords: { lat: 44.1893, lng: -107.4822 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 167, firstChoiceApplicants: 117, approxOdds: '~100%' },
+        nr_regular: { quota: 22, minPoints: 1, oddsAtMin: '66.67%', notes: '28 applicants shut out below 0 pts' },
+        nr_special: { quota: 10, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 7, firstChoiceApplicants: 28, approxOdds: '25.00%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 168, firstChoiceApplicants: 132, approxOdds: '100%' },
@@ -1356,8 +1844,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Paint Rock archery — Greybull/Hyattville area',
     description: 'North-central Wyoming, Paint Rock Creek drainage near Greybull and Hyattville. Premium archery elk country in timbered Bighorn Mountain terrain. September archery hunting with good rut activity. Draws at 12 points in regular pool — a serious but achievable mid-tier commitment for NR hunters.',
     tier: 'mid',
-    coords: { lat: 44.3, lng: -107.6 },
+    coords: { lat: 44.1893, lng: -107.4822 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 140, firstChoiceApplicants: 452, approxOdds: '30.97%' },
+        nr_regular: { quota: 12, minPoints: 13, oddsAtMin: '33.33%', notes: '160 applicants shut out below 13 pts' },
+        nr_special: { quota: 9, minPoints: 12, oddsAtMin: '20.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 164, approxOdds: '2.44%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 65, approxOdds: '4.62%' },
+      },
       {
         year: 2024,
         resident: { quota: 143, firstChoiceApplicants: 441, approxOdds: '32.43%' },
@@ -1379,8 +1875,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River area — accessible, low demand',
     description: 'West-central Wyoming. Low NR demand — draws at 3 points in regular pool with 66.67% odds. Good option for lower-point hunters.',
     tier: 'accessible',
-    coords: { lat: 43.3, lng: -108.1 },
+    coords: { lat: 43.4466, lng: -107.9551 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 103, firstChoiceApplicants: 70, approxOdds: '~100%' },
+        nr_regular: { quota: 9, minPoints: 4, oddsAtMin: '33.33%', notes: '30 applicants shut out below 3 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 37, approxOdds: '8.11%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 102, firstChoiceApplicants: 72, approxOdds: '100%' },
@@ -1403,8 +1907,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River country — accessible mountain elk',
     description: 'West-central Wyoming, Wind River Range foothills. Solid elk numbers, accessible terrain, and drawable for moderate-point NR hunters at 7 points.',
     tier: 'mid',
-    coords: { lat: 44.0, lng: -107.4 },
+    coords: { lat: 43.4357, lng: -107.524 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 306, firstChoiceApplicants: 302, approxOdds: '~100%' },
+        nr_regular: { quota: 27, minPoints: 8, oddsAtMin: '25.00%', notes: '110 applicants shut out below 8 pts' },
+        nr_special: { quota: 18, minPoints: 3, oddsAtMin: '100.00%' },
+        nr_random: { quota: 9, firstChoiceApplicants: 116, approxOdds: '7.76%' },
+        nr_special_random: { quota: 6, firstChoiceApplicants: 12, approxOdds: '50.00%' },
+      },
       {
         year: 2024,
         resident: { quota: 306, firstChoiceApplicants: 273, approxOdds: '100%' },
@@ -1423,8 +1935,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 48 antlerless elk. Zero NR demand.',
     tier: 'antlerless',
-    coords: { lat: 44.0, lng: -107.4 },
+    coords: { lat: 43.4357, lng: -107.524 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 119, firstChoiceApplicants: 1, approxOdds: '~100%' },
+        nr_regular: { quota: 15, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 120, firstChoiceApplicants: 6, approxOdds: '100%' },
@@ -1446,8 +1966,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River south — moderate draw difficulty',
     description: 'West-central Wyoming. Draws at 9-10 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 43.9, lng: -107.2 },
+    coords: { lat: 43.8535, lng: -107.5493 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 261, firstChoiceApplicants: 299, approxOdds: '87.29%' },
+        nr_regular: { quota: 17, minPoints: 9, oddsAtMin: '100.00%', notes: '86 applicants shut out below 9 pts' },
+        nr_special: { quota: 12, minPoints: 5, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 86, approxOdds: '5.81%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 28, approxOdds: '10.71%' },
+      },
       {
         year: 2024,
         resident: { quota: 258, firstChoiceApplicants: 327, approxOdds: '78.90%' },
@@ -1465,8 +1993,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 49 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 43.9, lng: -107.2 },
+    coords: { lat: 43.8535, lng: -107.5493 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 141, firstChoiceApplicants: 17, approxOdds: '~100%' },
+        nr_regular: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 86, firstChoiceApplicants: 18, approxOdds: '100%' },
@@ -1489,8 +2025,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Sunlight Unit — Cody area, Sunlight Basin',
     description: 'Northwest Wyoming, Sunlight Basin north of Cody. Remote mountain country with quality bulls. Moderate NR demand. Draws at 12 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.6, lng: -109.3 },
+    coords: { lat: 44.8144, lng: -109.6624 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 100, firstChoiceApplicants: 285, approxOdds: '35.09%' },
+        nr_regular: { quota: 9, minPoints: 16, oddsAtMin: '75.00%', notes: '227 applicants shut out below 16 pts' },
+        nr_special: { quota: 6, minPoints: 10, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 228, approxOdds: '0.88%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 51, approxOdds: '3.92%' },
+      },
       {
         year: 2024,
         resident: { quota: 100, firstChoiceApplicants: 297, approxOdds: '33.67%' },
@@ -1509,8 +2053,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Upper Green River north zone',
     description: 'Unit 51 North zone. Very limited quota, draws at 11 points.',
     tier: 'mid',
-    coords: { lat: 44.6, lng: -109.3 },
+    coords: { lat: 44.8144, lng: -109.6624 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 34, firstChoiceApplicants: 82, approxOdds: '41.46%' },
+        nr_regular: { quota: 3, minPoints: 7, oddsAtMin: '100.00%', notes: '8 applicants shut out below 7 pts' },
+        nr_special: { quota: 2, minPoints: 6, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 8, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 1, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 34, firstChoiceApplicants: 76, approxOdds: '44.74%' },
@@ -1529,8 +2081,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 51 antlerless elk. Low NR demand.',
     tier: 'antlerless',
-    coords: { lat: 44.6, lng: -109.3 },
+    coords: { lat: 44.8144, lng: -109.6624 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 42, firstChoiceApplicants: 116, approxOdds: '36.21%' },
+        nr_regular: { quota: 6, minPoints: 2, oddsAtMin: '100.00%', notes: '26 applicants shut out below 1 pts' },
+        nr_special: { quota: 3, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 26, approxOdds: '3.85%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 42, firstChoiceApplicants: 113, approxOdds: '37.17%' },
@@ -1549,8 +2109,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Sunlight Basin archery — Cody area',
     description: 'Northwest Wyoming, Sunlight Basin north and east of Cody. Remote mountain archery country with quality bulls and good September rut hunting. Draws at 8 points in regular pool, accessible via special pool at 6 points.',
     tier: 'mid',
-    coords: { lat: 44.6, lng: -109.3 },
+    coords: { lat: 44.8144, lng: -109.6624 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 67, firstChoiceApplicants: 82, approxOdds: '81.71%' },
+        nr_regular: { quota: 6, minPoints: 10, oddsAtMin: '66.67%', notes: '46 applicants shut out below 9 pts' },
+        nr_special: { quota: 5, minPoints: 4, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 46, approxOdds: '2.17%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 6, approxOdds: '16.67%' },
+      },
       {
         year: 2024,
         resident: { quota: 67, firstChoiceApplicants: 77, approxOdds: '87.01%' },
@@ -1575,8 +2143,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bald Ridge Unit — Cody area',
     description: 'Northwest Wyoming, Bald Ridge drainage near Cody. Remote mountain country with quality bulls. Small quota with moderate point requirements.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -109.1 },
+    coords: { lat: 44.7504, lng: -109.289 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 39, firstChoiceApplicants: 151, approxOdds: '25.83%' },
+        nr_regular: { quota: 3, minPoints: 10, oddsAtMin: '50.00%', notes: '68 applicants shut out below 10 pts' },
+        nr_special: { quota: 3, minPoints: 12, oddsAtMin: '50.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 69, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 24, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 50, firstChoiceApplicants: 180, approxOdds: '27.78%' },
@@ -1595,8 +2171,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bridger Wilderness edge Type 2',
     description: 'Unit 54 Type 2 elk. Draws at 11 points.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -109.1 },
+    coords: { lat: 44.7504, lng: -109.289 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 21, firstChoiceApplicants: 80, approxOdds: '26.25%' },
+        nr_regular: { quota: 2, minPoints: 15, oddsAtMin: '50.00%', notes: '15 applicants shut out below 14 pts' },
+        nr_special: { quota: 2, minPoints: 11, oddsAtMin: '50.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 15, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 5, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 21, firstChoiceApplicants: 63, approxOdds: '33.33%' },
@@ -1615,8 +2199,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bridger Wilderness edge Type 3 — very limited',
     description: 'Unit 54 Type 3. Quota of 1 — essentially a raffle.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -109.1 },
+    coords: { lat: 44.7504, lng: -109.289 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 16, firstChoiceApplicants: 103, approxOdds: '15.53%' },
+        nr_regular: { quota: 1, minPoints: 15, oddsAtMin: '100.00%', notes: '10 applicants shut out below 15 pts' },
+        nr_special: { quota: 1, minPoints: 17, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 10, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 10, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 2, firstChoiceApplicants: 78, approxOdds: '2.56%' },
@@ -1637,8 +2229,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Bridger Wilderness archery — good bow country',
     description: 'Unit 54 archery elk. Draws at 12 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -109.1 },
+    coords: { lat: 44.7504, lng: -109.289 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 34, firstChoiceApplicants: 61, approxOdds: '55.74%' },
+        nr_regular: { quota: 3, minPoints: 12, oddsAtMin: '100.00%', notes: '20 applicants shut out below 12 pts' },
+        nr_special: { quota: 2, minPoints: 10, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 20, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 4, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 34, firstChoiceApplicants: 44, approxOdds: '77.27%' },
@@ -1661,8 +2261,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Grinnell Unit — Cody area',
     description: 'Northwest Wyoming, Grinnell area near Cody. Remote mountain elk country with small quota. Draws at 13 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.4, lng: -109.0 },
+    coords: { lat: 44.474, lng: -109.8986 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 50, firstChoiceApplicants: 196, approxOdds: '25.51%' },
+        nr_regular: { quota: 5, minPoints: 16, oddsAtMin: '50.00%', notes: '68 applicants shut out below 16 pts' },
+        nr_special: { quota: 3, minPoints: 12, oddsAtMin: '50.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 69, approxOdds: '1.45%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 18, approxOdds: '5.56%' },
+      },
       {
         year: 2024,
         resident: { quota: 50, firstChoiceApplicants: 185, approxOdds: '27.03%' },
@@ -1681,8 +2289,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River south archery',
     description: 'Unit 55 archery elk. Draws at 9 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.4, lng: -109.0 },
+    coords: { lat: 44.474, lng: -109.8986 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 21, firstChoiceApplicants: 35, approxOdds: '60.00%' },
+        nr_regular: { quota: 2, minPoints: 8, oddsAtMin: '100.00%', notes: '14 applicants shut out below 8 pts' },
+        nr_special: { quota: 2, minPoints: 6, oddsAtMin: '40.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 14, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 6, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 21, firstChoiceApplicants: 22, approxOdds: '100%' },
@@ -1707,8 +2323,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wapiti Ridge Unit — Cody area trophy unit',
     description: 'Northwest Wyoming, Wapiti Ridge near Cody. Remote pack-in country with quality trophy bulls. Minimal NR quota. Draws at 18 points with only 16.67% odds — one of the toughest draws near Cody.',
     tier: 'trophy',
-    coords: { lat: 44.5, lng: -109.6 },
+    coords: { lat: 44.3952, lng: -109.5735 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 8, firstChoiceApplicants: 260, approxOdds: '3.08%' },
+        nr_regular: { quota: 1, minPoints: 19, oddsAtMin: '25.00%', notes: '50 applicants shut out below 19 pts' },
+        nr_special: { quota: 1, minPoints: 19, oddsAtMin: '33.33%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 53, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 14, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 8, firstChoiceApplicants: 205, approxOdds: '3.90%' },
@@ -1729,8 +2353,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wapiti Ridge archery — Cody area, surprisingly accessible',
     description: 'Northwest Wyoming, Wapiti Ridge near Cody. Premium archery elk country with strong trophy potential. Draws at 4 points in regular pool — surprisingly accessible for what this area holds.',
     tier: 'accessible',
-    coords: { lat: 44.5, lng: -109.6 },
+    coords: { lat: 44.3952, lng: -109.5735 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 25, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_regular: { quota: 3, minPoints: 5, oddsAtMin: '100.00%', notes: '4 applicants shut out below 4 pts' },
+        nr_special: { quota: 2, minPoints: 1, oddsAtMin: '66.67%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 4, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 1, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 25, firstChoiceApplicants: 2, approxOdds: '100%' },
@@ -1755,8 +2387,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Ishawoa Unit — Cody area, high demand trophy unit',
     description: 'Northwest Wyoming, Ishawoa drainage near Cody. High demand trophy elk country with zero NR random quota. Draws at 17-18 points in regular pool — serious long-term commitment required.',
     tier: 'trophy',
-    coords: { lat: 44.2, lng: -109.4 },
+    coords: { lat: 44.3709, lng: -109.1256 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 20, firstChoiceApplicants: 202, approxOdds: '9.90%' },
+        nr_regular: { quota: 3, minPoints: 12, oddsAtMin: '50.00%', notes: '26 applicants shut out below 12 pts' },
+        nr_special: { quota: 3, minPoints: 19, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 27, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 19, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 21, firstChoiceApplicants: 225, approxOdds: '9.33%' },
@@ -1775,8 +2415,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Deer Creek Unit — Meeteetse area',
     description: 'Northwest Wyoming, Deer Creek drainage near Meeteetse. Tiny NR quota with very high point requirements. Draws at 18 points with only 20% odds in regular pool.',
     tier: 'trophy',
-    coords: { lat: 44.1, lng: -108.9 },
+    coords: { lat: 44.077, lng: -109.6137 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 8, firstChoiceApplicants: 203, approxOdds: '3.94%' },
+        nr_regular: { quota: 1, minPoints: 19, oddsAtMin: '14.29%', notes: '33 applicants shut out below 19 pts' },
+        nr_special: { quota: 1, minPoints: 19, oddsAtMin: '20.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 39, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 11, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 8, firstChoiceApplicants: 191, approxOdds: '4.19%' },
@@ -1795,8 +2443,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Yellowstone boundary archery',
     description: 'Unit 59 archery elk. Very small quota, moderate demand.',
     tier: 'mid',
-    coords: { lat: 44.1, lng: -108.9 },
+    coords: { lat: 44.077, lng: -109.6137 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 21, firstChoiceApplicants: 2, approxOdds: '~100%' },
+        nr_regular: { quota: 3, minPoints: 4, oddsAtMin: '66.67%', notes: '14 applicants shut out below 3 pts' },
+        nr_special: { quota: 2, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 14, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 21, firstChoiceApplicants: 0, approxOdds: '100%' },
@@ -1821,8 +2477,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Thorofare Unit — most remote elk hunt in the lower 48',
     description: 'Northwest Wyoming, Thorofare country near Cody — one of the most remote wilderness areas in the lower 48. Pack-in only archery elk with exceptional trophy potential. Very small quota. Access via long trail from east side. A true bucket-list wilderness archery hunt.',
     tier: 'trophy',
-    coords: { lat: 43.9, lng: -110.1 },
+    coords: { lat: 44.1049, lng: -109.9405 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 17, firstChoiceApplicants: 1, approxOdds: '~100%' },
+        nr_regular: { quota: 3, minPoints: 4, oddsAtMin: '100.00%', notes: '13 applicants shut out below 3 pts' },
+        nr_special: { quota: 2, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 13, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 17, firstChoiceApplicants: 2, approxOdds: '100%' },
@@ -1845,8 +2509,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'North Greybull River Unit — Meeteetse area',
     description: 'Northwest Wyoming, North Greybull River drainage near Meeteetse. Good elk country with high resident demand. Draws at 11 points in regular pool with 20% odds.',
     tier: 'mid',
-    coords: { lat: 44.3, lng: -108.8 },
+    coords: { lat: 44.1403, lng: -109.217 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 125, firstChoiceApplicants: 345, approxOdds: '36.23%' },
+        nr_regular: { quota: 11, minPoints: 14, oddsAtMin: '100.00%', notes: '86 applicants shut out below 14 pts' },
+        nr_special: { quota: 8, minPoints: 12, oddsAtMin: '33.33%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 86, approxOdds: '3.49%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 41, approxOdds: '4.88%' },
+      },
       {
         year: 2024,
         resident: { quota: 126, firstChoiceApplicants: 398, approxOdds: '31.66%' },
@@ -1865,8 +2537,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River south Type 2 — very limited quota',
     description: 'Unit 61 Type 2. Zero NR quota issued in 2024.',
     tier: 'mid',
-    coords: { lat: 44.3, lng: -108.8 },
+    coords: { lat: 44.1403, lng: -109.217 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 35, firstChoiceApplicants: 271, approxOdds: '12.92%' },
+        nr_regular: { quota: 0, minPoints: null, oddsAtMin: null, notes: 'No NR pool tags allocated in 2025' },
+        nr_special: { quota: 0, minPoints: null, oddsAtMin: null },
+        nr_random: { quota: 0, firstChoiceApplicants: 26, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 7, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 34, firstChoiceApplicants: 314, approxOdds: '10.83%' },
@@ -1885,8 +2565,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 61 antlerless elk. Low demand, drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.3, lng: -108.8 },
+    coords: { lat: 44.1403, lng: -109.217 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 27, approxOdds: '~100%' },
+        nr_regular: { quota: 11, minPoints: 0, oddsAtMin: '68.75%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 5, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 5, approxOdds: '60.00%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 171, firstChoiceApplicants: 27, approxOdds: '100%' },
@@ -1905,8 +2593,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River south archery',
     description: 'Unit 61 archery elk. Very low demand — essentially zero NR quota available.',
     tier: 'mid',
-    coords: { lat: 44.3, lng: -108.8 },
+    coords: { lat: 44.1403, lng: -109.217 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 21, firstChoiceApplicants: 57, approxOdds: '36.84%' },
+        nr_regular: { quota: 2, minPoints: 8, oddsAtMin: '100.00%', notes: '31 applicants shut out below 8 pts' },
+        nr_special: { quota: 2, minPoints: 4, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 31, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 23, firstChoiceApplicants: 22, approxOdds: '100%' },
@@ -1929,8 +2625,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'South Greybull River Unit — Meeteetse area',
     description: 'Northwest Wyoming, South Greybull River drainage near Meeteetse. High NR demand trophy elk country. Draws at 14 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 44.1, lng: -108.7 },
+    coords: { lat: 44.0172, lng: -109.2153 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 101, firstChoiceApplicants: 561, approxOdds: '18.00%' },
+        nr_regular: { quota: 8, minPoints: 16, oddsAtMin: '33.33%', notes: '228 applicants shut out below 16 pts' },
+        nr_special: { quota: 6, minPoints: 13, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 230, approxOdds: '0.87%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 52, approxOdds: '1.92%' },
+      },
       {
         year: 2024,
         resident: { quota: 100, firstChoiceApplicants: 597, approxOdds: '16.75%' },
@@ -1949,8 +2653,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 62 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.1, lng: -108.7 },
+    coords: { lat: 44.0172, lng: -109.2153 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 63, firstChoiceApplicants: 15, approxOdds: '~100%' },
+        nr_regular: { quota: 9, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 4, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 11, approxOdds: '100%' },
@@ -1969,8 +2681,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 62 Type 5 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 44.1, lng: -108.7 },
+    coords: { lat: 44.0172, lng: -109.2153 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 147, firstChoiceApplicants: 136, approxOdds: '~100%' },
+        nr_regular: { quota: 14, minPoints: 0, oddsAtMin: '15.00%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 9, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 17, approxOdds: '23.53%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 146, firstChoiceApplicants: 114, approxOdds: '100%' },
@@ -1993,8 +2713,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wood River Unit — Meeteetse area',
     description: 'Northwest Wyoming, Wood River drainage near Meeteetse. Very high NR demand trophy elk country. Draws at 15 points in regular pool with 50% odds.',
     tier: 'trophy',
-    coords: { lat: 43.9, lng: -109.3 },
+    coords: { lat: 43.9508, lng: -108.9716 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 133, firstChoiceApplicants: 628, approxOdds: '21.18%' },
+        nr_regular: { quota: 8, minPoints: 16, oddsAtMin: '42.86%', notes: '201 applicants shut out below 16 pts' },
+        nr_special: { quota: 6, minPoints: 16, oddsAtMin: '66.67%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 205, approxOdds: '0.98%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 96, approxOdds: '2.08%' },
+      },
       {
         year: 2024,
         resident: { quota: 140, firstChoiceApplicants: 622, approxOdds: '22.51%' },
@@ -2013,8 +2741,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Dubois area Type 2',
     description: 'Unit 63 Type 2 elk. Very small quota, draws at 5+ points.',
     tier: 'mid',
-    coords: { lat: 43.9, lng: -109.3 },
+    coords: { lat: 43.9508, lng: -108.9716 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 28, firstChoiceApplicants: 68, approxOdds: '41.18%' },
+        nr_regular: { quota: 3, minPoints: 6, oddsAtMin: '33.33%', notes: '3 applicants shut out below 6 pts' },
+        nr_special: { quota: 3, minPoints: 5, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 4, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 1, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 29, firstChoiceApplicants: 86, approxOdds: '33.72%' },
@@ -2033,8 +2769,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Dubois area Type 3',
     description: 'Unit 63 Type 3 elk. Very high NR demand. Draws at 14 points in regular pool with 20% odds.',
     tier: 'mid',
-    coords: { lat: 43.9, lng: -109.3 },
+    coords: { lat: 43.9508, lng: -108.9716 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 54, firstChoiceApplicants: 279, approxOdds: '19.35%' },
+        nr_regular: { quota: 5, minPoints: 15, oddsAtMin: '33.33%', notes: '82 applicants shut out below 15 pts' },
+        nr_special: { quota: 3, minPoints: 14, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 84, approxOdds: '1.19%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 37, approxOdds: '2.70%' },
+      },
       {
         year: 2024,
         resident: { quota: 56, firstChoiceApplicants: 299, approxOdds: '18.73%' },
@@ -2053,8 +2797,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 63 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 43.9, lng: -109.3 },
+    coords: { lat: 43.9508, lng: -108.9716 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 83, firstChoiceApplicants: 19, approxOdds: '~100%' },
+        nr_regular: { quota: 12, minPoints: 0, oddsAtMin: '60.00%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 6, approxOdds: '66.67%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 82, firstChoiceApplicants: 14, approxOdds: '100%' },
@@ -2076,8 +2828,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Northeast of Cody — remote Bighorn Basin fringe',
     description: 'Northwest Wyoming, northeast of Cody in the drainages off the eastern Absaroka foothills. Remote terrain with limited road access. Zero NR regular quota issued in 2024 — essentially no regular pool draw opportunity for NR hunters.',
     tier: 'mid',
-    coords: { lat: 44.6, lng: -109.0 },
+    coords: { lat: 44.7378, lng: -108.6493 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 16, firstChoiceApplicants: 54, approxOdds: '29.63%' },
+        nr_regular: { quota: 1, minPoints: 10, oddsAtMin: '100.00%', notes: '17 applicants shut out below 10 pts' },
+        nr_special: { quota: 2, minPoints: 0, oddsAtMin: '50.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 17, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 17, firstChoiceApplicants: 54, approxOdds: '31.48%' },
@@ -2095,8 +2855,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 65 antlerless elk. Northeast of Cody, eastern Absaroka fringe. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 44.6, lng: -109.0 },
+    coords: { lat: 44.7378, lng: -108.6493 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 149, firstChoiceApplicants: 33, approxOdds: '~100%' },
+        nr_regular: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 6, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 96, firstChoiceApplicants: 9, approxOdds: '100%' },
@@ -2119,8 +2887,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'High quota antlerless — guaranteed draw',
     description: 'Northwest Wyoming, Park County near Cody/Wapiti corridor. High antlerless quota with zero NR demand. Essentially a guaranteed tag.',
     tier: 'antlerless',
-    coords: { lat: 43.7, lng: -109.8 },
+    coords: { lat: 43.7212, lng: -109.6072 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 336, firstChoiceApplicants: 388, approxOdds: '86.60%' },
+        nr_regular: { quota: 46, minPoints: 0, oddsAtMin: '84.00%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 20, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 15, firstChoiceApplicants: 3, approxOdds: '~100%' },
+        nr_special_random: { quota: 6, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 336, firstChoiceApplicants: 360, approxOdds: '93.33%' },
@@ -2139,8 +2915,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wiggins Fork Unit — Dubois area archery',
     description: 'West Wyoming, Wiggins Fork drainage near Dubois. Timbered mountain country with solid September archery hunting and good elk numbers. Draws at 6 points in regular pool with 50% odds — high NR demand.',
     tier: 'mid',
-    coords: { lat: 43.7, lng: -109.8 },
+    coords: { lat: 43.7212, lng: -109.6072 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 43, approxOdds: '~100%' },
+        nr_regular: { quota: 11, minPoints: 5, oddsAtMin: '80.00%', notes: '66 applicants shut out below 4 pts' },
+        nr_special: { quota: 8, minPoints: 4, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 66, approxOdds: '4.55%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 15, approxOdds: '13.33%' },
+      },
       {
         year: 2024,
         resident: { quota: 126, firstChoiceApplicants: 34, approxOdds: '100%' },
@@ -2163,8 +2947,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 75 antlerless elk. Very small quota, moderate NR demand.',
     tier: 'antlerless',
-    coords: { lat: 43.8, lng: -110.6 },
+    coords: { lat: 43.6874, lng: -110.644 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 8, firstChoiceApplicants: 36, approxOdds: '22.22%' },
+        nr_regular: { quota: 1, minPoints: 6, oddsAtMin: '100.00%', notes: '12 applicants shut out below 6 pts' },
+        nr_special: { quota: 1, minPoints: 1, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 12, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 1, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 17, firstChoiceApplicants: 46, approxOdds: '36.96%' },
@@ -2187,8 +2979,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wilson Unit — Jackson area',
     description: 'Northwest Wyoming, Wilson area near Jackson. Timbered country with good elk numbers and low NR demand. Draws at 7 points in regular pool.',
     tier: 'accessible',
-    coords: { lat: 43.5, lng: -110.8 },
+    coords: { lat: 43.5453, lng: -110.8317 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 60, firstChoiceApplicants: 91, approxOdds: '65.93%' },
+        nr_regular: { quota: 6, minPoints: 3, oddsAtMin: '100.00%', notes: '20 applicants shut out below 3 pts' },
+        nr_special: { quota: 4, minPoints: 1, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 20, approxOdds: '5.00%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 60, firstChoiceApplicants: 117, approxOdds: '51.28%' },
@@ -2207,8 +3007,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wind River headwaters Type 2 — very low demand',
     description: 'Unit 78 Type 2 elk. Very low NR demand. Draws at 1 point.',
     tier: 'accessible',
-    coords: { lat: 43.5, lng: -110.8 },
+    coords: { lat: 43.5453, lng: -110.8317 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 42, firstChoiceApplicants: 12, approxOdds: '~100%' },
+        nr_regular: { quota: 3, minPoints: 2, oddsAtMin: '66.67%', notes: '3 applicants shut out below 2 pts' },
+        nr_special: { quota: 3, minPoints: 1, oddsAtMin: '66.67%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 4, approxOdds: '25.00%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 1, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 42, firstChoiceApplicants: 12, approxOdds: '100%' },
@@ -2231,8 +3039,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 82 antlerless elk. Crystal Creek near Kelly/Jackson area. Low demand, drawable with 1 point.',
     tier: 'antlerless',
-    coords: { lat: 43.6, lng: -110.6 },
+    coords: { lat: 43.4852, lng: -110.3482 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 34, firstChoiceApplicants: 39, approxOdds: '87.18%' },
+        nr_regular: { quota: 5, minPoints: 0, oddsAtMin: '100.00%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 3, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 42, firstChoiceApplicants: 47, approxOdds: '89.36%' },
@@ -2255,8 +3071,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Hoback Unit — Bondurant area',
     description: 'West Wyoming, Hoback Basin near Bondurant. Good elk country with low NR demand. Draws at 4 points in regular pool with 40% odds — one of the more accessible draws in the area.',
     tier: 'accessible',
-    coords: { lat: 43.2, lng: -110.4 },
+    coords: { lat: 43.3101, lng: -110.5941 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 61, approxOdds: '~100%' },
+        nr_regular: { quota: 9, minPoints: 4, oddsAtMin: '100.00%', notes: '53 applicants shut out below 4 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 53, approxOdds: '3.77%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 42, firstChoiceApplicants: 49, approxOdds: '85.71%' },
@@ -2279,8 +3103,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Raspberry Ridge Unit — Bondurant area',
     description: 'West Wyoming, Raspberry Ridge near Bondurant. Limited antlered elk tag with small quota in timbered mountain country. Draws at 7 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 43.2, lng: -110.6 },
+    coords: { lat: 43.2338, lng: -110.292 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 8, firstChoiceApplicants: 30, approxOdds: '26.67%' },
+        nr_regular: { quota: 1, minPoints: 6, oddsAtMin: '50.00%', notes: '24 applicants shut out below 5 pts' },
+        nr_special: { quota: 1, minPoints: 3, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 24, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 8, firstChoiceApplicants: 28, approxOdds: '28.57%' },
@@ -2302,8 +3134,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Greys Fork Unit — Alpine area',
     description: 'West Wyoming, Greys Fork drainage near Alpine and the Snake River canyon. Timbered country with good road access and lower hunting pressure. Draws at 5 points in regular pool. Very low NR demand — a realistic draw for hunters building points.',
     tier: 'accessible',
-    coords: { lat: 43.1, lng: -110.9 },
+    coords: { lat: 43.1274, lng: -110.9963 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 67, firstChoiceApplicants: 85, approxOdds: '78.82%' },
+        nr_regular: { quota: 6, minPoints: 6, oddsAtMin: '100.00%', notes: '22 applicants shut out below 5 pts' },
+        nr_special: { quota: 5, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 22, approxOdds: '4.55%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 34, firstChoiceApplicants: 87, approxOdds: '39.08%' },
@@ -2325,8 +3165,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Salt River Unit — Afton/Thayne area',
     description: 'West Wyoming, Salt River drainage near Afton and Thayne. Good elk country in the Salt River Range. Draws at 13 points in regular pool with 50% odds.',
     tier: 'mid',
-    coords: { lat: 42.6, lng: -110.8 },
+    coords: { lat: 42.7735, lng: -110.9254 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 321, approxOdds: '26.17%' },
+        nr_regular: { quota: 2, minPoints: 16, oddsAtMin: '66.67%', notes: '65 applicants shut out below 15 pts' },
+        nr_special: { quota: 2, minPoints: 9, oddsAtMin: '50.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 65, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 5, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 323, approxOdds: '26.01%' },
@@ -2348,8 +3196,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Cottonwood-Belknap Unit — Big Piney area',
     description: 'Southwest Wyoming, Cottonwood and Belknap drainages near Big Piney. Good elk country with moderate NR demand. Draws at 6 points in regular pool with 40% odds — a solid mid-range option.',
     tier: 'accessible',
-    coords: { lat: 42.5, lng: -110.1 },
+    coords: { lat: 43.1622, lng: -110.0963 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 164, firstChoiceApplicants: 178, approxOdds: '92.13%' },
+        nr_regular: { quota: 14, minPoints: 5, oddsAtMin: '50.00%', notes: '59 applicants shut out below 5 pts' },
+        nr_special: { quota: 9, minPoints: 3, oddsAtMin: '33.33%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 61, approxOdds: '6.56%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 15, approxOdds: '20.00%' },
+      },
       {
         year: 2024,
         resident: { quota: 165, firstChoiceApplicants: 178, approxOdds: '92.70%' },
@@ -2371,8 +3227,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Green River Unit — Cora area',
     description: 'West Wyoming, Green River drainage near Cora. Solid elk country with good drawable odds for NR hunters. Draws at 8 points in regular pool — an underrated mid-tier unit in the Pinedale area.',
     tier: 'mid',
-    coords: { lat: 43.0, lng: -109.9 },
+    coords: { lat: 43.3181, lng: -109.862 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 189, firstChoiceApplicants: 360, approxOdds: '52.50%' },
+        nr_regular: { quota: 16, minPoints: 8, oddsAtMin: '91.67%', notes: '99 applicants shut out below 8 pts' },
+        nr_special: { quota: 12, minPoints: 6, oddsAtMin: '50.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 100, approxOdds: '5.00%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 16, approxOdds: '18.75%' },
+      },
       {
         year: 2024,
         resident: { quota: 189, firstChoiceApplicants: 363, approxOdds: '52.07%' },
@@ -2390,8 +3254,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Sierra Madre Type 2 — very drawable',
     description: 'Unit 95 Type 2 elk. Very low demand. Draws at 4 points with 40% odds.',
     tier: 'accessible',
-    coords: { lat: 43.0, lng: -109.9 },
+    coords: { lat: 43.3181, lng: -109.862 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 25, firstChoiceApplicants: 14, approxOdds: '~100%' },
+        nr_regular: { quota: 3, minPoints: 3, oddsAtMin: '66.67%', notes: '1 applicants shut out below 2 pts' },
+        nr_special: { quota: 2, minPoints: 1, oddsAtMin: '25.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 1, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 25, firstChoiceApplicants: 10, approxOdds: '100%' },
@@ -2409,8 +3281,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 95 antlerless elk. Very low demand, drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 43.0, lng: -109.9 },
+    coords: { lat: 43.3181, lng: -109.862 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 5, approxOdds: '~100%' },
+        nr_regular: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 6, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 127, firstChoiceApplicants: 9, approxOdds: '100%' },
@@ -2428,8 +3308,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag (Type 5)',
     description: 'Unit 95 Type 5 antlerless elk. Very small quota.',
     tier: 'antlerless',
-    coords: { lat: 43.0, lng: -109.9 },
+    coords: { lat: 43.3181, lng: -109.862 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 24, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_regular: { quota: 3, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 2, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 0, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 21, firstChoiceApplicants: 0, approxOdds: '100%' },
@@ -2451,8 +3339,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'New Fork Unit — Pinedale area',
     description: 'West Wyoming, New Fork drainage near Pinedale. Accessible elk country with good road access. One of the most drawable limited units for NR hunters in the Pinedale area.',
     tier: 'accessible',
-    coords: { lat: 42.9, lng: -109.8 },
+    coords: { lat: 43.0521, lng: -109.8918 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 231, firstChoiceApplicants: 77, approxOdds: '~100%' },
+        nr_regular: { quota: 27, minPoints: 2, oddsAtMin: '90.00%', notes: '44 applicants shut out below 2 pts' },
+        nr_special: { quota: 14, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 8, firstChoiceApplicants: 44, approxOdds: '18.18%' },
+        nr_special_random: { quota: 4, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 231, firstChoiceApplicants: 74, approxOdds: '100%' },
@@ -2470,8 +3366,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 96 antlerless elk. Essentially zero NR demand.',
     tier: 'antlerless',
-    coords: { lat: 42.9, lng: -109.8 },
+    coords: { lat: 43.0521, lng: -109.8918 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 147, firstChoiceApplicants: 11, approxOdds: '~100%' },
+        nr_regular: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 6, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 146, firstChoiceApplicants: 5, approxOdds: '100%' },
@@ -2493,8 +3397,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Pinedale Unit — west Wyoming',
     description: 'West Wyoming, Pinedale area. Good elk country with very low NR demand. Draws at 4-5 points in regular pool — very accessible for NR hunters.',
     tier: 'accessible',
-    coords: { lat: 42.8, lng: -109.9 },
+    coords: { lat: 42.8879, lng: -109.7174 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 210, firstChoiceApplicants: 102, approxOdds: '~100%' },
+        nr_regular: { quota: 18, minPoints: 6, oddsAtMin: '100.00%', notes: '53 applicants shut out below 5 pts' },
+        nr_special: { quota: 12, minPoints: 3, oddsAtMin: '50.00%' },
+        nr_random: { quota: 6, firstChoiceApplicants: 53, approxOdds: '11.32%' },
+        nr_special_random: { quota: 4, firstChoiceApplicants: 2, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 189, firstChoiceApplicants: 72, approxOdds: '100%' },
@@ -2516,8 +3428,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Scab Creek Unit — Pinedale area',
     description: 'West Wyoming, Scab Creek drainage near Pinedale. Solid elk country with good bull density and accessible terrain. Drawable with 4-5 NR points — a realistic option for hunters building a point bank.',
     tier: 'accessible',
-    coords: { lat: 42.7, lng: -109.7 },
+    coords: { lat: 42.3935, lng: -109.7176 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 294, firstChoiceApplicants: 296, approxOdds: '99.32%' },
+        nr_regular: { quota: 25, minPoints: 5, oddsAtMin: '5.00%', notes: '121 applicants shut out below 4 pts' },
+        nr_special: { quota: 18, minPoints: 3, oddsAtMin: '25.00%' },
+        nr_random: { quota: 8, firstChoiceApplicants: 136, approxOdds: '5.88%' },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 13, approxOdds: '38.46%' },
+      },
       {
         year: 2024,
         resident: { quota: 294, firstChoiceApplicants: 329, approxOdds: '89.36%' },
@@ -2535,8 +3455,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 98 antlerless elk. Very low demand, essentially guaranteed.',
     tier: 'antlerless',
-    coords: { lat: 42.7, lng: -109.7 },
+    coords: { lat: 42.3935, lng: -109.7176 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 105, firstChoiceApplicants: 4, approxOdds: '~100%' },
+        nr_regular: { quota: 15, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 67, firstChoiceApplicants: 4, approxOdds: '100%' },
@@ -2558,8 +3486,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Big Sandy Unit — Farson area',
     description: 'Southwest Wyoming, Big Sandy drainage near Farson. Solid elk numbers with lower NR pressure than nearby units. Draws at 10 points in regular pool.',
     tier: 'mid',
-    coords: { lat: 42.1, lng: -109.2 },
+    coords: { lat: 42.4136, lng: -109.2384 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 123, firstChoiceApplicants: 477, approxOdds: '25.79%' },
+        nr_regular: { quota: 11, minPoints: 11, oddsAtMin: '33.33%', notes: '97 applicants shut out below 11 pts' },
+        nr_special: { quota: 8, minPoints: 9, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 99, approxOdds: '3.03%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 31, approxOdds: '6.45%' },
+      },
       {
         year: 2024,
         resident: { quota: 123, firstChoiceApplicants: 440, approxOdds: '27.95%' },
@@ -2577,8 +3513,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 99 antlerless elk. Low demand.',
     tier: 'antlerless',
-    coords: { lat: 42.1, lng: -109.2 },
+    coords: { lat: 42.4136, lng: -109.2384 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 147, firstChoiceApplicants: 45, approxOdds: '~100%' },
+        nr_regular: { quota: 20, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 9, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 6, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 147, firstChoiceApplicants: 42, approxOdds: '100%' },
@@ -2600,8 +3544,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Desert elk on Wyoming\'s Red Desert — unique late-season bulls',
     description: 'Southwest Wyoming, Red Desert and surrounding sage/sand country. Desert elk hunt unlike anything else in the state. Enormous bulls. Draws at 18 points in regular pool with 62.50% odds. One of Wyoming\'s most unique and coveted tags.',
     tier: 'trophy',
-    coords: { lat: 41.6, lng: -108.8 },
+    coords: { lat: 41.9336, lng: -108.8524 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 130, firstChoiceApplicants: 3915, approxOdds: '3.32%' },
+        nr_regular: { quota: 11, minPoints: 19, oddsAtMin: '64.71%', notes: '959 applicants shut out below 19 pts' },
+        nr_special: { quota: 8, minPoints: 18, oddsAtMin: '77.78%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 965, approxOdds: '0.31%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 202, approxOdds: '0.99%' },
+      },
       {
         year: 2024,
         resident: { quota: 138, firstChoiceApplicants: 3948, approxOdds: '3.50%' },
@@ -2619,8 +3571,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Red Desert Type 2 — slightly more accessible',
     description: 'Unit 100 Type 2 elk. Draws at 13 points in regular pool. Still a premium trophy opportunity.',
     tier: 'trophy',
-    coords: { lat: 41.6, lng: -108.8 },
+    coords: { lat: 41.9336, lng: -108.8524 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 330, approxOdds: '25.45%' },
+        nr_regular: { quota: 7, minPoints: 12, oddsAtMin: '75.00%', notes: '40 applicants shut out below 12 pts' },
+        nr_special: { quota: 6, minPoints: 7, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 41, approxOdds: '4.88%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 12, approxOdds: '8.33%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 311, approxOdds: '27.01%' },
@@ -2638,8 +3598,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Red Desert antlerless — moderate demand',
     description: 'Unit 100 antlerless elk. Moderate NR demand relative to the unit\'s fame.',
     tier: 'antlerless',
-    coords: { lat: 41.6, lng: -108.8 },
+    coords: { lat: 41.9336, lng: -108.8524 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 248, approxOdds: '33.87%' },
+        nr_regular: { quota: 8, minPoints: 5, oddsAtMin: '83.33%', notes: '41 applicants shut out below 5 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 42, approxOdds: '4.76%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 147, firstChoiceApplicants: 307, approxOdds: '47.88%' },
@@ -2657,8 +3625,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Red Desert antlerless Type 5',
     description: 'Unit 100 Type 5 antlerless elk. Drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 41.6, lng: -108.8 },
+    coords: { lat: 41.9336, lng: -108.8524 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 318, approxOdds: '39.62%' },
+        nr_regular: { quota: 15, minPoints: 3, oddsAtMin: '100.00%', notes: '72 applicants shut out below 2 pts' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 72, approxOdds: '5.56%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 210, firstChoiceApplicants: 389, approxOdds: '53.98%' },
@@ -2680,8 +3656,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Little Mountain Unit — Rock Springs area',
     description: 'Southwest Wyoming, Little Mountain near Rock Springs. Low NR demand elk unit. Draws at 9 points with 66.67% odds in regular pool.',
     tier: 'accessible',
-    coords: { lat: 41.8, lng: -109.1 },
+    coords: { lat: 41.1484, lng: -110.6865 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 42, firstChoiceApplicants: 213, approxOdds: '19.72%' },
+        nr_regular: { quota: 3, minPoints: 8, oddsAtMin: '50.00%', notes: '46 applicants shut out below 8 pts' },
+        nr_special: { quota: 3, minPoints: 5, oddsAtMin: '66.67%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 47, approxOdds: '2.13%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 4, approxOdds: '25.00%' },
+      },
       {
         year: 2024,
         resident: { quota: 42, firstChoiceApplicants: 171, approxOdds: '24.56%' },
@@ -2699,8 +3683,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 106 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 41.8, lng: -109.1 },
+    coords: { lat: 41.1484, lng: -110.6865 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 70, approxOdds: '~100%' },
+        nr_regular: { quota: 18, minPoints: 0, oddsAtMin: '76.92%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 1, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 126, firstChoiceApplicants: 84, approxOdds: '100%' },
@@ -2722,8 +3714,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 107 antlerless elk. Lower Sweetwater near Bairoil. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 42.4, lng: -107.3 },
+    coords: { lat: 41.255, lng: -109.8928 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 169, firstChoiceApplicants: 47, approxOdds: '~100%' },
+        nr_regular: { quota: 24, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 10, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 8, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 179, firstChoiceApplicants: 33, approxOdds: '100%' },
@@ -2745,8 +3745,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Battle Creek Unit — Encampment area',
     description: 'Southeast Wyoming, Battle Creek drainage near Encampment. Timbered Sierra Madre country. Draws at 12 points in regular pool with 50% odds.',
     tier: 'mid',
-    coords: { lat: 41.2, lng: -106.8 },
+    coords: { lat: 41.5957, lng: -107.4793 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 98, firstChoiceApplicants: 309, approxOdds: '31.72%' },
+        nr_regular: { quota: 7, minPoints: 12, oddsAtMin: '50.00%', notes: '44 applicants shut out below 11 pts' },
+        nr_special: { quota: 5, minPoints: 12, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 44, approxOdds: '4.55%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 19, approxOdds: '5.26%' },
+      },
       {
         year: 2024,
         resident: { quota: 79, firstChoiceApplicants: 273, approxOdds: '28.94%' },
@@ -2764,8 +3772,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 108 antlerless elk. Very low demand.',
     tier: 'antlerless',
-    coords: { lat: 41.2, lng: -106.8 },
+    coords: { lat: 41.5957, lng: -107.4793 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 13, approxOdds: '~100%' },
+        nr_regular: { quota: 12, minPoints: 1, oddsAtMin: '90.00%', notes: '2 applicants shut out below 0 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 2, approxOdds: '~100%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 12, approxOdds: '100%' },
@@ -2790,8 +3806,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Seminoe Unit — Sinclair/Rawlins area',
     description: 'South-central Wyoming, Seminoe Mountains near Sinclair. Sage and rimrock terrain. Very limited NR quota — draws at 18 points with essentially 100% odds at minimum.',
     tier: 'trophy',
-    coords: { lat: 41.9, lng: -107.0 },
+    coords: { lat: 42.1302, lng: -107.0726 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 56, firstChoiceApplicants: 397, approxOdds: '14.11%' },
+        nr_regular: { quota: 1, minPoints: 19, oddsAtMin: '50.00%', notes: '178 applicants shut out below 19 pts' },
+        nr_special: { quota: 1, minPoints: 19, oddsAtMin: '100.00%' },
+        nr_random: { quota: 0, firstChoiceApplicants: 179, approxOdds: '0%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 79, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 59, firstChoiceApplicants: 469, approxOdds: '12.58%' },
@@ -2810,8 +3834,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 111 antlerless elk. Low demand.',
     tier: 'antlerless',
-    coords: { lat: 41.9, lng: -107.0 },
+    coords: { lat: 42.1302, lng: -107.0726 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 139, firstChoiceApplicants: 11, approxOdds: '~100%' },
+        nr_regular: { quota: 18, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 6, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 135, firstChoiceApplicants: 10, approxOdds: '100%' },
@@ -2833,8 +3865,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Rawlins Unit — south-central Wyoming',
     description: 'South-central Wyoming near Rawlins. Spike or antlerless management tag in sage and rimrock country. Draws at 2 points in regular pool with high odds.',
     tier: 'mid',
-    coords: { lat: 41.8, lng: -107.2 },
+    coords: { lat: 43.4639, lng: -105.1488 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 180, approxOdds: '70.00%' },
+        nr_regular: { quota: 13, minPoints: 2, oddsAtMin: '87.50%', notes: '23 applicants shut out below 2 pts' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 24, approxOdds: '16.67%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 102, firstChoiceApplicants: 365, approxOdds: '27.95%' },
@@ -2856,8 +3896,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'North Black Hills Unit — Sundance area',
     description: 'Northeast Wyoming, North Black Hills near Sundance. Timbered elk country with moderate NR demand. Draws at 4 points in regular pool with 13.33% odds.',
     tier: 'accessible',
-    coords: { lat: 44.4, lng: -104.1 },
+    coords: { lat: 44.6407, lng: -104.5814 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 84, firstChoiceApplicants: 62, approxOdds: '~100%' },
+        nr_regular: { quota: 7, minPoints: 6, oddsAtMin: '66.67%', notes: '118 applicants shut out below 6 pts' },
+        nr_special: { quota: 6, minPoints: 4, oddsAtMin: '66.67%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 119, approxOdds: '1.68%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 8, approxOdds: '12.50%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 56, approxOdds: '100%' },
@@ -2879,8 +3927,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'South Black Hills Unit — Newcastle area',
     description: 'Northeast Wyoming, South Black Hills near Newcastle. Timbered elk country with solid bull numbers. Drawable for NR hunters with 8-9 points in the regular pool.',
     tier: 'mid',
-    coords: { lat: 43.8, lng: -104.3 },
+    coords: { lat: 44.1355, lng: -104.2682 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 330, firstChoiceApplicants: 603, approxOdds: '54.73%' },
+        nr_regular: { quota: 25, minPoints: 7, oddsAtMin: '15.38%', notes: '181 applicants shut out below 7 pts' },
+        nr_special: { quota: 17, minPoints: 8, oddsAtMin: '100.00%' },
+        nr_random: { quota: 8, firstChoiceApplicants: 192, approxOdds: '4.17%' },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 62, approxOdds: '8.06%' },
+      },
       {
         year: 2024,
         resident: { quota: 324, firstChoiceApplicants: 638, approxOdds: '50.79%' },
@@ -2898,8 +3954,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Spike management tag — Wyoming Range south',
     description: 'Unit 117 limited quota spike tag. Very low NR demand. Essentially guaranteed draw.',
     tier: 'accessible',
-    coords: { lat: 43.8, lng: -104.3 },
+    coords: { lat: 44.1355, lng: -104.2682 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 293, firstChoiceApplicants: 15, approxOdds: '~100%' },
+        nr_regular: { quota: 39, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 17, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 13, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 5, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 339, firstChoiceApplicants: 25, approxOdds: '100%' },
@@ -2921,8 +3985,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Beulah Unit — Sundance area, Black Hills',
     description: 'Northeast Wyoming, Beulah area near Sundance. Antlered elk tag in Black Hills timber country. Draws at 13 points in regular pool with 50% odds.',
     tier: 'mid',
-    coords: { lat: 44.5, lng: -104.0 },
+    coords: { lat: 41.9593, lng: -107.6734 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 56, firstChoiceApplicants: 192, approxOdds: '29.17%' },
+        nr_regular: { quota: 6, minPoints: 15, oddsAtMin: '66.67%', notes: '58 applicants shut out below 15 pts' },
+        nr_special: { quota: 4, minPoints: 12, oddsAtMin: '66.67%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 58, approxOdds: '1.72%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 24, approxOdds: '4.17%' },
+      },
       {
         year: 2024,
         resident: { quota: 56, firstChoiceApplicants: 194, approxOdds: '28.87%' },
@@ -2940,8 +4012,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 118 antlerless elk. Zero demand — guaranteed draw.',
     tier: 'antlerless',
-    coords: { lat: 44.5, lng: -104.0 },
+    coords: { lat: 41.9593, lng: -107.6734 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 41, firstChoiceApplicants: 6, approxOdds: '~100%' },
+        nr_regular: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 3, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 48, firstChoiceApplicants: 10, approxOdds: '100%' },
@@ -2963,8 +4043,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Rochelle Hills Unit — Wright area',
     description: 'Northeast Wyoming, Rochelle Hills near Wright. Sage and pine terrain. Draws at 13 points in regular pool with 33.33% odds.',
     tier: 'mid',
-    coords: { lat: 43.9, lng: -105.2 },
+    coords: { lat: 43.2053, lng: -106.7857 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 124, firstChoiceApplicants: 582, approxOdds: '21.31%' },
+        nr_regular: { quota: 12, minPoints: 13, oddsAtMin: '20.00%', notes: '143 applicants shut out below 13 pts' },
+        nr_special: { quota: 8, minPoints: 13, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 151, approxOdds: '1.99%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 44, approxOdds: '4.55%' },
+      },
       {
         year: 2024,
         resident: { quota: 126, firstChoiceApplicants: 574, approxOdds: '21.95%' },
@@ -2982,8 +4070,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 120 antlerless elk. Very low demand, drawable with zero points.',
     tier: 'antlerless',
-    coords: { lat: 43.9, lng: -105.2 },
+    coords: { lat: 43.2053, lng: -106.7857 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 105, firstChoiceApplicants: 33, approxOdds: '~100%' },
+        nr_regular: { quota: 15, minPoints: 0, oddsAtMin: '87.50%', notes: '0 applicants shut out below 0 pts' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 2, approxOdds: '~100%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 105, firstChoiceApplicants: 42, approxOdds: '100%' },
@@ -3005,8 +4101,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Pine Ridge Unit — Lusk area, east Wyoming',
     description: 'East Wyoming, Pine Ridge near Lusk. Limited elk unit in pine and sage country. Draws at 8 points in regular pool with 22.22% odds.',
     tier: 'mid',
-    coords: { lat: 42.8, lng: -104.5 },
+    coords: { lat: 43.168, lng: -106.02 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 122, firstChoiceApplicants: 71, approxOdds: '~100%' },
+        nr_regular: { quota: 11, minPoints: 11, oddsAtMin: '25.00%', notes: '64 applicants shut out below 10 pts' },
+        nr_special: { quota: 8, minPoints: 8, oddsAtMin: '100.00%' },
+        nr_random: { quota: 3, firstChoiceApplicants: 66, approxOdds: '4.55%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 21, approxOdds: '9.52%' },
+      },
       {
         year: 2024,
         resident: { quota: 118, firstChoiceApplicants: 73, approxOdds: '100%' },
@@ -3024,8 +4128,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Wyoming Range north five-point — essentially guaranteed draw',
     description: 'Unit 122 five-point antlered tag. Draws at 0 points. Very low NR demand.',
     tier: 'accessible',
-    coords: { lat: 42.8, lng: -104.5 },
+    coords: { lat: 43.168, lng: -106.02 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 3, approxOdds: '~100%' },
+        nr_regular: { quota: 16, minPoints: 2, oddsAtMin: '80.00%', notes: '10 applicants shut out below 1 pts' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 10, approxOdds: '50.00%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 97, firstChoiceApplicants: 6, approxOdds: '100%' },
@@ -3047,7 +4159,7 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Black Thunder Unit — Wright area',
     description: 'Northeast Wyoming, Black Thunder area near Wright. Five-point antlered tag in sage and pine country. Draws at 7 points in regular pool with 50% odds.',
     tier: 'accessible',
-    coords: { lat: 43.6, lng: -105.3 },
+    coords: { lat: 43.8525, lng: -105.1096 },
     drawHistory: [
       {
         year: 2024,
@@ -3066,8 +4178,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 123 antlerless elk. Moderate demand, drawable with 1 point.',
     tier: 'antlerless',
-    coords: { lat: 43.6, lng: -105.3 },
+    coords: { lat: 43.8525, lng: -105.1096 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 90, firstChoiceApplicants: 20, approxOdds: '~100%' },
+        nr_regular: { quota: 12, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_special: { quota: 6, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 0, approxOdds: '~100%' },
+        nr_special_random: { quota: 1, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 63, firstChoiceApplicants: 30, approxOdds: '100%' },
@@ -3092,8 +4212,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Powder Rim Unit — Baggs area, south Wyoming',
     description: 'Southwest Wyoming, Powder Rim near Baggs. Sage and rim country elk unit. Very high NR demand relative to quota. Draws at 18 points in regular pool.',
     tier: 'trophy',
-    coords: { lat: 41.5, lng: -107.8 },
+    coords: { lat: 41.3443, lng: -108.3246 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 60, firstChoiceApplicants: 1133, approxOdds: '5.30%' },
+        nr_regular: { quota: 3, minPoints: 19, oddsAtMin: '9.09%', notes: '154 applicants shut out below 19 pts' },
+        nr_special: { quota: 3, minPoints: 19, oddsAtMin: '60.00%' },
+        nr_random: { quota: 1, firstChoiceApplicants: 184, approxOdds: '0.54%' },
+        nr_special_random: { quota: 0, firstChoiceApplicants: 42, approxOdds: '0%' },
+      },
       {
         year: 2024,
         resident: { quota: 35, firstChoiceApplicants: 905, approxOdds: '3.87%' },
@@ -3114,8 +4242,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Antlerless management tag',
     description: 'Unit 124 antlerless elk. Moderate NR demand given the unit\'s fame. Drawable with 0 points.',
     tier: 'antlerless',
-    coords: { lat: 41.5, lng: -107.8 },
+    coords: { lat: 41.3443, lng: -108.3246 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 126, firstChoiceApplicants: 132, approxOdds: '95.45%' },
+        nr_regular: { quota: 16, minPoints: 1, oddsAtMin: '77.78%', notes: '9 applicants shut out below 0 pts' },
+        nr_special: { quota: 8, minPoints: 0, oddsAtMin: '100.00%' },
+        nr_random: { quota: 5, firstChoiceApplicants: 9, approxOdds: '55.56%' },
+        nr_special_random: { quota: 2, firstChoiceApplicants: 0, approxOdds: '~100%' },
+      },
       {
         year: 2024,
         resident: { quota: 84, firstChoiceApplicants: 117, approxOdds: '71.79%' },
@@ -3137,8 +4273,16 @@ export const WYOMING_ELK_UNITS: Record<string, WyoElkUnit> = {
     trait: 'Elk Mountain Unit — southeast Wyoming',
     description: 'Southeast Wyoming, Elk Mountain area. Good elk country near the Medicine Bow Range. One of the more accessible NR limited units. Draws at 4 points in regular pool — good while building points for a premium unit.',
     tier: 'accessible',
-    coords: { lat: 41.8, lng: -106.4 },
+    coords: { lat: 41.7007, lng: -106.6267 },
     drawHistory: [
+      {
+        year: 2025,
+        resident: { quota: 165, firstChoiceApplicants: 65, approxOdds: '~100%' },
+        nr_regular: { quota: 14, minPoints: 5, oddsAtMin: '45.22%', notes: '72 applicants shut out below 4 pts' },
+        nr_special: { quota: 9, minPoints: 4, oddsAtMin: '18.87%' },
+        nr_random: { quota: 4, firstChoiceApplicants: 79, approxOdds: '5.06%' },
+        nr_special_random: { quota: 3, firstChoiceApplicants: 13, approxOdds: '23.08%' },
+      },
       {
         year: 2024,
         resident: { quota: 167, firstChoiceApplicants: 66, approxOdds: '100%' },
