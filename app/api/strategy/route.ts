@@ -14,6 +14,8 @@ import { WYOMING_ANTELOPE_UNITS } from './wyoantelopedata';
 import { buildWyomingAntelopeScoutDataset } from './wyoantelopeScoutAdapter';
 import { hasValidBetaAccess } from '@/lib/betaAccess';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
+import { getAccessSummary } from '@/lib/access';
+import { IDAHO_GMU_UNITS } from './idahoUnits';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -106,6 +108,7 @@ export async function POST(req: Request) {
 
     // ─── 2. FLAGS ─────────────────────────────────────────────────────────────
     const isWyoming = stateName === 'WYOMING';
+    const isIdaho = stateName === 'IDAHO';
     const isDeer = speciesKey === 'DEER';
     const isElk = speciesKey === 'ELK';
     const isAntelope = speciesKey === 'ANTELOPE';
@@ -427,8 +430,15 @@ export async function POST(req: Request) {
     // brief never defaults to mule deer for an antelope/elk/etc. tag.
     const speciesLabel = (formData.species && String(formData.species).trim()) || speciesKey;
 
+    // Idaho "basics" lookup — gives Idaho units a real centroid + geo anchor even
+    // before draw/trophy data is ingested, so the access grounding below is
+    // located in Idaho (not the Wyoming fallback).
+    const idahoUnit = isIdaho ? IDAHO_GMU_UNITS[unitResolved.toUpperCase()] : null;
+
     const geoAnchor = unitStats?.description
       ? `GEOGRAPHIC ANCHOR: This unit is strictly located in: ${unitStats.description}.`
+      : idahoUnit
+      ? `GEOGRAPHIC ANCHOR: This unit is strictly located in: ${idahoUnit.description}`
       : `LOCATION: Analyze ${stateName} ${speciesLabel} Area ${unitResolved}.`;
 
     const trophyEstimated = unitStats?.dataCompleteness === 'NEEDS_TROPHY_DATA';
@@ -452,12 +462,19 @@ export async function POST(req: Request) {
       }
     }
 
+    // Real access features (OpenStreetMap, via lib/access) so the TERRAIN & ACCESS
+    // section names actual roads/trailheads instead of inventing them. Best-effort
+    // and time-boxed — returns empty text on failure so the brief still generates.
+    const briefCoords = unitStats?.coords || idahoUnit?.coords || fallbackCoords;
+    const accessSummary = await getAccessSummary(briefCoords.lat, briefCoords.lng);
+
     const geographicGuardrails = `
       SPECIES: This is a ${speciesLabel} hunt in ${stateName}. EVERY section must be about ${speciesLabel} specifically — trophy scores, behavior, terrain use, and rut timing must all match ${speciesLabel}. NEVER write about mule deer (or any other species) unless ${speciesLabel} IS that species.
       ${geoAnchor}
       ${trophyInstruction}
       ${habitatBlock}
       ${wildernessBlock}
+      ${accessSummary.text}
       ${drawSummary}
       USER STATUS: ${formData.residency}
       MANDATORY COMPLIANCE:
@@ -495,7 +512,7 @@ Realistic expectations. Use the typical and top-end data provided. What does a g
 What hunt styles consistently produce in this unit. Be specific. What does NOT work here and why.
 
 6. TERRAIN & ACCESS
-Specific terrain description. Elevation range. Road system. Trailheads. Private land patchwork if relevant.
+Specific terrain description and elevation range. For the road system, trailheads, and parking, use ONLY the named roads and the counts in the REAL ACCESS DATA block above — name the actual roads when describing how to get in. Do NOT invent trailhead names, forest-road numbers, or parking areas that are not in that block; if a category shows 0 or "none cataloged", say access is via unmaintained two-tracks or cross-country and that there are no formal trailheads. For the public/private split, use the public-land percentage from the HABITAT METRICS block rather than guessing.
 
 7. HERD BEHAVIOR
 How animals use this unit through the season. Early season vs late. Rut timing if relevant. What changes their patterns.

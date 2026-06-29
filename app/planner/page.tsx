@@ -1,6 +1,17 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+
+// Leaflet touches `window`, so load the map client-side only.
+const UnitMap = dynamic(() => import('../UnitMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[440px] w-full flex items-center justify-center bg-zinc-950">
+      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Loading unit boundary…</p>
+    </div>
+  ),
+});
 
 // --- Types ---
 type FlowStep = 
@@ -46,6 +57,9 @@ type HuntPlannerState = {
   unitBrief: string | null;
   huntPlan: any | null;
   gearList: any | null;
+  planUnit: string;       // unit the active plan was built for (drives the map)
+  planState: string;
+  planSpecies: string;    // WY hunt-area boundaries differ by species
   loading: boolean;
   loadingMessage: string;
   error: string | null;
@@ -136,6 +150,9 @@ export default function App() {
     unitBrief: null,
     huntPlan: null,
     gearList: null,
+    planUnit: '',
+    planState: 'WY',
+    planSpecies: 'Mule Deer',
     loading: false,
     loadingMessage: '',
     error: null,
@@ -259,6 +276,9 @@ export default function App() {
         unitBrief: data.brief,
         huntPlan: data.tactical,
         gearList: data.gear,
+        planUnit: String(dataToSubmit.unit || ''),
+        planState: String(dataToSubmit.selectedState || dataToSubmit.states?.[0] || 'WY'),
+        planSpecies: String(dataToSubmit.species || ''),
         step: 'unit-brief',
         loading: false,
       }));
@@ -1025,6 +1045,11 @@ export default function App() {
             <div className="bg-zinc-900/80 p-12 rounded-3xl border border-zinc-800 shadow-inner">
               {state.step === 'unit-brief' && (
                 <div className="space-y-8">
+                  {/* Real unit boundary on satellite imagery — the first grounded
+                      e-scouting layer, replacing invented "access" prose. */}
+                  <div className="rounded-2xl overflow-hidden border border-zinc-800">
+                    <UnitMap unit={state.planUnit} state={state.planState} species={state.planSpecies} />
+                  </div>
                   {typeof state.unitBrief === 'object' && state.unitBrief !== null ? (
                     Object.entries(state.unitBrief).map(([key, value]) => (
                       <div key={key} className="border-b border-zinc-800 pb-6 last:border-0">
