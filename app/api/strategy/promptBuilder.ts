@@ -1247,21 +1247,22 @@ KEY DISTINCTIONS:
 - FCFS (First Come First Served): Leftover licenses available after draw
 - NR quota: varies by unit and season
 
-WEAPON FILTER: Hunter selected ${weaponLabel}. Dataset pre-filtered.
-${isArchery ? 'NOTE: Always highlight OTC archery options — this is a major advantage in Colorado.' : ''}
+${isArchery ? 'NOTE: Archery elk is widely OTC statewide in Colorado — always highlight OTC archery as a guaranteed option.' : ''}
 FAMILIARITY: Hunter knows "${knownAreas}". Reference by name in whyItFits.
 
 ${sharedHunterProfile(p)}
 
-AVAILABLE UNIT DATA:
+AVAILABLE HUNT DATA (real CPW choice-1 draw-success rates):
 ${JSON.stringify(scoutDataset)}
 
-Score and rank units. Minimum 7 recommendations.
-- MUST include OTC options if available for this weapon type
-- MUST include 2 premium limited license units as BUILD_AND_WAIT or LONG_GAME
-- All units topEnd >= ${trophyFloor}" or flag the gap
-- currentOdds: "OTC — no draw required" or approximate draw probability
-- Be clear about OTC vs limited license distinction for each unit
+Each entry is a GMU with its hunt codes (huntCodes), resident/non-resident choice-1 draw-success RANGES (resDrawSuccess / nonResDrawSuccess), and the best/easiest rate (bestResSuccess / bestNonResSuccess). Hunt-code trailing letters encode method (R=rifle, A=archery, M=muzzleloader). These are draw-SUCCESS RATES, not exact preference points — CPW does not publish points-to-draw in a usable form.
+
+Score and rank GMU units. Minimum 7 recommendations.
+- For a NON-RESIDENT, currentOdds = the unit's nonResDrawSuccess range; cite specific huntCodes. Low success % = high demand (many points); high % = easy / low points.
+- Tier by bestNonResSuccess: >=60% → DRAW_NOW; 25–60% → RANDOM_PLAY; <25% → BUILD_AND_WAIT or LONG_GAME.
+- NO EXACT POINTS: set nrMinPoints to 0 and do NOT state a specific number of preference points required; say points "vary — confirm current line on CPW".
+- MUST include at least 1 OTC option (Colorado has broad OTC archery elk and rifle 2nd/3rd-season elk in many GMUs): poolType "OTC", currentOdds "OTC — no draw required".
+- The "unit" field in output = the GMU number from the data. topEnd/typicalScore are not in the data — give realistic estimates and flag any below ${trophyFloor}".
 
 ${sharedWhyItFitsRules(p)}
 
@@ -1282,18 +1283,21 @@ Colorado preference point system. Hunter has ${hunterPoints} points.
 Residents access same OTC licenses as NR. For limited licenses, residents and NR compete in same draw for their respective quotas.
 ${isArchery ? 'ARCHERY ELK IS WIDELY OTC STATEWIDE — always highlight this as a guaranteed option.' : ''}
 
-WEAPON FILTER: Hunter selected ${weaponLabel}. Dataset pre-filtered.
+${isArchery ? 'NOTE: Archery elk is widely OTC statewide in Colorado — always highlight OTC archery as a guaranteed option.' : ''}
 FAMILIARITY: Hunter knows "${knownAreas}". Reference by name in whyItFits.
 
 ${sharedHunterProfile(p)}
 
-AVAILABLE UNIT DATA:
+AVAILABLE HUNT DATA (real CPW choice-1 draw-success rates):
 ${JSON.stringify(scoutDataset)}
 
-Score and rank units. Minimum 6 recommendations.
-- MUST include OTC options where available
-- All units topEnd >= ${trophyFloor}" or flag the gap
-- currentOdds: "OTC" for no-draw units, approximate % for limited licenses
+Each entry is a GMU with its hunt codes (huntCodes), resident/non-resident choice-1 draw-success RANGES (resDrawSuccess / nonResDrawSuccess), and the best/easiest rate (bestResSuccess / bestNonResSuccess). Hunt-code trailing letters encode method (R=rifle, A=archery, M=muzzleloader). These are draw-SUCCESS RATES, not exact preference points.
+
+Score and rank GMU units. Minimum 6 recommendations.
+- For a RESIDENT, currentOdds = the unit's resDrawSuccess range; cite specific huntCodes. Tier by bestResSuccess. Low success % = high demand (many points); high % = easy / low points.
+- NO EXACT POINTS: do NOT state a specific number of preference points required; say points "vary — confirm current line on CPW".
+- MUST include at least 1 OTC option (broad OTC archery elk and rifle 2nd/3rd-season elk): poolType "OTC", currentOdds "OTC — no draw required".
+- The "unit" field in output = the GMU number from the data. topEnd/typicalScore are not in the data — give realistic estimates and flag any below ${trophyFloor}".
 
 ${sharedWhyItFitsRules(p)}
 

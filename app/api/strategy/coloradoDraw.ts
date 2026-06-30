@@ -12184,15 +12184,25 @@ export function coloradoHuntsForUnit(speciesKey: string, unit: string): Colorado
   return (COLORADO_DRAW[speciesKey] || []).filter((h) => h.unit === u);
 }
 
-// Scout dataset: every hunt code for the species as a recommendable entry. CO
-// uses preference points; success % is the difficulty signal we can trust.
+// Scout dataset: aggregated per GMU (SCOUT recommends units, and a per-hunt-code
+// list would blow the token budget). Each unit carries its hunt codes and the
+// resident / non-resident choice-1 draw-success ranges + best (easiest) rate.
 export function buildColoradoScoutDataset(speciesKey: string): Array<Record<string, unknown>> {
-  return (COLORADO_DRAW[speciesKey] || []).map((h) => ({
-    unit: String(h.unit),
-    huntCode: h.code,
-    applicants: h.apps,
-    residentDrawSuccess: `${h.resSuccessPct}%`,
-    nonResidentDrawSuccess: `${h.nonResSuccessPct}%`,
-    note: 'Colorado uses preference points; success % is the choice-1 draw rate, not exact points',
-  }));
+  const byUnit: Record<string, ColoradoHunt[]> = {};
+  for (const h of COLORADO_DRAW[speciesKey] || []) {
+    (byUnit[h.unit] = byUnit[h.unit] || []).push(h);
+  }
+  return Object.entries(byUnit).map(([unit, hunts]) => {
+    const res = hunts.map((h) => h.resSuccessPct);
+    const nr = hunts.map((h) => h.nonResSuccessPct);
+    return {
+      unit,
+      huntCodes: hunts.slice(0, 6).map((h) => h.code),
+      huntCount: hunts.length,
+      resDrawSuccess: `${Math.min(...res)}-${Math.max(...res)}%`,
+      nonResDrawSuccess: `${Math.min(...nr)}-${Math.max(...nr)}%`,
+      bestResSuccess: Math.max(...res),
+      bestNonResSuccess: Math.max(...nr),
+    };
+  });
 }
