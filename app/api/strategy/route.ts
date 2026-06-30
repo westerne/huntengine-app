@@ -17,7 +17,7 @@ import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
-import { idahoHuntsForUnit, IDAHO_DRAW_YEAR } from './idahoDraw';
+import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -288,6 +288,10 @@ export async function POST(req: Request) {
 
         : isWyoming && isAntelope
         ? buildWyomingAntelopeScoutDataset(allowedAntelopeTypes)
+
+        // Idaho: real controlled-hunt draw odds (pure random, no points).
+        : isIdaho
+        ? buildIdahoScoutDataset(speciesKey, IDAHO_GMU_UNITS)
 
         : Object.entries(stateDataset).map(([unitName, unit]: [string, any]) => ({
             unit: unitName,

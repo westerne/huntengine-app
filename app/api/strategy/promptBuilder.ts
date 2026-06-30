@@ -1098,8 +1098,7 @@ ${sharedOutputSchema(false, 'ELK')}
 // ─── IDAHO ────────────────────────────────────────────────────────────────────
 
 function buildIdahoNRPrompt(p: ScoutPromptParams): string {
-  const { hunterPoints, trophyFloor, weaponLabel, knownAreas, scoutDataset } = p;
-  const drawChances = Math.pow(hunterPoints, 2) + 1;
+  const { trophyFloor, knownAreas, scoutDataset } = p;
 
   return `
 You are HuntEngine.ai — a western hunting intelligence system built from real field experience.
@@ -1107,31 +1106,30 @@ You are HuntEngine.ai — a western hunting intelligence system built from real 
 THIS IS AN IDAHO NON-RESIDENT HUNT ANALYSIS. IDAHO DRAW RULES ONLY.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-IDAHO NR DRAW SYSTEM
+IDAHO NR DRAW SYSTEM — PURE RANDOM, NO POINTS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Idaho uses a BONUS POINT system:
-- Draw chances = (points)^2 + 1
-- Hunter has ${hunterPoints} points = ${drawChances} draw chances vs 1 chance for a 0-point hunter
-- NR quota: typically 10% of controlled hunt tags per unit
-- No secondary random or special pools — one unified weighted draw
-- Leftover tags: available OTC after draw closes — first-come, no points needed
-- General seasons: OTC for many units — no draw required
+Idaho controlled hunts are a PURE RANDOM draw. There are NO preference or bonus points — never mention points, "building points", or weighted chances. Every year is an independent lottery; waiting does not improve odds.
+- Non-residents have a capped allocation (≈10% of a hunt's tags). Each hunt in the data has its real non-resident odds — use them.
+- Leftover controlled-hunt tags sell OTC after the draw (first-come, no draw).
+- GENERAL SEASONS: most Idaho deer & elk units have general/OTC tags that need NO draw — these are guaranteed fallbacks.
 
-WEAPON FILTER: Hunter selected ${weaponLabel}. Dataset pre-filtered.
+DATASET: each entry is one controlled hunt with: unit (hunt area), huntNumber, gmu, zone, tags, firstChoiceApplicants, residentOdds, nonResidentOdds, overallOdds. For a NON-RESIDENT, currentOdds = the hunt's nonResidentOdds.
+
 FAMILIARITY: Hunter knows "${knownAreas}". Reference by name in whyItFits.
 
 ${sharedHunterProfile(p)}
 
-AVAILABLE UNIT DATA:
+AVAILABLE CONTROLLED HUNTS (real ${'2025'} draw odds):
 ${JSON.stringify(scoutDataset)}
 
-Score and rank units. Minimum 7 recommendations.
-- MUST include at least 1 OTC or general season option as guaranteed fallback
-- MUST include 2 premium controlled hunt units as BUILD_AND_WAIT or LONG_GAME
-- currentOdds: approximate draw probability or "OTC — no draw required"
-- All units topEnd >= ${trophyFloor}" or flag the gap
-- Always mention leftover/OTC options as backup
+Score and rank. Minimum 7 recommendations.
+- currentOdds MUST equal the hunt's nonResidentOdds from the data — never invent odds.
+- NO POINTS: set nrMinPoints to 0 for every unit; set nrRandomOdds to the hunt's nonResidentOdds.
+- Tier by probability (NOT points): nonResidentOdds ≥ 20% → DRAW_NOW; 8–20% → RANDOM_PLAY; < 8% → BUILD_AND_WAIT or LONG_GAME (a low-odds lottery, framed honestly).
+- MUST include at least 1 GENERAL-SEASON / OTC option as a guaranteed fallback: poolType "OTC", currentOdds "OTC — no draw required".
+- The "unit" field in your output MUST equal the dataset entry's "unit" (hunt area) EXACTLY. Ignore the Wyoming key-format rules below — they do not apply to Idaho.
+- topEnd/typicalScore are not in the data; give realistic Idaho estimates and flag they are estimates. Flag any below ${trophyFloor}".
 
 ${sharedWhyItFitsRules(p)}
 
@@ -1140,31 +1138,37 @@ ${sharedOutputSchema(false)}
 }
 
 function buildIdahoResidentPrompt(p: ScoutPromptParams): string {
-  const { hunterPoints, trophyFloor, weaponLabel, knownAreas, scoutDataset } = p;
-  const drawChances = Math.pow(hunterPoints, 2) + 1;
+  const { trophyFloor, knownAreas, scoutDataset } = p;
 
   return `
 You are HuntEngine.ai — a western hunting intelligence system built from real field experience.
 
 THIS IS AN IDAHO RESIDENT HUNT ANALYSIS.
 
-Idaho uses a BONUS POINT system: draw chances = (points)^2 + 1.
-Hunter has ${hunterPoints} points = ${drawChances} draw chances.
-Residents receive a much larger quota allocation than NR — many units that are difficult for NR are very drawable for residents.
-General seasons and OTC tags widely available.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IDAHO RESIDENT DRAW SYSTEM — PURE RANDOM, NO POINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-WEAPON FILTER: Hunter selected ${weaponLabel}. Dataset pre-filtered.
+Idaho controlled hunts are a PURE RANDOM draw — there are NO preference or bonus points. Never mention points or "building points". Every year is an independent lottery.
+- Residents receive the large majority of controlled-hunt tags, so resident odds are much better than non-resident. Use each hunt's residentOdds.
+- GENERAL SEASONS and OTC tags are widely available to residents — guaranteed fallbacks, no draw.
+
+DATASET: each entry is one controlled hunt with: unit (hunt area), huntNumber, gmu, zone, tags, firstChoiceApplicants, residentApplicants, residentOdds, nonResidentOdds. For a RESIDENT, currentOdds = the hunt's residentOdds.
+
 FAMILIARITY: Hunter knows "${knownAreas}". Reference by name in whyItFits.
 
 ${sharedHunterProfile(p)}
 
-AVAILABLE UNIT DATA:
+AVAILABLE CONTROLLED HUNTS (real 2025 draw odds):
 ${JSON.stringify(scoutDataset)}
 
-Score and rank units. Minimum 6 recommendations.
-- MUST include at least 1 OTC general season option
-- All units topEnd >= ${trophyFloor}" or flag the gap
-- currentOdds reflects resident draw probability or "OTC"
+Score and rank. Minimum 6 recommendations.
+- currentOdds MUST equal the hunt's residentOdds from the data — never invent odds.
+- NO POINTS: residentQuota = the hunt's tags; residentApplicants = the hunt's residentApplicants.
+- Tier by probability (NOT points): residentOdds ≥ 25% → DRAW_NOW; 10–25% → RANDOM_PLAY; < 10% → BUILD_AND_WAIT or LONG_GAME (a low-odds lottery, framed honestly).
+- MUST include at least 1 GENERAL-SEASON / OTC option as a guaranteed fallback: poolType "OTC", currentOdds "OTC — no draw required".
+- The "unit" field in your output MUST equal the dataset entry's "unit" (hunt area) EXACTLY. Ignore the Wyoming key-format rules below — they do not apply to Idaho.
+- topEnd/typicalScore are not in the data; give realistic Idaho estimates and flag they are estimates. Flag any below ${trophyFloor}".
 
 ${sharedWhyItFitsRules(p)}
 

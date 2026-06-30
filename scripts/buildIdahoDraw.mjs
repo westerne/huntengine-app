@@ -80,6 +80,32 @@ export function idahoHuntsForUnit(speciesKey: string, gmu: string): IdahoHunt[] 
   if (Number.isNaN(g)) return [];
   return (IDAHO_DRAW[speciesKey] || []).filter((h) => parseInt(h.area, 10) === g);
 }
+
+// Scout dataset for the Find-a-Tag (SCOUT) flow: every controlled hunt for the
+// species as a recommendable entry, enriched with the GMU's elk zone. Real tags
+// and odds (resident + non-resident) — Idaho is a pure random draw, no points.
+export function buildIdahoScoutDataset(
+  speciesKey: string,
+  gmuZones: Record<string, { elkZone: string | null }>,
+): Array<Record<string, unknown>> {
+  return (IDAHO_DRAW[speciesKey] || []).map((h) => {
+    const gmu = String(parseInt(h.area, 10));
+    return {
+      unit: h.area,
+      huntNumber: h.hunt,
+      gmu,
+      zone: gmuZones[gmu]?.elkZone ?? null,
+      tags: h.tags,
+      firstChoiceApplicants: h.applicants,
+      residentApplicants: h.resApplicants,
+      nonResidentApplicants: h.nonResApplicants,
+      residentOdds: \`\${h.resOddsPct}%\`,
+      nonResidentOdds: \`\${h.nonResOddsPct}%\`,
+      overallOdds: \`\${h.oddsPct}%\`,
+      drawType: 'Controlled — pure random, no points',
+    };
+  });
+}
 `;
 
 writeFileSync(new URL('../app/api/strategy/idahoDraw.ts', import.meta.url), body);
