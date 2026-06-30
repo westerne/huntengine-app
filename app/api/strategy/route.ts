@@ -18,6 +18,7 @@ import { getAccessSummary } from '@/lib/access';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
+import { coloradoHuntsForUnit, COLORADO_DRAW_YEAR } from './coloradoDraw';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -114,6 +115,7 @@ export async function POST(req: Request) {
     // ─── 2. FLAGS ─────────────────────────────────────────────────────────────
     const isWyoming = stateName === 'WYOMING';
     const isIdaho = stateName === 'IDAHO';
+    const isColorado = stateName === 'COLORADO';
     const isDeer = speciesKey === 'DEER';
     const isElk = speciesKey === 'ELK';
     const isAntelope = speciesKey === 'ANTELOPE';
@@ -376,6 +378,30 @@ export async function POST(req: Request) {
         drawSummary = `
           ### IDAHO DRAW — Unit ${unitResolved} ${speciesLabel} ###
           No limited-entry controlled hunts are tied to this unit for ${speciesLabel} in ${IDAHO_DRAW_YEAR}. Treat this unit as GENERAL SEASON: tags are over-the-counter or general (no draw). Idaho uses no preference points. Do not fabricate controlled-hunt numbers or odds.
+          ###########################################
+        `;
+      }
+    }
+
+    // ── Colorado: real choice-1 draw-success % (CPW recap). CO uses preference
+    // points; we have the success RATE (res/nonres), not exact points. ────────
+    if (isColorado) {
+      const hunts = coloradoHuntsForUnit(speciesKey, unitResolved);
+      if (hunts.length) {
+        const lines = hunts.slice(0, 12).map(h =>
+          `- Hunt ${h.code}: ${h.apps != null ? `${h.apps} first-choice applicants, ` : ''}choice-1 draw success — resident ${h.resSuccessPct}%, non-resident ${h.nonResSuccessPct}%.`
+        ).join('\n');
+        drawSummary = `
+          ### COLORADO DRAW SUCCESS DATA (${COLORADO_DRAW_YEAR}) — Unit ${unitResolved} ${speciesLabel} ###
+          Colorado uses a PREFERENCE POINT draw (one point per year you apply unsuccessfully; high-demand units take many points). The figures below are the CHOICE-1 DRAW SUCCESS RATE for each hunt code in this unit — resident vs non-resident — NOT the exact points required (CPW does not publish that in a usable form). Low success % = high demand / many points; high success % = easy to draw.
+          ${lines}
+          Present these as draw-success rates. Explain that exact preference points required vary year to year and the hunter should confirm the current point line on CPW. Do NOT invent specific point requirements.
+          ###########################################
+        `;
+      } else {
+        drawSummary = `
+          ### COLORADO DRAW — Unit ${unitResolved} ${speciesLabel} ###
+          Machine-readable draw-success data was not available for ${speciesLabel} hunts in this unit. Colorado uses a preference-point draw. Do NOT fabricate specific draw odds or point requirements; advise the hunter to check CPW's published draw statistics for this unit.
           ###########################################
         `;
       }
