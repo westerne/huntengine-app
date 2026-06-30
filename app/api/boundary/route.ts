@@ -76,6 +76,25 @@ const CO_SOURCES: Record<string, Source> = {
   MTNGOAT: cpw(8),
 };
 
+// Montana FWP — DISTRICT (hunting district number, stored as a string). Deer/elk
+// share the "Deer Elk Lion" layer (11); antelope/moose/sheep/goat have their own.
+const FWP_BASE =
+  'https://fwp-gis.mt.gov/arcgis/rest/services/admbnd/huntingDistricts/MapServer';
+const fwp = (layer: number): Source => ({
+  url: `${FWP_BASE}/${layer}/query`,
+  unitField: 'DISTRICT',
+  numeric: false,
+  outFields: '*',
+});
+const MT_SOURCES: Record<string, Source> = {
+  DEER: fwp(11),
+  ELK: fwp(11),
+  ANTELOPE: fwp(3),
+  MOOSE: fwp(16),
+  BIGHORNSHEEP: fwp(5),
+  MTNGOAT: fwp(19),
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -90,6 +109,7 @@ function resolveSource(state: string, species: string): Source | null {
   if (state === 'ID') return IDFG_GMU;
   if (state === 'WY') return WY_SOURCES[speciesKey(species)] ?? null;
   if (state === 'CO') return CO_SOURCES[speciesKey(species)] ?? null;
+  if (state === 'MT') return MT_SOURCES[speciesKey(species)] ?? null;
   return null;
 }
 
