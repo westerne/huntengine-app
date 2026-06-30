@@ -17,6 +17,7 @@ import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
+import { idahoHuntsForUnit, IDAHO_DRAW_YEAR } from './idahoDraw';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -102,6 +103,9 @@ export async function POST(req: Request) {
     const speciesKey = speciesKeyMap[speciesRaw]
       || Object.entries(speciesKeyMap).find(([k]) => speciesRaw.includes(k))?.[1]
       || speciesRaw.toUpperCase().replace(/\s+/g, '');
+    // The species the hunter is after, bound early so every block (draw summary,
+    // guardrails) can reference it without re-deriving.
+    const speciesLabel = (formData.species && String(formData.species).trim()) || speciesKey;
 
     const stateRaw = (formData.state || formData.states?.[0] || '').toUpperCase().trim();
     const stateName = stateAliases[stateRaw] || stateRaw;
@@ -347,6 +351,32 @@ export async function POST(req: Request) {
     // `latest` is the newest year.
     let drawSummary = "NO OFFICIAL DATA AVAILABLE. Provide general draw advice only.";
 
+    // ── Idaho: real controlled-hunt draw odds (IDFG) ────────────────────────
+    // General deer/elk seasons are OTC/general (no draw); these are the
+    // limited-entry hunts tied to the unit. Idaho is a pure random draw — no
+    // preference/bonus points.
+    if (isIdaho) {
+      const hunts = idahoHuntsForUnit(speciesKey, unitResolved);
+      if (hunts.length) {
+        const lines = hunts.slice(0, 12).map(h =>
+          `- Controlled Hunt ${h.hunt} (Area ${h.area}): ${h.tags} tags, ${h.applicants} first-choice applicants. Draw odds ~${h.oddsPct}% (resident ${h.resOddsPct}%, non-resident ${h.nonResOddsPct}%).`
+        ).join('\n');
+        drawSummary = `
+          ### IDAHO CONTROLLED HUNT DRAW DATA (${IDAHO_DRAW_YEAR}) — Unit ${unitResolved} ${speciesLabel} ###
+          Idaho ${speciesLabel} also has GENERAL/OTC seasons that require NO draw. The hunts below are the LIMITED-ENTRY controlled hunts tied to this unit — use these exact numbers, do not invent others:
+          ${lines}
+          DRAW SYSTEM: Idaho uses a PURE RANDOM draw — there are NO preference or bonus points. Residents and non-residents each have set permit allocations. Every year is a fresh lottery.
+          ###########################################
+        `;
+      } else {
+        drawSummary = `
+          ### IDAHO DRAW — Unit ${unitResolved} ${speciesLabel} ###
+          No limited-entry controlled hunts are tied to this unit for ${speciesLabel} in ${IDAHO_DRAW_YEAR}. Treat this unit as GENERAL SEASON: tags are over-the-counter or general (no draw). Idaho uses no preference points. Do not fabricate controlled-hunt numbers or odds.
+          ###########################################
+        `;
+      }
+    }
+
     // Deer resolves draw data via wyoResolved; antelope/elk V2 units carry their
     // own drawHistory on the resolved unitStats, so fall back to that.
     const drawUnit = wyoResolved.drawSource
@@ -427,10 +457,6 @@ export async function POST(req: Request) {
     }
 
     // ─── 7. GUARDRAILS & TRUTH BLOCK ──────────────────────────────────────────
-    // The species the hunter is actually after — bind this everywhere so the
-    // brief never defaults to mule deer for an antelope/elk/etc. tag.
-    const speciesLabel = (formData.species && String(formData.species).trim()) || speciesKey;
-
     // Idaho "basics" lookup — gives Idaho units a real centroid + geo anchor even
     // before draw/trophy data is ingested, so the access grounding below is
     // located in Idaho (not the Wyoming fallback).
