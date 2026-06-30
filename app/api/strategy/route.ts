@@ -15,6 +15,7 @@ import { buildWyomingAntelopeScoutDataset } from './wyoantelopeScoutAdapter';
 import { hasValidBetaAccess } from '@/lib/betaAccess';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
+import { getPublicLandPct } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -462,17 +463,30 @@ export async function POST(req: Request) {
       }
     }
 
-    // Real access features (OpenStreetMap, via lib/access) so the TERRAIN & ACCESS
-    // section names actual roads/trailheads instead of inventing them. Best-effort
-    // and time-boxed — returns empty text on failure so the brief still generates.
+    // Real access features (OSM) + a real public-land % (sampled from BLM surface
+    // ownership when we have no curated publicPct, e.g. Idaho). Both best-effort,
+    // time-boxed, and run concurrently so they don't stack latency on the brief.
     const briefCoords = unitStats?.coords || idahoUnit?.coords || fallbackCoords;
-    const accessSummary = await getAccessSummary(briefCoords.lat, briefCoords.lng);
+    const origin = new URL(req.url).origin;
+    const [accessSummary, sampledLand] = await Promise.all([
+      getAccessSummary(briefCoords.lat, briefCoords.lng),
+      unitStats?.publicPct == null
+        ? getPublicLandPct(origin, stateRaw, speciesLabel, unitResolved)
+        : Promise.resolve(null),
+    ]);
+
+    // Surface a public-land % only when the curated data lacks one (habitatBlock
+    // already carries it for WY V2 units).
+    const publicLandBlock = (unitStats?.publicPct == null && sampledLand?.publicPct != null)
+      ? `PUBLIC LAND: approximately ${sampledLand.publicPct}% public land, computed from BLM surface ownership sampled across the unit (${sampledLand.sampled} points). Use this figure for the public/private split rather than guessing.`
+      : '';
 
     const geographicGuardrails = `
       SPECIES: This is a ${speciesLabel} hunt in ${stateName}. EVERY section must be about ${speciesLabel} specifically — trophy scores, behavior, terrain use, and rut timing must all match ${speciesLabel}. NEVER write about mule deer (or any other species) unless ${speciesLabel} IS that species.
       ${geoAnchor}
       ${trophyInstruction}
       ${habitatBlock}
+      ${publicLandBlock}
       ${wildernessBlock}
       ${accessSummary.text}
       ${drawSummary}
@@ -512,7 +526,7 @@ Realistic expectations. Use the typical and top-end data provided. What does a g
 What hunt styles consistently produce in this unit. Be specific. What does NOT work here and why.
 
 6. TERRAIN & ACCESS
-Specific terrain description and elevation range. For the road system, trailheads, and parking, use ONLY the named roads and the counts in the REAL ACCESS DATA block above — name the actual roads when describing how to get in. Do NOT invent trailhead names, forest-road numbers, or parking areas that are not in that block; if a category shows 0 or "none cataloged", say access is via unmaintained two-tracks or cross-country and that there are no formal trailheads. For the public/private split, use the public-land percentage from the HABITAT METRICS block rather than guessing.
+Specific terrain description and elevation range. For the road system, trailheads, and parking, use ONLY the named roads and the counts in the REAL ACCESS DATA block above — name the actual roads when describing how to get in. Do NOT invent trailhead names, forest-road numbers, or parking areas that are not in that block; if a category shows 0 or "none cataloged", say access is via unmaintained two-tracks or cross-country and that there are no formal trailheads. For the public/private split, use the public-land percentage from the HABITAT METRICS or PUBLIC LAND block above rather than guessing; if neither is present, do not state a specific percentage.
 
 7. HERD BEHAVIOR
 How animals use this unit through the season. Early season vs late. Rut timing if relevant. What changes their patterns.
