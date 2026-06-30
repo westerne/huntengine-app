@@ -1257,12 +1257,17 @@ ${JSON.stringify(scoutDataset)}
 
 Each entry is a GMU with its hunt codes (huntCodes), resident/non-resident choice-1 draw-success RANGES (resDrawSuccess / nonResDrawSuccess), and the best/easiest rate (bestResSuccess / bestNonResSuccess). Hunt-code trailing letters encode method (R=rifle, A=archery, M=muzzleloader). These are draw-SUCCESS RATES, not exact preference points — CPW does not publish points-to-draw in a usable form.
 
-Score and rank GMU units. Minimum 7 recommendations.
+Score and rank GMU units.
+CRITICAL — the "recommendations" array MUST contain AT LEAST 7 objects. This is mandatory; fewer than 7 is a failed response. The dataset has 100+ GMUs, so there is no reason to stop early. The 7+ MUST span this spread (do not return only 100%-success units):
+  • 3 high-success / OTC units → tier DRAW_NOW
+  • 2 mid-tier units (bestNonResSuccess 25–60%) → tier RANDOM_PLAY
+  • 2 premium low-success trophy units (bestNonResSuccess < 25%) → tier BUILD_AND_WAIT or LONG_GAME
+Put every recommended unit in drawableUnits too.
 - For a NON-RESIDENT, currentOdds = the unit's nonResDrawSuccess range; cite specific huntCodes. Low success % = high demand (many points); high % = easy / low points.
 - Tier by bestNonResSuccess: >=60% → DRAW_NOW; 25–60% → RANDOM_PLAY; <25% → BUILD_AND_WAIT or LONG_GAME.
 - NO EXACT POINTS: set nrMinPoints to 0 and do NOT state a specific number of preference points required; say points "vary — confirm current line on CPW".
 - MUST include at least 1 OTC option (Colorado has broad OTC archery elk and rifle 2nd/3rd-season elk in many GMUs): poolType "OTC", currentOdds "OTC — no draw required".
-- The "unit" field in output = the GMU number from the data. topEnd/typicalScore are not in the data — give realistic estimates and flag any below ${trophyFloor}".
+- Do NOT exclude a unit for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the GMU number from the data; topEnd/typicalScore are not in the data, so give realistic estimates.
 
 ${sharedWhyItFitsRules(p)}
 
@@ -1293,11 +1298,16 @@ ${JSON.stringify(scoutDataset)}
 
 Each entry is a GMU with its hunt codes (huntCodes), resident/non-resident choice-1 draw-success RANGES (resDrawSuccess / nonResDrawSuccess), and the best/easiest rate (bestResSuccess / bestNonResSuccess). Hunt-code trailing letters encode method (R=rifle, A=archery, M=muzzleloader). These are draw-SUCCESS RATES, not exact preference points.
 
-Score and rank GMU units. Minimum 6 recommendations.
+Score and rank GMU units.
+CRITICAL — the "recommendations" array MUST contain AT LEAST 7 objects. This is mandatory; fewer than 7 is a failed response. The dataset has 100+ GMUs, so there is no reason to stop early. The 7+ MUST span this spread (do not return only 100%-success units):
+  • 3 high-success / OTC units → tier DRAW_NOW
+  • 2 mid-tier units (bestResSuccess 25–60%) → tier RANDOM_PLAY
+  • 2 premium low-success trophy units (bestResSuccess < 25%) → tier BUILD_AND_WAIT or LONG_GAME
+Put every recommended unit in drawableUnits too.
 - For a RESIDENT, currentOdds = the unit's resDrawSuccess range; cite specific huntCodes. Tier by bestResSuccess. Low success % = high demand (many points); high % = easy / low points.
 - NO EXACT POINTS: do NOT state a specific number of preference points required; say points "vary — confirm current line on CPW".
 - MUST include at least 1 OTC option (broad OTC archery elk and rifle 2nd/3rd-season elk): poolType "OTC", currentOdds "OTC — no draw required".
-- The "unit" field in output = the GMU number from the data. topEnd/typicalScore are not in the data — give realistic estimates and flag any below ${trophyFloor}".
+- Do NOT exclude a unit for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the GMU number from the data; topEnd/typicalScore are not in the data, so give realistic estimates.
 
 ${sharedWhyItFitsRules(p)}
 
