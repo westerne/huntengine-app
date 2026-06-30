@@ -43,6 +43,30 @@ function inGeometry(x: number, y: number, geom: { type: string; coordinates: unk
   return false;
 }
 
+// Unit centroid (bbox center) from the boundary proxy, so the brief grounds its
+// access lookup at the real unit location for any proxy state (ID/CO/…) instead
+// of a fallback coordinate. Returns null for unsupported states / failures.
+export async function getUnitCentroid(
+  origin: string,
+  state: string,
+  species: string,
+  unit: string,
+): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const r = await fetch(
+      `${origin}/api/boundary?state=${encodeURIComponent(state)}&species=${encodeURIComponent(species)}&unit=${encodeURIComponent(unit)}`,
+      { signal: AbortSignal.timeout(20000) },
+    );
+    const fc: FC = await r.json();
+    const bb = bboxOf(fc);
+    if (!fc.features?.length || !bb) return null;
+    const [s, w, n, e] = bb;
+    return { lat: (s + n) / 2, lng: (w + e) / 2 };
+  } catch {
+    return null;
+  }
+}
+
 type Stats = { publicPct: number; sampled: number };
 const cache = new Map<string, { at: number; val: Stats | null }>();
 const TTL_MS = 24 * 60 * 60 * 1000;

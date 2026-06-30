@@ -37,11 +37,12 @@ const POINT_COLOR: Record<string, string> = {
 const STATE_CENTER: Record<string, [number, number]> = {
   WY: [42.9, -108.5],
   ID: [45.2, -114.5],
+  CO: [39.0, -105.7],
 };
 
 // States with a boundary source in /api/boundary. (Ownership + access are
 // national, so this set is the only gate on whether a unit map renders.)
-const SUPPORTED_STATES = new Set(['WY', 'ID']);
+const SUPPORTED_STATES = new Set(['WY', 'ID', 'CO']);
 
 type ProxyFC = FeatureCollection & { label?: string; isRegion?: boolean };
 type Identify = { lat: number; lng: number; label: string; isPublic: boolean | null; loading: boolean };

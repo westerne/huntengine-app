@@ -15,7 +15,7 @@ import { buildWyomingAntelopeScoutDataset } from './wyoantelopeScoutAdapter';
 import { hasValidBetaAccess } from '@/lib/betaAccess';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
-import { getPublicLandPct } from '@/lib/landstats';
+import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -466,8 +466,15 @@ export async function POST(req: Request) {
     // Real access features (OSM) + a real public-land % (sampled from BLM surface
     // ownership when we have no curated publicPct, e.g. Idaho). Both best-effort,
     // time-boxed, and run concurrently so they don't stack latency on the brief.
-    const briefCoords = unitStats?.coords || idahoUnit?.coords || fallbackCoords;
+    // Ground the access lookup at the unit's real location. Prefer curated coords;
+    // otherwise use the boundary centroid (any proxy state — ID/CO/…); the WY-area
+    // fallback is a last resort so we never silently query the wrong state.
     const origin = new URL(req.url).origin;
+    const curatedCoords = unitStats?.coords || idahoUnit?.coords || null;
+    const briefCoords =
+      curatedCoords ||
+      (await getUnitCentroid(origin, stateRaw, speciesLabel, unitResolved)) ||
+      fallbackCoords;
     const [accessSummary, sampledLand] = await Promise.all([
       getAccessSummary(briefCoords.lat, briefCoords.lng),
       unitStats?.publicPct == null

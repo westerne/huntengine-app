@@ -55,6 +55,27 @@ const IDFG_GMU: Source = {
   labelField: 'Elk_Zone',
 };
 
+// Colorado Parks & Wildlife — GMUID is the unit number. Big-game GMUs (deer/elk/
+// antelope/moose) share layer 6; bighorn sheep and mountain goat have their own
+// (layers 7/8). '*' outFields since the layers' schemas differ.
+const CPW_BASE =
+  'https://services5.arcgis.com/ttNGmDvKQA7oeDQ3/arcgis/rest/services/CPWAdminData/FeatureServer';
+const cpw = (layer: number): Source => ({
+  url: `${CPW_BASE}/${layer}/query`,
+  unitField: 'GMUID',
+  numeric: true,
+  outFields: '*',
+  labelField: 'COUNTY',
+});
+const CO_SOURCES: Record<string, Source> = {
+  DEER: cpw(6),
+  ELK: cpw(6),
+  ANTELOPE: cpw(6),
+  MOOSE: cpw(6),
+  BIGHORNSHEEP: cpw(7),
+  MTNGOAT: cpw(8),
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -68,6 +89,7 @@ function speciesKey(species: string): string {
 function resolveSource(state: string, species: string): Source | null {
   if (state === 'ID') return IDFG_GMU;
   if (state === 'WY') return WY_SOURCES[speciesKey(species)] ?? null;
+  if (state === 'CO') return CO_SOURCES[speciesKey(species)] ?? null;
   return null;
 }
 
