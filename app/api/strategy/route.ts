@@ -19,6 +19,7 @@ import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
 import { coloradoHuntsForUnit, COLORADO_DRAW_YEAR, buildColoradoScoutDataset } from './coloradoDraw';
+import { montanaHuntsForUnit, MONTANA_DRAW_YEAR, buildMontanaScoutDataset } from './montanaDraw';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -116,6 +117,7 @@ export async function POST(req: Request) {
     const isWyoming = stateName === 'WYOMING';
     const isIdaho = stateName === 'IDAHO';
     const isColorado = stateName === 'COLORADO';
+    const isMontana = stateName === 'MONTANA';
     const isDeer = speciesKey === 'DEER';
     const isElk = speciesKey === 'ELK';
     const isAntelope = speciesKey === 'ANTELOPE';
@@ -299,6 +301,10 @@ export async function POST(req: Request) {
         : isColorado
         ? buildColoradoScoutDataset(speciesKey)
 
+        // Montana: limited-permit draw success per district (bonus-point draw).
+        : isMontana
+        ? buildMontanaScoutDataset(speciesKey)
+
         : Object.entries(stateDataset).map(([unitName, unit]: [string, any]) => ({
             unit: unitName,
             typical: unit.typical ?? 'N/A',
@@ -406,6 +412,30 @@ export async function POST(req: Request) {
         drawSummary = `
           ### COLORADO DRAW — Unit ${unitResolved} ${speciesLabel} ###
           Machine-readable draw-success data was not available for ${speciesLabel} hunts in this unit. Colorado uses a preference-point draw. Do NOT fabricate specific draw odds or point requirements; advise the hunter to check CPW's published draw statistics for this unit.
+          ###########################################
+        `;
+      }
+    }
+
+    // ── Montana: limited-permit draw success (bonus-point draw, points squared).
+    // General deer/elk licenses are OTC; these are the limited permits. ────────
+    if (isMontana) {
+      const permits = montanaHuntsForUnit(speciesKey, unitResolved);
+      if (permits.length) {
+        const lines = permits.slice(0, 12).map(p =>
+          `- Permit ${p.lpt}: 1st-choice draw success — resident ${p.resSuccessPct}%, non-resident ${p.nrSuccessPct}%${p.resApps != null ? ` (${p.resApps} resident applicants)` : ''}.`
+        ).join('\n');
+        drawSummary = `
+          ### MONTANA DRAW SUCCESS DATA (${MONTANA_DRAW_YEAR}) — District ${unitResolved} ${speciesLabel} ###
+          Montana's general deer & elk licenses are GENERAL/OTC (no draw) for residents; non-residents draw the combination license. The figures below are the LIMITED PERMITS in this district, drawn via Montana's BONUS POINT system (each applicant's points are SQUARED in the draw — more points sharply improve odds, but it remains a weighted random draw). These are 1st-choice draw-SUCCESS RATES, not a point guarantee:
+          ${lines}
+          Explain the bonus-point (squared) system and that points improve but never guarantee odds. Do NOT invent specific point requirements. A permit at 100% was undersubscribed (everyone drew).
+          ###########################################
+        `;
+      } else {
+        drawSummary = `
+          ### MONTANA DRAW — District ${unitResolved} ${speciesLabel} ###
+          No limited-permit draw data was found for ${speciesLabel} in District ${unitResolved}. Montana deer & elk general licenses are general/OTC (no draw) for residents. Do NOT fabricate draw odds; advise checking MT FWP drawing statistics.
           ###########################################
         `;
       }

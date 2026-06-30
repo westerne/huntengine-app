@@ -302,7 +302,56 @@ export function buildScoutPrompt(params: ScoutPromptParams): string {
       : buildColoradoNRPrompt(params);
   }
 
+  if (stateName === 'MONTANA') {
+    return buildMontanaPrompt(params);
+  }
+
   return buildGenericPrompt(params);
+}
+
+// ─── MONTANA ──────────────────────────────────────────────────────────────────
+
+function buildMontanaPrompt(p: ScoutPromptParams): string {
+  const { isResident, trophyFloor, knownAreas, scoutDataset } = p;
+  const who = isResident ? 'RESIDENT' : 'NON-RESIDENT';
+  const succField = isResident ? 'resDrawSuccess' : 'nonResDrawSuccess';
+  const bestField = isResident ? 'bestResSuccess' : 'bestNonResSuccess';
+
+  return `
+You are HuntEngine.ai — a western hunting intelligence system built from real field experience.
+
+THIS IS A MONTANA ${who} HUNT ANALYSIS.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MONTANA DRAW SYSTEM — BONUS POINTS (SQUARED)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Montana's general deer & elk licenses are GENERAL/OTC — no draw (non-residents draw the combination license). The limited permits below are drawn via a BONUS POINT system where each applicant's points are SQUARED in the draw — more points sharply improve odds but never guarantee a draw (it stays a weighted random draw). Never state an exact number of points needed.
+
+DATA: each entry is a hunting DISTRICT with its limited permits (permits), resident/non-resident draw-success RANGES (resDrawSuccess / nonResDrawSuccess) and best/easiest rate (bestResSuccess / bestNonResSuccess). For a ${who}, currentOdds = the district's ${succField}.
+
+FAMILIARITY: Hunter knows "${knownAreas}". Reference by name in whyItFits.
+
+${sharedHunterProfile(p)}
+
+AVAILABLE DISTRICT DATA (real MT FWP draw-success rates):
+${JSON.stringify(scoutDataset)}
+
+Score and rank hunting districts.
+CRITICAL — the "recommendations" array MUST contain AT LEAST 7 objects. The 7+ MUST span this spread:
+  • 3 high-success / general-license districts → tier DRAW_NOW
+  • 2 mid-tier (${bestField} 25–60%) → tier RANDOM_PLAY
+  • 2 premium low-success (${bestField} < 25%) → tier BUILD_AND_WAIT or LONG_GAME
+Put every recommended unit in drawableUnits too.
+- currentOdds = the district's ${succField} range; cite specific permits. Low % = high demand; high % = easy.
+- NO EXACT POINTS: set nrMinPoints to 0; say bonus points "improve odds but never guarantee — confirm on MT FWP".
+- MUST include at least 1 general/OTC option (Montana deer & elk general licenses need no draw): poolType "OTC", currentOdds "OTC — no draw required".
+- Do NOT exclude a district for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the district number; topEnd/typicalScore are not in the data, so give realistic estimates.
+
+${sharedWhyItFitsRules(p)}
+
+${sharedOutputSchema(isResident)}
+`.trim();
 }
 
 // ─── WYOMING DEER ─────────────────────────────────────────────────────────────
