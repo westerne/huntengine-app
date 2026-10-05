@@ -15,13 +15,17 @@ export function huntsForWeapon(hunts: Hunt[], weapon: Weapon | 'any'): Hunt[] {
 
 // Draw success for applicants holding exactly `points` (from the agency's
 // point table). Above the table's top level, use the top level.
-export function successAtPoints(h: Hunt, residency: Residency, points: number): number | null {
+export function pointLineAt(h: Hunt, residency: Residency, points: number) {
   const lines = h.pointLines?.[residency];
   if (!lines?.length) return null;
   const top = Math.max(...lines.map((l) => l.points));
   const line = lines.find((l) => l.points === Math.min(points, top));
-  if (!line || line.applicants === 0) return null;
-  return Math.round((1000 * line.drawn) / line.applicants) / 10;
+  return line && line.applicants > 0 ? line : null;
+}
+
+export function successAtPoints(h: Hunt, residency: Residency, points: number): number | null {
+  const line = pointLineAt(h, residency, points);
+  return line ? Math.round((1000 * line.drawn) / line.applicants) / 10 : null;
 }
 
 // One entry per HUNT, not per unit: a unit holds bull, cow, youth and archery
@@ -45,6 +49,7 @@ export function buildGenericScoutDataset(
       applicants: s?.applicants ?? null,
       drawSuccess: s?.successPct ?? null,
       drawSuccessAtYourPoints: hunterPoints == null ? null : successAtPoints(h, residency, hunterPoints),
+      atYourPoints: hunterPoints == null ? null : pointLineAt(h, residency, hunterPoints),
       fewestPointsToDraw: s?.minPoints ?? null,
       otc: !!h.otc,
       hunterSuccess: h.harvest ? `${h.harvest.successPct}%` : null,

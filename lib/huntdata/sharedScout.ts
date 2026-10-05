@@ -24,6 +24,9 @@ function odds(e: Entry): { pct: number | null; text: string } {
   const yr = e.dataYear ? `${e.dataYear} draw` : 'last draw';
   if (e.otc) return { pct: 100, text: 'Over the counter — no draw' };
   if (pct == null) return { pct: null, text: 'No published odds' };
+  const line = e.atYourPoints as { drawn: number; applicants: number; points: number } | null | undefined;
+  // A bare "0%" reads like missing data; say how many tried.
+  if (atPts === 0 && line) return { pct, text: `0 of ${line.applicants} applicants at your points drew (${yr})` };
   return { pct, text: `${pct}% (${yr}, ${atPts != null ? 'at your points' : 'first choice'})` };
 }
 

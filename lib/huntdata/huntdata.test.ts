@@ -421,3 +421,14 @@ describe('weapon on shared-state cards', () => {
     expect(rifle.some((e) => e.weapon === 'archery' || e.weapon === 'muzzleloader')).toBe(false);
   });
 });
+
+describe('long-shot odds wording', () => {
+  it('shows "0 of N drew" instead of a bare 0%', async () => {
+    const { buildSharedScoutResponse } = await import('./sharedScout');
+    const out = buildSharedScoutResponse(
+      [{ unit: '23', huntCode: '3050', drawSuccess: 0.2, drawSuccessAtYourPoints: 0, atYourPoints: { points: 5, applicants: 41, drawn: 0 }, dataYear: 2026 }],
+      {}, { stateLabel: 'AZ', weaponLabel: 'Rifle' });
+    expect(out.recommendations[0].currentOdds).toBe('0 of 41 applicants at your points drew (2026 draw)');
+    expect(out.recommendations[0].tier).toBe('LONG_GAME');
+  });
+});

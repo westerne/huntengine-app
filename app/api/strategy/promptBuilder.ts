@@ -1404,6 +1404,8 @@ RULES:
 - Describe odds honestly: under 15% is a long shot or point-building play, never "reasonable" or "good"; 15–50% is a fair chance; 50%+ is likely.
 - Cite numbers only from the data, with their year. Never invent odds, tag counts, fees, season dates, trophy scores, terrain features or access points. Use "Unknown" ratings when you don't know.
 - If hunterSuccess is missing for a hunt, say no figure is published — don't estimate.
+- drawSuccessAtYourPoints counts permits issued to applicants at that point level across ALL passes. Never say which pass (bonus pass, random draw, etc.) the hunter would draw in.
+- Use only what the hunter told you. Don't assume experience, age, or that this is their first hunt.
 - Plain text, no markdown.
 
 Return ONLY this JSON:
