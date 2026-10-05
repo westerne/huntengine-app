@@ -18,6 +18,19 @@ export type ModelExplanations = {
 
 const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
 
+// Point-table odds cover every pass, so any claim about WHICH pass a hunter
+// draws in ("strong chance in the bonus pass") is unsupported. The model kept
+// making it despite the prompt rule, so drop those sentences.
+const PASS_CLAIM = /\b(bonus|random|max(imum)?[- ]point|first|second|1st|2nd)[- ](pass|draw|round)\b/i;
+export function stripPassClaims(text: string | undefined): string {
+  if (!text) return '';
+  return text
+    .split(/(?<=[.!?])\s+/)
+    .filter((s) => !(PASS_CLAIM.test(s) && /\b(chance|odds|likely|draw(n)?|position(ed)?)\b/i.test(s) && !/\bchoice\b/i.test(s)))
+    .join(' ')
+    .trim();
+}
+
 function odds(e: Entry): { pct: number | null; text: string } {
   const atPts = num(e.drawSuccessAtYourPoints);
   const pct = atPts ?? num(e.drawSuccess);
@@ -65,8 +78,8 @@ export function buildSharedScoutResponse(
       pressureRating: x.pressureRating ?? '—',
       totalScore: 0,
       tier,
-      whyItFits: x.whyItFits?.trim() || dataOnlyWhy(e, o),
-      tradeoffs: x.tradeoffs?.trim() || (x.whyItFits ? '' : 'No AI write-up for this hunt — figures shown are from agency data only.'),
+      whyItFits: stripPassClaims(x.whyItFits) || dataOnlyWhy(e, o),
+      tradeoffs: stripPassClaims(x.tradeoffs) || (x.whyItFits ? '' : 'No AI write-up for this hunt — figures shown are from agency data only.'),
       _odds: o.pct,
     };
   });
@@ -85,7 +98,7 @@ export function buildSharedScoutResponse(
       randomPoolUnits: fair.length,
       pointsToNextUnit: 0,
       bestLimitedUnit: best ? `${best.unit} (hunt ${best.huntCode})` : '',
-      summary: model.summary ?? '',
+      summary: stripPassClaims(model.summary),
     },
     strategyPath: model.strategyPath && TIER_ORDER.includes(model.strategyPath) ? model.strategyPath : (best?.tier ?? 'BUILD_AND_WAIT'),
     actionPlan: {

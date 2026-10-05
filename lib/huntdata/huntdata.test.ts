@@ -432,3 +432,13 @@ describe('long-shot odds wording', () => {
     expect(out.recommendations[0].tier).toBe('LONG_GAME');
   });
 });
+
+describe('draw-pass claims', () => {
+  it('drops sentences claiming which pass the hunter draws in, keeps the rest', async () => {
+    const { stripPassClaims } = await import('./sharedScout');
+    const text = 'Put hunt 3091 as your 1st choice because it offers 100% at your points. As a fallback, consider hunt 3019. With 5 points, you have a strong chance in the random draw for hunt 3091, making it a strategic choice to draw now. Keep building points.';
+    expect(stripPassClaims(text)).toBe('Put hunt 3091 as your 1st choice because it offers 100% at your points. As a fallback, consider hunt 3019. Keep building points.');
+    expect(stripPassClaims('You are well positioned for the bonus pass.')).toBe('');
+    expect(stripPassClaims('Put hunt 3019 as your 2nd choice.')).toBe('Put hunt 3019 as your 2nd choice.');
+  });
+});
