@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import ScoutResults from './ScoutResults';
 
 // Leaflet touches `window`, so load the map client-side only.
 const UnitMap = dynamic(() => import('../UnitMap'), {
@@ -114,13 +115,6 @@ function messageForStatus(status: number): string {
   if (status === 429) return 'Too many requests — please wait a few minutes and try again.';
   return 'Engine error during analysis. Please try again.';
 }
-
-const STRATEGY_LABELS: Record<string, { label: string; color: string; description: string }> = {
-  DRAW_NOW: { label: 'Draw Now', color: 'text-green-400', description: 'You have units you can draw this year.' },
-  RANDOM_PLAY: { label: 'Random Pool Play', color: 'text-amber-400', description: 'Low points but viable random pool options exist.' },
-  BUILD_AND_WAIT: { label: 'Build & Wait', color: 'text-blue-400', description: "You're 2-4 years from your best realistic unit." },
-  LONG_GAME: { label: 'Long Game', color: 'text-red-400', description: "Your target unit is a serious points commitment." },
-};
 
 export default function App() {
   const [state, setState] = useState<HuntPlannerState>({
@@ -835,11 +829,17 @@ export default function App() {
 
         {/* RECOMMENDATIONS */}
         {state.step === 'recommendations' && (
-          <div className="space-y-10 animate-in fade-in duration-500 text-left">
-            <h2 className="text-4xl font-black italic uppercase text-center mb-8 tracking-tighter leading-none">Top Tier Selections</h2>
-
-            {/* ── INPUT OVERVIEW CARD ───────────────────────────────────────── */}
-            <div className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 mb-2">
+          <div className="animate-in fade-in duration-500">
+            <ScoutResults
+              recommendations={state.recommendations}
+              drawReality={state.drawReality}
+              actionPlan={state.actionPlan}
+              stateCode={state.profile.states[0]}
+              drawableCount={state.drawableUnits.length}
+              onLearnMore={(rec) => handlePlanSubmit({ ...state.profile, unit: rec.unit, selectedState: rec.state || state.profile.states[0] })}
+              onShowDrawable={() => setState(s => ({ ...s, showDrawablePanel: true }))}
+              searchSummary={
+            <div className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6">
               <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-4">Your Search Parameters</p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
                 <div>
@@ -858,7 +858,7 @@ export default function App() {
                 </div>
                 <div>
                   <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">Weapon / Season</p>
-                  <p className="text-xs font-black text-zinc-200 uppercase">{state.profile.weapons.join(', ')} / {state.profile.seasons.join(', ')}</p>
+                  <p className="text-xs font-black text-zinc-200 uppercase">{state.profile.weapons.join(', ') || 'Any weapon'} / {state.profile.seasons.join(', ') || 'Any season'}</p>
                 </div>
                 <div>
                   <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">Trophy Floor</p>
@@ -894,145 +894,8 @@ export default function App() {
                 </span>
               </div>
             </div>
-
-            {/* Strategy Card */}
-            {state.drawReality && state.actionPlan && state.strategyPath && (() => {
-              const path = STRATEGY_LABELS[state.strategyPath] || { label: state.strategyPath, color: 'text-amber-400', description: '' };
-              return (
-                <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl mb-10">
-                  <div className="bg-zinc-800/60 px-8 py-5 border-b border-zinc-700 flex items-center justify-between">
-                    <div>
-                      <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">Your Draw Reality</p>
-                      <p className="text-zinc-300 text-sm leading-relaxed">{state.drawReality.summary}</p>
-                    </div>
-                    <div className="text-right shrink-0 ml-8">
-                      <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">Strategy</p>
-                      <p className={`text-lg font-black uppercase italic ${path.color}`}>{path.label}</p>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-3 divide-x divide-zinc-800 border-b border-zinc-800">
-                    <button
-                      className="px-6 py-4 text-center group hover:bg-zinc-800/50 transition-colors cursor-pointer w-full"
-                      onClick={() => state.drawableUnits.length > 0 && setState(s => ({ ...s, showDrawablePanel: true }))}
-                    >
-                      <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">Drawable Now</p>
-                      <p className="text-2xl font-black text-green-400 group-hover:text-green-300 transition-colors">{state.drawReality.regularPoolUnits || state.drawableUnits.length || 0}</p>
-                      <p className="text-[9px] font-bold uppercase text-zinc-600 group-hover:text-green-500 transition-colors">
-                        {state.drawableUnits.length > 0 ? 'Tap to see all →' : 'Regular Pool Units'}
-                      </p>
-                    </button>
-                    <div className="px-6 py-4 text-center">
-                      <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">Random Pool</p>
-                      <p className="text-2xl font-black text-amber-400">{state.drawReality.randomPoolUnits}</p>
-                      <p className="text-[9px] text-zinc-600 font-bold uppercase">Viable Options</p>
-                    </div>
-                    <div className="px-6 py-4 text-center">
-                      <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">Best Unit</p>
-                      <p className="text-2xl font-black text-zinc-100">{state.drawReality.bestLimitedUnit || '—'}</p>
-                      <p className="text-[9px] text-zinc-600 font-bold uppercase">{state.drawReality.pointsToNextUnit > 0 ? `${state.drawReality.pointsToNextUnit} pts away` : 'Drawable now'}</p>
-                    </div>
-                  </div>
-
-                  <div className="p-8 space-y-6">
-                    <div>
-                      <p className="text-amber-500 font-black uppercase text-xs tracking-widest mb-3">{state.actionPlan.headline}</p>
-                      <div className="space-y-2">
-                        {(state.actionPlan.steps || []).map((step: string, i: number) => (
-                          <div key={i} className="flex gap-3 items-start">
-                            <span className="text-amber-600 font-black text-xs mt-0.5 shrink-0">{i + 1}.</span>
-                            <p className="text-zinc-300 text-sm">{step}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {state.actionPlan.randomPoolPlays?.length > 0 && (
-                      <div className="bg-black border border-zinc-800 rounded-xl p-5">
-                        <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-3">Random Pool Plays This Year</p>
-                        <div className="flex flex-wrap gap-2">
-                          {state.actionPlan.randomPoolPlays.map((unit: string, i: number) => (
-                            <span key={i} className="px-3 py-1 bg-amber-900/20 border border-amber-800/40 rounded-full text-amber-400 text-[10px] font-black uppercase">{unit}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {state.actionPlan.pointBankingAdvice && (
-                      <p className="text-zinc-500 text-xs italic border-l-2 border-zinc-700 pl-3">{state.actionPlan.pointBankingAdvice}</p>
-                    )}
-                  </div>
-                </div>
-              );
-            })()}
-
-            {/* Unit Recommendation Cards */}
-            <div className="grid gap-8">
-              {state.recommendations.map((rec, i) => {
-                const isResidentProfile = state.profile.residency === 'Resident';
-                const tierConfig = STRATEGY_LABELS[rec.tier] || null;
-                return (
-                  <div key={rec.unit || i} className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
-                    <div className="bg-zinc-800/40 px-8 py-6 border-b border-zinc-800 grid grid-cols-2 md:grid-cols-6 gap-6 items-center">
-                      <div>
-                        <span className="text-amber-500 font-black text-[9px] uppercase tracking-widest leading-none">{rec.state || state.profile.states[0]}</span>
-                        <p className="text-2xl font-black italic uppercase text-white leading-tight">UNIT {rec.unit}</p>
-                        {tierConfig && (
-                          <span className={`text-[9px] font-black uppercase tracking-widest ${tierConfig.color}`}>{tierConfig.label}</span>
-                        )}
-                      </div>
-                      <div>
-                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">Trophy Ceiling</p>
-                        <p className="text-lg font-black italic text-zinc-100">{rec.topEndScore || rec.topEnd}</p>
-                      </div>
-                      <div>
-                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">Season</p>
-                        <p className="text-lg font-black italic text-zinc-100 uppercase">
-                          {(() => {
-                            if (typeof rec.season === 'string') return rec.season;
-                            const parts = [];
-                            if (rec.season?.archery) parts.push(`Archery: ${rec.season.archery.open} - ${rec.season.archery.close}`);
-                            if (rec.season?.rifle) parts.push(`Rifle: ${rec.season.rifle.open} - ${rec.season.rifle.close}`);
-                            return parts.length > 0 ? parts.join(' | ') : rec.seasonName || 'Oct 1-31';
-                          })()}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">Terrain</p>
-                        <p className="text-lg font-black italic capitalize">{rec.terrain || rec.terrainType}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">Current Odds</p>
-                        <p className="text-lg font-black italic text-green-500 uppercase">
-                          {rec.currentOdds || 'N/A'}
-                        </p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-[9px] uppercase text-zinc-500 font-black mb-1">Predicted</p>
-                        <p className={`text-lg font-black italic uppercase ${rec.oddsDirection === 'UP' ? 'text-green-400' : rec.oddsDirection === 'DOWN' ? 'text-red-400' : 'text-amber-400'}`}>
-                          {rec.predictedOdds || 'N/A'}
-                          {rec.oddsDirection === 'UP' && ' ↑'}
-                          {rec.oddsDirection === 'DOWN' && ' ↓'}
-                          {rec.oddsDirection === 'STABLE' && ' →'}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="p-8 flex flex-col md:flex-row justify-between items-center gap-10">
-                      <div className="flex-1">
-                        <p className="text-zinc-300 text-sm leading-relaxed">{rec.whyItFits}</p>
-                        {rec.tradeoffs && <p className="text-zinc-500 text-xs mt-3 italic border-l-2 border-zinc-700 pl-3">{rec.tradeoffs}</p>}
-                      </div>
-                      <button
-                        onClick={() => handlePlanSubmit({ ...state.profile, unit: rec.unit, selectedState: rec.state || state.profile.states[0] })}
-                        className="w-full md:w-64 bg-zinc-100 text-black py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[10px] shadow-xl"
-                      >
-                        Learn More
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+              }
+            />
           </div>
         )}
 
