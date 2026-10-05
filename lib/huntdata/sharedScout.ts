@@ -26,7 +26,7 @@ export function stripPassClaims(text: string | undefined): string {
   if (!text) return '';
   return text
     .split(/(?<=[.!?])\s+/)
-    .filter((s) => !(PASS_CLAIM.test(s) && /\b(chance|odds|likely|draw(n)?|position(ed)?)\b/i.test(s) && !/\bchoice\b/i.test(s)))
+    .filter((s) => !(PASS_CLAIM.test(s) && /\b(chance|odds|likely|draw(n)?|position(ed)?)\b/i.test(s)))
     .join(' ')
     .trim();
 }
