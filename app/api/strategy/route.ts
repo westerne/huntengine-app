@@ -31,6 +31,16 @@ import type { SpeciesKey } from '@/lib/huntdata/schema';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
+// Best-effort lookups (boundary centroid, OSM access, BLM land share) feed the
+// BRIEF but aren't essential. Public map services are sometimes slow — they
+// were taking ~20s of a ~50s BRIEF — so give up on a slow one and continue.
+function withTimeout<T>(p: Promise<T>, ms: number, fallback: T): Promise<T> {
+  return Promise.race([p.catch(() => fallback), new Promise<T>((r) => setTimeout(() => r(fallback), ms))]);
+}
+
+// BRIEF makes two model calls plus access/land lookups; allow up to 60s on Vercel.
+export const maxDuration = 60;
+
 const speciesKeyMap: Record<string, string> = {
   'mule deer': 'DEER', 'muley': 'DEER', 'muleys': 'DEER', 'deer': 'DEER', 'whitetail': 'DEER',
   'elk': 'ELK', 'antelope': 'ANTELOPE', 'pronghorn': 'ANTELOPE',
@@ -421,6 +431,7 @@ export async function POST(req: Request) {
         unitResolved,
         isResident ? 'resident' : 'nonresident',
         Number(formData.points?.[stateRaw]) || undefined,
+        formData.huntCode ? String(formData.huntCode) : undefined,
       );
     }
 
@@ -617,15 +628,20 @@ export async function POST(req: Request) {
     // otherwise use the boundary centroid (any proxy state — ID/CO/…). If neither
     // exists we skip the access lookup rather than query some other state's ground.
     const origin = new URL(req.url).origin;
+    const tBrief = Date.now(); // BRIEF timing, logged below
     const curatedCoords = unitStats?.coords || idahoUnit?.coords || null;
     const briefCoords =
       curatedCoords ||
-      (await getUnitCentroid(origin, stateRaw, speciesLabel, unitResolved)) ||
+      (await withTimeout(getUnitCentroid(origin, stateRaw, speciesLabel, unitResolved), 6000, null)) ||
       null;
     const [accessSummary, sampledLand] = await Promise.all([
-      getAccessSummary(briefCoords?.lat ?? NaN, briefCoords?.lng ?? NaN),
+      withTimeout(
+        getAccessSummary(briefCoords?.lat ?? NaN, briefCoords?.lng ?? NaN),
+        8000,
+        { trailheads: 0, parking: 0, gates: 0, roads: [], text: '' },
+      ),
       unitStats?.publicPct == null
-        ? getPublicLandPct(origin, stateRaw, speciesLabel, unitResolved)
+        ? withTimeout(getPublicLandPct(origin, stateRaw, speciesLabel, unitResolved), 8000, null)
         : Promise.resolve(null),
     ]);
 
@@ -638,7 +654,7 @@ export async function POST(req: Request) {
     // Agency hunter-success figures for this unit (controlled + general rows).
     const briefStateCode = toStateCode(stateName);
     const harvestBlock = briefStateCode
-      ? buildHarvestBlock(briefStateCode, speciesKey as SpeciesKey, speciesLabel, unitResolved)
+      ? buildHarvestBlock(briefStateCode, speciesKey as SpeciesKey, speciesLabel, formData.huntCode ? String(formData.huntCode) : unitResolved)
       : '';
 
     const geographicGuardrails = `
@@ -697,6 +713,7 @@ How animals use this unit through the season. Early season vs late. Rut timing i
 Nearest town. Cell service reality. Water sources. Weather windows. What can go wrong and how to be ready.
 `;
 
+    const tLookups = Date.now();
     const briefResponse = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [{ role: "system", content: briefPrompt }],
@@ -779,6 +796,7 @@ Generate a JSON object with exactly two keys:
 Headers in ALL CAPS. Plain text only. No markdown symbols.
 `;
 
+    const tModel1 = Date.now();
     const tacticalResponse = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [{ role: "system", content: tacticalPrompt }],
@@ -787,6 +805,7 @@ Headers in ALL CAPS. Plain text only. No markdown symbols.
     });
 
     const tacticalParsed = JSON.parse(tacticalResponse.choices[0].message.content || "{}");
+    console.log(`BRIEF timing ${stateName} ${unitResolved}: lookups ${tLookups - tBrief}ms, brief ${tModel1 - tLookups}ms, plan+gear ${Date.now() - tModel1}ms`);
 
     return NextResponse.json({
       brief: briefParsed.brief,

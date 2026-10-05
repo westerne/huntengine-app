@@ -228,14 +228,33 @@ export default function App() {
     });
   };
 
+  // POST to the analysis API with a hard client timeout, so a stalled request
+  // ends in a retryable error instead of an endless loading overlay. The
+  // hunter's answers live in state and are untouched on failure.
+  const REQUEST_TIMEOUT_MS = 90_000;
+  const postStrategy = async (body: unknown) => {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), REQUEST_TIMEOUT_MS);
+    try {
+      return await fetch('/api/strategy', {
+        method: 'POST',
+        headers: betaHeaders(),
+        body: JSON.stringify(body),
+        signal: ctrl.signal,
+      });
+    } finally {
+      clearTimeout(timer);
+    }
+  };
+  const failureMessage = (err: unknown, what: string) =>
+    err instanceof DOMException && err.name === 'AbortError'
+      ? `${what} took too long. Your answers are saved — try again.`
+      : `${what} failed — check your connection and try again. Your answers are saved.`;
+
   const handleScoutSubmit = async () => {
     setState(s => ({ ...s, loading: true, loadingMessage: "Analyzing planning horizons...", error: null }));
     try {
-      const res = await fetch('/api/strategy', {
-        method: 'POST',
-        headers: betaHeaders(),
-        body: JSON.stringify({ mode: 'SCOUT', formData: state.profile }),
-      });
+      const res = await postStrategy({ mode: 'SCOUT', formData: state.profile });
       if (!res.ok) {
         if (res.status === 401) resetBeta();
         setState(s => ({ ...s, loading: false, error: messageForStatus(res.status) }));
@@ -253,7 +272,7 @@ export default function App() {
         loading: false,
       }));
     } catch (err) {
-      setState(s => ({ ...s, loading: false, error: 'Analysis failed — check your connection and try again.' }));
+      setState(s => ({ ...s, loading: false, error: failureMessage(err, 'Analysis') }));
     }
   };
 
@@ -261,11 +280,7 @@ export default function App() {
     const dataToSubmit = customProfile || state.profile;
     setState(s => ({ ...s, loading: true, loadingMessage: "Building Tactical Strategy...", error: null }));
     try {
-      const res = await fetch('/api/strategy', {
-        method: 'POST',
-        headers: betaHeaders(),
-        body: JSON.stringify({ mode: 'FULL_SUITE', formData: dataToSubmit }),
-      });
+      const res = await postStrategy({ mode: 'FULL_SUITE', formData: dataToSubmit });
       if (!res.ok) {
         if (res.status === 401) resetBeta();
         setState(s => ({ ...s, loading: false, error: messageForStatus(res.status) }));
@@ -284,7 +299,7 @@ export default function App() {
         loading: false,
       }));
     } catch (err) {
-      setState(s => ({ ...s, loading: false, error: 'Failed to build plan — check your connection and try again.' }));
+      setState(s => ({ ...s, loading: false, error: failureMessage(err, 'Building the plan') }));
     }
   };
 
@@ -487,7 +502,13 @@ export default function App() {
             <button className="text-zinc-600 hover:text-amber-500 transition-colors" onClick={() => setState(s => ({ ...s, step: 'entry', entryMode: null, unitBrief: null, recommendations: [], drawableUnits: [], drawReality: null, actionPlan: null, strategyPath: null, showDrawablePanel: false, error: null }))}>START OVER</button>
             <span className="text-zinc-800">|</span>
             {['unit-brief', 'hunt-plan', 'gear-list', 'recommendations'].includes(state.step) && (
-              <button className="text-zinc-500 hover:text-white" onClick={() => setState(s => ({ ...s, step: s.entryMode === 'has-tag' ? 'plan-4' : 'scout-4' }))}>BACK</button>
+              <button className="text-zinc-500 hover:text-white" onClick={() => setState(s => ({
+                ...s,
+                // From a brief opened off the results, go back to the results, not the form.
+                step: ['unit-brief', 'hunt-plan', 'gear-list'].includes(s.step) && s.recommendations.length > 0
+                  ? 'recommendations'
+                  : s.entryMode === 'has-tag' ? 'plan-4' : 'scout-4',
+              }))}>BACK</button>
             )}
           </div>
         )}
@@ -561,7 +582,7 @@ export default function App() {
                 {showSpecialDrawOption && (
                   <ToggleSwitch
                     label="Include Wyoming Special Draw"
-                    sublabel="Special draw has better odds but costs ~$50 more per application. Toggle off to see regular draw only."
+                    sublabel="Special draw licenses cost more than regular ones (check WGFD for current fees) and often draw at lower point levels. Toggle off to see regular draw only."
                     value={state.profile.includeSpecialDraw}
                     onChange={(v) => setState(s => ({ ...s, profile: { ...s.profile, includeSpecialDraw: v } }))}
                     warningLabel="Special draw excluded — recommendations will use regular and random pools only."
@@ -836,7 +857,7 @@ export default function App() {
               actionPlan={state.actionPlan}
               stateCode={state.profile.states[0]}
               drawableCount={state.drawableUnits.length}
-              onLearnMore={(rec) => handlePlanSubmit({ ...state.profile, unit: rec.unit, selectedState: rec.state || state.profile.states[0] })}
+              onLearnMore={(rec) => handlePlanSubmit({ ...state.profile, unit: rec.unit, huntCode: rec.huntCode, selectedState: rec.state || state.profile.states[0] })}
               onShowDrawable={() => setState(s => ({ ...s, showDrawablePanel: true }))}
               searchSummary={
             <div className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6">

@@ -442,3 +442,13 @@ describe('draw-pass claims', () => {
     expect(stripPassClaims('Put hunt 3019 as your 2nd choice.')).toBe('Put hunt 3019 as your 2nd choice.');
   });
 });
+
+describe('BRIEF centers on the chosen hunt', () => {
+  it('puts the hunter\u2019s hunt first and marks it', () => {
+    const az = getStateModule('AZ')!;
+    const text = buildGenericDrawSummary(az, 'ELK', 'Elk', '5B', 'nonresident', 5, '3016');
+    const first = text.split('\n').find((l) => l.trim().startsWith('- Hunt'))!;
+    expect(first).toContain('Hunt 3016');
+    expect(first).toContain("THE HUNTER'S HUNT");
+  });
+});

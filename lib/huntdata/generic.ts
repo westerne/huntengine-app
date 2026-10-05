@@ -81,9 +81,13 @@ export function buildGenericDrawSummary(
   unit: string,
   residency: Residency,
   hunterPoints?: number,
+  huntCode?: string,
 ): string {
   const norm = (u: string) => u.trim().toLowerCase().replace(/^0+(?=\d)/, '');
-  const hunts = mod.hunts(species).filter((h) => norm(h.unit) === norm(unit));
+  // The hunter's chosen hunt (from a SCOUT card) leads; the unit's other hunts follow.
+  const hunts = mod.hunts(species)
+    .filter((h) => norm(h.unit) === norm(unit) || h.huntCode === huntCode)
+    .sort((a, b) => Number(b.huntCode === huntCode) - Number(a.huntCode === huntCode));
   const rules = mod.rulesVerified ? `DRAW SYSTEM: ${mod.drawSystemNote}` : `Confirm draw rules with ${mod.agency.name}.`;
 
   if (!hunts.length) {
@@ -101,7 +105,8 @@ export function buildGenericDrawSummary(
     const harvest = h.harvest ? `; hunter success ${h.harvest.successPct}% (${h.harvest.year})` : '';
     const atPts = hunterPoints == null ? null : successAtPoints(h, residency, hunterPoints);
     const pts = atPts == null ? '' : `; applicants with ${hunterPoints} points drew at ${atPts}%`;
-    return `- Hunt ${h.huntCode}${h.label ? ` (${h.label})` : ''}${h.otc ? ': over the counter, no draw' : s ? `: ${s}` : ': no draw numbers published'}${pts}${harvest}.`;
+    const mine = h.huntCode === huntCode ? " — THE HUNTER'S HUNT; focus the brief on this one" : '';
+    return `- Hunt ${h.huntCode}${h.label ? ` (${h.label})` : ''}${mine}${h.otc ? ': over the counter, no draw' : s ? `: ${s}` : ': no draw numbers published'}${pts}${harvest}.`;
   }).join('\n');
   const year = hunts.find((h) => h.drawYear != null)?.drawYear;
   const estimated = hunts.some((h) => h.dataQuality === 'estimated')
