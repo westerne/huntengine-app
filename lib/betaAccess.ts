@@ -7,11 +7,10 @@
 // cannot be called without it.
 //
 // Set BETA_ACCESS_CODE in .env.local (and in your Vercel project env). If it
-// is unset we fall back to the legacy code so existing testers aren't locked
-// out, but you should set it explicitly before sharing the beta widely.
-const BETA_CODE = (process.env.BETA_ACCESS_CODE ?? "SCOUT2026").trim().toUpperCase();
+// is unset the gate stays closed — no code in the source works as a fallback.
+const BETA_CODE = (process.env.BETA_ACCESS_CODE ?? "").trim().toUpperCase();
 
 export function hasValidBetaAccess(req: Request): boolean {
   const provided = (req.headers.get("x-beta-code") ?? "").trim().toUpperCase();
-  return provided.length > 0 && provided === BETA_CODE;
+  return BETA_CODE.length > 0 && provided === BETA_CODE;
 }

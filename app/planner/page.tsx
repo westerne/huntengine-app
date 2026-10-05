@@ -65,7 +65,9 @@ type HuntPlannerState = {
   error: string | null;
 };
 
-const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'NV', 'AZ', 'NM'];
+const STATES = ['WY', 'CO', 'MT', 'ID', 'UT'];
+// Shown but not selectable until their draw data is wired in.
+const COMING_SOON_STATES = ['NV', 'AZ', 'NM'];
 const SPECIES = ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
 const WEAPON_OPTIONS = ['Any', 'Rifle', 'Archery', 'Muzzleloader'];
 const FITNESS_LEVELS = ['Moderate', 'High', 'Elite'];
@@ -518,7 +520,7 @@ export default function App() {
             <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-10">
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Select State</label>
-                <div className="flex flex-wrap gap-2">{STATES.map(st => <TogglePill key={st} label={st} active={state.profile.states.includes(st)} onClick={() => setState(s => ({ ...s, profile: { ...s.profile, states: [st] } }))} />)}</div>
+                <div className="flex flex-wrap gap-2">{STATES.map(st => <TogglePill key={st} label={st} active={state.profile.states.includes(st)} onClick={() => setState(s => ({ ...s, profile: { ...s.profile, states: [st] } }))} />)}{COMING_SOON_STATES.map(st => <span key={st} title="Coming soon" className="px-4 py-2 rounded-full border border-zinc-800 bg-zinc-950 text-[10px] font-black uppercase tracking-widest text-zinc-700 cursor-not-allowed">{st} · Soon</span>)}</div>
               </div>
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Select Species</label>

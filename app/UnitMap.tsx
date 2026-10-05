@@ -53,6 +53,8 @@ function stateCode(state: string): string {
   const s = (state || '').trim().toUpperCase();
   if (s === 'WYOMING') return 'WY';
   if (s === 'IDAHO') return 'ID';
+  if (s === 'COLORADO') return 'CO';
+  if (s === 'MONTANA') return 'MT';
   return s;
 }
 
@@ -209,7 +211,7 @@ export default function UnitMap({ unit, state, species = '' }: { unit: string; s
   }, [unitBbox]);
 
   if (!supported) {
-    return <Placeholder>Boundary &amp; access data is available for Wyoming and Idaho so far. {state} maps are coming as the pipeline backfills more states.</Placeholder>;
+    return <Placeholder>Unit maps are available for Wyoming, Idaho, Colorado and Montana so far. {state} maps are coming as the pipeline backfills more states.</Placeholder>;
   }
   if (!boundary && !boundaryErr) return <Placeholder>Loading unit boundary…</Placeholder>;
 

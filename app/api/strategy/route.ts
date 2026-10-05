@@ -96,9 +96,7 @@ export async function POST(req: Request) {
 
     const { mode, formData, context = '' } = await req.json();
 
-    console.log("MODE RECEIVED:", mode);
-    console.log("STATE:", formData.states, formData.state);
-    console.log("FULL FORMDATA:", JSON.stringify(formData, null, 2));
+    console.log("MODE:", mode, "STATE:", formData.state || formData.states?.[0], "SPECIES:", formData.species);
 
     // ─── 1. SPECIES & STATE RESOLUTION ───────────────────────────────────────
     const speciesRaw = (formData.species || '').toLowerCase();
@@ -171,7 +169,6 @@ export async function POST(req: Request) {
         : undefined);
     const unitStats = unitKey ? stateDataset[unitKey] : null;
     const hasData = !!unitStats;
-    const fallbackCoords = { lat: 42.6542, lng: -110.8234 };
 
     // ─── 5. SCOUT MODE ────────────────────────────────────────────────────────
     if (mode === 'SCOUT') {
@@ -557,16 +554,16 @@ export async function POST(req: Request) {
     // ownership when we have no curated publicPct, e.g. Idaho). Both best-effort,
     // time-boxed, and run concurrently so they don't stack latency on the brief.
     // Ground the access lookup at the unit's real location. Prefer curated coords;
-    // otherwise use the boundary centroid (any proxy state — ID/CO/…); the WY-area
-    // fallback is a last resort so we never silently query the wrong state.
+    // otherwise use the boundary centroid (any proxy state — ID/CO/…). If neither
+    // exists we skip the access lookup rather than query some other state's ground.
     const origin = new URL(req.url).origin;
     const curatedCoords = unitStats?.coords || idahoUnit?.coords || null;
     const briefCoords =
       curatedCoords ||
       (await getUnitCentroid(origin, stateRaw, speciesLabel, unitResolved)) ||
-      fallbackCoords;
+      null;
     const [accessSummary, sampledLand] = await Promise.all([
-      getAccessSummary(briefCoords.lat, briefCoords.lng),
+      getAccessSummary(briefCoords?.lat ?? NaN, briefCoords?.lng ?? NaN),
       unitStats?.publicPct == null
         ? getPublicLandPct(origin, stateRaw, speciesLabel, unitResolved)
         : Promise.resolve(null),
@@ -727,7 +724,7 @@ Headers in ALL CAPS. Plain text only. No markdown symbols.
       brief: briefParsed.brief,
       tactical: tacticalParsed.tactical,
       gear: tacticalParsed.gear,
-      coords: unitStats?.coords || fallbackCoords,
+      coords: briefCoords,
     });
 
   } catch (error: any) {

@@ -2,5 +2,5 @@
 // component so "/" renders it directly (no separate landing/beta page).
 //
 // The previous classic single-page tool that lived here is preserved in git
-// history and on the backup branch if its Leaflet map flow is needed later.
+// history if it is needed later.
 export { default } from './planner/page';
