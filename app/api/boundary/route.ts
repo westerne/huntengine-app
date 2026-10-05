@@ -121,7 +121,10 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const state = (searchParams.get('state') || '').toUpperCase().trim();
   const species = searchParams.get('species') || '';
-  const rawUnit = (searchParams.get('unit') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  // Hunt keys carry a suffix after the area: WY "7-1" (area-type), "143-GEN",
+  // ID "1-1" (hunt area in GMU 1). The boundary is the area before the first
+  // dash — stripping the dash instead turned "7-1" into area 71.
+  const rawUnit = (searchParams.get('unit') || '').trim().toUpperCase().split('-')[0].replace(/[^A-Z0-9]/g, '');
 
   const src = resolveSource(state, species);
   if (!src) return NextResponse.json({ error: `no boundary source for ${state}/${species}` }, { status: 404 });
