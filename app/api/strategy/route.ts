@@ -23,6 +23,7 @@ import { montanaHuntsForUnit, MONTANA_DRAW_YEAR, buildMontanaScoutDataset } from
 import { getStateModule } from '@/lib/huntdata/registry';
 import { buildGenericDrawSummary, buildGenericScoutDataset } from '@/lib/huntdata/generic';
 import { filterToKnownUnits } from '@/lib/huntdata/unitGuard';
+import { applyHuntFacts } from '@/lib/huntdata/scoutFacts';
 import { buildHarvestBlock, enrichScoutDataset, harvestPromptNote } from '@/lib/huntdata/harvest';
 import { toStateCode } from '@/lib/huntdata/registry';
 import type { SpeciesKey } from '@/lib/huntdata/schema';
@@ -319,6 +320,7 @@ export async function POST(req: Request) {
             speciesKey as SpeciesKey,
             isResident ? 'resident' : 'nonresident',
             isArcheryHunter ? 'archery' : isMuzzleHunter ? 'muzzleloader' : 'any',
+            Number(hunterPoints) || 0,
           )
 
         : Object.entries(stateDataset).map(([unitName, unit]: [string, any]) => ({
@@ -369,6 +371,7 @@ export async function POST(req: Request) {
         grizzlyComfort: formData.grizzlyComfort !== false,
         scoutDataset,
         formData,
+        sharedState: usesSharedBuilders,
         drawRules: usesSharedBuilders && stateModule!.rulesVerified ? stateModule!.drawSystemNote : undefined,
       };
 
@@ -382,10 +385,11 @@ export async function POST(req: Request) {
       });
 
       // Drop any unit the model invented — only units in the dataset may reach the hunter.
-      const { result: scoutResult, dropped } = filterToKnownUnits(
-        JSON.parse(response.choices[0].message.content || "{}"),
-        scoutDataset as Array<{ unit?: unknown }>,
-      );
+      // Shared-builder states go further: odds and tier come from the hunt's data.
+      const parsed = JSON.parse(response.choices[0].message.content || "{}");
+      const { result: scoutResult, dropped } = usesSharedBuilders
+        ? applyHuntFacts(parsed, scoutDataset as Array<Record<string, unknown>>)
+        : filterToKnownUnits(parsed, scoutDataset as Array<{ unit?: unknown }>);
       if (dropped.length) console.warn("SCOUT dropped units not in dataset:", stateName, speciesKey, dropped);
       return NextResponse.json(scoutResult);
     }
@@ -403,6 +407,7 @@ export async function POST(req: Request) {
         speciesLabel,
         unitResolved,
         isResident ? 'resident' : 'nonresident',
+        Number(formData.points?.[stateRaw]) || undefined,
       );
     }
 

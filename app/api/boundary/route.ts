@@ -20,6 +20,7 @@ type Source = {
   outFields: string;
   labelField?: string;
   regionField?: string;    // if set, a single-letter unit matches this field instead
+  whereFor?: (unit: string) => string; // custom where-clause (overrides unitField matching)
 };
 
 const WGFD_BASE = 'https://services6.arcgis.com/cWzdqIyxbijuhPLw/arcgis/rest/services';
@@ -95,6 +96,21 @@ const MT_SOURCES: Record<string, Source> = {
   MTNGOAT: fwp(19),
 };
 
+// Arizona Game & Fish — GMUs with split hunt units (12AE/12AW, 22N/22S, 5BN…),
+// GMUNAME as a string ("27", "5A"). Shared across species. A unit ending in a
+// letter ("12A") also matches its split halves; a bare number ("23") matches
+// itself or its directional halves (23N/23S) but never "1" → "10".
+const AZGFD_GMU: Source = {
+  url: 'https://maps.azgfd.com/host/rest/services/SDR_GFAW-GIS-SQL1p/Boundaries_GameMgmtUnitsWithHuntUnits/FeatureServer/0/query',
+  unitField: 'GMUNAME',
+  numeric: false,
+  outFields: 'GMUNAME,REG_NAME',
+  labelField: 'REG_NAME',
+  whereFor: (u) => (/[A-Z]$/.test(u)
+    ? `GMUNAME='${u}' OR GMUNAME LIKE '${u}_'`
+    : `GMUNAME IN ('${u}','${u}N','${u}S','${u}E','${u}W')`),
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -110,6 +126,7 @@ function resolveSource(state: string, species: string): Source | null {
   if (state === 'WY') return WY_SOURCES[speciesKey(species)] ?? null;
   if (state === 'CO') return CO_SOURCES[speciesKey(species)] ?? null;
   if (state === 'MT') return MT_SOURCES[speciesKey(species)] ?? null;
+  if (state === 'AZ') return AZGFD_GMU;
   return null;
 }
 
@@ -140,7 +157,9 @@ export async function GET(req: Request) {
   } else {
     const unit = src.numeric ? (rawUnit.match(/\d+/)?.[0] ?? '') : rawUnit;
     if (!unit) return NextResponse.json({ error: 'invalid unit' }, { status: 400 });
-    where = src.numeric ? `${src.unitField}=${unit}` : `${src.unitField}='${unit}'`;
+    where = src.whereFor
+      ? src.whereFor(unit)
+      : src.numeric ? `${src.unitField}=${unit}` : `${src.unitField}='${unit}'`;
     matchVal = unit;
   }
 

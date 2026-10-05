@@ -30,7 +30,9 @@ export type ScoutPromptParams = {
   grizzlyComfort: boolean;
   scoutDataset: any[];
   formData: Record<string, any>;
-  // Verified draw-system rules for states on the shared builders (lib/huntdata).
+  // States on the shared builders (lib/huntdata): use buildSharedStatePrompt.
+  sharedState?: boolean;
+  // Verified draw-system rules for those states (omitted when unverified).
   drawRules?: string;
 };
 
@@ -163,10 +165,11 @@ Every sentence must be specific to this unit and this hunter. No copy-paste betw
 `.trim();
 }
 
-export function sharedOutputSchema(isResident: boolean, speciesKey: string = 'DEER'): string {
+export function sharedOutputSchema(isResident: boolean, speciesKey: string = 'DEER', unitRulesOverride?: string, withHuntCode = false): string {
+  const huntCodeField = withHuntCode ? '\n      "huntCode": string,' : '';
   const isElk = speciesKey === 'ELK';
   const isAntelope = speciesKey === 'ANTELOPE';
-  const unitKeyFormatRules = isAntelope
+  const unitKeyFormatRules = unitRulesOverride ? unitRulesOverride : isAntelope
     ? `UNIT KEY FORMAT RULES (CRITICAL):
 - Wyoming antelope tags use format "[areaNumber]-[type]" — e.g. "57-1", "23-2", "79-9", "50-0".
   - type=1: rifle (Any Antelope); type=2: alternate rifle season; type=9: archery; type=0: muzzleloader/handgun.
@@ -210,7 +213,7 @@ OUTPUT — return ONLY valid JSON. No markdown, no extra keys, no explanation ou
   },
   "drawableUnits": [
     {
-      "unit": string,
+      "unit": string,${huntCodeField}
       "state": string,
       "typicalScore": string,
       "topEnd": string,
@@ -226,7 +229,7 @@ OUTPUT — return ONLY valid JSON. No markdown, no extra keys, no explanation ou
   ],
   "recommendations": [
     {
-      "unit": string,
+      "unit": string,${huntCodeField}
       "state": string,
       "typicalScore": string,
       "topEnd": string,
@@ -268,6 +271,8 @@ ${unitKeyFormatRules}`.trim();
 
 export function buildScoutPrompt(params: ScoutPromptParams): string {
   const { stateName, isResident, speciesKey } = params;
+
+  if (params.sharedState) return buildSharedStatePrompt(params);
 
   if (stateName === 'WYOMING') {
     if (speciesKey === 'ELK') {
@@ -1363,6 +1368,51 @@ Put every recommended unit in drawableUnits too.
 ${sharedWhyItFitsRules(p)}
 
 ${sharedOutputSchema(true)}
+`.trim();
+}
+
+// ─── SHARED-BUILDER STATES (lib/huntdata: Arizona onward) ─────────────────────
+
+function buildSharedStatePrompt(p: ScoutPromptParams): string {
+  const who = p.isResident ? 'RESIDENT' : 'NON-RESIDENT';
+  return `
+You are HuntEngine.ai — a western hunting intelligence system built from real field experience.
+
+THIS IS A ${p.stateName} ${who} HUNT ANALYSIS. ${p.stateName} DRAW RULES ONLY.
+${p.drawRules
+    ? `DRAW RULES (verified): ${p.drawRules}`
+    : `Draw rules for ${p.stateName} are not loaded. Do NOT state point systems, pools or point requirements beyond the numbers in the data; tell the hunter to confirm rules with the state agency.`}
+
+Hunter holds ${p.hunterPoints} points for this species in ${p.stateName}.
+
+${sharedHunterProfile(p)}
+
+AVAILABLE HUNT DATA (official agency draw results; ${p.isResident ? 'resident' : 'non-resident'} figures):
+${JSON.stringify(p.scoutDataset)}
+
+Each entry is ONE HUNT: its unit, agency hunt code (huntCode), description (label — bull/cow/antlered/antlerless, youth, etc.), weapon, tags, first-choice applicants, first-choice draw success (drawSuccess, %), the approximate success rate for applicants at the hunter's own point level when the agency publishes a point table (drawSuccessAtYourPoints — permits issued ÷ applicants at that level; approximate), the fewest points that drew (fewestPointsToDraw), over-the-counter availability (otc), agency hunter success (hunterSuccess, season hunterSuccessYear), and the draw year (dataYear). These are HISTORICAL results from the last draw, not a forecast — say "last year" when citing them.
+
+Choose HUNTS, then report them by unit. Prefer hunts whose label fits the hunter's goal (antlered/bull hunts for a trophy-minded hunter; antlerless only if they want opportunity or meat). Return 6 TO 10 recommendations — fewer than 6 is a failed response when the dataset has 6+ suitable hunts. Spread them across odds levels:
+  • likely draws → tier DRAW_NOW (drawSuccessAtYourPoints, else drawSuccess, ≥ 50%)
+  • reasonable odds (15–50%) → tier RANDOM_PLAY
+  • long shots (< 15%) → tier BUILD_AND_WAIT or LONG_GAME
+Put every recommended hunt in drawableUnits too.
+- EVERY object in recommendations and drawableUnits MUST include "huntCode": the exact huntCode from the dataset. The app looks up odds and tier from it; objects without a valid huntCode are discarded.
+- Name the hunt code and label in whyItFits, e.g. "Hunt 3016 (bull elk, rifle)".
+- currentOdds = that hunt's drawSuccessAtYourPoints if present, else its drawSuccess — one number, never a range across different hunts.
+- Describe odds honestly and consistently with the tiers: under 15% is a long shot or point-building play, never "reasonable" or "good"; 15–50% is a fair chance; 50%+ is likely.
+- ${p.stateName} does not use regular/special/random pools. Describe the draw only with the DRAW RULES above. In drawReality, set regularPoolUnits to 0 and randomPoolUnits to the count of DRAW_NOW + RANDOM_PLAY hunts, and explain the point system in the summary.
+- Do NOT state exact points required unless fewestPointsToDraw is in the data. Never invent odds, tag counts or fees.
+- SEASON DATES ARE NOT IN THE DATA: set "season" to the weapon only (e.g. "Rifle — see ${p.stateName} regulations for dates"). Never write specific dates.
+- TROPHY SIZE IS NOT IN THE DATA: set typicalScore and topEnd to "Not in data". Do not estimate antler scores.
+- TERRAIN: only describe terrain in general terms you are confident of for that unit; if unsure, write "See unit map".
+- hunterSuccess is the agency figure for that exact hunt; cite it with its year. If absent, do not estimate success.
+
+${sharedWhyItFitsRules(p)}
+
+${sharedOutputSchema(p.isResident, p.speciesKey, `UNIT KEY FORMAT RULES (CRITICAL):
+- The "unit" field in your output MUST be exactly a "unit" value from the dataset (e.g. "27", "5A"). Never output a hunt code as the unit, never invent units.
+- Mention specific hunt codes inside whyItFits / currentOdds instead.`, true)}
 `.trim();
 }
 

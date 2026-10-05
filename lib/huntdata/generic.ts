@@ -7,40 +7,51 @@ import type { DrawStat, Hunt, Residency, SpeciesKey, StateModule, Weapon } from 
 const pick = (h: Hunt, r: Residency): DrawStat | null =>
   r === 'resident' ? h.draw.resident : h.draw.nonresident;
 
-const range = (a: number[]) => (a.length ? (Math.min(...a) === Math.max(...a) ? `${a[0]}%` : `${Math.min(...a)}-${Math.max(...a)}%`) : 'n/a');
-
 export function huntsForWeapon(hunts: Hunt[], weapon: Weapon | 'any'): Hunt[] {
   if (weapon === 'any') return hunts;
   // Keep hunts whose weapon is unknown — dropping them would hide real options.
   return hunts.filter((h) => !h.weapon || h.weapon === 'any' || h.weapon === weapon);
 }
 
-// One entry per unit (SCOUT ranks units; one row per hunt code blows the token budget).
+// Draw success for applicants holding exactly `points` (from the agency's
+// point table). Above the table's top level, use the top level.
+export function successAtPoints(h: Hunt, residency: Residency, points: number): number | null {
+  const lines = h.pointLines?.[residency];
+  if (!lines?.length) return null;
+  const top = Math.max(...lines.map((l) => l.points));
+  const line = lines.find((l) => l.points === Math.min(points, top));
+  if (!line || line.applicants === 0) return null;
+  return Math.round((1000 * line.drawn) / line.applicants) / 10;
+}
+
+// One entry per HUNT, not per unit: a unit holds bull, cow, youth and archery
+// hunts with nothing in common, and aggregating them gave "0-100%" odds.
+// Hunts are already filtered to the hunter's weapon.
 export function buildGenericScoutDataset(
   mod: StateModule,
   species: SpeciesKey,
   residency: Residency,
   weapon: Weapon | 'any' = 'any',
+  hunterPoints?: number,
 ): Array<Record<string, unknown>> {
-  const byUnit = new Map<string, Hunt[]>();
-  for (const h of huntsForWeapon(mod.hunts(species), weapon)) {
-    byUnit.set(h.unit, [...(byUnit.get(h.unit) ?? []), h]);
-  }
-  return [...byUnit.entries()].map(([unit, hunts]) => {
-    const odds = hunts.map((h) => pick(h, residency)?.successPct).filter((v): v is number => v != null);
-    const minPts = hunts.map((h) => pick(h, residency)?.minPoints).filter((v): v is number => v != null);
-    const harvest = hunts.map((h) => h.harvest?.successPct).filter((v): v is number => v != null);
+  return huntsForWeapon(mod.hunts(species), weapon).map((h) => {
+    const s = pick(h, residency);
     return {
-      unit,
-      huntCodes: hunts.slice(0, 6).map((h) => h.huntCode),
-      huntCount: hunts.length,
-      drawSuccess: range(odds),
-      bestDrawSuccess: odds.length ? Math.max(...odds) : null,
-      fewestPointsToDraw: minPts.length ? Math.min(...minPts) : null,
-      otc: hunts.some((h) => h.otc),
-      harvestSuccess: harvest.length ? range(harvest) : null,
-      dataYear: hunts.find((h) => h.drawYear != null)?.drawYear ?? null,
-      estimated: hunts.some((h) => h.dataQuality === 'estimated'),
+      unit: h.unit,
+      huntCode: h.huntCode,
+      label: h.label ?? null,
+      weapon: h.weapon ?? null,
+      tags: s?.tags ?? h.tags ?? null,
+      applicants: s?.applicants ?? null,
+      drawSuccess: s?.successPct ?? null,
+      drawSuccessAtYourPoints: hunterPoints == null ? null : successAtPoints(h, residency, hunterPoints),
+      fewestPointsToDraw: s?.minPoints ?? null,
+      otc: !!h.otc,
+      hunterSuccess: h.harvest ? `${h.harvest.successPct}%` : null,
+      hunterSuccessYear: h.harvest?.year ?? null,
+      hunterSuccessScope: h.harvest?.scope ?? null,
+      dataYear: h.drawYear,
+      estimated: h.dataQuality === 'estimated',
     };
   });
 }
@@ -64,6 +75,7 @@ export function buildGenericDrawSummary(
   speciesLabel: string,
   unit: string,
   residency: Residency,
+  hunterPoints?: number,
 ): string {
   const norm = (u: string) => u.trim().toLowerCase().replace(/^0+(?=\d)/, '');
   const hunts = mod.hunts(species).filter((h) => norm(h.unit) === norm(unit));
@@ -82,7 +94,9 @@ export function buildGenericDrawSummary(
   const lines = hunts.slice(0, 12).map((h) => {
     const s = statLine(who, residency === 'resident' ? h.draw.resident : h.draw.nonresident);
     const harvest = h.harvest ? `; hunter success ${h.harvest.successPct}% (${h.harvest.year})` : '';
-    return `- Hunt ${h.huntCode}${h.label ? ` (${h.label})` : ''}${h.otc ? ': over the counter, no draw' : s ? `: ${s}` : ': no draw numbers published'}${harvest}.`;
+    const atPts = hunterPoints == null ? null : successAtPoints(h, residency, hunterPoints);
+    const pts = atPts == null ? '' : `; applicants with ${hunterPoints} points drew at ${atPts}%`;
+    return `- Hunt ${h.huntCode}${h.label ? ` (${h.label})` : ''}${h.otc ? ': over the counter, no draw' : s ? `: ${s}` : ': no draw numbers published'}${pts}${harvest}.`;
   }).join('\n');
   const year = hunts.find((h) => h.drawYear != null)?.drawYear;
   const estimated = hunts.some((h) => h.dataQuality === 'estimated')

@@ -4,6 +4,9 @@ import { idahoModule } from './states/idaho';
 import { coloradoModule } from './states/colorado';
 import { montanaModule } from './states/montana';
 import { utahModule } from './states/utah';
+import { drawFileModule } from './states/fromDrawFile';
+import type { DrawFile } from './draw/format';
+import azDraw from './draw/az.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -43,10 +46,12 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
 
   // ── Batch A: before launch ───────────────────────────────────────────────
   AZ: {
-    code: 'AZ', name: 'ARIZONA', status: 'planned', batch: 'A',
+    code: 'AZ', name: 'ARIZONA', status: 'live', batch: 'A',
     agency: { name: 'Arizona Game and Fish Department', url: 'https://www.azgfd.com' },
-    drawSystem: 'bonus', rulesVerified: false,
-    drawSystemNote: 'Bonus points; a share of tags goes to the highest point holders, the rest by random draw. Non-resident tags are capped per hunt.',
+    // Verified 2026-10-05 against AZGFD draw-process and bonus-point pages and
+    // the 2026-27 regulations (R12-4-104, -107, -114). See lib/huntdata/draw/az-research.md.
+    drawSystem: 'bonus', rulesVerified: true,
+    drawSystemNote: "Bonus points: each point adds an extra random number and only the lowest number counts. Up to 20% of each hunt's tags go first to the highest-point applicants on their 1st or 2nd choice (statewide for bighorn sheep). Non-residents get at most 10% of a hunt's tags, and at most half of that in the bonus pass. Hunters also earn a permanent hunter-education point and a loyalty point after 5 straight years of applying. Elk and pronghorn are in the winter draw; deer and bighorn sheep are in the fall draw. Some archery deer and some elk tags are over the counter. Bighorn sheep is once in a lifetime. An Arizona hunting license is required to apply.",
   },
   NE: {
     code: 'NE', name: 'NEBRASKA', status: 'planned', batch: 'A',
@@ -128,6 +133,7 @@ const MODULES: Partial<Record<StateCode, StateModule>> = {
   CO: coloradoModule(STATE_INFO.CO),
   MT: montanaModule(STATE_INFO.MT),
   UT: utahModule(STATE_INFO.UT),
+  AZ: drawFileModule(STATE_INFO.AZ, azDraw as DrawFile),
 };
 
 export const ALL_STATES = Object.keys(STATE_INFO) as StateCode[];

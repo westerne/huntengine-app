@@ -39,11 +39,12 @@ const STATE_CENTER: Record<string, [number, number]> = {
   ID: [45.2, -114.5],
   CO: [39.0, -105.7],
   MT: [47.0, -109.6],
+  AZ: [34.3, -111.7],
 };
 
 // States with a boundary source in /api/boundary. (Ownership + access are
 // national, so this set is the only gate on whether a unit map renders.)
-const SUPPORTED_STATES = new Set(['WY', 'ID', 'CO', 'MT']);
+const SUPPORTED_STATES = new Set(['WY', 'ID', 'CO', 'MT', 'AZ']);
 
 type ProxyFC = FeatureCollection & { label?: string; isRegion?: boolean };
 type Identify = { lat: number; lng: number; label: string; isPublic: boolean | null; loading: boolean };
@@ -55,6 +56,7 @@ function stateCode(state: string): string {
   if (s === 'IDAHO') return 'ID';
   if (s === 'COLORADO') return 'CO';
   if (s === 'MONTANA') return 'MT';
+  if (s === 'ARIZONA') return 'AZ';
   return s;
 }
 
@@ -211,7 +213,7 @@ export default function UnitMap({ unit, state, species = '' }: { unit: string; s
   }, [unitBbox]);
 
   if (!supported) {
-    return <Placeholder>Unit maps are available for Wyoming, Idaho, Colorado and Montana so far. {state} maps are coming as the pipeline backfills more states.</Placeholder>;
+    return <Placeholder>Unit maps are available for Wyoming, Idaho, Colorado, Montana and Arizona so far. {state} maps are coming as the pipeline backfills more states.</Placeholder>;
   }
   if (!boundary && !boundaryErr) return <Placeholder>Loading unit boundary…</Placeholder>;
 

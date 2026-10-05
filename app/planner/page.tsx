@@ -65,9 +65,9 @@ type HuntPlannerState = {
   error: string | null;
 };
 
-const STATES = ['WY', 'CO', 'MT', 'ID', 'UT'];
+const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ'];
 // Shown but not selectable until their draw data is wired in.
-const COMING_SOON_STATES = ['NV', 'AZ', 'NM'];
+const COMING_SOON_STATES = ['NV', 'NM'];
 const SPECIES = ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
 const WEAPON_OPTIONS = ['Any', 'Rifle', 'Archery', 'Muzzleloader'];
 const FITNESS_LEVELS = ['Moderate', 'High', 'Elite'];

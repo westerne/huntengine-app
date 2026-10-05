@@ -57,7 +57,7 @@ Launch in January with the states that are ready. Add the rest during the season
 | Batch | States | Why this order | Approx. nonresident deadlines* |
 |---|---|---|---|
 | Live now | WY, ID, CO, MT, UT | Already have draw data | Jan 31 (WY elk) – early June |
-| **A: before launch** | AZ, NE, NM | Earliest deadlines after WY elk | AZ elk/antelope early Feb; NE Feb–Mar; NM mid-March |
+| **A: before launch** | ~~AZ~~ (live), NE, NM | Earliest deadlines after WY elk | AZ elk/antelope early Feb; NE Feb–Mar; NM mid-March |
 | **B: by March** | KS, ND, NV | Spring deadlines | KS April; ND elk/moose/sheep March; NV May |
 | **C: by April** | OR, WA, CA, SD, OK | Late spring deadlines | OR May 15; WA late May; CA early June; SD and OK spring/summer |
 | **D: by October 2027** | AK | Applications run Nov 1 – Dec 15 | Dec 15 |

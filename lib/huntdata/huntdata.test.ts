@@ -11,8 +11,8 @@ describe('registry', () => {
     expect(ALL_STATES).toHaveLength(17);
   });
 
-  it('has the five live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['CO', 'ID', 'MT', 'UT', 'WY']);
+  it('has the live states wired in', () => {
+    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'MT', 'UT', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -20,7 +20,7 @@ describe('registry', () => {
     expect(toStateCode('wy')).toBe('WY');
     expect(toStateCode('NEW MEXICO')).toBe('NM');
     expect(toStateCode('Narnia')).toBeNull();
-    expect(getStateModule('AZ')).toBeNull(); // planned, no data yet
+    expect(getStateModule('NV')).toBeNull(); // planned, no data yet
   });
 });
 
@@ -153,14 +153,14 @@ describe('generic builders (used by new states)', () => {
     ],
   };
 
-  it('aggregates SCOUT entries per unit and filters by weapon', () => {
+  it('lists one SCOUT entry per hunt and filters by weapon', () => {
     const all = buildGenericScoutDataset(fake, 'ELK', 'nonresident');
-    expect(all).toHaveLength(2);
-    expect(all[0]).toMatchObject({ unit: '1', huntCount: 2, drawSuccess: '0.7-5%', bestDrawSuccess: 5, fewestPointsToDraw: 20, harvestSuccess: '80%' });
+    expect(all).toHaveLength(3);
+    expect(all[0]).toMatchObject({ unit: '1', huntCode: '3001', drawSuccess: 0.7, fewestPointsToDraw: 20, hunterSuccess: '80%', hunterSuccessYear: 2025 });
 
     const archery = buildGenericScoutDataset(fake, 'ELK', 'resident', 'archery');
     expect(archery).toHaveLength(1);
-    expect(archery[0]).toMatchObject({ unit: '1', drawSuccess: '25%' });
+    expect(archery[0]).toMatchObject({ unit: '1', huntCode: '3002', drawSuccess: 25 });
   });
 
   it('writes a BRIEF draw block with the real numbers', () => {
@@ -199,7 +199,7 @@ describe('harvest (Idaho)', () => {
     expect(harvestPromptNote(ds)).toContain('do NOT estimate');
     const block = buildHarvestBlock('ID', 'ELK', 'Elk', '11');
     expect(block).toContain('Controlled hunt 2001 — Any Weapon: 56% hunter success (20 harvested by 36 hunters)');
-    expect(buildHarvestBlock('AZ', 'ELK', 'Elk', '11')).toBe(''); // no harvest file yet
+    expect(buildHarvestBlock('NV', 'ELK', 'Elk', '11')).toBe(''); // no harvest file yet
   });
 });
 
@@ -264,5 +264,89 @@ describe('BRIEF harvest block lookup', () => {
     const { harvestRowsForUnit } = await import('./harvest');
     const rows = harvestRowsForUnit('WY', 'ELK', '7-1');
     expect(rows[0]).toMatchObject({ huntCode: '7-1', successPct: 52.5 });
+  });
+});
+
+describe('point-level odds', () => {
+  it('reads the agency point table at the hunter\'s level, capped at the top row', async () => {
+    const { successAtPoints } = await import('./generic');
+    const h = {
+      state: 'AZ', species: 'ELK', huntCode: '1', unit: '1', drawYear: 2026, dataQuality: 'official',
+      draw: { resident: null, nonresident: null },
+      pointLines: { nonresident: [{ points: 0, applicants: 200, drawn: 2 }, { points: 5, applicants: 40, drawn: 4 }, { points: 20, applicants: 10, drawn: 9 }] },
+    } as Hunt;
+    expect(successAtPoints(h, 'nonresident', 0)).toBe(1);
+    expect(successAtPoints(h, 'nonresident', 5)).toBe(10);
+    expect(successAtPoints(h, 'nonresident', 25)).toBe(90);
+    expect(successAtPoints(h, 'nonresident', 3)).toBeNull(); // no row at 3 points
+    expect(successAtPoints(h, 'resident', 5)).toBeNull();
+  });
+});
+
+describe('Arizona (first state on the shared builders)', () => {
+  const az = getStateModule('AZ')!;
+
+  it('loads 2026 AZGFD draw results with point tables', () => {
+    const elk = az.hunts('ELK');
+    const h = elk.find((x) => x.huntCode === '3016')!;
+    expect(h).toMatchObject({ unit: '5B', drawYear: 2026, tags: 772 });
+    expect(h.draw.resident?.successPct).toBeCloseTo(13.9, 1);
+    expect(h.draw.nonresident?.successPct).toBeCloseTo(9.2, 1);
+    expect(h.pointLines?.nonresident?.length).toBeGreaterThan(0);
+    expect(STATE_INFO.AZ.rulesVerified).toBe(true);
+  });
+
+  it('joins 2025 harvest by hunt number', () => {
+    const covered = az.hunts('ELK').filter((h) => h.harvest).length / az.hunts('ELK').length;
+    expect(covered).toBeGreaterThan(0.8);
+  });
+
+  it('builds SCOUT entries with odds at the hunter points and a BRIEF block', () => {
+    const ds = buildGenericScoutDataset(az, 'ELK', 'nonresident', 'any', 5);
+    const h3016 = ds.find((d) => d.huntCode === '3016')!;
+    expect(h3016).toMatchObject({ unit: '5B', dataYear: 2026 });
+    expect(typeof h3016.drawSuccessAtYourPoints).toBe('number');
+    const brief = buildGenericDrawSummary(az, 'ELK', 'Elk', '5B', 'nonresident', 5);
+    expect(brief).toContain('ARIZONA DRAW DATA (2026)');
+    expect(brief).toContain('Hunt 3016');
+    expect(brief).toContain('applicants with 5 points drew at');
+    expect(brief).toContain('DRAW SYSTEM: Bonus points');
+  });
+});
+
+describe('shared-state SCOUT facts', () => {
+  it('fills odds and tier from the data and drops picks without a real hunt code', async () => {
+    const { applyHuntFacts, tierFor } = await import('./scoutFacts');
+    const dataset = [
+      { unit: '1', huntCode: '3011', drawSuccess: 0.8, drawSuccessAtYourPoints: 1.3, dataYear: 2026 },
+      { unit: '22', huntCode: '3027', drawSuccess: 60, drawSuccessAtYourPoints: null, dataYear: 2026 },
+    ];
+    const { result, dropped } = applyHuntFacts(
+      { recommendations: [
+        { huntCode: '3011', unit: 'wrong', tier: 'RANDOM_PLAY', currentOdds: '1.3' },
+        { huntCode: '3027', tier: 'LONG_GAME' },
+        { huntCode: '9999', unit: '5B' },
+        { unit: '1' },
+      ] },
+      dataset,
+    );
+    expect(result.recommendations).toEqual([
+      { huntCode: '3011', unit: '1', tier: 'LONG_GAME', currentOdds: '1.3% (2026 draw, at your points)' },
+      { huntCode: '3027', unit: '22', tier: 'DRAW_NOW', currentOdds: '60% (2026 draw, first choice)' },
+    ]);
+    expect(dropped).toEqual(['9999', '1']);
+    expect([tierFor(50), tierFor(15), tierFor(2), tierFor(1.9), tierFor(null)]).toEqual(['DRAW_NOW', 'RANDOM_PLAY', 'BUILD_AND_WAIT', 'LONG_GAME', 'BUILD_AND_WAIT']);
+  });
+});
+
+describe('shared-state SCOUT facts — hunt code from text', () => {
+  it('recovers the hunt code from whyItFits when the field is missing', async () => {
+    const { applyHuntFacts } = await import('./scoutFacts');
+    const { result, dropped } = applyHuntFacts(
+      { recommendations: [{ unit: '1', whyItFits: 'Hunt 3011 (bull elk, rifle) has strong success.' }, { unit: '1', whyItFits: 'Hunt 4444 is great' }] },
+      [{ unit: '1', huntCode: '3011', drawSuccess: 0.8, drawSuccessAtYourPoints: 1.3, dataYear: 2026 }],
+    );
+    expect(result.recommendations?.[0]).toMatchObject({ huntCode: '3011', tier: 'LONG_GAME' });
+    expect(dropped).toEqual(['1']);
   });
 });

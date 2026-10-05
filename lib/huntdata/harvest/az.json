@@ -1,0 +1,5776 @@
+{
+ "state": "AZ",
+ "year": 2025,
+ "source": {
+  "name": "Arizona Game and Fish Department — Harvest Summaries (hunter questionnaire results)",
+  "url": "https://www.azgfd.com/hunting/hunt-draw-and-licenses/harvest-reporting/"
+ },
+ "notes": "Reports: ELK: 2025-AZ-Elk-Harvest-Summary.pdf (PRELIMINARY results) https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/23102434/2025-AZ-Elk-Harvest-Summary.pdf; ANTELOPE: 2025-AZ-Pronghorn-Harvest-Summary-1.pdf (FINAL results) https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/23144004/2025-AZ-Pronghorn-Harvest-Summary-1.pdf; DEER: 2025-AZ-Deer-Harvest-Summary.pdf (FINAL results) https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/03/09102113/2025-AZ-Deer-Harvest-Summary.pdf; BIGHORNSHEEP: 2025-AZ-Bighorn-Sheep-Harvest-Summary-2.pdf (FINAL results) https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/21131544/2025-AZ-Bighorn-Sheep-Harvest-Summary-2.pdf. Deer legal wildlife from https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/12/23103956/2025-26-Arizona-Hunting-Regulations_251223.pdf. Survey-based: AZGFD estimates from mailed/online hunter questionnaires (the summaries list questionnaire returns and 90% confidence intervals), not mandatory reporting. ELK figures are AZGFD's PRELIMINARY results and may be revised. One row per AZGFD hunt number (huntCode). Multi-unit hunts keep AZGFD's unit text (e.g. \"1, 2B, and 2C\"); the per-unit \"multi-unit breakdown\" is not included. hunters = hunters afield; harvest = total harvest (all sexes/classes); successPct = AZGFD % success. daysPerHarvest = hunter days ÷ total harvest (computed; null when harvest is 0). DEER: draw hunts only (mule deer and Coues whitetail in one table); label carries the hunt's legal wildlife from the regulations (\"Antlered whitetail deer\" = Coues). Over-the-counter archery deer (reported per unit, no hunt number) is not included. Weapon: archery for Archery-Only sections, muzzleloader for Muzzleloader, rifle for General (any legal weapon) sections; unset for HAM/CHAMP and bighorn sheep. Hunts with no hunters afield or no published success figure, and bighorn special (auction/raffle) tags, are omitted. Section/total rows are omitted.",
+ "species": {
+  "ELK": [
+   {
+    "unit": "1, 2B, and 2C",
+    "huntCode": "3126",
+    "label": "Archery-Only Bull, Early — 1, 2B, and 2C",
+    "hunters": 203,
+    "harvest": 89,
+    "successPct": 44,
+    "daysPerHarvest": 20.8,
+    "weapon": "archery"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "3127",
+    "label": "Archery-Only Bull, Early — 3A and 3C",
+    "hunters": 62,
+    "harvest": 28,
+    "successPct": 45,
+    "daysPerHarvest": 18.9,
+    "weapon": "archery"
+   },
+   {
+    "unit": "3B",
+    "huntCode": "3128",
+    "label": "Archery-Only Bull, Early — 3B",
+    "hunters": 68,
+    "harvest": 13,
+    "successPct": 19,
+    "daysPerHarvest": 50.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4A",
+    "huntCode": "3129",
+    "label": "Archery-Only Bull, Early — 4A",
+    "hunters": 90,
+    "harvest": 30,
+    "successPct": 33,
+    "daysPerHarvest": 23.9,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4B",
+    "huntCode": "3130",
+    "label": "Archery-Only Bull, Early — 4B",
+    "hunters": 86,
+    "harvest": 27,
+    "successPct": 31,
+    "daysPerHarvest": 30.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5A",
+    "huntCode": "3131",
+    "label": "Archery-Only Bull, Early — 5A",
+    "hunters": 135,
+    "harvest": 30,
+    "successPct": 22,
+    "daysPerHarvest": 42.4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5A (Hopi)",
+    "huntCode": "3814",
+    "label": "Archery-Only Bull, Early — 5A (Hopi)",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B North",
+    "huntCode": "3132",
+    "label": "Archery-Only Bull, Early — 5B North",
+    "hunters": 154,
+    "harvest": 45,
+    "successPct": 29,
+    "daysPerHarvest": 31.6,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B North (Hopi)",
+    "huntCode": "3815",
+    "label": "Archery-Only Bull, Early — 5B North (Hopi)",
+    "hunters": 7,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B South",
+    "huntCode": "3133",
+    "label": "Archery-Only Bull, Early — 5B South",
+    "hunters": 172,
+    "harvest": 38,
+    "successPct": 22,
+    "daysPerHarvest": 43.2,
+    "weapon": "archery"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "3134",
+    "label": "Archery-Only Bull, Early — 6A",
+    "hunters": 639,
+    "harvest": 167,
+    "successPct": 26,
+    "daysPerHarvest": 32.9,
+    "weapon": "archery"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "3135",
+    "label": "Archery-Only Bull, Early — 6B",
+    "hunters": 137,
+    "harvest": 29,
+    "successPct": 21,
+    "daysPerHarvest": 46.6,
+    "weapon": "archery"
+   },
+   {
+    "unit": "7 East",
+    "huntCode": "3136",
+    "label": "Archery-Only Bull, Early — 7 East",
+    "hunters": 114,
+    "harvest": 28,
+    "successPct": 25,
+    "daysPerHarvest": 34.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "7 East (Kachina Peaks Wilderness Hunt Area)",
+    "huntCode": "3137",
+    "label": "Archery-Only Bull, Early — 7 East (Kachina Peaks Wilderness Hunt Area)",
+    "hunters": 19,
+    "harvest": 9,
+    "successPct": 47,
+    "daysPerHarvest": 16.2,
+    "weapon": "archery"
+   },
+   {
+    "unit": "7 West",
+    "huntCode": "3138",
+    "label": "Archery-Only Bull, Early — 7 West",
+    "hunters": 123,
+    "harvest": 21,
+    "successPct": 17,
+    "daysPerHarvest": 52.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "8",
+    "huntCode": "3139",
+    "label": "Archery-Only Bull, Early — 8",
+    "hunters": 176,
+    "harvest": 36,
+    "successPct": 20,
+    "daysPerHarvest": 45.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "9",
+    "huntCode": "3140",
+    "label": "Archery-Only Bull, Early — 9",
+    "hunters": 77,
+    "harvest": 42,
+    "successPct": 55,
+    "daysPerHarvest": 17.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3141",
+    "label": "Archery-Only Bull, Early — 10",
+    "hunters": 96,
+    "harvest": 39,
+    "successPct": 41,
+    "daysPerHarvest": 22.7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "3142",
+    "label": "Archery-Only Bull, Early — 11M",
+    "hunters": 71,
+    "harvest": 35,
+    "successPct": 49,
+    "daysPerHarvest": 15.6,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "3143",
+    "label": "Archery-Only Bull, Early — 11M",
+    "hunters": 78,
+    "harvest": 15,
+    "successPct": 19,
+    "daysPerHarvest": 37.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "15A, 15B, and 18A",
+    "huntCode": "3144",
+    "label": "Archery-Only Bull, Early — 15A, 15B, and 18A",
+    "hunters": 23,
+    "harvest": 9,
+    "successPct": 39,
+    "daysPerHarvest": 24.6,
+    "weapon": "archery"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "3145",
+    "label": "Archery-Only Bull, Early — 19A",
+    "hunters": 11,
+    "harvest": 3,
+    "successPct": 27,
+    "daysPerHarvest": 34.7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "21",
+    "huntCode": "3146",
+    "label": "Archery-Only Bull, Early — 21",
+    "hunters": 8,
+    "harvest": 1,
+    "successPct": 13,
+    "daysPerHarvest": 75,
+    "weapon": "archery"
+   },
+   {
+    "unit": "22",
+    "huntCode": "3147",
+    "label": "Archery-Only Bull, Early — 22",
+    "hunters": 50,
+    "harvest": 30,
+    "successPct": 60,
+    "daysPerHarvest": 13.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "23 North",
+    "huntCode": "3148",
+    "label": "Archery-Only Bull, Early — 23 North",
+    "hunters": 25,
+    "harvest": 13,
+    "successPct": 52,
+    "daysPerHarvest": 18.9,
+    "weapon": "archery"
+   },
+   {
+    "unit": "23 South",
+    "huntCode": "3149",
+    "label": "Archery-Only Bull, Early — 23 South",
+    "hunters": 11,
+    "harvest": 5,
+    "successPct": 45,
+    "daysPerHarvest": 20.4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "27",
+    "huntCode": "3150",
+    "label": "Archery-Only Bull, Early — 27",
+    "hunters": 202,
+    "harvest": 41,
+    "successPct": 20,
+    "daysPerHarvest": 46.9,
+    "weapon": "archery"
+   },
+   {
+    "unit": "1, 2B, and 2C",
+    "huntCode": "3151",
+    "label": "Archery-Only Bull, Late — 1, 2B, and 2C",
+    "hunters": 16,
+    "harvest": 11,
+    "successPct": 69,
+    "daysPerHarvest": 8.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4A",
+    "huntCode": "3152",
+    "label": "Archery-Only Bull, Late — 4A",
+    "hunters": 21,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5A",
+    "huntCode": "3153",
+    "label": "Archery-Only Bull, Late — 5A",
+    "hunters": 37,
+    "harvest": 5,
+    "successPct": 14,
+    "daysPerHarvest": 54.4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B North",
+    "huntCode": "3154",
+    "label": "Archery-Only Bull, Late — 5B North",
+    "hunters": 39,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B North (Hopi)",
+    "huntCode": "3818",
+    "label": "Archery-Only Bull, Late — 5B North (Hopi)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B South",
+    "huntCode": "3155",
+    "label": "Archery-Only Bull, Late — 5B South",
+    "hunters": 43,
+    "harvest": 8,
+    "successPct": 19,
+    "daysPerHarvest": 42,
+    "weapon": "archery"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "3156",
+    "label": "Archery-Only Bull, Late — 6A",
+    "hunters": 78,
+    "harvest": 6,
+    "successPct": 8,
+    "daysPerHarvest": 64.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "3157",
+    "label": "Archery-Only Bull, Late — 6B",
+    "hunters": 21,
+    "harvest": 2,
+    "successPct": 10,
+    "daysPerHarvest": 68.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "7 East",
+    "huntCode": "3158",
+    "label": "Archery-Only Bull, Late — 7 East",
+    "hunters": 50,
+    "harvest": 6,
+    "successPct": 12,
+    "daysPerHarvest": 65.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "7 West",
+    "huntCode": "3159",
+    "label": "Archery-Only Bull, Late — 7 West",
+    "hunters": 34,
+    "harvest": 2,
+    "successPct": 6,
+    "daysPerHarvest": 135,
+    "weapon": "archery"
+   },
+   {
+    "unit": "8",
+    "huntCode": "3160",
+    "label": "Archery-Only Bull, Late — 8",
+    "hunters": 39,
+    "harvest": 8,
+    "successPct": 21,
+    "daysPerHarvest": 32.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "9",
+    "huntCode": "3161",
+    "label": "Archery-Only Bull, Late — 9",
+    "hunters": 31,
+    "harvest": 13,
+    "successPct": 42,
+    "daysPerHarvest": 11.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3162",
+    "label": "Archery-Only Bull, Late — 10",
+    "hunters": 16,
+    "harvest": 5,
+    "successPct": 31,
+    "daysPerHarvest": 24.4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "21",
+    "huntCode": "3163",
+    "label": "Archery-Only Bull, Late — 21",
+    "hunters": 11,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "22 North",
+    "huntCode": "3164",
+    "label": "Archery-Only Bull, Late — 22 North",
+    "hunters": 171,
+    "harvest": 30,
+    "successPct": 18,
+    "daysPerHarvest": 37.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "22 South",
+    "huntCode": "3165",
+    "label": "Archery-Only Bull, Late — 22 South",
+    "hunters": 52,
+    "harvest": 9,
+    "successPct": 17,
+    "daysPerHarvest": 37.4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "23",
+    "huntCode": "3166",
+    "label": "Archery-Only Bull, Late — 23",
+    "hunters": 164,
+    "harvest": 17,
+    "successPct": 10,
+    "daysPerHarvest": 68.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "27",
+    "huntCode": "3167",
+    "label": "Archery-Only Bull, Late — 27",
+    "hunters": 29,
+    "harvest": 8,
+    "successPct": 28,
+    "daysPerHarvest": 31.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "1, 2B, and 2C",
+    "huntCode": "3168",
+    "label": "Archery-Only Antlerless — 1, 2B, and 2C",
+    "hunters": 64,
+    "harvest": 24,
+    "successPct": 38,
+    "daysPerHarvest": 19.7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "3171",
+    "label": "Archery-Only Antlerless — 3A and 3C",
+    "hunters": 28,
+    "harvest": 6,
+    "successPct": 21,
+    "daysPerHarvest": 35.8,
+    "weapon": "archery"
+   },
+   {
+    "unit": "3B",
+    "huntCode": "3172",
+    "label": "Archery-Only Antlerless — 3B",
+    "hunters": 21,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4A",
+    "huntCode": "3173",
+    "label": "Archery-Only Antlerless — 4A",
+    "hunters": 82,
+    "harvest": 8,
+    "successPct": 10,
+    "daysPerHarvest": 84.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4A (Hopi)",
+    "huntCode": "3819",
+    "label": "Archery-Only Antlerless — 4A (Hopi)",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4B",
+    "huntCode": "3174",
+    "label": "Archery-Only Antlerless — 4B",
+    "hunters": 16,
+    "harvest": 3,
+    "successPct": 19,
+    "daysPerHarvest": 52.7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5A",
+    "huntCode": "3175",
+    "label": "Archery-Only Antlerless — 5A",
+    "hunters": 44,
+    "harvest": 19,
+    "successPct": 43,
+    "daysPerHarvest": 11.4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5A (Hopi)",
+    "huntCode": "3820",
+    "label": "Archery-Only Antlerless — 5A (Hopi)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B North",
+    "huntCode": "3176",
+    "label": "Archery-Only Antlerless — 5B North",
+    "hunters": 21,
+    "harvest": 4,
+    "successPct": 19,
+    "daysPerHarvest": 26.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B South",
+    "huntCode": "3177",
+    "label": "Archery-Only Antlerless — 5B South",
+    "hunters": 41,
+    "harvest": 9,
+    "successPct": 22,
+    "daysPerHarvest": 33.6,
+    "weapon": "archery"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "3178",
+    "label": "Archery-Only Antlerless — 6A",
+    "hunters": 22,
+    "harvest": 5,
+    "successPct": 23,
+    "daysPerHarvest": 34,
+    "weapon": "archery"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "3179",
+    "label": "Archery-Only Antlerless — 6B",
+    "hunters": 61,
+    "harvest": 7,
+    "successPct": 11,
+    "daysPerHarvest": 68.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "7 East",
+    "huntCode": "3180",
+    "label": "Archery-Only Antlerless — 7 East",
+    "hunters": 48,
+    "harvest": 8,
+    "successPct": 17,
+    "daysPerHarvest": 44.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "7 West",
+    "huntCode": "3181",
+    "label": "Archery-Only Antlerless — 7 West",
+    "hunters": 41,
+    "harvest": 9,
+    "successPct": 22,
+    "daysPerHarvest": 28.9,
+    "weapon": "archery"
+   },
+   {
+    "unit": "8",
+    "huntCode": "3182",
+    "label": "Archery-Only Antlerless — 8",
+    "hunters": 39,
+    "harvest": 6,
+    "successPct": 15,
+    "daysPerHarvest": 50.7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3183",
+    "label": "Archery-Only Antlerless — 10",
+    "hunters": 14,
+    "harvest": 2,
+    "successPct": 14,
+    "daysPerHarvest": 38,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "3184",
+    "label": "Archery-Only Antlerless — 11M",
+    "hunters": 69,
+    "harvest": 24,
+    "successPct": 35,
+    "daysPerHarvest": 23.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "3185",
+    "label": "Archery-Only Antlerless — 11M",
+    "hunters": 77,
+    "harvest": 15,
+    "successPct": 19,
+    "daysPerHarvest": 35.9,
+    "weapon": "archery"
+   },
+   {
+    "unit": "22",
+    "huntCode": "3186",
+    "label": "Archery-Only Antlerless — 22",
+    "hunters": 45,
+    "harvest": 24,
+    "successPct": 53,
+    "daysPerHarvest": 8.4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "23",
+    "huntCode": "3187",
+    "label": "Archery-Only Antlerless — 23",
+    "hunters": 23,
+    "harvest": 2,
+    "successPct": 9,
+    "daysPerHarvest": 46.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "27",
+    "huntCode": "3188",
+    "label": "Archery-Only Antlerless — 27",
+    "hunters": 22,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "27 (Alpine Hunt Area)",
+    "huntCode": "3169",
+    "label": "Archery-Only Antlerless — 27 (Alpine Hunt Area)",
+    "hunters": 24,
+    "harvest": 17,
+    "successPct": 71,
+    "daysPerHarvest": 8.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "27 (Alpine Hunt Area)",
+    "huntCode": "3170",
+    "label": "Archery-Only Antlerless — 27 (Alpine Hunt Area)",
+    "hunters": 19,
+    "harvest": 17,
+    "successPct": 89,
+    "daysPerHarvest": 5.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3925",
+    "label": "Archery-Only Antlerless — Camp Navajo",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 17,
+    "daysPerHarvest": 26,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3926",
+    "label": "Archery-Only Antlerless — Camp Navajo",
+    "hunters": 8,
+    "harvest": 2,
+    "successPct": 25,
+    "daysPerHarvest": 16,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3927",
+    "label": "Archery-Only Antlerless — Camp Navajo",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3929",
+    "label": "Archery-Only Antlerless — Camp Navajo",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "16A",
+    "huntCode": "3189",
+    "label": "Archery-Only Any Elk — 16A",
+    "hunters": 8,
+    "harvest": 6,
+    "successPct": 75,
+    "daysPerHarvest": 7.2,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3930",
+    "label": "Archery-Only Any Elk — Camp Navajo",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 14,
+    "daysPerHarvest": 42,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3931",
+    "label": "Archery-Only Any Elk — Camp Navajo",
+    "hunters": 7,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3932",
+    "label": "Archery-Only Any Elk — Camp Navajo",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3933",
+    "label": "Archery-Only Any Elk — Camp Navajo",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3934",
+    "label": "Archery-Only Any Elk — Camp Navajo",
+    "hunters": 10,
+    "harvest": 3,
+    "successPct": 30,
+    "daysPerHarvest": 14.7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3935",
+    "label": "Archery-Only Any Elk — Camp Navajo",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "1, 2B, and 2C",
+    "huntCode": "3001",
+    "label": "General Bull — 1, 2B, and 2C",
+    "hunters": 32,
+    "harvest": 31,
+    "successPct": 97,
+    "daysPerHarvest": 3.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "3002",
+    "label": "General Bull — 3A and 3C",
+    "hunters": 13,
+    "harvest": 12,
+    "successPct": 92,
+    "daysPerHarvest": 4.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4B",
+    "huntCode": "3003",
+    "label": "General Bull — 4B",
+    "hunters": 13,
+    "harvest": 8,
+    "successPct": 62,
+    "daysPerHarvest": 4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 East",
+    "huntCode": "3004",
+    "label": "General Bull — 7 East",
+    "hunters": 24,
+    "harvest": 16,
+    "successPct": 67,
+    "daysPerHarvest": 4.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "8",
+    "huntCode": "3005",
+    "label": "General Bull — 8",
+    "hunters": 24,
+    "harvest": 15,
+    "successPct": 63,
+    "daysPerHarvest": 6.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3006",
+    "label": "General Bull — 10",
+    "hunters": 29,
+    "harvest": 24,
+    "successPct": 83,
+    "daysPerHarvest": 5.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A, 15B, and 18A",
+    "huntCode": "3007",
+    "label": "General Bull — 15A, 15B, and 18A",
+    "hunters": 30,
+    "harvest": 20,
+    "successPct": 67,
+    "daysPerHarvest": 4.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22 North",
+    "huntCode": "3008",
+    "label": "General Bull — 22 North",
+    "hunters": 30,
+    "harvest": 20,
+    "successPct": 67,
+    "daysPerHarvest": 7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23 North",
+    "huntCode": "3009",
+    "label": "General Bull — 23 North",
+    "hunters": 25,
+    "harvest": 23,
+    "successPct": 92,
+    "daysPerHarvest": 3.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23 South",
+    "huntCode": "3010",
+    "label": "General Bull — 23 South",
+    "hunters": 8,
+    "harvest": 6,
+    "successPct": 75,
+    "daysPerHarvest": 5.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1, 2B, and 2C",
+    "huntCode": "3011",
+    "label": "General Bull — 1, 2B, and 2C",
+    "hunters": 175,
+    "harvest": 146,
+    "successPct": 83,
+    "daysPerHarvest": 3.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "3012",
+    "label": "General Bull — 3A and 3C",
+    "hunters": 183,
+    "harvest": 60,
+    "successPct": 33,
+    "daysPerHarvest": 13.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A",
+    "huntCode": "3013",
+    "label": "General Bull — 4A",
+    "hunters": 124,
+    "harvest": 47,
+    "successPct": 38,
+    "daysPerHarvest": 11.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A (Hopi)",
+    "huntCode": "3801",
+    "label": "General Bull — 4A (Hopi)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60,
+    "daysPerHarvest": 2.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4B",
+    "huntCode": "3014",
+    "label": "General Bull — 4B",
+    "hunters": 134,
+    "harvest": 47,
+    "successPct": 35,
+    "daysPerHarvest": 13.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A",
+    "huntCode": "3015",
+    "label": "General Bull — 5A",
+    "hunters": 276,
+    "harvest": 89,
+    "successPct": 32,
+    "daysPerHarvest": 13.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A (Hopi)",
+    "huntCode": "3802",
+    "label": "General Bull — 5A (Hopi)",
+    "hunters": 11,
+    "harvest": 5,
+    "successPct": 45,
+    "daysPerHarvest": 7.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B",
+    "huntCode": "3016",
+    "label": "General Bull — 5B",
+    "hunters": 619,
+    "harvest": 284,
+    "successPct": 46,
+    "daysPerHarvest": 9.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B (Hopi)",
+    "huntCode": "3803",
+    "label": "General Bull — 5B (Hopi)",
+    "hunters": 23,
+    "harvest": 14,
+    "successPct": 61,
+    "daysPerHarvest": 4.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "3017",
+    "label": "General Bull — 6A",
+    "hunters": 631,
+    "harvest": 290,
+    "successPct": 46,
+    "daysPerHarvest": 8.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "3018",
+    "label": "General Bull — 6B",
+    "hunters": 125,
+    "harvest": 68,
+    "successPct": 54,
+    "daysPerHarvest": 7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 East",
+    "huntCode": "3019",
+    "label": "General Bull — 7 East",
+    "hunters": 292,
+    "harvest": 121,
+    "successPct": 41,
+    "daysPerHarvest": 10.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 West",
+    "huntCode": "3020",
+    "label": "General Bull — 7 West",
+    "hunters": 352,
+    "harvest": 108,
+    "successPct": 31,
+    "daysPerHarvest": 15,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "8",
+    "huntCode": "3021",
+    "label": "General Bull — 8",
+    "hunters": 375,
+    "harvest": 119,
+    "successPct": 32,
+    "daysPerHarvest": 14.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "9",
+    "huntCode": "3022",
+    "label": "General Bull — 9",
+    "hunters": 175,
+    "harvest": 66,
+    "successPct": 38,
+    "daysPerHarvest": 10.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3023",
+    "label": "General Bull — 10",
+    "hunters": 232,
+    "harvest": 110,
+    "successPct": 47,
+    "daysPerHarvest": 9.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A, 15B, and 18A",
+    "huntCode": "3024",
+    "label": "General Bull — 15A, 15B, and 18A",
+    "hunters": 70,
+    "harvest": 11,
+    "successPct": 16,
+    "daysPerHarvest": 39.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "3025",
+    "label": "General Bull — 19A",
+    "hunters": 24,
+    "harvest": 7,
+    "successPct": 29,
+    "daysPerHarvest": 12.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "3026",
+    "label": "General Bull — 21",
+    "hunters": 9,
+    "harvest": 4,
+    "successPct": 44,
+    "daysPerHarvest": 8.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22 North",
+    "huntCode": "3027",
+    "label": "General Bull — 22 North",
+    "hunters": 235,
+    "harvest": 90,
+    "successPct": 38,
+    "daysPerHarvest": 11,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22 North",
+    "huntCode": "3028",
+    "label": "General Bull — 22 North",
+    "hunters": 223,
+    "harvest": 58,
+    "successPct": 26,
+    "daysPerHarvest": 16.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22 South",
+    "huntCode": "3029",
+    "label": "General Bull — 22 South",
+    "hunters": 71,
+    "harvest": 44,
+    "successPct": 62,
+    "daysPerHarvest": 6.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "3030",
+    "label": "General Bull — 23",
+    "hunters": 149,
+    "harvest": 88,
+    "successPct": 59,
+    "daysPerHarvest": 6.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27",
+    "huntCode": "3031",
+    "label": "General Bull — 27",
+    "hunters": 191,
+    "harvest": 139,
+    "successPct": 73,
+    "daysPerHarvest": 4.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27",
+    "huntCode": "3032",
+    "label": "General Bull — 27",
+    "hunters": 203,
+    "harvest": 130,
+    "successPct": 64,
+    "daysPerHarvest": 6.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1 (Escudilla-Auger Canyon Hunt Area)",
+    "huntCode": "3033",
+    "label": "General Antlerless — 1 (Escudilla-Auger Canyon Hunt Area)",
+    "hunters": 61,
+    "harvest": 45,
+    "successPct": 74,
+    "daysPerHarvest": 3.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1, 2B, and 2C",
+    "huntCode": "3034",
+    "label": "General Antlerless — 1, 2B, and 2C",
+    "hunters": 330,
+    "harvest": 270,
+    "successPct": 82,
+    "daysPerHarvest": 3.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1, 2B, and 2C",
+    "huntCode": "3035",
+    "label": "General Antlerless — 1, 2B, and 2C",
+    "hunters": 276,
+    "harvest": 227,
+    "successPct": 82,
+    "daysPerHarvest": 4.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "3036",
+    "label": "General Antlerless — 3A and 3C",
+    "hunters": 158,
+    "harvest": 70,
+    "successPct": 44,
+    "daysPerHarvest": 9.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A",
+    "huntCode": "3037",
+    "label": "General Antlerless — 4A",
+    "hunters": 81,
+    "harvest": 43,
+    "successPct": 53,
+    "daysPerHarvest": 6.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A (Hopi)",
+    "huntCode": "3804",
+    "label": "General Antlerless — 4A (Hopi)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 67,
+    "daysPerHarvest": 1.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4B",
+    "huntCode": "3038",
+    "label": "General Antlerless — 4B",
+    "hunters": 43,
+    "harvest": 26,
+    "successPct": 60,
+    "daysPerHarvest": 6.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A",
+    "huntCode": "3039",
+    "label": "General Antlerless — 5A",
+    "hunters": 174,
+    "harvest": 105,
+    "successPct": 60,
+    "daysPerHarvest": 5.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B North",
+    "huntCode": "3040",
+    "label": "General Antlerless — 5B North",
+    "hunters": 168,
+    "harvest": 91,
+    "successPct": 54,
+    "daysPerHarvest": 5.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B North (Hopi)",
+    "huntCode": "3805",
+    "label": "General Antlerless — 5B North (Hopi)",
+    "hunters": 7,
+    "harvest": 5,
+    "successPct": 71,
+    "daysPerHarvest": 3.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B South",
+    "huntCode": "3041",
+    "label": "General Antlerless — 5B South",
+    "hunters": 334,
+    "harvest": 166,
+    "successPct": 50,
+    "daysPerHarvest": 7.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "3042",
+    "label": "General Antlerless — 6A",
+    "hunters": 464,
+    "harvest": 253,
+    "successPct": 55,
+    "daysPerHarvest": 6.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "3043",
+    "label": "General Antlerless — 6B",
+    "hunters": 237,
+    "harvest": 88,
+    "successPct": 37,
+    "daysPerHarvest": 11.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 East",
+    "huntCode": "3044",
+    "label": "General Antlerless — 7 East",
+    "hunters": 172,
+    "harvest": 50,
+    "successPct": 29,
+    "daysPerHarvest": 14.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 East",
+    "huntCode": "3045",
+    "label": "General Antlerless — 7 East",
+    "hunters": 152,
+    "harvest": 76,
+    "successPct": 50,
+    "daysPerHarvest": 7.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 East (Kachina Peaks Wilderness Hunt Area)",
+    "huntCode": "3046",
+    "label": "General Antlerless — 7 East (Kachina Peaks Wilderness Hunt Area)",
+    "hunters": 27,
+    "harvest": 17,
+    "successPct": 63,
+    "daysPerHarvest": 5.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 West",
+    "huntCode": "3047",
+    "label": "General Antlerless — 7 West",
+    "hunters": 305,
+    "harvest": 132,
+    "successPct": 43,
+    "daysPerHarvest": 9.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 West",
+    "huntCode": "3048",
+    "label": "General Antlerless — 7 West",
+    "hunters": 261,
+    "harvest": 92,
+    "successPct": 35,
+    "daysPerHarvest": 13.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "8",
+    "huntCode": "3049",
+    "label": "General Antlerless — 8",
+    "hunters": 399,
+    "harvest": 139,
+    "successPct": 35,
+    "daysPerHarvest": 11.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "9",
+    "huntCode": "3050",
+    "label": "General Antlerless — 9",
+    "hunters": 309,
+    "harvest": 128,
+    "successPct": 41,
+    "daysPerHarvest": 9.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "9",
+    "huntCode": "3051",
+    "label": "General Antlerless — 9",
+    "hunters": 264,
+    "harvest": 72,
+    "successPct": 27,
+    "daysPerHarvest": 16.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3052",
+    "label": "General Antlerless — 10",
+    "hunters": 610,
+    "harvest": 106,
+    "successPct": 17,
+    "daysPerHarvest": 26.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3053",
+    "label": "General Antlerless — 10",
+    "hunters": 585,
+    "harvest": 143,
+    "successPct": 24,
+    "daysPerHarvest": 18.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A, 15B, and 18A",
+    "huntCode": "3054",
+    "label": "General Antlerless — 15A, 15B, and 18A",
+    "hunters": 101,
+    "harvest": 27,
+    "successPct": 27,
+    "daysPerHarvest": 24.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "3055",
+    "label": "General Antlerless — 19A",
+    "hunters": 32,
+    "harvest": 3,
+    "successPct": 9,
+    "daysPerHarvest": 39.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "3056",
+    "label": "General Antlerless — 19A",
+    "hunters": 25,
+    "harvest": 6,
+    "successPct": 24,
+    "daysPerHarvest": 19.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "3057",
+    "label": "General Antlerless — 21",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 43,
+    "daysPerHarvest": 1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22 North",
+    "huntCode": "3058",
+    "label": "General Antlerless — 22 North",
+    "hunters": 132,
+    "harvest": 74,
+    "successPct": 56,
+    "daysPerHarvest": 6.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22 South",
+    "huntCode": "3059",
+    "label": "General Antlerless — 22 South",
+    "hunters": 38,
+    "harvest": 21,
+    "successPct": 55,
+    "daysPerHarvest": 6.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "3060",
+    "label": "General Antlerless — 23",
+    "hunters": 63,
+    "harvest": 28,
+    "successPct": 44,
+    "daysPerHarvest": 8.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "3061",
+    "label": "General Antlerless — 23",
+    "hunters": 78,
+    "harvest": 52,
+    "successPct": 67,
+    "daysPerHarvest": 5.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27",
+    "huntCode": "3062",
+    "label": "General Antlerless — 27",
+    "hunters": 138,
+    "harvest": 60,
+    "successPct": 43,
+    "daysPerHarvest": 10,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3901",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 10,
+    "harvest": 9,
+    "successPct": 90,
+    "daysPerHarvest": 3.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3902",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 11,
+    "harvest": 3,
+    "successPct": 27,
+    "daysPerHarvest": 15.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3903",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 6,
+    "harvest": 5,
+    "successPct": 83,
+    "daysPerHarvest": 4.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3904",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3905",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50,
+    "daysPerHarvest": 5.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3906",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 9,
+    "harvest": 2,
+    "successPct": 22,
+    "daysPerHarvest": 20,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3907",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 15,
+    "harvest": 6,
+    "successPct": 40,
+    "daysPerHarvest": 13.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3908",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": 5.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3909",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3910",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3911",
+    "label": "General Antlerless — Camp Navajo",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3912",
+    "label": "General Any Elk — Camp Navajo",
+    "hunters": 12,
+    "harvest": 5,
+    "successPct": 42,
+    "daysPerHarvest": 8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3913",
+    "label": "General Any Elk — Camp Navajo",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75,
+    "daysPerHarvest": 7.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3914",
+    "label": "General Any Elk — Camp Navajo",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75,
+    "daysPerHarvest": 7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3915",
+    "label": "General Any Elk — Camp Navajo",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3916",
+    "label": "General Any Elk — Camp Navajo",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33,
+    "daysPerHarvest": 11,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3917",
+    "label": "General Any Elk — Camp Navajo",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 67,
+    "daysPerHarvest": 7.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3919",
+    "label": "General Any Elk — Camp Navajo",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3920",
+    "label": "General Any Elk — Camp Navajo",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1 and 2C",
+    "huntCode": "3063",
+    "label": "Youth-Only (General) — 1 and 2C",
+    "hunters": 140,
+    "harvest": 125,
+    "successPct": 89,
+    "daysPerHarvest": 2.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "3064",
+    "label": "Youth-Only (General) — 3A and 3C",
+    "hunters": 142,
+    "harvest": 74,
+    "successPct": 52,
+    "daysPerHarvest": 6.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A",
+    "huntCode": "3065",
+    "label": "Youth-Only (General) — 4A",
+    "hunters": 85,
+    "harvest": 46,
+    "successPct": 54,
+    "daysPerHarvest": 6.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A",
+    "huntCode": "3066",
+    "label": "Youth-Only (General) — 5A",
+    "hunters": 116,
+    "harvest": 89,
+    "successPct": 77,
+    "daysPerHarvest": 3.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A (Hopi)",
+    "huntCode": "3807",
+    "label": "Youth-Only (General) — 5A (Hopi)",
+    "hunters": 7,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B South and 6A",
+    "huntCode": "3067",
+    "label": "Youth-Only (General) — 5B South and 6A",
+    "hunters": 325,
+    "harvest": 225,
+    "successPct": 69,
+    "daysPerHarvest": 4.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 West",
+    "huntCode": "3068",
+    "label": "Youth-Only (General) — 7 West",
+    "hunters": 91,
+    "harvest": 63,
+    "successPct": 69,
+    "daysPerHarvest": 3.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "9",
+    "huntCode": "3069",
+    "label": "Youth-Only (General) — 9",
+    "hunters": 134,
+    "harvest": 110,
+    "successPct": 82,
+    "daysPerHarvest": 3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3070",
+    "label": "Youth-Only (General) — 10",
+    "hunters": 305,
+    "harvest": 127,
+    "successPct": 42,
+    "daysPerHarvest": 9.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22",
+    "huntCode": "3071",
+    "label": "Youth-Only (General) — 22",
+    "hunters": 118,
+    "harvest": 103,
+    "successPct": 87,
+    "daysPerHarvest": 2.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "3072",
+    "label": "Youth-Only (General) — 23",
+    "hunters": 99,
+    "harvest": 64,
+    "successPct": 65,
+    "daysPerHarvest": 4.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17A, 17B, 18B, 19B, 20A, and 20C",
+    "huntCode": "3073",
+    "label": "Limited Opportunity Bull — 17A, 17B, 18B, 19B, 20A, and 20C",
+    "hunters": 30,
+    "harvest": 18,
+    "successPct": 60,
+    "daysPerHarvest": 10.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1 (Antelope Mountain Hunt Area)",
+    "huntCode": "3074",
+    "label": "Limited Opportunity Antlerless — 1 (Antelope Mountain Hunt Area)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60,
+    "daysPerHarvest": 5.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1 (Antelope Mountain Hunt Area)",
+    "huntCode": "3075",
+    "label": "Limited Opportunity Antlerless — 1 (Antelope Mountain Hunt Area)",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50,
+    "daysPerHarvest": 13.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1 (Antelope Mountain Hunt Area)",
+    "huntCode": "3076",
+    "label": "Limited Opportunity Antlerless — 1 (Antelope Mountain Hunt Area)",
+    "hunters": 11,
+    "harvest": 4,
+    "successPct": 36,
+    "daysPerHarvest": 14.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2A and 2B",
+    "huntCode": "3077",
+    "label": "Limited Opportunity Antlerless — 2A and 2B",
+    "hunters": 54,
+    "harvest": 21,
+    "successPct": 39,
+    "daysPerHarvest": 11.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2A and 2B",
+    "huntCode": "3078",
+    "label": "Limited Opportunity Antlerless — 2A and 2B",
+    "hunters": 50,
+    "harvest": 12,
+    "successPct": 24,
+    "daysPerHarvest": 26.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2A and 2B",
+    "huntCode": "3079",
+    "label": "Limited Opportunity Antlerless — 2A and 2B",
+    "hunters": 31,
+    "harvest": 11,
+    "successPct": 35,
+    "daysPerHarvest": 14,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A North",
+    "huntCode": "3080",
+    "label": "Limited Opportunity Antlerless — 4A North",
+    "hunters": 13,
+    "harvest": 7,
+    "successPct": 54,
+    "daysPerHarvest": 5.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A North (Hopi)",
+    "huntCode": "3808",
+    "label": "Limited Opportunity Antlerless — 4A North (Hopi)",
+    "hunters": 21,
+    "harvest": 18,
+    "successPct": 86,
+    "daysPerHarvest": 3.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A (East and West Sunset Hunt Areas)",
+    "huntCode": "3081",
+    "label": "Limited Opportunity Antlerless — 5A (East and West Sunset Hunt Areas)",
+    "hunters": 21,
+    "harvest": 16,
+    "successPct": 76,
+    "daysPerHarvest": 3.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A (East and West Sunset Hunt Areas)",
+    "huntCode": "3082",
+    "label": "Limited Opportunity Antlerless — 5A (East and West Sunset Hunt Areas)",
+    "hunters": 18,
+    "harvest": 7,
+    "successPct": 39,
+    "daysPerHarvest": 7.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A (Hopi: East and West Sunset Hunt Areas)",
+    "huntCode": "3809",
+    "label": "Limited Opportunity Antlerless — 5A (Hopi: East and West Sunset Hunt Areas)",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A (Hopi: East and West Sunset Hunt Areas)",
+    "huntCode": "3810",
+    "label": "Limited Opportunity Antlerless — 5A (Hopi: East and West Sunset Hunt Areas)",
+    "hunters": 21,
+    "harvest": 4,
+    "successPct": 19,
+    "daysPerHarvest": 21.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B North (Twin Arrows Hunt Area)",
+    "huntCode": "3083",
+    "label": "Limited Opportunity Antlerless — 5B North (Twin Arrows Hunt Area)",
+    "hunters": 21,
+    "harvest": 8,
+    "successPct": 38,
+    "daysPerHarvest": 10.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B North (Twin Arrows Hunt Area)",
+    "huntCode": "3084",
+    "label": "Limited Opportunity Antlerless — 5B North (Twin Arrows Hunt Area)",
+    "hunters": 25,
+    "harvest": 10,
+    "successPct": 40,
+    "daysPerHarvest": 8.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B North (Hopi: Twin Arrows Hunt Area)",
+    "huntCode": "3811",
+    "label": "Limited Opportunity Antlerless — 5B North (Hopi: Twin Arrows Hunt Area)",
+    "hunters": 23,
+    "harvest": 15,
+    "successPct": 65,
+    "daysPerHarvest": 2.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B North (Hopi: Twin Arrows Hunt Area)",
+    "huntCode": "3812",
+    "label": "Limited Opportunity Antlerless — 5B North (Hopi: Twin Arrows Hunt Area)",
+    "hunters": 25,
+    "harvest": 17,
+    "successPct": 68,
+    "daysPerHarvest": 3.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17A, 17B, 18B, 19B, 20A, and 20C",
+    "huntCode": "3085",
+    "label": "Limited Opportunity Antlerless — 17A, 17B, 18B, 19B, 20A, and 20C",
+    "hunters": 108,
+    "harvest": 34,
+    "successPct": 31,
+    "daysPerHarvest": 19.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17A, 17B, 18B, 19B, 20A, and 20C",
+    "huntCode": "3086",
+    "label": "Limited Opportunity Antlerless — 17A, 17B, 18B, 19B, 20A, and 20C",
+    "hunters": 199,
+    "harvest": 55,
+    "successPct": 28,
+    "daysPerHarvest": 32,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27 (Black Mountain Hunt Area)",
+    "huntCode": "3087",
+    "label": "Limited Opportunity Antlerless — 27 (Black Mountain Hunt Area)",
+    "hunters": 18,
+    "harvest": 5,
+    "successPct": 28,
+    "daysPerHarvest": 16,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2A and 2B",
+    "huntCode": "3088",
+    "label": "Limited Opportunity Any Elk — 2A and 2B",
+    "hunters": 30,
+    "harvest": 16,
+    "successPct": 53,
+    "daysPerHarvest": 9.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2A and 2B",
+    "huntCode": "3089",
+    "label": "Limited Opportunity Any Elk — 2A and 2B",
+    "hunters": 18,
+    "harvest": 14,
+    "successPct": 78,
+    "daysPerHarvest": 4.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2A and 2B",
+    "huntCode": "3090",
+    "label": "Limited Opportunity Any Elk — 2A and 2B",
+    "hunters": 23,
+    "harvest": 10,
+    "successPct": 43,
+    "daysPerHarvest": 8.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A (Zeniff Hunt Area) and 4B (Dry Lake Hunt Area",
+    "huntCode": "3091",
+    "label": "Limited Opportunity Any Elk — 3A (Zeniff Hunt Area) and 4B (Dry Lake Hunt Area",
+    "hunters": 29,
+    "harvest": 17,
+    "successPct": 59,
+    "daysPerHarvest": 10.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17A, 17B, 18B, 19B, 20A, and 20C",
+    "huntCode": "3092",
+    "label": "Limited Opportunity Any Elk — 17A, 17B, 18B, 19B, 20A, and 20C",
+    "hunters": 118,
+    "harvest": 37,
+    "successPct": 31,
+    "daysPerHarvest": 23.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "3093",
+    "label": "Limited Opportunity Any Elk — 24A",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 20,
+    "daysPerHarvest": 31,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "3094",
+    "label": "Limited Opportunity Any Elk — 24A",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "28, 31, and 32",
+    "huntCode": "3095",
+    "label": "Limited Opportunity Any Elk — 28, 31, and 32",
+    "hunters": 9,
+    "harvest": 2,
+    "successPct": 22,
+    "daysPerHarvest": 40.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "3096",
+    "label": "CHAMP — 3A and 3C",
+    "hunters": 10,
+    "harvest": 7,
+    "successPct": 70,
+    "daysPerHarvest": 4.4
+   },
+   {
+    "unit": "4B",
+    "huntCode": "3097",
+    "label": "CHAMP — 4B",
+    "hunters": 13,
+    "harvest": 11,
+    "successPct": 85,
+    "daysPerHarvest": 3.6
+   },
+   {
+    "unit": "6A",
+    "huntCode": "3098",
+    "label": "CHAMP — 6A",
+    "hunters": 47,
+    "harvest": 32,
+    "successPct": 68,
+    "daysPerHarvest": 5.3
+   },
+   {
+    "unit": "10",
+    "huntCode": "3099",
+    "label": "CHAMP — 10",
+    "hunters": 11,
+    "harvest": 4,
+    "successPct": 36,
+    "daysPerHarvest": 10
+   },
+   {
+    "unit": "3B",
+    "huntCode": "3100",
+    "label": "Muzzleloader Bull — 3B",
+    "hunters": 25,
+    "harvest": 16,
+    "successPct": 64,
+    "daysPerHarvest": 5.9,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "7 East (Kachina Peaks Wilderness Hunt Area)",
+    "huntCode": "3101",
+    "label": "Muzzleloader Bull — 7 East (Kachina Peaks Wilderness Hunt Area)",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 50,
+    "daysPerHarvest": 3.5,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "9",
+    "huntCode": "3102",
+    "label": "Muzzleloader Bull — 9",
+    "hunters": 18,
+    "harvest": 15,
+    "successPct": 83,
+    "daysPerHarvest": 4.2,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "22 South",
+    "huntCode": "3103",
+    "label": "Muzzleloader Bull — 22 South",
+    "hunters": 37,
+    "harvest": 20,
+    "successPct": 54,
+    "daysPerHarvest": 8.9,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "3B",
+    "huntCode": "3104",
+    "label": "Muzzleloader Bull — 3B",
+    "hunters": 167,
+    "harvest": 64,
+    "successPct": 38,
+    "daysPerHarvest": 11.1,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "3105",
+    "label": "Muzzleloader Bull — 6A",
+    "hunters": 291,
+    "harvest": 103,
+    "successPct": 35,
+    "daysPerHarvest": 10.6,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "10",
+    "huntCode": "3106",
+    "label": "Muzzleloader Bull — 10",
+    "hunters": 39,
+    "harvest": 10,
+    "successPct": 26,
+    "daysPerHarvest": 22.4,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "27",
+    "huntCode": "3107",
+    "label": "Muzzleloader Bull — 27",
+    "hunters": 36,
+    "harvest": 28,
+    "successPct": 78,
+    "daysPerHarvest": 5.3,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "3B",
+    "huntCode": "3108",
+    "label": "Muzzleloader Antlerless — 3B",
+    "hunters": 95,
+    "harvest": 64,
+    "successPct": 67,
+    "daysPerHarvest": 4.6,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "3B",
+    "huntCode": "3109",
+    "label": "Muzzleloader Antlerless — 3B",
+    "hunters": 231,
+    "harvest": 142,
+    "successPct": 61,
+    "daysPerHarvest": 9.6,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "3110",
+    "label": "Muzzleloader Antlerless — 6A",
+    "hunters": 45,
+    "harvest": 17,
+    "successPct": 38,
+    "daysPerHarvest": 9.6,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "8",
+    "huntCode": "3111",
+    "label": "Muzzleloader Antlerless — 8",
+    "hunters": 139,
+    "harvest": 49,
+    "successPct": 35,
+    "daysPerHarvest": 11.4,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3921",
+    "label": "Muzzleloader Antlerless — Camp Navajo",
+    "hunters": 10,
+    "harvest": 3,
+    "successPct": 30,
+    "daysPerHarvest": 14.3,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3922",
+    "label": "Muzzleloader Antlerless — Camp Navajo",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": 14,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "16A",
+    "huntCode": "3112",
+    "label": "Muzzleloader Any Elk — 16A",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 67,
+    "daysPerHarvest": 9.3,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3923",
+    "label": "Muzzleloader Any Elk — Camp Navajo",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 67,
+    "daysPerHarvest": 5,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "3924",
+    "label": "Muzzleloader Any Elk — Camp Navajo",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": 3,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "1 (Coon Canyon and Flat Top Hunt Areas)",
+    "huntCode": "3113",
+    "label": "Limited Opportunity (HAM) Antlerless — 1 (Coon Canyon and Flat Top Hunt Areas)",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": 23
+   },
+   {
+    "unit": "1 (Coon Canyon and Flat Top Hunt Areas)",
+    "huntCode": "3114",
+    "label": "Limited Opportunity (HAM) Antlerless — 1 (Coon Canyon and Flat Top Hunt Areas)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 4.6
+   },
+   {
+    "unit": "1 (Coon Canyon and Flat Top Hunt Areas)",
+    "huntCode": "3115",
+    "label": "Limited Opportunity (HAM) Antlerless — 1 (Coon Canyon and Flat Top Hunt Areas)",
+    "hunters": 10,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "1 (Coon Canyon and Flat Top Hunt Areas)",
+    "huntCode": "3116",
+    "label": "Limited Opportunity (HAM) Antlerless — 1 (Coon Canyon and Flat Top Hunt Areas)",
+    "hunters": 15,
+    "harvest": 5,
+    "successPct": 33,
+    "daysPerHarvest": 11
+   },
+   {
+    "unit": "1 (Coon Canyon and Flat Top Hunt Areas)",
+    "huntCode": "3117",
+    "label": "Limited Opportunity (HAM) Antlerless — 1 (Coon Canyon and Flat Top Hunt Areas)",
+    "hunters": 10,
+    "harvest": 5,
+    "successPct": 50,
+    "daysPerHarvest": 14.2
+   },
+   {
+    "unit": "1 (Coon Canyon and Flat Top Hunt Areas)",
+    "huntCode": "3118",
+    "label": "Limited Opportunity (HAM) Antlerless — 1 (Coon Canyon and Flat Top Hunt Areas)",
+    "hunters": 12,
+    "harvest": 3,
+    "successPct": 25,
+    "daysPerHarvest": 17
+   },
+   {
+    "unit": "3B and 3C (Show Low Creek Hunt Area)",
+    "huntCode": "3119",
+    "label": "Limited Opportunity (HAM) Antlerless — 3B and 3C (Show Low Creek Hunt Area)",
+    "hunters": 10,
+    "harvest": 7,
+    "successPct": 70,
+    "daysPerHarvest": 3.7
+   },
+   {
+    "unit": "3B and 3C (Show Low Creek Hunt Area)",
+    "huntCode": "3120",
+    "label": "Limited Opportunity (HAM) Antlerless — 3B and 3C (Show Low Creek Hunt Area)",
+    "hunters": 11,
+    "harvest": 4,
+    "successPct": 36,
+    "daysPerHarvest": 14.8
+   },
+   {
+    "unit": "3B and 3C (Show Low Creek Hunt Area)",
+    "huntCode": "3121",
+    "label": "Limited Opportunity (HAM) Antlerless — 3B and 3C (Show Low Creek Hunt Area)",
+    "hunters": 10,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "3B and 3C (Show Low Creek Hunt Area)",
+    "huntCode": "3122",
+    "label": "Limited Opportunity (HAM) Antlerless — 3B and 3C (Show Low Creek Hunt Area)",
+    "hunters": 8,
+    "harvest": 3,
+    "successPct": 38,
+    "daysPerHarvest": 12.7
+   },
+   {
+    "unit": "3B and 3C (Show Low Creek Hunt Area)",
+    "huntCode": "3123",
+    "label": "Limited Opportunity (HAM) Antlerless — 3B and 3C (Show Low Creek Hunt Area)",
+    "hunters": 8,
+    "harvest": 3,
+    "successPct": 38,
+    "daysPerHarvest": 12.7
+   },
+   {
+    "unit": "3B and 3C (Show Low Creek Hunt Area)",
+    "huntCode": "3124",
+    "label": "Limited Opportunity (HAM) Antlerless — 3B and 3C (Show Low Creek Hunt Area)",
+    "hunters": 9,
+    "harvest": 8,
+    "successPct": 89,
+    "daysPerHarvest": 4.8
+   },
+   {
+    "unit": "3B North",
+    "huntCode": "3125",
+    "label": "Limited Opportunity (HAM) Antlerless — 3B North",
+    "hunters": 14,
+    "harvest": 6,
+    "successPct": 43,
+    "daysPerHarvest": 12.5
+   },
+   {
+    "unit": "17A, 17B, 18B, 19B, 20A, and 20C",
+    "huntCode": "3190",
+    "label": "Limited Opportunity (Archery-Only) Bull — 17A, 17B, 18B, 19B, 20A, and 20C",
+    "hunters": 31,
+    "harvest": 17,
+    "successPct": 55,
+    "daysPerHarvest": 18.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "17A, 17B, 18B, 19B, 20A, and 20C",
+    "huntCode": "3191",
+    "label": "Limited Opportunity (Archery-Only) Antlerless — 17A, 17B, 18B, 19B, 20A, and 20C",
+    "hunters": 31,
+    "harvest": 5,
+    "successPct": 16,
+    "daysPerHarvest": 59.2,
+    "weapon": "archery"
+   },
+   {
+    "unit": "28, 31, and 32",
+    "huntCode": "3192",
+    "label": "Limited Opportunity (Archery-Only) Any Elk — 28, 31, and 32",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "unit": "1",
+    "huntCode": "2001",
+    "label": "General — 1",
+    "hunters": 32,
+    "harvest": 32,
+    "successPct": 100,
+    "daysPerHarvest": 1.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2A",
+    "huntCode": "2002",
+    "label": "General — 2A",
+    "hunters": 13,
+    "harvest": 10,
+    "successPct": 77,
+    "daysPerHarvest": 3.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2C",
+    "huntCode": "2003",
+    "label": "General — 2C",
+    "hunters": 10,
+    "harvest": 10,
+    "successPct": 100,
+    "daysPerHarvest": 2.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A",
+    "huntCode": "2004",
+    "label": "General — 3A",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3C",
+    "huntCode": "2005",
+    "label": "General — 3C",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A",
+    "huntCode": "2006",
+    "label": "General — 4A",
+    "hunters": 9,
+    "harvest": 9,
+    "successPct": 100,
+    "daysPerHarvest": 1.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A (Hopi)",
+    "huntCode": "2801",
+    "label": "General — 4A (Hopi)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 2.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4B",
+    "huntCode": "2007",
+    "label": "General — 4B",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 1.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A",
+    "huntCode": "2008",
+    "label": "General — 5A",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 1.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A (Hopi)",
+    "huntCode": "2802",
+    "label": "General — 5A (Hopi)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 2.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B",
+    "huntCode": "2009",
+    "label": "General — 5B",
+    "hunters": 19,
+    "harvest": 18,
+    "successPct": 95,
+    "daysPerHarvest": 3.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5B (Hopi)",
+    "huntCode": "2803",
+    "label": "General — 5B (Hopi)",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 50,
+    "daysPerHarvest": 6.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "2010",
+    "label": "General — 6A",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100,
+    "daysPerHarvest": 2.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6B North",
+    "huntCode": "2011",
+    "label": "General — 6B North",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6B South",
+    "huntCode": "2012",
+    "label": "General — 6B South",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7",
+    "huntCode": "2013",
+    "label": "General — 7",
+    "hunters": 30,
+    "harvest": 28,
+    "successPct": 93,
+    "daysPerHarvest": 2.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "9",
+    "huntCode": "2014",
+    "label": "General — 9",
+    "hunters": 18,
+    "harvest": 18,
+    "successPct": 100,
+    "daysPerHarvest": 1.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10",
+    "huntCode": "2015",
+    "label": "General — 10",
+    "hunters": 52,
+    "harvest": 44,
+    "successPct": 85,
+    "daysPerHarvest": 3.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12A and 12B",
+    "huntCode": "2016",
+    "label": "General — 12A and 12B",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "13A",
+    "huntCode": "2017",
+    "label": "General — 13A",
+    "hunters": 14,
+    "harvest": 11,
+    "successPct": 79,
+    "daysPerHarvest": 3.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "13B",
+    "huntCode": "2018",
+    "label": "General — 13B",
+    "hunters": 19,
+    "harvest": 14,
+    "successPct": 74,
+    "daysPerHarvest": 2.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17A",
+    "huntCode": "2019",
+    "label": "General — 17A",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": 3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "18A",
+    "huntCode": "2020",
+    "label": "General — 18A",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "18B",
+    "huntCode": "2021",
+    "label": "General — 18B",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 1.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "2022",
+    "label": "General — 19A",
+    "hunters": 18,
+    "harvest": 17,
+    "successPct": 94,
+    "daysPerHarvest": 2.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "19B",
+    "huntCode": "2023",
+    "label": "General — 19B",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 1.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "2024",
+    "label": "General — 21",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "2025",
+    "label": "General — 30A",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31 and 32",
+    "huntCode": "2026",
+    "label": "General — 31 and 32",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A and 35B",
+    "huntCode": "2027",
+    "label": "General — 35A and 35B",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "1",
+    "huntCode": "2038",
+    "label": "Archery-only — 1",
+    "hunters": 26,
+    "harvest": 6,
+    "successPct": 23,
+    "daysPerHarvest": 36.2,
+    "weapon": "archery"
+   },
+   {
+    "unit": "3A",
+    "huntCode": "2039",
+    "label": "Archery-only — 3A",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40,
+    "daysPerHarvest": 10,
+    "weapon": "archery"
+   },
+   {
+    "unit": "3B",
+    "huntCode": "2040",
+    "label": "Archery-only — 3B",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 67,
+    "daysPerHarvest": 9.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4A",
+    "huntCode": "2041",
+    "label": "Archery-only — 4A",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 2,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4A (Hopi)",
+    "huntCode": "2804",
+    "label": "Archery-only — 4A (Hopi)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "4B",
+    "huntCode": "2042",
+    "label": "Archery-only — 4B",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 14,
+    "daysPerHarvest": 53,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5A",
+    "huntCode": "2043",
+    "label": "Archery-only — 5A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 4.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5A (Hopi)",
+    "huntCode": "2805",
+    "label": "Archery-only — 5A (Hopi)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B",
+    "huntCode": "2044",
+    "label": "Archery-only — 5B",
+    "hunters": 8,
+    "harvest": 1,
+    "successPct": 13,
+    "daysPerHarvest": 63,
+    "weapon": "archery"
+   },
+   {
+    "unit": "5B (Hopi)",
+    "huntCode": "2806",
+    "label": "Archery-only — 5B (Hopi)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "2045",
+    "label": "Archery-only — 6A",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "6B North",
+    "huntCode": "2046",
+    "label": "Archery-only — 6B North",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 20,
+    "daysPerHarvest": 38,
+    "weapon": "archery"
+   },
+   {
+    "unit": "7",
+    "huntCode": "2047",
+    "label": "Archery-only — 7",
+    "hunters": 9,
+    "harvest": 6,
+    "successPct": 67,
+    "daysPerHarvest": 7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "9",
+    "huntCode": "2048",
+    "label": "Archery-only — 9",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": 16,
+    "weapon": "archery"
+   },
+   {
+    "unit": "10",
+    "huntCode": "2049",
+    "label": "Archery-only — 10",
+    "hunters": 27,
+    "harvest": 9,
+    "successPct": 33,
+    "daysPerHarvest": 20.8,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "2050",
+    "label": "Archery-only — 11M",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60,
+    "daysPerHarvest": 18.7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "12A and 12B",
+    "huntCode": "2051",
+    "label": "Archery-only — 12A and 12B",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75,
+    "daysPerHarvest": 3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "13A",
+    "huntCode": "2052",
+    "label": "Archery-only — 13A",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": 16,
+    "weapon": "archery"
+   },
+   {
+    "unit": "17B and 19B",
+    "huntCode": "2054",
+    "label": "Archery-only — 17B and 19B",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": 4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "18A",
+    "huntCode": "2055",
+    "label": "Archery-only — 18A",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75,
+    "daysPerHarvest": 6,
+    "weapon": "archery"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "2056",
+    "label": "Archery-only — 19A",
+    "hunters": 9,
+    "harvest": 5,
+    "successPct": 56,
+    "daysPerHarvest": 6.4,
+    "weapon": "archery"
+   },
+   {
+    "unit": "31 and 32",
+    "huntCode": "2059",
+    "label": "Archery-only — 31 and 32",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "archery"
+   },
+   {
+    "unit": "34A and 34B",
+    "huntCode": "2060",
+    "label": "Archery-only — 34A and 34B",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "35Aand 35B",
+    "huntCode": "2061",
+    "label": "Archery-only — 35Aand 35B",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 67,
+    "daysPerHarvest": 7,
+    "weapon": "archery"
+   },
+   {
+    "unit": "Camp Navajo",
+    "huntCode": "2901",
+    "label": "Archery-only — Camp Navajo",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 6,
+    "weapon": "archery"
+   },
+   {
+    "unit": "2B",
+    "huntCode": "2028",
+    "label": "Muzzleloader — 2B",
+    "hunters": 9,
+    "harvest": 6,
+    "successPct": 67,
+    "daysPerHarvest": 5,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "3B",
+    "huntCode": "2029",
+    "label": "Muzzleloader — 3B",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 67,
+    "daysPerHarvest": 4.5,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "8",
+    "huntCode": "2030",
+    "label": "Muzzleloader — 8",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": 4,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "8",
+    "huntCode": "2031",
+    "label": "Muzzleloader — 8",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 1.3,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "15A and 15B",
+    "huntCode": "2032",
+    "label": "Muzzleloader — 15A and 15B",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 5,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "17B and 19B",
+    "huntCode": "2033",
+    "label": "Muzzleloader — 17B and 19B",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "18A",
+    "huntCode": "2034",
+    "label": "Muzzleloader — 18A",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 1,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "2036",
+    "label": "Muzzleloader — 19A",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 1.3,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "34A and 34B",
+    "huntCode": "2037",
+    "label": "Muzzleloader — 34A and 34B",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 2,
+    "weapon": "muzzleloader"
+   }
+  ],
+  "DEER": [
+   {
+    "unit": "1",
+    "huntCode": "1001",
+    "label": "General — 1 — Any antlered deer",
+    "hunters": 282,
+    "harvest": 190,
+    "successPct": 67,
+    "daysPerHarvest": 6.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "2A, 2B, and 2C",
+    "huntCode": "1002",
+    "label": "General — 2A, 2B, and 2C — Any antlered deer",
+    "hunters": 35,
+    "harvest": 18,
+    "successPct": 51,
+    "daysPerHarvest": 8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "1003",
+    "label": "General — 3A and 3C — Any antlered deer",
+    "hunters": 54,
+    "harvest": 45,
+    "successPct": 83,
+    "daysPerHarvest": 4.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "1004",
+    "label": "General — 3A and 3C — Any antlered deer",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100,
+    "daysPerHarvest": 5.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A and 4B",
+    "huntCode": "1005",
+    "label": "General — 4A and 4B — Any antlered deer",
+    "hunters": 228,
+    "harvest": 62,
+    "successPct": 27,
+    "daysPerHarvest": 20.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A and 4B",
+    "huntCode": "1006",
+    "label": "General — 4A and 4B — Any antlered deer",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "4A and 4B (Hopi)",
+    "huntCode": "1801",
+    "label": "General — 4A and 4B (Hopi)",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 43,
+    "daysPerHarvest": 10,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A and 5B",
+    "huntCode": "1007",
+    "label": "General — 5A and 5B — Any antlered deer",
+    "hunters": 360,
+    "harvest": 130,
+    "successPct": 36,
+    "daysPerHarvest": 13.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "5A and 5B (Hopi)",
+    "huntCode": "1803",
+    "label": "General — 5A and 5B (Hopi)",
+    "hunters": 25,
+    "harvest": 16,
+    "successPct": 64,
+    "daysPerHarvest": 6.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "1008",
+    "label": "General — 6A — Antlered mule deer",
+    "hunters": 365,
+    "harvest": 148,
+    "successPct": 41,
+    "daysPerHarvest": 9.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "1009",
+    "label": "General — 6B — Antlered mule deer",
+    "hunters": 176,
+    "harvest": 49,
+    "successPct": 28,
+    "daysPerHarvest": 14.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "1010",
+    "label": "General — 6B — Any antlered deer",
+    "hunters": 7,
+    "harvest": 6,
+    "successPct": 86,
+    "daysPerHarvest": 12.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 and 9",
+    "huntCode": "1011",
+    "label": "General — 7 and 9 — Any antlered deer",
+    "hunters": 963,
+    "harvest": 518,
+    "successPct": 54,
+    "daysPerHarvest": 7.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "8",
+    "huntCode": "1012",
+    "label": "General — 8 — Antlered mule deer",
+    "hunters": 212,
+    "harvest": 95,
+    "successPct": 45,
+    "daysPerHarvest": 9.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10",
+    "huntCode": "1013",
+    "label": "General — 10 — Any antlered deer",
+    "hunters": 324,
+    "harvest": 87,
+    "successPct": 27,
+    "daysPerHarvest": 20.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12A East",
+    "huntCode": "1014",
+    "label": "General — 12A East — Any antlered deer",
+    "hunters": 33,
+    "harvest": 16,
+    "successPct": 48,
+    "daysPerHarvest": 9.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12A East",
+    "huntCode": "1015",
+    "label": "General — 12A East — Any antlered deer",
+    "hunters": 11,
+    "harvest": 10,
+    "successPct": 91,
+    "daysPerHarvest": 4.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12A West",
+    "huntCode": "1016",
+    "label": "General — 12A West — Any antlered deer",
+    "hunters": 286,
+    "harvest": 222,
+    "successPct": 78,
+    "daysPerHarvest": 6.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12A West",
+    "huntCode": "1017",
+    "label": "General — 12A West — Any antlered deer",
+    "hunters": 62,
+    "harvest": 51,
+    "successPct": 82,
+    "daysPerHarvest": 5.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12B",
+    "huntCode": "1018",
+    "label": "General — 12B — Any antlered deer",
+    "hunters": 12,
+    "harvest": 11,
+    "successPct": 92,
+    "daysPerHarvest": 4.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12B",
+    "huntCode": "1019",
+    "label": "General — 12B — Any antlered deer",
+    "hunters": 13,
+    "harvest": 13,
+    "successPct": 100,
+    "daysPerHarvest": 6.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12B West",
+    "huntCode": "1020",
+    "label": "General — 12B West — Any antlered deer",
+    "hunters": 87,
+    "harvest": 66,
+    "successPct": 76,
+    "daysPerHarvest": 5.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12B West",
+    "huntCode": "1021",
+    "label": "General — 12B West — Any antlered deer",
+    "hunters": 43,
+    "harvest": 40,
+    "successPct": 93,
+    "daysPerHarvest": 4.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "13A",
+    "huntCode": "1022",
+    "label": "General — 13A — Any antlered deer",
+    "hunters": 34,
+    "harvest": 27,
+    "successPct": 79,
+    "daysPerHarvest": 7.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "13B",
+    "huntCode": "1023",
+    "label": "General — 13B — Any antlered deer",
+    "hunters": 53,
+    "harvest": 34,
+    "successPct": 64,
+    "daysPerHarvest": 10.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "16A",
+    "huntCode": "1024",
+    "label": "General — 16A — Any antlered deer",
+    "hunters": 191,
+    "harvest": 65,
+    "successPct": 34,
+    "daysPerHarvest": 13.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17A",
+    "huntCode": "1025",
+    "label": "General — 17A — Any antlered deer",
+    "hunters": 86,
+    "harvest": 33,
+    "successPct": 38,
+    "daysPerHarvest": 11.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17B",
+    "huntCode": "1026",
+    "label": "General — 17B — Any antlered deer",
+    "hunters": 254,
+    "harvest": 70,
+    "successPct": 28,
+    "daysPerHarvest": 17.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "18A",
+    "huntCode": "1027",
+    "label": "General — 18A — Any antlered deer",
+    "hunters": 283,
+    "harvest": 75,
+    "successPct": 27,
+    "daysPerHarvest": 19.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "18B",
+    "huntCode": "1028",
+    "label": "General — 18B — Any antlered deer",
+    "hunters": 191,
+    "harvest": 61,
+    "successPct": 32,
+    "daysPerHarvest": 14.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "1029",
+    "label": "General — 19A — Any antlered deer",
+    "hunters": 436,
+    "harvest": 170,
+    "successPct": 39,
+    "daysPerHarvest": 11.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "19B",
+    "huntCode": "1030",
+    "label": "General — 19B — Any antlered deer",
+    "hunters": 155,
+    "harvest": 49,
+    "successPct": 32,
+    "daysPerHarvest": 14.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20A",
+    "huntCode": "1031",
+    "label": "General — 20A — Any antlered deer",
+    "hunters": 512,
+    "harvest": 198,
+    "successPct": 39,
+    "daysPerHarvest": 11.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20B",
+    "huntCode": "1032",
+    "label": "General — 20B — Any antlered deer",
+    "hunters": 180,
+    "harvest": 21,
+    "successPct": 12,
+    "daysPerHarvest": 31.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20C",
+    "huntCode": "1033",
+    "label": "General — 20C — Any antlered deer",
+    "hunters": 104,
+    "harvest": 35,
+    "successPct": 34,
+    "daysPerHarvest": 9.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20C",
+    "huntCode": "1034",
+    "label": "General — 20C — Any antlered deer",
+    "hunters": 104,
+    "harvest": 20,
+    "successPct": 19,
+    "daysPerHarvest": 20,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "1035",
+    "label": "General — 21 — Antlered mule deer",
+    "hunters": 190,
+    "harvest": 38,
+    "successPct": 20,
+    "daysPerHarvest": 19,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "1036",
+    "label": "General — 21 — Antlered mule deer",
+    "hunters": 10,
+    "harvest": 6,
+    "successPct": 60,
+    "daysPerHarvest": 9.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22",
+    "huntCode": "1037",
+    "label": "General — 22 — Antlered mule deer",
+    "hunters": 292,
+    "harvest": 43,
+    "successPct": 15,
+    "daysPerHarvest": 25.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "1038",
+    "label": "General — 23 — Antlered mule deer",
+    "hunters": 274,
+    "harvest": 70,
+    "successPct": 26,
+    "daysPerHarvest": 17.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "1039",
+    "label": "General — 24A — Antlered mule deer",
+    "hunters": 67,
+    "harvest": 40,
+    "successPct": 60,
+    "daysPerHarvest": 7.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24B",
+    "huntCode": "1040",
+    "label": "General — 24B — Antlered mule deer",
+    "hunters": 164,
+    "harvest": 31,
+    "successPct": 19,
+    "daysPerHarvest": 27.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27",
+    "huntCode": "1041",
+    "label": "General — 27 — Antlered mule deer",
+    "hunters": 429,
+    "harvest": 248,
+    "successPct": 58,
+    "daysPerHarvest": 6.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "28",
+    "huntCode": "1042",
+    "label": "General — 28 — Antlered mule deer",
+    "hunters": 197,
+    "harvest": 51,
+    "successPct": 26,
+    "daysPerHarvest": 16.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "28",
+    "huntCode": "1043",
+    "label": "General — 28 — Antlered mule deer",
+    "hunters": 181,
+    "harvest": 40,
+    "successPct": 22,
+    "daysPerHarvest": 19.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29",
+    "huntCode": "1044",
+    "label": "General — 29 — Antlered mule deer",
+    "hunters": 39,
+    "harvest": 6,
+    "successPct": 15,
+    "daysPerHarvest": 24.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29",
+    "huntCode": "1045",
+    "label": "General — 29 — Antlered mule deer",
+    "hunters": 32,
+    "harvest": 8,
+    "successPct": 25,
+    "daysPerHarvest": 18.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "1046",
+    "label": "General — 30A — Antlered mule deer",
+    "hunters": 142,
+    "harvest": 42,
+    "successPct": 30,
+    "daysPerHarvest": 13.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "1047",
+    "label": "General — 30A — Antlered mule deer",
+    "hunters": 131,
+    "harvest": 40,
+    "successPct": 31,
+    "daysPerHarvest": 12.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "1048",
+    "label": "General — 30B — Antlered mule deer",
+    "hunters": 262,
+    "harvest": 70,
+    "successPct": 27,
+    "daysPerHarvest": 15.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "1049",
+    "label": "General — 30B — Antlered mule deer",
+    "hunters": 270,
+    "harvest": 44,
+    "successPct": 16,
+    "daysPerHarvest": 27.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31",
+    "huntCode": "1050",
+    "label": "General — 31 — Antlered mule deer",
+    "hunters": 44,
+    "harvest": 9,
+    "successPct": 20,
+    "daysPerHarvest": 19.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31",
+    "huntCode": "1051",
+    "label": "General — 31 — Antlered mule deer",
+    "hunters": 38,
+    "harvest": 11,
+    "successPct": 29,
+    "daysPerHarvest": 12.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32",
+    "huntCode": "1052",
+    "label": "General — 32 — Antlered mule deer",
+    "hunters": 151,
+    "harvest": 58,
+    "successPct": 38,
+    "daysPerHarvest": 10.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32",
+    "huntCode": "1053",
+    "label": "General — 32 — Antlered mule deer",
+    "hunters": 136,
+    "harvest": 22,
+    "successPct": 16,
+    "daysPerHarvest": 25.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33",
+    "huntCode": "1054",
+    "label": "General — 33 — Antlered mule deer",
+    "hunters": 169,
+    "harvest": 41,
+    "successPct": 24,
+    "daysPerHarvest": 18.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34B",
+    "huntCode": "1055",
+    "label": "General — 34B — Antlered mule deer",
+    "hunters": 19,
+    "harvest": 9,
+    "successPct": 47,
+    "daysPerHarvest": 8.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34B",
+    "huntCode": "1056",
+    "label": "General — 34B — Antlered mule deer",
+    "hunters": 18,
+    "harvest": 4,
+    "successPct": 22,
+    "daysPerHarvest": 17.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "1057",
+    "label": "General — 36A — Antlered mule deer",
+    "hunters": 182,
+    "harvest": 46,
+    "successPct": 25,
+    "daysPerHarvest": 14.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "1058",
+    "label": "General — 36A — Antlered mule deer",
+    "hunters": 178,
+    "harvest": 26,
+    "successPct": 15,
+    "daysPerHarvest": 29.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36B",
+    "huntCode": "1059",
+    "label": "General — 36B — Antlered mule deer",
+    "hunters": 109,
+    "harvest": 35,
+    "successPct": 32,
+    "daysPerHarvest": 11.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36B",
+    "huntCode": "1060",
+    "label": "General — 36B — Antlered mule deer",
+    "hunters": 93,
+    "harvest": 28,
+    "successPct": 30,
+    "daysPerHarvest": 12.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36C",
+    "huntCode": "1061",
+    "label": "General — 36C — Antlered mule deer",
+    "hunters": 30,
+    "harvest": 9,
+    "successPct": 30,
+    "daysPerHarvest": 11.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36C",
+    "huntCode": "1062",
+    "label": "General — 36C — Antlered mule deer",
+    "hunters": 33,
+    "harvest": 4,
+    "successPct": 12,
+    "daysPerHarvest": 30,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "37A",
+    "huntCode": "1063",
+    "label": "General — 37A — Any antlered deer",
+    "hunters": 149,
+    "harvest": 56,
+    "successPct": 38,
+    "daysPerHarvest": 9.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "37A",
+    "huntCode": "1064",
+    "label": "General — 37A — Any antlered deer",
+    "hunters": 143,
+    "harvest": 40,
+    "successPct": 28,
+    "daysPerHarvest": 13.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "37B",
+    "huntCode": "1065",
+    "label": "General — 37B — Any antlered deer",
+    "hunters": 186,
+    "harvest": 63,
+    "successPct": 34,
+    "daysPerHarvest": 11.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "37B",
+    "huntCode": "1066",
+    "label": "General — 37B — Any antlered deer",
+    "hunters": 175,
+    "harvest": 56,
+    "successPct": 32,
+    "daysPerHarvest": 11.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "37B",
+    "huntCode": "1067",
+    "label": "General — 37B — Any antlered deer",
+    "hunters": 14,
+    "harvest": 12,
+    "successPct": 86,
+    "daysPerHarvest": 9.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "39 , 40A, and 40B",
+    "huntCode": "1068",
+    "label": "General — 39 , 40A, and 40B — Any antlered deer",
+    "hunters": 333,
+    "harvest": 59,
+    "successPct": 18,
+    "daysPerHarvest": 26.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "41",
+    "huntCode": "1069",
+    "label": "General — 41 — Any antlered deer",
+    "hunters": 443,
+    "harvest": 86,
+    "successPct": 19,
+    "daysPerHarvest": 24.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "42",
+    "huntCode": "1070",
+    "label": "General — 42 — Any antlered deer",
+    "hunters": 224,
+    "harvest": 36,
+    "successPct": 16,
+    "daysPerHarvest": 33.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "43A, 43B, 44A, and 44B",
+    "huntCode": "1071",
+    "label": "General — 43A, 43B, 44A, and 44B — Any antlered deer",
+    "hunters": 355,
+    "harvest": 88,
+    "successPct": 25,
+    "daysPerHarvest": 18.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45A, 45B, and 45C",
+    "huntCode": "1072",
+    "label": "General — 45A, 45B, and 45C — Any antlered deer",
+    "hunters": 191,
+    "harvest": 36,
+    "successPct": 19,
+    "daysPerHarvest": 25.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "46A and 46B",
+    "huntCode": "1073",
+    "label": "General — 46A and 46B — Any antlered deer",
+    "hunters": 11,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "1074",
+    "label": "General — 6A — Antlered whitetail deer (Coues)",
+    "hunters": 80,
+    "harvest": 29,
+    "successPct": 36,
+    "daysPerHarvest": 10.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6A",
+    "huntCode": "1075",
+    "label": "General — 6A — Antlered whitetail deer (Coues)",
+    "hunters": 18,
+    "harvest": 11,
+    "successPct": 61,
+    "daysPerHarvest": 13,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "1076",
+    "label": "General — 6B — Antlered whitetail deer (Coues)",
+    "hunters": 39,
+    "harvest": 10,
+    "successPct": 26,
+    "daysPerHarvest": 17.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "6B and 8",
+    "huntCode": "1077",
+    "label": "General — 6B and 8 — Antlered whitetail deer (Coues)",
+    "hunters": 20,
+    "harvest": 8,
+    "successPct": 40,
+    "daysPerHarvest": 16.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "8",
+    "huntCode": "1078",
+    "label": "General — 8 — Antlered whitetail deer (Coues)",
+    "hunters": 45,
+    "harvest": 4,
+    "successPct": 9,
+    "daysPerHarvest": 50.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "1079",
+    "label": "General — 21 — Antlered whitetail deer (Coues)",
+    "hunters": 195,
+    "harvest": 46,
+    "successPct": 24,
+    "daysPerHarvest": 17.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "1080",
+    "label": "General — 21 — Antlered whitetail deer (Coues)",
+    "hunters": 191,
+    "harvest": 61,
+    "successPct": 32,
+    "daysPerHarvest": 12.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "1081",
+    "label": "General — 21 — Antlered whitetail deer (Coues)",
+    "hunters": 18,
+    "harvest": 12,
+    "successPct": 67,
+    "daysPerHarvest": 10.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22",
+    "huntCode": "1082",
+    "label": "General — 22 — Antlered whitetail deer (Coues)",
+    "hunters": 268,
+    "harvest": 100,
+    "successPct": 37,
+    "daysPerHarvest": 10.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22",
+    "huntCode": "1083",
+    "label": "General — 22 — Antlered whitetail deer (Coues)",
+    "hunters": 283,
+    "harvest": 90,
+    "successPct": 32,
+    "daysPerHarvest": 13.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22",
+    "huntCode": "1084",
+    "label": "General — 22 — Antlered whitetail deer (Coues)",
+    "hunters": 33,
+    "harvest": 22,
+    "successPct": 67,
+    "daysPerHarvest": 11.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "1085",
+    "label": "General — 23 — Antlered whitetail deer (Coues)",
+    "hunters": 149,
+    "harvest": 39,
+    "successPct": 26,
+    "daysPerHarvest": 16.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "1086",
+    "label": "General — 23 — Antlered whitetail deer (Coues)",
+    "hunters": 141,
+    "harvest": 25,
+    "successPct": 18,
+    "daysPerHarvest": 25.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "1087",
+    "label": "General — 23 — Antlered whitetail deer (Coues)",
+    "hunters": 44,
+    "harvest": 14,
+    "successPct": 32,
+    "daysPerHarvest": 21.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "1088",
+    "label": "General — 24A — Antlered whitetail deer (Coues)",
+    "hunters": 221,
+    "harvest": 51,
+    "successPct": 23,
+    "daysPerHarvest": 16.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "1089",
+    "label": "General — 24A — Antlered whitetail deer (Coues)",
+    "hunters": 227,
+    "harvest": 86,
+    "successPct": 38,
+    "daysPerHarvest": 11.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "1090",
+    "label": "General — 24A — Antlered whitetail deer (Coues)",
+    "hunters": 216,
+    "harvest": 91,
+    "successPct": 42,
+    "daysPerHarvest": 11.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "1091",
+    "label": "General — 24A — Antlered whitetail deer (Coues)",
+    "hunters": 47,
+    "harvest": 28,
+    "successPct": 60,
+    "daysPerHarvest": 12.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24B",
+    "huntCode": "1092",
+    "label": "General — 24B — Antlered whitetail deer (Coues)",
+    "hunters": 166,
+    "harvest": 40,
+    "successPct": 24,
+    "daysPerHarvest": 15.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24B",
+    "huntCode": "1093",
+    "label": "General — 24B — Antlered whitetail deer (Coues)",
+    "hunters": 237,
+    "harvest": 65,
+    "successPct": 27,
+    "daysPerHarvest": 13.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24B",
+    "huntCode": "1094",
+    "label": "General — 24B — Antlered whitetail deer (Coues)",
+    "hunters": 221,
+    "harvest": 91,
+    "successPct": 41,
+    "daysPerHarvest": 10.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24B",
+    "huntCode": "1095",
+    "label": "General — 24B — Antlered whitetail deer (Coues)",
+    "hunters": 31,
+    "harvest": 19,
+    "successPct": 61,
+    "daysPerHarvest": 9.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27 and 28",
+    "huntCode": "1096",
+    "label": "General — 27 and 28 — Antlered whitetail deer (Coues)",
+    "hunters": 226,
+    "harvest": 87,
+    "successPct": 38,
+    "daysPerHarvest": 11.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27 and 28",
+    "huntCode": "1097",
+    "label": "General — 27 and 28 — Antlered whitetail deer (Coues)",
+    "hunters": 247,
+    "harvest": 79,
+    "successPct": 32,
+    "daysPerHarvest": 13.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27 and 28",
+    "huntCode": "1098",
+    "label": "General — 27 and 28 — Antlered whitetail deer (Coues)",
+    "hunters": 27,
+    "harvest": 13,
+    "successPct": 48,
+    "daysPerHarvest": 14.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29",
+    "huntCode": "1099",
+    "label": "General — 29 — Antlered whitetail deer (Coues)",
+    "hunters": 149,
+    "harvest": 56,
+    "successPct": 38,
+    "daysPerHarvest": 9.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29",
+    "huntCode": "1100",
+    "label": "General — 29 — Antlered whitetail deer (Coues)",
+    "hunters": 136,
+    "harvest": 78,
+    "successPct": 57,
+    "daysPerHarvest": 6.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29",
+    "huntCode": "1101",
+    "label": "General — 29 — Antlered whitetail deer (Coues)",
+    "hunters": 139,
+    "harvest": 62,
+    "successPct": 45,
+    "daysPerHarvest": 10.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29",
+    "huntCode": "1102",
+    "label": "General — 29 — Antlered whitetail deer (Coues)",
+    "hunters": 33,
+    "harvest": 24,
+    "successPct": 73,
+    "daysPerHarvest": 6.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "1103",
+    "label": "General — 30A — Antlered whitetail deer (Coues)",
+    "hunters": 140,
+    "harvest": 50,
+    "successPct": 36,
+    "daysPerHarvest": 10.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "1104",
+    "label": "General — 30A — Antlered whitetail deer (Coues)",
+    "hunters": 146,
+    "harvest": 61,
+    "successPct": 42,
+    "daysPerHarvest": 8.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "1105",
+    "label": "General — 30A — Antlered whitetail deer (Coues)",
+    "hunters": 114,
+    "harvest": 46,
+    "successPct": 40,
+    "daysPerHarvest": 10,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "1106",
+    "label": "General — 30A — Antlered whitetail deer (Coues)",
+    "hunters": 25,
+    "harvest": 12,
+    "successPct": 48,
+    "daysPerHarvest": 12.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "1107",
+    "label": "General — 30B — Antlered whitetail deer (Coues)",
+    "hunters": 91,
+    "harvest": 22,
+    "successPct": 24,
+    "daysPerHarvest": 18.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "1108",
+    "label": "General — 30B — Antlered whitetail deer (Coues)",
+    "hunters": 78,
+    "harvest": 20,
+    "successPct": 26,
+    "daysPerHarvest": 15.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "1109",
+    "label": "General — 30B — Antlered whitetail deer (Coues)",
+    "hunters": 75,
+    "harvest": 15,
+    "successPct": 20,
+    "daysPerHarvest": 21.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "1110",
+    "label": "General — 30B — Antlered whitetail deer (Coues)",
+    "hunters": 82,
+    "harvest": 27,
+    "successPct": 33,
+    "daysPerHarvest": 16.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31",
+    "huntCode": "1111",
+    "label": "General — 31 — Antlered whitetail deer (Coues)",
+    "hunters": 113,
+    "harvest": 46,
+    "successPct": 41,
+    "daysPerHarvest": 10.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31",
+    "huntCode": "1112",
+    "label": "General — 31 — Antlered whitetail deer (Coues)",
+    "hunters": 69,
+    "harvest": 32,
+    "successPct": 46,
+    "daysPerHarvest": 8.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31",
+    "huntCode": "1113",
+    "label": "General — 31 — Antlered whitetail deer (Coues)",
+    "hunters": 75,
+    "harvest": 27,
+    "successPct": 36,
+    "daysPerHarvest": 13.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31",
+    "huntCode": "1114",
+    "label": "General — 31 — Antlered whitetail deer (Coues)",
+    "hunters": 52,
+    "harvest": 14,
+    "successPct": 27,
+    "daysPerHarvest": 21.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32",
+    "huntCode": "1115",
+    "label": "General — 32 — Antlered whitetail deer (Coues)",
+    "hunters": 228,
+    "harvest": 82,
+    "successPct": 36,
+    "daysPerHarvest": 10.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32",
+    "huntCode": "1116",
+    "label": "General — 32 — Antlered whitetail deer (Coues)",
+    "hunters": 230,
+    "harvest": 73,
+    "successPct": 32,
+    "daysPerHarvest": 13.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32",
+    "huntCode": "1117",
+    "label": "General — 32 — Antlered whitetail deer (Coues)",
+    "hunters": 229,
+    "harvest": 77,
+    "successPct": 34,
+    "daysPerHarvest": 12.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32",
+    "huntCode": "1118",
+    "label": "General — 32 — Antlered whitetail deer (Coues)",
+    "hunters": 39,
+    "harvest": 16,
+    "successPct": 41,
+    "daysPerHarvest": 18.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33",
+    "huntCode": "1119",
+    "label": "General — 33 — Antlered whitetail deer (Coues)",
+    "hunters": 167,
+    "harvest": 83,
+    "successPct": 50,
+    "daysPerHarvest": 6.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33",
+    "huntCode": "1120",
+    "label": "General — 33 — Antlered whitetail deer (Coues)",
+    "hunters": 250,
+    "harvest": 104,
+    "successPct": 42,
+    "daysPerHarvest": 8.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33",
+    "huntCode": "1121",
+    "label": "General — 33 — Antlered whitetail deer (Coues)",
+    "hunters": 249,
+    "harvest": 111,
+    "successPct": 45,
+    "daysPerHarvest": 9.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33",
+    "huntCode": "1122",
+    "label": "General — 33 — Antlered whitetail deer (Coues)",
+    "hunters": 62,
+    "harvest": 37,
+    "successPct": 60,
+    "daysPerHarvest": 9.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34A",
+    "huntCode": "1123",
+    "label": "General — 34A — Antlered whitetail deer (Coues)",
+    "hunters": 544,
+    "harvest": 188,
+    "successPct": 35,
+    "daysPerHarvest": 10.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34A",
+    "huntCode": "1124",
+    "label": "General — 34A — Antlered whitetail deer (Coues)",
+    "hunters": 556,
+    "harvest": 133,
+    "successPct": 24,
+    "daysPerHarvest": 16.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34A",
+    "huntCode": "1125",
+    "label": "General — 34A — Antlered whitetail deer (Coues)",
+    "hunters": 454,
+    "harvest": 129,
+    "successPct": 28,
+    "daysPerHarvest": 16.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34A",
+    "huntCode": "1126",
+    "label": "General — 34A — Antlered whitetail deer (Coues)",
+    "hunters": 83,
+    "harvest": 51,
+    "successPct": 61,
+    "daysPerHarvest": 8.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34B",
+    "huntCode": "1127",
+    "label": "General — 34B — Antlered whitetail deer (Coues)",
+    "hunters": 125,
+    "harvest": 65,
+    "successPct": 52,
+    "daysPerHarvest": 7.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34B",
+    "huntCode": "1128",
+    "label": "General — 34B — Antlered whitetail deer (Coues)",
+    "hunters": 112,
+    "harvest": 35,
+    "successPct": 31,
+    "daysPerHarvest": 12.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34B",
+    "huntCode": "1129",
+    "label": "General — 34B — Antlered whitetail deer (Coues)",
+    "hunters": 97,
+    "harvest": 40,
+    "successPct": 41,
+    "daysPerHarvest": 11.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34B",
+    "huntCode": "1130",
+    "label": "General — 34B — Antlered whitetail deer (Coues)",
+    "hunters": 23,
+    "harvest": 12,
+    "successPct": 52,
+    "daysPerHarvest": 14.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "1131",
+    "label": "General — 35A — Antlered whitetail deer (Coues)",
+    "hunters": 319,
+    "harvest": 96,
+    "successPct": 30,
+    "daysPerHarvest": 14.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "1132",
+    "label": "General — 35A — Antlered whitetail deer (Coues)",
+    "hunters": 299,
+    "harvest": 69,
+    "successPct": 23,
+    "daysPerHarvest": 18,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "1133",
+    "label": "General — 35A — Antlered whitetail deer (Coues)",
+    "hunters": 291,
+    "harvest": 96,
+    "successPct": 33,
+    "daysPerHarvest": 14.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "1134",
+    "label": "General — 35A — Antlered whitetail deer (Coues)",
+    "hunters": 48,
+    "harvest": 17,
+    "successPct": 35,
+    "daysPerHarvest": 20.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35B",
+    "huntCode": "1135",
+    "label": "General — 35B — Antlered whitetail deer (Coues)",
+    "hunters": 346,
+    "harvest": 108,
+    "successPct": 31,
+    "daysPerHarvest": 12.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35B",
+    "huntCode": "1136",
+    "label": "General — 35B — Antlered whitetail deer (Coues)",
+    "hunters": 336,
+    "harvest": 102,
+    "successPct": 30,
+    "daysPerHarvest": 12.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35B",
+    "huntCode": "1137",
+    "label": "General — 35B — Antlered whitetail deer (Coues)",
+    "hunters": 263,
+    "harvest": 79,
+    "successPct": 30,
+    "daysPerHarvest": 15,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35B",
+    "huntCode": "1138",
+    "label": "General — 35B — Antlered whitetail deer (Coues)",
+    "hunters": 50,
+    "harvest": 25,
+    "successPct": 50,
+    "daysPerHarvest": 11.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "1139",
+    "label": "General — 36A — Antlered whitetail deer (Coues)",
+    "hunters": 321,
+    "harvest": 120,
+    "successPct": 37,
+    "daysPerHarvest": 9.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "1140",
+    "label": "General — 36A — Antlered whitetail deer (Coues)",
+    "hunters": 323,
+    "harvest": 104,
+    "successPct": 32,
+    "daysPerHarvest": 11.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "1141",
+    "label": "General — 36A — Antlered whitetail deer (Coues)",
+    "hunters": 307,
+    "harvest": 61,
+    "successPct": 20,
+    "daysPerHarvest": 24.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "1142",
+    "label": "General — 36A — Antlered whitetail deer (Coues)",
+    "hunters": 57,
+    "harvest": 16,
+    "successPct": 28,
+    "daysPerHarvest": 21.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36B",
+    "huntCode": "1143",
+    "label": "General — 36B — Antlered whitetail deer (Coues)",
+    "hunters": 576,
+    "harvest": 138,
+    "successPct": 24,
+    "daysPerHarvest": 16.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36B",
+    "huntCode": "1144",
+    "label": "General — 36B — Antlered whitetail deer (Coues)",
+    "hunters": 533,
+    "harvest": 95,
+    "successPct": 18,
+    "daysPerHarvest": 23,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36B",
+    "huntCode": "1145",
+    "label": "General — 36B — Antlered whitetail deer (Coues)",
+    "hunters": 539,
+    "harvest": 113,
+    "successPct": 21,
+    "daysPerHarvest": 23.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36B",
+    "huntCode": "1146",
+    "label": "General — 36B — Antlered whitetail deer (Coues)",
+    "hunters": 88,
+    "harvest": 24,
+    "successPct": 27,
+    "daysPerHarvest": 21.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36C",
+    "huntCode": "1147",
+    "label": "General — 36C — Antlered whitetail deer (Coues)",
+    "hunters": 151,
+    "harvest": 53,
+    "successPct": 35,
+    "daysPerHarvest": 11.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36C",
+    "huntCode": "1148",
+    "label": "General — 36C — Antlered whitetail deer (Coues)",
+    "hunters": 155,
+    "harvest": 45,
+    "successPct": 29,
+    "daysPerHarvest": 14.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36C",
+    "huntCode": "1149",
+    "label": "General — 36C — Antlered whitetail deer (Coues)",
+    "hunters": 130,
+    "harvest": 60,
+    "successPct": 46,
+    "daysPerHarvest": 10.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36C",
+    "huntCode": "1150",
+    "label": "General — 36C — Antlered whitetail deer (Coues)",
+    "hunters": 103,
+    "harvest": 54,
+    "successPct": 52,
+    "daysPerHarvest": 10.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "FTHU",
+    "huntCode": "1902",
+    "label": "General — FTHU",
+    "hunters": 80,
+    "harvest": 24,
+    "successPct": 30,
+    "daysPerHarvest": 16.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "FTHU",
+    "huntCode": "1903",
+    "label": "General — FTHU",
+    "hunters": 59,
+    "harvest": 26,
+    "successPct": 44,
+    "daysPerHarvest": 12.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "8",
+    "huntCode": "1151",
+    "label": "Youth-Only (General) — 8 — Any antlered deer",
+    "hunters": 42,
+    "harvest": 20,
+    "successPct": 48,
+    "daysPerHarvest": 7.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10",
+    "huntCode": "1152",
+    "label": "Youth-Only (General) — 10 — Any antlered deer",
+    "hunters": 64,
+    "harvest": 39,
+    "successPct": 61,
+    "daysPerHarvest": 7.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12A West",
+    "huntCode": "1153",
+    "label": "Youth-Only (General) — 12A West — Antlerless deer",
+    "hunters": 59,
+    "harvest": 49,
+    "successPct": 83,
+    "daysPerHarvest": 2.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17B, 19A, 19B, and 20A",
+    "huntCode": "1154",
+    "label": "Youth-Only (General) — 17B, 19A, 19B, and 20A — Any antlered deer",
+    "hunters": 224,
+    "harvest": 158,
+    "successPct": 71,
+    "daysPerHarvest": 4.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "18B",
+    "huntCode": "1155",
+    "label": "Youth-Only (General) — 18B — Any antlered deer",
+    "hunters": 40,
+    "harvest": 22,
+    "successPct": 55,
+    "daysPerHarvest": 8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20B",
+    "huntCode": "1156",
+    "label": "Youth-Only (General) — 20B — Any antlered deer",
+    "hunters": 62,
+    "harvest": 17,
+    "successPct": 27,
+    "daysPerHarvest": 13.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20C",
+    "huntCode": "1157",
+    "label": "Youth-Only (General) — 20C — Any antlered deer",
+    "hunters": 127,
+    "harvest": 71,
+    "successPct": 56,
+    "daysPerHarvest": 6.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21",
+    "huntCode": "1158",
+    "label": "Youth-Only (General) — 21 — Any antlered deer",
+    "hunters": 38,
+    "harvest": 22,
+    "successPct": 58,
+    "daysPerHarvest": 5.1,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22",
+    "huntCode": "1159",
+    "label": "Youth-Only (General) — 22 — Any antlered deer",
+    "hunters": 130,
+    "harvest": 55,
+    "successPct": 42,
+    "daysPerHarvest": 6.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23",
+    "huntCode": "1160",
+    "label": "Youth-Only (General) — 23 — Any antlered deer",
+    "hunters": 125,
+    "harvest": 78,
+    "successPct": 62,
+    "daysPerHarvest": 4.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27",
+    "huntCode": "1161",
+    "label": "Youth-Only (General) — 27 — Any antlered deer",
+    "hunters": 89,
+    "harvest": 77,
+    "successPct": 87,
+    "daysPerHarvest": 3.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "28",
+    "huntCode": "1162",
+    "label": "Youth-Only (General) — 28 — Any antlered deer",
+    "hunters": 21,
+    "harvest": 8,
+    "successPct": 38,
+    "daysPerHarvest": 8.9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29",
+    "huntCode": "1163",
+    "label": "Youth-Only (General) — 29 — Any antlered deer",
+    "hunters": 42,
+    "harvest": 23,
+    "successPct": 55,
+    "daysPerHarvest": 7.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "1164",
+    "label": "Youth-Only (General) — 30A — Any antlered deer",
+    "hunters": 14,
+    "harvest": 6,
+    "successPct": 43,
+    "daysPerHarvest": 9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "1165",
+    "label": "Youth-Only (General) — 30B — Any antlered deer",
+    "hunters": 47,
+    "harvest": 32,
+    "successPct": 68,
+    "daysPerHarvest": 6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31",
+    "huntCode": "1166",
+    "label": "Youth-Only (General) — 31 — Any antlered deer",
+    "hunters": 25,
+    "harvest": 18,
+    "successPct": 72,
+    "daysPerHarvest": 4.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32",
+    "huntCode": "1167",
+    "label": "Youth-Only (General) — 32 — Any antlered deer",
+    "hunters": 21,
+    "harvest": 15,
+    "successPct": 71,
+    "daysPerHarvest": 4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33",
+    "huntCode": "1168",
+    "label": "Youth-Only (General) — 33 — Any antlered deer",
+    "hunters": 173,
+    "harvest": 114,
+    "successPct": 66,
+    "daysPerHarvest": 4.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33",
+    "huntCode": "1169",
+    "label": "Youth-Only (General) — 33 — Any antlered deer",
+    "hunters": 168,
+    "harvest": 83,
+    "successPct": 49,
+    "daysPerHarvest": 6.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "1170",
+    "label": "Youth-Only (General) — 35A — Any antlered deer",
+    "hunters": 66,
+    "harvest": 52,
+    "successPct": 79,
+    "daysPerHarvest": 3.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35B",
+    "huntCode": "1171",
+    "label": "Youth-Only (General) — 35B — Any antlered deer",
+    "hunters": 71,
+    "harvest": 31,
+    "successPct": 44,
+    "daysPerHarvest": 6.6,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "1172",
+    "label": "Youth-Only (General) — 36A — Any antlered deer",
+    "hunters": 174,
+    "harvest": 79,
+    "successPct": 45,
+    "daysPerHarvest": 7.5,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36B",
+    "huntCode": "1173",
+    "label": "Youth-Only (General) — 36B — Any antlered deer",
+    "hunters": 109,
+    "harvest": 56,
+    "successPct": 51,
+    "daysPerHarvest": 6.3,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36C",
+    "huntCode": "1174",
+    "label": "Youth-Only (General) — 36C — Any antlered deer",
+    "hunters": 21,
+    "harvest": 8,
+    "successPct": 38,
+    "daysPerHarvest": 8.4,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "37B",
+    "huntCode": "1175",
+    "label": "Youth-Only (General) — 37B — Any antlered deer",
+    "hunters": 86,
+    "harvest": 45,
+    "successPct": 52,
+    "daysPerHarvest": 7.2,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "42",
+    "huntCode": "1176",
+    "label": "Youth-Only (General) — 42 — Any antlered deer",
+    "hunters": 58,
+    "harvest": 23,
+    "successPct": 40,
+    "daysPerHarvest": 10.7,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34A",
+    "huntCode": "1177",
+    "label": "Youth-Only (General) — 34A — Antlered whitetail deer (Coues)",
+    "hunters": 107,
+    "harvest": 40,
+    "successPct": 37,
+    "daysPerHarvest": 9,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "FTHU",
+    "huntCode": "1904",
+    "label": "Youth-Only (General) — FTHU",
+    "hunters": 15,
+    "harvest": 10,
+    "successPct": 67,
+    "daysPerHarvest": 6.8,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "7 and 9",
+    "huntCode": "1178",
+    "label": "CHAMP General — 7 and 9 — Any antlered deer",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 63,
+    "daysPerHarvest": 5.6
+   },
+   {
+    "unit": "12A West",
+    "huntCode": "1179",
+    "label": "CHAMP General — 12A West — Any antlered deer",
+    "hunters": 8,
+    "harvest": 6,
+    "successPct": 75,
+    "daysPerHarvest": 4.5
+   },
+   {
+    "unit": "34A",
+    "huntCode": "1180",
+    "label": "CHAMP General — 34A — Antlered whitetail deer (Coues)",
+    "hunters": 8,
+    "harvest": 3,
+    "successPct": 38,
+    "daysPerHarvest": 12.3
+   },
+   {
+    "unit": "3B",
+    "huntCode": "1181",
+    "label": "Muzzleloader — 3B — Any antlered deer",
+    "hunters": 104,
+    "harvest": 26,
+    "successPct": 25,
+    "daysPerHarvest": 20.1,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "6B",
+    "huntCode": "1182",
+    "label": "Muzzleloader — 6B — Any antlered deer",
+    "hunters": 171,
+    "harvest": 43,
+    "successPct": 25,
+    "daysPerHarvest": 16.8,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "12A East",
+    "huntCode": "1183",
+    "label": "Muzzleloader — 12A East — Any antlered deer",
+    "hunters": 11,
+    "harvest": 4,
+    "successPct": 36,
+    "daysPerHarvest": 13.5,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "12B West",
+    "huntCode": "1184",
+    "label": "Muzzleloader — 12B West — Any antlered deer",
+    "hunters": 15,
+    "harvest": 13,
+    "successPct": 87,
+    "daysPerHarvest": 5.1,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "15A, 15B, 15C, and 15D",
+    "huntCode": "1185",
+    "label": "Muzzleloader — 15A, 15B, 15C, and 15D — Any antlered deer",
+    "hunters": 91,
+    "harvest": 19,
+    "successPct": 21,
+    "daysPerHarvest": 20.8,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "15A, 15B, 15C, and 15D",
+    "huntCode": "1186",
+    "label": "Muzzleloader — 15A, 15B, 15C, and 15D — Any antlered deer",
+    "hunters": 81,
+    "harvest": 17,
+    "successPct": 21,
+    "daysPerHarvest": 20.9,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "15A, 15B, 15C, and 15D",
+    "huntCode": "1187",
+    "label": "Muzzleloader — 15A, 15B, 15C, and 15D — Any antlered deer",
+    "hunters": 13,
+    "harvest": 6,
+    "successPct": 46,
+    "daysPerHarvest": 12.8,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "20B",
+    "huntCode": "1188",
+    "label": "Muzzleloader — 20B — Any antlered deer",
+    "hunters": 55,
+    "harvest": 4,
+    "successPct": 7,
+    "daysPerHarvest": 63,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "35A and 35B",
+    "huntCode": "1189",
+    "label": "Muzzleloader — 35A and 35B — Any antlered deer",
+    "hunters": 34,
+    "harvest": 4,
+    "successPct": 12,
+    "daysPerHarvest": 33.3,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "35A and 35B",
+    "huntCode": "1190",
+    "label": "Muzzleloader — 35A and 35B — Any antlered deer",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": 8,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "39, 40A, 40B, 41, and 42",
+    "huntCode": "1191",
+    "label": "Muzzleloader — 39, 40A, 40B, 41, and 42 — Any antlered deer",
+    "hunters": 35,
+    "harvest": 7,
+    "successPct": 20,
+    "daysPerHarvest": 44.7,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "1192",
+    "label": "Muzzleloader — 30B — Antlered whitetail deer (Coues)",
+    "hunters": 13,
+    "harvest": 6,
+    "successPct": 46,
+    "daysPerHarvest": 5.8,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "33",
+    "huntCode": "1193",
+    "label": "Muzzleloader — 33 — Antlered whitetail deer (Coues)",
+    "hunters": 253,
+    "harvest": 85,
+    "successPct": 34,
+    "daysPerHarvest": 10.8,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "34A",
+    "huntCode": "1194",
+    "label": "Muzzleloader — 34A — Antlered whitetail deer (Coues)",
+    "hunters": 20,
+    "harvest": 3,
+    "successPct": 15,
+    "daysPerHarvest": 28.7,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "1195",
+    "label": "Muzzleloader — 36A — Antlered whitetail deer (Coues)",
+    "hunters": 64,
+    "harvest": 23,
+    "successPct": 36,
+    "daysPerHarvest": 8,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "FTHU",
+    "huntCode": "1905",
+    "label": "Muzzleloader — FTHU",
+    "hunters": 9,
+    "harvest": 4,
+    "successPct": 44,
+    "daysPerHarvest": 8.3,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "FTHU",
+    "huntCode": "1906",
+    "label": "Muzzleloader — FTHU",
+    "hunters": 9,
+    "harvest": 1,
+    "successPct": 11,
+    "daysPerHarvest": 57,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "15A, 15B, 15C, and 15D",
+    "huntCode": "1196",
+    "label": "Youth-Only (Muzzleloader) — 15A, 15B, 15C, and 15D — Any antlered deer",
+    "hunters": 21,
+    "harvest": 17,
+    "successPct": 81,
+    "daysPerHarvest": 4.4,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "16A",
+    "huntCode": "1197",
+    "label": "Youth-Only (Muzzleloader) — 16A — Any antlered deer",
+    "hunters": 20,
+    "harvest": 4,
+    "successPct": 20,
+    "daysPerHarvest": 27,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "1",
+    "huntCode": "1198",
+    "label": "Archery-Only — 1 — Any antlered deer",
+    "hunters": 144,
+    "harvest": 64,
+    "successPct": 44,
+    "daysPerHarvest": 14.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "3A and 3C",
+    "huntCode": "1199",
+    "label": "Archery-Only — 3A and 3C — Any antlered deer",
+    "hunters": 17,
+    "harvest": 7,
+    "successPct": 41,
+    "daysPerHarvest": 18.6,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "1200",
+    "label": "Archery-Only — 11M — Any antlered deer",
+    "hunters": 110,
+    "harvest": 42,
+    "successPct": 38,
+    "daysPerHarvest": 17.9,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "1201",
+    "label": "Archery-Only — 11M — Antlerless deer",
+    "hunters": 37,
+    "harvest": 10,
+    "successPct": 27,
+    "daysPerHarvest": 18.8,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "1202",
+    "label": "Archery-Only — 11M — Antlerless deer",
+    "hunters": 11,
+    "harvest": 8,
+    "successPct": 73,
+    "daysPerHarvest": 8.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "12A and 12B",
+    "huntCode": "1203",
+    "label": "Archery-Only — 12A and 12B — Any antlered deer",
+    "hunters": 179,
+    "harvest": 71,
+    "successPct": 40,
+    "daysPerHarvest": 15.2,
+    "weapon": "archery"
+   },
+   {
+    "unit": "13A",
+    "huntCode": "1204",
+    "label": "Archery-Only — 13A — Any antlered deer",
+    "hunters": 13,
+    "harvest": 7,
+    "successPct": 54,
+    "daysPerHarvest": 15.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "13B",
+    "huntCode": "1205",
+    "label": "Archery-Only — 13B — Any antlered deer",
+    "hunters": 17,
+    "harvest": 8,
+    "successPct": 47,
+    "daysPerHarvest": 22.3,
+    "weapon": "archery"
+   },
+   {
+    "unit": "17A",
+    "huntCode": "1206",
+    "label": "Archery-Only — 17A — Any antlered deer",
+    "hunters": 44,
+    "harvest": 15,
+    "successPct": 34,
+    "daysPerHarvest": 24.1,
+    "weapon": "archery"
+   },
+   {
+    "unit": "27",
+    "huntCode": "1207",
+    "label": "Archery-Only — 27 — Antlered mule deer",
+    "hunters": 239,
+    "harvest": 67,
+    "successPct": 28,
+    "daysPerHarvest": 23.8,
+    "weapon": "archery"
+   },
+   {
+    "unit": "11M",
+    "huntCode": "1208",
+    "label": "Archery-Only — 11M — Any deer",
+    "hunters": 23,
+    "harvest": 13,
+    "successPct": 57,
+    "daysPerHarvest": 11.5,
+    "weapon": "archery"
+   },
+   {
+    "unit": "CN",
+    "huntCode": "1901",
+    "label": "Archery-Only — CN",
+    "hunters": 20,
+    "harvest": 8,
+    "successPct": 40,
+    "daysPerHarvest": 14.6,
+    "weapon": "archery"
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "unit": "12A/12B/13A",
+    "huntCode": "6002",
+    "label": "Desert bighorn sheep — 12A/12B/13A",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 8
+   },
+   {
+    "unit": "12BE",
+    "huntCode": "6003",
+    "label": "Desert bighorn sheep — 12BE",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 2.3
+   },
+   {
+    "unit": "12BE",
+    "huntCode": "6004",
+    "label": "Desert bighorn sheep — 12BE",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 67,
+    "daysPerHarvest": 9.5
+   },
+   {
+    "unit": "13BN",
+    "huntCode": "6005",
+    "label": "Desert bighorn sheep — 13BN",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 2.7
+   },
+   {
+    "unit": "13BN",
+    "huntCode": "6006",
+    "label": "Desert bighorn sheep — 13BN",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": 17
+   },
+   {
+    "unit": "13BS",
+    "huntCode": "6007",
+    "label": "Desert bighorn sheep — 13BS",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "15A/15BE",
+    "huntCode": "6008",
+    "label": "Desert bighorn sheep — 15A/15BE",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 17.5
+   },
+   {
+    "unit": "15BW",
+    "huntCode": "6009",
+    "label": "Desert bighorn sheep — 15BW",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "15CN",
+    "huntCode": "6010",
+    "label": "Desert bighorn sheep — 15CN",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "15CS",
+    "huntCode": "6011",
+    "label": "Desert bighorn sheep — 15CS",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 16
+   },
+   {
+    "unit": "15D",
+    "huntCode": "6012",
+    "label": "Desert bighorn sheep — 15D",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 2.2
+   },
+   {
+    "unit": "16A",
+    "huntCode": "6013",
+    "label": "Desert bighorn sheep — 16A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "16AS/18B",
+    "huntCode": "6014",
+    "label": "Desert bighorn sheep — 16AS/18B",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 12.5
+   },
+   {
+    "unit": "22",
+    "huntCode": "6015",
+    "label": "Desert bighorn sheep — 22",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "22",
+    "huntCode": "6016",
+    "label": "Desert bighorn sheep — 22",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 11.5
+   },
+   {
+    "unit": "24B",
+    "huntCode": "6017",
+    "label": "Desert bighorn sheep — 24B",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 10
+   },
+   {
+    "unit": "24BN",
+    "huntCode": "6018",
+    "label": "Desert bighorn sheep — 24BN",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 2
+   },
+   {
+    "unit": "24BS",
+    "huntCode": "6019",
+    "label": "Desert bighorn sheep — 24BS",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "28",
+    "huntCode": "6020",
+    "label": "Desert bighorn sheep — 28",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 1.5
+   },
+   {
+    "unit": "28",
+    "huntCode": "6021",
+    "label": "Desert bighorn sheep — 28",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "31/32",
+    "huntCode": "6022",
+    "label": "Desert bighorn sheep — 31/32",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "37A",
+    "huntCode": "6023",
+    "label": "Desert bighorn sheep — 37A",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 8
+   },
+   {
+    "unit": "37A",
+    "huntCode": "6024",
+    "label": "Desert bighorn sheep — 37A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 4
+   },
+   {
+    "unit": "37A",
+    "huntCode": "6025",
+    "label": "Desert bighorn sheep — 37A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 2.5
+   },
+   {
+    "unit": "37A",
+    "huntCode": "6026",
+    "label": "Desert bighorn sheep — 37A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 7.5
+   },
+   {
+    "unit": "37B",
+    "huntCode": "6027",
+    "label": "Desert bighorn sheep — 37B",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "39E",
+    "huntCode": "6028",
+    "label": "Desert bighorn sheep — 39E",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 4.5
+   },
+   {
+    "unit": "39W",
+    "huntCode": "6029",
+    "label": "Desert bighorn sheep — 39W",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 6
+   },
+   {
+    "unit": "40A",
+    "huntCode": "6030",
+    "label": "Desert bighorn sheep — 40A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 7.5
+   },
+   {
+    "unit": "40BWG",
+    "huntCode": "6031",
+    "label": "Desert bighorn sheep — 40BWG",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 11
+   },
+   {
+    "unit": "40BWM",
+    "huntCode": "6032",
+    "label": "Desert bighorn sheep — 40BWM",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 6
+   },
+   {
+    "unit": "40BWT",
+    "huntCode": "6033",
+    "label": "Desert bighorn sheep — 40BWT",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 2
+   },
+   {
+    "unit": "41E",
+    "huntCode": "6034",
+    "label": "Desert bighorn sheep — 41E",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 3.2
+   },
+   {
+    "unit": "41W",
+    "huntCode": "6035",
+    "label": "Desert bighorn sheep — 41W",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 2.7
+   },
+   {
+    "unit": "42/44A",
+    "huntCode": "6036",
+    "label": "Desert bighorn sheep — 42/44A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3.5
+   },
+   {
+    "unit": "43A",
+    "huntCode": "6037",
+    "label": "Desert bighorn sheep — 43A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "43B",
+    "huntCode": "6038",
+    "label": "Desert bighorn sheep — 43B",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 4.3
+   },
+   {
+    "unit": "43B",
+    "huntCode": "6039",
+    "label": "Desert bighorn sheep — 43B",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 5.3
+   },
+   {
+    "unit": "44AE",
+    "huntCode": "6040",
+    "label": "Desert bighorn sheep — 44AE",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 7
+   },
+   {
+    "unit": "44BN",
+    "huntCode": "6041",
+    "label": "Desert bighorn sheep — 44BN",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 67,
+    "daysPerHarvest": 19.5
+   },
+   {
+    "unit": "44BS",
+    "huntCode": "6042",
+    "label": "Desert bighorn sheep — 44BS",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 1.3
+   },
+   {
+    "unit": "45A",
+    "huntCode": "6043",
+    "label": "Desert bighorn sheep — 45A",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 5.6
+   },
+   {
+    "unit": "45A",
+    "huntCode": "6044",
+    "label": "Desert bighorn sheep — 45A",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 5.4
+   },
+   {
+    "unit": "45B",
+    "huntCode": "6045",
+    "label": "Desert bighorn sheep — 45B",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 5.5
+   },
+   {
+    "unit": "45B",
+    "huntCode": "6046",
+    "label": "Desert bighorn sheep — 45B",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 7.7
+   },
+   {
+    "unit": "45C",
+    "huntCode": "6047",
+    "label": "Desert bighorn sheep — 45C",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 2.3
+   },
+   {
+    "unit": "45C",
+    "huntCode": "6048",
+    "label": "Desert bighorn sheep — 45C",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 1.3
+   },
+   {
+    "unit": "46A",
+    "huntCode": "6049",
+    "label": "Desert bighorn sheep — 46A",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 13
+   },
+   {
+    "unit": "46BE",
+    "huntCode": "6050",
+    "label": "Desert bighorn sheep — 46BE",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 2.3
+   },
+   {
+    "unit": "46BW",
+    "huntCode": "6051",
+    "label": "Desert bighorn sheep — 46BW",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 2.8
+   },
+   {
+    "unit": "01/27 Black River",
+    "huntCode": "6501",
+    "label": "Rocky Mountain bighorn sheep — 01/27 Black River",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 1.5
+   },
+   {
+    "unit": "01/02B",
+    "huntCode": "6502",
+    "label": "Rocky Mountain bighorn sheep — 01/02B",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "01/02B",
+    "huntCode": "6503",
+    "label": "Rocky Mountain bighorn sheep — 01/02B",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "04A/05A",
+    "huntCode": "6504",
+    "label": "Rocky Mountain bighorn sheep — 04A/05A",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": 13
+   },
+   {
+    "unit": "06A",
+    "huntCode": "6505",
+    "label": "Rocky Mountain bighorn sheep — 06A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 7
+   },
+   {
+    "unit": "22",
+    "huntCode": "6506",
+    "label": "Rocky Mountain bighorn sheep — 22",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "23/24A",
+    "huntCode": "6507",
+    "label": "Rocky Mountain bighorn sheep — 23/24A",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 8.5
+   },
+   {
+    "unit": "27 Upper Blue River",
+    "huntCode": "6508",
+    "label": "Rocky Mountain bighorn sheep — 27 Upper Blue River",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "27 Upper/Lower Blue River",
+    "huntCode": "6509",
+    "label": "Rocky Mountain bighorn sheep — 27 Upper/Lower Blue River",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "27S/28N",
+    "huntCode": "6510",
+    "label": "Rocky Mountain bighorn sheep — 27S/28N",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 1.7
+   },
+   {
+    "unit": "27S/28N",
+    "huntCode": "6511",
+    "label": "Rocky Mountain bighorn sheep — 27S/28N",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "15D/16A/18B",
+    "huntCode": "6801",
+    "label": "One-Horned Desert bighorn sheep — 15D/16A/18B",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "01/02B/22/23/24A/27/28N",
+    "huntCode": "6901",
+    "label": "One-Horned Rocky Mountain bighorn sheep — 01/02B/22/23/24A/27/28N",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 2
+   }
+  ]
+ }
+}
