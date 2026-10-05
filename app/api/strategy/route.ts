@@ -602,7 +602,8 @@ export async function POST(req: Request) {
 
     const trophyEstimated = unitStats?.dataCompleteness === 'NEEDS_TROPHY_DATA';
     const trophyInstruction = !hasData
-      ? `EXPERT MODE: Provide realistic ${speciesLabel} trophy ranges for ${stateName} ${speciesLabel} Area ${unitResolved}.`
+      // No measured trophy data: say so instead of inventing score ranges.
+      ? `NO TROPHY DATA: There is no measured trophy data for ${stateName} ${speciesLabel} Area ${unitResolved}. In TROPHY AUDIT, say plainly that unit-specific trophy data isn't available. You may describe in general terms what a mature ${speciesLabel} looks like and what age class to target, but give NO antler/horn score numbers or ranges for this unit.`
       : trophyEstimated
       ? `TROPHY ESTIMATE (region-level, not unit-sourced): Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}. Present these as an approximate regional estimate for this area — do NOT state them as precise, measured, unit-specific figures.`
       : `PRIMARY TRUTH DATA: Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}.`;
@@ -698,7 +699,7 @@ ${harvestBlock ? 'Then give the hunter success rate for this hunt from the HARVE
 Honest assessment of animal numbers in this unit. Population trend if known. What's driving density. Don't sugarcoat a struggling herd.
 
 4. TROPHY AUDIT
-Realistic expectations. Use the typical and top-end data provided. What does a good animal here actually look like. What age class is huntable.
+Realistic expectations. Use the typical and top-end data provided — if none is provided, say so and give no score numbers. What does a good animal here actually look like. What age class is huntable.
 
 5. SUCCESSFUL STYLES
 What hunt styles consistently produce in this unit. Be specific. What does NOT work here and why.
