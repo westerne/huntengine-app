@@ -95,7 +95,10 @@ Each new state needs:
 
 Each state today is a hand-written TypeScript file with its own shape. That won't hold up for 17 states.
 
-- [ ] **One data format for every state:** units, species, draw odds by point level, harvest success, boundaries and rules.
+- [x] **One data format for every state:** units, species, draw odds by point level, harvest success, boundaries and rules. (`lib/huntdata/schema.ts`)
+- [x] **State registry** with all 17 states, their agencies and draw systems (`lib/huntdata/registry.ts`). Draw-rule notes for planned states are marked unverified until checked against the agency.
+- [x] **Adapters** that read WY, ID, CO, MT and UT into the shared format without changing their existing prompts.
+- [x] **Shared SCOUT and BRIEF builders** (`lib/huntdata/generic.ts`). A new state only has to produce its hunts and it gets SCOUT and BRIEF automatically.
 - [ ] **Import scripts** that turn each agency's published files (PDF, CSV, KML) into that format. Next year's data then becomes a re-run, not a rewrite.
 - [ ] Move WY, ID, CO, MT and UT onto the new format. Fix their gaps along the way:
   - [ ] Harvest success rates for all five
@@ -104,7 +107,9 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
   - [ ] Wyoming antelope: trophy and season data
   - [ ] Retire the old `HUNT_DATA` stubs
 - [ ] **One map boundary source per state**, set up in config instead of code.
-- [ ] **Tests:** SCOUT only recommends real units, and draw numbers in BRIEF match the data.
+- [x] **Tests** (`npm test`): every live state's data passes validation, spot checks match source numbers, and the shared builders work.
+- [x] **SCOUT unit guard:** any unit the AI makes up is dropped before the hunter sees it.
+- [ ] Colorado bighorn sheep and mountain goat hunts (none loaded today).
 - [ ] Break up the planner (70KB) and prompt builder (80KB) so new states don't make them bigger.
 
 ## Phase 2: Membership launch + Batch A (December – early January)

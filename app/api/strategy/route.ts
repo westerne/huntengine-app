@@ -20,6 +20,10 @@ import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
 import { coloradoHuntsForUnit, COLORADO_DRAW_YEAR, buildColoradoScoutDataset } from './coloradoDraw';
 import { montanaHuntsForUnit, MONTANA_DRAW_YEAR, buildMontanaScoutDataset } from './montanaDraw';
+import { getStateModule } from '@/lib/huntdata/registry';
+import { buildGenericDrawSummary, buildGenericScoutDataset } from '@/lib/huntdata/generic';
+import { filterToKnownUnits } from '@/lib/huntdata/unitGuard';
+import type { SpeciesKey } from '@/lib/huntdata/schema';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -116,6 +120,11 @@ export async function POST(req: Request) {
     const isIdaho = stateName === 'IDAHO';
     const isColorado = stateName === 'COLORADO';
     const isMontana = stateName === 'MONTANA';
+    // States added through lib/huntdata (everything after the original five)
+    // use the shared SCOUT/BRIEF builders instead of a hand-tuned branch.
+    const stateModule = getStateModule(stateName);
+    const usesSharedBuilders = !!stateModule
+      && !['WYOMING', 'IDAHO', 'COLORADO', 'MONTANA', 'UTAH'].includes(stateName);
     const isDeer = speciesKey === 'DEER';
     const isElk = speciesKey === 'ELK';
     const isAntelope = speciesKey === 'ANTELOPE';
@@ -302,6 +311,14 @@ export async function POST(req: Request) {
         : isMontana
         ? buildMontanaScoutDataset(speciesKey)
 
+        : usesSharedBuilders
+        ? buildGenericScoutDataset(
+            stateModule!,
+            speciesKey as SpeciesKey,
+            isResident ? 'resident' : 'nonresident',
+            isArcheryHunter ? 'archery' : isMuzzleHunter ? 'muzzleloader' : 'any',
+          )
+
         : Object.entries(stateDataset).map(([unitName, unit]: [string, any]) => ({
             unit: unitName,
             typical: unit.typical ?? 'N/A',
@@ -344,6 +361,7 @@ export async function POST(req: Request) {
         grizzlyComfort: formData.grizzlyComfort !== false,
         scoutDataset,
         formData,
+        drawRules: usesSharedBuilders && stateModule!.rulesVerified ? stateModule!.drawSystemNote : undefined,
       };
 
       const scoutPrompt = buildScoutPrompt(promptParams);
@@ -355,7 +373,13 @@ export async function POST(req: Request) {
         response_format: { type: "json_object" },
       });
 
-      return NextResponse.json(JSON.parse(response.choices[0].message.content || "{}"));
+      // Drop any unit the model invented — only units in the dataset may reach the hunter.
+      const { result: scoutResult, dropped } = filterToKnownUnits(
+        JSON.parse(response.choices[0].message.content || "{}"),
+        scoutDataset as Array<{ unit?: unknown }>,
+      );
+      if (dropped.length) console.warn("SCOUT dropped units not in dataset:", stateName, speciesKey, dropped);
+      return NextResponse.json(scoutResult);
     }
 
     // ─── 6. BRIEF MODE — DRAW SUMMARY ────────────────────────────────────────
@@ -363,6 +387,16 @@ export async function POST(req: Request) {
     // UNIT_IN_REGION, self for LQ/GENERAL_REGION), sorted year-descending so
     // `latest` is the newest year.
     let drawSummary = "NO OFFICIAL DATA AVAILABLE. Provide general draw advice only.";
+
+    if (usesSharedBuilders) {
+      drawSummary = buildGenericDrawSummary(
+        stateModule!,
+        speciesKey as SpeciesKey,
+        speciesLabel,
+        unitResolved,
+        isResident ? 'resident' : 'nonresident',
+      );
+    }
 
     // ── Idaho: real controlled-hunt draw odds (IDFG) ────────────────────────
     // General deer/elk seasons are OTC/general (no draw); these are the

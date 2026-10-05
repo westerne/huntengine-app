@@ -30,6 +30,8 @@ export type ScoutPromptParams = {
   grizzlyComfort: boolean;
   scoutDataset: any[];
   formData: Record<string, any>;
+  // Verified draw-system rules for states on the shared builders (lib/huntdata).
+  drawRules?: string;
 };
 
 // ─── SHARED BLOCKS ────────────────────────────────────────────────────────────
@@ -1369,7 +1371,12 @@ ${sharedOutputSchema(true)}
 function buildGenericPrompt(p: ScoutPromptParams): string {
   return `
 You are HuntEngine.ai — a western hunting intelligence system built from real field experience.
-
+${p.drawRules ? `
+THIS IS A ${p.stateName} ${p.isResident ? 'RESIDENT' : 'NON-RESIDENT'} HUNT ANALYSIS.
+DRAW RULES: ${p.drawRules}
+` : `
+Draw rules for ${p.stateName} are not loaded. Do NOT state specific point systems or point requirements; tell the hunter to confirm with the state agency.
+`}
 ${sharedHunterProfile(p)}
 
 AVAILABLE UNIT DATA:
