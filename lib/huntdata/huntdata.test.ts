@@ -381,3 +381,43 @@ describe('SCOUT shortlist (shared states)', () => {
     expect(picks.every((p) => !/antlerless|youth/i.test(String(p.label)))).toBe(true);
   });
 });
+
+describe('shared-state SCOUT response', () => {
+  it('builds a card for every shortlisted hunt, even ones the model skipped', async () => {
+    const { buildSharedScoutResponse } = await import('./sharedScout');
+    const shortlist = [
+      { unit: '7E', huntCode: '3019', label: 'Bull elk', drawSuccess: 10, drawSuccessAtYourPoints: 24.1, hunterSuccess: '60%', hunterSuccessYear: 2025, dataYear: 2026 },
+      { unit: '4B', huntCode: '3091', label: 'Any elk', drawSuccess: 90, drawSuccessAtYourPoints: 100, hunterSuccess: '70%', hunterSuccessYear: 2025, dataYear: 2026 },
+      { unit: '1', huntCode: '3011', label: 'Bull elk', drawSuccess: 0.8, drawSuccessAtYourPoints: 1.3, hunterSuccess: null, dataYear: 2026 },
+    ];
+    const out = buildSharedScoutResponse(shortlist, {
+      summary: 'Put 3091 first.',
+      explanations: { '3091': { whyItFits: 'Likely draw.', tradeoffs: 'Any-elk tag.' } },
+    }, { stateLabel: 'AZ', weaponLabel: 'Rifle' });
+
+    expect(out.recommendations.map((r) => r.huntCode)).toEqual(['3091', '3019', '3011']); // tier then odds
+    expect(out.recommendations.map((r) => r.tier)).toEqual(['DRAW_NOW', 'RANDOM_PLAY', 'LONG_GAME']);
+    expect(out.recommendations[0]).toMatchObject({ currentOdds: '100% (2026 draw, at your points)', whyItFits: 'Likely draw.', topEnd: 'Not in data' });
+    expect(out.recommendations[2].whyItFits).toBe('Hunt 3011 (Bull elk): 1.3% (2026 draw, at your points). No hunter-success figure is published for this hunt.');
+    expect(out.recommendations[2].tradeoffs).toContain('agency data only');
+    expect(out.drawableUnits.map((d) => d.huntCode)).toEqual(['3091']);
+    expect(out.drawReality).toMatchObject({ regularPoolUnits: 1, randomPoolUnits: 1, bestLimitedUnit: '4B (hunt 3091)', summary: 'Put 3091 first.' });
+    expect(out.recommendations.every((r) => !/oct|nov|sep/i.test(r.season))).toBe(true);
+  });
+});
+
+describe('weapon on shared-state cards', () => {
+  it('labels each card with the hunt\u2019s own weapon', async () => {
+    const { buildSharedScoutResponse } = await import('./sharedScout');
+    const out = buildSharedScoutResponse(
+      [{ unit: '22', huntCode: '3100', weapon: 'archery', drawSuccess: 80, dataYear: 2026 }],
+      {}, { stateLabel: 'AZ', weaponLabel: 'Rifle' });
+    expect(out.recommendations[0].season).toBe('Archery — see AZ regulations for dates');
+  });
+
+  it('a rifle filter excludes archery and muzzleloader hunts', () => {
+    const az = getStateModule('AZ')!;
+    const rifle = buildGenericScoutDataset(az, 'ELK', 'nonresident', 'rifle', 5);
+    expect(rifle.some((e) => e.weapon === 'archery' || e.weapon === 'muzzleloader')).toBe(false);
+  });
+});

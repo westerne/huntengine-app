@@ -1375,44 +1375,39 @@ ${sharedOutputSchema(true)}
 
 function buildSharedStatePrompt(p: ScoutPromptParams): string {
   const who = p.isResident ? 'RESIDENT' : 'NON-RESIDENT';
+  const codes = p.scoutDataset.map((e: { huntCode?: unknown }) => String(e.huntCode));
   return `
-You are HuntEngine.ai — a western hunting intelligence system built from real field experience.
+You are HuntEngine.ai — a western hunting advisor. Your job is DECISION SUPPORT: tell this hunter what to do and why, in plain language.
 
 THIS IS A ${p.stateName} ${who} HUNT ANALYSIS. ${p.stateName} DRAW RULES ONLY.
 ${p.drawRules
     ? `DRAW RULES (verified): ${p.drawRules}`
-    : `Draw rules for ${p.stateName} are not loaded. Do NOT state point systems, pools or point requirements beyond the numbers in the data; tell the hunter to confirm rules with the state agency.`}
+    : `Draw rules for ${p.stateName} are not loaded. Do NOT describe point systems or pools; tell the hunter to confirm rules with the state agency.`}
 
 Hunter holds ${p.hunterPoints} points for this species in ${p.stateName}.
 
 ${sharedHunterProfile(p)}
 
-AVAILABLE HUNT DATA (official agency draw results; ${p.isResident ? 'resident' : 'non-resident'} figures):
+SHORTLISTED HUNTS (chosen by the app from official agency data; ${p.isResident ? 'resident' : 'non-resident'} figures):
 ${JSON.stringify(p.scoutDataset)}
 
-Each entry is ONE HUNT: its unit, agency hunt code (huntCode), description (label — bull/cow/antlered/antlerless, youth, etc.), weapon, tags, first-choice applicants, first-choice draw success (drawSuccess, %), the approximate success rate for applicants at the hunter's own point level when the agency publishes a point table (drawSuccessAtYourPoints — permits issued ÷ applicants at that level; approximate), the fewest points that drew (fewestPointsToDraw), over-the-counter availability (otc), agency hunter success (hunterSuccess, season hunterSuccessYear), and the draw year (dataYear). These are HISTORICAL results from the last draw, not a forecast — say "last year" when citing them.
+Each entry is ONE hunt: unit, agency hunt code (huntCode), description (label), weapon, tags, applicants, first-choice draw success (drawSuccess, %), approximate success for applicants at the hunter's own point level (drawSuccessAtYourPoints, %), fewest points that drew (fewestPointsToDraw), over-the-counter (otc), agency hunter success (hunterSuccess, season hunterSuccessYear) and draw year (dataYear). These are LAST YEAR'S results, not a forecast.
 
-The app has already SHORTLISTED these hunts for this hunter, spread across odds levels. Write ONE recommendation for EVERY hunt in the dataset, in the same order — do not skip any and do not add others. Your job is to explain fit and tradeoffs for each, ranked within the tiers below:
-  • likely draws → tier DRAW_NOW (drawSuccessAtYourPoints, else drawSuccess, ≥ 50%)
-  • reasonable odds (15–50%) → tier RANDOM_PLAY
-  • long shots (< 15%) → tier BUILD_AND_WAIT or LONG_GAME
-Put every recommended hunt in drawableUnits too.
-- EVERY object in recommendations and drawableUnits MUST include "huntCode": the exact huntCode from the dataset. The app looks up odds and tier from it; objects without a valid huntCode are discarded.
-- Name the hunt code and label in whyItFits, e.g. "Hunt 3016 (bull elk, rifle)".
-- currentOdds = that hunt's drawSuccessAtYourPoints if present, else its drawSuccess — one number, never a range across different hunts.
-- Describe odds honestly and consistently with the tiers: under 15% is a long shot or point-building play, never "reasonable" or "good"; 15–50% is a fair chance; 50%+ is likely.
-- ${p.stateName} does not use regular/special/random pools. Describe the draw only with the DRAW RULES above. In drawReality, set regularPoolUnits to 0 and randomPoolUnits to the count of DRAW_NOW + RANDOM_PLAY hunts, and explain the point system in the summary.
-- Do NOT state exact points required unless fewestPointsToDraw is in the data. Never invent odds, tag counts or fees.
-- SEASON DATES ARE NOT IN THE DATA: set "season" to the weapon only (e.g. "Rifle — see ${p.stateName} regulations for dates"). Never write specific dates.
-- TROPHY SIZE IS NOT IN THE DATA: set typicalScore and topEnd to "Not in data". Do not estimate antler scores.
-- TERRAIN: only describe terrain in general terms you are confident of for that unit; if unsure, write "See unit map".
-- hunterSuccess is the agency figure for that exact hunt; cite it with its year. If absent, do not estimate success.
+The app shows each hunt's odds, tier, season and unit itself. You write the advice:
 
-${sharedWhyItFitsRules(p)}
+1. "summary": 2–4 sentences that LEAD WITH ONE RECOMMENDATION — which hunt to put as 1st choice and why — then the main tradeoff and the fallback. Use the hunt codes. Say what the points situation means for this hunter under the draw rules.
+2. "strategyPath": the single best overall approach — "DRAW_NOW" | "RANDOM_PLAY" | "BUILD_AND_WAIT" | "LONG_GAME".
+3. "actionPlan": { "headline": short imperative next step, "steps": 2–4 concrete steps (e.g. "Put hunt 3091 as 1st choice, 3019 as 2nd"), "pointBankingAdvice": one sentence on building points for the future }.
+4. "explanations": an object with EXACTLY these keys — ${codes.map((c: string) => `"${c}"`).join(', ')} — each { "whyItFits": 1–2 sentences tied to this hunter's profile, "tradeoffs": 1 sentence, "accessRating": "Easy" | "Moderate" | "Hard" | "Unknown", "pressureRating": "Low" | "Moderate" | "High" | "Unknown" }.
 
-${sharedOutputSchema(p.isResident, p.speciesKey, `UNIT KEY FORMAT RULES (CRITICAL):
-- The "unit" field in your output MUST be exactly a "unit" value from the dataset (e.g. "27", "5A"). Never output a hunt code as the unit, never invent units.
-- Mention specific hunt codes inside whyItFits / currentOdds instead.`, true)}
+RULES:
+- Describe odds honestly: under 15% is a long shot or point-building play, never "reasonable" or "good"; 15–50% is a fair chance; 50%+ is likely.
+- Cite numbers only from the data, with their year. Never invent odds, tag counts, fees, season dates, trophy scores, terrain features or access points. Use "Unknown" ratings when you don't know.
+- If hunterSuccess is missing for a hunt, say no figure is published — don't estimate.
+- Plain text, no markdown.
+
+Return ONLY this JSON:
+{ "summary": string, "strategyPath": string, "actionPlan": { "headline": string, "steps": string[], "pointBankingAdvice": string }, "explanations": { "<huntCode>": { "whyItFits": string, "tradeoffs": string, "accessRating": string, "pressureRating": string } } }
 `.trim();
 }
 
