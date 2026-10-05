@@ -13,8 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// GA4 loads only when a measurement ID is configured (Vercel env / .env.local).
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// HuntQuarters GA4 property. Loads on the production deploy only, so local and
+// preview testing don't count as visits; NEXT_PUBLIC_GA_ID overrides it.
+const GA_ID =
+  process.env.NEXT_PUBLIC_GA_ID ?? (process.env.VERCEL_ENV === 'production' ? 'G-19RVQZEPFC' : undefined);
 
 export const metadata: Metadata = {
   title: "HuntQuarters | Western Big Game Hunt Planner",
