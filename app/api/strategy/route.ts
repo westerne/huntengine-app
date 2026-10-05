@@ -24,6 +24,7 @@ import { getStateModule } from '@/lib/huntdata/registry';
 import { buildGenericDrawSummary, buildGenericScoutDataset } from '@/lib/huntdata/generic';
 import { filterToKnownUnits } from '@/lib/huntdata/unitGuard';
 import { applyHuntFacts } from '@/lib/huntdata/scoutFacts';
+import { buildShortlist, goalFrom } from '@/lib/huntdata/shortlist';
 import { buildHarvestBlock, enrichScoutDataset, harvestPromptNote } from '@/lib/huntdata/harvest';
 import { toStateCode } from '@/lib/huntdata/registry';
 import type { SpeciesKey } from '@/lib/huntdata/schema';
@@ -342,9 +343,13 @@ export async function POST(req: Request) {
 
       // Attach agency hunter-success rates where a harvest file exists for the state.
       const stateCode = toStateCode(stateName);
-      const scoutDataset = stateCode
+      const enriched = stateCode
         ? enrichScoutDataset(stateCode, speciesKey as SpeciesKey, baseScoutDataset as Array<Record<string, unknown>>)
         : baseScoutDataset;
+      // Shared-builder states: the server picks the hunts; the model explains them.
+      const scoutDataset = usesSharedBuilders
+        ? buildShortlist(enriched as Array<Record<string, unknown>>, { goal: goalFrom(formData.sacrificeTrophy) })
+        : enriched;
 
       // ── Build and send scout prompt ───────────────────────────────────────
       const promptParams: ScoutPromptParams = {

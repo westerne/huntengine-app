@@ -350,3 +350,34 @@ describe('shared-state SCOUT facts — hunt code from text', () => {
     expect(dropped).toEqual(['1']);
   });
 });
+
+describe('SCOUT shortlist (shared states)', () => {
+  it('spreads picks across odds levels and skips restricted/antlerless hunts', async () => {
+    const { buildShortlist } = await import('./shortlist');
+    const mk = (code: string, odds: number, label = 'Bull elk', hs = 50) =>
+      ({ unit: code, huntCode: code, label, drawSuccess: odds, drawSuccessAtYourPoints: null, hunterSuccess: `${hs}%` });
+    const ds = [
+      mk('L1', 80), mk('L2', 60), mk('L3', 55), mk('L4', 90, 'Bull elk', 10),
+      mk('F1', 30), mk('F2', 20), mk('F3', 40), mk('F4', 16),
+      mk('S1', 5), mk('S2', 1), mk('S3', 3),
+      mk('Y1', 95, 'Bull elk — Youth only'), mk('C1', 99, 'Antlerless elk'),
+    ];
+    const picks = buildShortlist(ds).map((e) => e.huntCode);
+    expect(picks).toHaveLength(8);
+    expect(picks).not.toContain('Y1');
+    expect(picks).not.toContain('C1');
+    expect(picks.filter((c) => c.startsWith('L'))).toHaveLength(3);
+    expect(picks.filter((c) => c.startsWith('F'))).toHaveLength(3);
+    expect(picks.filter((c) => c.startsWith('S'))).toHaveLength(2);
+    // opportunity hunters can see antlerless
+    expect(buildShortlist(ds, { goal: 'opportunity' }).map((e) => e.huntCode)).toContain('C1');
+  });
+
+  it('shortlists real Arizona bull elk hunts for a 5-point non-resident', async () => {
+    const { buildShortlist } = await import('./shortlist');
+    const az = getStateModule('AZ')!;
+    const picks = buildShortlist(buildGenericScoutDataset(az, 'ELK', 'nonresident', 'rifle', 5), { goal: 'trophy' });
+    expect(picks.length).toBeGreaterThanOrEqual(6);
+    expect(picks.every((p) => !/antlerless|youth/i.test(String(p.label)))).toBe(true);
+  });
+});

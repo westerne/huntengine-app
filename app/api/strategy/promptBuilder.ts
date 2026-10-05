@@ -1392,7 +1392,7 @@ ${JSON.stringify(p.scoutDataset)}
 
 Each entry is ONE HUNT: its unit, agency hunt code (huntCode), description (label — bull/cow/antlered/antlerless, youth, etc.), weapon, tags, first-choice applicants, first-choice draw success (drawSuccess, %), the approximate success rate for applicants at the hunter's own point level when the agency publishes a point table (drawSuccessAtYourPoints — permits issued ÷ applicants at that level; approximate), the fewest points that drew (fewestPointsToDraw), over-the-counter availability (otc), agency hunter success (hunterSuccess, season hunterSuccessYear), and the draw year (dataYear). These are HISTORICAL results from the last draw, not a forecast — say "last year" when citing them.
 
-Choose HUNTS, then report them by unit. Prefer hunts whose label fits the hunter's goal (antlered/bull hunts for a trophy-minded hunter; antlerless only if they want opportunity or meat). Return 6 TO 10 recommendations — fewer than 6 is a failed response when the dataset has 6+ suitable hunts. Spread them across odds levels:
+The app has already SHORTLISTED these hunts for this hunter, spread across odds levels. Write ONE recommendation for EVERY hunt in the dataset, in the same order — do not skip any and do not add others. Your job is to explain fit and tradeoffs for each, ranked within the tiers below:
   • likely draws → tier DRAW_NOW (drawSuccessAtYourPoints, else drawSuccess, ≥ 50%)
   • reasonable odds (15–50%) → tier RANDOM_PLAY
   • long shots (< 15%) → tier BUILD_AND_WAIT or LONG_GAME

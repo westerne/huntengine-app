@@ -69,6 +69,11 @@ const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ'];
 // Shown but not selectable until their draw data is wired in.
 const COMING_SOON_STATES = ['NV', 'NM'];
 const SPECIES = ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
+// Species with data, for states that don't have all six (Arizona has no moose or goat).
+const STATE_SPECIES: Record<string, string[]> = {
+  AZ: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
+};
+const speciesFor = (st: string) => STATE_SPECIES[st] ?? SPECIES;
 const WEAPON_OPTIONS = ['Any', 'Rifle', 'Archery', 'Muzzleloader'];
 const FITNESS_LEVELS = ['Moderate', 'High', 'Elite'];
 const STYLE_OPTIONS = ['Hotel/Town Based', 'Base Camp/Truck', 'Backcountry'];
@@ -520,11 +525,11 @@ export default function App() {
             <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-10">
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Select State</label>
-                <div className="flex flex-wrap gap-2">{STATES.map(st => <TogglePill key={st} label={st} active={state.profile.states.includes(st)} onClick={() => setState(s => ({ ...s, profile: { ...s.profile, states: [st] } }))} />)}{COMING_SOON_STATES.map(st => <span key={st} title="Coming soon" className="px-4 py-2 rounded-full border border-zinc-800 bg-zinc-950 text-[10px] font-black uppercase tracking-widest text-zinc-700 cursor-not-allowed">{st} · Soon</span>)}</div>
+                <div className="flex flex-wrap gap-2">{STATES.map(st => <TogglePill key={st} label={st} active={state.profile.states.includes(st)} onClick={() => setState(s => ({ ...s, profile: { ...s.profile, states: [st], species: speciesFor(st).includes(s.profile.species) ? s.profile.species : speciesFor(st)[0] } }))} />)}{COMING_SOON_STATES.map(st => <span key={st} title="Coming soon" className="px-4 py-2 rounded-full border border-zinc-800 bg-zinc-950 text-[10px] font-black uppercase tracking-widest text-zinc-700 cursor-not-allowed">{st} · Soon</span>)}</div>
               </div>
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Select Species</label>
-                <select className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none focus:border-amber-600" value={state.profile.species} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, species: e.target.value } }))}>{SPECIES.map(sp => <option key={sp} value={sp}>{sp}</option>)}</select>
+                <select className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none focus:border-amber-600" value={state.profile.species} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, species: e.target.value } }))}>{speciesFor(state.profile.states[0]).map(sp => <option key={sp} value={sp}>{sp}</option>)}</select>
               </div>
               <div>
                 <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Residency</label>
@@ -721,11 +726,11 @@ export default function App() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">State</label>
-                  <select className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none" value={state.profile.states[0]} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, states: [e.target.value] } }))}>{STATES.map(st => <option key={st} value={st}>{st}</option>)}</select>
+                  <select className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none" value={state.profile.states[0]} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, states: [e.target.value], species: speciesFor(e.target.value).includes(s.profile.species) ? s.profile.species : speciesFor(e.target.value)[0] } }))}>{STATES.map(st => <option key={st} value={st}>{st}</option>)}</select>
                 </div>
                 <div>
                   <label className="block text-[10px] font-black uppercase text-zinc-500 mb-4 tracking-widest">Species</label>
-                  <select className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none" value={state.profile.species} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, species: e.target.value } }))}>{SPECIES.map(sp => <option key={sp} value={sp}>{sp}</option>)}</select>
+                  <select className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none" value={state.profile.species} onChange={(e) => setState(s => ({ ...s, profile: { ...s.profile, species: e.target.value } }))}>{speciesFor(state.profile.states[0]).map(sp => <option key={sp} value={sp}>{sp}</option>)}</select>
                 </div>
               </div>
               <div>
