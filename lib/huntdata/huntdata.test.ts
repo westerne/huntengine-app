@@ -145,7 +145,7 @@ describe('generic builders (used by new states)', () => {
     hunts: () => [
       { state: 'AZ', species: 'ELK', huntCode: '3001', unit: '1', weapon: 'rifle', drawYear: 2026, dataQuality: 'official',
         draw: { resident: { tags: 20, applicants: 400, successPct: 5 }, nonresident: { tags: 2, applicants: 300, successPct: 0.7, minPoints: 20 } },
-        harvest: { successPct: 80, year: 2025 } },
+        harvest: { successPct: 80, year: 2025, scope: 'hunt' } },
       { state: 'AZ', species: 'ELK', huntCode: '3002', unit: '1', weapon: 'archery', drawYear: 2026, dataQuality: 'official',
         draw: { resident: { tags: 50, applicants: 200, successPct: 25 }, nonresident: { tags: 5, applicants: 100, successPct: 5 } } },
       { state: 'AZ', species: 'ELK', huntCode: '3003', unit: '2', weapon: 'rifle', drawYear: 2026, dataQuality: 'official',
@@ -174,5 +174,95 @@ describe('generic builders (used by new states)', () => {
     const text = buildGenericDrawSummary({ ...fake, rulesVerified: false }, 'ELK', 'Elk', '1', 'resident');
     expect(text).not.toContain(fake.drawSystemNote);
     expect(text).toContain('Confirm draw rules with Arizona Game and Fish Department');
+  });
+});
+
+describe('harvest (Idaho)', () => {
+  it('attaches 2025 hunter success to controlled hunts by hunt number', () => {
+    const elk = getStateModule('ID')!.hunts('ELK');
+    const h = elk.find((x) => x.huntCode === '2001')!;
+    expect(h.harvest).toMatchObject({ successPct: 56, year: 2025, hunters: 36, harvest: 20, scope: 'hunt' });
+    const covered = elk.filter((x) => x.harvest).length / elk.length;
+    expect(covered).toBeGreaterThan(0.8);
+  });
+
+  it('never borrows general-season success for a controlled hunt', () => {
+    const elk = getStateModule('ID')!.hunts('ELK');
+    expect(elk.every((x) => !x.harvest || x.harvest.scope === 'hunt')).toBe(true);
+  });
+
+  it('enriches the SCOUT dataset and writes a BRIEF block', async () => {
+    const { enrichScoutDataset, buildHarvestBlock, harvestPromptNote } = await import('./harvest');
+    const ds = enrichScoutDataset('ID', 'ELK', [{ unit: '11', huntNumber: 2001 }, { unit: '999', huntNumber: 99999 }]);
+    expect(ds[0].hunterSuccess).toBe('56%');
+    expect(ds[1].hunterSuccess).toBeUndefined();
+    expect(harvestPromptNote(ds)).toContain('do NOT estimate');
+    const block = buildHarvestBlock('ID', 'ELK', 'Elk', '11');
+    expect(block).toContain('Controlled hunt 2001 — Any Weapon: 56% hunter success (20 harvested by 36 hunters)');
+    expect(buildHarvestBlock('AZ', 'ELK', 'Elk', '11')).toBe(''); // no harvest file yet
+  });
+});
+
+describe('harvest (Montana, Utah)', () => {
+  it('MT uses district totals with the right season per species', async () => {
+    const { harvestYear } = await import('./harvest');
+    expect(harvestYear('MT', 'ELK')).toBe(2024);
+    expect(harvestYear('MT', 'DEER')).toBe(2025);
+    const elk = getStateModule('MT')!.hunts('ELK');
+    const withHarvest = elk.filter((h) => h.harvest);
+    expect(withHarvest.length / elk.length).toBeGreaterThan(0.8);
+    expect(withHarvest.every((h) => h.harvest!.scope === 'unit' && h.harvest!.year === 2024)).toBe(true);
+  });
+
+  it('MT district 100 elk matches FWP (84 of 1536 hunters, 5%)', async () => {
+    const { harvestRowsForUnit } = await import('./harvest');
+    expect(harvestRowsForUnit('MT', 'ELK', '100')[0]).toMatchObject({ hunters: 1536, harvest: 84, successPct: 5 });
+  });
+
+  it('UT units all get 2024 harvest, and Henry Mtns premium matches DWR', async () => {
+    const { harvestRowsForUnit } = await import('./harvest');
+    const ut = getStateModule('UT')!;
+    // No confirmed DWR hunt for these app units yet; left unmatched on purpose.
+    const unmapped = ['Uintas East Moose', 'Plateau'];
+    for (const s of ut.species) for (const h of ut.hunts(s)) {
+      if (unmapped.includes(h.unit)) expect(h.harvest, h.unit).toBeNull();
+      else expect(h.harvest, `${s} ${h.unit}`).toBeTruthy();
+    }
+    const henry = harvestRowsForUnit('UT', 'DEER', 'Henry Mountains').find((r) => r.huntCode === 'DB1003');
+    expect(henry).toMatchObject({ hunters: 27, harvest: 26, successPct: 96.2 });
+  });
+});
+
+describe('harvest (Wyoming)', () => {
+  it('joins 2025 WGFD harvest to draw keys by hunt code', () => {
+    const wy = getStateModule('WY')!;
+    const elk71 = wy.hunts('ELK').find((h) => h.huntCode === '7-1')!;
+    expect(elk71.harvest).toMatchObject({ hunters: 1439, harvest: 756, successPct: 52.5, year: 2025, scope: 'hunt' });
+    expect(wy.hunts('DEER').find((h) => h.huntCode === '141-1')!.harvest).toMatchObject({ hunters: 50, harvest: 35, successPct: 70 });
+    for (const s of wy.species) {
+      const hunts = wy.hunts(s);
+      // 4 deer LQ codes group areas differently in WGFD's harvest report (e.g. 105-106-109-1).
+      expect(hunts.filter((h) => h.harvest).length / hunts.length, s).toBeGreaterThan(0.9);
+    }
+  });
+});
+
+describe('harvest (Colorado)', () => {
+  it('joins 2025 CPW harvest by hunt code', async () => {
+    const co = getStateModule('CO')!;
+    const elk = co.hunts('ELK');
+    expect(elk.find((h) => h.huntCode === 'EE001E1R')!.harvest).toMatchObject({ hunters: 11, harvest: 6, successPct: 54.5, year: 2025, scope: 'hunt' });
+    expect(elk.filter((h) => h.harvest).length / elk.length).toBeGreaterThan(0.9);
+    const { enrichScoutDataset } = await import('./harvest');
+    const [entry] = enrichScoutDataset('CO', 'ELK', [{ unit: '1', huntCodes: ['EE001E1R'] }]);
+    expect(entry).toMatchObject({ hunterSuccess: '54.5%', hunterSuccessScope: 'hunt' });
+  });
+});
+
+describe('BRIEF harvest block lookup', () => {
+  it('finds WY rows when BRIEF passes a hunt key as the unit', async () => {
+    const { harvestRowsForUnit } = await import('./harvest');
+    const rows = harvestRowsForUnit('WY', 'ELK', '7-1');
+    expect(rows[0]).toMatchObject({ huntCode: '7-1', successPct: 52.5 });
   });
 });

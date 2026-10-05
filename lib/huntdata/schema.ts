@@ -45,6 +45,11 @@ export type PointLine = {
 export type Harvest = {
   successPct: number;           // hunter success, 0–100
   year: number;
+  hunters?: number | null;
+  harvest?: number | null;
+  // "hunt" = reported for this exact hunt code; "unit" = reported for the unit
+  // and weapon (e.g. CO GMU by season), not this specific license.
+  scope: 'hunt' | 'unit';
 };
 
 // One huntable product: a hunt code / permit / license type in a unit.

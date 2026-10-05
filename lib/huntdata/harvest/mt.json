@@ -1,0 +1,3855 @@
+{
+ "state": "MT",
+ "year": 2025,
+ "speciesYear": {
+  "DEER": 2025,
+  "ELK": 2024,
+  "ANTELOPE": 2024,
+  "MOOSE": 2025,
+  "BIGHORNSHEEP": 2025,
+  "MTNGOAT": 2025
+ },
+ "source": {
+  "name": "Montana Fish, Wildlife & Parks — Harvest Estimates (myfwp.mt.gov)",
+  "url": "https://myfwp.mt.gov/fwpPub/harvestReports"
+ },
+ "notes": "FWP survey-based (hunter phone survey) estimates, per hunting district, all license types (general + permits), all weapons, residents + nonresidents combined. successPct = total harvest / hunters; daysPerHarvest = hunter days / harvest. Season by species: DEER 2025, ELK 2024, ANTELOPE 2024, MOOSE 2025, BIGHORNSHEEP 2025, MTNGOAT 2025 (newer seasons skipped where FWP had posted harvest but not yet hunter estimates). Deer rows are all deer (mule + whitetail): FWP does not split deer hunters by species. Some elk districts are reported only as lettered sub-districts (e.g. 411E/411W). Not reported per permit (LPT).",
+ "species": {
+  "DEER": [
+   {
+    "unit": "100",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2765,
+    "harvest": 1140,
+    "successPct": 41,
+    "daysPerHarvest": 19.8
+   },
+   {
+    "unit": "101",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2913,
+    "harvest": 1158,
+    "successPct": 40,
+    "daysPerHarvest": 19
+   },
+   {
+    "unit": "103",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 5147,
+    "harvest": 1715,
+    "successPct": 33,
+    "daysPerHarvest": 20.4
+   },
+   {
+    "unit": "104",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1575,
+    "harvest": 533,
+    "successPct": 34,
+    "daysPerHarvest": 24.2
+   },
+   {
+    "unit": "110",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1344,
+    "harvest": 465,
+    "successPct": 35,
+    "daysPerHarvest": 18.1
+   },
+   {
+    "unit": "120",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2179,
+    "harvest": 694,
+    "successPct": 32,
+    "daysPerHarvest": 21
+   },
+   {
+    "unit": "121",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2639,
+    "harvest": 1155,
+    "successPct": 44,
+    "daysPerHarvest": 19.9
+   },
+   {
+    "unit": "122",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2412,
+    "harvest": 794,
+    "successPct": 33,
+    "daysPerHarvest": 23.5
+   },
+   {
+    "unit": "123",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 702,
+    "harvest": 213,
+    "successPct": 30,
+    "daysPerHarvest": 26.1
+   },
+   {
+    "unit": "124",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 441,
+    "harvest": 212,
+    "successPct": 48,
+    "daysPerHarvest": 16.2
+   },
+   {
+    "unit": "130",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2069,
+    "harvest": 650,
+    "successPct": 31,
+    "daysPerHarvest": 18.9
+   },
+   {
+    "unit": "140",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 750,
+    "harvest": 157,
+    "successPct": 21,
+    "daysPerHarvest": 30.9
+   },
+   {
+    "unit": "141",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 139,
+    "harvest": 25,
+    "successPct": 18,
+    "daysPerHarvest": 44.1
+   },
+   {
+    "unit": "150",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 275,
+    "harvest": 44,
+    "successPct": 16,
+    "daysPerHarvest": 39.7
+   },
+   {
+    "unit": "170",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2713,
+    "harvest": 1772,
+    "successPct": 65,
+    "daysPerHarvest": 11
+   },
+   {
+    "unit": "200",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 618,
+    "harvest": 204,
+    "successPct": 33,
+    "daysPerHarvest": 20.7
+   },
+   {
+    "unit": "201",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 3441,
+    "harvest": 1025,
+    "successPct": 30,
+    "daysPerHarvest": 22.6
+   },
+   {
+    "unit": "202",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1814,
+    "harvest": 701,
+    "successPct": 39,
+    "daysPerHarvest": 16.7
+   },
+   {
+    "unit": "204",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1386,
+    "harvest": 406,
+    "successPct": 29,
+    "daysPerHarvest": 21.3
+   },
+   {
+    "unit": "210",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 875,
+    "harvest": 295,
+    "successPct": 34,
+    "daysPerHarvest": 19.6
+   },
+   {
+    "unit": "211",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 566,
+    "harvest": 103,
+    "successPct": 18,
+    "daysPerHarvest": 44
+   },
+   {
+    "unit": "212",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 481,
+    "harvest": 126,
+    "successPct": 26,
+    "daysPerHarvest": 28.2
+   },
+   {
+    "unit": "213",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1178,
+    "harvest": 337,
+    "successPct": 29,
+    "daysPerHarvest": 27.8
+   },
+   {
+    "unit": "214",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 360,
+    "harvest": 73,
+    "successPct": 20,
+    "daysPerHarvest": 32.7
+   },
+   {
+    "unit": "215",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1406,
+    "harvest": 286,
+    "successPct": 20,
+    "daysPerHarvest": 38
+   },
+   {
+    "unit": "216",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 500,
+    "harvest": 141,
+    "successPct": 28,
+    "daysPerHarvest": 26.3
+   },
+   {
+    "unit": "217",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 486,
+    "harvest": 151,
+    "successPct": 31,
+    "daysPerHarvest": 21.6
+   },
+   {
+    "unit": "240",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2009,
+    "harvest": 775,
+    "successPct": 39,
+    "daysPerHarvest": 17.3
+   },
+   {
+    "unit": "250",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 449,
+    "harvest": 175,
+    "successPct": 39,
+    "daysPerHarvest": 18.3
+   },
+   {
+    "unit": "260",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1130,
+    "harvest": 669,
+    "successPct": 59,
+    "daysPerHarvest": 13.7
+   },
+   {
+    "unit": "261",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 486,
+    "harvest": 183,
+    "successPct": 38,
+    "daysPerHarvest": 16.1
+   },
+   {
+    "unit": "262",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 804,
+    "harvest": 368,
+    "successPct": 46,
+    "daysPerHarvest": 14.2
+   },
+   {
+    "unit": "270",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1968,
+    "harvest": 395,
+    "successPct": 20,
+    "daysPerHarvest": 40.8
+   },
+   {
+    "unit": "280",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 191,
+    "harvest": 48,
+    "successPct": 25,
+    "daysPerHarvest": 25.1
+   },
+   {
+    "unit": "281",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1229,
+    "harvest": 373,
+    "successPct": 30,
+    "daysPerHarvest": 21.1
+   },
+   {
+    "unit": "282",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 367,
+    "harvest": 104,
+    "successPct": 28,
+    "daysPerHarvest": 21.6
+   },
+   {
+    "unit": "284",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 174,
+    "harvest": 27,
+    "successPct": 16,
+    "daysPerHarvest": 43.9
+   },
+   {
+    "unit": "285",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 3133,
+    "harvest": 1107,
+    "successPct": 35,
+    "daysPerHarvest": 18.7
+   },
+   {
+    "unit": "290",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 317,
+    "harvest": 88,
+    "successPct": 28,
+    "daysPerHarvest": 26.4
+   },
+   {
+    "unit": "291",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 377,
+    "harvest": 110,
+    "successPct": 29,
+    "daysPerHarvest": 19.3
+   },
+   {
+    "unit": "292",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1492,
+    "harvest": 531,
+    "successPct": 36,
+    "daysPerHarvest": 17.7
+   },
+   {
+    "unit": "293",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1065,
+    "harvest": 242,
+    "successPct": 23,
+    "daysPerHarvest": 32.4
+   },
+   {
+    "unit": "298",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 286,
+    "harvest": 108,
+    "successPct": 38,
+    "daysPerHarvest": 15.4
+   },
+   {
+    "unit": "301",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1106,
+    "harvest": 315,
+    "successPct": 28,
+    "daysPerHarvest": 20.7
+   },
+   {
+    "unit": "302",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 960,
+    "harvest": 273,
+    "successPct": 28,
+    "daysPerHarvest": 26.1
+   },
+   {
+    "unit": "303",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 348,
+    "harvest": 75,
+    "successPct": 22,
+    "daysPerHarvest": 33
+   },
+   {
+    "unit": "304",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 462,
+    "harvest": 185,
+    "successPct": 40,
+    "daysPerHarvest": 15
+   },
+   {
+    "unit": "309",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 802,
+    "harvest": 414,
+    "successPct": 52,
+    "daysPerHarvest": 13
+   },
+   {
+    "unit": "310",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 527,
+    "harvest": 74,
+    "successPct": 14,
+    "daysPerHarvest": 47.5
+   },
+   {
+    "unit": "311",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1633,
+    "harvest": 948,
+    "successPct": 58,
+    "daysPerHarvest": 10
+   },
+   {
+    "unit": "312",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1459,
+    "harvest": 595,
+    "successPct": 41,
+    "daysPerHarvest": 15
+   },
+   {
+    "unit": "313",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 810,
+    "harvest": 248,
+    "successPct": 31,
+    "daysPerHarvest": 21
+   },
+   {
+    "unit": "314",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1401,
+    "harvest": 589,
+    "successPct": 42,
+    "daysPerHarvest": 14.7
+   },
+   {
+    "unit": "315",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1587,
+    "harvest": 631,
+    "successPct": 40,
+    "daysPerHarvest": 16.3
+   },
+   {
+    "unit": "316",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 185,
+    "harvest": 76,
+    "successPct": 41,
+    "daysPerHarvest": 14.5
+   },
+   {
+    "unit": "317",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1116,
+    "harvest": 537,
+    "successPct": 48,
+    "daysPerHarvest": 14.1
+   },
+   {
+    "unit": "318",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 696,
+    "harvest": 99,
+    "successPct": 14,
+    "daysPerHarvest": 71.2
+   },
+   {
+    "unit": "319",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 772,
+    "harvest": 166,
+    "successPct": 22,
+    "daysPerHarvest": 35.9
+   },
+   {
+    "unit": "320",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2611,
+    "harvest": 1305,
+    "successPct": 50,
+    "daysPerHarvest": 12.8
+   },
+   {
+    "unit": "321",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1088,
+    "harvest": 135,
+    "successPct": 12,
+    "daysPerHarvest": 53.7
+   },
+   {
+    "unit": "322",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1599,
+    "harvest": 688,
+    "successPct": 43,
+    "daysPerHarvest": 15.4
+   },
+   {
+    "unit": "323",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2639,
+    "harvest": 671,
+    "successPct": 25,
+    "daysPerHarvest": 25.4
+   },
+   {
+    "unit": "324",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1535,
+    "harvest": 573,
+    "successPct": 37,
+    "daysPerHarvest": 16.6
+   },
+   {
+    "unit": "329",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1184,
+    "harvest": 228,
+    "successPct": 19,
+    "daysPerHarvest": 31.9
+   },
+   {
+    "unit": "331",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2606,
+    "harvest": 576,
+    "successPct": 22,
+    "daysPerHarvest": 36.3
+   },
+   {
+    "unit": "335",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1194,
+    "harvest": 330,
+    "successPct": 28,
+    "daysPerHarvest": 25.6
+   },
+   {
+    "unit": "339",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 870,
+    "harvest": 202,
+    "successPct": 23,
+    "daysPerHarvest": 29.6
+   },
+   {
+    "unit": "340",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1922,
+    "harvest": 604,
+    "successPct": 31,
+    "daysPerHarvest": 21.2
+   },
+   {
+    "unit": "343",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1112,
+    "harvest": 241,
+    "successPct": 22,
+    "daysPerHarvest": 32.1
+   },
+   {
+    "unit": "350",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 768,
+    "harvest": 183,
+    "successPct": 24,
+    "daysPerHarvest": 29.4
+   },
+   {
+    "unit": "360",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1637,
+    "harvest": 483,
+    "successPct": 30,
+    "daysPerHarvest": 22.1
+   },
+   {
+    "unit": "361",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 308,
+    "harvest": 44,
+    "successPct": 14,
+    "daysPerHarvest": 54
+   },
+   {
+    "unit": "370",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 515,
+    "harvest": 95,
+    "successPct": 18,
+    "daysPerHarvest": 32.7
+   },
+   {
+    "unit": "380",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1915,
+    "harvest": 723,
+    "successPct": 38,
+    "daysPerHarvest": 16.7
+   },
+   {
+    "unit": "388",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 518,
+    "harvest": 233,
+    "successPct": 45,
+    "daysPerHarvest": 13.6
+   },
+   {
+    "unit": "390",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 715,
+    "harvest": 233,
+    "successPct": 33,
+    "daysPerHarvest": 21.2
+   },
+   {
+    "unit": "391",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1880,
+    "harvest": 677,
+    "successPct": 36,
+    "daysPerHarvest": 20.1
+   },
+   {
+    "unit": "392",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 691,
+    "harvest": 341,
+    "successPct": 49,
+    "daysPerHarvest": 14.9
+   },
+   {
+    "unit": "393",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1671,
+    "harvest": 598,
+    "successPct": 36,
+    "daysPerHarvest": 16
+   },
+   {
+    "unit": "400",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2000,
+    "harvest": 1091,
+    "successPct": 55,
+    "daysPerHarvest": 11.5
+   },
+   {
+    "unit": "401",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1204,
+    "harvest": 758,
+    "successPct": 63,
+    "daysPerHarvest": 8.2
+   },
+   {
+    "unit": "403",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 418,
+    "harvest": 225,
+    "successPct": 54,
+    "daysPerHarvest": 9.6
+   },
+   {
+    "unit": "404",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1850,
+    "harvest": 994,
+    "successPct": 54,
+    "daysPerHarvest": 9.6
+   },
+   {
+    "unit": "405",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1279,
+    "harvest": 794,
+    "successPct": 62,
+    "daysPerHarvest": 8
+   },
+   {
+    "unit": "406",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 731,
+    "harvest": 445,
+    "successPct": 61,
+    "daysPerHarvest": 7.4
+   },
+   {
+    "unit": "410",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 505,
+    "harvest": 221,
+    "successPct": 44,
+    "daysPerHarvest": 15.5
+   },
+   {
+    "unit": "411",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2383,
+    "harvest": 1225,
+    "successPct": 51,
+    "daysPerHarvest": 12
+   },
+   {
+    "unit": "412",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1139,
+    "harvest": 732,
+    "successPct": 64,
+    "daysPerHarvest": 9.1
+   },
+   {
+    "unit": "413",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2609,
+    "harvest": 1263,
+    "successPct": 48,
+    "daysPerHarvest": 13.5
+   },
+   {
+    "unit": "415",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 102,
+    "harvest": 34,
+    "successPct": 33,
+    "daysPerHarvest": 15.9
+   },
+   {
+    "unit": "416",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1750,
+    "harvest": 501,
+    "successPct": 29,
+    "daysPerHarvest": 26.4
+   },
+   {
+    "unit": "417",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 253,
+    "harvest": 124,
+    "successPct": 49,
+    "daysPerHarvest": 11
+   },
+   {
+    "unit": "418",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 495,
+    "harvest": 278,
+    "successPct": 56,
+    "daysPerHarvest": 16.5
+   },
+   {
+    "unit": "419",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 861,
+    "harvest": 505,
+    "successPct": 59,
+    "daysPerHarvest": 8.8
+   },
+   {
+    "unit": "420",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 382,
+    "harvest": 130,
+    "successPct": 34,
+    "daysPerHarvest": 19.7
+   },
+   {
+    "unit": "421",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1325,
+    "harvest": 800,
+    "successPct": 60,
+    "daysPerHarvest": 9.8
+   },
+   {
+    "unit": "422",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 714,
+    "harvest": 306,
+    "successPct": 43,
+    "daysPerHarvest": 13.2
+   },
+   {
+    "unit": "424",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 217,
+    "harvest": 99,
+    "successPct": 46,
+    "daysPerHarvest": 13.4
+   },
+   {
+    "unit": "425",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 531,
+    "harvest": 203,
+    "successPct": 38,
+    "daysPerHarvest": 14.9
+   },
+   {
+    "unit": "426",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 835,
+    "harvest": 448,
+    "successPct": 54,
+    "daysPerHarvest": 9.7
+   },
+   {
+    "unit": "441",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 532,
+    "harvest": 243,
+    "successPct": 46,
+    "daysPerHarvest": 13.3
+   },
+   {
+    "unit": "442",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 410,
+    "harvest": 94,
+    "successPct": 23,
+    "daysPerHarvest": 26.2
+   },
+   {
+    "unit": "444",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 840,
+    "harvest": 592,
+    "successPct": 70,
+    "daysPerHarvest": 9.7
+   },
+   {
+    "unit": "445",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1281,
+    "harvest": 879,
+    "successPct": 69,
+    "daysPerHarvest": 7.5
+   },
+   {
+    "unit": "446",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 792,
+    "harvest": 295,
+    "successPct": 37,
+    "daysPerHarvest": 17.3
+   },
+   {
+    "unit": "447",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1613,
+    "harvest": 807,
+    "successPct": 50,
+    "daysPerHarvest": 12.1
+   },
+   {
+    "unit": "448",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 788,
+    "harvest": 304,
+    "successPct": 39,
+    "daysPerHarvest": 17.9
+   },
+   {
+    "unit": "450",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 584,
+    "harvest": 227,
+    "successPct": 39,
+    "daysPerHarvest": 16.2
+   },
+   {
+    "unit": "451",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 144,
+    "harvest": 46,
+    "successPct": 32,
+    "daysPerHarvest": 29.5
+   },
+   {
+    "unit": "452",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 962,
+    "harvest": 345,
+    "successPct": 36,
+    "daysPerHarvest": 17.5
+   },
+   {
+    "unit": "455",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 107,
+    "harvest": 35,
+    "successPct": 33,
+    "daysPerHarvest": 20.4
+   },
+   {
+    "unit": "471",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 640,
+    "harvest": 329,
+    "successPct": 51,
+    "daysPerHarvest": 16.1
+   },
+   {
+    "unit": "502",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1625,
+    "harvest": 952,
+    "successPct": 59,
+    "daysPerHarvest": 8.8
+   },
+   {
+    "unit": "515",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2329,
+    "harvest": 1095,
+    "successPct": 47,
+    "daysPerHarvest": 11.4
+   },
+   {
+    "unit": "525",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2334,
+    "harvest": 1198,
+    "successPct": 51,
+    "daysPerHarvest": 10.9
+   },
+   {
+    "unit": "535",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1219,
+    "harvest": 571,
+    "successPct": 47,
+    "daysPerHarvest": 12.8
+   },
+   {
+    "unit": "540",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 859,
+    "harvest": 281,
+    "successPct": 33,
+    "daysPerHarvest": 18.7
+   },
+   {
+    "unit": "555",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 578,
+    "harvest": 260,
+    "successPct": 45,
+    "daysPerHarvest": 12.8
+   },
+   {
+    "unit": "565",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 108,
+    "harvest": 40,
+    "successPct": 37,
+    "daysPerHarvest": 17.6
+   },
+   {
+    "unit": "575",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2007,
+    "harvest": 1145,
+    "successPct": 57,
+    "daysPerHarvest": 9.7
+   },
+   {
+    "unit": "580",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1399,
+    "harvest": 727,
+    "successPct": 52,
+    "daysPerHarvest": 10.7
+   },
+   {
+    "unit": "590",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 3919,
+    "harvest": 1734,
+    "successPct": 44,
+    "daysPerHarvest": 14.3
+   },
+   {
+    "unit": "600",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1998,
+    "harvest": 1054,
+    "successPct": 53,
+    "daysPerHarvest": 10.3
+   },
+   {
+    "unit": "620",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1199,
+    "harvest": 439,
+    "successPct": 37,
+    "daysPerHarvest": 15.9
+   },
+   {
+    "unit": "621",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 764,
+    "harvest": 266,
+    "successPct": 35,
+    "daysPerHarvest": 18.8
+   },
+   {
+    "unit": "622",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 434,
+    "harvest": 98,
+    "successPct": 23,
+    "daysPerHarvest": 25.4
+   },
+   {
+    "unit": "630",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1664,
+    "harvest": 799,
+    "successPct": 48,
+    "daysPerHarvest": 14.2
+   },
+   {
+    "unit": "640",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2776,
+    "harvest": 1695,
+    "successPct": 61,
+    "daysPerHarvest": 10.1
+   },
+   {
+    "unit": "650",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2010,
+    "harvest": 1025,
+    "successPct": 51,
+    "daysPerHarvest": 12
+   },
+   {
+    "unit": "652",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 123,
+    "harvest": 60,
+    "successPct": 49,
+    "daysPerHarvest": 12.2
+   },
+   {
+    "unit": "670",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2456,
+    "harvest": 1168,
+    "successPct": 48,
+    "daysPerHarvest": 12.2
+   },
+   {
+    "unit": "690",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 2914,
+    "harvest": 1544,
+    "successPct": 53,
+    "daysPerHarvest": 10.1
+   },
+   {
+    "unit": "700",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 3259,
+    "harvest": 1495,
+    "successPct": 46,
+    "daysPerHarvest": 15.9
+   },
+   {
+    "unit": "701",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 3286,
+    "harvest": 1711,
+    "successPct": 52,
+    "daysPerHarvest": 11
+   },
+   {
+    "unit": "702",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 1740,
+    "harvest": 900,
+    "successPct": 52,
+    "daysPerHarvest": 10.6
+   },
+   {
+    "unit": "703",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 3447,
+    "harvest": 1725,
+    "successPct": 50,
+    "daysPerHarvest": 12.3
+   },
+   {
+    "unit": "704",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 4306,
+    "harvest": 2421,
+    "successPct": 56,
+    "daysPerHarvest": 10.6
+   },
+   {
+    "unit": "705",
+    "label": "2025 season — All deer (mule + whitetail), all weapons, residents + nonresidents",
+    "hunters": 3585,
+    "harvest": 2261,
+    "successPct": 63,
+    "daysPerHarvest": 9.1
+   }
+  ],
+  "ELK": [
+   {
+    "unit": "100",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1536,
+    "harvest": 84,
+    "successPct": 5,
+    "daysPerHarvest": 158.4
+   },
+   {
+    "unit": "101",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1819,
+    "harvest": 260,
+    "successPct": 14,
+    "daysPerHarvest": 55.6
+   },
+   {
+    "unit": "103",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3153,
+    "harvest": 135,
+    "successPct": 4,
+    "daysPerHarvest": 188.5
+   },
+   {
+    "unit": "104",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1092,
+    "harvest": 78,
+    "successPct": 7,
+    "daysPerHarvest": 126.7
+   },
+   {
+    "unit": "110",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 808,
+    "harvest": 52,
+    "successPct": 6,
+    "daysPerHarvest": 117.3
+   },
+   {
+    "unit": "120",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1167,
+    "harvest": 49,
+    "successPct": 4,
+    "daysPerHarvest": 171.8
+   },
+   {
+    "unit": "121",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2041,
+    "harvest": 246,
+    "successPct": 12,
+    "daysPerHarvest": 71.9
+   },
+   {
+    "unit": "122",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1684,
+    "harvest": 104,
+    "successPct": 6,
+    "daysPerHarvest": 138.3
+   },
+   {
+    "unit": "123",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 521,
+    "harvest": 40,
+    "successPct": 8,
+    "daysPerHarvest": 112.1
+   },
+   {
+    "unit": "124",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 326,
+    "harvest": 41,
+    "successPct": 13,
+    "daysPerHarvest": 63
+   },
+   {
+    "unit": "130",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 893,
+    "harvest": 33,
+    "successPct": 4,
+    "daysPerHarvest": 194.7
+   },
+   {
+    "unit": "140",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 438,
+    "harvest": 12,
+    "successPct": 3,
+    "daysPerHarvest": 336.9
+   },
+   {
+    "unit": "141",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 97,
+    "harvest": 9,
+    "successPct": 9,
+    "daysPerHarvest": 73.8
+   },
+   {
+    "unit": "150",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 382,
+    "harvest": 102,
+    "successPct": 27,
+    "daysPerHarvest": 29.3
+   },
+   {
+    "unit": "170",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 588,
+    "harvest": 56,
+    "successPct": 10,
+    "daysPerHarvest": 81.3
+   },
+   {
+    "unit": "200",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 496,
+    "harvest": 38,
+    "successPct": 8,
+    "daysPerHarvest": 110.6
+   },
+   {
+    "unit": "201",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2503,
+    "harvest": 327,
+    "successPct": 13,
+    "daysPerHarvest": 64.2
+   },
+   {
+    "unit": "202",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1136,
+    "harvest": 90,
+    "successPct": 8,
+    "daysPerHarvest": 105.4
+   },
+   {
+    "unit": "204",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1057,
+    "harvest": 76,
+    "successPct": 7,
+    "daysPerHarvest": 99.5
+   },
+   {
+    "unit": "210",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1058,
+    "harvest": 162,
+    "successPct": 15,
+    "daysPerHarvest": 48.4
+   },
+   {
+    "unit": "211",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 832,
+    "harvest": 124,
+    "successPct": 15,
+    "daysPerHarvest": 56.8
+   },
+   {
+    "unit": "212",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 449,
+    "harvest": 26,
+    "successPct": 6,
+    "daysPerHarvest": 137.4
+   },
+   {
+    "unit": "213",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1570,
+    "harvest": 369,
+    "successPct": 24,
+    "daysPerHarvest": 41.1
+   },
+   {
+    "unit": "214",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 393,
+    "harvest": 25,
+    "successPct": 6,
+    "daysPerHarvest": 139
+   },
+   {
+    "unit": "215",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2076,
+    "harvest": 284,
+    "successPct": 14,
+    "daysPerHarvest": 64.2
+   },
+   {
+    "unit": "216",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 463,
+    "harvest": 50,
+    "successPct": 11,
+    "daysPerHarvest": 69.1
+   },
+   {
+    "unit": "217",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 544,
+    "harvest": 92,
+    "successPct": 17,
+    "daysPerHarvest": 47.6
+   },
+   {
+    "unit": "240",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1209,
+    "harvest": 120,
+    "successPct": 10,
+    "daysPerHarvest": 73.4
+   },
+   {
+    "unit": "250",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 130,
+    "harvest": 51,
+    "successPct": 39,
+    "daysPerHarvest": 29.7
+   },
+   {
+    "unit": "260",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 447,
+    "harvest": 50,
+    "successPct": 11,
+    "daysPerHarvest": 64
+   },
+   {
+    "unit": "261",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 473,
+    "harvest": 48,
+    "successPct": 10,
+    "daysPerHarvest": 79.4
+   },
+   {
+    "unit": "262",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 378,
+    "harvest": 93,
+    "successPct": 25,
+    "daysPerHarvest": 30.2
+   },
+   {
+    "unit": "270",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3320,
+    "harvest": 662,
+    "successPct": 20,
+    "daysPerHarvest": 45.3
+   },
+   {
+    "unit": "280",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 212,
+    "harvest": 44,
+    "successPct": 21,
+    "daysPerHarvest": 34.3
+   },
+   {
+    "unit": "281",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1213,
+    "harvest": 83,
+    "successPct": 7,
+    "daysPerHarvest": 112.1
+   },
+   {
+    "unit": "282",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 261,
+    "harvest": 21,
+    "successPct": 8,
+    "daysPerHarvest": 80
+   },
+   {
+    "unit": "284",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 221,
+    "harvest": 32,
+    "successPct": 14,
+    "daysPerHarvest": 74.8
+   },
+   {
+    "unit": "285",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1798,
+    "harvest": 56,
+    "successPct": 3,
+    "daysPerHarvest": 273
+   },
+   {
+    "unit": "290",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 264,
+    "harvest": 52,
+    "successPct": 20,
+    "daysPerHarvest": 33.3
+   },
+   {
+    "unit": "291",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 652,
+    "harvest": 122,
+    "successPct": 19,
+    "daysPerHarvest": 38.1
+   },
+   {
+    "unit": "292",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1172,
+    "harvest": 82,
+    "successPct": 7,
+    "daysPerHarvest": 110.4
+   },
+   {
+    "unit": "293",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1549,
+    "harvest": 156,
+    "successPct": 10,
+    "daysPerHarvest": 80.2
+   },
+   {
+    "unit": "298",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 307,
+    "harvest": 42,
+    "successPct": 14,
+    "daysPerHarvest": 49.2
+   },
+   {
+    "unit": "301",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1107,
+    "harvest": 110,
+    "successPct": 10,
+    "daysPerHarvest": 73
+   },
+   {
+    "unit": "302",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1229,
+    "harvest": 272,
+    "successPct": 22,
+    "daysPerHarvest": 30.7
+   },
+   {
+    "unit": "303",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1180,
+    "harvest": 274,
+    "successPct": 23,
+    "daysPerHarvest": 28.2
+   },
+   {
+    "unit": "304",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 554,
+    "harvest": 93,
+    "successPct": 17,
+    "daysPerHarvest": 39.8
+   },
+   {
+    "unit": "309",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 377,
+    "harvest": 117,
+    "successPct": 31,
+    "daysPerHarvest": 19.4
+   },
+   {
+    "unit": "310",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 908,
+    "harvest": 117,
+    "successPct": 13,
+    "daysPerHarvest": 64.2
+   },
+   {
+    "unit": "311",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 794,
+    "harvest": 238,
+    "successPct": 30,
+    "daysPerHarvest": 24.3
+   },
+   {
+    "unit": "312",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1089,
+    "harvest": 230,
+    "successPct": 21,
+    "daysPerHarvest": 33.6
+   },
+   {
+    "unit": "313",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1326,
+    "harvest": 346,
+    "successPct": 26,
+    "daysPerHarvest": 28.6
+   },
+   {
+    "unit": "314",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2182,
+    "harvest": 692,
+    "successPct": 32,
+    "daysPerHarvest": 20.3
+   },
+   {
+    "unit": "315",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1858,
+    "harvest": 378,
+    "successPct": 20,
+    "daysPerHarvest": 32.2
+   },
+   {
+    "unit": "316",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 247,
+    "harvest": 39,
+    "successPct": 16,
+    "daysPerHarvest": 49.5
+   },
+   {
+    "unit": "317",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1303,
+    "harvest": 437,
+    "successPct": 34,
+    "daysPerHarvest": 17.8
+   },
+   {
+    "unit": "318",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1214,
+    "harvest": 190,
+    "successPct": 16,
+    "daysPerHarvest": 60.3
+   },
+   {
+    "unit": "319",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2064,
+    "harvest": 351,
+    "successPct": 17,
+    "daysPerHarvest": 52.5
+   },
+   {
+    "unit": "320",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2286,
+    "harvest": 379,
+    "successPct": 17,
+    "daysPerHarvest": 44.1
+   },
+   {
+    "unit": "321",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2217,
+    "harvest": 363,
+    "successPct": 16,
+    "daysPerHarvest": 48.1
+   },
+   {
+    "unit": "322",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1844,
+    "harvest": 418,
+    "successPct": 23,
+    "daysPerHarvest": 33.1
+   },
+   {
+    "unit": "323",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 5015,
+    "harvest": 1013,
+    "successPct": 20,
+    "daysPerHarvest": 36.8
+   },
+   {
+    "unit": "324",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2475,
+    "harvest": 614,
+    "successPct": 25,
+    "daysPerHarvest": 27.3
+   },
+   {
+    "unit": "329",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1912,
+    "harvest": 410,
+    "successPct": 21,
+    "daysPerHarvest": 36.2
+   },
+   {
+    "unit": "331",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3111,
+    "harvest": 597,
+    "successPct": 19,
+    "daysPerHarvest": 42
+   },
+   {
+    "unit": "335",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1692,
+    "harvest": 186,
+    "successPct": 11,
+    "daysPerHarvest": 76
+   },
+   {
+    "unit": "339",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1020,
+    "harvest": 194,
+    "successPct": 19,
+    "daysPerHarvest": 39.9
+   },
+   {
+    "unit": "340",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2068,
+    "harvest": 387,
+    "successPct": 19,
+    "daysPerHarvest": 42.4
+   },
+   {
+    "unit": "343",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1318,
+    "harvest": 153,
+    "successPct": 12,
+    "daysPerHarvest": 73.3
+   },
+   {
+    "unit": "350",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 946,
+    "harvest": 99,
+    "successPct": 10,
+    "daysPerHarvest": 79.8
+   },
+   {
+    "unit": "360",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3402,
+    "harvest": 1099,
+    "successPct": 32,
+    "daysPerHarvest": 23.4
+   },
+   {
+    "unit": "361",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 581,
+    "harvest": 87,
+    "successPct": 15,
+    "daysPerHarvest": 57.7
+   },
+   {
+    "unit": "370",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 629,
+    "harvest": 80,
+    "successPct": 13,
+    "daysPerHarvest": 58.1
+   },
+   {
+    "unit": "380",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2801,
+    "harvest": 474,
+    "successPct": 17,
+    "daysPerHarvest": 47.8
+   },
+   {
+    "unit": "388",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 304,
+    "harvest": 27,
+    "successPct": 9,
+    "daysPerHarvest": 69.7
+   },
+   {
+    "unit": "390",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 790,
+    "harvest": 214,
+    "successPct": 27,
+    "daysPerHarvest": 28.9
+   },
+   {
+    "unit": "391N",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1078,
+    "harvest": 182,
+    "successPct": 17,
+    "daysPerHarvest": 45.3
+   },
+   {
+    "unit": "391S",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 826,
+    "harvest": 150,
+    "successPct": 18,
+    "daysPerHarvest": 44.2
+   },
+   {
+    "unit": "392",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1109,
+    "harvest": 111,
+    "successPct": 10,
+    "daysPerHarvest": 76.9
+   },
+   {
+    "unit": "393",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2048,
+    "harvest": 590,
+    "successPct": 29,
+    "daysPerHarvest": 24.3
+   },
+   {
+    "unit": "400",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 202,
+    "harvest": 29,
+    "successPct": 14,
+    "daysPerHarvest": 45.9
+   },
+   {
+    "unit": "401",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 405,
+    "harvest": 125,
+    "successPct": 31,
+    "daysPerHarvest": 19.7
+   },
+   {
+    "unit": "403",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 54,
+    "harvest": 6,
+    "successPct": 11,
+    "daysPerHarvest": 46.3
+   },
+   {
+    "unit": "404",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 134,
+    "harvest": 17,
+    "successPct": 13,
+    "daysPerHarvest": 41.9
+   },
+   {
+    "unit": "405",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 101,
+    "harvest": 14,
+    "successPct": 14,
+    "daysPerHarvest": 38.6
+   },
+   {
+    "unit": "406",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 78,
+    "harvest": 11,
+    "successPct": 14,
+    "daysPerHarvest": 36.8
+   },
+   {
+    "unit": "410",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1332,
+    "harvest": 378,
+    "successPct": 28,
+    "daysPerHarvest": 29.6
+   },
+   {
+    "unit": "411E",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1381,
+    "harvest": 534,
+    "successPct": 39,
+    "daysPerHarvest": 20
+   },
+   {
+    "unit": "411W",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 902,
+    "harvest": 355,
+    "successPct": 39,
+    "daysPerHarvest": 20.5
+   },
+   {
+    "unit": "412",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 614,
+    "harvest": 186,
+    "successPct": 30,
+    "daysPerHarvest": 23.5
+   },
+   {
+    "unit": "413",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1994,
+    "harvest": 317,
+    "successPct": 16,
+    "daysPerHarvest": 48.3
+   },
+   {
+    "unit": "415",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 134,
+    "harvest": 12,
+    "successPct": 9,
+    "daysPerHarvest": 73.1
+   },
+   {
+    "unit": "416",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3284,
+    "harvest": 620,
+    "successPct": 19,
+    "daysPerHarvest": 37.5
+   },
+   {
+    "unit": "417",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 662,
+    "harvest": 292,
+    "successPct": 44,
+    "daysPerHarvest": 17.1
+   },
+   {
+    "unit": "418",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 416,
+    "harvest": 114,
+    "successPct": 27,
+    "daysPerHarvest": 25.6
+   },
+   {
+    "unit": "419",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 247,
+    "harvest": 42,
+    "successPct": 17,
+    "daysPerHarvest": 36.7
+   },
+   {
+    "unit": "420",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 314,
+    "harvest": 80,
+    "successPct": 25,
+    "daysPerHarvest": 29.8
+   },
+   {
+    "unit": "421",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 596,
+    "harvest": 167,
+    "successPct": 28,
+    "daysPerHarvest": 22.4
+   },
+   {
+    "unit": "422",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 740,
+    "harvest": 151,
+    "successPct": 20,
+    "daysPerHarvest": 29
+   },
+   {
+    "unit": "424",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 279,
+    "harvest": 29,
+    "successPct": 10,
+    "daysPerHarvest": 48
+   },
+   {
+    "unit": "425",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 461,
+    "harvest": 76,
+    "successPct": 16,
+    "daysPerHarvest": 36.6
+   },
+   {
+    "unit": "426",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 319,
+    "harvest": 89,
+    "successPct": 28,
+    "daysPerHarvest": 23.7
+   },
+   {
+    "unit": "441",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 577,
+    "harvest": 98,
+    "successPct": 17,
+    "daysPerHarvest": 39.2
+   },
+   {
+    "unit": "442",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 550,
+    "harvest": 58,
+    "successPct": 11,
+    "daysPerHarvest": 67.6
+   },
+   {
+    "unit": "444",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 175,
+    "harvest": 18,
+    "successPct": 10,
+    "daysPerHarvest": 64.4
+   },
+   {
+    "unit": "445",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 847,
+    "harvest": 350,
+    "successPct": 41,
+    "daysPerHarvest": 14.9
+   },
+   {
+    "unit": "446",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1140,
+    "harvest": 399,
+    "successPct": 35,
+    "daysPerHarvest": 18.2
+   },
+   {
+    "unit": "447",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1063,
+    "harvest": 281,
+    "successPct": 26,
+    "daysPerHarvest": 25.1
+   },
+   {
+    "unit": "448",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1072,
+    "harvest": 122,
+    "successPct": 11,
+    "daysPerHarvest": 60.6
+   },
+   {
+    "unit": "450",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 358,
+    "harvest": 44,
+    "successPct": 12,
+    "daysPerHarvest": 50.7
+   },
+   {
+    "unit": "451",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 224,
+    "harvest": 49,
+    "successPct": 22,
+    "daysPerHarvest": 34.5
+   },
+   {
+    "unit": "452",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1349,
+    "harvest": 334,
+    "successPct": 25,
+    "daysPerHarvest": 25.7
+   },
+   {
+    "unit": "455",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 317,
+    "harvest": 148,
+    "successPct": 47,
+    "daysPerHarvest": 15
+   },
+   {
+    "unit": "471",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 99,
+    "harvest": 9,
+    "successPct": 9,
+    "daysPerHarvest": 77
+   },
+   {
+    "unit": "502",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 384,
+    "harvest": 58,
+    "successPct": 15,
+    "daysPerHarvest": 46.4
+   },
+   {
+    "unit": "515",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 968,
+    "harvest": 234,
+    "successPct": 24,
+    "daysPerHarvest": 29.1
+   },
+   {
+    "unit": "525",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1874,
+    "harvest": 512,
+    "successPct": 27,
+    "daysPerHarvest": 27.2
+   },
+   {
+    "unit": "535E",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1023,
+    "harvest": 323,
+    "successPct": 32,
+    "daysPerHarvest": 20.3
+   },
+   {
+    "unit": "535W",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 678,
+    "harvest": 213,
+    "successPct": 31,
+    "daysPerHarvest": 23
+   },
+   {
+    "unit": "540",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1259,
+    "harvest": 315,
+    "successPct": 25,
+    "daysPerHarvest": 29.3
+   },
+   {
+    "unit": "555",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 217,
+    "harvest": 44,
+    "successPct": 20,
+    "daysPerHarvest": 40.8
+   },
+   {
+    "unit": "565",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 86,
+    "harvest": 13,
+    "successPct": 15,
+    "daysPerHarvest": 34.9
+   },
+   {
+    "unit": "575",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 991,
+    "harvest": 250,
+    "successPct": 25,
+    "daysPerHarvest": 30.1
+   },
+   {
+    "unit": "580N",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1353,
+    "harvest": 482,
+    "successPct": 36,
+    "daysPerHarvest": 18.1
+   },
+   {
+    "unit": "580S",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 477,
+    "harvest": 198,
+    "successPct": 42,
+    "daysPerHarvest": 17.7
+   },
+   {
+    "unit": "590",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2494,
+    "harvest": 750,
+    "successPct": 30,
+    "daysPerHarvest": 24.8
+   },
+   {
+    "unit": "600",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 154,
+    "harvest": 14,
+    "successPct": 9,
+    "daysPerHarvest": 55.1
+   },
+   {
+    "unit": "620",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 704,
+    "harvest": 128,
+    "successPct": 18,
+    "daysPerHarvest": 47.1
+   },
+   {
+    "unit": "621",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 582,
+    "harvest": 94,
+    "successPct": 16,
+    "daysPerHarvest": 48.9
+   },
+   {
+    "unit": "622",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 455,
+    "harvest": 101,
+    "successPct": 22,
+    "daysPerHarvest": 35.3
+   },
+   {
+    "unit": "630",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 273,
+    "harvest": 61,
+    "successPct": 22,
+    "daysPerHarvest": 35.5
+   },
+   {
+    "unit": "640",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 89,
+    "harvest": 3,
+    "successPct": 3,
+    "daysPerHarvest": 149.7
+   },
+   {
+    "unit": "650",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 98,
+    "harvest": 14,
+    "successPct": 14,
+    "daysPerHarvest": 39.9
+   },
+   {
+    "unit": "670",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 65,
+    "harvest": 3,
+    "successPct": 5,
+    "daysPerHarvest": 98
+   },
+   {
+    "unit": "690",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 776,
+    "harvest": 257,
+    "successPct": 33,
+    "daysPerHarvest": 21
+   },
+   {
+    "unit": "700",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1757,
+    "harvest": 660,
+    "successPct": 38,
+    "daysPerHarvest": 19.9
+   },
+   {
+    "unit": "701E",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 483,
+    "harvest": 105,
+    "successPct": 22,
+    "daysPerHarvest": 26
+   },
+   {
+    "unit": "701W",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 219,
+    "harvest": 73,
+    "successPct": 33,
+    "daysPerHarvest": 20.7
+   },
+   {
+    "unit": "702",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 771,
+    "harvest": 284,
+    "successPct": 37,
+    "daysPerHarvest": 18.1
+   },
+   {
+    "unit": "703",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 449,
+    "harvest": 62,
+    "successPct": 14,
+    "daysPerHarvest": 52.4
+   },
+   {
+    "unit": "704",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1601,
+    "harvest": 534,
+    "successPct": 33,
+    "daysPerHarvest": 24.6
+   },
+   {
+    "unit": "705",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 727,
+    "harvest": 203,
+    "successPct": 28,
+    "daysPerHarvest": 25.2
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "unit": "215",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 10,
+    "harvest": 5,
+    "successPct": 50,
+    "daysPerHarvest": 5.6
+   },
+   {
+    "unit": "291",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": 7
+   },
+   {
+    "unit": "300",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 236,
+    "harvest": 81,
+    "successPct": 34,
+    "daysPerHarvest": 11
+   },
+   {
+    "unit": "301",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 25,
+    "harvest": 8,
+    "successPct": 32,
+    "daysPerHarvest": 12.5
+   },
+   {
+    "unit": "310",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 265,
+    "harvest": 148,
+    "successPct": 56,
+    "daysPerHarvest": 6.8
+   },
+   {
+    "unit": "311",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 110,
+    "harvest": 22,
+    "successPct": 20,
+    "daysPerHarvest": 23.5
+   },
+   {
+    "unit": "313",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 63,
+    "daysPerHarvest": 5.4
+   },
+   {
+    "unit": "317",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 68,
+    "harvest": 43,
+    "successPct": 63,
+    "daysPerHarvest": 6.6
+   },
+   {
+    "unit": "318",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 100,
+    "harvest": 24,
+    "successPct": 24,
+    "daysPerHarvest": 21.4
+   },
+   {
+    "unit": "319",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 76,
+    "harvest": 18,
+    "successPct": 24,
+    "daysPerHarvest": 28.7
+   },
+   {
+    "unit": "320",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 138,
+    "harvest": 75,
+    "successPct": 54,
+    "daysPerHarvest": 8.6
+   },
+   {
+    "unit": "322",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 753,
+    "harvest": 433,
+    "successPct": 58,
+    "daysPerHarvest": 7.2
+   },
+   {
+    "unit": "329",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 111,
+    "harvest": 52,
+    "successPct": 47,
+    "daysPerHarvest": 7.5
+   },
+   {
+    "unit": "338",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 139,
+    "harvest": 56,
+    "successPct": 40,
+    "daysPerHarvest": 12.9
+   },
+   {
+    "unit": "339",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 67,
+    "harvest": 37,
+    "successPct": 55,
+    "daysPerHarvest": 6.8
+   },
+   {
+    "unit": "340",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 417,
+    "harvest": 335,
+    "successPct": 80,
+    "daysPerHarvest": 6
+   },
+   {
+    "unit": "350",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 85,
+    "harvest": 66,
+    "successPct": 78,
+    "daysPerHarvest": 6.4
+   },
+   {
+    "unit": "360",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 333,
+    "harvest": 180,
+    "successPct": 54,
+    "daysPerHarvest": 7.8
+   },
+   {
+    "unit": "370",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 90,
+    "harvest": 69,
+    "successPct": 77,
+    "daysPerHarvest": 7.1
+   },
+   {
+    "unit": "371",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 66,
+    "harvest": 23,
+    "successPct": 35,
+    "daysPerHarvest": 17.2
+   },
+   {
+    "unit": "380",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 107,
+    "harvest": 30,
+    "successPct": 28,
+    "daysPerHarvest": 24.4
+   },
+   {
+    "unit": "381",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 18,
+    "harvest": 6,
+    "successPct": 33,
+    "daysPerHarvest": 32.8
+   },
+   {
+    "unit": "388",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 19,
+    "harvest": 8,
+    "successPct": 42,
+    "daysPerHarvest": 17.1
+   },
+   {
+    "unit": "390",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 158,
+    "harvest": 58,
+    "successPct": 37,
+    "daysPerHarvest": 18.5
+   },
+   {
+    "unit": "401",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 304,
+    "harvest": 168,
+    "successPct": 55,
+    "daysPerHarvest": 7.4
+   },
+   {
+    "unit": "404",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 430,
+    "harvest": 278,
+    "successPct": 65,
+    "daysPerHarvest": 6.3
+   },
+   {
+    "unit": "420",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 178,
+    "harvest": 103,
+    "successPct": 58,
+    "daysPerHarvest": 6.7
+   },
+   {
+    "unit": "430",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 214,
+    "harvest": 148,
+    "successPct": 69,
+    "daysPerHarvest": 7.2
+   },
+   {
+    "unit": "440",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 176,
+    "harvest": 143,
+    "successPct": 81,
+    "daysPerHarvest": 5.4
+   },
+   {
+    "unit": "441",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 29,
+    "harvest": 10,
+    "successPct": 34,
+    "daysPerHarvest": 15.5
+   },
+   {
+    "unit": "444",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 214,
+    "harvest": 102,
+    "successPct": 48,
+    "daysPerHarvest": 9.2
+   },
+   {
+    "unit": "450",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 130,
+    "harvest": 72,
+    "successPct": 55,
+    "daysPerHarvest": 6.3
+   },
+   {
+    "unit": "455",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "471",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 433,
+    "harvest": 273,
+    "successPct": 63,
+    "daysPerHarvest": 7
+   },
+   {
+    "unit": "480",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 173,
+    "harvest": 118,
+    "successPct": 68,
+    "daysPerHarvest": 7.6
+   },
+   {
+    "unit": "481",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 198,
+    "harvest": 101,
+    "successPct": 51,
+    "daysPerHarvest": 8.5
+   },
+   {
+    "unit": "490",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 256,
+    "harvest": 156,
+    "successPct": 61,
+    "daysPerHarvest": 5.3
+   },
+   {
+    "unit": "506",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 222,
+    "harvest": 136,
+    "successPct": 61,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "516",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 700,
+    "harvest": 424,
+    "successPct": 61,
+    "daysPerHarvest": 6.4
+   },
+   {
+    "unit": "526",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 210,
+    "harvest": 104,
+    "successPct": 50,
+    "daysPerHarvest": 7.6
+   },
+   {
+    "unit": "536",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 303,
+    "harvest": 188,
+    "successPct": 62,
+    "daysPerHarvest": 6.6
+   },
+   {
+    "unit": "546",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 335,
+    "harvest": 220,
+    "successPct": 66,
+    "daysPerHarvest": 4.7
+   },
+   {
+    "unit": "556",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 148,
+    "harvest": 71,
+    "successPct": 48,
+    "daysPerHarvest": 10.4
+   },
+   {
+    "unit": "576",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 949,
+    "harvest": 503,
+    "successPct": 53,
+    "daysPerHarvest": 7.4
+   },
+   {
+    "unit": "586",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 392,
+    "harvest": 306,
+    "successPct": 78,
+    "daysPerHarvest": 4.6
+   },
+   {
+    "unit": "596",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 295,
+    "harvest": 108,
+    "successPct": 37,
+    "daysPerHarvest": 12.7
+   },
+   {
+    "unit": "600",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 321,
+    "harvest": 200,
+    "successPct": 62,
+    "daysPerHarvest": 7.1
+   },
+   {
+    "unit": "620",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 434,
+    "harvest": 310,
+    "successPct": 71,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "630",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 359,
+    "harvest": 236,
+    "successPct": 66,
+    "daysPerHarvest": 6.5
+   },
+   {
+    "unit": "640",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 158,
+    "harvest": 93,
+    "successPct": 59,
+    "daysPerHarvest": 10
+   },
+   {
+    "unit": "650",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 459,
+    "harvest": 344,
+    "successPct": 75,
+    "daysPerHarvest": 5.3
+   },
+   {
+    "unit": "670",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 314,
+    "harvest": 220,
+    "successPct": 70,
+    "daysPerHarvest": 5.3
+   },
+   {
+    "unit": "690",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 341,
+    "harvest": 239,
+    "successPct": 70,
+    "daysPerHarvest": 4.7
+   },
+   {
+    "unit": "700",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1385,
+    "harvest": 956,
+    "successPct": 69,
+    "daysPerHarvest": 4.9
+   },
+   {
+    "unit": "701",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1093,
+    "harvest": 728,
+    "successPct": 67,
+    "daysPerHarvest": 4.6
+   },
+   {
+    "unit": "702",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 549,
+    "harvest": 331,
+    "successPct": 60,
+    "daysPerHarvest": 5.6
+   },
+   {
+    "unit": "703",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 619,
+    "harvest": 338,
+    "successPct": 55,
+    "daysPerHarvest": 6.5
+   },
+   {
+    "unit": "704",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1015,
+    "harvest": 668,
+    "successPct": 66,
+    "daysPerHarvest": 5.7
+   },
+   {
+    "unit": "705",
+    "label": "2024 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1714,
+    "harvest": 1594,
+    "successPct": 93,
+    "daysPerHarvest": 4
+   }
+  ],
+  "MOOSE": [
+   {
+    "unit": "100",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 9,
+    "harvest": 6,
+    "successPct": 67,
+    "daysPerHarvest": 25.2
+   },
+   {
+    "unit": "101",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50,
+    "daysPerHarvest": 32
+   },
+   {
+    "unit": "102",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40,
+    "daysPerHarvest": 39.5
+   },
+   {
+    "unit": "103",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 67,
+    "daysPerHarvest": 9
+   },
+   {
+    "unit": "104",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33,
+    "daysPerHarvest": 80
+   },
+   {
+    "unit": "105",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 12,
+    "harvest": 9,
+    "successPct": 75,
+    "daysPerHarvest": 25.7
+   },
+   {
+    "unit": "106",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 12,
+    "harvest": 11,
+    "successPct": 92,
+    "daysPerHarvest": 15.7
+   },
+   {
+    "unit": "110",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 10,
+    "harvest": 6,
+    "successPct": 60,
+    "daysPerHarvest": 27.3
+   },
+   {
+    "unit": "111",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 8,
+    "harvest": 8,
+    "successPct": 100,
+    "daysPerHarvest": 14.5
+   },
+   {
+    "unit": "112",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 30
+   },
+   {
+    "unit": "121",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "122",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 13.3
+   },
+   {
+    "unit": "125",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "126",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 30
+   },
+   {
+    "unit": "140",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 7
+   },
+   {
+    "unit": "141",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 10
+   },
+   {
+    "unit": "150",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 7
+   },
+   {
+    "unit": "210",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 19.3
+   },
+   {
+    "unit": "211",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": 17
+   },
+   {
+    "unit": "213",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 15
+   },
+   {
+    "unit": "214",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 6
+   },
+   {
+    "unit": "215",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "220",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 21.7
+   },
+   {
+    "unit": "230",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 11.3
+   },
+   {
+    "unit": "240",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33,
+    "daysPerHarvest": 71
+   },
+   {
+    "unit": "261",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 51.5
+   },
+   {
+    "unit": "270",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 17
+   },
+   {
+    "unit": "280",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 8
+   },
+   {
+    "unit": "285",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "292",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 28
+   },
+   {
+    "unit": "293",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "300",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100,
+    "daysPerHarvest": 9.1
+   },
+   {
+    "unit": "301",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 6,
+    "harvest": 5,
+    "successPct": 83,
+    "daysPerHarvest": 11.8
+   },
+   {
+    "unit": "302",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 3.3
+   },
+   {
+    "unit": "303",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 9.5
+   },
+   {
+    "unit": "310",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "311",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 10
+   },
+   {
+    "unit": "312",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 15
+   },
+   {
+    "unit": "313",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": 18.8
+   },
+   {
+    "unit": "314",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "319",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 30
+   },
+   {
+    "unit": "320",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100,
+    "daysPerHarvest": 6.7
+   },
+   {
+    "unit": "322",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3.5
+   },
+   {
+    "unit": "323",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 10,
+    "harvest": 10,
+    "successPct": 100,
+    "daysPerHarvest": 4.7
+   },
+   {
+    "unit": "324",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 6,
+    "harvest": 5,
+    "successPct": 83,
+    "daysPerHarvest": 20.2
+   },
+   {
+    "unit": "325",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 21.7
+   },
+   {
+    "unit": "326",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 5.6
+   },
+   {
+    "unit": "327",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 7.3
+   },
+   {
+    "unit": "329",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 24.5
+   },
+   {
+    "unit": "330",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 16,
+    "harvest": 15,
+    "successPct": 94,
+    "daysPerHarvest": 13.7
+   },
+   {
+    "unit": "332",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 16,
+    "harvest": 11,
+    "successPct": 69,
+    "daysPerHarvest": 8.5
+   },
+   {
+    "unit": "334",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 17,
+    "harvest": 16,
+    "successPct": 94,
+    "daysPerHarvest": 4.1
+   },
+   {
+    "unit": "335",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 11.5
+   },
+   {
+    "unit": "340",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": 7.5
+   },
+   {
+    "unit": "341",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 18
+   },
+   {
+    "unit": "350",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": 45
+   },
+   {
+    "unit": "360",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 8
+   },
+   {
+    "unit": "361",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 9.8
+   },
+   {
+    "unit": "380",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 7,
+    "harvest": 5,
+    "successPct": 71,
+    "daysPerHarvest": 51.2
+   },
+   {
+    "unit": "382",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "390",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "401",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "415",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "422",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 12
+   },
+   {
+    "unit": "441",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 15
+   },
+   {
+    "unit": "447",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 12
+   },
+   {
+    "unit": "494",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75,
+    "daysPerHarvest": 25.7
+   },
+   {
+    "unit": "496",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 20.3
+   },
+   {
+    "unit": "513",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 15.5
+   },
+   {
+    "unit": "514",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 13
+   },
+   {
+    "unit": "516",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "600",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 9,
+    "harvest": 9,
+    "successPct": 100,
+    "daysPerHarvest": 11
+   },
+   {
+    "unit": "700",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 11
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "unit": "100",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "102",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "121",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 25
+   },
+   {
+    "unit": "122",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 17.5
+   },
+   {
+    "unit": "123",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "124",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 8,
+    "harvest": 8,
+    "successPct": 100,
+    "daysPerHarvest": 4.8
+   },
+   {
+    "unit": "203",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 5.3
+   },
+   {
+    "unit": "210",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "214",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 29.5
+   },
+   {
+    "unit": "250",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 20
+   },
+   {
+    "unit": "261",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "270",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 12,
+    "harvest": 12,
+    "successPct": 100,
+    "daysPerHarvest": 3.8
+   },
+   {
+    "unit": "300",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 31,
+    "harvest": 4,
+    "successPct": 13,
+    "daysPerHarvest": 17.3
+   },
+   {
+    "unit": "301",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 6.5
+   },
+   {
+    "unit": "302",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 9.7
+   },
+   {
+    "unit": "303",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 60,
+    "harvest": 2,
+    "successPct": 3,
+    "daysPerHarvest": 216.5
+   },
+   {
+    "unit": "304",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "305",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 25
+   },
+   {
+    "unit": "330",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "340",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 21
+   },
+   {
+    "unit": "380",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 12
+   },
+   {
+    "unit": "381",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 4
+   },
+   {
+    "unit": "421",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 2
+   },
+   {
+    "unit": "422",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 9.7
+   },
+   {
+    "unit": "423",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 14.5
+   },
+   {
+    "unit": "424",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 15
+   },
+   {
+    "unit": "441",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 12.5
+   },
+   {
+    "unit": "455",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 23.5
+   },
+   {
+    "unit": "482",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 8,
+    "harvest": 8,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "500",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 55,
+    "harvest": 2,
+    "successPct": 4,
+    "daysPerHarvest": 192
+   },
+   {
+    "unit": "501",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 84,
+    "harvest": 5,
+    "successPct": 6,
+    "daysPerHarvest": 91.6
+   },
+   {
+    "unit": "502",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 41,
+    "harvest": 2,
+    "successPct": 5,
+    "daysPerHarvest": 194.5
+   },
+   {
+    "unit": "503",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 67,
+    "daysPerHarvest": 7.5
+   },
+   {
+    "unit": "620",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 7
+   },
+   {
+    "unit": "680",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 26,
+    "harvest": 19,
+    "successPct": 73,
+    "daysPerHarvest": 6.4
+   }
+  ],
+  "MTNGOAT": [
+   {
+    "unit": "100",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 5
+   },
+   {
+    "unit": "133",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "140",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "142",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "150",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "240",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "312",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "313",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 14,
+    "harvest": 14,
+    "successPct": 100,
+    "daysPerHarvest": 1.9
+   },
+   {
+    "unit": "314",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 28,
+    "harvest": 16,
+    "successPct": 57,
+    "daysPerHarvest": 13.5
+   },
+   {
+    "unit": "316",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 11,
+    "harvest": 9,
+    "successPct": 82,
+    "daysPerHarvest": 8.6
+   },
+   {
+    "unit": "320",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": 13.3
+   },
+   {
+    "unit": "323",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 38,
+    "harvest": 36,
+    "successPct": 95,
+    "daysPerHarvest": 5.6
+   },
+   {
+    "unit": "324",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75,
+    "daysPerHarvest": 6.3
+   },
+   {
+    "unit": "325",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": 2.7
+   },
+   {
+    "unit": "326",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": 9
+   },
+   {
+    "unit": "329",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 15,
+    "harvest": 15,
+    "successPct": 100,
+    "daysPerHarvest": 4.1
+   },
+   {
+    "unit": "330",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 4.5
+   },
+   {
+    "unit": "331",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 4.3
+   },
+   {
+    "unit": "350",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 3.5
+   },
+   {
+    "unit": "361",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 4
+   },
+   {
+    "unit": "362",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 4.8
+   },
+   {
+    "unit": "393",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": 3.4
+   },
+   {
+    "unit": "415",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 1
+   },
+   {
+    "unit": "442",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 12
+   },
+   {
+    "unit": "447",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 3
+   },
+   {
+    "unit": "453",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "514",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 9
+   },
+   {
+    "unit": "517",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": 7.8
+   },
+   {
+    "unit": "518",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": 19
+   },
+   {
+    "unit": "519",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": 0
+   },
+   {
+    "unit": "521",
+    "label": "2025 season — General + permits, all weapons, residents + nonresidents",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": 8.3
+   }
+  ]
+ }
+}

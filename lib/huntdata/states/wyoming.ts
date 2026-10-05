@@ -1,5 +1,6 @@
 import type { Hunt, SpeciesKey, StateInfo, StateModule, Weapon } from '../schema';
 import { parsePct, stat, sumKnown } from '../util';
+import { harvestForHunt } from '../harvest';
 import { WYOMING_DEER_UNITS } from '@/app/api/strategy/wyodeerdata';
 import { WYOMING_ELK_UNITS } from '@/app/api/strategy/wyoelkdata';
 import { WYOMING_ANTELOPE_UNITS } from '@/app/api/strategy/wyoantelopedata';
@@ -40,13 +41,16 @@ function toHunt(species: SpeciesKey, key: string, p: WyoProduct): Hunt | null {
     { name: 'special-random', tags: latest.nr_special_random.quota, applicants: latest.nr_special_random.firstChoiceApplicants, successPct: parsePct(latest.nr_special_random.approxOdds) },
   ];
 
+  const unit = key.includes('-') ? key.slice(0, key.lastIndexOf('-')) : key;
+  const weapon = weaponFor(species, key);
   return {
     state: 'WY',
     species,
     huntCode: key,
-    unit: key.includes('-') ? key.slice(0, key.lastIndexOf('-')) : key,
+    unit,
     label: p.huntTypeLabel ?? p.huntType,
-    weapon: weaponFor(species, key),
+    weapon,
+    harvest: harvestForHunt('WY', species, key, unit, weapon),
     drawYear: latest.year,
     dataQuality: 'official',
     draw: {

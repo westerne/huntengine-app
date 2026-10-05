@@ -1,6 +1,7 @@
 import type { Hunt, SpeciesKey, StateInfo, StateModule } from '../schema';
 import { stat } from '../util';
 import { IDAHO_DRAW, IDAHO_DRAW_YEAR } from '@/app/api/strategy/idahoDraw';
+import { harvestForHunt } from '../harvest';
 
 export function idahoModule(info: StateInfo): StateModule {
   return {
@@ -20,6 +21,7 @@ export function idahoModule(info: StateInfo): StateModule {
           resident: stat({ applicants: h.resApplicants, successPct: h.resOddsPct }),
           nonresident: stat({ applicants: h.nonResApplicants, successPct: h.nonResOddsPct }),
         },
+        harvest: harvestForHunt('ID', species, String(h.hunt), h.area),
       }));
     },
   };

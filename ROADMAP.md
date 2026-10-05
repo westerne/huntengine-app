@@ -41,7 +41,6 @@ The draw data and features below date from June 30, 2026. Phase 0 cleanup was do
 
 **Missing**
 - No accounts, saved plans, database or payments. Stripe was taken out in June.
-- No harvest success rates for any state. This is the biggest data gap.
 - Only 5 of the 17 target states have data.
 - No tests.
 
@@ -101,7 +100,8 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [x] **Shared SCOUT and BRIEF builders** (`lib/huntdata/generic.ts`). A new state only has to produce its hunts and it gets SCOUT and BRIEF automatically.
 - [ ] **Import scripts** that turn each agency's published files (PDF, CSV, KML) into that format. Next year's data then becomes a re-run, not a rewrite.
 - [ ] Move WY, ID, CO, MT and UT onto the new format. Fix their gaps along the way:
-  - [ ] Harvest success rates for all five
+  - [x] Harvest success rates for all five (`scripts/harvest/`, `lib/huntdata/harvest/`): WY 2025, CO 2025, ID 2025, MT 2025 (elk and antelope 2024), UT 2024. Shown in SCOUT and BRIEF.
+  - [ ] Utah: confirm which DWR hunts match "Plateau" antelope and "Uintas East Moose" (no harvest rate until then)
   - [ ] Colorado preference-point data (points needed to draw, not just success %)
   - [ ] Utah: DWR's published draw odds in place of hand-entered numbers
   - [ ] Wyoming antelope: trophy and season data

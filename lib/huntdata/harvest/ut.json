@@ -1,0 +1,4605 @@
+{
+ "state": "UT",
+ "year": 2024,
+ "source": {
+  "name": "Utah DWR 2024 big game harvest reports (limited-entry/OIAL + general-season buck deer)",
+  "url": "https://wildlife.utah.gov/biggame/reports"
+ },
+ "notes": "Per DWR hunt number from https://wildlife.utah.gov/pdf/bg/2024/2024_le_oial_all.pdf and https://wildlife.utah.gov/pdf/bg/2024/2024_gs_buck_deer_hr.pdf. successPct is DWR's published percent success (for general-season deer DWR computes it from raw survey responses, while hunters/harvest are projected estimates, so harvest/hunters may not equal successPct exactly). daysPerHarvest is null: DWR publishes average days hunted per hunter, not days per harvest. CWMU hunts and hunts with no reported data are excluded. Bighorn sheep includes both desert (DS) and Rocky Mountain (RS) hunts. Labels name the DWR hunt type, weapon, and DWR sub-unit when mapped to a broader app unit.",
+ "species": {
+  "DEER": [
+   {
+    "unit": "Antelope Island",
+    "huntCode": "DB0009",
+    "weapon": "any",
+    "label": "Premium Limited Entry Any Legal Weapon",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Antelope Island",
+    "huntCode": "DB1002",
+    "weapon": "any",
+    "label": "Premium Limited Entry Any Legal Weapon",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver",
+    "huntCode": "DB1059",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 8,
+    "harvest": 6,
+    "successPct": 75,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver",
+    "huntCode": "DB1500",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 309,
+    "harvest": 75,
+    "successPct": 24.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver",
+    "huntCode": "DB1530",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 909,
+    "harvest": 516,
+    "successPct": 56.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver",
+    "huntCode": "DB1560",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 267,
+    "harvest": 103,
+    "successPct": 38.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver",
+    "huntCode": "DB1769",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 217,
+    "harvest": 94,
+    "successPct": 43.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs",
+    "huntCode": "DB1011",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 41,
+    "harvest": 34,
+    "successPct": 83.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs",
+    "huntCode": "DB1017",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (Book Cliffs, North)",
+    "hunters": 100,
+    "harvest": 91,
+    "successPct": 90.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs",
+    "huntCode": "DB1018",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (Book Cliffs, South)",
+    "hunters": 26,
+    "harvest": 22,
+    "successPct": 84.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs",
+    "huntCode": "DB1025",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 44,
+    "harvest": 32,
+    "successPct": 73.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs",
+    "huntCode": "DB1044",
+    "label": "Limited Entry Multiseason",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs",
+    "huntCode": "DB1090",
+    "label": "Limited Entry HAMSS (Book Cliffs, Floy Canyon)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Kaiparowits",
+    "huntCode": "DB1084",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader (Boulder/Kaiparowits)",
+    "hunters": 9,
+    "harvest": 4,
+    "successPct": 44.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Kaiparowits",
+    "huntCode": "DB1518",
+    "weapon": "archery",
+    "label": "General Season Archery (Boulder/Kaiparowits)",
+    "hunters": 338,
+    "harvest": 90,
+    "successPct": 26.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Kaiparowits",
+    "huntCode": "DB1548",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon (Boulder/Kaiparowits)",
+    "hunters": 946,
+    "harvest": 505,
+    "successPct": 53.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Kaiparowits",
+    "huntCode": "DB1578",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader (Boulder/Kaiparowits)",
+    "hunters": 297,
+    "harvest": 107,
+    "successPct": 35.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Kaiparowits",
+    "huntCode": "DB1787",
+    "label": "General Season Dedicated Hunter (Boulder/Kaiparowits)",
+    "hunters": 223,
+    "harvest": 58,
+    "successPct": 26.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder",
+    "huntCode": "DB1077",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 21,
+    "harvest": 14,
+    "successPct": 65,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder",
+    "huntCode": "DB1501",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 714,
+    "harvest": 185,
+    "successPct": 25.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder",
+    "huntCode": "DB1531",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 2353,
+    "harvest": 945,
+    "successPct": 40.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder",
+    "huntCode": "DB1561",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 709,
+    "harvest": 198,
+    "successPct": 28,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder",
+    "huntCode": "DB1770",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 67,
+    "harvest": 28,
+    "successPct": 41.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache",
+    "huntCode": "DB1078",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 60,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache",
+    "huntCode": "DB1502",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 623,
+    "harvest": 75,
+    "successPct": 12,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache",
+    "huntCode": "DB1532",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 1886,
+    "harvest": 512,
+    "successPct": 27.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache",
+    "huntCode": "DB1562",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 610,
+    "harvest": 100,
+    "successPct": 16.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache",
+    "huntCode": "DB1771",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 453,
+    "harvest": 142,
+    "successPct": 31.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Crawford Mtn",
+    "huntCode": "DB1026",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 9,
+    "harvest": 8,
+    "successPct": 87.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Chalk Creek",
+    "huntCode": "DB1100",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 10,
+    "harvest": 9,
+    "successPct": 88.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Chalk Creek",
+    "huntCode": "DB1599",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 639,
+    "harvest": 196,
+    "successPct": 30.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Chalk Creek",
+    "huntCode": "DB1600",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 309,
+    "harvest": 45,
+    "successPct": 14.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Chalk Creek",
+    "huntCode": "DB1601",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 284,
+    "harvest": 58,
+    "successPct": 20.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Chalk Creek",
+    "huntCode": "DB1602",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 296,
+    "harvest": 23,
+    "successPct": 7.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Chalk Creek",
+    "huntCode": "DB1799",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 26,
+    "harvest": 9,
+    "successPct": 36.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Chalk Creek/East Canyon/Morgan-South Rich",
+    "huntCode": "DB1774",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 71,
+    "harvest": 19,
+    "successPct": 27.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mountain",
+    "huntCode": "DB1015",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Diamond Mtn)",
+    "hunters": 27,
+    "harvest": 25,
+    "successPct": 92,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mountain",
+    "huntCode": "DB1023",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (Diamond Mtn)",
+    "hunters": 101,
+    "harvest": 97,
+    "successPct": 95.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mountain",
+    "huntCode": "DB1038",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Diamond Mtn)",
+    "hunters": 30,
+    "harvest": 25,
+    "successPct": 82.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mountain",
+    "huntCode": "DB1047",
+    "label": "Limited Entry Multiseason (Diamond Mtn)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon",
+    "huntCode": "DB1101",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon",
+    "huntCode": "DB1105",
+    "label": "Limited Entry HAMSS",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon",
+    "huntCode": "DB1603",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 479,
+    "harvest": 135,
+    "successPct": 28.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon",
+    "huntCode": "DB1604",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 238,
+    "harvest": 50,
+    "successPct": 21.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon",
+    "huntCode": "DB1605",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 239,
+    "harvest": 46,
+    "successPct": 19.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon",
+    "huntCode": "DB1606",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 228,
+    "harvest": 27,
+    "successPct": 11.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon",
+    "huntCode": "DB1800",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 57,
+    "harvest": 16,
+    "successPct": 28,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore",
+    "huntCode": "DB1028",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 11,
+    "harvest": 9,
+    "successPct": 81.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore",
+    "huntCode": "DB1506",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 347,
+    "harvest": 76,
+    "successPct": 21.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore",
+    "huntCode": "DB1536",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 724,
+    "harvest": 339,
+    "successPct": 46.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore",
+    "huntCode": "DB1566",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 330,
+    "harvest": 114,
+    "successPct": 34.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore",
+    "huntCode": "DB1591",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 323,
+    "harvest": 118,
+    "successPct": 36.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore",
+    "huntCode": "DB1775",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 256,
+    "harvest": 88,
+    "successPct": 34.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Oak Creek",
+    "huntCode": "DB1012",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Fillmore, Oak Creek LE)",
+    "hunters": 15,
+    "harvest": 10,
+    "successPct": 69.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Oak Creek",
+    "huntCode": "DB1019",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (Fillmore, Oak Creek LE)",
+    "hunters": 35,
+    "harvest": 33,
+    "successPct": 93.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Oak Creek",
+    "huntCode": "DB1029",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Fillmore, Oak Creek LE)",
+    "hunters": 12,
+    "harvest": 12,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Oak Creek",
+    "huntCode": "DB1045",
+    "label": "Limited Entry Multiseason (Fillmore, Oak Creek LE)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake",
+    "huntCode": "DB1055",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake",
+    "huntCode": "DB1519",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 198,
+    "harvest": 46,
+    "successPct": 23.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake",
+    "huntCode": "DB1549",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 343,
+    "harvest": 182,
+    "successPct": 53,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake",
+    "huntCode": "DB1579",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 170,
+    "harvest": 64,
+    "successPct": 37.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake",
+    "huntCode": "DB1596",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 172,
+    "harvest": 91,
+    "successPct": 52.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake",
+    "huntCode": "DB1788",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 119,
+    "harvest": 56,
+    "successPct": 47,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Henry Mountains",
+    "huntCode": "DB1000",
+    "weapon": "archery",
+    "label": "Premium Limited Entry Archery (Henry Mtns)",
+    "hunters": 11,
+    "harvest": 11,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Henry Mountains",
+    "huntCode": "DB1003",
+    "weapon": "any",
+    "label": "Premium Limited Entry Any Legal Weapon (Henry Mtns)",
+    "hunters": 27,
+    "harvest": 26,
+    "successPct": 96.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Henry Mountains",
+    "huntCode": "DB1005",
+    "weapon": "muzzleloader",
+    "label": "Premium Limited Entry Muzzleloader (Henry Mtns)",
+    "hunters": 11,
+    "harvest": 11,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Henry Mountains",
+    "huntCode": "DB1007",
+    "label": "Premium Limited Entry Multiseason (Henry Mtns)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kaiparowits HAMSS",
+    "huntCode": "DB1091",
+    "label": "Limited Entry HAMSS",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kamas",
+    "huntCode": "DB1030",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kamas",
+    "huntCode": "DB1508",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 182,
+    "harvest": 14,
+    "successPct": 7.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kamas",
+    "huntCode": "DB1538",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 337,
+    "harvest": 52,
+    "successPct": 15.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kamas",
+    "huntCode": "DB1568",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 170,
+    "harvest": 28,
+    "successPct": 16.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kamas",
+    "huntCode": "DB1592",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 141,
+    "harvest": 16,
+    "successPct": 11.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kamas",
+    "huntCode": "DB1777",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 107,
+    "harvest": 16,
+    "successPct": 14.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal Dolores Triangle",
+    "huntCode": "DB1013",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (La Sal, Dolores Triangle)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal Dolores Triangle",
+    "huntCode": "DB1020",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (La Sal, Dolores Triangle)",
+    "hunters": 11,
+    "harvest": 10,
+    "successPct": 90,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal Dolores Triangle",
+    "huntCode": "DB1031",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (La Sal, Dolores Triangle)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "LaSal General",
+    "huntCode": "DB1081",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader (La Sal, La Sal Mtns)",
+    "hunters": 7,
+    "harvest": 2,
+    "successPct": 28.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "LaSal General",
+    "huntCode": "DB1509",
+    "weapon": "archery",
+    "label": "General Season Archery (La Sal, La Sal Mtns)",
+    "hunters": 216,
+    "harvest": 74,
+    "successPct": 34.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "LaSal General",
+    "huntCode": "DB1539",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon (La Sal, La Sal Mtns)",
+    "hunters": 623,
+    "harvest": 372,
+    "successPct": 59.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "LaSal General",
+    "huntCode": "DB1569",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader (La Sal, La Sal Mtns)",
+    "hunters": 198,
+    "harvest": 97,
+    "successPct": 48.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "LaSal General",
+    "huntCode": "DB1778",
+    "label": "General Season Dedicated Hunter (La Sal, La Sal Mtns)",
+    "hunters": 166,
+    "harvest": 71,
+    "successPct": 42.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti/San Rafael",
+    "huntCode": "DB1079",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 38,
+    "harvest": 29,
+    "successPct": 77.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti/San Rafael",
+    "huntCode": "DB1503",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 1305,
+    "harvest": 256,
+    "successPct": 19.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti/San Rafael",
+    "huntCode": "DB1533",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 3782,
+    "harvest": 1530,
+    "successPct": 40.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti/San Rafael",
+    "huntCode": "DB1563",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 1203,
+    "harvest": 321,
+    "successPct": 26.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti/San Rafael",
+    "huntCode": "DB1772",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 922,
+    "harvest": 353,
+    "successPct": 38.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe",
+    "huntCode": "DB1032",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe",
+    "huntCode": "DB1510",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 158,
+    "harvest": 42,
+    "successPct": 26.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe",
+    "huntCode": "DB1540",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 426,
+    "harvest": 263,
+    "successPct": 61.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe",
+    "huntCode": "DB1570",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 136,
+    "harvest": 58,
+    "successPct": 42.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe",
+    "huntCode": "DB1779",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 89,
+    "harvest": 39,
+    "successPct": 44.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Morgan-South Rich",
+    "huntCode": "DB1103",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Morgan-South Rich",
+    "huntCode": "DB1607",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 441,
+    "harvest": 86,
+    "successPct": 19.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Morgan-South Rich",
+    "huntCode": "DB1608",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 203,
+    "harvest": 26,
+    "successPct": 12.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Morgan-South Rich",
+    "huntCode": "DB1609",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 192,
+    "harvest": 28,
+    "successPct": 14.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Morgan-South Rich",
+    "huntCode": "DB1610",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 185,
+    "harvest": 12,
+    "successPct": 6.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Morgan-South Rich",
+    "huntCode": "DB1801",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 14,
+    "harvest": 1,
+    "successPct": 8.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton",
+    "huntCode": "DB1053",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton",
+    "huntCode": "DB1511",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 63,
+    "harvest": 14,
+    "successPct": 22.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton",
+    "huntCode": "DB1541",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 185,
+    "harvest": 105,
+    "successPct": 56.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton",
+    "huntCode": "DB1571",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 59,
+    "harvest": 24,
+    "successPct": 41.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton",
+    "huntCode": "DB1780",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 46,
+    "harvest": 20,
+    "successPct": 43.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Myton",
+    "huntCode": "DB1094",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Other Muzzleloader",
+    "hunters": 16,
+    "harvest": 9,
+    "successPct": 56.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo",
+    "huntCode": "DB1080",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 23,
+    "harvest": 18,
+    "successPct": 76.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo",
+    "huntCode": "DB1504",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 711,
+    "harvest": 89,
+    "successPct": 12.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo",
+    "huntCode": "DB1534",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 2081,
+    "harvest": 750,
+    "successPct": 36,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo",
+    "huntCode": "DB1564",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 688,
+    "harvest": 148,
+    "successPct": 21.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo",
+    "huntCode": "DB1773",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 473,
+    "harvest": 163,
+    "successPct": 34.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile",
+    "huntCode": "DB1033",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 6,
+    "harvest": 5,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile",
+    "huntCode": "DB1512",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 198,
+    "harvest": 56,
+    "successPct": 28.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile",
+    "huntCode": "DB1542",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 426,
+    "harvest": 185,
+    "successPct": 43.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile",
+    "huntCode": "DB1572",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 183,
+    "harvest": 38,
+    "successPct": 20.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile",
+    "huntCode": "DB1593",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 197,
+    "harvest": 61,
+    "successPct": 31.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile",
+    "huntCode": "DB1781",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 148,
+    "harvest": 56,
+    "successPct": 37.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope",
+    "huntCode": "DB1065",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 12,
+    "harvest": 9,
+    "successPct": 75,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope",
+    "huntCode": "DB1513",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 384,
+    "harvest": 49,
+    "successPct": 12.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope",
+    "huntCode": "DB1543",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 717,
+    "harvest": 252,
+    "successPct": 35.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope",
+    "huntCode": "DB1573",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 370,
+    "harvest": 38,
+    "successPct": 10.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope",
+    "huntCode": "DB1598",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 349,
+    "harvest": 85,
+    "successPct": 24.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope",
+    "huntCode": "DB1782",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 147,
+    "harvest": 32,
+    "successPct": 22,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Ogden",
+    "huntCode": "DB1054",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 7,
+    "harvest": 5,
+    "successPct": 71.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Ogden",
+    "huntCode": "DB1514",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 271,
+    "harvest": 57,
+    "successPct": 21.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Ogden",
+    "huntCode": "DB1544",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 891,
+    "harvest": 230,
+    "successPct": 25.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Ogden",
+    "huntCode": "DB1574",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 263,
+    "harvest": 39,
+    "successPct": 14.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Ogden",
+    "huntCode": "DB1783",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 116,
+    "harvest": 31,
+    "successPct": 27.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Oquirrh-Stansbury",
+    "huntCode": "DB1082",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 13,
+    "harvest": 12,
+    "successPct": 92.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Oquirrh-Stansbury",
+    "huntCode": "DB1515",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 407,
+    "harvest": 65,
+    "successPct": 16,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Oquirrh-Stansbury",
+    "huntCode": "DB1545",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 1168,
+    "harvest": 610,
+    "successPct": 52.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Oquirrh-Stansbury",
+    "huntCode": "DB1575",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 386,
+    "harvest": 117,
+    "successPct": 30.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Oquirrh-Stansbury",
+    "huntCode": "DB1784",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 274,
+    "harvest": 115,
+    "successPct": 42,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake",
+    "huntCode": "DB1083",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 7,
+    "harvest": 4,
+    "successPct": 57.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake",
+    "huntCode": "DB1516",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 361,
+    "harvest": 121,
+    "successPct": 33.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake",
+    "huntCode": "DB1546",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 725,
+    "harvest": 410,
+    "successPct": 56.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake",
+    "huntCode": "DB1576",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 327,
+    "harvest": 132,
+    "successPct": 40.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake",
+    "huntCode": "DB1594",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 334,
+    "harvest": 161,
+    "successPct": 48.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake",
+    "huntCode": "DB1785",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 239,
+    "harvest": 118,
+    "successPct": 49.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Paunsaugunt",
+    "huntCode": "DB1001",
+    "weapon": "archery",
+    "label": "Premium Limited Entry Archery",
+    "hunters": 36,
+    "harvest": 20,
+    "successPct": 55.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Paunsaugunt",
+    "huntCode": "DB1004",
+    "weapon": "any",
+    "label": "Premium Limited Entry Any Legal Weapon",
+    "hunters": 86,
+    "harvest": 72,
+    "successPct": 83.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Paunsaugunt",
+    "huntCode": "DB1006",
+    "weapon": "muzzleloader",
+    "label": "Premium Limited Entry Muzzleloader",
+    "hunters": 30,
+    "harvest": 23,
+    "successPct": 77.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Paunsaugunt",
+    "huntCode": "DB1008",
+    "label": "Premium Limited Entry Multiseason",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Paunsaugunt",
+    "huntCode": "DB1010",
+    "weapon": "any",
+    "label": "Management Buck Any Legal Weapon",
+    "hunters": 21,
+    "harvest": 19,
+    "successPct": 90.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Paunsaugunt",
+    "huntCode": "DB1058",
+    "weapon": "any",
+    "label": "Cactus Buck Any Legal Weapon",
+    "hunters": 28,
+    "harvest": 13,
+    "successPct": 48,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Paunsaugunt",
+    "huntCode": "DB1073",
+    "weapon": "archery",
+    "label": "Management Buck Archery",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Paunsaugunt",
+    "huntCode": "DB1074",
+    "weapon": "muzzleloader",
+    "label": "Management Buck Muzzleloader",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "DB1034",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 17,
+    "harvest": 12,
+    "successPct": 70.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "DB1517",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 553,
+    "harvest": 134,
+    "successPct": 24.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "DB1547",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 1126,
+    "harvest": 526,
+    "successPct": 46.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "DB1577",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 539,
+    "harvest": 173,
+    "successPct": 32,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "DB1595",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 518,
+    "harvest": 183,
+    "successPct": 35.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "DB1786",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 394,
+    "harvest": 113,
+    "successPct": 28.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "DB1014",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (San Juan, Elk Ridge)",
+    "hunters": 15,
+    "harvest": 11,
+    "successPct": 73.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "DB1022",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (San Juan, Elk Ridge)",
+    "hunters": 42,
+    "harvest": 30,
+    "successPct": 70.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "DB1037",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (San Juan, Elk Ridge)",
+    "hunters": 17,
+    "harvest": 14,
+    "successPct": 82.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "DB1046",
+    "label": "Limited Entry Multiseason (San Juan, Elk Ridge)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, Abajo Mtns",
+    "huntCode": "DB1085",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 8,
+    "harvest": 7,
+    "successPct": 87.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, Abajo Mtns",
+    "huntCode": "DB1521",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 362,
+    "harvest": 108,
+    "successPct": 29.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, Abajo Mtns",
+    "huntCode": "DB1551",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 1085,
+    "harvest": 537,
+    "successPct": 49.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, Abajo Mtns",
+    "huntCode": "DB1581",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 354,
+    "harvest": 152,
+    "successPct": 42.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, Abajo Mtns",
+    "huntCode": "DB1790",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 159,
+    "harvest": 48,
+    "successPct": 30,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert",
+    "huntCode": "DB1040",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert",
+    "huntCode": "DB1524",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 76,
+    "harvest": 19,
+    "successPct": 24.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert",
+    "huntCode": "DB1554",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 251,
+    "harvest": 82,
+    "successPct": 32.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert",
+    "huntCode": "DB1584",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 76,
+    "harvest": 25,
+    "successPct": 32.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert",
+    "huntCode": "DB1793",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 53,
+    "harvest": 15,
+    "successPct": 28,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Thousand Lake",
+    "huntCode": "DB1036",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader (Thousand Lakes)",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Thousand Lake",
+    "huntCode": "DB1520",
+    "weapon": "archery",
+    "label": "General Season Archery (Thousand Lakes)",
+    "hunters": 48,
+    "harvest": 9,
+    "successPct": 17.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Thousand Lake",
+    "huntCode": "DB1550",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon (Thousand Lakes)",
+    "hunters": 59,
+    "harvest": 28,
+    "successPct": 47.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Thousand Lake",
+    "huntCode": "DB1580",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader (Thousand Lakes)",
+    "hunters": 42,
+    "harvest": 9,
+    "successPct": 21.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Thousand Lake",
+    "huntCode": "DB1789",
+    "label": "General Season Dedicated Hunter (Thousand Lakes)",
+    "hunters": 21,
+    "harvest": 5,
+    "successPct": 23.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernal/Bonanza",
+    "huntCode": "DB1086",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernal/Bonanza",
+    "huntCode": "DB1522",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 293,
+    "harvest": 105,
+    "successPct": 36,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernal/Bonanza",
+    "huntCode": "DB1552",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 396,
+    "harvest": 299,
+    "successPct": 75.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernal/Bonanza",
+    "huntCode": "DB1582",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 156,
+    "harvest": 87,
+    "successPct": 55.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernal/Bonanza",
+    "huntCode": "DB1791",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 113,
+    "harvest": 67,
+    "successPct": 59.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernon",
+    "huntCode": "DB1016",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (West Desert, Vernon)",
+    "hunters": 45,
+    "harvest": 25,
+    "successPct": 54.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernon",
+    "huntCode": "DB1024",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (West Desert, Vernon)",
+    "hunters": 147,
+    "harvest": 127,
+    "successPct": 86.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernon",
+    "huntCode": "DB1042",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (West Desert, Vernon)",
+    "hunters": 46,
+    "harvest": 27,
+    "successPct": 58.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernon",
+    "huntCode": "DB1048",
+    "label": "Limited Entry Multiseason (West Desert, Vernon)",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, East",
+    "huntCode": "DB1041",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 25,
+    "harvest": 20,
+    "successPct": 78.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, East",
+    "huntCode": "DB1525",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 793,
+    "harvest": 114,
+    "successPct": 14.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, East",
+    "huntCode": "DB1555",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 2285,
+    "harvest": 801,
+    "successPct": 35,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, East",
+    "huntCode": "DB1585",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 756,
+    "harvest": 156,
+    "successPct": 20.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, East",
+    "huntCode": "DB1794",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 583,
+    "harvest": 197,
+    "successPct": 33.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, West",
+    "huntCode": "DB1087",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 29,
+    "harvest": 13,
+    "successPct": 46.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, West",
+    "huntCode": "DB1526",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 895,
+    "harvest": 159,
+    "successPct": 17.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, West",
+    "huntCode": "DB1556",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 2756,
+    "harvest": 474,
+    "successPct": 17.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, West",
+    "huntCode": "DB1586",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 938,
+    "harvest": 98,
+    "successPct": 10.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, West",
+    "huntCode": "DB1795",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 587,
+    "harvest": 123,
+    "successPct": 21,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, Tintic",
+    "huntCode": "DB1088",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, Tintic",
+    "huntCode": "DB1527",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 121,
+    "harvest": 18,
+    "successPct": 14.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, Tintic",
+    "huntCode": "DB1557",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 379,
+    "harvest": 154,
+    "successPct": 40.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, Tintic",
+    "huntCode": "DB1587",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 119,
+    "harvest": 40,
+    "successPct": 33.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, Tintic",
+    "huntCode": "DB1796",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 84,
+    "harvest": 31,
+    "successPct": 37.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, West",
+    "huntCode": "DB1089",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, West",
+    "huntCode": "DB1528",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 58,
+    "harvest": 12,
+    "successPct": 20.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, West",
+    "huntCode": "DB1558",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 186,
+    "harvest": 55,
+    "successPct": 29.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, West",
+    "huntCode": "DB1588",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 58,
+    "harvest": 18,
+    "successPct": 30.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, West",
+    "huntCode": "DB1797",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 50,
+    "harvest": 14,
+    "successPct": 27.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Yellowstone",
+    "huntCode": "DB1039",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 60,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Yellowstone",
+    "huntCode": "DB1523",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 196,
+    "harvest": 47,
+    "successPct": 24.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Yellowstone",
+    "huntCode": "DB1553",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 515,
+    "harvest": 296,
+    "successPct": 57.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Yellowstone",
+    "huntCode": "DB1583",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 172,
+    "harvest": 65,
+    "successPct": 38.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Yellowstone",
+    "huntCode": "DB1792",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 125,
+    "harvest": 56,
+    "successPct": 45.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Zion",
+    "huntCode": "DB1043",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry on General Season Muzzleloader",
+    "hunters": 15,
+    "harvest": 11,
+    "successPct": 73.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Zion",
+    "huntCode": "DB1529",
+    "weapon": "archery",
+    "label": "General Season Archery",
+    "hunters": 542,
+    "harvest": 186,
+    "successPct": 34.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Zion",
+    "huntCode": "DB1559",
+    "weapon": "any",
+    "label": "General Season Any Legal Weapon",
+    "hunters": 1111,
+    "harvest": 611,
+    "successPct": 55,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Zion",
+    "huntCode": "DB1589",
+    "weapon": "muzzleloader",
+    "label": "General Season Muzzleloader",
+    "hunters": 511,
+    "harvest": 159,
+    "successPct": 31.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Zion",
+    "huntCode": "DB1597",
+    "weapon": "any",
+    "label": "General Season Early Any Legal Weapon",
+    "hunters": 526,
+    "harvest": 245,
+    "successPct": 46.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Zion",
+    "huntCode": "DB1798",
+    "label": "General Season Dedicated Hunter",
+    "hunters": 375,
+    "harvest": 130,
+    "successPct": 34.5,
+    "daysPerHarvest": null
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "unit": "Book Cliffs, South",
+    "huntCode": "RS6701",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder Newfoundland RMBS",
+    "huntCode": "RS6703",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (Box Elder, Newfoundland Mtn)",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder Newfoundland RMBS",
+    "huntCode": "RS6704",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (Box Elder, Newfoundland Mtn)",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder Newfoundland RMBS",
+    "huntCode": "RS6722",
+    "weapon": "archery",
+    "label": "OIAL Archery (Box Elder, Newfoundland Mtn)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Oak Creek RMBS",
+    "huntCode": "RS6720",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (Fillmore, Oak Creek)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Oak Creek RMBS",
+    "huntCode": "RS6726",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (Fillmore, Oak Creek)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Oak Creek RMBS",
+    "huntCode": "RS6727",
+    "weapon": "archery",
+    "label": "OIAL Archery (Fillmore, Oak Creek)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Henry Mtns",
+    "huntCode": "DS6600",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kaiparowits East",
+    "huntCode": "DS6601",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (Kaiparowits, East)",
+    "hunters": 9,
+    "harvest": 9,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kaiparowits Escalante",
+    "huntCode": "DS6602",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (Kaiparowits, Escalante)",
+    "hunters": 8,
+    "harvest": 7,
+    "successPct": 87.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kaiparowits West",
+    "huntCode": "DS6603",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (Kaiparowits, West)",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, Potash/South Cisco",
+    "huntCode": "DS6604",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mineral Mtns",
+    "huntCode": "DS6625",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo",
+    "huntCode": "RS6725",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile, Gray Canyon",
+    "huntCode": "RS6712",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 6,
+    "harvest": 5,
+    "successPct": 83.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile, Jack Creek",
+    "huntCode": "RS6713",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Summit/West Daggett",
+    "huntCode": "RS6709",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Three Corners",
+    "huntCode": "RS6708",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Oquirrh-Stansbury, West",
+    "huntCode": "RS6721",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley, Beaver Dam",
+    "huntCode": "DS6621",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley, Virgin River",
+    "huntCode": "DS6620",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, Lockhart",
+    "huntCode": "DS6606",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, North",
+    "huntCode": "DS6622",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, San Juan River",
+    "huntCode": "DS6623",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, South",
+    "huntCode": "DS6607",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael Dirty Devil",
+    "huntCode": "DS6608",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (San Rafael, Dirty Devil)",
+    "hunters": 7,
+    "harvest": 6,
+    "successPct": 85.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael Dirty Devil",
+    "huntCode": "DS6624",
+    "weapon": "archery",
+    "label": "OIAL Archery (San Rafael, Dirty Devil)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael South",
+    "huntCode": "DS6610",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (San Rafael, South)",
+    "hunters": 11,
+    "harvest": 9,
+    "successPct": 81.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael, North",
+    "huntCode": "DS6609",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns, West",
+    "huntCode": "RS6724",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Zion",
+    "huntCode": "DS6611",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   }
+  ],
+  "ELK": [
+   {
+    "unit": "Barney Top/Kaiparowits",
+    "huntCode": "EB3135",
+    "weapon": "archery",
+    "label": "Limited Entry September Archery",
+    "hunters": 9,
+    "harvest": 3,
+    "successPct": 33.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Barney Top/Kaiparowits",
+    "huntCode": "EB3142",
+    "label": "Limited Entry HAMSS",
+    "hunters": 10,
+    "harvest": 4,
+    "successPct": 44.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver Elk",
+    "huntCode": "EB3000",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Beaver, East)",
+    "hunters": 21,
+    "harvest": 15,
+    "successPct": 70,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver Elk",
+    "huntCode": "EB3024",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Beaver, East)",
+    "hunters": 11,
+    "harvest": 11,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver Elk",
+    "huntCode": "EB3025",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Beaver, East)",
+    "hunters": 15,
+    "harvest": 14,
+    "successPct": 93.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver Elk",
+    "huntCode": "EB3077",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Beaver, East)",
+    "hunters": 13,
+    "harvest": 10,
+    "successPct": 76.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver Elk",
+    "huntCode": "EB3102",
+    "label": "Limited Entry Multiseason (Beaver, East)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver Elk",
+    "huntCode": "EB3158",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Beaver, East)",
+    "hunters": 10,
+    "harvest": 5,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver Elk",
+    "huntCode": "EB3159",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Beaver, East)",
+    "hunters": 26,
+    "harvest": 21,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3001",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Book Cliffs, Bitter Creek/South)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3002",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Book Cliffs, Little Creek Roadless)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3026",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Book Cliffs, Bitter Creek/South)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3028",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Book Cliffs, Little Creek Roadless)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3078",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Book Cliffs, Bitter Creek/South)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3079",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Book Cliffs, Little Creek Roadless)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3104",
+    "label": "Limited Entry Multiseason (Book Cliffs, Little Creek Roadless)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3160",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Book Cliffs, Bitter Creek/East)",
+    "hunters": 21,
+    "harvest": 8,
+    "successPct": 40,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3161",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Book Cliffs, Bitter Creek/East)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3162",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Book Cliffs, Bitter Creek/East)",
+    "hunters": 9,
+    "harvest": 9,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3163",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Book Cliffs, Bitter Creek/East)",
+    "hunters": 14,
+    "harvest": 9,
+    "successPct": 64.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3164",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Book Cliffs, Bitter Creek/East)",
+    "hunters": 26,
+    "harvest": 15,
+    "successPct": 56,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3165",
+    "label": "Limited Entry Multiseason (Book Cliffs, Bitter Creek/East)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3166",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Book Cliffs, Bitter Creek/East)",
+    "hunters": 13,
+    "harvest": 9,
+    "successPct": 69.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs Elk",
+    "huntCode": "EB3167",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Book Cliffs, Little Creek Roadless)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Elk",
+    "huntCode": "EB3145",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Boulder)",
+    "hunters": 32,
+    "harvest": 21,
+    "successPct": 64.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Elk",
+    "huntCode": "EB3148",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Boulder)",
+    "hunters": 15,
+    "harvest": 13,
+    "successPct": 86.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Elk",
+    "huntCode": "EB3151",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Boulder)",
+    "hunters": 21,
+    "harvest": 18,
+    "successPct": 85,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Elk",
+    "huntCode": "EB3154",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Boulder)",
+    "hunters": 19,
+    "harvest": 15,
+    "successPct": 78.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Elk",
+    "huntCode": "EB3156",
+    "label": "Limited Entry Multiseason (Boulder)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Elk",
+    "huntCode": "EB3190",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Boulder)",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Boulder Elk",
+    "huntCode": "EB3191",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Boulder)",
+    "hunters": 36,
+    "harvest": 26,
+    "successPct": 71.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Grouse Creek",
+    "huntCode": "EB3147",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 62.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Grouse Creek",
+    "huntCode": "EB3150",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon",
+    "hunters": 14,
+    "harvest": 7,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Grouse Creek",
+    "huntCode": "EB3153",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Pilot Mtn",
+    "huntCode": "EB3031",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 11,
+    "harvest": 7,
+    "successPct": 60,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Pilot Mtn",
+    "huntCode": "EB3130",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Meadowville",
+    "huntCode": "EB3003",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 9,
+    "harvest": 3,
+    "successPct": 33.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Meadowville",
+    "huntCode": "EB3032",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 57.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Meadowville",
+    "huntCode": "EB3033",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Meadowville",
+    "huntCode": "EB3081",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Meadowville",
+    "huntCode": "EB3105",
+    "label": "Limited Entry Multiseason",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Meadowville",
+    "huntCode": "EB3168",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Meadowville",
+    "huntCode": "EB3169",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon",
+    "hunters": 13,
+    "harvest": 3,
+    "successPct": 25,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, North",
+    "huntCode": "EB3132",
+    "weapon": "archery",
+    "label": "Limited Entry September Archery",
+    "hunters": 28,
+    "harvest": 7,
+    "successPct": 25.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, North",
+    "huntCode": "EB3139",
+    "label": "Limited Entry HAMSS",
+    "hunters": 28,
+    "harvest": 10,
+    "successPct": 34.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, South",
+    "huntCode": "EB3005",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 9,
+    "harvest": 3,
+    "successPct": 33.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, South",
+    "huntCode": "EB3036",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, South",
+    "huntCode": "EB3037",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon",
+    "hunters": 7,
+    "harvest": 4,
+    "successPct": 57.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, South",
+    "huntCode": "EB3083",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, South",
+    "huntCode": "EB3107",
+    "label": "Limited Entry Multiseason",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, South",
+    "huntCode": "EB3170",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, South",
+    "huntCode": "EB3171",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon",
+    "hunters": 11,
+    "harvest": 3,
+    "successPct": 30,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn",
+    "huntCode": "EB3020",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 24,
+    "harvest": 8,
+    "successPct": 35,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn",
+    "huntCode": "EB3068",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon",
+    "hunters": 25,
+    "harvest": 21,
+    "successPct": 82.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn",
+    "huntCode": "EB3069",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon",
+    "hunters": 36,
+    "harvest": 32,
+    "successPct": 88.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn",
+    "huntCode": "EB3098",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 21,
+    "harvest": 17,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn",
+    "huntCode": "EB3122",
+    "label": "Limited Entry Multiseason",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn",
+    "huntCode": "EB3195",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn",
+    "huntCode": "EB3196",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon",
+    "hunters": 17,
+    "harvest": 8,
+    "successPct": 47.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Pahvant",
+    "huntCode": "EB3008",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Fillmore, Pahvant)",
+    "hunters": 19,
+    "harvest": 9,
+    "successPct": 47.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Pahvant",
+    "huntCode": "EB3042",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Fillmore, Pahvant)",
+    "hunters": 12,
+    "harvest": 10,
+    "successPct": 81.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Pahvant",
+    "huntCode": "EB3043",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Fillmore, Pahvant)",
+    "hunters": 14,
+    "harvest": 11,
+    "successPct": 76.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Pahvant",
+    "huntCode": "EB3086",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Fillmore, Pahvant)",
+    "hunters": 12,
+    "harvest": 8,
+    "successPct": 66.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Pahvant",
+    "huntCode": "EB3110",
+    "label": "Limited Entry Multiseason (Fillmore, Pahvant)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Pahvant",
+    "huntCode": "EB3180",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Fillmore, Pahvant)",
+    "hunters": 10,
+    "harvest": 1,
+    "successPct": 10,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore Pahvant",
+    "huntCode": "EB3181",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Fillmore, Pahvant)",
+    "hunters": 22,
+    "harvest": 13,
+    "successPct": 57.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake/Thousand Lakes",
+    "huntCode": "EB3018",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 86,
+    "harvest": 28,
+    "successPct": 32.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake/Thousand Lakes",
+    "huntCode": "EB3063",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon",
+    "hunters": 37,
+    "harvest": 24,
+    "successPct": 63.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake/Thousand Lakes",
+    "huntCode": "EB3064",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon",
+    "hunters": 101,
+    "harvest": 64,
+    "successPct": 63.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake/Thousand Lakes",
+    "huntCode": "EB3065",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon",
+    "hunters": 61,
+    "harvest": 45,
+    "successPct": 73.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake/Thousand Lakes",
+    "huntCode": "EB3096",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 52,
+    "harvest": 36,
+    "successPct": 70,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake/Thousand Lakes",
+    "huntCode": "EB3120",
+    "label": "Limited Entry Multiseason",
+    "hunters": 12,
+    "harvest": 11,
+    "successPct": 90.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fishlake/Thousand Lakes",
+    "huntCode": "EB3192",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 20,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, Dolores Triangle",
+    "huntCode": "EB3044",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon",
+    "hunters": 7,
+    "harvest": 6,
+    "successPct": 83.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, La Sal Mtns",
+    "huntCode": "EB3009",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 38,
+    "harvest": 11,
+    "successPct": 28.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, La Sal Mtns",
+    "huntCode": "EB3045",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon",
+    "hunters": 19,
+    "harvest": 15,
+    "successPct": 78.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, La Sal Mtns",
+    "huntCode": "EB3046",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon",
+    "hunters": 26,
+    "harvest": 15,
+    "successPct": 57.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, La Sal Mtns",
+    "huntCode": "EB3087",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 24,
+    "harvest": 17,
+    "successPct": 70.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, La Sal Mtns",
+    "huntCode": "EB3111",
+    "label": "Limited Entry Multiseason",
+    "hunters": 7,
+    "harvest": 4,
+    "successPct": 57.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, La Sal Mtns",
+    "huntCode": "EB3182",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, La Sal Mtns",
+    "huntCode": "EB3183",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon",
+    "hunters": 47,
+    "harvest": 26,
+    "successPct": 56.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti Elk",
+    "huntCode": "EB3006",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Manti)",
+    "hunters": 168,
+    "harvest": 46,
+    "successPct": 27.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti Elk",
+    "huntCode": "EB3038",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Manti)",
+    "hunters": 77,
+    "harvest": 56,
+    "successPct": 72.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti Elk",
+    "huntCode": "EB3039",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Manti)",
+    "hunters": 115,
+    "harvest": 91,
+    "successPct": 79.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti Elk",
+    "huntCode": "EB3084",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Manti)",
+    "hunters": 103,
+    "harvest": 68,
+    "successPct": 66.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti Elk",
+    "huntCode": "EB3108",
+    "label": "Limited Entry Multiseason (Manti)",
+    "hunters": 22,
+    "harvest": 19,
+    "successPct": 85.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti Elk",
+    "huntCode": "EB3126",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Manti)",
+    "hunters": 195,
+    "harvest": 124,
+    "successPct": 63.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Manti Elk",
+    "huntCode": "EB3172",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Manti)",
+    "hunters": 7,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe Elk",
+    "huntCode": "EB3010",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Monroe)",
+    "hunters": 19,
+    "harvest": 11,
+    "successPct": 57.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe Elk",
+    "huntCode": "EB3047",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Monroe)",
+    "hunters": 12,
+    "harvest": 12,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe Elk",
+    "huntCode": "EB3048",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Monroe)",
+    "hunters": 12,
+    "harvest": 8,
+    "successPct": 66.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe Elk",
+    "huntCode": "EB3088",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Monroe)",
+    "hunters": 11,
+    "harvest": 9,
+    "successPct": 81.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe Elk",
+    "huntCode": "EB3112",
+    "label": "Limited Entry Multiseason (Monroe)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe Elk",
+    "huntCode": "EB3184",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Monroe)",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Monroe Elk",
+    "huntCode": "EB3185",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Monroe)",
+    "hunters": 21,
+    "harvest": 15,
+    "successPct": 73.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton Elk",
+    "huntCode": "EB3011",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Mt Dutton)",
+    "hunters": 18,
+    "harvest": 8,
+    "successPct": 47.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton Elk",
+    "huntCode": "EB3049",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Mt Dutton)",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton Elk",
+    "huntCode": "EB3050",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Mt Dutton)",
+    "hunters": 13,
+    "harvest": 11,
+    "successPct": 84.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton Elk",
+    "huntCode": "EB3089",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Mt Dutton)",
+    "hunters": 11,
+    "harvest": 8,
+    "successPct": 72.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton Elk",
+    "huntCode": "EB3113",
+    "label": "Limited Entry Multiseason (Mt Dutton)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton Elk",
+    "huntCode": "EB3186",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Mt Dutton)",
+    "hunters": 7,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton Elk",
+    "huntCode": "EB3187",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Mt Dutton)",
+    "hunters": 22,
+    "harvest": 21,
+    "successPct": 95.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo",
+    "huntCode": "EB3040",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo",
+    "huntCode": "EB3109",
+    "label": "Limited Entry Multiseason",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo/San Pitch Mtns",
+    "huntCode": "EB3173",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 19,
+    "harvest": 5,
+    "successPct": 27.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo/San Pitch Mtns",
+    "huntCode": "EB3174",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo/San Pitch Mtns",
+    "huntCode": "EB3175",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon",
+    "hunters": 9,
+    "harvest": 8,
+    "successPct": 88.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo/San Pitch Mtns",
+    "huntCode": "EB3176",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon",
+    "hunters": 14,
+    "harvest": 9,
+    "successPct": 64.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo/San Pitch Mtns",
+    "huntCode": "EB3177",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon",
+    "hunters": 24,
+    "harvest": 19,
+    "successPct": 78.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo/San Pitch Mtns",
+    "huntCode": "EB3178",
+    "label": "Limited Entry Multiseason",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nebo/San Pitch Mtns",
+    "huntCode": "EB3179",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 12,
+    "harvest": 9,
+    "successPct": 72.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Three Corners",
+    "huntCode": "EB3013",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Three Corners",
+    "huntCode": "EB3053",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon",
+    "hunters": 14,
+    "harvest": 12,
+    "successPct": 85.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Three Corners",
+    "huntCode": "EB3091",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Three Corners",
+    "huntCode": "EB3115",
+    "label": "Limited Entry Multiseason",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake Elk",
+    "huntCode": "EB3015",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Panguitch Lake)",
+    "hunters": 18,
+    "harvest": 9,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake Elk",
+    "huntCode": "EB3056",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Panguitch Lake)",
+    "hunters": 9,
+    "harvest": 6,
+    "successPct": 66.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake Elk",
+    "huntCode": "EB3057",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Panguitch Lake)",
+    "hunters": 10,
+    "harvest": 10,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake Elk",
+    "huntCode": "EB3093",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Panguitch Lake)",
+    "hunters": 10,
+    "harvest": 9,
+    "successPct": 90,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake Elk",
+    "huntCode": "EB3117",
+    "label": "Limited Entry Multiseason (Panguitch Lake)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake Elk",
+    "huntCode": "EB3188",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Panguitch Lake)",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 20,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Lake Elk",
+    "huntCode": "EB3189",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Panguitch Lake)",
+    "hunters": 19,
+    "harvest": 10,
+    "successPct": 52.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "EB3019",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (San Juan Bull Elk)",
+    "hunters": 26,
+    "harvest": 12,
+    "successPct": 48,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "EB3066",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (San Juan Bull Elk)",
+    "hunters": 20,
+    "harvest": 16,
+    "successPct": 78.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "EB3067",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (San Juan Bull Elk)",
+    "hunters": 17,
+    "harvest": 12,
+    "successPct": 70.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "EB3097",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (San Juan Bull Elk)",
+    "hunters": 17,
+    "harvest": 12,
+    "successPct": 68.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "EB3121",
+    "label": "Limited Entry Multiseason (San Juan Bull Elk)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "EB3193",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (San Juan Bull Elk)",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan",
+    "huntCode": "EB3194",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (San Juan Bull Elk)",
+    "hunters": 32,
+    "harvest": 20,
+    "successPct": 62.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3136",
+    "weapon": "archery",
+    "label": "Limited Entry September Archery (Southwest Desert, North)",
+    "hunters": 11,
+    "harvest": 9,
+    "successPct": 81.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3143",
+    "label": "Limited Entry HAMSS (Southwest Desert, North)",
+    "hunters": 13,
+    "harvest": 10,
+    "successPct": 75,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3146",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Southwest Desert, South)",
+    "hunters": 36,
+    "harvest": 17,
+    "successPct": 47.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3149",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Southwest Desert, South)",
+    "hunters": 19,
+    "harvest": 15,
+    "successPct": 77.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3152",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Southwest Desert, South)",
+    "hunters": 24,
+    "harvest": 16,
+    "successPct": 65.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3155",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Southwest Desert, South)",
+    "hunters": 23,
+    "harvest": 14,
+    "successPct": 61.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3157",
+    "label": "Limited Entry Multiseason (Southwest Desert, South)",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3197",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Southwest Desert, South)",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert Elk",
+    "huntCode": "EB3198",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Southwest Desert, South)",
+    "hunters": 43,
+    "harvest": 30,
+    "successPct": 70.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Elk",
+    "huntCode": "EB3022",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Wasatch Mtns)",
+    "hunters": 199,
+    "harvest": 37,
+    "successPct": 18.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Elk",
+    "huntCode": "EB3072",
+    "weapon": "any",
+    "label": "Limited Entry Early Any Legal Weapon (Wasatch Mtns)",
+    "hunters": 88,
+    "harvest": 57,
+    "successPct": 65,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Elk",
+    "huntCode": "EB3073",
+    "weapon": "any",
+    "label": "Limited Entry Late Any Legal Weapon (Wasatch Mtns)",
+    "hunters": 139,
+    "harvest": 93,
+    "successPct": 66.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Elk",
+    "huntCode": "EB3100",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Wasatch Mtns)",
+    "hunters": 122,
+    "harvest": 82,
+    "successPct": 67.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Elk",
+    "huntCode": "EB3124",
+    "label": "Limited Entry Multiseason (Wasatch Mtns)",
+    "hunters": 27,
+    "harvest": 21,
+    "successPct": 76.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Elk",
+    "huntCode": "EB3127",
+    "weapon": "any",
+    "label": "Limited Entry Mid Any Legal Weapon (Wasatch Mtns)",
+    "hunters": 239,
+    "harvest": 129,
+    "successPct": 53.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Elk",
+    "huntCode": "EB3199",
+    "weapon": "archery",
+    "label": "Limited Entry Late Archery (Wasatch Mtns)",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 20,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, Deep Creek",
+    "huntCode": "EB3137",
+    "weapon": "archery",
+    "label": "Limited Entry September Archery",
+    "hunters": 13,
+    "harvest": 8,
+    "successPct": 58.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert, Deep Creek",
+    "huntCode": "EB3144",
+    "label": "Limited Entry HAMSS",
+    "hunters": 13,
+    "harvest": 10,
+    "successPct": 75,
+    "daysPerHarvest": null
+   }
+  ],
+  "MOOSE": [
+   {
+    "unit": "Cache Moose",
+    "huntCode": "MB6000",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (Cache)",
+    "hunters": 16,
+    "harvest": 16,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Chalk Creek",
+    "huntCode": "MB6001",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn/Vernal",
+    "huntCode": "MB6009",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon",
+    "huntCode": "MB6002",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "East Canyon, Morgan-Summit",
+    "huntCode": "MB6003",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kamas",
+    "huntCode": "MB6004",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Morgan-South Rich",
+    "huntCode": "MB6005",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope Uintas",
+    "huntCode": "MB6006",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (North Slope, Summit)",
+    "hunters": 27,
+    "harvest": 27,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope Uintas",
+    "huntCode": "MB6007",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon (North Slope, Three Corners/West Daggett)",
+    "hunters": 9,
+    "harvest": 9,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Ogden",
+    "huntCode": "MB6008",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 9,
+    "harvest": 9,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Wasatch Mtns/Central Mtns",
+    "huntCode": "MB6011",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 24,
+    "harvest": 24,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Yellowstone",
+    "huntCode": "MB6010",
+    "weapon": "any",
+    "label": "OIAL Any Legal Weapon",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "unit": "Beaver",
+    "huntCode": "PB5000",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 9,
+    "harvest": 7,
+    "successPct": 77.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Beaver",
+    "huntCode": "PB5025",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 42,
+    "harvest": 40,
+    "successPct": 95.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs, Bitter Creek",
+    "huntCode": "PB5001",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 12,
+    "harvest": 11,
+    "successPct": 91.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs, Bitter Creek",
+    "huntCode": "PB5026",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 50,
+    "harvest": 45,
+    "successPct": 91.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs, South",
+    "huntCode": "PB5002",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Book Cliffs, South",
+    "huntCode": "PB5027",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 30,
+    "harvest": 29,
+    "successPct": 96.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Promontory",
+    "huntCode": "PB5003",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Promontory",
+    "huntCode": "PB5028",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 15,
+    "harvest": 9,
+    "successPct": 57.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Puddle Valley",
+    "huntCode": "PB5004",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Puddle Valley",
+    "huntCode": "PB5029",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 18,
+    "harvest": 17,
+    "successPct": 94.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Snowville",
+    "huntCode": "PB5005",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 42.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, Snowville",
+    "huntCode": "PB5030",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 38,
+    "harvest": 36,
+    "successPct": 94.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, West",
+    "huntCode": "PB5006",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 8,
+    "harvest": 6,
+    "successPct": 71.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Box Elder, West",
+    "huntCode": "PB5031",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 40,
+    "harvest": 32,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Rich",
+    "huntCode": "PB5073",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Rich",
+    "huntCode": "PB5074",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache, Rich",
+    "huntCode": "PB5075",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Cache/Morgan-South Rich/Ogden",
+    "huntCode": "PB5032",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn/Bonanza",
+    "huntCode": "PB5016",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 18,
+    "harvest": 17,
+    "successPct": 94.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn/Bonanza",
+    "huntCode": "PB5047",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 57,
+    "harvest": 57,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Diamond Mtn/Bonanza",
+    "huntCode": "PB5060",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 18,
+    "harvest": 17,
+    "successPct": 94.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore, Oak Creek South",
+    "huntCode": "PB5008",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 12,
+    "harvest": 10,
+    "successPct": 83.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore, Oak Creek South",
+    "huntCode": "PB5033",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 37,
+    "harvest": 37,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Fillmore, Oak Creek South",
+    "huntCode": "PB5065",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 13,
+    "harvest": 11,
+    "successPct": 84.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Kaiparowits",
+    "huntCode": "PB5034",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, Potash/South Cisco",
+    "huntCode": "PB5009",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "La Sal, Potash/South Cisco",
+    "huntCode": "PB5035",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 22,
+    "harvest": 21,
+    "successPct": 95.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton/Paunsaugunt",
+    "huntCode": "PB5331",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 38,
+    "harvest": 24,
+    "successPct": 62.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Mt Dutton/Paunsaugunt",
+    "huntCode": "PB5332",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 8,
+    "harvest": 0,
+    "successPct": 0,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile, Anthro-Myton Bench",
+    "huntCode": "PB5011",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 28,
+    "harvest": 25,
+    "successPct": 89.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile, Anthro-Myton Bench",
+    "huntCode": "PB5037",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 87,
+    "harvest": 85,
+    "successPct": 97.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile, Anthro-Myton Bench",
+    "huntCode": "PB5059",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 29,
+    "harvest": 26,
+    "successPct": 89.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile, Range Creek",
+    "huntCode": "PB5038",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 11,
+    "harvest": 11,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Nine Mile, Range Creek",
+    "huntCode": "PB5053",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 50,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Summit",
+    "huntCode": "PB5039",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 13,
+    "harvest": 12,
+    "successPct": 92.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Three Corners/West Daggett",
+    "huntCode": "PB5012",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 11,
+    "harvest": 8,
+    "successPct": 70,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Three Corners/West Daggett",
+    "huntCode": "PB5040",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 37,
+    "harvest": 31,
+    "successPct": 83.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "North Slope, Three Corners/West Daggett",
+    "huntCode": "PB5066",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 11,
+    "harvest": 9,
+    "successPct": 81.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Antelope",
+    "huntCode": "PB5041",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (Panguitch Lake/Zion, North)",
+    "hunters": 25,
+    "harvest": 23,
+    "successPct": 91.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Antelope",
+    "huntCode": "PB5054",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (Panguitch Lake/Zion, North)",
+    "hunters": 8,
+    "harvest": 6,
+    "successPct": 71.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Panguitch Antelope",
+    "huntCode": "PB5061",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader (Panguitch Lake/Zion, North)",
+    "hunters": 8,
+    "harvest": 8,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Parker Mtn",
+    "huntCode": "PB5076",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 43,
+    "harvest": 42,
+    "successPct": 97.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Parker Mtn",
+    "huntCode": "PB5077",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 14,
+    "harvest": 6,
+    "successPct": 46.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Parker Mtn",
+    "huntCode": "PB5078",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 15,
+    "harvest": 12,
+    "successPct": 78.6,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "PB5013",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 7,
+    "harvest": 5,
+    "successPct": 71.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "PB5042",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 24,
+    "harvest": 20,
+    "successPct": 81.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Pine Valley",
+    "huntCode": "PB5062",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 7,
+    "harvest": 4,
+    "successPct": 57.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Juan, Hatch Point",
+    "huntCode": "PB5044",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael, Desert",
+    "huntCode": "PB5045",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 66.7,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael, Desert",
+    "huntCode": "PB5055",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael, North",
+    "huntCode": "PB5015",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 20,
+    "harvest": 13,
+    "successPct": 65,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael, North",
+    "huntCode": "PB5046",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 67,
+    "harvest": 66,
+    "successPct": 98.5,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "San Rafael, North",
+    "huntCode": "PB5056",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 21,
+    "harvest": 16,
+    "successPct": 76.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert",
+    "huntCode": "PB5018",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 31,
+    "harvest": 23,
+    "successPct": 74.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert",
+    "huntCode": "PB5024",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 31,
+    "harvest": 26,
+    "successPct": 83.9,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Southwest Desert",
+    "huntCode": "PB5049",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 99,
+    "harvest": 81,
+    "successPct": 81.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernal",
+    "huntCode": "PB5017",
+    "weapon": "archery",
+    "label": "Limited Entry Archery",
+    "hunters": 19,
+    "harvest": 13,
+    "successPct": 68.4,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernal",
+    "huntCode": "PB5048",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon",
+    "hunters": 62,
+    "harvest": 51,
+    "successPct": 82,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "Vernal",
+    "huntCode": "PB5072",
+    "weapon": "muzzleloader",
+    "label": "Limited Entry Muzzleloader",
+    "hunters": 20,
+    "harvest": 13,
+    "successPct": 63.2,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert",
+    "huntCode": "PB5019",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (West Desert, Riverbed)",
+    "hunters": 15,
+    "harvest": 15,
+    "successPct": 100,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert",
+    "huntCode": "PB5020",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (West Desert, Rush Valley)",
+    "hunters": 8,
+    "harvest": 2,
+    "successPct": 25,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert",
+    "huntCode": "PB5021",
+    "weapon": "archery",
+    "label": "Limited Entry Archery (West Desert, Snake Valley)",
+    "hunters": 19,
+    "harvest": 12,
+    "successPct": 61.1,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert",
+    "huntCode": "PB5050",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (West Desert, Riverbed)",
+    "hunters": 66,
+    "harvest": 64,
+    "successPct": 96.8,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert",
+    "huntCode": "PB5051",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (West Desert, Rush Valley)",
+    "hunters": 34,
+    "harvest": 29,
+    "successPct": 85.3,
+    "daysPerHarvest": null
+   },
+   {
+    "unit": "West Desert",
+    "huntCode": "PB5052",
+    "weapon": "any",
+    "label": "Limited Entry Any Legal Weapon (West Desert, Snake Valley)",
+    "hunters": 84,
+    "harvest": 68,
+    "successPct": 80.5,
+    "daysPerHarvest": null
+   }
+  ]
+ }
+}

@@ -1,6 +1,7 @@
 import type { Hunt, SpeciesKey, StateInfo, StateModule } from '../schema';
 import { parsePct, stat } from '../util';
 import { HUNT_DATA, type UnitStats } from '@/app/api/strategy/data';
+import { harvestForHunt } from '../harvest';
 
 // Utah is still hand-entered (ROADMAP Phase 1: replace with DWR draw odds), so
 // every hunt is marked "estimated" and carries no draw year.
@@ -27,6 +28,7 @@ export function utahModule(info: StateInfo): StateModule {
               resident: null,
               nonresident: stat({ tags: d.nrTagsApprox, successPct: parsePct(d.randomOddsNR) }),
             },
+            harvest: harvestForHunt('UT', species, key, key),
           };
         });
     },

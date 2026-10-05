@@ -23,6 +23,8 @@ import { montanaHuntsForUnit, MONTANA_DRAW_YEAR, buildMontanaScoutDataset } from
 import { getStateModule } from '@/lib/huntdata/registry';
 import { buildGenericDrawSummary, buildGenericScoutDataset } from '@/lib/huntdata/generic';
 import { filterToKnownUnits } from '@/lib/huntdata/unitGuard';
+import { buildHarvestBlock, enrichScoutDataset, harvestPromptNote } from '@/lib/huntdata/harvest';
+import { toStateCode } from '@/lib/huntdata/registry';
 import type { SpeciesKey } from '@/lib/huntdata/schema';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -229,7 +231,7 @@ export async function POST(req: Request) {
       // Wyoming Deer V2: use the adapter — returns 46 hunt products (17 regions + 29 LQ)
       // with notableUnits nested inside region entries. SCOUT sees real draw decisions,
       // not the 162 raw entries that include geographic substructure.
-      const scoutDataset = isWyoming && isDeer
+      const baseScoutDataset = isWyoming && isDeer
         ? buildWyomingDeerScoutDataset({ includeWhitetail: false })
 
         : isWyoming && isElk
@@ -336,6 +338,12 @@ export async function POST(req: Request) {
             nrRandomOdds2024: 'N/A',
           }));
 
+      // Attach agency hunter-success rates where a harvest file exists for the state.
+      const stateCode = toStateCode(stateName);
+      const scoutDataset = stateCode
+        ? enrichScoutDataset(stateCode, speciesKey as SpeciesKey, baseScoutDataset as Array<Record<string, unknown>>)
+        : baseScoutDataset;
+
       // ── Build and send scout prompt ───────────────────────────────────────
       const promptParams: ScoutPromptParams = {
         stateName,
@@ -364,7 +372,7 @@ export async function POST(req: Request) {
         drawRules: usesSharedBuilders && stateModule!.rulesVerified ? stateModule!.drawSystemNote : undefined,
       };
 
-      const scoutPrompt = buildScoutPrompt(promptParams);
+      const scoutPrompt = buildScoutPrompt(promptParams) + harvestPromptNote(scoutDataset as Array<Record<string, unknown>>);
 
       const response = await openai.chat.completions.create({
         model: "gpt-4o",
@@ -609,6 +617,12 @@ export async function POST(req: Request) {
       ? `PUBLIC LAND: approximately ${sampledLand.publicPct}% public land, computed from BLM surface ownership sampled across the unit (${sampledLand.sampled} points). Use this figure for the public/private split rather than guessing.`
       : '';
 
+    // Agency hunter-success figures for this unit (controlled + general rows).
+    const briefStateCode = toStateCode(stateName);
+    const harvestBlock = briefStateCode
+      ? buildHarvestBlock(briefStateCode, speciesKey as SpeciesKey, speciesLabel, unitResolved)
+      : '';
+
     const geographicGuardrails = `
       SPECIES: This is a ${speciesLabel} hunt in ${stateName}. EVERY section must be about ${speciesLabel} specifically — trophy scores, behavior, terrain use, and rut timing must all match ${speciesLabel}. NEVER write about mule deer (or any other species) unless ${speciesLabel} IS that species.
       ${geoAnchor}
@@ -618,6 +632,7 @@ export async function POST(req: Request) {
       ${wildernessBlock}
       ${accessSummary.text}
       ${drawSummary}
+      ${harvestBlock}
       USER STATUS: ${formData.residency}
       MANDATORY COMPLIANCE:
       1. NO MARKDOWN: section titles ALL CAPS. No asterisks. No hashtags.
@@ -643,6 +658,7 @@ What makes this unit unique. Where it sits geographically. What kind of country 
 
 2. DRAW ODDS & RESIDENCY
 Use ONLY the numbers from the data block above. Explain the draw system clearly. Tell the hunter exactly what their odds are and why. If resident: explain the random draw system. If NR: explain all pools and what points are needed.
+${harvestBlock ? 'Then give the hunter success rate for this hunt from the HARVEST SUCCESS block (with its season year) so the hunter knows their odds of filling the tag once drawn. If the figure is unit-wide rather than for this exact hunt, say so.' : 'No harvest success data is available for this hunt — do not estimate one.'}
 
 3. POPULATION AUDIT
 Honest assessment of animal numbers in this unit. Population trend if known. What's driving density. Don't sugarcoat a struggling herd.
