@@ -8,11 +8,13 @@ type Pick = Record<string, unknown> & { huntCode?: unknown };
 export type Tier = 'DRAW_NOW' | 'RANDOM_PLAY' | 'BUILD_AND_WAIT' | 'LONG_GAME';
 
 // Same thresholds the prompt describes.
-export function tierFor(oddsPct: number | null): Tier {
-  if (oddsPct == null) return 'BUILD_AND_WAIT';
+// In a pure random draw (no points) there is nothing to build toward, so
+// anything under 15% is simply a long shot.
+export function tierFor(oddsPct: number | null, hasPoints = true): Tier {
+  if (oddsPct == null) return hasPoints ? 'BUILD_AND_WAIT' : 'LONG_GAME';
   if (oddsPct >= 50) return 'DRAW_NOW';
   if (oddsPct >= 15) return 'RANDOM_PLAY';
-  if (oddsPct >= 2) return 'BUILD_AND_WAIT';
+  if (oddsPct >= 2 && hasPoints) return 'BUILD_AND_WAIT';
   return 'LONG_GAME';
 }
 

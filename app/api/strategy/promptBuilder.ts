@@ -32,6 +32,8 @@ export type ScoutPromptParams = {
   formData: Record<string, any>;
   // States on the shared builders (lib/huntdata): use buildSharedStatePrompt.
   sharedState?: boolean;
+  // Pure random draw (e.g. New Mexico): no point language anywhere.
+  noPoints?: boolean;
   // Verified draw-system rules for those states (omitted when unverified).
   drawRules?: string;
 };
@@ -1384,7 +1386,9 @@ ${p.drawRules
     ? `DRAW RULES (verified): ${p.drawRules}`
     : `Draw rules for ${p.stateName} are not loaded. Do NOT describe point systems or pools; tell the hunter to confirm rules with the state agency.`}
 
-Hunter holds ${p.hunterPoints} points for this species in ${p.stateName}.
+${p.noPoints
+    ? `${p.stateName} is a pure random draw with NO points. Never mention building, banking or holding points, and set pointBankingAdvice to "". Low-odds hunts are long shots every year, not point investments.`
+    : `Hunter holds ${p.hunterPoints} points for this species in ${p.stateName}.`}
 
 ${sharedHunterProfile(p)}
 

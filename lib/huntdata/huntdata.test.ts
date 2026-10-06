@@ -481,3 +481,15 @@ describe('New Mexico harvest', () => {
     expect(elk.filter((h) => h.harvest).length / elk.length).toBeGreaterThan(0.8);
   });
 });
+
+describe('random-draw states have no point language', () => {
+  it('labels low odds as long shots and drops point advice', async () => {
+    const { buildSharedScoutResponse } = await import('./sharedScout');
+    const out = buildSharedScoutResponse(
+      [{ unit: '34', huntCode: 'ELK-1-349', drawSuccess: 8.6, dataYear: 2026 }],
+      { actionPlan: { pointBankingAdvice: 'Keep building points.' } },
+      { stateLabel: 'NM', weaponLabel: 'Rifle', hasPoints: false });
+    expect(out.recommendations[0].tier).toBe('LONG_GAME');
+    expect(out.actionPlan.pointBankingAdvice).toBe('');
+  });
+});

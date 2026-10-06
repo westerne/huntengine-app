@@ -56,11 +56,11 @@ function dataOnlyWhy(e: Entry, o: { text: string }): string {
 export function buildSharedScoutResponse(
   shortlist: Entry[],
   model: ModelExplanations,
-  ctx: { stateLabel: string; weaponLabel: string },
+  ctx: { stateLabel: string; weaponLabel: string; hasPoints?: boolean },
 ) {
   const recs = shortlist.map((e) => {
     const o = odds(e);
-    const tier = tierFor(o.pct);
+    const tier = tierFor(o.pct, ctx.hasPoints ?? true);
     const x = model.explanations?.[String(e.huntCode)] ?? {};
     return {
       unit: String(e.unit),
@@ -105,7 +105,8 @@ export function buildSharedScoutResponse(
       headline: model.actionPlan?.headline ?? '',
       steps: model.actionPlan?.steps ?? [],
       randomPoolPlays: fair.map((r) => `Unit ${r.unit} — hunt ${r.huntCode}`),
-      pointBankingAdvice: model.actionPlan?.pointBankingAdvice ?? '',
+      // No point system → no point-banking advice.
+      pointBankingAdvice: ctx.hasPoints === false ? '' : model.actionPlan?.pointBankingAdvice ?? '',
     },
     drawableUnits: drawNow.map((r) => ({
       unit: r.unit, huntCode: r.huntCode, state: r.state, typicalScore: r.typicalScore, topEnd: r.topEnd,

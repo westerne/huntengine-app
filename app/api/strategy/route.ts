@@ -389,6 +389,7 @@ export async function POST(req: Request) {
         scoutDataset,
         formData,
         sharedState: usesSharedBuilders,
+        noPoints: usesSharedBuilders && stateModule!.drawSystem === 'random',
         drawRules: usesSharedBuilders && stateModule!.rulesVerified ? stateModule!.drawSystemNote : undefined,
       };
 
@@ -409,7 +410,11 @@ export async function POST(req: Request) {
         return NextResponse.json(buildSharedScoutResponse(
           scoutDataset as Array<Record<string, unknown>>,
           parsed,
-          { stateLabel: stateModule!.code, weaponLabel: isArcheryHunter ? 'Archery' : isMuzzleHunter ? 'Muzzleloader' : 'Rifle' },
+          {
+            stateLabel: stateModule!.code,
+            weaponLabel: isArcheryHunter ? 'Archery' : isMuzzleHunter ? 'Muzzleloader' : 'Rifle',
+            hasPoints: stateModule!.drawSystem !== 'random',
+          },
         ));
       }
       const { result: scoutResult, dropped } = filterToKnownUnits(parsed, scoutDataset as Array<{ unit?: unknown }>);
