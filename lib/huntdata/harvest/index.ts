@@ -5,6 +5,7 @@ import azHarvest from './az.json';
 import coHarvest from './co.json';
 import idHarvest from './id.json';
 import mtHarvest from './mt.json';
+import nmHarvest from './nm.json';
 import utHarvest from './ut.json';
 import wyHarvest from './wy.json';
 
@@ -15,6 +16,7 @@ const HARVEST: Partial<Record<StateCode, HarvestFile>> = {
   CO: coHarvest as HarvestFile,
   ID: idHarvest as HarvestFile,
   MT: mtHarvest as HarvestFile,
+  NM: nmHarvest as HarvestFile,
   UT: utHarvest as HarvestFile,
   WY: wyHarvest as HarvestFile,
 };
@@ -37,6 +39,8 @@ const UNIT_FALLBACK: Partial<Record<StateCode, boolean>> = {
   CO: false,
   //   AZ: no — every row is an AZGFD hunt number.
   AZ: false,
+  //   NM: no — every row is an NMDGF hunt code.
+  NM: false,
 };
 
 export function getHarvestFile(state: StateCode): HarvestFile | null {

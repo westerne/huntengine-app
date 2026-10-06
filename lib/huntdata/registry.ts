@@ -7,6 +7,7 @@ import { utahModule } from './states/utah';
 import { drawFileModule } from './states/fromDrawFile';
 import type { DrawFile } from './draw/format';
 import azDraw from './draw/az.json';
+import nmDraw from './draw/nm.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -56,14 +57,19 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
   NE: {
     code: 'NE', name: 'NEBRASKA', status: 'planned', batch: 'A',
     agency: { name: 'Nebraska Game and Parks Commission', url: 'https://outdoornebraska.gov' },
-    drawSystem: 'preference', rulesVerified: false,
-    drawSystemNote: 'Preference points for elk, antelope and bighorn permits. Confirm current rules with Game and Parks.',
+    // From 166 NAC 1/3/14 and Neb. Rev. Stat. 37-447..455 (research 2026-10-06). Left
+    // unverified: NGPC's site says elk is "moving to bonus points squared", which
+    // conflicts with current rule text, and the site blocks scripted access.
+    drawSystem: 'hybrid', rulesVerified: false,
+    drawSystemNote: "General bull elk is a resident-only draw with bonus points (an extra entry per unsuccessful year); one antlered elk per lifetime. Antelope and draw-unit deer use preference points (most points drawn first; points reset when you draw). Non-residents can draw only certain deer units, statewide archery/muzzleloader deer and archery antelope. Most other deer units are over the counter. Bighorn sheep is a resident-only random lottery.",
   },
   NM: {
-    code: 'NM', name: 'NEW MEXICO', status: 'planned', batch: 'A',
+    code: 'NM', name: 'NEW MEXICO', status: 'live', batch: 'A',
     agency: { name: 'New Mexico Department of Game and Fish', url: 'https://wildlife.dgf.nm.gov' },
-    drawSystem: 'random', rulesVerified: false,
-    drawSystemNote: 'Pure random draw with no points. Licenses are split between residents, outfitted non-residents and non-residents.',
+    // Verified 2026-10-06 against the 2026-27 NMDGF rules booklet and 19.31.3 NMAC.
+    // See lib/huntdata/draw/nm-ne-research.md.
+    drawSystem: 'random', rulesVerified: true,
+    drawSystemNote: "Pure random draw with no preference or bonus points, so every applicant has the same odds each year. By law at least 84% of draw licenses go to residents, 10% to applicants using a New Mexico-registered outfitter, and 6% to non-residents without an outfitter. Cow elk and Wildlife Management Area hunts are resident-only. A Game-Hunting license plus habitat validation must be bought before applying; applications are due in March. Bighorn rams are once in a lifetime. Leftover licenses go on sale first-come-first-served in late June, residents only for the first 24 hours.",
   },
 
   // ── Batch B: by March ────────────────────────────────────────────────────
@@ -127,13 +133,23 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
   },
 };
 
+// States added through generated draw files (scripts/draw/build<ST>Draw.mjs).
+// Adding a state: import its draw file here, set its STATE_INFO status to
+// 'live', and add its boundary source and planner species list.
+const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
+  AZ: azDraw as DrawFile,
+  NM: nmDraw as DrawFile,
+};
+
 const MODULES: Partial<Record<StateCode, StateModule>> = {
   WY: wyomingModule(STATE_INFO.WY),
   ID: idahoModule(STATE_INFO.ID),
   CO: coloradoModule(STATE_INFO.CO),
   MT: montanaModule(STATE_INFO.MT),
   UT: utahModule(STATE_INFO.UT),
-  AZ: drawFileModule(STATE_INFO.AZ, azDraw as DrawFile),
+  ...Object.fromEntries(
+    (Object.entries(DRAW_FILES) as Array<[StateCode, DrawFile]>).map(([c, f]) => [c, drawFileModule(STATE_INFO[c], f)]),
+  ),
 };
 
 export const ALL_STATES = Object.keys(STATE_INFO) as StateCode[];

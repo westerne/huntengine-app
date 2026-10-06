@@ -111,6 +111,18 @@ const AZGFD_GMU: Source = {
     : `GMUNAME IN ('${u}','${u}N','${u}S','${u}E','${u}W')`),
 };
 
+// New Mexico Game & Fish — GMU polygons (GMU string: "34", "16B"). Split units
+// have no parent polygon, so a bare "16" matches 16A–16E; "1" never matches "10".
+const NMDGF_GMU: Source = {
+  url: 'https://services2.arcgis.com/CjbW1bVhK4dB3WOa/arcgis/rest/services/NMDGF_Game_Management_Units_I_E__v2_WFL1/FeatureServer/0/query',
+  unitField: 'GMU',
+  numeric: false,
+  outFields: 'GMU',
+  whereFor: (u) => (/[A-Z]$/.test(u)
+    ? `GMU='${u}'`
+    : `GMU IN ('${u}','${u}A','${u}B','${u}C','${u}D','${u}E')`),
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -127,6 +139,7 @@ function resolveSource(state: string, species: string): Source | null {
   if (state === 'CO') return CO_SOURCES[speciesKey(species)] ?? null;
   if (state === 'MT') return MT_SOURCES[speciesKey(species)] ?? null;
   if (state === 'AZ') return AZGFD_GMU;
+  if (state === 'NM') return NMDGF_GMU;
   return null;
 }
 

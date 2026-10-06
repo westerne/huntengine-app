@@ -12,7 +12,7 @@ describe('registry', () => {
   });
 
   it('has the live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'MT', 'UT', 'WY']);
+    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'MT', 'NM', 'UT', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -450,5 +450,34 @@ describe('BRIEF centers on the chosen hunt', () => {
     const first = text.split('\n').find((l) => l.trim().startsWith('- Hunt'))!;
     expect(first).toContain('Hunt 3016');
     expect(first).toContain("THE HUNTER'S HUNT");
+  });
+});
+
+describe('New Mexico', () => {
+  const nm = getStateModule('NM')!;
+  it('loads 2026 NMDGF draw odds by pool, outfitter kept separate', () => {
+    const h = nm.hunts('ELK').find((x) => x.huntCode === 'ELK-1-281')!;
+    expect(h.drawYear).toBe(2026);
+    expect(h.draw.resident).toMatchObject({ applicants: 417 });
+    expect(h.draw.resident?.successPct).toBeCloseTo(5.0, 1);
+    expect(h.draw.nonresident?.successPct).toBeCloseTo(0.5, 1);
+    expect(h.draw.nonresident?.pools?.find((p) => p.name === 'outfitter')).toMatchObject({ applicants: 82 });
+    expect(STATE_INFO.NM.rulesVerified).toBe(true);
+  });
+  it('builds SCOUT entries with no point tables (random draw)', () => {
+    const ds = buildGenericScoutDataset(nm, 'ELK', 'nonresident', 'rifle', 0);
+    expect(ds.length).toBeGreaterThan(20);
+    expect(ds.every((e) => e.drawSuccessAtYourPoints === null)).toBe(true);
+  });
+});
+
+describe('New Mexico harvest', () => {
+  it('joins NMDGF harvest by hunt code with per-species seasons', async () => {
+    const { harvestYear, harvestRowsForUnit } = await import('./harvest');
+    expect(harvestYear('NM', 'ELK')).toBe(2025);
+    expect(harvestYear('NM', 'BIGHORNSHEEP')).toBe(2024);
+    expect(harvestRowsForUnit('NM', 'ELK', 'ELK-2-129')[0]).toMatchObject({ huntCode: 'ELK-2-129', successPct: 22 });
+    const elk = getStateModule('NM')!.hunts('ELK');
+    expect(elk.filter((h) => h.harvest).length / elk.length).toBeGreaterThan(0.8);
   });
 });

@@ -66,13 +66,14 @@ type HuntPlannerState = {
   error: string | null;
 };
 
-const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ'];
+const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ', 'NM'];
 // Shown but not selectable until their draw data is wired in.
-const COMING_SOON_STATES = ['NV', 'NM'];
+const COMING_SOON_STATES = ['NV', 'NE'];
 const SPECIES = ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
 // Species with data, for states that don't have all six (Arizona has no moose or goat).
 const STATE_SPECIES: Record<string, string[]> = {
   AZ: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
+  NM: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
 };
 const speciesFor = (st: string) => STATE_SPECIES[st] ?? SPECIES;
 const WEAPON_OPTIONS = ['Any', 'Rifle', 'Archery', 'Muzzleloader'];
