@@ -12,7 +12,7 @@ describe('registry', () => {
   });
 
   it('has the live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'MT', 'NM', 'UT', 'WY']);
+    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'MT', 'NE', 'NM', 'UT', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -491,5 +491,40 @@ describe('random-draw states have no point language', () => {
       { stateLabel: 'NM', weaponLabel: 'Rifle', hasPoints: false });
     expect(out.recommendations[0].tier).toBe('LONG_GAME');
     expect(out.actionPlan.pointBankingAdvice).toBe('');
+  });
+});
+
+describe('Nebraska', () => {
+  const ne = getStateModule('NE')!;
+  it('loads 2025 NGPC draw results from the saved PDF', () => {
+    const bull = ne.hunts('ELK').find((h) => h.huntCode === 'ELK-UNIT4-BULL')!;
+    expect(bull).toMatchObject({ unit: 'Unit 4', drawYear: 2025 });
+    expect(bull.draw.nonresident).toBeNull(); // resident-only draw
+    expect(STATE_INFO.NE.rulesVerified).toBe(false);
+  });
+  it('caps point-level odds at 100% when second-choice draws exceed applicants', async () => {
+    const { successAtPoints } = await import('./generic');
+    for (const sp of ne.species) for (const h of ne.hunts(sp)) {
+      for (const r of ['resident', 'nonresident'] as const) for (let p = 0; p <= 12; p++) {
+        const v = successAtPoints(h, r, p);
+        if (v != null) expect(v).toBeLessThanOrEqual(100);
+      }
+    }
+  });
+  it('a non-resident elk search finds nothing (resident-only)', () => {
+    expect(buildGenericScoutDataset(ne, 'ELK', 'nonresident').filter((e) => e.drawSuccess != null)).toHaveLength(0);
+  });
+});
+
+describe('weapon from label', () => {
+  it('keeps archery/muzzleloader permits out of a rifle search', async () => {
+    const { weaponFromLabel } = await import('./states/fromDrawFile');
+    expect(weaponFromLabel('Statewide Archery deer')).toBe('archery');
+    expect(weaponFromLabel('DEER-STATEWIDE-MUZZLELOADER')).toBe('muzzleloader');
+    expect(weaponFromLabel('Bull elk — General')).toBeUndefined();
+    const ne = getStateModule('NE')!;
+    const rifle = buildGenericScoutDataset(ne, 'DEER', 'nonresident', 'rifle', 0).map((e) => e.huntCode);
+    expect(rifle).not.toContain('DEER-STATEWIDE-ARCHERY');
+    expect(rifle).not.toContain('DEER-STATEWIDE-MUZZLELOADER');
   });
 });

@@ -8,6 +8,7 @@ import { drawFileModule } from './states/fromDrawFile';
 import type { DrawFile } from './draw/format';
 import azDraw from './draw/az.json';
 import nmDraw from './draw/nm.json';
+import neDraw from './draw/ne.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -55,7 +56,7 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
     drawSystemNote: "Bonus points: each point adds an extra random number and only the lowest number counts. Up to 20% of each hunt's tags go first to the highest-point applicants on their 1st or 2nd choice (statewide for bighorn sheep). Non-residents get at most 10% of a hunt's tags, and at most half of that in the bonus pass. Hunters also earn a permanent hunter-education point and a loyalty point after 5 straight years of applying. Elk and pronghorn are in the winter draw; deer and bighorn sheep are in the fall draw. Some archery deer and some elk tags are over the counter. Bighorn sheep is once in a lifetime. An Arizona hunting license is required to apply.",
   },
   NE: {
-    code: 'NE', name: 'NEBRASKA', status: 'planned', batch: 'A',
+    code: 'NE', name: 'NEBRASKA', status: 'live', batch: 'A',
     agency: { name: 'Nebraska Game and Parks Commission', url: 'https://outdoornebraska.gov' },
     // From 166 NAC 1/3/14 and Neb. Rev. Stat. 37-447..455 (research 2026-10-06). Left
     // unverified: NGPC's site says elk is "moving to bonus points squared", which
@@ -139,6 +140,7 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
 const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   AZ: azDraw as DrawFile,
   NM: nmDraw as DrawFile,
+  NE: neDraw as DrawFile,
 };
 
 const MODULES: Partial<Record<StateCode, StateModule>> = {

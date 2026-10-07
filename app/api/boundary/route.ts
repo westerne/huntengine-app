@@ -21,6 +21,7 @@ type Source = {
   labelField?: string;
   regionField?: string;    // if set, a single-letter unit matches this field instead
   whereFor?: (unit: string) => string; // custom where-clause (overrides unitField matching)
+  namedUnits?: boolean;    // units are names with spaces ("Unit 1", "Banner North") — keep spaces, no dash split
 };
 
 const WGFD_BASE = 'https://services6.arcgis.com/cWzdqIyxbijuhPLw/arcgis/rest/services';
@@ -123,6 +124,25 @@ const NMDGF_GMU: Source = {
     : `GMU IN ('${u}','${u}A','${u}B','${u}C','${u}D','${u}E')`),
 };
 
+// Nebraska Game & Parks — a separate unit layer per species, UnitName as a
+// name ("Unit 1", "Pine Ridge", "Banner North"). Matched case-insensitively.
+const NGPC_BASE = 'https://services5.arcgis.com/IOshH1zLrIieqrNk/arcgis/rest/services';
+const ngpc = (svc: string): Source => ({
+  url: `${NGPC_BASE}/${svc}/FeatureServer/0/query`,
+  unitField: 'UnitName',
+  numeric: false,
+  outFields: 'UnitName',
+  labelField: 'UnitName',
+  namedUnits: true,
+  whereFor: (u) => `UPPER(UnitName)='${u}'`,
+});
+const NE_SOURCES: Record<string, Source> = {
+  ELK: ngpc('Elk_Hunting_Units_2022'),
+  DEER: ngpc('Deer_Mangement_Units_2022'), // (sic — the service name is misspelled)
+  ANTELOPE: ngpc('Antelope_Hunting_Units_2022'),
+  BIGHORNSHEEP: ngpc('Bighorn_Hunting_Units_2022'),
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -140,6 +160,7 @@ function resolveSource(state: string, species: string): Source | null {
   if (state === 'MT') return MT_SOURCES[speciesKey(species)] ?? null;
   if (state === 'AZ') return AZGFD_GMU;
   if (state === 'NM') return NMDGF_GMU;
+  if (state === 'NE') return NE_SOURCES[speciesKey(species)] ?? null;
   return null;
 }
 
@@ -154,10 +175,12 @@ export async function GET(req: Request) {
   // Hunt keys carry a suffix after the area: WY "7-1" (area-type), "143-GEN",
   // ID "1-1" (hunt area in GMU 1). The boundary is the area before the first
   // dash — stripping the dash instead turned "7-1" into area 71.
-  const rawUnit = (searchParams.get('unit') || '').trim().toUpperCase().split('-')[0].replace(/[^A-Z0-9]/g, '');
-
   const src = resolveSource(state, species);
   if (!src) return NextResponse.json({ error: `no boundary source for ${state}/${species}` }, { status: 404 });
+  const param = (searchParams.get('unit') || '').trim().toUpperCase();
+  const rawUnit = src.namedUnits
+    ? param.replace(/[^A-Z0-9 ]/g, '').replace(/\s+/g, ' ').trim()
+    : param.split('-')[0].replace(/[^A-Z0-9]/g, '');
   if (!rawUnit) return NextResponse.json({ error: 'unit required' }, { status: 400 });
 
   // A lone letter is a general region (deer only); otherwise the unit number.

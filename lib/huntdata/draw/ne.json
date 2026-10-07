@@ -1,0 +1,3376 @@
+{
+ "state": "NE",
+ "year": 2025,
+ "source": {
+  "name": "Nebraska Game and Parks Commission — 2025 Nebraska Draw Results (PDF; read from a locally saved copy of the 2025 results PDF)",
+  "url": "https://outdoornebraska.gov/permits/hunting-permits/big-game-permits/draw-results/"
+ },
+ "notes": "NGPC 2025 big-game draw results, read from a locally saved copy of the official \"2025 Nebraska Draw Results\" PDF (2025-Nebraska-Draw-Results-1.pdf); outdoornebraska.gov blocks scripted downloads. Point systems as printed: general bull elk = BONUS points (\"bonus point pool\"; residents only; bull drawing data are First Choice options only); limited landowner bull elk = PREFERENCE points (resident landowners earn 1 point, nonresident landowners 0.9 per unsuccessful drawing); deer = PREFERENCE points; antelope = PREFERENCE points. Antlerless elk tables print no point breakdown. ELK: units are NGPC's \"Unit N\" numbering, identical to the elk map layer UnitName (no Unit 13 or Unit 15 permits appear in the PDF). General bull: applicants = first-choice applications (a group application counts once) from the bonus-point table, successPct = successful first-choice applications ÷ applications; per-unit bull quotas are NOT printed (tags null; 141 bull permits statewide). General antlerless: applicants = applications (first-choice antlerless + unsuccessful bull applicants with antlerless 2nd choice, per NGPC), tags = permits issued, successPct = successful applications ÷ applications. Landowner bull/antlerless: NGPC does not split by residency — resident and nonresident landowners are COMBINED in draw.resident / pointLines.resident (fractional point levels 0.9, 1.8, 2.7, 3.6, 4.5 are nonresident landowners). Landowner antlerless tags = quota; successPct = NGPC printed Draw Success (issued ÷ applications). DEER (draw units only): unit = the deer map-layer name (PDF \"Frenchman MDCA\" → unit \"Frenchman\"; \"MDCA\" = mule deer conservation area, kept in label/huntCode — the permit may cover only part of the unit polygon). Statewide Archery / Statewide Muzzleloader (nonresident) use unit \"Statewide\" (no map polygon). applicants = applicants incl. group members, tags = permits available, successPct = permits issued ÷ applicants. pointLines: first-choice applications vs successful applications by preference point (group applications count once; NGPC notes successful counts include second-choice draws, so drawn can exceed applicants at a level). minPoints = lowest point level with a successful application. ANTELOPE: unit = antelope map-layer UnitName (\"Firearm-Banner North\" → \"Banner North\"; \"North Sioux Muzzleloader\" and \"Prairie Muzzleloader\" are their own map polygons); NR Statewide Archery uses unit \"Statewide\". tags = quota; applicants = first-choice applications. NGPC prints only an integer draw-success percent per point pool (incl. second-choice draws, so >100% occurs), no per-unit overall success — successPct is null. pointLines.drawn was recovered from the printed percent only where exactly one whole number of draws matches it; rows where that was ambiguous have no pointLines (Firearm-North Sioux; NR-Statewide Archery Antelope). minPoints = lowest point level with a non-zero printed success. Firearm permits mapped to weapon \"rifle\". Landowner antelope (134 applications, all successful) has no unit breakdown and is omitted. successPct capped at 100 where the NGPC successful/issued count exceeds applicants (second-choice draws, or a table inconsistency): Unit 8 general antlerless (111.5%); Unit 12 landowner bull (125%); Loup West - NR deer (111.5%); Statewide Archery - NR deer (110.2%); Statewide Muzzleloader - NR deer (113.1%). PDF inconsistencies kept as printed (applicants/successful use the printed Total; pointLines use the printed pool cells): Unit 1 - Bull (landowner bull applicants): point pools sum to 65, printed Total 64; Unit 3 landowner antlerless: printed 70% vs issued÷applications 71.4%. BIGHORN SHEEP: not in this PDF. No season dates are published with the draw results.",
+ "species": {
+  "ELK": [
+   {
+    "huntCode": "ELK-UNIT1-BULL",
+    "unit": "Unit 1",
+    "label": "Bull elk — Unit 1 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 1296,
+      "successPct": 0.9
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 298,
+       "drawn": 2
+      },
+      {
+       "points": 1,
+       "applicants": 180,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 161,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 122,
+       "drawn": 2
+      },
+      {
+       "points": 4,
+       "applicants": 106,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 81,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 80,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 65,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 56,
+       "drawn": 2
+      },
+      {
+       "points": 9,
+       "applicants": 49,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 49,
+       "drawn": 3
+      },
+      {
+       "points": 11,
+       "applicants": 49,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT2-BULL",
+    "unit": "Unit 2",
+    "label": "Bull elk — Unit 2 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 360,
+      "successPct": 1.9
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 79,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 62,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 38,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 28,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 32,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 32,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 21,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 18,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 15,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 14,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 12,
+       "drawn": 1
+      },
+      {
+       "points": 11,
+       "applicants": 9,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT3-BULL",
+    "unit": "Unit 3",
+    "label": "Bull elk — Unit 3 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 537,
+      "successPct": 2
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 117,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 82,
+       "drawn": 3
+      },
+      {
+       "points": 2,
+       "applicants": 51,
+       "drawn": 2
+      },
+      {
+       "points": 3,
+       "applicants": 40,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 47,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 39,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 27,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 30,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 28,
+       "drawn": 1
+      },
+      {
+       "points": 9,
+       "applicants": 28,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 17,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 31,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT4-BULL",
+    "unit": "Unit 4",
+    "label": "Bull elk — Unit 4 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 704,
+      "successPct": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 169,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 113,
+       "drawn": 2
+      },
+      {
+       "points": 2,
+       "applicants": 76,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 60,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 55,
+       "drawn": 4
+      },
+      {
+       "points": 5,
+       "applicants": 41,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 43,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 31,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 26,
+       "drawn": 2
+      },
+      {
+       "points": 9,
+       "applicants": 34,
+       "drawn": 2
+      },
+      {
+       "points": 10,
+       "applicants": 27,
+       "drawn": 2
+      },
+      {
+       "points": 11,
+       "applicants": 29,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT5-BULL",
+    "unit": "Unit 5",
+    "label": "Bull elk — Unit 5 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 1485,
+      "successPct": 1.3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 275,
+       "drawn": 3
+      },
+      {
+       "points": 1,
+       "applicants": 191,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 172,
+       "drawn": 3
+      },
+      {
+       "points": 3,
+       "applicants": 144,
+       "drawn": 2
+      },
+      {
+       "points": 4,
+       "applicants": 137,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 99,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 109,
+       "drawn": 3
+      },
+      {
+       "points": 7,
+       "applicants": 82,
+       "drawn": 2
+      },
+      {
+       "points": 8,
+       "applicants": 63,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 91,
+       "drawn": 2
+      },
+      {
+       "points": 10,
+       "applicants": 50,
+       "drawn": 1
+      },
+      {
+       "points": 11,
+       "applicants": 72,
+       "drawn": 4
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT6-BULL",
+    "unit": "Unit 6",
+    "label": "Bull elk — Unit 6 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 303,
+      "successPct": 3.3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 76,
+       "drawn": 2
+      },
+      {
+       "points": 1,
+       "applicants": 43,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 32,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 33,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 39,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 13,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 13,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 18,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 18,
+       "drawn": 1
+      },
+      {
+       "points": 9,
+       "applicants": 9,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 3,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT7-BULL",
+    "unit": "Unit 7",
+    "label": "Bull elk — Unit 7 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 268,
+      "successPct": 6
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 60,
+       "drawn": 2
+      },
+      {
+       "points": 1,
+       "applicants": 51,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 44,
+       "drawn": 3
+      },
+      {
+       "points": 3,
+       "applicants": 39,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 22,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 21,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 6,
+       "drawn": 2
+      },
+      {
+       "points": 9,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 11,
+       "applicants": 3,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT8-BULL",
+    "unit": "Unit 8",
+    "label": "Bull elk — Unit 8 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 77,
+      "successPct": 7.8
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 24,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 15,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 9,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT9-BULL",
+    "unit": "Unit 9",
+    "label": "Bull elk — Unit 9 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 78,
+      "successPct": 7.7
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 27,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 9,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 4,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT10-BULL",
+    "unit": "Unit 10",
+    "label": "Bull elk — Unit 10 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 104,
+      "successPct": 5.8
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 31,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 22,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 14,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 10,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 12,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT11-BULL",
+    "unit": "Unit 11",
+    "label": "Bull elk — Unit 11 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 39,
+      "successPct": 7.7
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 9,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT12-BULL",
+    "unit": "Unit 12",
+    "label": "Bull elk — Unit 12 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 143,
+      "successPct": 4.9
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 47,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 23,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 17,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 8,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 9,
+       "drawn": 3
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 11,
+       "applicants": 3,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT131-BULL",
+    "unit": "Unit 131",
+    "label": "Bull elk — Unit 131 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 32,
+      "successPct": 6.3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT132-BULL",
+    "unit": "Unit 132",
+    "label": "Bull elk — Unit 132 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 85,
+      "successPct": 3.5
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 30,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 17,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT14-BULL",
+    "unit": "Unit 14",
+    "label": "Bull elk — Unit 14 (general, resident)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 142,
+      "successPct": 5.6
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 68,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 20,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 14,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 6,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 7,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 9,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT1-EARLY-ANTLERLESS",
+    "unit": "Unit 1",
+    "label": "Antlerless elk (early) — Unit 1 (general, resident)",
+    "tags": 25,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 162,
+      "successPct": 14.8
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT1-LATE-ANTLERLESS",
+    "unit": "Unit 1",
+    "label": "Antlerless elk (late) — Unit 1 (general, resident)",
+    "tags": 35,
+    "draw": {
+     "resident": {
+      "tags": 35,
+      "applicants": 207,
+      "successPct": 15
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT2-EARLY-ANTLERLESS",
+    "unit": "Unit 2",
+    "label": "Antlerless elk (early) — Unit 2 (general, resident)",
+    "tags": 15,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 44,
+      "successPct": 34.1
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT2-LATE-ANTLERLESS",
+    "unit": "Unit 2",
+    "label": "Antlerless elk (late) — Unit 2 (general, resident)",
+    "tags": 25,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 81,
+      "successPct": 27.2
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT3-EARLY-ANTLERLESS",
+    "unit": "Unit 3",
+    "label": "Antlerless elk (early) — Unit 3 (general, resident)",
+    "tags": 40,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 94,
+      "successPct": 40.4
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT3-LATE-ANTLERLESS",
+    "unit": "Unit 3",
+    "label": "Antlerless elk (late) — Unit 3 (general, resident)",
+    "tags": 40,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 153,
+      "successPct": 25.5
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT4-EARLY-ANTLERLESS",
+    "unit": "Unit 4",
+    "label": "Antlerless elk (early) — Unit 4 (general, resident)",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 197,
+      "successPct": 24.4
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT4-LATE-ANTLERLESS",
+    "unit": "Unit 4",
+    "label": "Antlerless elk (late) — Unit 4 (general, resident)",
+    "tags": 30,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 131,
+      "successPct": 22.9
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT5-EARLY-ANTLERLESS",
+    "unit": "Unit 5",
+    "label": "Antlerless elk (early) — Unit 5 (general, resident)",
+    "tags": 25,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 489,
+      "successPct": 4.9
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT5-LATE-ANTLERLESS",
+    "unit": "Unit 5",
+    "label": "Antlerless elk (late) — Unit 5 (general, resident)",
+    "tags": 20,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 216,
+      "successPct": 9.3
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT6-EARLY-ANTLERLESS",
+    "unit": "Unit 6",
+    "label": "Antlerless elk (early) — Unit 6 (general, resident)",
+    "tags": 25,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 70,
+      "successPct": 34.3
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT6-LATE-ANTLERLESS",
+    "unit": "Unit 6",
+    "label": "Antlerless elk (late) — Unit 6 (general, resident)",
+    "tags": 15,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 62,
+      "successPct": 21
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT7-ANTLERLESS",
+    "unit": "Unit 7",
+    "label": "Antlerless elk — Unit 7 (general, resident)",
+    "tags": 28,
+    "draw": {
+     "resident": {
+      "tags": 28,
+      "applicants": 154,
+      "successPct": 18.2
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT8-ANTLERLESS",
+    "unit": "Unit 8",
+    "label": "Antlerless elk — Unit 8 (general, resident)",
+    "tags": 30,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 26,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT9-ANTLERLESS",
+    "unit": "Unit 9",
+    "label": "Antlerless elk — Unit 9 (general, resident)",
+    "tags": 10,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 39,
+      "successPct": 23.1
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT10-EARLY-ANTLERLESS",
+    "unit": "Unit 10",
+    "label": "Antlerless elk (early) — Unit 10 (general, resident)",
+    "tags": 15,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 15,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT10-LATE-ANTLERLESS",
+    "unit": "Unit 10",
+    "label": "Antlerless elk (late) — Unit 10 (general, resident)",
+    "tags": 20,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 34,
+      "successPct": 55.9
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT11-ANTLERLESS",
+    "unit": "Unit 11",
+    "label": "Antlerless elk — Unit 11 (general, resident)",
+    "tags": 13,
+    "draw": {
+     "resident": {
+      "tags": 13,
+      "applicants": 17,
+      "successPct": 70.6
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT12-ANTLERLESS",
+    "unit": "Unit 12",
+    "label": "Antlerless elk — Unit 12 (general, resident)",
+    "tags": 16,
+    "draw": {
+     "resident": {
+      "tags": 16,
+      "applicants": 74,
+      "successPct": 14.9
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT131-ANTLERLESS",
+    "unit": "Unit 131",
+    "label": "Antlerless elk — Unit 131 (general, resident)",
+    "tags": 7,
+    "draw": {
+     "resident": {
+      "tags": 7,
+      "applicants": 21,
+      "successPct": 33.3
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT132-ANTLERLESS",
+    "unit": "Unit 132",
+    "label": "Antlerless elk — Unit 132 (general, resident)",
+    "tags": 10,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 67,
+      "successPct": 14.9
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT14-ANTLERLESS",
+    "unit": "Unit 14",
+    "label": "Antlerless elk — Unit 14 (general, resident)",
+    "tags": 16,
+    "draw": {
+     "resident": {
+      "tags": 16,
+      "applicants": 72,
+      "successPct": 18.1
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT1-LANDOWNER-BULL",
+    "unit": "Unit 1",
+    "label": "Limited landowner bull elk — Unit 1 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 64,
+      "successPct": 14.1,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 22,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 15,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 2.7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 8,
+       "drawn": 3
+      },
+      {
+       "points": 4,
+       "applicants": 6,
+       "drawn": 6
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT2-LANDOWNER-BULL",
+    "unit": "Unit 2",
+    "label": "Limited landowner bull elk — Unit 2 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 8,
+      "successPct": 62.5,
+      "minPoints": 0
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 5,
+       "drawn": 2
+      },
+      {
+       "points": 1,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT3-LANDOWNER-BULL",
+    "unit": "Unit 3",
+    "label": "Limited landowner bull elk — Unit 3 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 81,
+      "successPct": 11.1,
+      "minPoints": 4
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 13,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 26,
+       "drawn": 0
+      },
+      {
+       "points": 1.8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 2.8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 3.6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 9,
+       "drawn": 1
+      },
+      {
+       "points": 4.5,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 6,
+       "drawn": 6
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT4-LANDOWNER-BULL",
+    "unit": "Unit 4",
+    "label": "Limited landowner bull elk — Unit 4 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 65,
+      "successPct": 24.6,
+      "minPoints": 1
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 33,
+       "drawn": 0
+      },
+      {
+       "points": 0.9,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 25,
+       "drawn": 10
+      },
+      {
+       "points": 2,
+       "applicants": 6,
+       "drawn": 6
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT5-LANDOWNER-BULL",
+    "unit": "Unit 5",
+    "label": "Limited landowner bull elk — Unit 5 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 101,
+      "successPct": 14.9,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 25,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 31,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 19,
+       "drawn": 0
+      },
+      {
+       "points": 2.7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 20,
+       "drawn": 10
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 4.5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT6-LANDOWNER-BULL",
+    "unit": "Unit 6",
+    "label": "Limited landowner bull elk — Unit 6 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 49,
+      "successPct": 14.3,
+      "minPoints": 2
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 25,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 10,
+       "drawn": 4
+      },
+      {
+       "points": 2.7,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT7-LANDOWNER-BULL",
+    "unit": "Unit 7",
+    "label": "Limited landowner bull elk — Unit 7 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 31,
+      "successPct": 38.7,
+      "minPoints": 0.9
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 18,
+       "drawn": 0
+      },
+      {
+       "points": 0.9,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 10,
+       "drawn": 10
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT8-LANDOWNER-BULL",
+    "unit": "Unit 8",
+    "label": "Limited landowner bull elk — Unit 8 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 2,
+      "successPct": 100,
+      "minPoints": 0
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT9-LANDOWNER-BULL",
+    "unit": "Unit 9",
+    "label": "Limited landowner bull elk — Unit 9 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 10,
+      "successPct": 40,
+      "minPoints": 1
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT10-LANDOWNER-BULL",
+    "unit": "Unit 10",
+    "label": "Limited landowner bull elk — Unit 10 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 4,
+      "successPct": 100,
+      "minPoints": 0
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT11-LANDOWNER-BULL",
+    "unit": "Unit 11",
+    "label": "Limited landowner bull elk — Unit 11 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 1,
+      "successPct": 100,
+      "minPoints": 1
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT12-LANDOWNER-BULL",
+    "unit": "Unit 12",
+    "label": "Limited landowner bull elk — Unit 12 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 4,
+      "successPct": 100,
+      "minPoints": 0
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 2,
+       "drawn": 3
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT131-LANDOWNER-BULL",
+    "unit": "Unit 131",
+    "label": "Limited landowner bull elk — Unit 131 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 2,
+      "successPct": 100,
+      "minPoints": 0
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT132-LANDOWNER-BULL",
+    "unit": "Unit 132",
+    "label": "Limited landowner bull elk — Unit 132 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 10,
+      "successPct": 20,
+      "minPoints": 2
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT14-LANDOWNER-BULL",
+    "unit": "Unit 14",
+    "label": "Limited landowner bull elk — Unit 14 (resident + nonresident landowners combined)",
+    "tags": null,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": 9,
+      "successPct": 66.7,
+      "minPoints": 0
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 6,
+       "drawn": 3
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 1.8,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT1-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 1",
+    "label": "Limited landowner antlerless elk — Unit 1 (resident + nonresident landowners combined)",
+    "tags": 45,
+    "draw": {
+     "resident": {
+      "tags": 45,
+      "applicants": 57,
+      "successPct": 79
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT2-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 2",
+    "label": "Limited landowner antlerless elk — Unit 2 (resident + nonresident landowners combined)",
+    "tags": 30,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 12,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT3-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 3",
+    "label": "Limited landowner antlerless elk — Unit 3 (resident + nonresident landowners combined)",
+    "tags": 60,
+    "draw": {
+     "resident": {
+      "tags": 60,
+      "applicants": 84,
+      "successPct": 70
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT4-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 4",
+    "label": "Limited landowner antlerless elk — Unit 4 (resident + nonresident landowners combined)",
+    "tags": 60,
+    "draw": {
+     "resident": {
+      "tags": 60,
+      "applicants": 53,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT5-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 5",
+    "label": "Limited landowner antlerless elk — Unit 5 (resident + nonresident landowners combined)",
+    "tags": 33,
+    "draw": {
+     "resident": {
+      "tags": 33,
+      "applicants": 90,
+      "successPct": 37
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT6-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 6",
+    "label": "Limited landowner antlerless elk — Unit 6 (resident + nonresident landowners combined)",
+    "tags": 30,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 40,
+      "successPct": 75
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT7-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 7",
+    "label": "Limited landowner antlerless elk — Unit 7 (resident + nonresident landowners combined)",
+    "tags": 21,
+    "draw": {
+     "resident": {
+      "tags": 21,
+      "applicants": 21,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT8-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 8",
+    "label": "Limited landowner antlerless elk — Unit 8 (resident + nonresident landowners combined)",
+    "tags": 10,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 4,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT9-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 9",
+    "label": "Limited landowner antlerless elk — Unit 9 (resident + nonresident landowners combined)",
+    "tags": 7,
+    "draw": {
+     "resident": {
+      "tags": 7,
+      "applicants": 6,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT10-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 10",
+    "label": "Limited landowner antlerless elk — Unit 10 (resident + nonresident landowners combined)",
+    "tags": 26,
+    "draw": {
+     "resident": {
+      "tags": 26,
+      "applicants": 4,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT11-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 11",
+    "label": "Limited landowner antlerless elk — Unit 11 (resident + nonresident landowners combined)",
+    "tags": 9,
+    "draw": {
+     "resident": {
+      "tags": 9,
+      "applicants": 3,
+      "successPct": 100
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT12-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 12",
+    "label": "Limited landowner antlerless elk — Unit 12 (resident + nonresident landowners combined)",
+    "tags": 12,
+    "draw": {
+     "resident": {
+      "tags": 12,
+      "applicants": 5,
+      "successPct": 80
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT131-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 131",
+    "label": "Limited landowner antlerless elk — Unit 131 (resident + nonresident landowners combined)",
+    "tags": 5,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 0,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT132-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 132",
+    "label": "Limited landowner antlerless elk — Unit 132 (resident + nonresident landowners combined)",
+    "tags": 7,
+    "draw": {
+     "resident": {
+      "tags": 7,
+      "applicants": 9,
+      "successPct": 78
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-UNIT14-LANDOWNER-ANTLERLESS",
+    "unit": "Unit 14",
+    "label": "Limited landowner antlerless elk — Unit 14 (resident + nonresident landowners combined)",
+    "tags": 12,
+    "draw": {
+     "resident": {
+      "tags": 12,
+      "applicants": 11,
+      "successPct": 91
+     },
+     "nonresident": null
+    }
+   }
+  ],
+  "DEER": [
+   {
+    "huntCode": "DEER-FRENCHMAN-MDCA",
+    "unit": "Frenchman",
+    "label": "Deer — Frenchman MDCA (resident & nonresident)",
+    "tags": 1200,
+    "draw": {
+     "resident": {
+      "tags": 1020,
+      "applicants": 2366,
+      "successPct": 43.1,
+      "minPoints": 0
+     },
+     "nonresident": {
+      "tags": 180,
+      "applicants": 782,
+      "successPct": 23,
+      "minPoints": 1
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1452,
+       "drawn": 189
+      },
+      {
+       "points": 1,
+       "applicants": 778,
+       "drawn": 778
+      },
+      {
+       "points": 2,
+       "applicants": 16,
+       "drawn": 16
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 3
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 379,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 207,
+       "drawn": 71
+      },
+      {
+       "points": 2,
+       "applicants": 78,
+       "drawn": 78
+      },
+      {
+       "points": 3,
+       "applicants": 13,
+       "drawn": 13
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 4
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-PLATTE-MDCA",
+    "unit": "Platte",
+    "label": "Deer — Platte MDCA (resident & nonresident)",
+    "tags": 700,
+    "draw": {
+     "resident": {
+      "tags": 595,
+      "applicants": 1236,
+      "successPct": 48.1,
+      "minPoints": 0
+     },
+     "nonresident": {
+      "tags": 105,
+      "applicants": 317,
+      "successPct": 33.1,
+      "minPoints": 1
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 850,
+       "drawn": 224
+      },
+      {
+       "points": 1,
+       "applicants": 355,
+       "drawn": 355
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 164,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 102,
+       "drawn": 72
+      },
+      {
+       "points": 2,
+       "applicants": 26,
+       "drawn": 26
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-BUFFALO-MDCA",
+    "unit": "Buffalo",
+    "label": "Deer — Buffalo MDCA (nonresident)",
+    "tags": 120,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 120,
+      "applicants": 127,
+      "successPct": 94.5,
+      "minPoints": 0
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 106,
+       "drawn": 99
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-CALAMUSWEST-DRAW",
+    "unit": "Calamus West",
+    "label": "Deer — Calamus West (nonresident)",
+    "tags": 210,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 210,
+      "applicants": 239,
+      "successPct": 87.9,
+      "minPoints": 0
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 177,
+       "drawn": 152
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-LOUPWEST-DRAW",
+    "unit": "Loup West",
+    "label": "Deer — Loup West (nonresident)",
+    "tags": 105,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 105,
+      "applicants": 52,
+      "successPct": 100,
+      "minPoints": 0
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 37,
+       "drawn": 43
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 3
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-PINERIDGE-MDCA",
+    "unit": "Pine Ridge",
+    "label": "Deer — Pine Ridge MDCA (nonresident)",
+    "tags": 135,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 135,
+      "applicants": 659,
+      "successPct": 20.5,
+      "minPoints": 1
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 386,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 134,
+       "drawn": 105
+      },
+      {
+       "points": 2,
+       "applicants": 10,
+       "drawn": 10
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-PLAINS-DRAW",
+    "unit": "Plains",
+    "label": "Deer — Plains (nonresident)",
+    "tags": 150,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 150,
+      "applicants": 207,
+      "successPct": 72.5,
+      "minPoints": 0
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 147,
+       "drawn": 105
+      },
+      {
+       "points": 1,
+       "applicants": 17,
+       "drawn": 18
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-REPUBLICAN-MDCA",
+    "unit": "Republican",
+    "label": "Deer — Republican MDCA (nonresident)",
+    "tags": 7,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 7,
+      "applicants": 81,
+      "successPct": 8.6,
+      "minPoints": 1
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 60,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 9,
+       "drawn": 6
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-SANDHILLS-DRAW",
+    "unit": "Sandhills",
+    "label": "Deer — Sandhills (nonresident)",
+    "tags": 180,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 180,
+      "applicants": 493,
+      "successPct": 36.5,
+      "minPoints": 0
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 309,
+       "drawn": 61
+      },
+      {
+       "points": 1,
+       "applicants": 80,
+       "drawn": 86
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-UPPERPLATTE-DRAW",
+    "unit": "Upper Platte",
+    "label": "Deer — Upper Platte (nonresident)",
+    "tags": 120,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 120,
+      "applicants": 153,
+      "successPct": 78.4,
+      "minPoints": 0
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 108,
+       "drawn": 85
+      },
+      {
+       "points": 1,
+       "applicants": 5,
+       "drawn": 5
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-STATEWIDE-ARCHERY",
+    "unit": "Statewide",
+    "label": "Deer — Statewide Archery (nonresident)",
+    "weapon": "archery",
+    "tags": 3000,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 3000,
+      "applicants": 1607,
+      "successPct": 100,
+      "minPoints": 0
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1285,
+       "drawn": 1414
+      },
+      {
+       "points": 1,
+       "applicants": 36,
+       "drawn": 44
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 3
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-STATEWIDE-MUZZLELOADER",
+    "unit": "Statewide",
+    "label": "Deer — Statewide Muzzleloader (nonresident)",
+    "weapon": "muzzleloader",
+    "tags": 1000,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1000,
+      "applicants": 685,
+      "successPct": 100,
+      "minPoints": 0
+     }
+    },
+    "pointLines": {
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 469,
+       "drawn": 548
+      },
+      {
+       "points": 1,
+       "applicants": 15,
+       "drawn": 16
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "huntCode": "ANTELOPE-BANNERNORTH-FIREARM",
+    "unit": "Banner North",
+    "label": "Firearm antelope — Banner North (resident)",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 397,
+      "successPct": null,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 121,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 111,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 79,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 58,
+       "drawn": 10
+      },
+      {
+       "points": 4,
+       "applicants": 25,
+       "drawn": 30
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-BANNERSOUTH-FIREARM",
+    "unit": "Banner South",
+    "label": "Firearm antelope — Banner South (resident)",
+    "weapon": "rifle",
+    "tags": 60,
+    "draw": {
+     "resident": {
+      "tags": 60,
+      "applicants": 344,
+      "successPct": null,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 97,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 91,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 66,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 58,
+       "drawn": 22
+      },
+      {
+       "points": 4,
+       "applicants": 28,
+       "drawn": 29
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-BOXBUTTEEAST-FIREARM",
+    "unit": "Box Butte East",
+    "label": "Firearm antelope — Box Butte East (resident)",
+    "weapon": "rifle",
+    "tags": 20,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 119,
+      "successPct": null,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 42,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 28,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 19,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 19,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 9,
+       "drawn": 16
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-BOXBUTTEWEST-FIREARM",
+    "unit": "Box Butte West",
+    "label": "Firearm antelope — Box Butte West (resident)",
+    "weapon": "rifle",
+    "tags": 40,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 427,
+      "successPct": null,
+      "minPoints": 4
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 129,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 81,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 79,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 76,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 45,
+       "drawn": 16
+      },
+      {
+       "points": 5,
+       "applicants": 16,
+       "drawn": 17
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-CHERRY-FIREARM",
+    "unit": "Cherry",
+    "label": "Firearm antelope — Cherry (resident)",
+    "weapon": "rifle",
+    "tags": 60,
+    "draw": {
+     "resident": {
+      "tags": 60,
+      "applicants": 398,
+      "successPct": null,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 143,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 107,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 64,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 60,
+       "drawn": 26
+      },
+      {
+       "points": 4,
+       "applicants": 23,
+       "drawn": 30
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-CHEYENNE-FIREARM",
+    "unit": "Cheyenne",
+    "label": "Firearm antelope — Cheyenne (resident)",
+    "weapon": "rifle",
+    "tags": 30,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 245,
+      "successPct": null,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 63,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 63,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 52,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 47,
+       "drawn": 9
+      },
+      {
+       "points": 4,
+       "applicants": 19,
+       "drawn": 19
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-DISMAL-FIREARM",
+    "unit": "Dismal",
+    "label": "Firearm antelope — Dismal (resident)",
+    "weapon": "rifle",
+    "tags": 30,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 346,
+      "successPct": null,
+      "minPoints": 4
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 113,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 95,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 43,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 55,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 38,
+       "drawn": 25
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-EASTERNSANDHILLS-FIREARM",
+    "unit": "Eastern Sandhills",
+    "label": "Firearm antelope — Eastern Sandhills (resident)",
+    "weapon": "rifle",
+    "tags": 20,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 141,
+      "successPct": null,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 60,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 35,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 28,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 17,
+       "drawn": 17
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-GARDEN-FIREARM",
+    "unit": "Garden",
+    "label": "Firearm antelope — Garden (resident)",
+    "weapon": "rifle",
+    "tags": 40,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 320,
+      "successPct": null,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 106,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 78,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 52,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 51,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 30,
+       "drawn": 30
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-NORTHSIOUX-FIREARM",
+    "unit": "North Sioux",
+    "label": "Firearm antelope — North Sioux (resident)",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 100,
+      "applicants": 1183,
+      "successPct": null,
+      "minPoints": 5
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-NORTHSIOUX-MUZZLELOADER",
+    "unit": "North Sioux Muzzleloader",
+    "label": "Muzzleloader antelope — North Sioux Muzzleloader (resident)",
+    "weapon": "muzzleloader",
+    "tags": 25,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 186,
+      "successPct": null,
+      "minPoints": 5
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 43,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 44,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 33,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 23,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 20,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 17,
+       "drawn": 15
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 9,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-PRAIRIE-MUZZLELOADER",
+    "unit": "Prairie Muzzleloader",
+    "label": "Muzzleloader antelope — Prairie Muzzleloader (resident)",
+    "weapon": "muzzleloader",
+    "tags": 87,
+    "draw": {
+     "resident": {
+      "tags": 87,
+      "applicants": 442,
+      "successPct": null,
+      "minPoints": 3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 117,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 121,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 90,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 100,
+       "drawn": 67
+      },
+      {
+       "points": 4,
+       "applicants": 9,
+       "drawn": 11
+      },
+      {
+       "points": 5,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-STATEWIDE-ARCHERY",
+    "unit": "Statewide",
+    "label": "Archery antelope — Statewide Archery Antelope (nonresident)",
+    "weapon": "archery",
+    "tags": 250,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 250,
+      "applicants": 515,
+      "successPct": null,
+      "minPoints": 0
+     }
+    }
+   }
+  ]
+ }
+}

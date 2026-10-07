@@ -10,7 +10,8 @@ function checkStat(prefix: string, s: DrawStat | null, out: string[]) {
   if (!pctOk(s.successPct)) out.push(`${prefix} successPct ${s.successPct} is outside 0–100`);
   if (!countOk(s.tags)) out.push(`${prefix} tags ${s.tags} is not a whole number ≥ 0`);
   if (!countOk(s.applicants)) out.push(`${prefix} applicants ${s.applicants} is not a whole number ≥ 0`);
-  if (s.minPoints != null && !countOk(s.minPoints)) out.push(`${prefix} minPoints ${s.minPoints} is not a whole number ≥ 0`);
+  // Points can be fractional (Nebraska landowner elk prints levels like 0.9).
+  if (s.minPoints != null && !(Number.isFinite(s.minPoints) && s.minPoints >= 0)) out.push(`${prefix} minPoints ${s.minPoints} is not a number ≥ 0`);
   for (const p of s.pools ?? []) checkStat(`${prefix} ${p.name} pool`, p, out);
 }
 

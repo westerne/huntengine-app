@@ -25,7 +25,9 @@ function seasonText(rec: Rec): string {
   return parts.length ? parts.join(' | ') : rec.seasonName || 'See state regulations';
 }
 
-const huntName = (rec: Rec) => `Unit ${rec.unit}${rec.huntCode ? ` · Hunt ${rec.huntCode}` : ''}`;
+// Short codes ("27", "5B") read as "Unit 27"; names ("Loup West", "Unit 4") stand alone.
+const unitName = (u: string) => (/^[0-9][0-9A-Z]{0,4}$/i.test(String(u)) || /^[A-Z]$/i.test(String(u)) ? `Unit ${u}` : String(u));
+const huntName = (rec: Rec) => `${unitName(rec.unit)}${rec.huntCode ? ` · Hunt ${rec.huntCode}` : ''}`;
 
 function TierTag({ tier }: { tier: string }) {
   const t = TIER_LABELS[tier];

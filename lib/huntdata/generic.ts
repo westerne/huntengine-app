@@ -25,7 +25,8 @@ export function pointLineAt(h: Hunt, residency: Residency, points: number) {
 
 export function successAtPoints(h: Hunt, residency: Residency, points: number): number | null {
   const line = pointLineAt(h, residency, points);
-  return line ? Math.round((1000 * line.drawn) / line.applicants) / 10 : null;
+  // Some agencies count second-choice draws at a level, so drawn can exceed applied.
+  return line ? Math.min(100, Math.round((1000 * line.drawn) / line.applicants) / 10) : null;
 }
 
 // One entry per HUNT, not per unit: a unit holds bull, cow, youth and archery

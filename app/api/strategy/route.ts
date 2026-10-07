@@ -239,6 +239,12 @@ export async function POST(req: Request) {
       console.log("WEAPON DETECTION:", { weaponsRaw, isArcheryHunter, isMuzzleHunter, weaponLabel });
       console.log("SEASON DETECTION:", { seasonsRaw, seasonLabel, seasonContext });
 
+      // Weapon filter for shared-builder states. A rifle pick means rifle hunts;
+      // no pick ("Any") means every weapon — and must not be described as rifle.
+      const sharedWeapon = isArcheryHunter ? 'archery' : isMuzzleHunter ? 'muzzleloader'
+        : weaponsRaw.some((w) => w.includes('rifle')) ? 'rifle' : 'any';
+      const sharedWeaponLabel = { archery: 'Archery', muzzleloader: 'Muzzleloader', rifle: 'Rifle', any: 'Any weapon' }[sharedWeapon];
+
       // ── Build scout dataset ───────────────────────────────────────────────
       // Wyoming Deer V2: use the adapter — returns 46 hunt products (17 regions + 29 LQ)
       // with notableUnits nested inside region entries. SCOUT sees real draw decisions,
@@ -330,9 +336,7 @@ export async function POST(req: Request) {
             stateModule!,
             speciesKey as SpeciesKey,
             isResident ? 'resident' : 'nonresident',
-            // A rifle pick means rifle hunts, not "any weapon".
-            isArcheryHunter ? 'archery' : isMuzzleHunter ? 'muzzleloader'
-              : weaponsRaw.some((w) => w.includes('rifle')) ? 'rifle' : 'any',
+            sharedWeapon,
             Number(hunterPoints) || 0,
           )
 
@@ -373,7 +377,7 @@ export async function POST(req: Request) {
         timeline,
         huntStyle,
         fitness,
-        weaponLabel,
+        weaponLabel: usesSharedBuilders ? sharedWeaponLabel.toUpperCase() : weaponLabel,
         allowedHuntTypeCodes,
         seasonLabel,
         seasonContext,
@@ -412,7 +416,7 @@ export async function POST(req: Request) {
           parsed,
           {
             stateLabel: stateModule!.code,
-            weaponLabel: isArcheryHunter ? 'Archery' : isMuzzleHunter ? 'Muzzleloader' : 'Rifle',
+            weaponLabel: sharedWeaponLabel,
             hasPoints: stateModule!.drawSystem !== 'random',
           },
         ));
