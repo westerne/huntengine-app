@@ -32,7 +32,7 @@ export default function BriefView({
   huntPlan: any;
   gearList: any;
   map: { unit: string; state: string; species: string };
-  save?: { saved?: { id?: string; busy?: boolean; error?: string }; onSave: () => void };
+  save?: { saved?: { id?: string; busy?: boolean; error?: string }; onSave: () => void; label: string; savedText: string };
 }) {
   return (
     <div className="max-w-4xl mx-auto space-y-10 animate-in fade-in duration-1000 text-left">
@@ -46,10 +46,10 @@ export default function BriefView({
       {save && (
         <div className="flex justify-center">
           {save.saved?.id ? (
-            <Link href={`/season/${save.saved.id}`} className="text-green-400 text-[11px] font-black uppercase tracking-widest">✓ Saved to My Season as Tag secured — open it</Link>
+            <Link href={`/season/${save.saved.id}`} className="text-green-400 text-[11px] font-black uppercase tracking-widest">✓ {save.savedText}</Link>
           ) : (
             <button type="button" disabled={save.saved?.busy} onClick={save.onSave} className="bg-amber-600 text-white px-6 py-3 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px] disabled:opacity-50">
-              {save.saved?.busy ? 'Saving…' : 'Save this tag to My Season'}
+              {save.saved?.busy ? 'Saving…' : save.label}
             </button>
           )}
           {save.saved?.error && <p role="alert" className="text-red-400 text-xs ml-3">{save.saved.error}</p>}

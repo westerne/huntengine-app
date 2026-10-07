@@ -147,6 +147,7 @@ export default function App() {
         planUnit: String(dataToSubmit.unit || ''),
         planState: String(dataToSubmit.selectedState || dataToSubmit.states?.[0] || 'WY'),
         planSpecies: String(dataToSubmit.species || ''),
+        planRec: dataToSubmit.planRec ?? null,
         step: 'unit-brief',
         loading: false,
       }));
@@ -178,7 +179,7 @@ export default function App() {
 
   // Brief for a specific hunt picked off the results or the drawable panel.
   const briefFor = (rec: any) =>
-    handlePlanSubmit({ ...profile, unit: rec.unit, huntCode: rec.huntCode, selectedState: rec.state || profile.states[0] });
+    handlePlanSubmit({ ...profile, unit: rec.unit, huntCode: rec.huntCode, selectedState: rec.state || profile.states[0], planRec: rec });
 
   const startOver = () => setState((s) => ({
     ...s, step: 'entry', entryMode: null, unitBrief: null, recommendations: [], drawableUnits: [],
@@ -288,10 +289,22 @@ export default function App() {
             huntPlan={state.huntPlan}
             gearList={state.gearList}
             map={{ unit: state.planUnit, state: state.planState, species: state.planSpecies }}
-            save={isMember && state.entryMode === 'has-tag' ? {
-              saved: saved[state.planUnit],
-              onSave: () => saveHunt({ unit: state.planUnit, state: state.planState }, { status: 'tag_secured', source: 'has_tag' }),
-            } : undefined}
+            save={!isMember ? undefined
+              // "I already have a tag" → saved as Tag secured.
+              : state.entryMode === 'has-tag' ? {
+                  saved: saved[state.planUnit],
+                  label: 'Save this tag to My Season',
+                  savedText: 'Saved to My Season as Tag secured — open it',
+                  onSave: () => saveHunt({ unit: state.planUnit, state: state.planState }, { status: 'tag_secured', source: 'has_tag' }),
+                }
+              // Brief opened from a recommendation → save that hunt.
+              : state.planRec ? {
+                  saved: saved[saveKey(state.planRec)],
+                  label: 'Save this hunt to My Season',
+                  savedText: 'Saved to My Season — open it',
+                  onSave: () => saveHunt(state.planRec),
+                }
+              : undefined}
           />
         )}
       </div>

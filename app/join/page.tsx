@@ -1,5 +1,4 @@
 import { redirect } from 'next/navigation';
-import AppNav from '../components/AppNav';
 import JoinButton from './JoinButton';
 import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
@@ -18,7 +17,6 @@ export default async function JoinPage({ searchParams }: { searchParams: Promise
 
   return (
     <div className="min-h-screen bg-black text-zinc-100">
-      <AppNav />
       <main className="max-w-xl mx-auto px-4 py-16">
         <p className="text-[10px] uppercase text-amber-500 font-black tracking-widest mb-2">Membership</p>
         <h1 className="text-3xl font-black italic uppercase mb-4">Plan every draw with HuntQuarters</h1>

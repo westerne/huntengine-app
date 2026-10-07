@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import AppNav from '../components/AppNav';
 import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { supabaseServer } from '@/lib/supabase/server';
@@ -64,7 +63,6 @@ export default async function SeasonPage({ searchParams }: { searchParams: Promi
 
   return (
     <div className="min-h-screen bg-black text-zinc-100">
-      <AppNav current="season" />
       <main className="max-w-4xl mx-auto px-4 py-10">
         {welcome && <p role="status" className="mb-6 bg-green-950/60 border border-green-800 text-green-200 rounded-xl px-4 py-3 text-sm">Welcome to HuntQuarters. Your membership is active.</p>}
         <h1 className="text-3xl font-black italic uppercase mb-8">My Season</h1>

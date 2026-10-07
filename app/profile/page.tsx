@@ -1,5 +1,4 @@
 import { redirect } from 'next/navigation';
-import AppNav from '../components/AppNav';
 import ProfileForm from './ProfileForm';
 import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
@@ -20,7 +19,6 @@ export default async function ProfilePage() {
   ]);
   return (
     <div className="min-h-screen bg-black text-zinc-100">
-      <AppNav current="profile" />
       <ProfileForm email={viewer.email} profile={profile ?? {}} points={points ?? []} />
     </div>
   );

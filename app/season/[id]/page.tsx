@@ -1,5 +1,4 @@
 import { notFound, redirect } from 'next/navigation';
-import AppNav from '../../components/AppNav';
 import HuntWorkspace from './HuntWorkspace';
 import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
@@ -29,7 +28,6 @@ export default async function HuntPage({ params }: { params: Promise<{ id: strin
 
   return (
     <div className="min-h-screen bg-black text-zinc-100">
-      <AppNav current="season" />
       <HuntWorkspace
         hunt={hunt as SavedHunt}
         notes={notes ?? []}

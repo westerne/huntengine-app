@@ -50,6 +50,7 @@ export type HuntPlannerState = {
   planUnit: string;       // unit the active plan was built for (drives the map)
   planState: string;
   planSpecies: string;    // WY hunt-area boundaries differ by species
+  planRec: any | null;    // the recommendation card the brief was opened from (for saving)
   loading: boolean;
   loadingMessage: string;
   error: string | null;
@@ -94,6 +95,7 @@ export const INITIAL_STATE: HuntPlannerState = {
   planUnit: '',
   planState: 'WY',
   planSpecies: 'Mule Deer',
+  planRec: null,
   loading: false,
   loadingMessage: '',
   error: null,
