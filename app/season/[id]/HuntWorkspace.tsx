@@ -7,6 +7,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import ApplicationPanel, { type OfficialInfo } from './ApplicationPanel';
+import PreparationPanel, { type PlanRow } from './PreparationPanel';
+import type { PlanInputs } from '@/lib/plans';
 import type { Application, Task } from '@/lib/applications';
 import {
   canMove, nextAction, RESULT_LABEL, RESULTS, STATUS_LABEL, STATUSES,
@@ -17,13 +19,15 @@ type Note = { id: string; body: string; created_at: string };
 type Rec = { currentOdds?: string; tier?: string; whyItFits?: string; tradeoffs?: string; season?: string } | null;
 
 export default function HuntWorkspace({
-  hunt: initial, notes: initialNotes, application, tasks, official,
+  hunt: initial, notes: initialNotes, application, tasks, official, plans, prepDefaults,
 }: {
   hunt: SavedHunt;
   notes: Note[];
   application: Application | null;
   tasks: Task[];
   official: OfficialInfo;
+  plans: PlanRow[];
+  prepDefaults: Partial<Record<keyof PlanInputs, string>>;
 }) {
   const [hunt, setHunt] = useState(initial);
   const [notes, setNotes] = useState(initialNotes);
@@ -120,6 +124,17 @@ export default function HuntWorkspace({
       {/* Application (before the hunt is drawn or settled) */}
       {['considering', 'planned', 'applied'].includes(hunt.status) && (
         <ApplicationPanel hunt={hunt} application={application} tasks={tasks} official={official} onHunt={setHunt} />
+      )}
+
+      {/* Preparation, once the tag is in hand */}
+      {['tag_secured', 'preparing'].includes(hunt.status) && (
+        <PreparationPanel
+          hunt={hunt}
+          plans={plans}
+          prepTasks={tasks.filter((t) => t.kind === 'prep')}
+          defaults={prepDefaults}
+          onHunt={setHunt}
+        />
       )}
 
       {/* Saved recommendation (a snapshot from when it was saved) */}

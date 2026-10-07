@@ -36,6 +36,9 @@ function HuntCard({ h }: { h: SavedHunt }) {
         </span>
       </div>
       {h.label && <p className="text-zinc-500 text-xs mt-1">{h.label}</p>}
+      {(h as SavedHunt & { hunt_start?: string | null; hunt_end?: string | null }).hunt_start && (
+        <p className="text-zinc-300 text-xs font-bold mt-1">Hunting {(h as { hunt_start?: string }).hunt_start}{(h as { hunt_end?: string | null }).hunt_end ? ` → ${(h as { hunt_end?: string }).hunt_end}` : ''}</p>
+      )}
       {odds && <p className="text-green-400 text-sm font-bold mt-2">{odds}</p>}
       <p className="text-amber-500 text-[11px] font-black uppercase tracking-widest mt-3">Next: {action.label} →</p>
     </Link>
