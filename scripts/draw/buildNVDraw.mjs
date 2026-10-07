@@ -179,8 +179,11 @@ const WEAPON_CODE = {
 };
 const WEAPON = { ALW: 'rifle', AR: 'archery', M: 'muzzleloader' }; // others: no single weapon
 const WEAPON_LABEL = {
-  ALW: 'Any Legal Weapon', AR: 'Archery', M: 'Muzzleloader', WR: 'Shotgun or Bow Only (weapon restriction)',
-  SWR: 'Classic (archery, muzzleloader or any legal weapon by season)', 'SWR-Prmtve': 'Primitive (archery or muzzleloader by season)',
+  ALW: 'Any Legal Weapon', AR: 'Archery', M: 'Muzzleloader',
+  // No weapon words for mixed/restricted hunts: fromDrawFile.ts infers a weapon
+  // from label words, and these hunts are not a single weapon (see notes).
+  WR: 'Weapon-restricted (special firearm restrictions, NAC 503.170)',
+  SWR: 'Junior Classic (weapon set by season)', 'SWR-Prmtve': 'Junior Primitive (weapon set by season)',
 };
 
 // ---------------------------------------------------------------- helpers
@@ -489,7 +492,7 @@ out.notes = [
   `One row = one unit group + season + weapon of one hunt class; NDOW's resident hunt and nonresident hunt for that unit group are merged into draw.resident / draw.nonresident. huntCode = "<NDOW hunt number>-<first unit>" (resident number when a resident hunt exists, else the nonresident number); a suffix (-Early/-Mid/-Late by season, or -1/-2) is added when a hunt number and first unit repeat. Both NDOW hunt numbers are in the label. Hunt numbers per class/weapon are from Commission Regulation ${YEAR} Big Game Quotas (${QUOTA_URL ?? 'not found'}) and the Restricted Nonresident Guided Mule Deer regulation (${GUIDED_URL ?? 'not found'}).`,
   `DrawStat.tags = the quota printed for that residency's hunt. applicants = FIRST-CHOICE applicants (all bonus-point levels). successPct = first-choice successful ÷ first-choice applicants × 100, computed here. Tags filled from 2nd-5th choices are not counted. minPoints = lowest bonus-point level where a first-choice applicant drew — Nevada's draw is random, so this is not a cutoff.`,
   `pointLines: per bonus-point level, applicants = first-choice applicants at that level, drawn = first-choice successful at that level (levels with no first-choice applicants dropped). Successful cells are blank when zero in the PDF and are placed by column position; a block's pointLines are kept only when every column sums to the report's Total row.`,
-  `Weapon: Any Legal Weapon → rifle, Archery → archery, Muzzleloader → muzzleloader; Shotgun-or-Bow-only, junior Classic and junior Primitive hunts have no single weapon. Units: unit groups as NDOW prints them; ranges like "066 - 068" are expanded; "Portion of 144…" and "113N" map to the whole unit.`,
+  `Weapon: Any Legal Weapon → rifle, Archery → archery, Muzzleloader → muzzleloader; no weapon is set for "Weapon-restricted" hunts (report: "Shotgun or Bow Only", unit 203 area), junior Classic hunt 1107 (archery, muzzleloader and any-legal-weapon seasons on one tag) or junior Primitive hunt 1105 (archery and muzzleloader seasons). Units: unit groups as NDOW prints them; ranges like "066 - 068" are expanded; "Portion of 144…" and "113N" map to the whole unit.`,
   `${fromXlsxOnly} hunt/residency entries are in the ${YEAR} Nevada Big Game Hunt Data workbook (${DATA_URL}) but have no bonus-point block; they carry the quota only (applicants/successPct null).`,
   `Not included: Silver State, Partnership in Wildlife, Dream, Heritage, landowner/depredation/incentive/private-lands hunts, management/one-horn desert bighorn rams (no bonus points), black bear and moose.`,
 ].join(' ');

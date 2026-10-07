@@ -7,6 +7,7 @@ import idHarvest from './id.json';
 import mtHarvest from './mt.json';
 import nmHarvest from './nm.json';
 import ndHarvest from './nd.json';
+import nvHarvest from './nv.json';
 import utHarvest from './ut.json';
 import wyHarvest from './wy.json';
 
@@ -19,6 +20,7 @@ const HARVEST: Partial<Record<StateCode, HarvestFile>> = {
   MT: mtHarvest as HarvestFile,
   NM: nmHarvest as HarvestFile,
   ND: ndHarvest as HarvestFile,
+  NV: nvHarvest as HarvestFile,
   UT: utHarvest as HarvestFile,
   WY: wyHarvest as HarvestFile,
 };
@@ -46,6 +48,8 @@ const UNIT_FALLBACK: Partial<Record<StateCode, boolean>> = {
   //   ND: yes — elk/moose harvest is reported per unit (any + antlerless
   //       combined), labelled unit-wide; deer/pronghorn are statewide only.
   ND: true,
+  //   NV: no — rows are per NDOW hunt (split by residency).
+  NV: false,
 };
 
 export function getHarvestFile(state: StateCode): HarvestFile | null {
@@ -85,6 +89,16 @@ export function harvestForHunt(
 
   const byCode = rows.filter((r) => r.huntCode === huntCode);
   if (byCode.length) {
+    // Split by residency (e.g. NV): combine into one overall rate — total
+    // animals ÷ total hunters — rather than picking one group's figure.
+    const res = byCode.filter((r) => r.residency);
+    if (res.length > 1 && res.every((r) => r.hunters != null && r.harvest != null)) {
+      const hunters = res.reduce((a, r) => a + (r.hunters as number), 0);
+      const harvest = res.reduce((a, r) => a + (r.harvest as number), 0);
+      if (hunters > 0) {
+        return { successPct: Math.round((1000 * harvest) / hunters) / 10, year: harvestYear(state, species)!, hunters, harvest, scope: 'hunt' };
+      }
+    }
     // A hunt code can be reported once per take method; prefer the hunt's own weapon.
     const best = byCode.find((r) => weapon && r.weapon === weapon) ?? byCode[0];
     return toHarvest(best, harvestYear(state, species)!, 'hunt');

@@ -5,7 +5,7 @@
   "name": "Nevada Department of Wildlife — 2025 Big Game Main Draw, Bonus Point and Application Choice Trends reports",
   "url": "https://www.ndow.org/apply-buy/apply-buy-hunting/"
  },
- "notes": "NDOW 2025 main big-game draw (random draw with bonus points: each applicant gets points² + 1 draw numbers, lowest number wins). Draw numbers come from NDOW's per-hunt \"Bonus Point and Application Choice Trends\" reports (www.ndow.org/wp-content/uploads, one PDF per species class and weapon, some split by residency): https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-Archery-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-Archery-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-Muzzleloader-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Shorter-ALW-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/03/Antelope-Junior-Horns-Shorter-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/California-Bighorn-Any-Ram-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/California-Bighorn-Any-Ram-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Desert-Bighorn-Any-Ewe-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Desert-Bighorn-Any-Ram-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Desert-Bighorn-Any-Ram-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Desert-Bighorn-Any-Ram-Archery-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-Archery-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-Archery-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-Muzzleloader-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/04/Elk-Spike-ALW-Bonus-Point-and-Application-Trend-2025-1.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mountain-Goat-Any-Goat-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Archery-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Archery-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Junior-Antlered-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-NonResident-Guided-Antlered-ALW-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Rocky-Mountain-Bighorn-Any-Ram-Bonus-Point-and-Application-Trend-2025.pdf. One row = one unit group + season + weapon of one hunt class; NDOW's resident hunt and nonresident hunt for that unit group are merged into draw.resident / draw.nonresident. huntCode = \"<NDOW hunt number>-<first unit>\" (resident number when a resident hunt exists, else the nonresident number); a suffix (-Early/-Mid/-Late by season, or -1/-2) is added when a hunt number and first unit repeat. Both NDOW hunt numbers are in the label. Hunt numbers per class/weapon are from Commission Regulation 2025 Big Game Quotas (https://www.ndow.org/wp-content/uploads/2025/08/CR25-13-2025-Big-Game-Quotas-NBWC-Approved-May-2025-FINAL.pdf) and the Restricted Nonresident Guided Mule Deer regulation (https://www.ndow.org/wp-content/uploads/2025/07/CR-25-10-2025-2026-Restricted-Nonresident-Guided-Mule-Deer-Seasons-Quotas-FINAL.pdf). DrawStat.tags = the quota printed for that residency's hunt. applicants = FIRST-CHOICE applicants (all bonus-point levels). successPct = first-choice successful ÷ first-choice applicants × 100, computed here. Tags filled from 2nd-5th choices are not counted. minPoints = lowest bonus-point level where a first-choice applicant drew — Nevada's draw is random, so this is not a cutoff. pointLines: per bonus-point level, applicants = first-choice applicants at that level, drawn = first-choice successful at that level (levels with no first-choice applicants dropped). Successful cells are blank when zero in the PDF and are placed by column position; a block's pointLines are kept only when every column sums to the report's Total row. Weapon: Any Legal Weapon → rifle, Archery → archery, Muzzleloader → muzzleloader; Shotgun-or-Bow-only, junior Classic and junior Primitive hunts have no single weapon. Units: unit groups as NDOW prints them; ranges like \"066 - 068\" are expanded; \"Portion of 144…\" and \"113N\" map to the whole unit. 3 hunt/residency entries are in the 2025 Nevada Big Game Hunt Data workbook (https://www.ndow.org/wp-content/uploads/2026/03/2025-Nevada-Big-Game-Hunt-Data.xlsx) but have no bonus-point block; they carry the quota only (applicants/successPct null). Not included: Silver State, Partnership in Wildlife, Dream, Heritage, landowner/depredation/incentive/private-lands hunts, management/one-horn desert bighorn rams (no bonus points), black bear and moose.",
+ "notes": "NDOW 2025 main big-game draw (random draw with bonus points: each applicant gets points² + 1 draw numbers, lowest number wins). Draw numbers come from NDOW's per-hunt \"Bonus Point and Application Choice Trends\" reports (www.ndow.org/wp-content/uploads, one PDF per species class and weapon, some split by residency): https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-Archery-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-Archery-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Longer-Muzzleloader-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Antelope-Horns-Shorter-ALW-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/03/Antelope-Junior-Horns-Shorter-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/California-Bighorn-Any-Ram-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/California-Bighorn-Any-Ram-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Desert-Bighorn-Any-Ewe-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Desert-Bighorn-Any-Ram-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Desert-Bighorn-Any-Ram-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Desert-Bighorn-Any-Ram-Archery-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-Archery-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-Archery-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-Muzzleloader-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/04/Elk-Spike-ALW-Bonus-Point-and-Application-Trend-2025-1.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mountain-Goat-Any-Goat-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Archery-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Archery-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-NonResident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-Resident-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Junior-Antlered-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-NonResident-Guided-Antlered-ALW-Bonus-Point-and-Application-Trend-2025.pdf ; https://www.ndow.org/wp-content/uploads/2026/01/Rocky-Mountain-Bighorn-Any-Ram-Bonus-Point-and-Application-Trend-2025.pdf. One row = one unit group + season + weapon of one hunt class; NDOW's resident hunt and nonresident hunt for that unit group are merged into draw.resident / draw.nonresident. huntCode = \"<NDOW hunt number>-<first unit>\" (resident number when a resident hunt exists, else the nonresident number); a suffix (-Early/-Mid/-Late by season, or -1/-2) is added when a hunt number and first unit repeat. Both NDOW hunt numbers are in the label. Hunt numbers per class/weapon are from Commission Regulation 2025 Big Game Quotas (https://www.ndow.org/wp-content/uploads/2025/08/CR25-13-2025-Big-Game-Quotas-NBWC-Approved-May-2025-FINAL.pdf) and the Restricted Nonresident Guided Mule Deer regulation (https://www.ndow.org/wp-content/uploads/2025/07/CR-25-10-2025-2026-Restricted-Nonresident-Guided-Mule-Deer-Seasons-Quotas-FINAL.pdf). DrawStat.tags = the quota printed for that residency's hunt. applicants = FIRST-CHOICE applicants (all bonus-point levels). successPct = first-choice successful ÷ first-choice applicants × 100, computed here. Tags filled from 2nd-5th choices are not counted. minPoints = lowest bonus-point level where a first-choice applicant drew — Nevada's draw is random, so this is not a cutoff. pointLines: per bonus-point level, applicants = first-choice applicants at that level, drawn = first-choice successful at that level (levels with no first-choice applicants dropped). Successful cells are blank when zero in the PDF and are placed by column position; a block's pointLines are kept only when every column sums to the report's Total row. Weapon: Any Legal Weapon → rifle, Archery → archery, Muzzleloader → muzzleloader; no weapon is set for \"Weapon-restricted\" hunts (report: \"Shotgun or Bow Only\", unit 203 area), junior Classic hunt 1107 (archery, muzzleloader and any-legal-weapon seasons on one tag) or junior Primitive hunt 1105 (archery and muzzleloader seasons). Units: unit groups as NDOW prints them; ranges like \"066 - 068\" are expanded; \"Portion of 144…\" and \"113N\" map to the whole unit. 2 hunt/residency entries are in the 2025 Nevada Big Game Hunt Data workbook (https://www.ndow.org/wp-content/uploads/2026/03/2025-Nevada-Big-Game-Hunt-Data.xlsx) but have no bonus-point block; they carry the quota only (applicants/successPct null). Not included: Silver State, Partnership in Wildlife, Dream, Heritage, landowner/depredation/incentive/private-lands hunts, management/one-horn desert bighorn rams (no bonus points), black bear and moose.",
  "species": {
   "ANTELOPE": [
    {
@@ -42762,7 +42762,7 @@
    {
     "huntCode": "1105-014",
     "unit": "014",
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 014 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 014 (NDOW resident hunt 1105)",
     "draw": {
      "resident": {
       "tags": 2,
@@ -42775,7 +42775,7 @@
    {
     "huntCode": "1105-051",
     "unit": "051",
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 051 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 051 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -42815,7 +42815,7 @@
      "067",
      "068"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 061, 062, 064, 066 - 068 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 061, 062, 064, 066 - 068 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -42847,7 +42847,7 @@
    {
     "huntCode": "1105-065",
     "unit": "065",
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 065 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 065 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -42891,7 +42891,7 @@
      "079",
      "091"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 071 - 079, 091 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 071 - 079, 091 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -42923,7 +42923,7 @@
    {
     "huntCode": "1105-081",
     "unit": "081",
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 081 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 081 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-11-10",
      "close": "2025-12-10"
@@ -42971,7 +42971,7 @@
      "108",
      "109"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 101 - 109 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 101 - 109 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-09-30"
@@ -43007,7 +43007,7 @@
      "114",
      "115"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 114, 115 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 114, 115 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -43040,7 +43040,7 @@
      "133",
      "134"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 131 - 134 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 131 - 134 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -43079,7 +43079,7 @@
      "144",
      "145"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 141 - 145 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 141 - 145 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -43119,7 +43119,7 @@
      "155",
      "156"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 151 - 156 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 151 - 156 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -43151,7 +43151,7 @@
      "172",
      "173"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 171 - 173 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 171 - 173 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -43187,7 +43187,7 @@
      "194",
      "196"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 194, 196 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 194, 196 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -43229,7 +43229,7 @@
      "222",
      "223"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 221 - 223 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 221 - 223 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -43268,7 +43268,7 @@
      "244",
      "245"
     ],
-    "label": "Junior antlered mule deer — Primitive (archery or muzzleloader by season), Units 241 - 245 (NDOW resident hunt 1105)",
+    "label": "Junior antlered mule deer — Junior Primitive (weapon set by season), Units 241 - 245 (NDOW resident hunt 1105)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-04"
@@ -44027,7 +44027,7 @@
      "012",
      "013"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 011 - 013 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 011 - 013 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44069,7 +44069,7 @@
    {
     "huntCode": "1107-015",
     "unit": "015",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 015 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 015 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2026-01-01"
@@ -44101,7 +44101,7 @@
    {
     "huntCode": "1107-021",
     "unit": "021",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 021 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 021 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-12-01",
      "close": "2026-01-01"
@@ -44143,7 +44143,7 @@
    {
     "huntCode": "1107-022",
     "unit": "022",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 022 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 022 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44180,7 +44180,7 @@
    {
     "huntCode": "1107-031",
     "unit": "031",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 031 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 031 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44222,7 +44222,7 @@
    {
     "huntCode": "1107-032",
     "unit": "032",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 032 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 032 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44259,7 +44259,7 @@
    {
     "huntCode": "1107-033",
     "unit": "033",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 033 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 033 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44291,7 +44291,7 @@
    {
     "huntCode": "1107-034",
     "unit": "034",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 034 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 034 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44323,7 +44323,7 @@
    {
     "huntCode": "1107-035",
     "unit": "035",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 035 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 035 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44359,7 +44359,7 @@
      "041",
      "042"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 041, 042 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 041, 042 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44396,7 +44396,7 @@
      "044",
      "046"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 043, 044, 046 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 043, 044, 046 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44433,7 +44433,7 @@
    {
     "huntCode": "1107-045",
     "unit": "045",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 045 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 045 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44475,7 +44475,7 @@
      "112",
      "113"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 111 - 113 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 111 - 113 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-02"
@@ -44517,7 +44517,7 @@
    {
     "huntCode": "1107-121",
     "unit": "121",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 121 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 121 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-02"
@@ -44570,7 +44570,7 @@
      "163",
      "164"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 161 - 164 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 161 - 164 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-02"
@@ -44618,7 +44618,7 @@
      "183",
      "184"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 181 - 184 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 181 - 184 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-05"
@@ -44660,7 +44660,7 @@
    {
     "huntCode": "1107-192",
     "unit": "192",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 192 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 192 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-30"
@@ -44702,7 +44702,7 @@
    {
     "huntCode": "1107-195",
     "unit": "195",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 195 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 195 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-02"
@@ -44748,7 +44748,7 @@
      "201",
      "204"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 201, 204 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 201, 204 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-11-05",
      "close": "2026-01-01"
@@ -44797,7 +44797,7 @@
      "207",
      "208"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 202, 205 - 208 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 202, 205 - 208 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-11-05",
      "close": "2026-01-01"
@@ -44839,14 +44839,38 @@
    {
     "huntCode": "1107-203",
     "unit": "203",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 203 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 203 (NDOW resident hunt 1107)",
+    "season": {
+     "open": "2025-08-10",
+     "close": "2025-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 7,
-      "applicants": null,
-      "successPct": null
+      "applicants": 20,
+      "successPct": 15,
+      "minPoints": 0
      },
      "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 12,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 5,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 1
+      }
+     ]
     }
    },
    {
@@ -44857,7 +44881,7 @@
      "212",
      "213"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 211 - 213 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 211 - 213 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-30"
@@ -44894,7 +44918,7 @@
    {
     "huntCode": "1107-231",
     "unit": "231",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 231 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 231 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-10-31"
@@ -44952,7 +44976,7 @@
      "253",
      "254"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 251 - 254 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 251 - 254 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-02"
@@ -44994,7 +45018,7 @@
      "267",
      "268"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 261 - 268 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 261 - 268 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-30"
@@ -45045,7 +45069,7 @@
      "271",
      "272"
     ],
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 271, 272 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 271, 272 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-30"
@@ -45092,7 +45116,7 @@
    {
     "huntCode": "1107-291",
     "unit": "291",
-    "label": "Junior antlered mule deer — Classic (archery, muzzleloader or any legal weapon by season), Units 291 (NDOW resident hunt 1107)",
+    "label": "Junior antlered mule deer — Junior Classic (weapon set by season), Units 291 (NDOW resident hunt 1107)",
     "season": {
      "open": "2025-08-10",
      "close": "2025-11-30"
@@ -47504,7 +47528,7 @@
    {
     "huntCode": "1235-203",
     "unit": "203",
-    "label": "Antlered mule deer, nonresident guided — Shotgun or Bow Only (weapon restriction), Units 203 (NDOW nonresident hunt 1235)",
+    "label": "Antlered mule deer, nonresident guided — Weapon-restricted (special firearm restrictions, NAC 503.170), Units 203 (NDOW nonresident hunt 1235)",
     "season": {
      "open": "2025-11-05",
      "close": "2025-11-30"
@@ -55935,7 +55959,7 @@
    {
     "huntCode": "1331-203",
     "unit": "203",
-    "label": "Antlered mule deer — Shotgun or Bow Only (weapon restriction), Units 203 (NDOW resident hunt 1331, nonresident hunt 1332)",
+    "label": "Antlered mule deer — Weapon-restricted (special firearm restrictions, NAC 503.170), Units 203 (NDOW resident hunt 1331, nonresident hunt 1332)",
     "season": {
      "open": "2025-11-05",
      "close": "2025-11-30"
@@ -66667,43 +66691,6 @@
        "points": 5,
        "applicants": 2,
        "drawn": 0
-      }
-     ]
-    }
-   },
-   {
-    "huntCode": "null-203",
-    "unit": "203",
-    "label": "Junior antlered mule deer — Shotgun or Bow Only (weapon restriction), Units 203 (NDOW )",
-    "season": {
-     "open": "2025-08-10",
-     "close": "2025-11-30"
-    },
-    "draw": {
-     "resident": {
-      "tags": 7,
-      "applicants": 20,
-      "successPct": 15,
-      "minPoints": 0
-     },
-     "nonresident": null
-    },
-    "pointLines": {
-     "resident": [
-      {
-       "points": 0,
-       "applicants": 12,
-       "drawn": 1
-      },
-      {
-       "points": 1,
-       "applicants": 5,
-       "drawn": 1
-      },
-      {
-       "points": 2,
-       "applicants": 3,
-       "drawn": 1
       }
      ]
     }

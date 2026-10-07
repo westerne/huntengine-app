@@ -11,6 +11,7 @@ import nmDraw from './draw/nm.json';
 import neDraw from './draw/ne.json';
 import ndDraw from './draw/nd.json';
 import ksDraw from './draw/ks.json';
+import nvDraw from './draw/nv.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -93,10 +94,12 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
     drawSystemNote: "Deer gun, muzzleloader deer and pronghorn are weighted bonus-point lotteries: with 1–3 points you get twice your points in extra chances, and from 4 points up your points are cubed. Points are lost when you draw your first choice and kept only if you apply at least every other year. Elk, moose and bighorn sheep are once-in-a-lifetime lotteries without bonus points. Elk, moose and pronghorn are residents-only; non-residents draw deer gun licenses from a separate pool of about 1% of licenses, and at most one bighorn license may go to a non-resident.",
   },
   NV: {
-    code: 'NV', name: 'NEVADA', status: 'planned', batch: 'B',
+    code: 'NV', name: 'NEVADA', status: 'live', batch: 'B',
     agency: { name: 'Nevada Department of Wildlife', url: 'https://www.ndow.org' },
-    drawSystem: 'bonus-squared', rulesVerified: false,
-    drawSystemNote: 'Bonus points, squared (plus the current year) in a random draw. Points improve odds but never guarantee a tag.',
+    // Verified 2026-10-07 against NDOW's 2026 Big Game Application FAQ and
+    // CR 26-01 (lib/huntdata/draw/nv-research.md).
+    drawSystem: 'bonus-squared', rulesVerified: true,
+    drawSystemNote: "Random draw with squared bonus points: each applicant gets (bonus points squared + 1) random numbers and the lowest number counts, so points improve odds but never guarantee a tag. You need an active Nevada hunting or combination license to earn a point; an unsuccessful application becomes a point, and points are lost after skipping a hunt category two years in a row. Quotas are about 90% resident and 10% non-resident. After drawing there are waiting periods: bighorn ram and mountain goat 10 years, elk 7, antelope 3, bighorn ewe 2, mule deer none. Main-draw applications are due in May.",
   },
 
   // ── Batch C: by April ────────────────────────────────────────────────────
@@ -149,6 +152,7 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   NE: neDraw as DrawFile,
   ND: ndDraw as DrawFile,
   KS: ksDraw as DrawFile,
+  NV: nvDraw as DrawFile,
 };
 
 const MODULES: Partial<Record<StateCode, StateModule>> = {

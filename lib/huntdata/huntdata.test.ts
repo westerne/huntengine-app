@@ -12,7 +12,7 @@ describe('registry', () => {
   });
 
   it('has the live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'UT', 'WY']);
+    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'NV', 'UT', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -20,7 +20,7 @@ describe('registry', () => {
     expect(toStateCode('wy')).toBe('WY');
     expect(toStateCode('NEW MEXICO')).toBe('NM');
     expect(toStateCode('Narnia')).toBeNull();
-    expect(getStateModule('NV')).toBeNull(); // planned, no data yet
+    expect(getStateModule('OR')).toBeNull(); // planned, no data yet
   });
 });
 
@@ -552,5 +552,21 @@ describe('Kansas', () => {
     expect(u16.draw.nonresident).toMatchObject({ tags: 1740, applicants: 2369 });
     expect(u16.draw.nonresident?.successPct).toBeCloseTo(73.4, 1);
     expect(STATE_INFO.KS.drawSystem).toBe('preference');
+  });
+});
+
+describe('Nevada', () => {
+  const nv = getStateModule('NV')!;
+  it('loads NDOW draw results with bonus-point tables', () => {
+    const h = nv.hunts('DEER').find((x) => x.huntCode === '1331-011')!;
+    expect(h.draw.resident).toMatchObject({ tags: 40, applicants: 704 });
+    expect(h.draw.resident?.successPct).toBeCloseTo(4.0, 1);
+    expect(h.pointLines?.resident?.find((l) => l.points === 2)).toMatchObject({ applicants: 152, drawn: 9 });
+    expect(STATE_INFO.NV.rulesVerified).toBe(true);
+  });
+  it('combines resident + non-resident harvest into one overall rate', () => {
+    const elk = nv.hunts('ELK').find((x) => x.huntCode === '4151-221-Early')!;
+    expect(elk.harvest?.scope).toBe('hunt');
+    expect(elk.harvest!.hunters).toBeGreaterThanOrEqual(55); // resident 55 + any non-residents
   });
 });

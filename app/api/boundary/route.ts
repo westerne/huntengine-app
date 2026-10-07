@@ -171,6 +171,16 @@ const KDWP_DMU: Source = {
   whereFor: (u) => `DMU='UNIT ${u.replace(/^0+(?=\d)/, '')}'`,
 };
 
+// Nevada Department of Wildlife — hunt units, display_name as 3-digit text ("061").
+const NDOW_UNITS: Source = {
+  url: 'https://services.arcgis.com/RyxlXSfFi87rAosq/arcgis/rest/services/NDOW_Hunt_Units/FeatureServer/0/query',
+  unitField: 'display_name',
+  numeric: false,
+  outFields: 'display_name',
+  labelField: 'display_name',
+  whereFor: (u) => `display_name='${/^\d+$/.test(u) ? u.padStart(3, '0') : u}'`,
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -191,6 +201,7 @@ function resolveSource(state: string, species: string): Source | null {
   if (state === 'NE') return NE_SOURCES[speciesKey(species)] ?? null;
   if (state === 'ND') return ND_SOURCES[speciesKey(species)] ?? null;
   if (state === 'KS') return KDWP_DMU;
+  if (state === 'NV') return NDOW_UNITS;
   return null;
 }
 
