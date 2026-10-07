@@ -153,7 +153,9 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 
 ## Phase 3: Application season (January – June 2027)
 
-- [ ] **Batches B and C**, each going live ahead of its deadlines.
+- [x] **Batches B and C** live (2026-10-07): KS, ND, NV, then OK, CA, WA, OR, SD. 16 of 17 states; Alaska is Batch D.
+  - Data limits to keep in mind: CA and WA publish no odds by point level (overall odds only); OK applicant counts include 2nd–5th choices; SD and the new eastern-OR deer areas have no public unit map; OR sheep/goat tag numbers are 2026 proposals.
+  - Refresh each state's draw file when its 2026 (or 2027) results post.
 - [ ] **Deadline calendar** for all 17 states, with email reminders.
 - [ ] **Points tracker:** members enter their points once for every state, and every plan uses them.
 - [ ] **Multi-state planning:** "where should I apply this year?" across all states at once. The planner handles one state at a time today.

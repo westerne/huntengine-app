@@ -203,6 +203,18 @@ export async function POST(req: Request) {
 
     // ─── 5. SCOUT MODE ────────────────────────────────────────────────────────
     if (mode === 'SCOUT') {
+      // Species closed to non-residents: answer plainly — no AI, no "build points".
+      const closed = !isResident ? stateModule?.residentOnly?.[speciesKey as SpeciesKey] : undefined;
+      if (closed) {
+        return NextResponse.json({
+          drawReality: { regularPoolUnits: 0, randomPoolUnits: 0, pointsToNextUnit: 0, bestLimitedUnit: '', summary: `${closed} Non-residents can't apply or build points for it, so there's nothing to plan here. Try another species in this state, or the same species in another state.` },
+          strategyPath: 'LONG_GAME',
+          actionPlan: { headline: 'Not open to non-residents', steps: [], randomPoolPlays: [], pointBankingAdvice: '' },
+          drawableUnits: [],
+          recommendations: [],
+          residentOnly: true,
+        });
+      }
       const hunterPoints = formData.points?.[stateRaw] ?? formData.points?.['WY'] ?? 0;
       const trophyFloor = parseInt(formData.trophyQuality || '0');
       const timeline = formData.drawTimeline || 'This Year';

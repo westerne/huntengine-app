@@ -1,0 +1,2511 @@
+{
+ "state": "SD",
+ "year": 2025,
+ "speciesYear": {
+  "DEER": 2025,
+  "ELK": 2025,
+  "ANTELOPE": 2025,
+  "BIGHORNSHEEP": 2024
+ },
+ "source": {
+  "name": "South Dakota Game, Fish and Parks — Harvest Reports and Surveys",
+  "url": "https://gfp.sd.gov/hunt-surveys/"
+ },
+ "notes": "Per LICENSE (GFP unit + license type), 2025 seasons, from GFP's harvest-projection PDFs at https://gfp.sd.gov/images/Harvest_Reports/: 'WEST RIVER PRAIRIE FIREARM DEER.pdf' (regular season + West River Special Buck), 'EAST RIVER FIREARM DEER.pdf' (regular + East River Special Buck), 'BLACK HILLS DEER.pdf', 'CUSTER STATE PARK DEER.pdf', 'MUZZLELOADER DEER.pdf', 'NATIONAL WILDLIFE REFUGE FIREARM DEER.pdf', 'ARCHERY DEER.pdf' (nonresident public/private table), 'BLACK HILLS CSP PRAIRIE ELK.pdf', 'FIREARM ANTELOPE.pdf', 'CUSTER STATE PARK ANTELOPE.pdf', 'ARCHERY ANTELOPE.pdf', 'SPECIAL ANTELOPE.pdf'. These are email-survey projections (Survey123), not mandatory reports. huntCode uses the same '<prefix>-<code>' scheme as draw/sd.json, so most rows match a 2026 draw row; a few 2025 license types differ from 2026 (e.g. MZD-ST101 vs 2026 ST102). successPct = GFP's 'Hunter Success' column (where a report prints only 'Tag Success', e.g. single-tag antelope, special buck and nonresident archery, that figure). harvest = GFP 'Total Harvest'/'Harvested' projection. hunters = null: GFP prints licenses sold and survey response rate, not hunters afield. residency is set only where GFP splits a row by residency (Special Antelope, nonresident archery). Left out: unlimited / landowner-own-land licenses (not drawn), resident archery (over the counter), access-permit archery, rows with a blank Hunter Success (58D-13, 67A-11, H5A-21 archery). Row sums reconcile to the report totals within rounding (e.g. West River regular 10,254 + 67A-11's 36 vs 10,286 printed). BIGHORNSHEEP: 2024 season from 'South Dakota Game Report 2025-07, 2024 Big Game Harvest Projections' (https://gfp.sd.gov/userdocs/docs/2024_big_game_annual_report.pdf); Black Hills units BH2+BH4 are reported together (unit 'BH'; 6 licenses incl. 1 auction license, all harvested); no 2025 sheep report is posted. No mountain goat (season closed).",
+ "species": {
+  "DEER": [
+   {
+    "unit": "ST1",
+    "huntCode": "ADNP-ST101",
+    "residency": "nonresident",
+    "weapon": "archery",
+    "label": "Nonresident Archery Deer, public & private land (statewide) — GFP license ADNP-ST1-01",
+    "hunters": null,
+    "harvest": 605,
+    "successPct": 29
+   },
+   {
+    "unit": "BH1",
+    "huntCode": "BHD-BH102",
+    "label": "Black Hills Deer (firearm) — GFP license BH1-02",
+    "hunters": null,
+    "harvest": 142,
+    "successPct": 62.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "BH1",
+    "huntCode": "BHD-BH112",
+    "label": "Black Hills Deer (firearm) — GFP license BH1-12",
+    "hunters": null,
+    "harvest": 1816,
+    "successPct": 61.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "CU1",
+    "huntCode": "CUD-CU111",
+    "label": "Custer State Park Deer (firearm) — GFP license CU1-11",
+    "hunters": null,
+    "harvest": 18,
+    "successPct": 74.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "01A",
+    "huntCode": "ERD-01A01",
+    "label": "East River Deer (firearm) — GFP license 01A-01",
+    "hunters": null,
+    "harvest": 160,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "03A",
+    "huntCode": "ERD-03A01",
+    "label": "East River Deer (firearm) — GFP license 03A-01",
+    "hunters": null,
+    "harvest": 246,
+    "successPct": 41.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "03A",
+    "huntCode": "ERD-03A13",
+    "label": "East River Deer (firearm) — GFP license 03A-13",
+    "hunters": null,
+    "harvest": 126,
+    "successPct": 42.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "04A",
+    "huntCode": "ERD-04A11",
+    "label": "East River Deer (firearm) — GFP license 04A-11",
+    "hunters": null,
+    "harvest": 220,
+    "successPct": 49.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "05A",
+    "huntCode": "ERD-05A01",
+    "label": "East River Deer (firearm) — GFP license 05A-01",
+    "hunters": null,
+    "harvest": 192,
+    "successPct": 48.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "05A",
+    "huntCode": "ERD-05A13",
+    "label": "East River Deer (firearm) — GFP license 05A-13",
+    "hunters": null,
+    "harvest": 95,
+    "successPct": 48.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "06A",
+    "huntCode": "ERD-06A01",
+    "label": "East River Deer (firearm) — GFP license 06A-01",
+    "hunters": null,
+    "harvest": 175,
+    "successPct": 44.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "06A",
+    "huntCode": "ERD-06A13",
+    "label": "East River Deer (firearm) — GFP license 06A-13",
+    "hunters": null,
+    "harvest": 48,
+    "successPct": 49.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "07A",
+    "huntCode": "ERD-07A02",
+    "label": "East River Deer (firearm) — GFP license 07A-02",
+    "hunters": null,
+    "harvest": 19,
+    "successPct": 19.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "08A",
+    "huntCode": "ERD-08A02",
+    "label": "East River Deer (firearm) — GFP license 08A-02",
+    "hunters": null,
+    "harvest": 33,
+    "successPct": 33.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "10A",
+    "huntCode": "ERD-10A11",
+    "label": "East River Deer (firearm) — GFP license 10A-11",
+    "hunters": null,
+    "harvest": 110,
+    "successPct": 55.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "12A",
+    "huntCode": "ERD-12A02",
+    "label": "East River Deer (firearm) — GFP license 12A-02",
+    "hunters": null,
+    "harvest": 32,
+    "successPct": 32.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "13A",
+    "huntCode": "ERD-13A01",
+    "label": "East River Deer (firearm) — GFP license 13A-01",
+    "hunters": null,
+    "harvest": 21,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "13A",
+    "huntCode": "ERD-13A11",
+    "label": "East River Deer (firearm) — GFP license 13A-11",
+    "hunters": null,
+    "harvest": 192,
+    "successPct": 38.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "13L",
+    "huntCode": "ERD-13L01",
+    "label": "East River Deer (firearm) — GFP license 13L-01",
+    "hunters": null,
+    "harvest": 13,
+    "successPct": 67.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "14A",
+    "huntCode": "ERD-14A01",
+    "label": "East River Deer (firearm) — GFP license 14A-01",
+    "hunters": null,
+    "harvest": 23,
+    "successPct": 45.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "14A",
+    "huntCode": "ERD-14A11",
+    "label": "East River Deer (firearm) — GFP license 14A-11",
+    "hunters": null,
+    "harvest": 51,
+    "successPct": 34.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "16A",
+    "huntCode": "ERD-16A01",
+    "label": "East River Deer (firearm) — GFP license 16A-01",
+    "hunters": null,
+    "harvest": 18,
+    "successPct": 62.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "16A",
+    "huntCode": "ERD-16A11",
+    "label": "East River Deer (firearm) — GFP license 16A-11",
+    "hunters": null,
+    "harvest": 192,
+    "successPct": 55.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "17A",
+    "huntCode": "ERD-17A11",
+    "label": "East River Deer (firearm) — GFP license 17A-11",
+    "hunters": null,
+    "harvest": 65,
+    "successPct": 33.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "18A",
+    "huntCode": "ERD-18A01",
+    "label": "East River Deer (firearm) — GFP license 18A-01",
+    "hunters": null,
+    "harvest": 301,
+    "successPct": 50.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "18A",
+    "huntCode": "ERD-18A13",
+    "label": "East River Deer (firearm) — GFP license 18A-13",
+    "hunters": null,
+    "harvest": 82,
+    "successPct": 41.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "19A",
+    "huntCode": "ERD-19A02",
+    "label": "East River Deer (firearm) — GFP license 19A-02",
+    "hunters": null,
+    "harvest": 22,
+    "successPct": 22.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22A",
+    "huntCode": "ERD-22A01",
+    "label": "East River Deer (firearm) — GFP license 22A-01",
+    "hunters": null,
+    "harvest": 261,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "22A",
+    "huntCode": "ERD-22A13",
+    "label": "East River Deer (firearm) — GFP license 22A-13",
+    "hunters": null,
+    "harvest": 107,
+    "successPct": 36.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23A",
+    "huntCode": "ERD-23A01",
+    "label": "East River Deer (firearm) — GFP license 23A-01",
+    "hunters": null,
+    "harvest": 218,
+    "successPct": 44.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "23A",
+    "huntCode": "ERD-23A13",
+    "label": "East River Deer (firearm) — GFP license 23A-13",
+    "hunters": null,
+    "harvest": 37,
+    "successPct": 37.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "25A",
+    "huntCode": "ERD-25A11",
+    "label": "East River Deer (firearm) — GFP license 25A-11",
+    "hunters": null,
+    "harvest": 28,
+    "successPct": 19.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "26A",
+    "huntCode": "ERD-26A01",
+    "label": "East River Deer (firearm) — GFP license 26A-01",
+    "hunters": null,
+    "harvest": 319,
+    "successPct": 64.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "26A",
+    "huntCode": "ERD-26A13",
+    "label": "East River Deer (firearm) — GFP license 26A-13",
+    "hunters": null,
+    "harvest": 100,
+    "successPct": 50.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "28A",
+    "huntCode": "ERD-28A01",
+    "label": "East River Deer (firearm) — GFP license 28A-01",
+    "hunters": null,
+    "harvest": 333,
+    "successPct": 55.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "28A",
+    "huntCode": "ERD-28A13",
+    "label": "East River Deer (firearm) — GFP license 28A-13",
+    "hunters": null,
+    "harvest": 175,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29A",
+    "huntCode": "ERD-29A01",
+    "label": "East River Deer (firearm) — GFP license 29A-01",
+    "hunters": null,
+    "harvest": 203,
+    "successPct": 51.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "29A",
+    "huntCode": "ERD-29A13",
+    "label": "East River Deer (firearm) — GFP license 29A-13",
+    "hunters": null,
+    "harvest": 53,
+    "successPct": 53.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32A",
+    "huntCode": "ERD-32A01",
+    "label": "East River Deer (firearm) — GFP license 32A-01",
+    "hunters": null,
+    "harvest": 246,
+    "successPct": 41.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "32A",
+    "huntCode": "ERD-32A13",
+    "label": "East River Deer (firearm) — GFP license 32A-13",
+    "hunters": null,
+    "harvest": 40,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33A",
+    "huntCode": "ERD-33A01",
+    "label": "East River Deer (firearm) — GFP license 33A-01",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 25.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "33A",
+    "huntCode": "ERD-33A11",
+    "label": "East River Deer (firearm) — GFP license 33A-11",
+    "hunters": null,
+    "harvest": 179,
+    "successPct": 60.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "34A",
+    "huntCode": "ERD-34A02",
+    "label": "East River Deer (firearm) — GFP license 34A-02",
+    "hunters": null,
+    "harvest": 60,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "ERD-36A01",
+    "label": "East River Deer (firearm) — GFP license 36A-01",
+    "hunters": null,
+    "harvest": 94,
+    "successPct": 62.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "ERD-36A11",
+    "label": "East River Deer (firearm) — GFP license 36A-11",
+    "hunters": null,
+    "harvest": 125,
+    "successPct": 50.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "37A",
+    "huntCode": "ERD-37A02",
+    "label": "East River Deer (firearm) — GFP license 37A-02",
+    "hunters": null,
+    "harvest": 26,
+    "successPct": 27.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "38A",
+    "huntCode": "ERD-38A01",
+    "label": "East River Deer (firearm) — GFP license 38A-01",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 75.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "38A",
+    "huntCode": "ERD-38A11",
+    "label": "East River Deer (firearm) — GFP license 38A-11",
+    "hunters": null,
+    "harvest": 166,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "40A",
+    "huntCode": "ERD-40A11",
+    "label": "East River Deer (firearm) — GFP license 40A-11",
+    "hunters": null,
+    "harvest": 86,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "42A",
+    "huntCode": "ERD-42A01",
+    "label": "East River Deer (firearm) — GFP license 42A-01",
+    "hunters": null,
+    "harvest": 206,
+    "successPct": 41.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "42A",
+    "huntCode": "ERD-42A13",
+    "label": "East River Deer (firearm) — GFP license 42A-13",
+    "hunters": null,
+    "harvest": 85,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "43A",
+    "huntCode": "ERD-43A01",
+    "label": "East River Deer (firearm) — GFP license 43A-01",
+    "hunters": null,
+    "harvest": 139,
+    "successPct": 46.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "43A",
+    "huntCode": "ERD-43A13",
+    "label": "East River Deer (firearm) — GFP license 43A-13",
+    "hunters": null,
+    "harvest": 40,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "44A",
+    "huntCode": "ERD-44A02",
+    "label": "East River Deer (firearm) — GFP license 44A-02",
+    "hunters": null,
+    "harvest": 23,
+    "successPct": 23.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "46A",
+    "huntCode": "ERD-46A01",
+    "label": "East River Deer (firearm) — GFP license 46A-01",
+    "hunters": null,
+    "harvest": 102,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "47A",
+    "huntCode": "ERD-47A01",
+    "label": "East River Deer (firearm) — GFP license 47A-01",
+    "hunters": null,
+    "harvest": 282,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "47A",
+    "huntCode": "ERD-47A13",
+    "label": "East River Deer (firearm) — GFP license 47A-13",
+    "hunters": null,
+    "harvest": 181,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "48A",
+    "huntCode": "ERD-48A01",
+    "label": "East River Deer (firearm) — GFP license 48A-01",
+    "hunters": null,
+    "harvest": 226,
+    "successPct": 45.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "48A",
+    "huntCode": "ERD-48A13",
+    "label": "East River Deer (firearm) — GFP license 48A-13",
+    "hunters": null,
+    "harvest": 24,
+    "successPct": 47.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "51A",
+    "huntCode": "ERD-51A01",
+    "label": "East River Deer (firearm) — GFP license 51A-01",
+    "hunters": null,
+    "harvest": 187,
+    "successPct": 47.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "51A",
+    "huntCode": "ERD-51A13",
+    "label": "East River Deer (firearm) — GFP license 51A-13",
+    "hunters": null,
+    "harvest": 114,
+    "successPct": 33.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "52A",
+    "huntCode": "ERD-52A01",
+    "label": "East River Deer (firearm) — GFP license 52A-01",
+    "hunters": null,
+    "harvest": 117,
+    "successPct": 39.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "52A",
+    "huntCode": "ERD-52A13",
+    "label": "East River Deer (firearm) — GFP license 52A-13",
+    "hunters": null,
+    "harvest": 28,
+    "successPct": 28.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "54A",
+    "huntCode": "ERD-54A01",
+    "label": "East River Deer (firearm) — GFP license 54A-01",
+    "hunters": null,
+    "harvest": 23,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "54A",
+    "huntCode": "ERD-54A11",
+    "label": "East River Deer (firearm) — GFP license 54A-11",
+    "hunters": null,
+    "harvest": 207,
+    "successPct": 52.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "55A",
+    "huntCode": "ERD-55A01",
+    "label": "East River Deer (firearm) — GFP license 55A-01",
+    "hunters": null,
+    "harvest": 234,
+    "successPct": 47.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "55A",
+    "huntCode": "ERD-55A13",
+    "label": "East River Deer (firearm) — GFP license 55A-13",
+    "hunters": null,
+    "harvest": 24,
+    "successPct": 48.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "56A",
+    "huntCode": "ERD-56A11",
+    "label": "East River Deer (firearm) — GFP license 56A-11",
+    "hunters": null,
+    "harvest": 94,
+    "successPct": 37.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "57A",
+    "huntCode": "ERD-57A01",
+    "label": "East River Deer (firearm) — GFP license 57A-01",
+    "hunters": null,
+    "harvest": 282,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "57A",
+    "huntCode": "ERD-57A13",
+    "label": "East River Deer (firearm) — GFP license 57A-13",
+    "hunters": null,
+    "harvest": 87,
+    "successPct": 44.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "59A",
+    "huntCode": "ERD-59A01",
+    "label": "East River Deer (firearm) — GFP license 59A-01",
+    "hunters": null,
+    "harvest": 66,
+    "successPct": 66.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "59A",
+    "huntCode": "ERD-59A11",
+    "label": "East River Deer (firearm) — GFP license 59A-11",
+    "hunters": null,
+    "harvest": 41,
+    "successPct": 54.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "59B",
+    "huntCode": "ERD-59B01",
+    "label": "East River Deer (firearm) — GFP license 59B-01",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "59B",
+    "huntCode": "ERD-59B11",
+    "label": "East River Deer (firearm) — GFP license 59B-11",
+    "hunters": null,
+    "harvest": 37,
+    "successPct": 49.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "61A",
+    "huntCode": "ERD-61A02",
+    "label": "East River Deer (firearm) — GFP license 61A-02",
+    "hunters": null,
+    "harvest": 26,
+    "successPct": 27.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "62A",
+    "huntCode": "ERD-62A02",
+    "label": "East River Deer (firearm) — GFP license 62A-02",
+    "hunters": null,
+    "harvest": 41,
+    "successPct": 41.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "63A",
+    "huntCode": "ERD-63A01",
+    "label": "East River Deer (firearm) — GFP license 63A-01",
+    "hunters": null,
+    "harvest": 30,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "63A",
+    "huntCode": "ERD-63A11",
+    "label": "East River Deer (firearm) — GFP license 63A-11",
+    "hunters": null,
+    "harvest": 189,
+    "successPct": 48.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "63A",
+    "huntCode": "ERD-63A13",
+    "label": "East River Deer (firearm) — GFP license 63A-13",
+    "hunters": null,
+    "harvest": 29,
+    "successPct": 29.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "ER1",
+    "huntCode": "ESD-ER101",
+    "label": "East River Special Buck — GFP license ER-01",
+    "hunters": null,
+    "harvest": 265,
+    "successPct": 53.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "ST1",
+    "huntCode": "MZD-ST101",
+    "label": "Muzzleloader Deer (statewide) — GFP license ST1-01",
+    "hunters": null,
+    "harvest": 336,
+    "successPct": 33.6,
+    "weapon": "muzzleloader"
+   },
+   {
+    "unit": "LC1",
+    "huntCode": "NWR-LC101",
+    "label": "National Wildlife Refuge Deer — GFP license LC1-01",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 20.0
+   },
+   {
+    "unit": "LC2",
+    "huntCode": "NWR-LC201",
+    "label": "National Wildlife Refuge Deer — GFP license LC2-01",
+    "hunters": null,
+    "harvest": 6,
+    "successPct": 50.0
+   },
+   {
+    "unit": "SL1",
+    "huntCode": "NWR-SL101",
+    "label": "National Wildlife Refuge Deer — GFP license SL1-01",
+    "hunters": null,
+    "harvest": 12,
+    "successPct": 56.0
+   },
+   {
+    "unit": "SL2",
+    "huntCode": "NWR-SL201",
+    "label": "National Wildlife Refuge Deer — GFP license SL2-01",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 39.0
+   },
+   {
+    "unit": "SL4",
+    "huntCode": "NWR-SL401",
+    "label": "National Wildlife Refuge Deer — GFP license SL4-01",
+    "hunters": null,
+    "harvest": 6,
+    "successPct": 27.0
+   },
+   {
+    "unit": "SL5",
+    "huntCode": "NWR-SL501",
+    "label": "National Wildlife Refuge Deer — GFP license SL5-01",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 14.0
+   },
+   {
+    "unit": "WA1",
+    "huntCode": "NWR-WA101",
+    "label": "National Wildlife Refuge Deer — GFP license WA1-01",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 22.0
+   },
+   {
+    "unit": "WA3",
+    "huntCode": "NWR-WA301",
+    "label": "National Wildlife Refuge Deer — GFP license WA3-01",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 18.0
+   },
+   {
+    "unit": "02A",
+    "huntCode": "WRD-02A01",
+    "label": "West River Deer (firearm) — GFP license 02A-01",
+    "hunters": null,
+    "harvest": 255,
+    "successPct": 59.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "02A",
+    "huntCode": "WRD-02A13P",
+    "label": "West River Deer (firearm) — GFP license 02A-13P",
+    "hunters": null,
+    "harvest": 13,
+    "successPct": 24.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "02A",
+    "huntCode": "WRD-02A18",
+    "label": "West River Deer (firearm) — GFP license 02A-18",
+    "hunters": null,
+    "harvest": 151,
+    "successPct": 53.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "02C",
+    "huntCode": "WRD-02C02",
+    "label": "West River Deer (firearm) — GFP license 02C-02",
+    "hunters": null,
+    "harvest": 61,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "02C",
+    "huntCode": "WRD-02C11",
+    "label": "West River Deer (firearm) — GFP license 02C-11",
+    "hunters": null,
+    "harvest": 16,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11A",
+    "huntCode": "WRD-11A02",
+    "label": "West River Deer (firearm) — GFP license 11A-02",
+    "hunters": null,
+    "harvest": 77,
+    "successPct": 58.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11A",
+    "huntCode": "WRD-11A11",
+    "label": "West River Deer (firearm) — GFP license 11A-11",
+    "hunters": null,
+    "harvest": 35,
+    "successPct": 65.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11B",
+    "huntCode": "WRD-11B02",
+    "label": "West River Deer (firearm) — GFP license 11B-02",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 31.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11B",
+    "huntCode": "WRD-11B11",
+    "label": "West River Deer (firearm) — GFP license 11B-11",
+    "hunters": null,
+    "harvest": 30,
+    "successPct": 55.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A",
+    "huntCode": "WRD-15A01",
+    "label": "West River Deer (firearm) — GFP license 15A-01",
+    "hunters": null,
+    "harvest": 147,
+    "successPct": 68.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A",
+    "huntCode": "WRD-15A18",
+    "label": "West River Deer (firearm) — GFP license 15A-18",
+    "hunters": null,
+    "harvest": 554,
+    "successPct": 62.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A",
+    "huntCode": "WRD-15A19P",
+    "label": "West River Deer (firearm) — GFP license 15A-19P",
+    "hunters": null,
+    "harvest": 347,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15B",
+    "huntCode": "WRD-15B01",
+    "label": "West River Deer (firearm) — GFP license 15B-01",
+    "hunters": null,
+    "harvest": 83,
+    "successPct": 51.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15B",
+    "huntCode": "WRD-15B18",
+    "label": "West River Deer (firearm) — GFP license 15B-18",
+    "hunters": null,
+    "harvest": 390,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15B",
+    "huntCode": "WRD-15B19P",
+    "label": "West River Deer (firearm) — GFP license 15B-19P",
+    "hunters": null,
+    "harvest": 165,
+    "successPct": 52.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20A",
+    "huntCode": "WRD-20A01",
+    "label": "West River Deer (firearm) — GFP license 20A-01",
+    "hunters": null,
+    "harvest": 115,
+    "successPct": 53.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20A",
+    "huntCode": "WRD-20A03",
+    "label": "West River Deer (firearm) — GFP license 20A-03",
+    "hunters": null,
+    "harvest": 24,
+    "successPct": 45.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20A",
+    "huntCode": "WRD-20A11",
+    "label": "West River Deer (firearm) — GFP license 20A-11",
+    "hunters": null,
+    "harvest": 173,
+    "successPct": 46.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21A",
+    "huntCode": "WRD-21A02",
+    "label": "West River Deer (firearm) — GFP license 21A-02",
+    "hunters": null,
+    "harvest": 73,
+    "successPct": 67.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21A",
+    "huntCode": "WRD-21A11",
+    "label": "West River Deer (firearm) — GFP license 21A-11",
+    "hunters": null,
+    "harvest": 138,
+    "successPct": 64.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21A",
+    "huntCode": "WRD-21A13P",
+    "label": "West River Deer (firearm) — GFP license 21A-13P",
+    "hunters": null,
+    "harvest": 28,
+    "successPct": 52.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21B",
+    "huntCode": "WRD-21B01",
+    "label": "West River Deer (firearm) — GFP license 21B-01",
+    "hunters": null,
+    "harvest": 30,
+    "successPct": 55.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21B",
+    "huntCode": "WRD-21B11",
+    "label": "West River Deer (firearm) — GFP license 21B-11",
+    "hunters": null,
+    "harvest": 37,
+    "successPct": 69.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "WRD-24A01",
+    "label": "West River Deer (firearm) — GFP license 24A-01",
+    "hunters": null,
+    "harvest": 52,
+    "successPct": 48.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "WRD-24A11",
+    "label": "West River Deer (firearm) — GFP license 24A-11",
+    "hunters": null,
+    "harvest": 117,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "WRD-24A13",
+    "label": "West River Deer (firearm) — GFP license 24A-13",
+    "hunters": null,
+    "harvest": 45,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24B",
+    "huntCode": "WRD-24B11",
+    "label": "West River Deer (firearm) — GFP license 24B-11",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 75.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24B",
+    "huntCode": "WRD-24B13",
+    "label": "West River Deer (firearm) — GFP license 24B-13",
+    "hunters": null,
+    "harvest": 6,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27A",
+    "huntCode": "WRD-27A02",
+    "label": "West River Deer (firearm) — GFP license 27A-02",
+    "hunters": null,
+    "harvest": 56,
+    "successPct": 52.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27A",
+    "huntCode": "WRD-27A11",
+    "label": "West River Deer (firearm) — GFP license 27A-11",
+    "hunters": null,
+    "harvest": 35,
+    "successPct": 64.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27A",
+    "huntCode": "WRD-27A13P",
+    "label": "West River Deer (firearm) — GFP license 27A-13P",
+    "hunters": null,
+    "harvest": 6,
+    "successPct": 21.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27B",
+    "huntCode": "WRD-27B02",
+    "label": "West River Deer (firearm) — GFP license 27B-02",
+    "hunters": null,
+    "harvest": 137,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27B",
+    "huntCode": "WRD-27B11",
+    "label": "West River Deer (firearm) — GFP license 27B-11",
+    "hunters": null,
+    "harvest": 62,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27B",
+    "huntCode": "WRD-27B13P",
+    "label": "West River Deer (firearm) — GFP license 27B-13P",
+    "hunters": null,
+    "harvest": 19,
+    "successPct": 34.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27L",
+    "huntCode": "WRD-27L02",
+    "label": "West River Deer (firearm) — GFP license 27L-02",
+    "hunters": null,
+    "harvest": 5,
+    "successPct": 67.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27L",
+    "huntCode": "WRD-27L11",
+    "label": "West River Deer (firearm) — GFP license 27L-11",
+    "hunters": null,
+    "harvest": 11,
+    "successPct": 100.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "WRD-30A11",
+    "label": "West River Deer (firearm) — GFP license 30A-11",
+    "hunters": null,
+    "harvest": 178,
+    "successPct": 37.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30A",
+    "huntCode": "WRD-30A13P",
+    "label": "West River Deer (firearm) — GFP license 30A-13P",
+    "hunters": null,
+    "harvest": 32,
+    "successPct": 30.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "WRD-30B11",
+    "label": "West River Deer (firearm) — GFP license 30B-11",
+    "hunters": null,
+    "harvest": 211,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "30B",
+    "huntCode": "WRD-30B13P",
+    "label": "West River Deer (firearm) — GFP license 30B-13P",
+    "hunters": null,
+    "harvest": 37,
+    "successPct": 35.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31A",
+    "huntCode": "WRD-31A01",
+    "label": "West River Deer (firearm) — GFP license 31A-01",
+    "hunters": null,
+    "harvest": 414,
+    "successPct": 64.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31A",
+    "huntCode": "WRD-31A03P",
+    "label": "West River Deer (firearm) — GFP license 31A-03P",
+    "hunters": null,
+    "harvest": 69,
+    "successPct": 60.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31A",
+    "huntCode": "WRD-31A08",
+    "label": "West River Deer (firearm) — GFP license 31A-08",
+    "hunters": null,
+    "harvest": 103,
+    "successPct": 84.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31A",
+    "huntCode": "WRD-31A18",
+    "label": "West River Deer (firearm) — GFP license 31A-18",
+    "hunters": null,
+    "harvest": 85,
+    "successPct": 58.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31A",
+    "huntCode": "WRD-31A19",
+    "label": "West River Deer (firearm) — GFP license 31A-19",
+    "hunters": null,
+    "harvest": 97,
+    "successPct": 35.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "WRD-35A01",
+    "label": "West River Deer (firearm) — GFP license 35A-01",
+    "hunters": null,
+    "harvest": 192,
+    "successPct": 65.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "WRD-35A11",
+    "label": "West River Deer (firearm) — GFP license 35A-11",
+    "hunters": null,
+    "harvest": 25,
+    "successPct": 30.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "WRD-35A18",
+    "label": "West River Deer (firearm) — GFP license 35A-18",
+    "hunters": null,
+    "harvest": 66,
+    "successPct": 79.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "WRD-35A19P",
+    "label": "West River Deer (firearm) — GFP license 35A-19P",
+    "hunters": null,
+    "harvest": 38,
+    "successPct": 26.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35C",
+    "huntCode": "WRD-35C01",
+    "label": "West River Deer (firearm) — GFP license 35C-01",
+    "hunters": null,
+    "harvest": 135,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35C",
+    "huntCode": "WRD-35C03P",
+    "label": "West River Deer (firearm) — GFP license 35C-03P",
+    "hunters": null,
+    "harvest": 29,
+    "successPct": 52.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35C",
+    "huntCode": "WRD-35C11",
+    "label": "West River Deer (firearm) — GFP license 35C-11",
+    "hunters": null,
+    "harvest": 39,
+    "successPct": 48.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35C",
+    "huntCode": "WRD-35C18",
+    "label": "West River Deer (firearm) — GFP license 35C-18",
+    "hunters": null,
+    "harvest": 65,
+    "successPct": 76.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35C",
+    "huntCode": "WRD-35C19P",
+    "label": "West River Deer (firearm) — GFP license 35C-19P",
+    "hunters": null,
+    "harvest": 69,
+    "successPct": 54.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35L",
+    "huntCode": "WRD-35L01",
+    "label": "West River Deer (firearm) — GFP license 35L-01",
+    "hunters": null,
+    "harvest": 52,
+    "successPct": 62.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35L",
+    "huntCode": "WRD-35L11",
+    "label": "West River Deer (firearm) — GFP license 35L-11",
+    "hunters": null,
+    "harvest": 17,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "39A",
+    "huntCode": "WRD-39A01",
+    "label": "West River Deer (firearm) — GFP license 39A-01",
+    "hunters": null,
+    "harvest": 131,
+    "successPct": 69.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "39A",
+    "huntCode": "WRD-39A11",
+    "label": "West River Deer (firearm) — GFP license 39A-11",
+    "hunters": null,
+    "harvest": 24,
+    "successPct": 45.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "39A",
+    "huntCode": "WRD-39A13P",
+    "label": "West River Deer (firearm) — GFP license 39A-13P",
+    "hunters": null,
+    "harvest": 17,
+    "successPct": 38.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "39B",
+    "huntCode": "WRD-39B01",
+    "label": "West River Deer (firearm) — GFP license 39B-01",
+    "hunters": null,
+    "harvest": 170,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "39B",
+    "huntCode": "WRD-39B11",
+    "label": "West River Deer (firearm) — GFP license 39B-11",
+    "hunters": null,
+    "harvest": 27,
+    "successPct": 50.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "39B",
+    "huntCode": "WRD-39B13",
+    "label": "West River Deer (firearm) — GFP license 39B-13",
+    "hunters": null,
+    "harvest": 32,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "41A",
+    "huntCode": "WRD-41A01",
+    "label": "West River Deer (firearm) — GFP license 41A-01",
+    "hunters": null,
+    "harvest": 125,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "41A",
+    "huntCode": "WRD-41A11",
+    "label": "West River Deer (firearm) — GFP license 41A-11",
+    "hunters": null,
+    "harvest": 131,
+    "successPct": 61.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45A",
+    "huntCode": "WRD-45A01",
+    "label": "West River Deer (firearm) — GFP license 45A-01",
+    "hunters": null,
+    "harvest": 69,
+    "successPct": 65.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45A",
+    "huntCode": "WRD-45A11",
+    "label": "West River Deer (firearm) — GFP license 45A-11",
+    "hunters": null,
+    "harvest": 150,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45B",
+    "huntCode": "WRD-45B01",
+    "label": "West River Deer (firearm) — GFP license 45B-01",
+    "hunters": null,
+    "harvest": 29,
+    "successPct": 54.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45B",
+    "huntCode": "WRD-45B11",
+    "label": "West River Deer (firearm) — GFP license 45B-11",
+    "hunters": null,
+    "harvest": 104,
+    "successPct": 55.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45C",
+    "huntCode": "WRD-45C01",
+    "label": "West River Deer (firearm) — GFP license 45C-01",
+    "hunters": null,
+    "harvest": 13,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45C",
+    "huntCode": "WRD-45C13",
+    "label": "West River Deer (firearm) — GFP license 45C-13",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 9.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45D",
+    "huntCode": "WRD-45D01",
+    "label": "West River Deer (firearm) — GFP license 45D-01",
+    "hunters": null,
+    "harvest": 17,
+    "successPct": 50.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45D",
+    "huntCode": "WRD-45D11",
+    "label": "West River Deer (firearm) — GFP license 45D-11",
+    "hunters": null,
+    "harvest": 33,
+    "successPct": 61.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49A",
+    "huntCode": "WRD-49A01",
+    "label": "West River Deer (firearm) — GFP license 49A-01",
+    "hunters": null,
+    "harvest": 316,
+    "successPct": 58.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49A",
+    "huntCode": "WRD-49A13",
+    "label": "West River Deer (firearm) — GFP license 49A-13",
+    "hunters": null,
+    "harvest": 58,
+    "successPct": 38.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49A",
+    "huntCode": "WRD-49A18",
+    "label": "West River Deer (firearm) — GFP license 49A-18",
+    "hunters": null,
+    "harvest": 212,
+    "successPct": 62.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49B",
+    "huntCode": "WRD-49B01",
+    "label": "West River Deer (firearm) — GFP license 49B-01",
+    "hunters": null,
+    "harvest": 414,
+    "successPct": 64.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49B",
+    "huntCode": "WRD-49B11",
+    "label": "West River Deer (firearm) — GFP license 49B-11",
+    "hunters": null,
+    "harvest": 56,
+    "successPct": 51.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "50A",
+    "huntCode": "WRD-50A01",
+    "label": "West River Deer (firearm) — GFP license 50A-01",
+    "hunters": null,
+    "harvest": 111,
+    "successPct": 69.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "50A",
+    "huntCode": "WRD-50A11",
+    "label": "West River Deer (firearm) — GFP license 50A-11",
+    "hunters": null,
+    "harvest": 224,
+    "successPct": 52.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53A",
+    "huntCode": "WRD-53A01",
+    "label": "West River Deer (firearm) — GFP license 53A-01",
+    "hunters": null,
+    "harvest": 281,
+    "successPct": 65.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53A",
+    "huntCode": "WRD-53A09P",
+    "label": "West River Deer (firearm) — GFP license 53A-09P",
+    "hunters": null,
+    "harvest": 124,
+    "successPct": 70.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53A",
+    "huntCode": "WRD-53A18",
+    "label": "West River Deer (firearm) — GFP license 53A-18",
+    "hunters": null,
+    "harvest": 201,
+    "successPct": 54.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53A",
+    "huntCode": "WRD-53A19P",
+    "label": "West River Deer (firearm) — GFP license 53A-19P",
+    "hunters": null,
+    "harvest": 67,
+    "successPct": 43.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53C",
+    "huntCode": "WRD-53C01",
+    "label": "West River Deer (firearm) — GFP license 53C-01",
+    "hunters": null,
+    "harvest": 356,
+    "successPct": 66.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53C",
+    "huntCode": "WRD-53C09P",
+    "label": "West River Deer (firearm) — GFP license 53C-09P",
+    "hunters": null,
+    "harvest": 71,
+    "successPct": 35.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53C",
+    "huntCode": "WRD-53C18",
+    "label": "West River Deer (firearm) — GFP license 53C-18",
+    "hunters": null,
+    "harvest": 230,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53C",
+    "huntCode": "WRD-53C19P",
+    "label": "West River Deer (firearm) — GFP license 53C-19P",
+    "hunters": null,
+    "harvest": 110,
+    "successPct": 54.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "58A",
+    "huntCode": "WRD-58A01",
+    "label": "West River Deer (firearm) — GFP license 58A-01",
+    "hunters": null,
+    "harvest": 108,
+    "successPct": 67.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "58A",
+    "huntCode": "WRD-58A18",
+    "label": "West River Deer (firearm) — GFP license 58A-18",
+    "hunters": null,
+    "harvest": 133,
+    "successPct": 64.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "58D",
+    "huntCode": "WRD-58D01",
+    "label": "West River Deer (firearm) — GFP license 58D-01",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 33.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "60A",
+    "huntCode": "WRD-60A01",
+    "label": "West River Deer (firearm) — GFP license 60A-01",
+    "hunters": null,
+    "harvest": 24,
+    "successPct": 45.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "60A",
+    "huntCode": "WRD-60A11",
+    "label": "West River Deer (firearm) — GFP license 60A-11",
+    "hunters": null,
+    "harvest": 301,
+    "successPct": 47.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "64A",
+    "huntCode": "WRD-64A01",
+    "label": "West River Deer (firearm) — GFP license 64A-01",
+    "hunters": null,
+    "harvest": 175,
+    "successPct": 65.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "64A",
+    "huntCode": "WRD-64A11",
+    "label": "West River Deer (firearm) — GFP license 64A-11",
+    "hunters": null,
+    "harvest": 41,
+    "successPct": 50.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "64A",
+    "huntCode": "WRD-64A19P",
+    "label": "West River Deer (firearm) — GFP license 64A-19P",
+    "hunters": null,
+    "harvest": 21,
+    "successPct": 29.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "65A",
+    "huntCode": "WRD-65A02",
+    "label": "West River Deer (firearm) — GFP license 65A-02",
+    "hunters": null,
+    "harvest": 37,
+    "successPct": 46.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "67A",
+    "huntCode": "WRD-67A01",
+    "label": "West River Deer (firearm) — GFP license 67A-01",
+    "hunters": null,
+    "harvest": 45,
+    "successPct": 56.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "WR1",
+    "huntCode": "WSD-WR101",
+    "label": "West River Special Buck — GFP license WR-01",
+    "hunters": null,
+    "harvest": 739,
+    "successPct": 74.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "WR1",
+    "huntCode": "WSD-WR111",
+    "label": "West River Special Buck — GFP license WR-11",
+    "hunters": null,
+    "harvest": 614,
+    "successPct": 62.0,
+    "weapon": "rifle"
+   }
+  ],
+  "ELK": [
+   {
+    "unit": "H1A",
+    "huntCode": "AEE-H1A21",
+    "label": "Black Hills Archery Elk — GFP license H1A-21",
+    "hunters": null,
+    "harvest": 14,
+    "successPct": 46.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H1A",
+    "huntCode": "AEE-H1A23",
+    "label": "Black Hills Archery Elk — GFP license H1A-23",
+    "hunters": null,
+    "harvest": 0,
+    "successPct": 0.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H2A",
+    "huntCode": "AEE-H2A21",
+    "label": "Black Hills Archery Elk — GFP license H2A-21",
+    "hunters": null,
+    "harvest": 69,
+    "successPct": 56.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H2A",
+    "huntCode": "AEE-H2A23",
+    "label": "Black Hills Archery Elk — GFP license H2A-23",
+    "hunters": null,
+    "harvest": 15,
+    "successPct": 23.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H3A",
+    "huntCode": "AEE-H3A21",
+    "label": "Black Hills Archery Elk — GFP license H3A-21",
+    "hunters": null,
+    "harvest": 14,
+    "successPct": 36.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H3A",
+    "huntCode": "AEE-H3A23",
+    "label": "Black Hills Archery Elk — GFP license H3A-23",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 11.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H4A",
+    "huntCode": "AEE-H4A21",
+    "label": "Black Hills Archery Elk — GFP license H4A-21",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 50.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H4A",
+    "huntCode": "AEE-H4A23",
+    "label": "Black Hills Archery Elk — GFP license H4A-23",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 14.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H7A",
+    "huntCode": "AEE-H7A21",
+    "label": "Black Hills Archery Elk — GFP license H7A-21",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 38.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H7A",
+    "huntCode": "AEE-H7A23",
+    "label": "Black Hills Archery Elk — GFP license H7A-23",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 25.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "H1A",
+    "huntCode": "BHE-H1A21",
+    "label": "Black Hills Firearms Elk — GFP license H1A-21",
+    "hunters": null,
+    "harvest": 67,
+    "successPct": 84.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H1B",
+    "huntCode": "BHE-H1B23",
+    "label": "Black Hills Firearms Elk — GFP license H1B-23",
+    "hunters": null,
+    "harvest": 57,
+    "successPct": 57.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2A",
+    "huntCode": "BHE-H2A21",
+    "label": "Black Hills Firearms Elk — GFP license H2A-21",
+    "hunters": null,
+    "harvest": 292,
+    "successPct": 83.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2B",
+    "huntCode": "BHE-H2B23",
+    "label": "Black Hills Firearms Elk — GFP license H2B-23",
+    "hunters": null,
+    "harvest": 60,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2C",
+    "huntCode": "BHE-H2C23",
+    "label": "Black Hills Firearms Elk — GFP license H2C-23",
+    "hunters": null,
+    "harvest": 56,
+    "successPct": 59.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2D",
+    "huntCode": "BHE-H2D23",
+    "label": "Black Hills Firearms Elk — GFP license H2D-23",
+    "hunters": null,
+    "harvest": 37,
+    "successPct": 73.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2E",
+    "huntCode": "BHE-H2E23",
+    "label": "Black Hills Firearms Elk — GFP license H2E-23",
+    "hunters": null,
+    "harvest": 73,
+    "successPct": 56.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2F",
+    "huntCode": "BHE-H2F23",
+    "label": "Black Hills Firearms Elk — GFP license H2F-23",
+    "hunters": null,
+    "harvest": 96,
+    "successPct": 73.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2G",
+    "huntCode": "BHE-H2G23",
+    "label": "Black Hills Firearms Elk — GFP license H2G-23",
+    "hunters": null,
+    "harvest": 90,
+    "successPct": 72.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2H",
+    "huntCode": "BHE-H2H23",
+    "label": "Black Hills Firearms Elk — GFP license H2H-23",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 33.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2I",
+    "huntCode": "BHE-H2I23",
+    "label": "Black Hills Firearms Elk — GFP license H2I-23",
+    "hunters": null,
+    "harvest": 5,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H2J",
+    "huntCode": "BHE-H2J23",
+    "label": "Black Hills Firearms Elk — GFP license H2J-23",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 38.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H3A",
+    "huntCode": "BHE-H3A21",
+    "label": "Black Hills Firearms Elk — GFP license H3A-21",
+    "hunters": null,
+    "harvest": 74,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H3B",
+    "huntCode": "BHE-H3B23",
+    "label": "Black Hills Firearms Elk — GFP license H3B-23",
+    "hunters": null,
+    "harvest": 16,
+    "successPct": 34.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H3C",
+    "huntCode": "BHE-H3C23",
+    "label": "Black Hills Firearms Elk — GFP license H3C-23",
+    "hunters": null,
+    "harvest": 22,
+    "successPct": 47.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H3D",
+    "huntCode": "BHE-H3D23",
+    "label": "Black Hills Firearms Elk — GFP license H3D-23",
+    "hunters": null,
+    "harvest": 18,
+    "successPct": 39.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H3E",
+    "huntCode": "BHE-H3E23",
+    "label": "Black Hills Firearms Elk — GFP license H3E-23",
+    "hunters": null,
+    "harvest": 24,
+    "successPct": 38.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H3F",
+    "huntCode": "BHE-H3F23",
+    "label": "Black Hills Firearms Elk — GFP license H3F-23",
+    "hunters": null,
+    "harvest": 21,
+    "successPct": 32.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H3G",
+    "huntCode": "BHE-H3G23",
+    "label": "Black Hills Firearms Elk — GFP license H3G-23",
+    "hunters": null,
+    "harvest": 21,
+    "successPct": 35.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H4A",
+    "huntCode": "BHE-H4A21",
+    "label": "Black Hills Firearms Elk — GFP license H4A-21",
+    "hunters": null,
+    "harvest": 24,
+    "successPct": 61.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H4B",
+    "huntCode": "BHE-H4B23",
+    "label": "Black Hills Firearms Elk — GFP license H4B-23",
+    "hunters": null,
+    "harvest": 19,
+    "successPct": 42.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H5A",
+    "huntCode": "BHE-H5A21",
+    "label": "Black Hills Firearms Elk — GFP license H5A-21",
+    "hunters": null,
+    "harvest": 5,
+    "successPct": 100.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H7A",
+    "huntCode": "BHE-H7A21",
+    "label": "Black Hills Firearms Elk — GFP license H7A-21",
+    "hunters": null,
+    "harvest": 28,
+    "successPct": 81.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H7B",
+    "huntCode": "BHE-H7B23",
+    "label": "Black Hills Firearms Elk — GFP license H7B-23",
+    "hunters": null,
+    "harvest": 31,
+    "successPct": 61.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H9A",
+    "huntCode": "BHE-H9A21",
+    "label": "Black Hills Firearms Elk — GFP license H9A-21",
+    "hunters": null,
+    "harvest": 11,
+    "successPct": 70.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "H9B",
+    "huntCode": "BHE-H9B23",
+    "label": "Black Hills Firearms Elk — GFP license H9B-23",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 25.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "CU1",
+    "huntCode": "CEE-CU121",
+    "label": "Custer State Park Early Archery Elk — GFP license CU1-21",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 88.0,
+    "weapon": "archery"
+   },
+   {
+    "unit": "CU1",
+    "huntCode": "CUE-CU121",
+    "label": "Custer State Park Firearms Elk — GFP license CU1-21",
+    "hunters": null,
+    "harvest": 22,
+    "successPct": 89.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "09A",
+    "huntCode": "PRE-09A21",
+    "label": "Prairie Firearms Elk — GFP license 09A-21",
+    "hunters": null,
+    "harvest": 7,
+    "successPct": 83.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "09A",
+    "huntCode": "PRE-09A23",
+    "label": "Prairie Firearms Elk — GFP license 09A-23",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 25.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11B",
+    "huntCode": "PRE-11B21",
+    "label": "Prairie Firearms Elk — GFP license 11B-21",
+    "hunters": null,
+    "harvest": 10,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11C",
+    "huntCode": "PRE-11C21",
+    "label": "Prairie Firearms Elk — GFP license 11C-21",
+    "hunters": null,
+    "harvest": 6,
+    "successPct": 40.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11D",
+    "huntCode": "PRE-11D23",
+    "label": "Prairie Firearms Elk — GFP license 11D-23",
+    "hunters": null,
+    "harvest": 15,
+    "successPct": 53.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11E",
+    "huntCode": "PRE-11E23",
+    "label": "Prairie Firearms Elk — GFP license 11E-23",
+    "hunters": null,
+    "harvest": 10,
+    "successPct": 100.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A",
+    "huntCode": "PRE-15A21",
+    "label": "Prairie Firearms Elk — GFP license 15A-21",
+    "hunters": null,
+    "harvest": 7,
+    "successPct": 88.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A",
+    "huntCode": "PRE-15A23",
+    "label": "Prairie Firearms Elk — GFP license 15A-23",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 33.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27A",
+    "huntCode": "PRE-27A21",
+    "label": "Prairie Firearms Elk — GFP license 27A-21",
+    "hunters": null,
+    "harvest": 29,
+    "successPct": 95.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27A",
+    "huntCode": "PRE-27A23",
+    "label": "Prairie Firearms Elk — GFP license 27A-23",
+    "hunters": null,
+    "harvest": 10,
+    "successPct": 26.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "PRE-35A21",
+    "label": "Prairie Firearms Elk — GFP license 35A-21",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 86.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "PRE-35A23",
+    "label": "Prairie Firearms Elk — GFP license 35A-23",
+    "hunters": null,
+    "harvest": 11,
+    "successPct": 37.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35B",
+    "huntCode": "PRE-35B21",
+    "label": "Prairie Firearms Elk — GFP license 35B-21",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 100.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35B",
+    "huntCode": "PRE-35B23",
+    "label": "Prairie Firearms Elk — GFP license 35B-23",
+    "hunters": null,
+    "harvest": 5,
+    "successPct": 13.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49A",
+    "huntCode": "PRE-49A21",
+    "label": "Prairie Firearms Elk — GFP license 49A-21",
+    "hunters": null,
+    "harvest": 0,
+    "successPct": 0.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49A",
+    "huntCode": "PRE-49A23",
+    "label": "Prairie Firearms Elk — GFP license 49A-23",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 17.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "WRA",
+    "huntCode": "PRE-WRA21",
+    "label": "Prairie Firearms Elk — GFP license WRA-21",
+    "hunters": null,
+    "harvest": 28,
+    "successPct": 92.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "WRA",
+    "huntCode": "PRE-WRA23",
+    "label": "Prairie Firearms Elk — GFP license WRA-23",
+    "hunters": null,
+    "harvest": 19,
+    "successPct": 25.0,
+    "weapon": "rifle"
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "unit": "ST1",
+    "huntCode": "ARNP-ST142",
+    "residency": "nonresident",
+    "weapon": "archery",
+    "label": "Nonresident Archery Antelope, public & private land (statewide) — GFP license ST1-42",
+    "hunters": null,
+    "harvest": 150,
+    "successPct": 34
+   },
+   {
+    "unit": "CU1",
+    "huntCode": "CUA-CU142",
+    "label": "Custer State Park Antelope — GFP license CU1-42",
+    "hunters": null,
+    "harvest": 5,
+    "successPct": 100.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "02A",
+    "huntCode": "PRA-02A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 02A-42",
+    "hunters": null,
+    "harvest": 33,
+    "successPct": 66.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "11A",
+    "huntCode": "PRA-11A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 11A-42",
+    "hunters": null,
+    "harvest": 13,
+    "successPct": 64.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15A",
+    "huntCode": "PRA-15A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 15A-42",
+    "hunters": null,
+    "harvest": 37,
+    "successPct": 69.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "15B",
+    "huntCode": "PRA-15B42",
+    "label": "Prairie (Firearms) Antelope — GFP license 15B-42",
+    "hunters": null,
+    "harvest": 155,
+    "successPct": 77.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "20A",
+    "huntCode": "PRA-20A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 20A-42",
+    "hunters": null,
+    "harvest": 44,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "21A",
+    "huntCode": "PRA-21A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 21A-42",
+    "hunters": null,
+    "harvest": 79,
+    "successPct": 79.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "24A",
+    "huntCode": "PRA-24A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 24A-42",
+    "hunters": null,
+    "harvest": 16,
+    "successPct": 32.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "27A",
+    "huntCode": "PRA-27A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 27A-42",
+    "hunters": null,
+    "harvest": 254,
+    "successPct": 73.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "31A",
+    "huntCode": "PRA-31A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 31A-42",
+    "hunters": null,
+    "harvest": 12,
+    "successPct": 44.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35A",
+    "huntCode": "PRA-35A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 35A-42",
+    "hunters": null,
+    "harvest": 111,
+    "successPct": 74.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "35B",
+    "huntCode": "PRA-35B42",
+    "label": "Prairie (Firearms) Antelope — GFP license 35B-42",
+    "hunters": null,
+    "harvest": 127,
+    "successPct": 84.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "36A",
+    "huntCode": "PRA-36A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 36A-42",
+    "hunters": null,
+    "harvest": 5,
+    "successPct": 80.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "38A",
+    "huntCode": "PRA-38A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 38A-42",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 33.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "39A",
+    "huntCode": "PRA-39A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 39A-42",
+    "hunters": null,
+    "harvest": 33,
+    "successPct": 66.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "41A",
+    "huntCode": "PRA-41A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 41A-42",
+    "hunters": null,
+    "harvest": 14,
+    "successPct": 45.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45A",
+    "huntCode": "PRA-45A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 45A-42",
+    "hunters": null,
+    "harvest": 6,
+    "successPct": 100.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "45B",
+    "huntCode": "PRA-45B42",
+    "label": "Prairie (Firearms) Antelope — GFP license 45B-42",
+    "hunters": null,
+    "harvest": 11,
+    "successPct": 100.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49A",
+    "huntCode": "PRA-49A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 49A-42",
+    "hunters": null,
+    "harvest": 127,
+    "successPct": 63.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "49B",
+    "huntCode": "PRA-49B42",
+    "label": "Prairie (Firearms) Antelope — GFP license 49B-42",
+    "hunters": null,
+    "harvest": 36,
+    "successPct": 70.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "50A",
+    "huntCode": "PRA-50A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 50A-42",
+    "hunters": null,
+    "harvest": 11,
+    "successPct": 54.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53A",
+    "huntCode": "PRA-53A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 53A-42",
+    "hunters": null,
+    "harvest": 53,
+    "successPct": 69.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "53B",
+    "huntCode": "PRA-53B42",
+    "label": "Prairie (Firearms) Antelope — GFP license 53B-42",
+    "hunters": null,
+    "harvest": 90,
+    "successPct": 90.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "58A",
+    "huntCode": "PRA-58A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 58A-42",
+    "hunters": null,
+    "harvest": 24,
+    "successPct": 58.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "59A",
+    "huntCode": "PRA-59A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 59A-42",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 50.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "60A",
+    "huntCode": "PRA-60A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 60A-42",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 50.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "63A",
+    "huntCode": "PRA-63A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 63A-42",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 25.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "64A",
+    "huntCode": "PRA-64A42",
+    "label": "Prairie (Firearms) Antelope — GFP license 64A-42",
+    "hunters": null,
+    "harvest": 95,
+    "successPct": 62.0,
+    "weapon": "rifle"
+   },
+   {
+    "unit": "PR",
+    "huntCode": "SPA-PR42",
+    "residency": "nonresident",
+    "weapon": "rifle",
+    "label": "Special Antelope (prairie units, statewide license) — GFP license PR-42",
+    "hunters": null,
+    "harvest": 39,
+    "successPct": 88.0
+   },
+   {
+    "unit": "PR",
+    "huntCode": "SPA-PR42",
+    "residency": "resident",
+    "weapon": "rifle",
+    "label": "Special Antelope (prairie units, statewide license) — GFP license PR-42",
+    "hunters": null,
+    "harvest": 36,
+    "successPct": 75.0
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "unit": "BH",
+    "label": "Black Hills bighorn sheep, units BH2 + BH4 combined (6 licenses incl. 1 auction license; 2024 season)",
+    "hunters": null,
+    "harvest": 6,
+    "successPct": 100
+   },
+   {
+    "unit": "CU1",
+    "huntCode": "CBS-CU152",
+    "label": "Custer State Park bighorn sheep (4 licenses; 2024 season)",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 100
+   }
+  ]
+ }
+}

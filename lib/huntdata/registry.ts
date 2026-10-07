@@ -16,6 +16,7 @@ import okDraw from './draw/ok.json';
 import caDraw from './draw/ca.json';
 import waDraw from './draw/wa.json';
 import orDraw from './draw/or.json';
+import sdDraw from './draw/sd.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -64,6 +65,11 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
   },
   NE: {
     code: 'NE', name: 'NEBRASKA', status: 'live', batch: 'A',
+    // nm-ne-research.md: general bull elk and bighorn sheep are resident-only.
+    residentOnly: {
+      ELK: 'Nebraska’s elk draw is for residents only (non-residents can get elk only through landowner permits).',
+      BIGHORNSHEEP: 'Nebraska’s bighorn sheep lottery is for residents only.',
+    },
     agency: { name: 'Nebraska Game and Parks Commission', url: 'https://outdoornebraska.gov' },
     // From 166 NAC 1/3/14 and Neb. Rev. Stat. 37-447..455 (research 2026-10-06). Left
     // unverified: NGPC's site says elk is "moving to bonus points squared", which
@@ -91,6 +97,12 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
   },
   ND: {
     code: 'ND', name: 'NORTH DAKOTA', status: 'live', batch: 'B',
+    // nd-research.md: "Nonresidents can apply for only a bighorn sheep license".
+    residentOnly: {
+      ELK: 'North Dakota elk licenses are for residents only.',
+      MOOSE: 'North Dakota moose licenses are for residents only.',
+      ANTELOPE: 'North Dakota pronghorn licenses are for residents only.',
+    },
     agency: { name: 'North Dakota Game and Fish Department', url: 'https://gf.nd.gov' },
     // Verified 2026-10-07 against gf.nd.gov lottery pages and the 2026
     // elk/moose/sheep proclamation. See lib/huntdata/draw/nd-research.md.
@@ -132,10 +144,17 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
     drawSystemNote: "Modified preference points for every species. Deer: 90% of a hunt's tags go to the highest point holders and 10% are drawn at random. Elk, pronghorn and bighorn sheep: when a hunt has four or more tags, 75% go by points and the rest at random; a hunt with fewer tags is random only. Party applications average their points. Non-residents can apply, but only one non-resident is drawn for elk and one for pronghorn statewide each year, and they get at most 10% of bighorn tags; a bighorn tag is once in a lifetime. CDFW doesn't split results by residency and doesn't publish odds at each point level, so the odds shown are tags divided by first-choice applicants across everyone — high point holders draw far more often than that. Applications run April 15 to June 2.",
   },
   SD: {
-    code: 'SD', name: 'SOUTH DAKOTA', status: 'planned', batch: 'C',
+    code: 'SD', name: 'SOUTH DAKOTA', status: 'live', batch: 'C',
+    // sd-research.md: elk and bighorn sheep are resident-only.
+    residentOnly: {
+      ELK: 'South Dakota elk licenses are for residents only.',
+      BIGHORNSHEEP: 'South Dakota bighorn sheep licenses are for residents only.',
+    },
     agency: { name: 'South Dakota Game, Fish and Parks', url: 'https://gfp.sd.gov' },
-    drawSystem: 'preference', rulesVerified: false,
-    drawSystemNote: 'Preference points across several draws for deer, antelope and elk. Confirm current rules with GFP.',
+    // Verified 2026-10-07 against GFP application rules and draw statistics
+    // (lib/huntdata/draw/sd-research.md).
+    drawSystem: 'preference', rulesVerified: true,
+    drawSystemNote: "A random draw in point pools; preference points are cubed before the draw, so more points help but never guarantee a license. Deer and antelope: half of a unit's licenses go first to qualifying landowners, then the 2+ point pool, then 1+, then 0+ (no one in the 0+ pool draws until everyone in 1+ has). Elk: landowners 50%, then 10+ points 30%, 2+ points 15%, 0+ points 5%; Custer State Park elk uses 15+/10+/0+ pools. Elk and bighorn sheep are residents only; sheep is once in a lifetime, and drawing elk with points means a nine-year wait. Non-residents can't apply for East River, muzzleloader or Custer State Park deer. Applications: special buck in March–April, elk and sheep April–May, deer May–June, antelope June–July. GFP has no public hunt-unit map, so units show without an outline.",
   },
   OK: {
     code: 'OK', name: 'OKLAHOMA', status: 'live', batch: 'C',
@@ -169,6 +188,7 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   CA: caDraw as DrawFile,
   WA: waDraw as DrawFile,
   OR: orDraw as DrawFile,
+  SD: sdDraw as DrawFile,
 };
 
 const MODULES: Partial<Record<StateCode, StateModule>> = {

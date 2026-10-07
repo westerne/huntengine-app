@@ -8,6 +8,7 @@ import mtHarvest from './mt.json';
 import nmHarvest from './nm.json';
 import caHarvest from './ca.json';
 import ndHarvest from './nd.json';
+import sdHarvest from './sd.json';
 import nvHarvest from './nv.json';
 import orHarvest from './or.json';
 import okHarvest from './ok.json';
@@ -25,6 +26,7 @@ const HARVEST: Partial<Record<StateCode, HarvestFile>> = {
   MT: mtHarvest as HarvestFile,
   NM: nmHarvest as HarvestFile,
   ND: ndHarvest as HarvestFile,
+  SD: sdHarvest as HarvestFile,
   NV: nvHarvest as HarvestFile,
   OR: orHarvest as HarvestFile,
   OK: okHarvest as HarvestFile,
@@ -67,6 +69,8 @@ const UNIT_FALLBACK: Partial<Record<StateCode, boolean>> = {
   WA: false,
   //   OR: no — rows are per ODFW hunt (multi-unit hunts are combined above).
   OR: false,
+  //   SD: no — rows are per GFP license (unit + license type).
+  SD: false,
 };
 
 export function getHarvestFile(state: StateCode): HarvestFile | null {

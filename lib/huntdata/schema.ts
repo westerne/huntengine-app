@@ -92,6 +92,9 @@ export type StateInfo = {
   // current regulations. Unverified notes must not be fed to prompts.
   rulesVerified: boolean;
   status: 'live' | 'planned';
+  // Species non-residents can't apply for in this state's draw (verified in
+  // the state's research notes). SCOUT says so plainly instead of advising.
+  residentOnly?: Partial<Record<SpeciesKey, string>>;
   // Rollout batch from ROADMAP.md: live states are "live", the rest A–D.
   batch: 'live' | 'A' | 'B' | 'C' | 'D';
 };

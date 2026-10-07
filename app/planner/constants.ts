@@ -1,8 +1,8 @@
 import type { Profile, PlannerFlags } from './types';
 
-export const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV', 'OK', 'CA', 'WA', 'OR'];
+export const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV', 'OK', 'CA', 'WA', 'OR', 'SD'];
 // Shown but not selectable until their draw data is wired in.
-export const COMING_SOON_STATES = ['SD'];
+export const COMING_SOON_STATES: string[] = [];
 export const SPECIES = ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
 // Species with data, for states that don't have all six (Arizona has no moose or goat).
 const STATE_SPECIES: Record<string, string[]> = {
@@ -15,7 +15,8 @@ const STATE_SPECIES: Record<string, string[]> = {
   OK: ['Mule Deer', 'Elk', 'Antelope'],
   CA: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
   WA: ['Mule Deer', 'Elk', 'Moose', 'Bighorn Sheep', 'Mountain Goat'],
-  OR: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],   // controlled hunts only; "deer" is mostly whitetail
+  OR: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
+  SD: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],   // goat season closed   // controlled hunts only; "deer" is mostly whitetail
 };
 export const speciesFor = (st: string) => STATE_SPECIES[st] ?? SPECIES;
 

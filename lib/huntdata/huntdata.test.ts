@@ -12,7 +12,7 @@ describe('registry', () => {
   });
 
   it('has the live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CA', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'NV', 'OK', 'OR', 'UT', 'WA', 'WY']);
+    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CA', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'NV', 'OK', 'OR', 'SD', 'UT', 'WA', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -20,7 +20,7 @@ describe('registry', () => {
     expect(toStateCode('wy')).toBe('WY');
     expect(toStateCode('NEW MEXICO')).toBe('NM');
     expect(toStateCode('Narnia')).toBeNull();
-    expect(getStateModule('SD')).toBeNull(); // planned, no data yet
+    expect(getStateModule('AK')).toBeNull(); // planned, no data yet
   });
 });
 
@@ -662,5 +662,24 @@ describe('harvest overlay', () => {
     expect(e.hunterSuccess).toBe('2 of 2 hunters (too few to judge)');
     const or = enrichScoutDataset('OR', 'DEER', buildGenericScoutDataset(getStateModule('OR')!, 'DEER', 'resident')).find((x) => x.huntCode === '123A')!;
     expect(or.hunterSuccess).toBe('82.1%'); // 32 of 39 across its three unit portions
+  });
+});
+
+describe('South Dakota', () => {
+  const sd = getStateModule('SD')!;
+  it('loads the 2026 GFP first draw with point tables and clean labels', () => {
+    const elk = sd.hunts('ELK').find((h) => h.huntCode === 'AEE-H1A21')!;
+    expect(elk.draw.resident).toMatchObject({ tags: 30, applicants: 892 });
+    expect(elk.harvest?.successPct).toBe(46);
+    expect(JSON.stringify(sd.hunts('ELK'))).not.toMatch(/â€/);
+    expect(sd.hunts('MTNGOAT')).toEqual([]);
+  });
+});
+
+describe('resident-only species', () => {
+  it('are flagged from the research notes', () => {
+    expect(getStateModule('SD')!.residentOnly?.ELK).toMatch(/residents only/);
+    expect(getStateModule('ND')!.residentOnly?.BIGHORNSHEEP).toBeUndefined(); // one NR sheep license allowed
+    expect(getStateModule('CA')!.residentOnly).toBeUndefined();
   });
 });

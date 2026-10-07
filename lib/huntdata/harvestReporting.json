@@ -489,6 +489,36 @@
    ],
    "reportUrl": "https://myodfw.com/articles/report-your-hunt",
    "summary": "Every Oregon deer, elk and pronghorn tag needs a hunt report by January 31, even if you didn’t hunt. Missing a deer or elk report costs 5 later. Sheep and goat tags are not part of it; we haven’t verified their check-in rules."
+  },
+  "SD": {
+   "rules": [
+    {
+     "species": [
+      "DEER",
+      "ELK",
+      "ANTELOPE"
+     ],
+     "applies": "No required report; GFP emails harvest surveys to license holders",
+     "type": "survey",
+     "deadline": null,
+     "consequence": null,
+     "source": "https://gfp.sd.gov/hunt-surveys/",
+     "quote": "Surveys are emailed at the end of each hunting season to all hunters with a working email address."
+    },
+    {
+     "species": [
+      "BIGHORNSHEEP"
+     ],
+     "applies": "Every bighorn sheep taken must be inspected and horn-plugged by GFP",
+     "type": "mandatory_check",
+     "deadline": "Within 24 hours of the kill",
+     "consequence": null,
+     "source": "https://gfp.sd.gov/userdocs/docs/2026bhsheep.pdf",
+     "quote": "Successful hunters must have their bighorn sheep inspected and legally marked (plugged) by a GFP representative within 24 hours of kill."
+    }
+   ],
+   "reportUrl": "https://gfp.sd.gov/userdocs/docs/2026bhsheep.pdf",
+   "summary": "South Dakota has no required harvest report for deer, elk or antelope; GFP sends email surveys. A bighorn sheep must be inspected and plugged by GFP within 24 hours."
   }
  }
 }
