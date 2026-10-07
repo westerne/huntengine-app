@@ -68,6 +68,10 @@ export function applyChange(
 
   if (!canMove(hunt.status, status)) return { error: `Can't move from ${STATUS_LABEL[hunt.status]} to ${STATUS_LABEL[status]}.` };
 
+  // Back to Considering/Planned (incl. un-archiving) means not applied for any
+  // more, so an old draw result no longer applies.
+  if ((status === 'considering' || status === 'planned') && change.application_result === undefined) result = null;
+
   // Marking applied starts a pending result; a draw result only makes sense once applied.
   if (status === 'applied' && hunt.status !== 'applied' && result == null) result = 'pending';
   if (result && result !== 'pending' && !['applied', 'tag_secured', 'preparing', 'completed', 'archived'].includes(status)) {

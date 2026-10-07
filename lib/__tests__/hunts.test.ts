@@ -29,6 +29,11 @@ describe('saved-hunt lifecycle', () => {
     expect(canMove('archived', 'considering')).toBe(true);
   });
 
+  it('un-archiving a hunt that had a draw result works and clears the old result', () => {
+    expect(applyChange({ status: 'archived', application_result: 'successful' }, { status: 'considering' }))
+      .toEqual({ status: 'considering', application_result: null });
+  });
+
   it('season year rolls to next year from July', () => {
     expect(currentSeasonYear(new Date('2026-03-01'))).toBe(2026);
     expect(currentSeasonYear(new Date('2026-10-06'))).toBe(2027);
