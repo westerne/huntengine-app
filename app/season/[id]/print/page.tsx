@@ -9,6 +9,7 @@ import { harvestReportingFor } from '@/lib/huntdata/harvestReporting';
 import { STATE_INFO, toStateCode } from '@/lib/huntdata/registry';
 import type { Task } from '@/lib/applications';
 import PrintButton from './PrintButton';
+import { huntTitle } from '@/lib/huntName';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,7 +17,6 @@ export const dynamic = 'force-dynamic';
 // links on paper. It is a reference sheet, NOT a navigation map — it says so
 // at the top, and it never prints coordinates.
 
-const unitText = (u: string) => (/^[0-9][0-9A-Z]{0,4}$/i.test(u) ? `Unit ${u}` : u);
 
 function Blank({ label }: { label: string }) {
   return (
@@ -66,7 +66,7 @@ export default async function PrintPacket({ params }: { params: Promise<{ id: st
 
         <header className="border-b-2 border-black pb-3">
           <p className="text-xs font-bold uppercase tracking-widest">HuntQuarters hunt packet · {hunt.season_year} season</p>
-          <h1 className="text-2xl font-black uppercase">{info?.name ?? hunt.state} {hunt.species} · {unitText(hunt.unit)}{hunt.hunt_code ? ` · Hunt ${hunt.hunt_code}` : ''}</h1>
+          <h1 className="text-2xl font-black uppercase">{info?.name ?? hunt.state} {hunt.species} · {huntTitle(hunt.unit, hunt.hunt_code)}</h1>
           {hunt.label && <p>{hunt.label}</p>}
           <p className="mt-1"><b>Hunt dates:</b> {dates}{inputs.weapon ? ` · ${inputs.weapon}` : ''}{inputs.party_size ? ` · party of ${inputs.party_size}` : ''}</p>
           <p className="text-xs text-zinc-600">Printed {new Date().toLocaleDateString('en-US')}{plan ? ` · plan version ${plan.version}` : ''}</p>

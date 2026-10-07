@@ -5,6 +5,7 @@
 // explanations keyed by hunt code, plus the summary and action plan. A hunt
 // the model skipped still gets a card, explained from its data alone.
 
+import { humanizeCodes } from '../huntName';
 import { tierFor, type Tier } from './scoutFacts';
 
 type Entry = Record<string, unknown>;
@@ -107,7 +108,7 @@ export function buildSharedScoutResponse(
       randomPoolUnits: fair.length,
       pointsToNextUnit: 0,
       bestLimitedUnit: best ? `${best.unit} (hunt ${best.huntCode})` : '',
-      summary: stripPassClaims(model.summary),
+      summary: humanizeCodes(stripPassClaims(model.summary)),
     },
     strategyPath: model.strategyPath && TIER_ORDER.includes(model.strategyPath) ? model.strategyPath : (best?.tier ?? 'BUILD_AND_WAIT'),
     actionPlan: {

@@ -1,4 +1,5 @@
 'use client';
+import { huntTitle } from '@/lib/huntName';
 
 // Slide-over list of every unit the hunter can likely draw now.
 
@@ -46,7 +47,7 @@ export default function DrawablePanel({
                     <span className="text-[9px] text-zinc-600 font-black uppercase">{unit.poolType}</span>
                   </div>
                   <p className="text-lg font-black italic uppercase text-white leading-tight truncate">
-                    Unit {unit.unit}{unit.huntCode ? ` · Hunt ${unit.huntCode}` : ''}
+                    {huntTitle(unit.unit, unit.huntCode)}
                   </p>
                   <p className="text-[10px] text-zinc-500 font-bold mt-0.5 truncate">{unit.terrain}</p>
                   <div className="flex items-center gap-3 mt-2">

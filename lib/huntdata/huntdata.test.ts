@@ -623,7 +623,7 @@ describe('Washington', () => {
   const wa = getStateModule('WA')!;
   it('loads 2025 special permits and general (OTC) seasons with their own success', () => {
     const q = wa.hunts('DEER').find((h) => h.huntCode === '1000')!;
-    expect(q).toMatchObject({ unit: '105', tags: 5, applicants: 75 });
+    expect(q).toMatchObject({ unit: 'GMU 105', tags: 5, applicants: 75 });
     const gen = wa.hunts('ELK').find((h) => h.huntCode === 'GEN-101-archery')!;
     expect(gen.otc).toBe(true);
     expect(gen.harvest).toMatchObject({ successPct: 5, scope: 'hunt' });
@@ -681,5 +681,15 @@ describe('resident-only species', () => {
     expect(getStateModule('SD')!.residentOnly?.ELK).toMatch(/residents only/);
     expect(getStateModule('ND')!.residentOnly?.BIGHORNSHEEP).toBeUndefined(); // one NR sheep license allowed
     expect(getStateModule('CA')!.residentOnly).toBeUndefined();
+  });
+});
+
+describe('hunt names on screen', () => {
+  it('shows WA GMUs and general seasons in plain words', async () => {
+    const { huntTitle, humanizeCodes } = await import('../huntName');
+    expect(huntTitle('GMU 127', 'GEN-127-any')).toBe('GMU 127 · General season · any weapon');
+    expect(huntTitle('GMU 105', '1000')).toBe('GMU 105 · Hunt 1000');
+    expect(huntTitle('27', null)).toBe('Unit 27');
+    expect(humanizeCodes('Put GEN-127-archery first.')).toBe('Put the GMU 127 general season (archery) first.');
   });
 });

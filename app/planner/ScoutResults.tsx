@@ -6,6 +6,7 @@
 
 import type { ReactNode } from 'react';
 import Link from 'next/link';
+import { huntTitle } from '@/lib/huntName';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Rec = any;
@@ -26,9 +27,8 @@ function seasonText(rec: Rec): string {
   return parts.length ? parts.join(' | ') : rec.seasonName || 'See state regulations';
 }
 
-// Short codes ("27", "5B") read as "Unit 27"; names ("Loup West", "Unit 4") stand alone.
-const unitName = (u: string) => (/^[0-9][0-9A-Z]{0,4}$/i.test(String(u)) || /^[A-Z]$/i.test(String(u)) ? `Unit ${u}` : String(u));
-const huntName = (rec: Rec) => `${unitName(rec.unit)}${rec.huntCode ? ` · Hunt ${rec.huntCode}` : ''}`;
+// Short codes ("27", "5B") read as "Unit 27"; names ("Loup West", "GMU 127") stand alone.
+const huntName = (rec: Rec) => huntTitle(rec.unit, rec.huntCode);
 
 function TierTag({ tier }: { tier: string }) {
   const t = TIER_LABELS[tier];

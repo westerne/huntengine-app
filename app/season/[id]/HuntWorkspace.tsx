@@ -13,6 +13,7 @@ import type { HuntReport } from '@/lib/reports';
 import type { HarvestReportingInfo } from '@/lib/huntdata/harvestReporting';
 import type { PlanInputs } from '@/lib/plans';
 import type { Application, Task } from '@/lib/applications';
+import { huntTitle } from '@/lib/huntName';
 import {
   canMove, nextAction, RESULT_LABEL, RESULTS, STATUS_LABEL, STATUSES,
   type ApplicationResult, type HuntStatus, type SavedHunt,
@@ -93,7 +94,6 @@ export default function HuntWorkspace({
     else setError('Could not delete the note.');
   };
 
-  const unitText = /^[0-9][0-9A-Z]{0,4}$/i.test(hunt.unit) ? `Unit ${hunt.unit}` : hunt.unit;
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-10 space-y-8">
@@ -102,7 +102,7 @@ export default function HuntWorkspace({
       {/* Overview */}
       <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6" aria-labelledby="hunt-title">
         <p className="text-[10px] uppercase text-amber-500 font-black tracking-widest mb-2">{hunt.season_year} season · {STATUS_LABEL[hunt.status]}{hunt.application_result ? ` · ${RESULT_LABEL[hunt.application_result]}` : ''}</p>
-        <h1 id="hunt-title" className="text-2xl font-black italic uppercase">{hunt.state} {hunt.species} · {unitText}{hunt.hunt_code ? ` · Hunt ${hunt.hunt_code}` : ''}</h1>
+        <h1 id="hunt-title" className="text-2xl font-black italic uppercase">{hunt.state} {hunt.species} · {huntTitle(hunt.unit, hunt.hunt_code)}</h1>
         {hunt.label && <p className="text-zinc-400 text-sm mt-1">{hunt.label}</p>}
         <p className="mt-4 text-amber-400 text-sm font-bold">Next: {action.label}</p>
         {['tag_secured', 'preparing', 'completed'].includes(hunt.status) && (

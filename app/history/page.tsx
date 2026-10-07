@@ -5,6 +5,7 @@ import { accountsEnabled } from '@/lib/supabase/config';
 import { supabaseServer } from '@/lib/supabase/server';
 import { RESULT_LABEL, STATUS_LABEL, type SavedHunt } from '@/lib/hunts';
 import type { HuntReport } from '@/lib/reports';
+import { huntTitle } from '@/lib/huntName';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,8 +18,7 @@ type Row = SavedHunt & {
   hunt_reports: HuntReport | HuntReport[] | null;
 };
 const one = <T,>(v: T | T[] | null | undefined): T | null => (Array.isArray(v) ? v[0] ?? null : v ?? null);
-const unitText = (u: string) => (/^[0-9][0-9A-Z]{0,4}$/i.test(u) ? `Unit ${u}` : u);
-const title = (h: SavedHunt) => `${h.state} ${h.species} · ${unitText(h.unit)}${h.hunt_code ? ` · Hunt ${h.hunt_code}` : ''}`;
+const title = (h: SavedHunt) => `${h.state} ${h.species} · ${huntTitle(h.unit, h.hunt_code)}`;
 
 const RESULT_CLS: Record<string, string> = {
   successful: 'text-green-400', unsuccessful: 'text-zinc-400', alternate: 'text-amber-300', withdrawn: 'text-zinc-500', pending: 'text-amber-400',

@@ -7,6 +7,7 @@ import { currentSeasonYear, nextAction, RESULT_LABEL, STATUS_LABEL, type SavedHu
 import { sortOpenTasks, type Task } from '@/lib/applications';
 import TaskList from './TaskList';
 import AddTask from './AddTask';
+import { huntTitle } from '@/lib/huntName';
 
 // Per-request: depends on the signed-in user.
 export const dynamic = 'force-dynamic';
@@ -35,7 +36,7 @@ function HuntCard({ h }: { h: SavedHunt & Reported }) {
     <Link href={`/season/${h.id}`} className="block bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-amber-700 transition-colors">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="text-white font-black uppercase italic">
-          {h.state} {h.species} · {/^[0-9][0-9A-Z]{0,4}$/i.test(h.unit) ? `Unit ${h.unit}` : h.unit}{h.hunt_code ? ` · Hunt ${h.hunt_code}` : ''}
+          {h.state} {h.species} · {huntTitle(h.unit, h.hunt_code)}
         </p>
         <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">
           {STATUS_LABEL[h.status]}{h.application_result && h.application_result !== 'pending' ? ` · ${RESULT_LABEL[h.application_result]}` : ''}
