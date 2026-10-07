@@ -173,8 +173,8 @@ function Ledger({ rows, years }: { rows: LedgerRow[]; years: number[] }) {
   );
 }
 
-export default function CalendarView({ years, items, ledger, flags, homeState, loadError }: {
-  years: number[]; items: CalItem[]; ledger: LedgerRow[]; flags: YearFlag[]; homeState: string | null; loadError: boolean;
+export default function CalendarView({ years, items, ledger, flags, homeState, homeKnown, loadError }: {
+  years: number[]; items: CalItem[]; ledger: LedgerRow[]; flags: YearFlag[]; homeState: string | null; homeKnown: boolean; loadError: boolean;
 }) {
   const router = useRouter();
   const [adding, setAdding] = useState(false);
@@ -194,22 +194,26 @@ export default function CalendarView({ years, items, ledger, flags, homeState, l
           <h1 className="text-3xl font-black italic uppercase">My Hunt Calendar</h1>
           <p className="text-zinc-500 text-sm mt-1">Your next {years.length} seasons: draw targets, bucket-list hunts, OTC options and points.</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
+          <Link href="/calendar/setup" className="border border-zinc-700 text-zinc-200 px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-zinc-800">{items.length ? 'Get suggestions' : 'Start planning'}</Link>
           <Link href="/calendar/import" className="border border-zinc-700 text-zinc-200 px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-zinc-800">Import spreadsheet</Link>
           <button type="button" onClick={() => setAdding(true)} className="bg-amber-600 text-white px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-amber-500">+ Add a hunt</button>
         </div>
       </div>
 
       {loadError && <p role="alert" className="bg-red-950/50 border border-red-900 text-red-200 rounded-xl px-4 py-3 text-sm">Your calendar couldn&apos;t be loaded just now. Nothing is lost — try again in a minute.</p>}
-      {!homeState && <p className="bg-amber-950/40 border border-amber-900 text-amber-200 rounded-xl px-4 py-3 text-sm">Set your home state in <Link href="/profile" className="underline">My Profile</Link> — odds below assume you&apos;re a non-resident everywhere.</p>}
+      {!homeState && !homeKnown && <p className="bg-amber-950/40 border border-amber-900 text-amber-200 rounded-xl px-4 py-3 text-sm">Set your home state in <Link href="/profile" className="underline">My Profile</Link> — odds below assume you&apos;re a non-resident everywhere.</p>}
       {error && <p role="alert" className="text-red-400 text-sm">{error}</p>}
       {adding && <AddItem years={years} onDone={() => { setAdding(false); router.refresh(); }} />}
 
       {items.length === 0 && ledger.length === 0 && !loadError ? (
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 space-y-3">
-          <p className="text-zinc-200 font-bold">Start with what you already track.</p>
-          <p className="text-zinc-400 text-sm">Paste your spreadsheet (points, the units you plan to hunt and when, bucket-list hunts, OTC options) and we&apos;ll lay it out year by year with draw odds.</p>
-          <Link href="/calendar/import" className="inline-block bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500">Import my spreadsheet</Link>
+          <p className="text-zinc-200 font-bold">Let&apos;s build your next {years.length} seasons.</p>
+          <p className="text-zinc-400 text-sm">Answer a few quick questions — what you hunt, where, your points, your bucket list — and we&apos;ll suggest hunts year by year from real draw results. You choose what stays.</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link href="/calendar/setup" className="inline-block bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500">Start planning</Link>
+            <Link href="/calendar/import" className="text-zinc-400 text-[11px] font-black uppercase tracking-widest hover:text-white">Already track this in a spreadsheet? Import it</Link>
+          </div>
         </div>
       ) : (
         <>

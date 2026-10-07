@@ -16,8 +16,21 @@ const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : n
 const pct = (v: unknown) => (typeof v === 'string' ? (/too few to judge/.test(v) ? null : parseFloat(v)) : num(v));
 
 // Restricted hunts most hunters can't apply for; never shortlisted.
-const RESTRICTED = /\b(youth|juniors?|apprentice|master hunters?|disabilit(?:y|ies)|ham|champ|challenged|disabled|military|tribal|hopi|navajo)\b/i;
-const ANTLERLESS = /\b(antlerless|cow|doe|ewe)\b/i;
+export const RESTRICTED = /\b(youth|juniors?|apprentice|master hunters?|disabilit(?:y|ies)|ham|champ|challenged|disabled|military|tribal|hopi|navajo)\b/i;
+// Private-land-only hunts need landowner permission before you apply, so they
+// draw easily but aren't open to most hunters. CPW marks them with a "P"
+// season in the hunt code (E-F-007-P5-R); other states say "private".
+export function isPrivateOnly(e: { huntCode?: unknown; label?: unknown }): boolean {
+  const code = String(e.huntCode ?? '').replace(/-/g, '').toUpperCase();
+  return /^[A-Z]{2}\d{3}P\d[A-Z]$/.test(code) || /\bprivate\b/i.test(String(e.label ?? ''));
+}
+export const ANTLERLESS = /\b(antlerless|cow|doe|ewe)\b/i;
+// Antlerless by label, or by CPW's sex letter (second letter F = female, as in
+// D-F-056-L1-R) for Colorado hunts that carry no label.
+export function isAntlerless(e: { huntCode?: unknown; label?: unknown }): boolean {
+  if (ANTLERLESS.test(String(e.label ?? ''))) return true;
+  return /^[A-Z]F\d{3}[A-Z]\d[A-Z]$/.test(String(e.huntCode ?? '').replace(/-/g, '').toUpperCase());
+}
 
 export function oddsOf(e: Entry): number | null {
   const published = num(e.drawSuccessAtYourPoints) ?? num(e.drawSuccess);
@@ -41,8 +54,9 @@ export function buildShortlist<T extends Entry>(dataset: T[], opts: ShortlistOpt
   const eligible = dataset.filter((e) => {
     const label = String(e.label ?? '');
     if (RESTRICTED.test(label)) return false;
+    if (isPrivateOnly(e)) return false;
     if (oddsOf(e) == null && !e.otc) return false;
-    if (goal !== 'opportunity' && ANTLERLESS.test(label)) return false;
+    if (goal !== 'opportunity' && isAntlerless(e)) return false;
     return true;
   });
 

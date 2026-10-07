@@ -33,3 +33,7 @@ create policy "own plan items" on public.plan_items
       select 1 from public.saved_hunts h where h.id = saved_hunt_id and h.user_id = auth.uid()
     )
   ));
+
+-- Guided setup answers (interests, how long they'll wait, units they know,
+-- bucket list) — kept so suggestions can be rebuilt later.
+alter table public.profiles add column if not exists planning jsonb;

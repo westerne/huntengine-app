@@ -26,11 +26,13 @@ export default async function CalendarPage() {
   const [{ data: itemRows, error }, { data: pointRows }, { data: profile }] = await Promise.all([
     supabase.from('plan_items').select('*').order('target_year', { nullsFirst: false }).order('position').order('created_at'),
     supabase.from('hunter_points').select('state, species, points, as_of_year'),
-    supabase.from('profiles').select('home_state').eq('user_id', viewer.userId).maybeSingle(),
+    supabase.from('profiles').select('home_state, planning').eq('user_id', viewer.userId).maybeSingle(),
   ]);
   const items = (itemRows ?? []) as PlanItem[];
   const balances = (pointRows ?? []) as PointBalance[];
   const home = profile?.home_state ?? null;
+  // Setup answer "another state": non-resident everywhere, no need to ask again.
+  const homeKnown = !!home || (profile?.planning as { homeState?: string } | null)?.homeState === 'XX';
   const years = calendarYears(currentSeasonYear());
   const residencyFor = (state: string) => (home && home === state ? 'resident' : 'nonresident') as 'resident' | 'nonresident';
   const pairKey = (state: string, species: string) => `${state}|${speciesKeyOf(species, state) ?? species}`;
@@ -71,6 +73,7 @@ export default async function CalendarPage() {
         ledger={ledger}
         flags={yearFlags(withOutlook, years)}
         homeState={home}
+        homeKnown={homeKnown}
         loadError={!!error}
       />
     </div>
