@@ -115,9 +115,9 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 ## Phase 2: Membership launch + Batch A (December – early January)
 
 - [ ] **Batch A states:** AZ, NE, NM.
-- [ ] **Accounts:** sign up and log in. These replace the beta code.
-- [ ] **Saved plans:** members can come back to their SCOUT results and BRIEFs.
-- [ ] **Payments:** bring Stripe back.
+- [x] **Accounts:** email + password sign-in (built; turns on with Supabase settings — see docs/ACCOUNTS_SETUP.md).
+- [x] **My Season:** save hunts from results, track status and draw results, private notes; "Save this tag" for hunts already drawn. My Profile with preferences and point balances.
+- [x] **Payments:** Stripe annual membership with promotion codes (beta testers get a free year), webhook, billing portal. Needs Stripe products + keys.
 - [ ] **Usage limits for each member**, stored in the database, to keep OpenAI costs in check.
 - [ ] **Landing page** on huntquarters.com that lists the states covered and the ones coming next.
 - [ ] **Links from huntaddicts.com** articles into the planner.
