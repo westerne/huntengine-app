@@ -58,6 +58,13 @@ export default function App() {
     if (me && me.accounts && me.member) updateProfile({ points: pointsFor(me.points, profile.species) });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profile.species]);
+  // …and residency follows the state: resident only in their saved home state.
+  // (They can still flip it by hand for this search.)
+  useEffect(() => {
+    const home = me && me.accounts && me.member ? me.profile?.home_state : null;
+    if (home) updateProfile({ residency: profile.states[0] === home ? 'Resident' : 'Non-Resident' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profile.states]);
   const enterBeta = (code: string) => {
     try { sessionStorage.setItem(BETA_KEY, code); } catch {}
     setState((s) => ({ ...s, error: null }));
