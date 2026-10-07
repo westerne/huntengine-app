@@ -1,0 +1,7364 @@
+{
+ "state": "CA",
+ "year": 2025,
+ "source": {
+  "name": "California Department of Fish and Wildlife - 2025 Big Game Drawing statistics (2026 California Big Game Digest tables and 2025 Tag Drawing Statistics PDFs)",
+  "url": "https://wildlife.ca.gov/Licensing/Statistics/Big-Game-Drawing"
+ },
+ "notes": "CDFW 2025 Big Game Drawing (draw held June 2025). California uses a MODIFIED PREFERENCE POINT system for every species (deer, elk, pronghorn, bighorn sheep): each hunt's quota is split into a preference-point portion (highest points first, ties by random number) and a random 'draw-by-choice' portion. Splits: premium deer 90/10; apprentice deer 50/50; elk, pronghorn and bighorn sheep quota 1 = random only, 2 = 1+1, 3 = 2+1, 4+ = 75% preference. Party applications use the party's AVERAGE points, so point values can be fractional (e.g. 8.6667). There is NO bonus-point system in California. RESIDENCY: CDFW publishes no residency split; residents and nonresidents apply in the same pool. DEER rows put the combined figures in BOTH draw.resident and draw.nonresident (identical; nonresidents compete equally for deer). ELK, PRONGHORN and BIGHORN SHEEP rows put the combined figures in draw.resident and leave draw.nonresident null, because regulation caps nonresidents (only ONE nonresident may be drawn for elk and one for pronghorn statewide per year; nonresidents get at most 10% of bighorn tags), so the combined odds do not apply to a nonresident. SOURCES: DEER draw numbers = '2025 Deer Tag Drawing Statistics' tables in the 2026 California Big Game Digest (pp.29-31, https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline), which print per hunt: tag quota, preference / random quotas, total 1st-choice applicants, max-point (23) applicants, tags awarded in the preference drawing, highest and LOWEST point value awarded in the preference drawing, and random-drawing tags awarded to 1st / 2nd / 3rd-choice applicants. ELK / PRONGHORN / SHEEP draw numbers = the 2026 Digest hunt tables (elk pp.48-52, pronghorn pp.58-59, bighorn p.61), which print 2025 tag quota, preference / random quotas, total applicants and max-point applicants. Hunt names = CDFW '2025 ... Tag Drawing Statistics - Number of Applicants by Point Value' PDFs (https://wildlife.ca.gov/Licensing/Statistics/Big-Game-Drawing; deer https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=242657/242658/242661/242665/242669, elk https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=242638/242639/242643, pronghorn https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=242634/242635, bighorn https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=242632); every row's quota, preference quota, random quota and applicant count was matched against those PDFs. HOW FIELDS WERE DERIVED. DEER: tags = tag quota; applicants = total 1st-choice applicants; successPct = (tags awarded in the preference drawing + random-drawing tags awarded to 1st-choice applicants) / 1st-choice applicants x 100 (computed here, not a CDFW figure; capped at 100); minPoints = CDFW's printed 'Lowest Point Value Awarded Tag in Preference Drawing' (0 where every 1st-choice applicant drew). pools: preference = tags awarded in the preference drawing / all 1st-choice applicants; random = 1st-choice random awards / 1st-choice applicants left after the preference round. Tags that went to 2nd/3rd-choice applicants are noted in the label. ELK / PRONGHORN / SHEEP: one hunt choice per application, so successPct = min(quota, applicants) / applicants x 100 (computed here; assumes the full 2025 quota was issued in the draw, which CDFW does not print); minPoints = null (CDFW does not publish the lowest point value drawn for these species); pool applicant counts are not published. pointLines are NOT filled: CDFW publishes applicants by point value but not how many drew at each point value. Hunts new for 2026 (no 2025 quota, shown as '-' in the Digest) are omitted. Preference-point-only codes (PD, 499, 799, 599) are omitted. UNITS: deer zone hunts use the zone name as spelled in CDFW BIOS layer ds342 field Zone_Nam (e.g. 'X3a'); the C-zone hunt (C) covers C1-C4; area-specific archery (A), general late-season (G), apprentice (J) and muzzleloader (M, MA) hunts use the hunt code, which is the 'Zone' field of BIOS layers ds3242 / ds3241. Elk unit = elk hunt area NAME in BIOS ds786 (hunt 422 Owens Valley Multiple Zone covers Bishop, Independence, Goodale, Lone Pine). Pronghorn unit = zone number (BIOS ds787 'Zone'); bighorn unit = zone number (BIOS ds784 'Zone_Num'). WEAPON: 'General Season'/'General Methods' = rifle (any legal method); zone tags valid for 'Archery and General Seasons' (D12, D14, D17) = any; MA hunts and elk 303 are muzzleloader OR archery and are tagged muzzleloader. No season dates: the 2026 Digest prints 2026 dates, not 2025.",
+ "species": {
+  "DEER": [
+   {
+    "huntCode": "C",
+    "unit": "C1",
+    "units": [
+     "C1",
+     "C2",
+     "C3",
+     "C4"
+    ],
+    "label": "C Zones General Seasons - Buck",
+    "weapon": "rifle",
+    "tags": 8150,
+    "applicants": 5965,
+    "draw": {
+     "resident": {
+      "tags": 8150,
+      "applicants": 5965,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 7335,
+        "applicants": 5965,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 815,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 8150,
+      "applicants": 5965,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 7335,
+        "applicants": 5965,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 815,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "D12",
+    "unit": "D12",
+    "label": "Zone D12 Archery and General Seasons - Buck",
+    "weapon": "any",
+    "tags": 950,
+    "applicants": 1078,
+    "draw": {
+     "resident": {
+      "tags": 950,
+      "applicants": 1078,
+      "successPct": 88.1,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 855,
+        "applicants": 1078,
+        "successPct": 79.3,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 95,
+        "applicants": 223,
+        "successPct": 42.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 950,
+      "applicants": 1078,
+      "successPct": 88.1,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 855,
+        "applicants": 1078,
+        "successPct": 79.3,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 95,
+        "applicants": 223,
+        "successPct": 42.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "D14",
+    "unit": "D14",
+    "label": "Zone D14 Archery and General Seasons - Buck",
+    "weapon": "any",
+    "tags": 3000,
+    "applicants": 2139,
+    "draw": {
+     "resident": {
+      "tags": 3000,
+      "applicants": 2139,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 2700,
+        "applicants": 2139,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 300,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 3000,
+      "applicants": 2139,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 2700,
+        "applicants": 2139,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 300,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "D17",
+    "unit": "D17",
+    "label": "Zone D17 Archery and General Seasons - Buck",
+    "weapon": "any",
+    "tags": 500,
+    "applicants": 752,
+    "draw": {
+     "resident": {
+      "tags": 500,
+      "applicants": 752,
+      "successPct": 66.5,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 450,
+        "applicants": 752,
+        "successPct": 59.8,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 50,
+        "applicants": 302,
+        "successPct": 16.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 500,
+      "applicants": 752,
+      "successPct": 66.5,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 450,
+        "applicants": 752,
+        "successPct": 59.8,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 50,
+        "applicants": 302,
+        "successPct": 16.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X1",
+    "unit": "X1",
+    "label": "Zone X1 General Season - Buck",
+    "weapon": "rifle",
+    "tags": 760,
+    "applicants": 2884,
+    "draw": {
+     "resident": {
+      "tags": 760,
+      "applicants": 2884,
+      "successPct": 26.4,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 684,
+        "applicants": 2884,
+        "successPct": 23.7,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 76,
+        "applicants": 2200,
+        "successPct": 3.5
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 760,
+      "applicants": 2884,
+      "successPct": 26.4,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 684,
+        "applicants": 2884,
+        "successPct": 23.7,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 76,
+        "applicants": 2200,
+        "successPct": 3.5
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X2",
+    "unit": "X2",
+    "label": "Zone X2 General Season - Buck",
+    "weapon": "rifle",
+    "tags": 189,
+    "applicants": 1310,
+    "draw": {
+     "resident": {
+      "tags": 189,
+      "applicants": 1310,
+      "successPct": 14.4,
+      "minPoints": 8.6667,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 171,
+        "applicants": 1310,
+        "successPct": 13.1,
+        "minPoints": 8.6667
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 18,
+        "applicants": 1139,
+        "successPct": 1.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 189,
+      "applicants": 1310,
+      "successPct": 14.4,
+      "minPoints": 8.6667,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 171,
+        "applicants": 1310,
+        "successPct": 13.1,
+        "minPoints": 8.6667
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 18,
+        "applicants": 1139,
+        "successPct": 1.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X3A",
+    "unit": "X3a",
+    "label": "Zone X3A General Season - Buck",
+    "weapon": "rifle",
+    "tags": 354,
+    "applicants": 1714,
+    "draw": {
+     "resident": {
+      "tags": 354,
+      "applicants": 1714,
+      "successPct": 20.7,
+      "minPoints": 5,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 319,
+        "applicants": 1714,
+        "successPct": 18.6,
+        "minPoints": 5
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 35,
+        "applicants": 1395,
+        "successPct": 2.5
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 354,
+      "applicants": 1714,
+      "successPct": 20.7,
+      "minPoints": 5,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 319,
+        "applicants": 1714,
+        "successPct": 18.6,
+        "minPoints": 5
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 35,
+        "applicants": 1395,
+        "successPct": 2.5
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X3B",
+    "unit": "X3b",
+    "label": "Zone X3B General Season - Buck",
+    "weapon": "rifle",
+    "tags": 499,
+    "applicants": 1266,
+    "draw": {
+     "resident": {
+      "tags": 499,
+      "applicants": 1266,
+      "successPct": 39.4,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 450,
+        "applicants": 1266,
+        "successPct": 35.5,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 49,
+        "applicants": 816,
+        "successPct": 6.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 499,
+      "applicants": 1266,
+      "successPct": 39.4,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 450,
+        "applicants": 1266,
+        "successPct": 35.5,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 49,
+        "applicants": 816,
+        "successPct": 6.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X4",
+    "unit": "X4",
+    "label": "Zone X4 General Season - Buck",
+    "weapon": "rifle",
+    "tags": 479,
+    "applicants": 1319,
+    "draw": {
+     "resident": {
+      "tags": 479,
+      "applicants": 1319,
+      "successPct": 36.3,
+      "minPoints": 2.75,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 432,
+        "applicants": 1319,
+        "successPct": 32.8,
+        "minPoints": 2.75
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 47,
+        "applicants": 887,
+        "successPct": 5.3
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 479,
+      "applicants": 1319,
+      "successPct": 36.3,
+      "minPoints": 2.75,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 432,
+        "applicants": 1319,
+        "successPct": 32.8,
+        "minPoints": 2.75
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 47,
+        "applicants": 887,
+        "successPct": 5.3
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X5A",
+    "unit": "X5a",
+    "label": "Zone X5A General Season - Buck",
+    "weapon": "rifle",
+    "tags": 75,
+    "applicants": 552,
+    "draw": {
+     "resident": {
+      "tags": 75,
+      "applicants": 552,
+      "successPct": 13.6,
+      "minPoints": 7,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 68,
+        "applicants": 552,
+        "successPct": 12.3,
+        "minPoints": 7
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 7,
+        "applicants": 484,
+        "successPct": 1.4
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 75,
+      "applicants": 552,
+      "successPct": 13.6,
+      "minPoints": 7,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 68,
+        "applicants": 552,
+        "successPct": 12.3,
+        "minPoints": 7
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 7,
+        "applicants": 484,
+        "successPct": 1.4
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X5B",
+    "unit": "X5b",
+    "label": "Zone X5B General Season - Buck",
+    "weapon": "rifle",
+    "tags": 50,
+    "applicants": 2590,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 2590,
+      "successPct": 1.9,
+      "minPoints": 19,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 45,
+        "applicants": 2590,
+        "successPct": 1.7,
+        "minPoints": 19
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 5,
+        "applicants": 2545,
+        "successPct": 0.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 50,
+      "applicants": 2590,
+      "successPct": 1.9,
+      "minPoints": 19,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 45,
+        "applicants": 2590,
+        "successPct": 1.7,
+        "minPoints": 19
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 5,
+        "applicants": 2545,
+        "successPct": 0.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X6A",
+    "unit": "X6a",
+    "label": "Zone X6A General Season - Buck",
+    "weapon": "rifle",
+    "tags": 329,
+    "applicants": 2601,
+    "draw": {
+     "resident": {
+      "tags": 329,
+      "applicants": 2601,
+      "successPct": 12.6,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 297,
+        "applicants": 2601,
+        "successPct": 11.4,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 32,
+        "applicants": 2304,
+        "successPct": 1.4
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 329,
+      "applicants": 2601,
+      "successPct": 12.6,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 297,
+        "applicants": 2601,
+        "successPct": 11.4,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 32,
+        "applicants": 2304,
+        "successPct": 1.4
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X6B",
+    "unit": "X6b",
+    "label": "Zone X6B General Season - Buck",
+    "weapon": "rifle",
+    "tags": 309,
+    "applicants": 1046,
+    "draw": {
+     "resident": {
+      "tags": 309,
+      "applicants": 1046,
+      "successPct": 29.5,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 279,
+        "applicants": 1046,
+        "successPct": 26.7,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 30,
+        "applicants": 767,
+        "successPct": 3.9
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 309,
+      "applicants": 1046,
+      "successPct": 29.5,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 279,
+        "applicants": 1046,
+        "successPct": 26.7,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 30,
+        "applicants": 767,
+        "successPct": 3.9
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X7A",
+    "unit": "X7a",
+    "label": "Zone X7A General Season - Buck",
+    "weapon": "rifle",
+    "tags": 229,
+    "applicants": 1059,
+    "draw": {
+     "resident": {
+      "tags": 229,
+      "applicants": 1059,
+      "successPct": 21.6,
+      "minPoints": 5,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 207,
+        "applicants": 1059,
+        "successPct": 19.5,
+        "minPoints": 5
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 22,
+        "applicants": 852,
+        "successPct": 2.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 229,
+      "applicants": 1059,
+      "successPct": 21.6,
+      "minPoints": 5,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 207,
+        "applicants": 1059,
+        "successPct": 19.5,
+        "minPoints": 5
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 22,
+        "applicants": 852,
+        "successPct": 2.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X7B",
+    "unit": "X7b",
+    "label": "Zone X7B General Season - Buck",
+    "weapon": "rifle",
+    "tags": 134,
+    "applicants": 528,
+    "draw": {
+     "resident": {
+      "tags": 134,
+      "applicants": 528,
+      "successPct": 25.4,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 121,
+        "applicants": 528,
+        "successPct": 22.9,
+        "minPoints": 4
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 13,
+        "applicants": 407,
+        "successPct": 3.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 134,
+      "applicants": 528,
+      "successPct": 25.4,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 121,
+        "applicants": 528,
+        "successPct": 22.9,
+        "minPoints": 4
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 13,
+        "applicants": 407,
+        "successPct": 3.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X8",
+    "unit": "X8",
+    "label": "Zone X8 General Season - Buck",
+    "weapon": "rifle",
+    "tags": 210,
+    "applicants": 917,
+    "draw": {
+     "resident": {
+      "tags": 210,
+      "applicants": 917,
+      "successPct": 22.9,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 189,
+        "applicants": 917,
+        "successPct": 20.6,
+        "minPoints": 4
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 21,
+        "applicants": 728,
+        "successPct": 2.9
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 210,
+      "applicants": 917,
+      "successPct": 22.9,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 189,
+        "applicants": 917,
+        "successPct": 20.6,
+        "minPoints": 4
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 21,
+        "applicants": 728,
+        "successPct": 2.9
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X9A",
+    "unit": "X9a",
+    "label": "Zone X9A General Season - Buck",
+    "weapon": "rifle",
+    "tags": 269,
+    "applicants": 3215,
+    "draw": {
+     "resident": {
+      "tags": 269,
+      "applicants": 3215,
+      "successPct": 8.4,
+      "minPoints": 9,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 243,
+        "applicants": 3215,
+        "successPct": 7.6,
+        "minPoints": 9
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 26,
+        "applicants": 2972,
+        "successPct": 0.9
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 269,
+      "applicants": 3215,
+      "successPct": 8.4,
+      "minPoints": 9,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 243,
+        "applicants": 3215,
+        "successPct": 7.6,
+        "minPoints": 9
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 26,
+        "applicants": 2972,
+        "successPct": 0.9
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X9B",
+    "unit": "X9b",
+    "label": "Zone X9B General Season - Buck",
+    "weapon": "rifle",
+    "tags": 230,
+    "applicants": 463,
+    "draw": {
+     "resident": {
+      "tags": 230,
+      "applicants": 463,
+      "successPct": 49.7,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 207,
+        "applicants": 463,
+        "successPct": 44.7,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 23,
+        "applicants": 256,
+        "successPct": 9.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 230,
+      "applicants": 463,
+      "successPct": 49.7,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 207,
+        "applicants": 463,
+        "successPct": 44.7,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 23,
+        "applicants": 256,
+        "successPct": 9.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X9C",
+    "unit": "X9c",
+    "label": "Zone X9C General Season - Buck",
+    "weapon": "rifle",
+    "tags": 325,
+    "applicants": 521,
+    "draw": {
+     "resident": {
+      "tags": 325,
+      "applicants": 521,
+      "successPct": 62.4,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 293,
+        "applicants": 521,
+        "successPct": 56.2,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 32,
+        "applicants": 228,
+        "successPct": 14.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 325,
+      "applicants": 521,
+      "successPct": 62.4,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 293,
+        "applicants": 521,
+        "successPct": 56.2,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 32,
+        "applicants": 228,
+        "successPct": 14.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X10",
+    "unit": "X10",
+    "label": "Zone X10 General Season - Buck",
+    "weapon": "rifle",
+    "tags": 400,
+    "applicants": 436,
+    "draw": {
+     "resident": {
+      "tags": 400,
+      "applicants": 436,
+      "successPct": 91.7,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 360,
+        "applicants": 436,
+        "successPct": 82.6,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 40,
+        "applicants": 76,
+        "successPct": 52.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 400,
+      "applicants": 436,
+      "successPct": 91.7,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 360,
+        "applicants": 436,
+        "successPct": 82.6,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 40,
+        "applicants": 76,
+        "successPct": 52.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "X12",
+    "unit": "X12",
+    "label": "Zone X12 General Season - Buck",
+    "weapon": "rifle",
+    "tags": 349,
+    "applicants": 4023,
+    "draw": {
+     "resident": {
+      "tags": 349,
+      "applicants": 4023,
+      "successPct": 8.7,
+      "minPoints": 8,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 315,
+        "applicants": 4023,
+        "successPct": 7.8,
+        "minPoints": 8
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 34,
+        "applicants": 3708,
+        "successPct": 0.9
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 349,
+      "applicants": 4023,
+      "successPct": 8.7,
+      "minPoints": 8,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 315,
+        "applicants": 4023,
+        "successPct": 7.8,
+        "minPoints": 8
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 34,
+        "applicants": 3708,
+        "successPct": 0.9
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A1",
+    "unit": "A1",
+    "label": "Archery Hunt In C Zones - Buck",
+    "weapon": "archery",
+    "tags": 1945,
+    "applicants": 505,
+    "draw": {
+     "resident": {
+      "tags": 1945,
+      "applicants": 505,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 1751,
+        "applicants": 505,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 194,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 1945,
+      "applicants": 505,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 1751,
+        "applicants": 505,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 194,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A3",
+    "unit": "A3",
+    "label": "Archery Hunt In Zone X1 - Buck",
+    "weapon": "archery",
+    "tags": 100,
+    "applicants": 289,
+    "draw": {
+     "resident": {
+      "tags": 100,
+      "applicants": 289,
+      "successPct": 34.6,
+      "minPoints": 2,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 90,
+        "applicants": 289,
+        "successPct": 31.1,
+        "minPoints": 2
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 10,
+        "applicants": 199,
+        "successPct": 5.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 100,
+      "applicants": 289,
+      "successPct": 34.6,
+      "minPoints": 2,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 90,
+        "applicants": 289,
+        "successPct": 31.1,
+        "minPoints": 2
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 10,
+        "applicants": 199,
+        "successPct": 5.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A4",
+    "unit": "A4",
+    "label": "Archery Hunt In Zone X2 - Buck",
+    "weapon": "archery",
+    "tags": 10,
+    "applicants": 40,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 40,
+      "successPct": 25.0,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 9,
+        "applicants": 40,
+        "successPct": 22.5,
+        "minPoints": 4
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 31,
+        "successPct": 3.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 10,
+      "applicants": 40,
+      "successPct": 25.0,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 9,
+        "applicants": 40,
+        "successPct": 22.5,
+        "minPoints": 4
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 31,
+        "successPct": 3.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A5",
+    "unit": "A5",
+    "label": "Archery Hunt In Zone X3A - Buck",
+    "weapon": "archery",
+    "tags": 40,
+    "applicants": 110,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 110,
+      "successPct": 36.4,
+      "minPoints": 2.5,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 36,
+        "applicants": 110,
+        "successPct": 32.7,
+        "minPoints": 2.5
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 74,
+        "successPct": 5.4
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 40,
+      "applicants": 110,
+      "successPct": 36.4,
+      "minPoints": 2.5,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 36,
+        "applicants": 110,
+        "successPct": 32.7,
+        "minPoints": 2.5
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 74,
+        "successPct": 5.4
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A6",
+    "unit": "A6",
+    "label": "Archery Hunt In Zone X3B - Buck",
+    "weapon": "archery",
+    "tags": 70,
+    "applicants": 82,
+    "draw": {
+     "resident": {
+      "tags": 70,
+      "applicants": 82,
+      "successPct": 85.4,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 63,
+        "applicants": 82,
+        "successPct": 76.8,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 7,
+        "applicants": 19,
+        "successPct": 36.8
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 70,
+      "applicants": 82,
+      "successPct": 85.4,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 63,
+        "applicants": 82,
+        "successPct": 76.8,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 7,
+        "applicants": 19,
+        "successPct": 36.8
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A7",
+    "unit": "A7",
+    "label": "Archery Hunt In Zone X4 - Buck",
+    "weapon": "archery",
+    "tags": 120,
+    "applicants": 239,
+    "draw": {
+     "resident": {
+      "tags": 120,
+      "applicants": 239,
+      "successPct": 50.2,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 108,
+        "applicants": 239,
+        "successPct": 45.2,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 12,
+        "applicants": 131,
+        "successPct": 9.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 120,
+      "applicants": 239,
+      "successPct": 50.2,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 108,
+        "applicants": 239,
+        "successPct": 45.2,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 12,
+        "applicants": 131,
+        "successPct": 9.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A8",
+    "unit": "A8",
+    "label": "Archery Hunt In Zone X5A - Buck",
+    "weapon": "archery",
+    "tags": 10,
+    "applicants": 33,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 33,
+      "successPct": 30.3,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 9,
+        "applicants": 33,
+        "successPct": 27.3,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 24,
+        "successPct": 4.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 10,
+      "applicants": 33,
+      "successPct": 30.3,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 9,
+        "applicants": 33,
+        "successPct": 27.3,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 24,
+        "successPct": 4.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A9",
+    "unit": "A9",
+    "label": "Archery Hunt In Zone X5B - Buck",
+    "weapon": "archery",
+    "tags": 5,
+    "applicants": 74,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 74,
+      "successPct": 6.8,
+      "minPoints": 12,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 4,
+        "applicants": 74,
+        "successPct": 5.4,
+        "minPoints": 12
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 70,
+        "successPct": 1.4
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 5,
+      "applicants": 74,
+      "successPct": 6.8,
+      "minPoints": 12,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 4,
+        "applicants": 74,
+        "successPct": 5.4,
+        "minPoints": 12
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 70,
+        "successPct": 1.4
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A11",
+    "unit": "A11",
+    "label": "Archery Hunt In Zone X6A - Buck",
+    "weapon": "archery",
+    "tags": 50,
+    "applicants": 329,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 329,
+      "successPct": 15.2,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 45,
+        "applicants": 329,
+        "successPct": 13.7,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 5,
+        "applicants": 284,
+        "successPct": 1.8
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 50,
+      "applicants": 329,
+      "successPct": 15.2,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 45,
+        "applicants": 329,
+        "successPct": 13.7,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 5,
+        "applicants": 284,
+        "successPct": 1.8
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A12",
+    "unit": "A12",
+    "label": "Archery Hunt In Zone X6B - Buck",
+    "weapon": "archery",
+    "tags": 90,
+    "applicants": 204,
+    "draw": {
+     "resident": {
+      "tags": 90,
+      "applicants": 204,
+      "successPct": 44.1,
+      "minPoints": 2,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 81,
+        "applicants": 204,
+        "successPct": 39.7,
+        "minPoints": 2
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 9,
+        "applicants": 123,
+        "successPct": 7.3
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 90,
+      "applicants": 204,
+      "successPct": 44.1,
+      "minPoints": 2,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 81,
+        "applicants": 204,
+        "successPct": 39.7,
+        "minPoints": 2
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 9,
+        "applicants": 123,
+        "successPct": 7.3
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A13",
+    "unit": "A13",
+    "label": "Archery Hunt In Zone X7A - Buck",
+    "weapon": "archery",
+    "tags": 45,
+    "applicants": 78,
+    "draw": {
+     "resident": {
+      "tags": 45,
+      "applicants": 78,
+      "successPct": 57.7,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 41,
+        "applicants": 78,
+        "successPct": 52.6,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 37,
+        "successPct": 10.8
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 45,
+      "applicants": 78,
+      "successPct": 57.7,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 41,
+        "applicants": 78,
+        "successPct": 52.6,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 37,
+        "successPct": 10.8
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A14",
+    "unit": "A14",
+    "label": "Archery Hunt In Zone X7B - Buck",
+    "weapon": "archery",
+    "tags": 25,
+    "applicants": 98,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 98,
+      "successPct": 25.5,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 98,
+        "successPct": 23.5,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 75,
+        "successPct": 2.7
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 98,
+      "successPct": 25.5,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 98,
+        "successPct": 23.5,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 75,
+        "successPct": 2.7
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A15",
+    "unit": "A15",
+    "label": "Archery Hunt In Zone X8 - Buck",
+    "weapon": "archery",
+    "tags": 40,
+    "applicants": 81,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 81,
+      "successPct": 49.4,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 36,
+        "applicants": 81,
+        "successPct": 44.4,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 45,
+        "successPct": 8.9
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 40,
+      "applicants": 81,
+      "successPct": 49.4,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 36,
+        "applicants": 81,
+        "successPct": 44.4,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 45,
+        "successPct": 8.9
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A16",
+    "unit": "A16",
+    "label": "Archery Hunt In Zone X9A - Buck",
+    "weapon": "archery",
+    "tags": 30,
+    "applicants": 267,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 267,
+      "successPct": 11.2,
+      "minPoints": 7.6667,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 27,
+        "applicants": 267,
+        "successPct": 10.1,
+        "minPoints": 7.6667
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 3,
+        "applicants": 240,
+        "successPct": 1.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 30,
+      "applicants": 267,
+      "successPct": 11.2,
+      "minPoints": 7.6667,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 27,
+        "applicants": 267,
+        "successPct": 10.1,
+        "minPoints": 7.6667
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 3,
+        "applicants": 240,
+        "successPct": 1.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A17",
+    "unit": "A17",
+    "label": "Archery Hunt In Zone X9B - Buck",
+    "weapon": "archery",
+    "tags": 210,
+    "applicants": 26,
+    "draw": {
+     "resident": {
+      "tags": 210,
+      "applicants": 26,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 189,
+        "applicants": 26,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 21,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 210,
+      "applicants": 26,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 189,
+        "applicants": 26,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 21,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A20",
+    "unit": "A20",
+    "label": "Archery Hunt In Zone X12 - Buck",
+    "weapon": "archery",
+    "tags": 40,
+    "applicants": 237,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 237,
+      "successPct": 16.9,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 36,
+        "applicants": 237,
+        "successPct": 15.2,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 201,
+        "successPct": 2.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 40,
+      "applicants": 237,
+      "successPct": 16.9,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 36,
+        "applicants": 237,
+        "successPct": 15.2,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 201,
+        "successPct": 2.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A21",
+    "unit": "A21",
+    "label": "Anderson Flat Archery Buck",
+    "weapon": "archery",
+    "tags": 25,
+    "applicants": 156,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 156,
+      "successPct": 16.0,
+      "minPoints": 7,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 156,
+        "successPct": 14.7,
+        "minPoints": 7
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 133,
+        "successPct": 1.5
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 156,
+      "successPct": 16.0,
+      "minPoints": 7,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 156,
+        "successPct": 14.7,
+        "minPoints": 7
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 133,
+        "successPct": 1.5
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A24",
+    "unit": "A24",
+    "label": "Monterey Archery Either-Sex",
+    "weapon": "archery",
+    "tags": 100,
+    "applicants": 177,
+    "draw": {
+     "resident": {
+      "tags": 100,
+      "applicants": 177,
+      "successPct": 56.5,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 90,
+        "applicants": 177,
+        "successPct": 50.8,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 10,
+        "applicants": 87,
+        "successPct": 11.5
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 100,
+      "applicants": 177,
+      "successPct": 56.5,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 90,
+        "applicants": 177,
+        "successPct": 50.8,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 10,
+        "applicants": 87,
+        "successPct": 11.5
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A25",
+    "unit": "A25",
+    "label": "Lake Sonoma Archery Either-Sex",
+    "weapon": "archery",
+    "tags": 35,
+    "applicants": 104,
+    "draw": {
+     "resident": {
+      "tags": 35,
+      "applicants": 104,
+      "successPct": 33.7,
+      "minPoints": 2,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 32,
+        "applicants": 104,
+        "successPct": 30.8,
+        "minPoints": 2
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 3,
+        "applicants": 72,
+        "successPct": 4.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 35,
+      "applicants": 104,
+      "successPct": 33.7,
+      "minPoints": 2,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 32,
+        "applicants": 104,
+        "successPct": 30.8,
+        "minPoints": 2
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 3,
+        "applicants": 72,
+        "successPct": 4.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A26",
+    "unit": "A26",
+    "label": "Bass Hill Archery Buck",
+    "weapon": "archery",
+    "tags": 30,
+    "applicants": 509,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 509,
+      "successPct": 5.9,
+      "minPoints": 13,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 27,
+        "applicants": 509,
+        "successPct": 5.3,
+        "minPoints": 13
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 3,
+        "applicants": 482,
+        "successPct": 0.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 30,
+      "applicants": 509,
+      "successPct": 5.9,
+      "minPoints": 13,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 27,
+        "applicants": 509,
+        "successPct": 5.3,
+        "minPoints": 13
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 3,
+        "applicants": 482,
+        "successPct": 0.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A27",
+    "unit": "A27",
+    "label": "Devil's Garden Archery Buck",
+    "weapon": "archery",
+    "tags": 10,
+    "applicants": 175,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 175,
+      "successPct": 5.7,
+      "minPoints": 15,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 9,
+        "applicants": 175,
+        "successPct": 5.1,
+        "minPoints": 15
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 166,
+        "successPct": 0.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 10,
+      "applicants": 175,
+      "successPct": 5.7,
+      "minPoints": 15,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 9,
+        "applicants": 175,
+        "successPct": 5.1,
+        "minPoints": 15
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 166,
+        "successPct": 0.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A30",
+    "unit": "A30",
+    "label": "Covelo Archery Buck",
+    "weapon": "archery",
+    "tags": 40,
+    "applicants": 299,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 299,
+      "successPct": 13.4,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 36,
+        "applicants": 299,
+        "successPct": 12.0,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 263,
+        "successPct": 1.5
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 40,
+      "applicants": 299,
+      "successPct": 13.4,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 36,
+        "applicants": 299,
+        "successPct": 12.0,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 4,
+        "applicants": 263,
+        "successPct": 1.5
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "A33",
+    "unit": "A33",
+    "label": "Fort Hunter Liggett Late Season Archery Either-Sex",
+    "weapon": "archery",
+    "tags": 50,
+    "applicants": 148,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 148,
+      "successPct": 33.8,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 45,
+        "applicants": 148,
+        "successPct": 30.4,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 5,
+        "applicants": 103,
+        "successPct": 4.9
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 50,
+      "applicants": 148,
+      "successPct": 33.8,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 45,
+        "applicants": 148,
+        "successPct": 30.4,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 5,
+        "applicants": 103,
+        "successPct": 4.9
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G1",
+    "unit": "G1",
+    "label": "Late Season Buck Hunt in Zone C4 - General Methods",
+    "weapon": "rifle",
+    "tags": 2710,
+    "applicants": 3857,
+    "draw": {
+     "resident": {
+      "tags": 2710,
+      "applicants": 3857,
+      "successPct": 70.3,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 2439,
+        "applicants": 3857,
+        "successPct": 63.2,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 271,
+        "applicants": 1418,
+        "successPct": 19.1
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 2710,
+      "applicants": 3857,
+      "successPct": 70.3,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 2439,
+        "applicants": 3857,
+        "successPct": 63.2,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 271,
+        "applicants": 1418,
+        "successPct": 19.1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G3",
+    "unit": "G3",
+    "label": "Goodale Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 25,
+    "applicants": 3854,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 3854,
+      "successPct": 0.6,
+      "minPoints": 23,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 3854,
+        "successPct": 0.6,
+        "minPoints": 23
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 3831,
+        "successPct": 0.1
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 3854,
+      "successPct": 0.6,
+      "minPoints": 23,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 3854,
+        "successPct": 0.6,
+        "minPoints": 23
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 3831,
+        "successPct": 0.1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G6",
+    "unit": "G6",
+    "label": "Kern River Deer Herd Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 50,
+    "applicants": 822,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 822,
+      "successPct": 6.1,
+      "minPoints": 12,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 45,
+        "applicants": 822,
+        "successPct": 5.5,
+        "minPoints": 12
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 5,
+        "applicants": 777,
+        "successPct": 0.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 50,
+      "applicants": 822,
+      "successPct": 6.1,
+      "minPoints": 12,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 45,
+        "applicants": 822,
+        "successPct": 5.5,
+        "minPoints": 12
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 5,
+        "applicants": 777,
+        "successPct": 0.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G12",
+    "unit": "G12",
+    "label": "Gray Lodge Shotgun Either-Sex",
+    "weapon": "rifle",
+    "tags": 30,
+    "applicants": 148,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 148,
+      "successPct": 20.3,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 27,
+        "applicants": 148,
+        "successPct": 18.2,
+        "minPoints": 4
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 3,
+        "applicants": 121,
+        "successPct": 2.5
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 30,
+      "applicants": 148,
+      "successPct": 20.3,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 27,
+        "applicants": 148,
+        "successPct": 18.2,
+        "minPoints": 4
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 3,
+        "applicants": 121,
+        "successPct": 2.5
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G13",
+    "unit": "G13",
+    "label": "San Diego Antlerless - General Methods",
+    "weapon": "rifle",
+    "tags": 300,
+    "applicants": 505,
+    "draw": {
+     "resident": {
+      "tags": 300,
+      "applicants": 505,
+      "successPct": 59.4,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 270,
+        "applicants": 505,
+        "successPct": 53.5,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 30,
+        "applicants": 235,
+        "successPct": 12.8
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 300,
+      "applicants": 505,
+      "successPct": 59.4,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 270,
+        "applicants": 505,
+        "successPct": 53.5,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 30,
+        "applicants": 235,
+        "successPct": 12.8
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G19",
+    "unit": "G19",
+    "label": "Sutter-Yuba Wildlife Areas Either-Sex - Shotgun/Archery/Crossbow",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 364,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 364,
+      "successPct": 6.9,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 364,
+        "successPct": 6.3,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 341,
+        "successPct": 0.6
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 364,
+      "successPct": 6.9,
+      "minPoints": 6,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 364,
+        "successPct": 6.3,
+        "minPoints": 6
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 341,
+        "successPct": 0.6
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G21",
+    "unit": "G21",
+    "label": "Ventana Wilderness Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 25,
+    "applicants": 114,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 114,
+      "successPct": 21.9,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 114,
+        "successPct": 20.2,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 91,
+        "successPct": 2.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 114,
+      "successPct": 21.9,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 114,
+        "successPct": 20.2,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 91,
+        "successPct": 2.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G37",
+    "unit": "G37",
+    "label": "Anderson Flat Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 25,
+    "applicants": 2500,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 2500,
+      "successPct": 1.0,
+      "minPoints": 21,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 2500,
+        "successPct": 0.9,
+        "minPoints": 21
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 2477,
+        "successPct": 0.1
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 2500,
+      "successPct": 1.0,
+      "minPoints": 21,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 2500,
+        "successPct": 0.9,
+        "minPoints": 21
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 2477,
+        "successPct": 0.1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G38",
+    "unit": "G38",
+    "label": "X-10 Late Season Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 300,
+    "applicants": 235,
+    "draw": {
+     "resident": {
+      "tags": 300,
+      "applicants": 235,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 270,
+        "applicants": 235,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 30,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 300,
+      "applicants": 235,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 270,
+        "applicants": 235,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 30,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G39",
+    "unit": "G39",
+    "label": "Round Valley Late Season Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 649,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 649,
+      "successPct": 0.3,
+      "minPoints": 23,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 1,
+        "applicants": 649,
+        "successPct": 0.2,
+        "minPoints": 23
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 648,
+        "successPct": 0.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 649,
+      "successPct": 0.3,
+      "minPoints": 23,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 1,
+        "applicants": 649,
+        "successPct": 0.2,
+        "minPoints": 23
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 648,
+        "successPct": 0.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "G40",
+    "unit": "G40",
+    "label": "D7 Late Season Buck Hunt",
+    "weapon": "rifle",
+    "tags": 25,
+    "applicants": 855,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 855,
+      "successPct": 2.9,
+      "minPoints": 15,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 855,
+        "successPct": 2.7,
+        "minPoints": 15
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 832,
+        "successPct": 0.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 855,
+      "successPct": 2.9,
+      "minPoints": 15,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 23,
+        "applicants": 855,
+        "successPct": 2.7,
+        "minPoints": 15
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 832,
+        "successPct": 0.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J1",
+    "unit": "J1",
+    "label": "Lake Sonoma Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 25,
+    "applicants": 68,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 68,
+      "successPct": 36.8,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 13,
+        "applicants": 68,
+        "successPct": 19.1,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 12,
+        "applicants": 55,
+        "successPct": 21.8
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 68,
+      "successPct": 36.8,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 13,
+        "applicants": 68,
+        "successPct": 19.1,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 12,
+        "applicants": 55,
+        "successPct": 21.8
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J3",
+    "unit": "J3",
+    "label": "Tehama Wildlife Area Apprentice Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 15,
+    "applicants": 393,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 393,
+      "successPct": 3.8,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 8,
+        "applicants": 393,
+        "successPct": 2.0,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 7,
+        "applicants": 385,
+        "successPct": 1.8
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 15,
+      "applicants": 393,
+      "successPct": 3.8,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 8,
+        "applicants": 393,
+        "successPct": 2.0,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 7,
+        "applicants": 385,
+        "successPct": 1.8
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J4",
+    "unit": "J4",
+    "label": "Shasta-Trinity Apprentice Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 15,
+    "applicants": 397,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 397,
+      "successPct": 3.8,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 8,
+        "applicants": 397,
+        "successPct": 2.0,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 7,
+        "applicants": 389,
+        "successPct": 1.8
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 15,
+      "applicants": 397,
+      "successPct": 3.8,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 8,
+        "applicants": 397,
+        "successPct": 2.0,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 7,
+        "applicants": 389,
+        "successPct": 1.8
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J8",
+    "unit": "J8",
+    "label": "Daugherty Hill Wildlife Area Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 15,
+    "applicants": 104,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 104,
+      "successPct": 14.4,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 8,
+        "applicants": 104,
+        "successPct": 7.7,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 7,
+        "applicants": 96,
+        "successPct": 7.3
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 15,
+      "applicants": 104,
+      "successPct": 14.4,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 8,
+        "applicants": 104,
+        "successPct": 7.7,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 7,
+        "applicants": 96,
+        "successPct": 7.3
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J9",
+    "unit": "J9",
+    "label": "Little Dry Creek Apprentice Shotgun Either-Sex",
+    "weapon": "rifle",
+    "tags": 5,
+    "applicants": 25,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 25,
+      "successPct": 20.0,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 3,
+        "applicants": 25,
+        "successPct": 12.0,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 2,
+        "applicants": 22,
+        "successPct": 9.1
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 5,
+      "applicants": 25,
+      "successPct": 20.0,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 3,
+        "applicants": 25,
+        "successPct": 12.0,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 2,
+        "applicants": 22,
+        "successPct": 9.1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J10",
+    "unit": "J10",
+    "label": "Fort Hunter Liggett Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 30,
+    "applicants": 170,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 170,
+      "successPct": 17.6,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 15,
+        "applicants": 170,
+        "successPct": 8.8,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 15,
+        "applicants": 155,
+        "successPct": 9.7
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 30,
+      "applicants": 170,
+      "successPct": 17.6,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 15,
+        "applicants": 170,
+        "successPct": 8.8,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 15,
+        "applicants": 155,
+        "successPct": 9.7
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J11",
+    "unit": "J11",
+    "label": "San Bernardino Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 40,
+    "applicants": 120,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 120,
+      "successPct": 33.3,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 20,
+        "applicants": 120,
+        "successPct": 16.7,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 20,
+        "applicants": 100,
+        "successPct": 20.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 40,
+      "applicants": 120,
+      "successPct": 33.3,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 20,
+        "applicants": 120,
+        "successPct": 16.7,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 20,
+        "applicants": 100,
+        "successPct": 20.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J12",
+    "unit": "J12",
+    "label": "Round Valley Apprentice Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 530,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 530,
+      "successPct": 1.9,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 5,
+        "applicants": 530,
+        "successPct": 0.9,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 5,
+        "applicants": 525,
+        "successPct": 1.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 10,
+      "applicants": 530,
+      "successPct": 1.9,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 5,
+        "applicants": 530,
+        "successPct": 0.9,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 5,
+        "applicants": 525,
+        "successPct": 1.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J13",
+    "unit": "J13",
+    "label": "Los Angeles Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 40,
+    "applicants": 60,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 60,
+      "successPct": 66.7,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 20,
+        "applicants": 60,
+        "successPct": 33.3,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 20,
+        "applicants": 40,
+        "successPct": 50.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 40,
+      "applicants": 60,
+      "successPct": 66.7,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 20,
+        "applicants": 60,
+        "successPct": 33.3,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 20,
+        "applicants": 40,
+        "successPct": 50.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J14",
+    "unit": "J14",
+    "label": "Riverside Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 30,
+    "applicants": 35,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 35,
+      "successPct": 85.7,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 15,
+        "applicants": 35,
+        "successPct": 42.9,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 15,
+        "applicants": 20,
+        "successPct": 75.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 30,
+      "applicants": 35,
+      "successPct": 85.7,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 15,
+        "applicants": 35,
+        "successPct": 42.9,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 15,
+        "applicants": 20,
+        "successPct": 75.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J15",
+    "unit": "J15",
+    "label": "Anderson Flat Apprentice Buck - General Methods",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 306,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 306,
+      "successPct": 3.3,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 5,
+        "applicants": 306,
+        "successPct": 1.6,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 5,
+        "applicants": 301,
+        "successPct": 1.7
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 10,
+      "applicants": 306,
+      "successPct": 3.3,
+      "minPoints": 3,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 5,
+        "applicants": 306,
+        "successPct": 1.6,
+        "minPoints": 3
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 5,
+        "applicants": 301,
+        "successPct": 1.7
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J16",
+    "unit": "J16",
+    "label": "Bucks Mountain-Nevada City Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 75,
+    "applicants": 84,
+    "draw": {
+     "resident": {
+      "tags": 75,
+      "applicants": 84,
+      "successPct": 89.3,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 38,
+        "applicants": 84,
+        "successPct": 45.2,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 37,
+        "applicants": 46,
+        "successPct": 80.4
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 75,
+      "applicants": 84,
+      "successPct": 89.3,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 38,
+        "applicants": 84,
+        "successPct": 45.2,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 37,
+        "applicants": 46,
+        "successPct": 80.4
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J17",
+    "unit": "J17",
+    "label": "Blue Canyon Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 25,
+    "applicants": 25,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 25,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 13,
+        "applicants": 25,
+        "successPct": 52.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 12,
+        "applicants": 12,
+        "successPct": 100.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 25,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 13,
+        "applicants": 25,
+        "successPct": 52.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 12,
+        "applicants": 12,
+        "successPct": 100.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J18",
+    "unit": "J18",
+    "label": "Pacific - Grizzly Flat Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 75,
+    "applicants": 102,
+    "draw": {
+     "resident": {
+      "tags": 75,
+      "applicants": 102,
+      "successPct": 73.5,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 38,
+        "applicants": 102,
+        "successPct": 37.3,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 37,
+        "applicants": 64,
+        "successPct": 57.8
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 75,
+      "applicants": 102,
+      "successPct": 73.5,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 38,
+        "applicants": 102,
+        "successPct": 37.3,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 37,
+        "applicants": 64,
+        "successPct": 57.8
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J19",
+    "unit": "J19",
+    "label": "Zone X7A Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 25,
+    "applicants": 56,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 56,
+      "successPct": 44.6,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 13,
+        "applicants": 56,
+        "successPct": 23.2,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 12,
+        "applicants": 43,
+        "successPct": 27.9
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 25,
+      "applicants": 56,
+      "successPct": 44.6,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 13,
+        "applicants": 56,
+        "successPct": 23.2,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 12,
+        "applicants": 43,
+        "successPct": 27.9
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J20",
+    "unit": "J20",
+    "label": "Zone X7B Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 20,
+    "applicants": 48,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 48,
+      "successPct": 41.7,
+      "minPoints": 2,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 10,
+        "applicants": 48,
+        "successPct": 20.8,
+        "minPoints": 2
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 10,
+        "applicants": 38,
+        "successPct": 26.3
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 20,
+      "applicants": 48,
+      "successPct": 41.7,
+      "minPoints": 2,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 10,
+        "applicants": 48,
+        "successPct": 20.8,
+        "minPoints": 2
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 10,
+        "applicants": 38,
+        "successPct": 26.3
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "J21",
+    "unit": "J21",
+    "label": "East Tehama Apprentice Either-Sex - General Methods",
+    "weapon": "rifle",
+    "tags": 50,
+    "applicants": 146,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 146,
+      "successPct": 34.2,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 25,
+        "applicants": 146,
+        "successPct": 17.1,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 25,
+        "applicants": 121,
+        "successPct": 20.7
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 50,
+      "applicants": 146,
+      "successPct": 34.2,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "preference (50%)",
+        "tags": 25,
+        "applicants": 146,
+        "successPct": 17.1,
+        "minPoints": 1
+       },
+       {
+        "name": "random draw-by-choice (50%)",
+        "tags": 25,
+        "applicants": 121,
+        "successPct": 20.7
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "M3",
+    "unit": "M3",
+    "label": "Doyle Muzzleloading Rifle Buck",
+    "weapon": "muzzleloader",
+    "tags": 20,
+    "applicants": 564,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 564,
+      "successPct": 3.5,
+      "minPoints": 19,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 18,
+        "applicants": 564,
+        "successPct": 3.2,
+        "minPoints": 19
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 546,
+        "successPct": 0.4
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 20,
+      "applicants": 564,
+      "successPct": 3.5,
+      "minPoints": 19,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 18,
+        "applicants": 564,
+        "successPct": 3.2,
+        "minPoints": 19
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 546,
+        "successPct": 0.4
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "M4",
+    "unit": "M4",
+    "label": "Horse Lake Muzzleloading Rifle Buck",
+    "weapon": "muzzleloader",
+    "tags": 10,
+    "applicants": 51,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 51,
+      "successPct": 19.6,
+      "minPoints": 7,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 9,
+        "applicants": 51,
+        "successPct": 17.6,
+        "minPoints": 7
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 42,
+        "successPct": 2.4
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 10,
+      "applicants": 51,
+      "successPct": 19.6,
+      "minPoints": 7,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 9,
+        "applicants": 51,
+        "successPct": 17.6,
+        "minPoints": 7
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 42,
+        "successPct": 2.4
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "M5",
+    "unit": "M5",
+    "label": "East Lassen Muzzleloading Rifle Buck",
+    "weapon": "muzzleloader",
+    "tags": 5,
+    "applicants": 95,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 95,
+      "successPct": 5.3,
+      "minPoints": 18,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 4,
+        "applicants": 95,
+        "successPct": 4.2,
+        "minPoints": 18
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 91,
+        "successPct": 1.1
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 5,
+      "applicants": 95,
+      "successPct": 5.3,
+      "minPoints": 18,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 4,
+        "applicants": 95,
+        "successPct": 4.2,
+        "minPoints": 18
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 91,
+        "successPct": 1.1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "M6",
+    "unit": "M6",
+    "label": "San Diego Muzzleloading Rifle Either-Sex",
+    "weapon": "muzzleloader",
+    "tags": 80,
+    "applicants": 75,
+    "draw": {
+     "resident": {
+      "tags": 80,
+      "applicants": 75,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 72,
+        "applicants": 75,
+        "successPct": 96.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 8,
+        "applicants": 3,
+        "successPct": 100.0
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 80,
+      "applicants": 75,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 72,
+        "applicants": 75,
+        "successPct": 96.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 8,
+        "applicants": 3,
+        "successPct": 100.0
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "M7",
+    "unit": "M7",
+    "label": "Ventura Muzzleloading Rifle Either-Sex",
+    "weapon": "muzzleloader",
+    "tags": 150,
+    "applicants": 161,
+    "draw": {
+     "resident": {
+      "tags": 150,
+      "applicants": 161,
+      "successPct": 93.2,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 135,
+        "applicants": 161,
+        "successPct": 83.9,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 15,
+        "applicants": 26,
+        "successPct": 57.7
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 150,
+      "applicants": 161,
+      "successPct": 93.2,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 135,
+        "applicants": 161,
+        "successPct": 83.9,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 15,
+        "applicants": 26,
+        "successPct": 57.7
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "M8",
+    "unit": "M8",
+    "label": "Bass Hill Muzzleloading Rifle Buck",
+    "weapon": "muzzleloader",
+    "tags": 20,
+    "applicants": 161,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 161,
+      "successPct": 12.4,
+      "minPoints": 8,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 18,
+        "applicants": 161,
+        "successPct": 11.2,
+        "minPoints": 8
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 143,
+        "successPct": 1.4
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 20,
+      "applicants": 161,
+      "successPct": 12.4,
+      "minPoints": 8,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 18,
+        "applicants": 161,
+        "successPct": 11.2,
+        "minPoints": 8
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 143,
+        "successPct": 1.4
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "M9",
+    "unit": "M9",
+    "label": "Devil's Garden Muzzleloading Rifle Buck",
+    "weapon": "muzzleloader",
+    "tags": 15,
+    "applicants": 572,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 572,
+      "successPct": 2.6,
+      "minPoints": 21,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 14,
+        "applicants": 572,
+        "successPct": 2.4,
+        "minPoints": 21
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 558,
+        "successPct": 0.2
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 15,
+      "applicants": 572,
+      "successPct": 2.6,
+      "minPoints": 21,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 14,
+        "applicants": 572,
+        "successPct": 2.4,
+        "minPoints": 21
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 1,
+        "applicants": 558,
+        "successPct": 0.2
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "M11",
+    "unit": "M11",
+    "label": "Northwestern California Muzzleloading Rifle Buck",
+    "weapon": "muzzleloader",
+    "tags": 20,
+    "applicants": 711,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 711,
+      "successPct": 2.8,
+      "minPoints": 15,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 18,
+        "applicants": 711,
+        "successPct": 2.5,
+        "minPoints": 15
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 693,
+        "successPct": 0.3
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 20,
+      "applicants": 711,
+      "successPct": 2.8,
+      "minPoints": 15,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 18,
+        "applicants": 711,
+        "successPct": 2.5,
+        "minPoints": 15
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 2,
+        "applicants": 693,
+        "successPct": 0.3
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "MA1",
+    "unit": "MA1",
+    "label": "San Luis Obispo Muzzleloading Rifle/Archery Either-Sex",
+    "weapon": "muzzleloader",
+    "tags": 150,
+    "applicants": 108,
+    "draw": {
+     "resident": {
+      "tags": 150,
+      "applicants": 108,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 135,
+        "applicants": 108,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 15,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 150,
+      "applicants": 108,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 135,
+        "applicants": 108,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 15,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     }
+    }
+   },
+   {
+    "huntCode": "MA3",
+    "unit": "MA3",
+    "label": "Santa Barbara Muzzleloading Rifle/Archery Buck",
+    "weapon": "muzzleloader",
+    "tags": 150,
+    "applicants": 125,
+    "draw": {
+     "resident": {
+      "tags": 150,
+      "applicants": 125,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 135,
+        "applicants": 125,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 15,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": {
+      "tags": 150,
+      "applicants": 125,
+      "successPct": 100.0,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "preference (90%)",
+        "tags": 135,
+        "applicants": 125,
+        "successPct": 100.0,
+        "minPoints": 0
+       },
+       {
+        "name": "random draw-by-choice (10%)",
+        "tags": 15,
+        "applicants": 0,
+        "successPct": null
+       }
+      ]
+     }
+    }
+   }
+  ],
+  "ELK": [
+   {
+    "huntCode": "484",
+    "unit": "Cache Creek",
+    "label": "Cache Creek Apprentice - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 186,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 186,
+      "successPct": 0.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "471",
+    "unit": "Fort Hunter Liggett",
+    "label": "Fort Hunter Liggett Apprentice - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 82,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 82,
+      "successPct": 1.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "472",
+    "unit": "Fort Hunter Liggett",
+    "label": "Fort Hunter Liggett Apprentice - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 339,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 339,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "466",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Apprentice - Period 1 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 129,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 129,
+      "successPct": 1.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "469",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Apprentice - Period 2 - General Methods - Spike Bull",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 144,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 144,
+      "successPct": 1.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "464",
+    "unit": "La Panza",
+    "label": "La Panza Period 1 Apprentice - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 40,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 40,
+      "successPct": 2.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "408",
+    "unit": "Marble Mountains",
+    "label": "Marble Mountains Apprentice - General Methods - Either-Sex",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 266,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 266,
+      "successPct": 1.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "409",
+    "unit": "Northeastern",
+    "label": "Northeastern Apprentice- General Methods - Either-Sex",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 287,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 287,
+      "successPct": 0.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "383",
+    "unit": "Central Coast",
+    "label": "Central Coast - Archery - Bull",
+    "weapon": "archery",
+    "tags": 5,
+    "applicants": 154,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 154,
+      "successPct": 3.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "382",
+    "unit": "Central Coast",
+    "label": "Central Coast - Archery - Antlerless",
+    "weapon": "archery",
+    "tags": 5,
+    "applicants": 30,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 30,
+      "successPct": 16.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "450",
+    "unit": "Fort Hunter Liggett",
+    "label": "Fort Hunter Liggett - Archery - Antlerless",
+    "weapon": "archery",
+    "tags": 8,
+    "applicants": 103,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 103,
+      "successPct": 7.8,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 6,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "449",
+    "unit": "Fort Hunter Liggett",
+    "label": "Fort Hunter Liggett - Archery - Either-Sex",
+    "weapon": "archery",
+    "tags": 6,
+    "applicants": 538,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 538,
+      "successPct": 1.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "385",
+    "unit": "La Panza",
+    "label": "La Panza - Archery - Bull",
+    "weapon": "archery",
+    "tags": 5,
+    "applicants": 98,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 98,
+      "successPct": 5.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "386",
+    "unit": "La Panza",
+    "label": "La Panza - Archery - Antlerless",
+    "weapon": "archery",
+    "tags": 5,
+    "applicants": 16,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 16,
+      "successPct": 31.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "337",
+    "unit": "Lone Pine",
+    "label": "Lone Pine Period 1 - Archery - Antlerless",
+    "weapon": "archery",
+    "tags": 1,
+    "applicants": 56,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 56,
+      "successPct": 1.8,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "411",
+    "unit": "Northeastern",
+    "label": "Northeastern - Archery - Either-Sex",
+    "weapon": "archery",
+    "tags": 10,
+    "applicants": 515,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 515,
+      "successPct": 1.9,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "422",
+    "unit": "Bishop",
+    "units": [
+     "Bishop",
+     "Independence",
+     "Goodale",
+     "Lone Pine"
+    ],
+    "label": "Owens Valley Multiple Zone - Archery - Bull",
+    "weapon": "archery",
+    "tags": 3,
+    "applicants": 735,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 735,
+      "successPct": 0.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "384",
+    "unit": "Siskiyou",
+    "label": "Siskiyou - Archery - Bull",
+    "weapon": "archery",
+    "tags": 10,
+    "applicants": 153,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 153,
+      "successPct": 6.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "303",
+    "unit": "Marble Mountains",
+    "label": "Marble Mountains - Muzzleloader/Archery - Either-Sex",
+    "weapon": "muzzleloader",
+    "tags": 10,
+    "applicants": 334,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 334,
+      "successPct": 3.0,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "367",
+    "unit": "Independence",
+    "label": "Independence Period 1 - Muzzleloader - Bull",
+    "weapon": "muzzleloader",
+    "tags": 1,
+    "applicants": 211,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 211,
+      "successPct": 0.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "301",
+    "unit": "Marble Mountains",
+    "label": "Marble Mountains - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 8,
+    "applicants": 210,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 210,
+      "successPct": 3.8,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 6,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "302",
+    "unit": "Marble Mountains",
+    "label": "Marble Mountains - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 34,
+    "applicants": 2685,
+    "draw": {
+     "resident": {
+      "tags": 34,
+      "applicants": 2685,
+      "successPct": 1.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 26,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "374",
+    "unit": "Northwestern",
+    "label": "Northwestern - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 15,
+    "applicants": 166,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 166,
+      "successPct": 9.0,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 12,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "355",
+    "unit": "Northwestern",
+    "label": "Northwestern - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 25,
+    "applicants": 1139,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 1139,
+      "successPct": 2.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 19,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 6,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "483",
+    "unit": "Northwestern",
+    "label": "Northwestern - General Methods - Either-Sex",
+    "weapon": "rifle",
+    "tags": 3,
+    "applicants": 327,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 327,
+      "successPct": 0.9,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "401",
+    "unit": "Siskiyou",
+    "label": "Siskiyou - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 30,
+    "applicants": 392,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 392,
+      "successPct": 7.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 23,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 7,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "300",
+    "unit": "Siskiyou",
+    "label": "Siskiyou - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 20,
+    "applicants": 839,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 839,
+      "successPct": 2.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 15,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "328",
+    "unit": "Mendocino",
+    "label": "Mendocino - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 329,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 329,
+      "successPct": 0.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "304",
+    "unit": "Northeastern",
+    "label": "Northeastern - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 343,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 343,
+      "successPct": 2.9,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "305",
+    "unit": "Northeastern",
+    "label": "Northeastern - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 15,
+    "applicants": 3463,
+    "draw": {
+     "resident": {
+      "tags": 15,
+      "applicants": 3463,
+      "successPct": 0.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 12,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "379",
+    "unit": "Tehachapi",
+    "label": "Tehachapi - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 97,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 97,
+      "successPct": 10.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "380",
+    "unit": "Tehachapi",
+    "label": "Tehachapi - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 368,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 368,
+      "successPct": 2.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "329",
+    "unit": "Bear Valley",
+    "label": "Bear Valley - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 62,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 62,
+      "successPct": 1.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "330",
+    "unit": "Bear Valley",
+    "label": "Bear Valley - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 352,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 352,
+      "successPct": 0.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "406",
+    "unit": "Cache Creek",
+    "label": "Cache Creek Period 1 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 799,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 799,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "416",
+    "unit": "Cache Creek",
+    "label": "Cache Creek Period 2 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 176,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 176,
+      "successPct": 1.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "375",
+    "unit": "Central Coast",
+    "label": "Central Coast - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 83,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 83,
+      "successPct": 12.0,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "376",
+    "unit": "Central Coast",
+    "label": "Central Coast - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 526,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 526,
+      "successPct": 1.9,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "463",
+    "unit": "East Park Reservoir",
+    "label": "East Park Reservoir - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 102,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 102,
+      "successPct": 2.0,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "461",
+    "unit": "East Park Reservoir",
+    "label": "East Park Reservoir - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 812,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 812,
+      "successPct": 0.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "448",
+    "unit": "Fort Hunter Liggett",
+    "label": "Fort Hunter Liggett Period 2 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 6,
+    "applicants": 288,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 288,
+      "successPct": 2.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "447",
+    "unit": "Fort Hunter Liggett",
+    "label": "Fort Hunter Liggett Period 3 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 8,
+    "applicants": 1533,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 1533,
+      "successPct": 0.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 6,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "377",
+    "unit": "Gabilan",
+    "label": "Gabilan - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 6,
+    "applicants": 62,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 62,
+      "successPct": 9.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "378",
+    "unit": "Gabilan",
+    "label": "Gabilan - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 320,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 320,
+      "successPct": 3.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "373",
+    "unit": "Goodale",
+    "label": "Goodale Period 1 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 337,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 337,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "365",
+    "unit": "Goodale",
+    "label": "Goodale Period 2 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 61,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 61,
+      "successPct": 1.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "366",
+    "unit": "Goodale",
+    "label": "Goodale Period 3 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 59,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 59,
+      "successPct": 1.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "433",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 1 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 300,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 300,
+      "successPct": 0.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "437",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 2 - General Methods - Spike Bull",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 176,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 176,
+      "successPct": 1.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "357",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 8 - General Methods - Spike Bull",
+    "weapon": "rifle",
+    "tags": 6,
+    "applicants": 255,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 255,
+      "successPct": 2.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "358",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 9 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 307,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 307,
+      "successPct": 1.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "359",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 10 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 2402,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 2402,
+      "successPct": 0.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "360",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 11 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 237,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 237,
+      "successPct": 1.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "362",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 12 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 711,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 711,
+      "successPct": 0.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "363",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 13 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 185,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 185,
+      "successPct": 2.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "381",
+    "unit": "Grizzly Island",
+    "label": "Grizzly Island Period 13 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 3,
+    "applicants": 703,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 703,
+      "successPct": 0.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "368",
+    "unit": "Independence",
+    "label": "Independence Period 2 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 94,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 94,
+      "successPct": 1.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "369",
+    "unit": "Independence",
+    "label": "Independence Period 2 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 533,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 533,
+      "successPct": 0.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "370",
+    "unit": "Independence",
+    "label": "Independence Period 3 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 105,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 105,
+      "successPct": 1.0,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "417",
+    "unit": "La Panza",
+    "label": "La Panza Period 1 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 5,
+    "applicants": 91,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 91,
+      "successPct": 5.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "419",
+    "unit": "La Panza",
+    "label": "La Panza Period 1 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 6,
+    "applicants": 485,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 485,
+      "successPct": 1.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "418",
+    "unit": "La Panza",
+    "label": "La Panza Period 2 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 6,
+    "applicants": 145,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 145,
+      "successPct": 4.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "420",
+    "unit": "La Panza",
+    "label": "La Panza Period 2 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 6,
+    "applicants": 371,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 371,
+      "successPct": 1.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "387",
+    "unit": "Lake Pillsbury",
+    "label": "Lake Pillsbury Period 1 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 107,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 107,
+      "successPct": 3.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "388",
+    "unit": "Lake Pillsbury",
+    "label": "Lake Pillsbury Period 2 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 33,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 33,
+      "successPct": 6.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "389",
+    "unit": "Lake Pillsbury",
+    "label": "Lake Pillsbury Period 3 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 73,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 73,
+      "successPct": 2.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "390",
+    "unit": "Lake Pillsbury",
+    "label": "Lake Pillsbury Period 4 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 643,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 643,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "391",
+    "unit": "Lake Pillsbury",
+    "label": "Lake Pillsbury Period 5 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 386,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 386,
+      "successPct": 0.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "486",
+    "unit": "Lone Pine",
+    "label": "Lone Pine Period 2 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 598,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 598,
+      "successPct": 0.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "497",
+    "unit": "San Luis Reservoir",
+    "label": "San Luis Reservoir - General Methods - Either Sex",
+    "weapon": "rifle",
+    "tags": 5,
+    "applicants": 958,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 958,
+      "successPct": 0.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "315",
+    "unit": "West Tinemaha",
+    "label": "West Tinemaha Period 1 General Methods Bull",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 230,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 230,
+      "successPct": 0.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "323",
+    "unit": "Whitney",
+    "label": "Whitney Period 2 - General Methods - Bull",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 239,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 239,
+      "successPct": 0.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "324",
+    "unit": "Whitney",
+    "label": "Whitney Period 3 - General Methods - Antlerless",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 84,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 84,
+      "successPct": 1.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "huntCode": "790",
+    "unit": "4",
+    "label": "Zone 4 - Lassen Apprentice - General Methods - Either-Sex",
+    "weapon": "rifle",
+    "tags": 5,
+    "applicants": 695,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 695,
+      "successPct": 0.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "780",
+    "unit": "5",
+    "label": "Zone 5 - Big Valley Apprentice - General Methods - Either-Sex",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 102,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 102,
+      "successPct": 1.0,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "766",
+    "unit": "6",
+    "label": "Zone 6 - Surprise Valley Apprentice - General Methods - Either-Sex",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 279,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 279,
+      "successPct": 1.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "728",
+    "unit": "2",
+    "label": "Zone 2 - Clear Lake - Archery - Buck",
+    "weapon": "archery",
+    "tags": 1,
+    "applicants": 105,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 105,
+      "successPct": 1.0,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "745",
+    "unit": "4",
+    "label": "Zone 4 - Lassen - Archery - Buck",
+    "weapon": "archery",
+    "tags": 5,
+    "applicants": 558,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 558,
+      "successPct": 0.9,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "755",
+    "unit": "5",
+    "label": "Zone 5 - Big Valley - Archery - Buck",
+    "weapon": "archery",
+    "tags": 1,
+    "applicants": 63,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 63,
+      "successPct": 1.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "765",
+    "unit": "6",
+    "label": "Zone 6 - Surprise Valley - Archery - Buck",
+    "weapon": "archery",
+    "tags": 1,
+    "applicants": 121,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 121,
+      "successPct": 0.8,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "710",
+    "unit": "1",
+    "label": "Zone 1 - Mount Dome - General Methods - Buck",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 439,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 439,
+      "successPct": 0.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "720",
+    "unit": "2",
+    "label": "Zone 2 - Clear Lake - General Methods - Buck",
+    "weapon": "rifle",
+    "tags": 6,
+    "applicants": 1224,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 1224,
+      "successPct": 0.5,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 5,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "730",
+    "unit": "3",
+    "label": "Zone 3 - Likely Tables Period 1 - General Methods - Buck",
+    "weapon": "rifle",
+    "tags": 5,
+    "applicants": 2773,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 2773,
+      "successPct": 0.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "740",
+    "unit": "4",
+    "label": "Zone 4 - Lassen Period 1 - General Methods - Buck",
+    "weapon": "rifle",
+    "tags": 35,
+    "applicants": 5610,
+    "draw": {
+     "resident": {
+      "tags": 35,
+      "applicants": 5610,
+      "successPct": 0.6,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 27,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "742",
+    "unit": "4",
+    "label": "Zone 4 - Lassen Period 2 - General Methods - Buck",
+    "weapon": "rifle",
+    "tags": 35,
+    "applicants": 4020,
+    "draw": {
+     "resident": {
+      "tags": 35,
+      "applicants": 4020,
+      "successPct": 0.9,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 27,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "750",
+    "unit": "5",
+    "label": "Zone 5 - Big Valley - General Methods - Buck",
+    "weapon": "rifle",
+    "tags": 5,
+    "applicants": 758,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 758,
+      "successPct": 0.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 4,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "760",
+    "unit": "6",
+    "label": "Zone 6 - Surprise Valley - General Methods - Buck",
+    "weapon": "rifle",
+    "tags": 10,
+    "applicants": 1385,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 1385,
+      "successPct": 0.7,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 8,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "huntCode": "501",
+    "unit": "1",
+    "label": "Zone 1 - Marble and Clipper Mountains - General Method - Ram",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 1515,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 1515,
+      "successPct": 0.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "502",
+    "unit": "2",
+    "label": "Zone 2 - Old Dad and Kelso Peak Mountains - General Method - Ram",
+    "weapon": "rifle",
+    "tags": 3,
+    "applicants": 971,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 971,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "503",
+    "unit": "3",
+    "label": "Zone 3 - Clark and Kingston Mountain Ranges - General Method - Ram",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 1535,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 1535,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "504",
+    "unit": "4",
+    "label": "Zone 4 - Orocopia Mountains - General Method - Ram",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 799,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 799,
+      "successPct": 0.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "505",
+    "unit": "5",
+    "label": "Zone 5 - San Gorgonio Wilderness - General Method - Ram",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 793,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 793,
+      "successPct": 0.1,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "506",
+    "unit": "6",
+    "label": "Zone 6 - Sheep Hole Mountains - General Method - Ram",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 569,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 569,
+      "successPct": 0.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "507",
+    "unit": "7",
+    "label": "Zone 7 - White Mountains - General Method - Ram P1",
+    "weapon": "rifle",
+    "tags": 3,
+    "applicants": 1419,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 1419,
+      "successPct": 0.2,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 2,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "511",
+    "unit": "7",
+    "label": "Zone 7 - White Mountains - General Method - Ram P2",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 469,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 469,
+      "successPct": 0.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "508",
+    "unit": "8",
+    "label": "Zone 8 - South Bristol Mountains - General Method - Ram",
+    "weapon": "rifle",
+    "tags": 1,
+    "applicants": 380,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 380,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 0,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "509",
+    "unit": "9",
+    "label": "Zone 9 - Cady Mountains - General Method - Ram",
+    "weapon": "rifle",
+    "tags": 2,
+    "applicants": 754,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 754,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "512",
+    "unit": "10",
+    "label": "Zone 10 - Newberry, Rodman and Ord Mountains",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 1297,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 1297,
+      "successPct": 0.3,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "513",
+    "unit": "10",
+    "label": "Zone 10 - Newberry, Rodman and Ord Mountains P2",
+    "weapon": "rifle",
+    "tags": 4,
+    "applicants": 1091,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 1091,
+      "successPct": 0.4,
+      "minPoints": null,
+      "pools": [
+       {
+        "name": "preference point",
+        "tags": 3,
+        "applicants": null,
+        "successPct": null
+       },
+       {
+        "name": "random draw-by-choice",
+        "tags": 1,
+        "applicants": null,
+        "successPct": null
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   }
+  ]
+ }
+}

@@ -14,6 +14,7 @@ export type DrawRow = {
   season?: { open: string; close: string }; // ISO dates, only if published with the draw data
   tags?: number | null;      // total tags when not split by residency
   applicants?: number | null; // total applicants when not split by residency
+  otc?: boolean;             // general / over-the-counter season, no draw (e.g. WA general GMUs)
   draw: {
     resident: DrawStat | null;
     nonresident: DrawStat | null;

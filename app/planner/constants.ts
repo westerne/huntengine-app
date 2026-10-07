@@ -1,8 +1,8 @@
 import type { Profile, PlannerFlags } from './types';
 
-export const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV'];
+export const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV', 'OK', 'CA', 'WA', 'OR'];
 // Shown but not selectable until their draw data is wired in.
-export const COMING_SOON_STATES = ['OR', 'WA', 'CA'];
+export const COMING_SOON_STATES = ['SD'];
 export const SPECIES = ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
 // Species with data, for states that don't have all six (Arizona has no moose or goat).
 const STATE_SPECIES: Record<string, string[]> = {
@@ -10,8 +10,12 @@ const STATE_SPECIES: Record<string, string[]> = {
   NM: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
   NE: ['Mule Deer', 'Elk', 'Antelope'],
   ND: ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep'],
-  KS: ['Mule Deer', 'Antelope'],
-  NV: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],   // KDWP publishes no per-hunt elk draw stats
+  KS: ['Mule Deer', 'Antelope'],   // KDWP publishes no per-hunt elk draw stats
+  NV: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
+  OK: ['Mule Deer', 'Elk', 'Antelope'],
+  CA: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
+  WA: ['Mule Deer', 'Elk', 'Moose', 'Bighorn Sheep', 'Mountain Goat'],
+  OR: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],   // controlled hunts only; "deer" is mostly whitetail
 };
 export const speciesFor = (st: string) => STATE_SPECIES[st] ?? SPECIES;
 

@@ -1,0 +1,475 @@
+{
+ "state": "OK",
+ "year": 2025,
+ "source": {
+  "name": "Oklahoma Department of Wildlife Conservation — Results from 2025 Controlled Hunts (CSV/PDF)",
+  "url": "https://www.wildlifedepartment.com/sites/default/files/2026-04/2025%20Controlled%20Hunts%20Results.csv"
+ },
+ "notes": "ODWC \"Results from 2025 Controlled Hunts\" (posted 2026-04; same table as the PDF https://www.wildlifedepartment.com/sites/default/files/2026-04/2025%20Controlled%20Hunts%20Results.pdf and the \"2025-26 Controlled Hunt Results\" table on https://www.wildlifedepartment.com/hunting/controlledhunts). CONTROLLED HUNTS ONLY, reported per hunt AREA and method (A/M/G), not per hunt number. hunters = \"# Hunters\"; harvest = Antlered + Antlerless; successPct = harvest ÷ hunters × 100, rounded to 0.1 (computed by us; ODWC prints counts only). Only single-animal permits are included: rows whose permit is a 2-deer permit (\"(2)\") are left out because harvest ÷ hunters there is deer per hunter, not the share of hunters who succeeded. Also left out: rows with no harvest printed (Tishomingo NWR gun; Great Salt Plains SP archery), rows with 0 hunters, rows ODWC prints as single permits whose matching draw hunts are 2-deer permits (Little River NWR gun 3160/3161, Pine Creek WMA youth 5130), turkey, and Special Family deer hunts (all 2-deer). huntCode is set only when exactly one ODWC hunt number in lib/huntdata/draw/ok.json has the same area, weapon, category and permit count (elk/antelope matched by area + permit type); where ODWC pooled several hunts at one area/method (e.g. Wichita Mountains NWR walk-in elk hunts 1030/1040/1050 and 1031/1041/1051, Cherokee GMA 3044+3046, Cookson WMA either-sex + antlerless), the row carries the area as unit and no huntCode. Permit counts in this harvest table do not always equal the draw tables (e.g. Wichita walk-in elk: 100 either-sex / 225 cow here vs 3 × 20 / 3 × 45 drawn — walk-in elk applications may cover up to 2 hunters), so treat the harvest permit text in label as ODWC's, not as tags. Statewide over-the-counter deer: ODWC publishes harvest by county (E-Check counts) and statewide success by method (Game Harvest Survey, chart only) in the 2025-26 Big Game Harvest Report, but no hunter numbers or success rate per county/zone, so no OTC rows. Same for OTC elk zones and archery pronghorn.",
+ "species": {
+  "ELK": [
+   {
+    "unit": "Cookson WMA",
+    "huntCode": "1001",
+    "weapon": "rifle",
+    "label": "Elk: Cookson WMA, 1 Either-sex (gun)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "Wichita Mountains NWR",
+    "huntCode": "1020",
+    "weapon": "rifle",
+    "label": "Elk: Wichita Mts. NWR, 40 Bull Only (gun)",
+    "hunters": 40,
+    "harvest": 35,
+    "successPct": 87.5
+   },
+   {
+    "unit": "Wichita Mountains NWR",
+    "huntCode": "1021",
+    "weapon": "rifle",
+    "label": "Elk: Wichita Mts. NWR, 70 Cow Only (gun)",
+    "hunters": 52,
+    "harvest": 31,
+    "successPct": 59.6
+   },
+   {
+    "unit": "Wichita Mountains NWR",
+    "weapon": "rifle",
+    "label": "Elk: Wichita Mts. NWR (Walk-in only), 100 Either-sex (gun)",
+    "hunters": 95,
+    "harvest": 78,
+    "successPct": 82.1
+   },
+   {
+    "unit": "Wichita Mountains NWR",
+    "weapon": "rifle",
+    "label": "Elk: Wichita Mts. NWR (Walk-in only), 225 Cow Only (gun)",
+    "hunters": 194,
+    "harvest": 124,
+    "successPct": 63.9
+   },
+   {
+    "unit": "Camp Gruber / Cherokee WMA",
+    "weapon": "rifle",
+    "label": "Elk: Gruber CGTC/Cherokee WMA, 1 Either-sex (gun)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "unit": "Cimarron County",
+    "huntCode": "2001",
+    "weapon": "rifle",
+    "label": "Pronghorn: Cimarron Co., 10 Either-Sex (gun)",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100.0
+   },
+   {
+    "unit": "Cimarron County",
+    "huntCode": "2002",
+    "weapon": "rifle",
+    "label": "Pronghorn: Cimarron Co., 15 Doe Only (gun)",
+    "hunters": 11,
+    "harvest": 8,
+    "successPct": 72.7
+   },
+   {
+    "unit": "Texas County",
+    "huntCode": "2010",
+    "weapon": "rifle",
+    "label": "Pronghorn: Texas Co., 5 Either-Sex (gun)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "Texas County",
+    "huntCode": "2011",
+    "weapon": "rifle",
+    "label": "Pronghorn: Texas Co., 10 Doe Only (gun)",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50.0
+   }
+  ],
+  "DEER": [
+   {
+    "unit": "Atoka WMA",
+    "huntCode": "3001",
+    "weapon": "rifle",
+    "label": "Deer: Atoka WMA, 30 Either-Sex (gun)",
+    "hunters": 25,
+    "harvest": 7,
+    "successPct": 28.0
+   },
+   {
+    "unit": "Beaver River WMA McFarland Unit",
+    "huntCode": "3007",
+    "weapon": "rifle",
+    "label": "Deer: Beaver River WMA- McFarland Unit, 2 Either-Sex (gun)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "Beaver River WMA McFarland Unit",
+    "weapon": "rifle",
+    "label": "Deer: Beaver River WMA- McFarland Unit Whitetail only, 8 Either-Sex (gun)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60.0
+   },
+   {
+    "unit": "Beaver River WMA",
+    "huntCode": "3008",
+    "weapon": "rifle",
+    "label": "Deer: Beaver River WMA, 2 Either-Sex (gun)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "Beaver River WMA",
+    "weapon": "rifle",
+    "label": "Deer: Beaver River WMA- whitetail only, 20 Either-Sex (gun)",
+    "hunters": 18,
+    "harvest": 7,
+    "successPct": 38.9
+   },
+   {
+    "unit": "Candy Creek WMA",
+    "huntCode": "3020",
+    "weapon": "muzzleloader",
+    "label": "Deer: Candy Creek WMA, 12 Either-Sex (muzzleloader)",
+    "hunters": 12,
+    "harvest": 2,
+    "successPct": 16.7
+   },
+   {
+    "unit": "Candy Creek WMA",
+    "huntCode": "3021",
+    "weapon": "rifle",
+    "label": "Deer: Candy Creek WMA, 12 Either-Sex (gun)",
+    "hunters": 12,
+    "harvest": 2,
+    "successPct": 16.7
+   },
+   {
+    "unit": "Canton WMA",
+    "huntCode": "3030",
+    "weapon": "rifle",
+    "label": "Deer: Canton WMA, 75 Either-Sex (gun)",
+    "hunters": 54,
+    "harvest": 26,
+    "successPct": 48.1
+   },
+   {
+    "unit": "Cherokee GMA",
+    "weapon": "rifle",
+    "label": "Deer: Cherokee GMA, 120 Either-Sex (gun)",
+    "hunters": 102,
+    "harvest": 23,
+    "successPct": 22.5
+   },
+   {
+    "unit": "Cookson WMA",
+    "weapon": "muzzleloader",
+    "label": "Deer: Cookson WMA, 12 Either-Sex, 46 Antlerless (muzzleloader)",
+    "hunters": 38,
+    "harvest": 7,
+    "successPct": 18.4
+   },
+   {
+    "unit": "Cookson WMA",
+    "weapon": "rifle",
+    "label": "Deer: Cookson WMA, 12 Either-Sex, 36 Antlerless (gun)",
+    "hunters": 31,
+    "harvest": 3,
+    "successPct": 9.7
+   },
+   {
+    "unit": "Fort Gibson WRP",
+    "weapon": "muzzleloader",
+    "label": "Deer: Ft. Gibson WRP, 125 Antlerless, 25 Either-Sex (muzzleloader)",
+    "hunters": 99,
+    "harvest": 33,
+    "successPct": 33.3
+   },
+   {
+    "unit": "Grady County WMA",
+    "huntCode": "3120",
+    "weapon": "muzzleloader",
+    "label": "Deer: Grady County, 10 Either-Sex (muzzleloader)",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "Grady County WMA",
+    "huntCode": "3121",
+    "weapon": "rifle",
+    "label": "Deer: Grady County, 10 Either-Sex (gun)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3
+   },
+   {
+    "unit": "McCurtain Co. WA",
+    "weapon": "muzzleloader",
+    "label": "Deer: McCurtain Co. W.A., 16 Either-Sex (muzzleloader)",
+    "hunters": 13,
+    "harvest": 4,
+    "successPct": 30.8
+   },
+   {
+    "unit": "McGee Creek WMA",
+    "huntCode": "3201",
+    "weapon": "rifle",
+    "label": "Deer: McGee Creek WMA, 65 Either-Sex (gun)",
+    "hunters": 49,
+    "harvest": 5,
+    "successPct": 10.2
+   },
+   {
+    "unit": "Neosho WMA",
+    "huntCode": "3203",
+    "weapon": "muzzleloader",
+    "label": "Deer: Neosho WMA, 6 Either-Sex (muzzleloader)",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "Osage-Western Wall WMA",
+    "weapon": "muzzleloader",
+    "label": "Deer: Osage/Western Wall, 20 (1) Either-sex (muzzleloader)",
+    "hunters": 14,
+    "harvest": 5,
+    "successPct": 35.7
+   },
+   {
+    "unit": "Pushmataha WMA",
+    "huntCode": "3230",
+    "weapon": "muzzleloader",
+    "label": "Deer: Pushmataha WMA, 50 Either-Sex (muzzleloader)",
+    "hunters": 36,
+    "harvest": 5,
+    "successPct": 13.9
+   },
+   {
+    "unit": "Sans Bois WMA",
+    "huntCode": "3275",
+    "weapon": "muzzleloader",
+    "label": "Deer: Sans Bois WMA, 15 Either-Sex (muzzleloader)",
+    "hunters": 15,
+    "harvest": 3,
+    "successPct": 20.0
+   },
+   {
+    "unit": "Sans Bois WMA",
+    "huntCode": "3276",
+    "weapon": "rifle",
+    "label": "Deer: Sans Bois WMA, 15 Either-Sex (gun)",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 14.3
+   },
+   {
+    "unit": "Spavinaw GMA",
+    "weapon": "rifle",
+    "label": "Deer: Spavinaw GMA, 20 Either-Sex, 30 Antlerless (gun)",
+    "hunters": 28,
+    "harvest": 3,
+    "successPct": 10.7
+   },
+   {
+    "unit": "Washita NWR",
+    "huntCode": "3320",
+    "weapon": "rifle",
+    "label": "Deer: Washita NWR, 5 Antlerless Only (gun)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "Wichita Mountains NWR",
+    "weapon": "rifle",
+    "label": "Deer: Wichita Mts. NWR, 30 Antlered, 40 Antlerless (gun)",
+    "hunters": 45,
+    "harvest": 26,
+    "successPct": 57.8
+   },
+   {
+    "unit": "Cherokee GMA",
+    "huntCode": "4001",
+    "weapon": "rifle",
+    "label": "Motor-vehicle / non-ambulatory deer: Cherokee GMA, 40 Either-Sex (gun)",
+    "hunters": 27,
+    "harvest": 8,
+    "successPct": 29.6
+   },
+   {
+    "unit": "Cookson WMA",
+    "huntCode": "4010",
+    "weapon": "rifle",
+    "label": "Motor-vehicle / non-ambulatory deer: Cookson WMA, 12 Either-Sex (gun)",
+    "hunters": 10,
+    "harvest": 2,
+    "successPct": 20.0
+   },
+   {
+    "unit": "Beaver River WMA McFarland Unit",
+    "huntCode": "5006",
+    "weapon": "rifle",
+    "label": "Youth deer: Beaver River WMA- McFarland Unit, 15 Either-Sex (gun)",
+    "hunters": 13,
+    "harvest": 3,
+    "successPct": 23.1
+   },
+   {
+    "unit": "Cherokee GMA",
+    "huntCode": "5010",
+    "weapon": "rifle",
+    "label": "Youth deer: Cherokee GMA, 50 Either-Sex (gun)",
+    "hunters": 37,
+    "harvest": 14,
+    "successPct": 37.8
+   },
+   {
+    "unit": "Cookson WMA",
+    "huntCode": "5020",
+    "weapon": "rifle",
+    "label": "Youth deer: Cookson WMA, 30 Either-Sex (gun)",
+    "hunters": 20,
+    "harvest": 7,
+    "successPct": 35.0
+   },
+   {
+    "unit": "Cross Timbers WMA",
+    "huntCode": "5025",
+    "weapon": "rifle",
+    "label": "Youth deer: Crosstimbers WMA, 30 Antlerless Only (gun)",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50.0
+   },
+   {
+    "unit": "Eufaula CoE Gaines Creek",
+    "huntCode": "5035",
+    "weapon": "rifle",
+    "label": "Youth deer: Eufaula Lake COE- Gaines Creek, 5 Either-Sex (gun)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60.0
+   },
+   {
+    "unit": "Fort Cobb WMA and SP",
+    "weapon": "muzzleloader",
+    "label": "Youth deer: Ft. Cobb WMA and SP, 25 Antlerless Only (muzzleloader)",
+    "hunters": 13,
+    "harvest": 5,
+    "successPct": 38.5
+   },
+   {
+    "unit": "Hugo WMA",
+    "huntCode": "5060",
+    "weapon": "rifle",
+    "label": "Youth deer: Hugo WMA, 30 Either-Sex (gun)",
+    "hunters": 26,
+    "harvest": 10,
+    "successPct": 38.5
+   },
+   {
+    "unit": "James Collins WMA",
+    "weapon": "rifle",
+    "label": "Youth deer: James Collins WMA, 80 Either-Sex (gun)",
+    "hunters": 70,
+    "harvest": 28,
+    "successPct": 40.0
+   },
+   {
+    "unit": "McAlester AAP",
+    "weapon": "rifle",
+    "label": "Youth deer: McAlester AAP, 25 Antlerless (gun) — includes McAlester AAP federal-base drawn hunters (ODWC footnote)",
+    "hunters": 27,
+    "harvest": 17,
+    "successPct": 63.0
+   },
+   {
+    "unit": "Neosho WMA",
+    "huntCode": "5095",
+    "weapon": "muzzleloader",
+    "label": "Youth deer: Neosho WMA, 6 Either-Sex (muzzleloader)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7
+   },
+   {
+    "unit": "Neosho WMA",
+    "huntCode": "5096",
+    "weapon": "rifle",
+    "label": "Youth deer: Neosho WMA, 6 Either-Sex (gun)",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 20.0
+   },
+   {
+    "unit": "Osage-Western Wall WMA",
+    "weapon": "rifle",
+    "label": "Youth deer: Osage/Western Wall, 10 (1) Either Sex (gun)",
+    "hunters": 8,
+    "harvest": 3,
+    "successPct": 37.5
+   },
+   {
+    "unit": "Pushmataha WMA",
+    "weapon": "rifle",
+    "label": "Youth deer: Pushmataha WMA, 70 Either-Sex (gun)",
+    "hunters": 62,
+    "harvest": 19,
+    "successPct": 30.6
+   },
+   {
+    "unit": "Spavinaw GMA",
+    "huntCode": "5180",
+    "weapon": "muzzleloader",
+    "label": "Youth deer: Spavinaw WMA, 40 Either-Sex (muzzleloader)",
+    "hunters": 23,
+    "harvest": 8,
+    "successPct": 34.8
+   },
+   {
+    "unit": "Spavinaw GMA",
+    "huntCode": "5181",
+    "weapon": "rifle",
+    "label": "Youth deer: Spavinaw WMA, 40 Either-Sex (gun)",
+    "hunters": 37,
+    "harvest": 12,
+    "successPct": 32.4
+   },
+   {
+    "unit": "Washita NWR",
+    "weapon": "rifle",
+    "label": "Youth deer: Washita NWR, 20 Antlerless Only (gun)",
+    "hunters": 17,
+    "harvest": 13,
+    "successPct": 76.5
+   },
+   {
+    "unit": "Waurika Lake CoE",
+    "huntCode": "5270",
+    "weapon": "rifle",
+    "label": "Youth deer: Waurika Lake COE, 5 Antlerless Only (gun)",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75.0
+   }
+  ]
+ }
+}

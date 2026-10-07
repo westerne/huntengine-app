@@ -12,10 +12,11 @@ export type ShortlistOptions = {
 };
 
 const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
-const pct = (v: unknown) => (typeof v === 'string' ? parseFloat(v) : num(v));
+// A hunter-success figure from a handful of hunters doesn't rank anything.
+const pct = (v: unknown) => (typeof v === 'string' ? (/too few to judge/.test(v) ? null : parseFloat(v)) : num(v));
 
 // Restricted hunts most hunters can't apply for; never shortlisted.
-const RESTRICTED = /\b(youth|juniors?|ham|champ|challenged|disabled|military|tribal|hopi|navajo)\b/i;
+const RESTRICTED = /\b(youth|juniors?|apprentice|master hunters?|disabilit(?:y|ies)|ham|champ|challenged|disabled|military|tribal|hopi|navajo)\b/i;
 const ANTLERLESS = /\b(antlerless|cow|doe|ewe)\b/i;
 
 export function oddsOf(e: Entry): number | null {

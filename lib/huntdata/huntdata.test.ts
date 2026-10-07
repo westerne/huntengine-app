@@ -12,7 +12,7 @@ describe('registry', () => {
   });
 
   it('has the live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'NV', 'UT', 'WY']);
+    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CA', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'NV', 'OK', 'OR', 'UT', 'WA', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -20,7 +20,7 @@ describe('registry', () => {
     expect(toStateCode('wy')).toBe('WY');
     expect(toStateCode('NEW MEXICO')).toBe('NM');
     expect(toStateCode('Narnia')).toBeNull();
-    expect(getStateModule('OR')).toBeNull(); // planned, no data yet
+    expect(getStateModule('SD')).toBeNull(); // planned, no data yet
   });
 });
 
@@ -568,5 +568,99 @@ describe('Nevada', () => {
     const elk = nv.hunts('ELK').find((x) => x.huntCode === '4151-221-Early')!;
     expect(elk.harvest?.scope).toBe('hunt');
     expect(elk.harvest!.hunters).toBeGreaterThanOrEqual(55); // resident 55 + any non-residents
+  });
+});
+
+describe('Oklahoma', () => {
+  const ok = getStateModule('OK')!;
+  it('loads ODWC 2025 controlled hunts with permits, applicants and hunter success', () => {
+    const elk = ok.hunts('ELK').find((h) => h.huntCode === '1020')!;
+    expect(elk).toMatchObject({ unit: 'Wichita Mountains NWR', tags: 40, applicants: 8668 });
+    expect(elk.harvest?.successPct).toBe(87.5);
+    expect(ok.hunts('DEER').length).toBe(129);
+    expect(STATE_INFO.OK.drawSystemNote).toMatch(/any of their five choices/);
+  });
+});
+
+describe('small harvest samples', () => {
+  it('shows counts, not a percentage, under 10 hunters', async () => {
+    const { successText } = await import('./generic');
+    expect(successText({ successPct: 100, year: 2025, hunters: 1, harvest: 1, scope: 'hunt' })).toBe('1 of 1 hunter (too few to judge)');
+    expect(successText({ successPct: 87.5, year: 2025, hunters: 40, harvest: 35, scope: 'hunt' })).toBe('87.5%');
+    expect(successText({ successPct: 60, year: 2025, scope: 'unit' })).toBe('60%');
+  });
+});
+
+describe('California', () => {
+  const ca = getStateModule('CA')!;
+  it('loads 2025 CDFW drawing results with clean labels', () => {
+    const elk = ca.hunts('ELK').find((h) => h.huntCode === '484')!;
+    expect(elk).toMatchObject({ unit: 'Cache Creek', tags: 1, applicants: 186 });
+    expect(elk.label).not.toMatch(/CDFW hunt/);
+    expect(ca.hunts('BIGHORNSHEEP').length).toBe(12);
+    expect(STATE_INFO.CA.drawSystemNote).toMatch(/one non-resident is drawn for elk/);
+  });
+  it('flags one-tag hunter success as too few to judge', async () => {
+    const { buildGenericScoutDataset } = await import('./generic');
+    const e = buildGenericScoutDataset(ca, 'ELK', 'resident').find((x) => x.huntCode === '484')!;
+    expect(e.hunterSuccess).toBe('100% (only 1 tag, too few to judge)');
+  });
+});
+
+describe('shortlist guards', () => {
+  it('drops apprentice hunts and ignores tiny hunter-success samples when ranking', async () => {
+    const { buildShortlist } = await import('./shortlist');
+    const list = buildShortlist([
+      { unit: 'A', huntCode: '1', label: 'Apprentice - Bull', drawSuccess: 5, hunterSuccess: '90%' },
+      { unit: 'B', huntCode: '2', label: 'Bull', drawSuccess: 5, hunterSuccess: '100% (only 2 tags, too few to judge)' },
+      { unit: 'C', huntCode: '3', label: 'Bull', drawSuccess: 5, hunterSuccess: '60%' },
+    ] as never[]) as Array<{ huntCode: string }>;
+    expect(list.map((e) => e.huntCode)).toEqual(['3', '2']);
+  });
+});
+
+describe('Washington', () => {
+  const wa = getStateModule('WA')!;
+  it('loads 2025 special permits and general (OTC) seasons with their own success', () => {
+    const q = wa.hunts('DEER').find((h) => h.huntCode === '1000')!;
+    expect(q).toMatchObject({ unit: '105', tags: 5, applicants: 75 });
+    const gen = wa.hunts('ELK').find((h) => h.huntCode === 'GEN-101-archery')!;
+    expect(gen.otc).toBe(true);
+    expect(gen.harvest).toMatchObject({ successPct: 5, scope: 'hunt' });
+    // A special permit never borrows general-season success from its GMU.
+    expect(wa.hunts('ELK').find((h) => h.huntCode === '2000')!.harvest?.successPct).toBe(0);
+  });
+  it('keeps Master Hunter and disability permits out of the shortlist', async () => {
+    const { buildShortlist } = await import('./shortlist');
+    const { buildGenericScoutDataset } = await import('./generic');
+    const list = buildShortlist(buildGenericScoutDataset(wa, 'ELK', 'resident'), { size: 50 });
+    expect(list.some((e) => /master hunter|disabilit/i.test(String(e.label)))).toBe(false);
+  });
+});
+
+describe('Oregon', () => {
+  const or = getStateModule('OR')!;
+  it('loads 2026 ODFW draw results with point tables', () => {
+    const h = or.hunts('DEER').find((x) => x.huntCode === '112')!;
+    expect(h).toMatchObject({ unit: '12', tags: 17, applicants: 584 });
+    expect(h.draw.resident?.minPoints).toBe(10);
+    expect(h.pointLines?.resident?.length).toBeGreaterThan(5);
+  });
+  it('combines a multi-unit hunt’s harvest rows into one rate', async () => {
+    const { harvestForHunt } = await import('./harvest');
+    const h = harvestForHunt('OR', 'ELK', '244', '43', 'rifle')!;
+    expect(h).toMatchObject({ hunters: 248 + 89 + 346, harvest: 113 + 38 + 147, scope: 'hunt' });
+  });
+});
+
+describe('harvest overlay', () => {
+  it('keeps the generic dataset’s own hunter-success text', async () => {
+    const { enrichScoutDataset } = await import('./harvest');
+    const { buildGenericScoutDataset } = await import('./generic');
+    const wa = getStateModule('WA')!;
+    const e = enrichScoutDataset('WA', 'ELK', buildGenericScoutDataset(wa, 'ELK', 'nonresident')).find((x) => x.huntCode === 'GEN-244-archery')!;
+    expect(e.hunterSuccess).toBe('2 of 2 hunters (too few to judge)');
+    const or = enrichScoutDataset('OR', 'DEER', buildGenericScoutDataset(getStateModule('OR')!, 'DEER', 'resident')).find((x) => x.huntCode === '123A')!;
+    expect(or.hunterSuccess).toBe('82.1%'); // 32 of 39 across its three unit portions
   });
 });

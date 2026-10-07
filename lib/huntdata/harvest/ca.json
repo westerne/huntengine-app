@@ -1,0 +1,1846 @@
+{
+ "state": "CA",
+ "year": 2025,
+ "speciesYear": {
+  "DEER": 2025,
+  "ELK": 2025,
+  "ANTELOPE": 2025,
+  "BIGHORNSHEEP": 2025
+ },
+ "source": {
+  "name": "California Department of Fish and Wildlife - 2025 Deer Harvest Statistics and 2026 Big Game Digest (2025 hunter success)",
+  "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=245246&inline"
+ },
+ "notes": "DEER = 2025 season, PER HUNT/ZONE, from CDFW '2025 California Deer Harvest Statistics' Table 1 (https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=245246&inline, linked from https://wildlife.ca.gov/Hunting/Deer; data as of April 13, 2026; excludes Section 554 landowner and PLM harvest). harvest = CDFW 'Total Estimated' deer kill (reported kill adjusted for the non-reporting rate); successPct = CDFW 'Percent Hunter Success' = total estimated kill / tags issued. hunters = null (CDFW prints tag quota, not tags issued or hunters afield). B-zone, C-zone and D3-5 tags are good in a group of zones: harvest is per zone but CDFW's success % is for the whole group (said in the label). Draw hunt 'C' (C1-C4 tag) has its own row with the group figure and harvest null. Statewide archery-only (AO) and fundraising (Gold Opp, Open Zone) rows are left out. Units use CDFW BIOS layer spellings (X3a, not X3A). ELK / PRONGHORN / BIGHORN SHEEP = 2025 season, PER HUNT, from the '2025 Hunter Success (%)' column of the 2026 California Big Game Digest hunt tables (https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline, elk pp.48-52, pronghorn pp.58-59, bighorn p.61). Only the percent is published (hunters and harvest null). Hunts printed '-' are left out. Pronghorn hunt 790 (Zone 4 Lassen apprentice) is left out: the Digest prints 80% in one table and 100% in another. Newer per-hunt elk / pronghorn harvest PDFs with counts stop at 2022 (elk) and 2023 (pronghorn) on wildlife.ca.gov, so they were not used.",
+ "species": {
+  "DEER": [
+   {
+    "unit": "A",
+    "huntCode": "A",
+    "label": "Zone A - tag quota 65,000",
+    "hunters": null,
+    "harvest": 9184,
+    "successPct": 34.2
+   },
+   {
+    "unit": "B1",
+    "huntCode": "B1",
+    "label": "Zone B1 - estimated harvest is for this zone; hunter success 32.5% is CDFW's figure for the whole B zones (B1-B6) tag group (tag quota 35,000)",
+    "hunters": null,
+    "harvest": 3992,
+    "successPct": 32.5
+   },
+   {
+    "unit": "B2",
+    "huntCode": "B2",
+    "label": "Zone B2 - estimated harvest is for this zone; hunter success 32.5% is CDFW's figure for the whole B zones (B1-B6) tag group (tag quota 35,000)",
+    "hunters": null,
+    "harvest": 3565,
+    "successPct": 32.5
+   },
+   {
+    "unit": "B3",
+    "huntCode": "B3",
+    "label": "Zone B3 - estimated harvest is for this zone; hunter success 32.5% is CDFW's figure for the whole B zones (B1-B6) tag group (tag quota 35,000)",
+    "hunters": null,
+    "harvest": 1222,
+    "successPct": 32.5
+   },
+   {
+    "unit": "B4",
+    "huntCode": "B4",
+    "label": "Zone B4 - estimated harvest is for this zone; hunter success 32.5% is CDFW's figure for the whole B zones (B1-B6) tag group (tag quota 35,000)",
+    "hunters": null,
+    "harvest": 296,
+    "successPct": 32.5
+   },
+   {
+    "unit": "B5",
+    "huntCode": "B5",
+    "label": "Zone B5 - estimated harvest is for this zone; hunter success 32.5% is CDFW's figure for the whole B zones (B1-B6) tag group (tag quota 35,000)",
+    "hunters": null,
+    "harvest": 1309,
+    "successPct": 32.5
+   },
+   {
+    "unit": "B6",
+    "huntCode": "B6",
+    "label": "Zone B6 - estimated harvest is for this zone; hunter success 32.5% is CDFW's figure for the whole B zones (B1-B6) tag group (tag quota 35,000)",
+    "hunters": null,
+    "harvest": 955,
+    "successPct": 32.5
+   },
+   {
+    "unit": "C1",
+    "huntCode": "C1",
+    "label": "Zone C1 - estimated harvest is for this zone; hunter success 30.1% is CDFW's figure for the whole C zones (C1-C4) tag group (tag quota 8,150)",
+    "hunters": null,
+    "harvest": 284,
+    "successPct": 30.1
+   },
+   {
+    "unit": "C2",
+    "huntCode": "C2",
+    "label": "Zone C2 - estimated harvest is for this zone; hunter success 30.1% is CDFW's figure for the whole C zones (C1-C4) tag group (tag quota 8,150)",
+    "hunters": null,
+    "harvest": 455,
+    "successPct": 30.1
+   },
+   {
+    "unit": "C3",
+    "huntCode": "C3",
+    "label": "Zone C3 - estimated harvest is for this zone; hunter success 30.1% is CDFW's figure for the whole C zones (C1-C4) tag group (tag quota 8,150)",
+    "hunters": null,
+    "harvest": 585,
+    "successPct": 30.1
+   },
+   {
+    "unit": "C4",
+    "huntCode": "C4",
+    "label": "Zone C4 - estimated harvest is for this zone; hunter success 30.1% is CDFW's figure for the whole C zones (C1-C4) tag group (tag quota 8,150)",
+    "hunters": null,
+    "harvest": 1129,
+    "successPct": 30.1
+   },
+   {
+    "unit": "D3",
+    "huntCode": "D3",
+    "label": "Zone D3 - estimated harvest is for this zone; hunter success 19.0% is CDFW's figure for the whole D3-5 zones tag group (tag quota 33,000)",
+    "hunters": null,
+    "harvest": 2509,
+    "successPct": 19.0
+   },
+   {
+    "unit": "D4",
+    "huntCode": "D4",
+    "label": "Zone D4 - estimated harvest is for this zone; hunter success 19.0% is CDFW's figure for the whole D3-5 zones tag group (tag quota 33,000)",
+    "hunters": null,
+    "harvest": 905,
+    "successPct": 19.0
+   },
+   {
+    "unit": "D5",
+    "huntCode": "D5",
+    "label": "Zone D5 - estimated harvest is for this zone; hunter success 19.0% is CDFW's figure for the whole D3-5 zones tag group (tag quota 33,000)",
+    "hunters": null,
+    "harvest": 2484,
+    "successPct": 19.0
+   },
+   {
+    "unit": "D6",
+    "huntCode": "D6",
+    "label": "Zone D6 - tag quota 10,000",
+    "hunters": null,
+    "harvest": 1119,
+    "successPct": 11.2
+   },
+   {
+    "unit": "D7",
+    "huntCode": "D7",
+    "label": "Zone D7 - tag quota 9,000",
+    "hunters": null,
+    "harvest": 1300,
+    "successPct": 14.5
+   },
+   {
+    "unit": "D8",
+    "huntCode": "D8",
+    "label": "Zone D8 - tag quota 8,000",
+    "hunters": null,
+    "harvest": 916,
+    "successPct": 16.2
+   },
+   {
+    "unit": "D9",
+    "huntCode": "D9",
+    "label": "Zone D9 - tag quota 2,000",
+    "hunters": null,
+    "harvest": 342,
+    "successPct": 17.1
+   },
+   {
+    "unit": "D10",
+    "huntCode": "D10",
+    "label": "Zone D10 - tag quota 700",
+    "hunters": null,
+    "harvest": 241,
+    "successPct": 36.9
+   },
+   {
+    "unit": "D11",
+    "huntCode": "D11",
+    "label": "Zone D11 - tag quota 5,500",
+    "hunters": null,
+    "harvest": 622,
+    "successPct": 13.8
+   },
+   {
+    "unit": "D12",
+    "huntCode": "D12",
+    "weapon": "any",
+    "label": "Zone D12 - tag quota 950",
+    "hunters": null,
+    "harvest": 121,
+    "successPct": 12.8
+   },
+   {
+    "unit": "D13",
+    "huntCode": "D13",
+    "label": "Zone D13 - tag quota 4,000",
+    "hunters": null,
+    "harvest": 372,
+    "successPct": 13.7
+   },
+   {
+    "unit": "D14",
+    "huntCode": "D14",
+    "weapon": "any",
+    "label": "Zone D14 - tag quota 3,000",
+    "hunters": null,
+    "harvest": 503,
+    "successPct": 16.8
+   },
+   {
+    "unit": "D15",
+    "huntCode": "D15",
+    "label": "Zone D15 - tag quota 1,500",
+    "hunters": null,
+    "harvest": 109,
+    "successPct": 14.8
+   },
+   {
+    "unit": "D16",
+    "huntCode": "D16",
+    "label": "Zone D16 - tag quota 3,000",
+    "hunters": null,
+    "harvest": 322,
+    "successPct": 10.7
+   },
+   {
+    "unit": "D17",
+    "huntCode": "D17",
+    "weapon": "any",
+    "label": "Zone D17 - tag quota 500",
+    "hunters": null,
+    "harvest": 58,
+    "successPct": 11.6
+   },
+   {
+    "unit": "D19",
+    "huntCode": "D19",
+    "label": "Zone D19 - tag quota 1,500",
+    "hunters": null,
+    "harvest": 156,
+    "successPct": 10.4
+   },
+   {
+    "unit": "X1",
+    "huntCode": "X1",
+    "weapon": "rifle",
+    "label": "Zone X1 - tag quota 760",
+    "hunters": null,
+    "harvest": 331,
+    "successPct": 45.5
+   },
+   {
+    "unit": "X2",
+    "huntCode": "X2",
+    "weapon": "rifle",
+    "label": "Zone X2 - tag quota 189",
+    "hunters": null,
+    "harvest": 78,
+    "successPct": 46.7
+   },
+   {
+    "unit": "X3a",
+    "huntCode": "X3A",
+    "weapon": "rifle",
+    "label": "Zone X3A - tag quota 354",
+    "hunters": null,
+    "harvest": 209,
+    "successPct": 63.0
+   },
+   {
+    "unit": "X3b",
+    "huntCode": "X3B",
+    "weapon": "rifle",
+    "label": "Zone X3B - tag quota 499",
+    "hunters": null,
+    "harvest": 161,
+    "successPct": 34.5
+   },
+   {
+    "unit": "X4",
+    "huntCode": "X4",
+    "weapon": "rifle",
+    "label": "Zone X4 - tag quota 479",
+    "hunters": null,
+    "harvest": 173,
+    "successPct": 37.3
+   },
+   {
+    "unit": "X5a",
+    "huntCode": "X5A",
+    "weapon": "rifle",
+    "label": "Zone X5A - tag quota 75",
+    "hunters": null,
+    "harvest": 47,
+    "successPct": 68.1
+   },
+   {
+    "unit": "X5b",
+    "huntCode": "X5B",
+    "weapon": "rifle",
+    "label": "Zone X5B - tag quota 50",
+    "hunters": null,
+    "harvest": 30,
+    "successPct": 68.2
+   },
+   {
+    "unit": "X6a",
+    "huntCode": "X6A",
+    "weapon": "rifle",
+    "label": "Zone X6A - tag quota 329",
+    "hunters": null,
+    "harvest": 247,
+    "successPct": 77.2
+   },
+   {
+    "unit": "X6b",
+    "huntCode": "X6B",
+    "weapon": "rifle",
+    "label": "Zone X6B - tag quota 309",
+    "hunters": null,
+    "harvest": 134,
+    "successPct": 47.7
+   },
+   {
+    "unit": "X7a",
+    "huntCode": "X7A",
+    "weapon": "rifle",
+    "label": "Zone X7A - tag quota 229",
+    "hunters": null,
+    "harvest": 52,
+    "successPct": 23.4
+   },
+   {
+    "unit": "X7b",
+    "huntCode": "X7B",
+    "weapon": "rifle",
+    "label": "Zone X7B - tag quota 134",
+    "hunters": null,
+    "harvest": 32,
+    "successPct": 25.0
+   },
+   {
+    "unit": "X8",
+    "huntCode": "X8",
+    "weapon": "rifle",
+    "label": "Zone X8 - tag quota 210",
+    "hunters": null,
+    "harvest": 49,
+    "successPct": 24.3
+   },
+   {
+    "unit": "X9a",
+    "huntCode": "X9A",
+    "weapon": "rifle",
+    "label": "Zone X9A - tag quota 269",
+    "hunters": null,
+    "harvest": 160,
+    "successPct": 62.7
+   },
+   {
+    "unit": "X9b",
+    "huntCode": "X9B",
+    "weapon": "rifle",
+    "label": "Zone X9B - tag quota 230",
+    "hunters": null,
+    "harvest": 65,
+    "successPct": 29.4
+   },
+   {
+    "unit": "X9c",
+    "huntCode": "X9C",
+    "weapon": "rifle",
+    "label": "Zone X9C - tag quota 325",
+    "hunters": null,
+    "harvest": 77,
+    "successPct": 24.0
+   },
+   {
+    "unit": "X10",
+    "huntCode": "X10",
+    "weapon": "rifle",
+    "label": "Zone X10 - tag quota 400",
+    "hunters": null,
+    "harvest": 59,
+    "successPct": 14.9
+   },
+   {
+    "unit": "X12",
+    "huntCode": "X12",
+    "weapon": "rifle",
+    "label": "Zone X12 - tag quota 349",
+    "hunters": null,
+    "harvest": 193,
+    "successPct": 58.7
+   },
+   {
+    "unit": "A1",
+    "huntCode": "A1",
+    "weapon": "archery",
+    "label": "Hunt A1 - tag quota 1,945",
+    "hunters": null,
+    "harvest": 456,
+    "successPct": 23.5
+   },
+   {
+    "unit": "A3",
+    "huntCode": "A3",
+    "weapon": "archery",
+    "label": "Hunt A3 - tag quota 100",
+    "hunters": null,
+    "harvest": 39,
+    "successPct": 39.8
+   },
+   {
+    "unit": "A4",
+    "huntCode": "A4",
+    "weapon": "archery",
+    "label": "Hunt A4 - tag quota 10",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 40.0
+   },
+   {
+    "unit": "A5",
+    "huntCode": "A5",
+    "weapon": "archery",
+    "label": "Hunt A5 - tag quota 40",
+    "hunters": null,
+    "harvest": 22,
+    "successPct": 57.9
+   },
+   {
+    "unit": "A6",
+    "huntCode": "A6",
+    "weapon": "archery",
+    "label": "Hunt A6 - tag quota 70",
+    "hunters": null,
+    "harvest": 17,
+    "successPct": 24.3
+   },
+   {
+    "unit": "A7",
+    "huntCode": "A7",
+    "weapon": "archery",
+    "label": "Hunt A7 - tag quota 120",
+    "hunters": null,
+    "harvest": 33,
+    "successPct": 28.7
+   },
+   {
+    "unit": "A8",
+    "huntCode": "A8",
+    "weapon": "archery",
+    "label": "Hunt A8 - tag quota 10",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 40.0
+   },
+   {
+    "unit": "A9",
+    "huntCode": "A9",
+    "weapon": "archery",
+    "label": "Hunt A9 - tag quota 5",
+    "hunters": null,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "A11",
+    "huntCode": "A11",
+    "weapon": "archery",
+    "label": "Hunt A11 - tag quota 50",
+    "hunters": null,
+    "harvest": 27,
+    "successPct": 56.3
+   },
+   {
+    "unit": "A12",
+    "huntCode": "A12",
+    "weapon": "archery",
+    "label": "Hunt A12 - tag quota 90",
+    "hunters": null,
+    "harvest": 25,
+    "successPct": 30.1
+   },
+   {
+    "unit": "A13",
+    "huntCode": "A13",
+    "weapon": "archery",
+    "label": "Hunt A13 - tag quota 45",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 22.0
+   },
+   {
+    "unit": "A14",
+    "huntCode": "A14",
+    "weapon": "archery",
+    "label": "Hunt A14 - tag quota 25",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 33.3
+   },
+   {
+    "unit": "A15",
+    "huntCode": "A15",
+    "weapon": "archery",
+    "label": "Hunt A15 - tag quota 40",
+    "hunters": null,
+    "harvest": 7,
+    "successPct": 21.9
+   },
+   {
+    "unit": "A16",
+    "huntCode": "A16",
+    "weapon": "archery",
+    "label": "Hunt A16 - tag quota 30",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 28.6
+   },
+   {
+    "unit": "A17",
+    "huntCode": "A17",
+    "weapon": "archery",
+    "label": "Hunt A17 - tag quota 210",
+    "hunters": null,
+    "harvest": 11,
+    "successPct": 5.3
+   },
+   {
+    "unit": "A18",
+    "huntCode": "A18",
+    "weapon": "archery",
+    "label": "Hunt A18 - tag quota 350",
+    "hunters": null,
+    "harvest": 11,
+    "successPct": 4.2
+   },
+   {
+    "unit": "A19",
+    "huntCode": "A19",
+    "weapon": "archery",
+    "label": "Hunt A19 - tag quota 100",
+    "hunters": null,
+    "harvest": 12,
+    "successPct": 12.0
+   },
+   {
+    "unit": "A20",
+    "huntCode": "A20",
+    "weapon": "archery",
+    "label": "Hunt A20 - tag quota 40",
+    "hunters": null,
+    "harvest": 14,
+    "successPct": 35.9
+   },
+   {
+    "unit": "A21",
+    "huntCode": "A21",
+    "weapon": "archery",
+    "label": "Hunt A21 - tag quota 25",
+    "hunters": null,
+    "harvest": 12,
+    "successPct": 50.0
+   },
+   {
+    "unit": "A22",
+    "huntCode": "A22",
+    "weapon": "archery",
+    "label": "Hunt A22 - tag quota 1,000",
+    "hunters": null,
+    "harvest": 52,
+    "successPct": 5.2
+   },
+   {
+    "unit": "A24",
+    "huntCode": "A24",
+    "weapon": "archery",
+    "label": "Hunt A24 - tag quota 100",
+    "hunters": null,
+    "harvest": 28,
+    "successPct": 28.6
+   },
+   {
+    "unit": "A25",
+    "huntCode": "A25",
+    "weapon": "archery",
+    "label": "Hunt A25 - tag quota 35",
+    "hunters": null,
+    "harvest": 7,
+    "successPct": 22.6
+   },
+   {
+    "unit": "A26",
+    "huntCode": "A26",
+    "weapon": "archery",
+    "label": "Hunt A26 - tag quota 30",
+    "hunters": null,
+    "harvest": 17,
+    "successPct": 58.6
+   },
+   {
+    "unit": "A27",
+    "huntCode": "A27",
+    "weapon": "archery",
+    "label": "Hunt A27 - tag quota 10",
+    "hunters": null,
+    "harvest": 6,
+    "successPct": 75.0
+   },
+   {
+    "unit": "A30",
+    "huntCode": "A30",
+    "weapon": "archery",
+    "label": "Hunt A30 - tag quota 40",
+    "hunters": null,
+    "harvest": 12,
+    "successPct": 32.4
+   },
+   {
+    "unit": "A31",
+    "huntCode": "A31",
+    "weapon": "archery",
+    "label": "Hunt A31 - tag quota 1,000",
+    "hunters": null,
+    "harvest": 136,
+    "successPct": 13.6
+   },
+   {
+    "unit": "A32",
+    "huntCode": "A32",
+    "weapon": "archery",
+    "label": "Hunt A32 - tag quota 250",
+    "hunters": null,
+    "harvest": 23,
+    "successPct": 9.2
+   },
+   {
+    "unit": "A33",
+    "huntCode": "A33",
+    "weapon": "archery",
+    "label": "Hunt A33 - tag quota 50",
+    "hunters": null,
+    "harvest": 13,
+    "successPct": 26.0
+   },
+   {
+    "unit": "G1",
+    "huntCode": "G1",
+    "weapon": "rifle",
+    "label": "Hunt G1 - tag quota 2,710",
+    "hunters": null,
+    "harvest": 955,
+    "successPct": 35.6
+   },
+   {
+    "unit": "G3",
+    "huntCode": "G3",
+    "weapon": "rifle",
+    "label": "Hunt G3 - tag quota 25",
+    "hunters": null,
+    "harvest": 20,
+    "successPct": 90.9
+   },
+   {
+    "unit": "G6",
+    "huntCode": "G6",
+    "weapon": "rifle",
+    "label": "Hunt G6 - tag quota 50",
+    "hunters": null,
+    "harvest": 30,
+    "successPct": 66.7
+   },
+   {
+    "unit": "G12",
+    "huntCode": "G12",
+    "weapon": "rifle",
+    "label": "Hunt G12 - tag quota 30",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 27.6
+   },
+   {
+    "unit": "G13",
+    "huntCode": "G13",
+    "weapon": "rifle",
+    "label": "Hunt G13 - tag quota 300",
+    "hunters": null,
+    "harvest": 45,
+    "successPct": 15.0
+   },
+   {
+    "unit": "G19",
+    "huntCode": "G19",
+    "weapon": "any",
+    "label": "Hunt G19 - tag quota 25",
+    "hunters": null,
+    "harvest": 14,
+    "successPct": 56.0
+   },
+   {
+    "unit": "G21",
+    "huntCode": "G21",
+    "weapon": "rifle",
+    "label": "Hunt G21 - tag quota 25",
+    "hunters": null,
+    "harvest": 5,
+    "successPct": 21.7
+   },
+   {
+    "unit": "G37",
+    "huntCode": "G37",
+    "weapon": "rifle",
+    "label": "Hunt G37 - tag quota 25",
+    "hunters": null,
+    "harvest": 16,
+    "successPct": 80.0
+   },
+   {
+    "unit": "G38",
+    "huntCode": "G38",
+    "weapon": "rifle",
+    "label": "Hunt G38 - tag quota 300",
+    "hunters": null,
+    "harvest": 40,
+    "successPct": 13.6
+   },
+   {
+    "unit": "G39",
+    "huntCode": "G39",
+    "weapon": "rifle",
+    "label": "Hunt G39 - tag quota 2",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "G40",
+    "huntCode": "G40",
+    "weapon": "rifle",
+    "label": "Hunt G40 - tag quota 25",
+    "hunters": null,
+    "harvest": 16,
+    "successPct": 69.6
+   },
+   {
+    "unit": "M3",
+    "huntCode": "M3",
+    "weapon": "muzzleloader",
+    "label": "Hunt M3 - tag quota 20",
+    "hunters": null,
+    "harvest": 10,
+    "successPct": 55.6
+   },
+   {
+    "unit": "M4",
+    "huntCode": "M4",
+    "weapon": "muzzleloader",
+    "label": "Hunt M4 - tag quota 10",
+    "hunters": null,
+    "harvest": 7,
+    "successPct": 87.5
+   },
+   {
+    "unit": "M5",
+    "huntCode": "M5",
+    "weapon": "muzzleloader",
+    "label": "Hunt M5 - tag quota 5",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 20.0
+   },
+   {
+    "unit": "M6",
+    "huntCode": "M6",
+    "weapon": "muzzleloader",
+    "label": "Hunt M6 - tag quota 80",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 5.0
+   },
+   {
+    "unit": "M7",
+    "huntCode": "M7",
+    "weapon": "muzzleloader",
+    "label": "Hunt M7 - tag quota 150",
+    "hunters": null,
+    "harvest": 17,
+    "successPct": 11.3
+   },
+   {
+    "unit": "M8",
+    "huntCode": "M8",
+    "weapon": "muzzleloader",
+    "label": "Hunt M8 - tag quota 20",
+    "hunters": null,
+    "harvest": 10,
+    "successPct": 71.4
+   },
+   {
+    "unit": "M9",
+    "huntCode": "M9",
+    "weapon": "muzzleloader",
+    "label": "Hunt M9 - tag quota 15",
+    "hunters": null,
+    "harvest": 10,
+    "successPct": 71.4
+   },
+   {
+    "unit": "M11",
+    "huntCode": "M11",
+    "weapon": "muzzleloader",
+    "label": "Hunt M11 - tag quota 20",
+    "hunters": null,
+    "harvest": 14,
+    "successPct": 70.0
+   },
+   {
+    "unit": "MA1",
+    "huntCode": "MA1",
+    "weapon": "muzzleloader",
+    "label": "Hunt MA1 - tag quota 150",
+    "hunters": null,
+    "harvest": 17,
+    "successPct": 11.9
+   },
+   {
+    "unit": "MA3",
+    "huntCode": "MA3",
+    "weapon": "muzzleloader",
+    "label": "Hunt MA3 - tag quota 150",
+    "hunters": null,
+    "harvest": 20,
+    "successPct": 13.4
+   },
+   {
+    "unit": "J1",
+    "huntCode": "J1",
+    "weapon": "rifle",
+    "label": "Hunt J1 - tag quota 25",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 36.0
+   },
+   {
+    "unit": "J3",
+    "huntCode": "J3",
+    "weapon": "rifle",
+    "label": "Hunt J3 - tag quota 15",
+    "hunters": null,
+    "harvest": 14,
+    "successPct": 93.3
+   },
+   {
+    "unit": "J4",
+    "huntCode": "J4",
+    "weapon": "rifle",
+    "label": "Hunt J4 - tag quota 15",
+    "hunters": null,
+    "harvest": 13,
+    "successPct": 86.7
+   },
+   {
+    "unit": "J8",
+    "huntCode": "J8",
+    "weapon": "rifle",
+    "label": "Hunt J8 - tag quota 15",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 53.3
+   },
+   {
+    "unit": "J9",
+    "huntCode": "J9",
+    "weapon": "rifle",
+    "label": "Hunt J9 - tag quota 5",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 80.0
+   },
+   {
+    "unit": "J10",
+    "huntCode": "J10",
+    "weapon": "rifle",
+    "label": "Hunt J10 - tag quota 30",
+    "hunters": null,
+    "harvest": 26,
+    "successPct": 86.7
+   },
+   {
+    "unit": "J11",
+    "huntCode": "J11",
+    "weapon": "rifle",
+    "label": "Hunt J11 - tag quota 40",
+    "hunters": null,
+    "harvest": 16,
+    "successPct": 42.1
+   },
+   {
+    "unit": "J12",
+    "huntCode": "J12",
+    "weapon": "rifle",
+    "label": "Hunt J12 - tag quota 10",
+    "hunters": null,
+    "harvest": 10,
+    "successPct": 100.0
+   },
+   {
+    "unit": "J13",
+    "huntCode": "J13",
+    "weapon": "rifle",
+    "label": "Hunt J13 - tag quota 40",
+    "hunters": null,
+    "harvest": 16,
+    "successPct": 40.0
+   },
+   {
+    "unit": "J14",
+    "huntCode": "J14",
+    "weapon": "rifle",
+    "label": "Hunt J14 - tag quota 30",
+    "hunters": null,
+    "harvest": 14,
+    "successPct": 46.7
+   },
+   {
+    "unit": "J15",
+    "huntCode": "J15",
+    "weapon": "rifle",
+    "label": "Hunt J15 - tag quota 10",
+    "hunters": null,
+    "harvest": 10,
+    "successPct": 100.0
+   },
+   {
+    "unit": "J16",
+    "huntCode": "J16",
+    "weapon": "rifle",
+    "label": "Hunt J16 - tag quota 75",
+    "hunters": null,
+    "harvest": 35,
+    "successPct": 46.7
+   },
+   {
+    "unit": "J17",
+    "huntCode": "J17",
+    "weapon": "rifle",
+    "label": "Hunt J17 - tag quota 25",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 32.0
+   },
+   {
+    "unit": "J18",
+    "huntCode": "J18",
+    "weapon": "rifle",
+    "label": "Hunt J18 - tag quota 75",
+    "hunters": null,
+    "harvest": 28,
+    "successPct": 37.3
+   },
+   {
+    "unit": "J19",
+    "huntCode": "J19",
+    "weapon": "rifle",
+    "label": "Hunt J19 - tag quota 25",
+    "hunters": null,
+    "harvest": 16,
+    "successPct": 64.0
+   },
+   {
+    "unit": "J20",
+    "huntCode": "J20",
+    "weapon": "rifle",
+    "label": "Hunt J20 - tag quota 20",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 42.1
+   },
+   {
+    "unit": "J21",
+    "huntCode": "J21",
+    "weapon": "rifle",
+    "label": "Hunt J21 - tag quota 50",
+    "hunters": null,
+    "harvest": 35,
+    "successPct": 70.0
+   },
+   {
+    "unit": "C1",
+    "huntCode": "C",
+    "weapon": "rifle",
+    "label": "C zones (C1-C4) tag - CDFW group hunter success for the C-zone tag (per-zone estimated harvest is in the C1-C4 rows)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 30.1
+   }
+  ],
+  "ELK": [
+   {
+    "unit": "Cache Creek",
+    "huntCode": "484",
+    "weapon": "rifle",
+    "label": "Cache Creek Apprentice - General Methods - Bull (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "466",
+    "weapon": "rifle",
+    "label": "Grizzly Island Apprentice - Period 1 - General Methods - Antlerless (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "469",
+    "weapon": "rifle",
+    "label": "Grizzly Island Apprentice - Period 2 - General Methods - Spike Bull (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Marble Mountains",
+    "huntCode": "408",
+    "weapon": "rifle",
+    "label": "Marble Mountains Apprentice - General Methods - Either-Sex (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Northeastern",
+    "huntCode": "409",
+    "weapon": "rifle",
+    "label": "Northeastern Apprentice- General Methods - Either-Sex (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Central Coast",
+    "huntCode": "383",
+    "weapon": "archery",
+    "label": "Central Coast - Archery - Bull (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Central Coast",
+    "huntCode": "382",
+    "weapon": "archery",
+    "label": "Central Coast - Archery - Antlerless (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Fort Hunter Liggett",
+    "huntCode": "450",
+    "weapon": "archery",
+    "label": "Fort Hunter Liggett - Archery - Antlerless (2025 tag quota 8)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 16.7
+   },
+   {
+    "unit": "Fort Hunter Liggett",
+    "huntCode": "449",
+    "weapon": "archery",
+    "label": "Fort Hunter Liggett - Archery - Either-Sex (2025 tag quota 6)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "La Panza",
+    "huntCode": "385",
+    "weapon": "archery",
+    "label": "La Panza - Archery - Bull (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "La Panza",
+    "huntCode": "386",
+    "weapon": "archery",
+    "label": "La Panza - Archery - Antlerless (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 75
+   },
+   {
+    "unit": "Lone Pine",
+    "huntCode": "337",
+    "weapon": "archery",
+    "label": "Lone Pine Period 1 - Archery - Antlerless (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "Northeastern",
+    "huntCode": "411",
+    "weapon": "archery",
+    "label": "Northeastern - Archery - Either-Sex (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 20
+   },
+   {
+    "unit": "Bishop",
+    "huntCode": "422",
+    "weapon": "archery",
+    "label": "Owens Valley Multiple Zone - Archery - Bull (2025 tag quota 3)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 66.7
+   },
+   {
+    "unit": "Siskiyou",
+    "huntCode": "384",
+    "weapon": "archery",
+    "label": "Siskiyou - Archery - Bull (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 25
+   },
+   {
+    "unit": "Marble Mountains",
+    "huntCode": "303",
+    "weapon": "muzzleloader",
+    "label": "Marble Mountains - Muzzleloader/Archery - Either-Sex (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 40
+   },
+   {
+    "unit": "Independence",
+    "huntCode": "367",
+    "weapon": "muzzleloader",
+    "label": "Independence Period 1 - Muzzleloader - Bull (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "Marble Mountains",
+    "huntCode": "301",
+    "weapon": "rifle",
+    "label": "Marble Mountains - General Methods - Antlerless (2025 tag quota 8)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 66.7
+   },
+   {
+    "unit": "Marble Mountains",
+    "huntCode": "302",
+    "weapon": "rifle",
+    "label": "Marble Mountains - General Methods - Bull (2025 tag quota 34)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 84.2
+   },
+   {
+    "unit": "Northwestern",
+    "huntCode": "374",
+    "weapon": "rifle",
+    "label": "Northwestern - General Methods - Antlerless (2025 tag quota 15)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 60.8
+   },
+   {
+    "unit": "Northwestern",
+    "huntCode": "355",
+    "weapon": "rifle",
+    "label": "Northwestern - General Methods - Bull (2025 tag quota 25)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 90.3
+   },
+   {
+    "unit": "Northwestern",
+    "huntCode": "483",
+    "weapon": "rifle",
+    "label": "Northwestern - General Methods - Either-Sex (2025 tag quota 3)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Siskiyou",
+    "huntCode": "401",
+    "weapon": "rifle",
+    "label": "Siskiyou - General Methods - Antlerless (2025 tag quota 30)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 92.3
+   },
+   {
+    "unit": "Siskiyou",
+    "huntCode": "300",
+    "weapon": "rifle",
+    "label": "Siskiyou - General Methods - Bull (2025 tag quota 20)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 69.6
+   },
+   {
+    "unit": "Mendocino",
+    "huntCode": "328",
+    "weapon": "rifle",
+    "label": "Mendocino - General Methods - Bull (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 75
+   },
+   {
+    "unit": "Northeastern",
+    "huntCode": "304",
+    "weapon": "rifle",
+    "label": "Northeastern - General Methods - Antlerless (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 50
+   },
+   {
+    "unit": "Northeastern",
+    "huntCode": "305",
+    "weapon": "rifle",
+    "label": "Northeastern - General Methods - Bull (2025 tag quota 15)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 86.7
+   },
+   {
+    "unit": "Tehachapi",
+    "huntCode": "379",
+    "weapon": "rifle",
+    "label": "Tehachapi - General Methods - Antlerless (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 55.6
+   },
+   {
+    "unit": "Tehachapi",
+    "huntCode": "380",
+    "weapon": "rifle",
+    "label": "Tehachapi - General Methods - Bull (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 88.9
+   },
+   {
+    "unit": "Bear Valley",
+    "huntCode": "330",
+    "weapon": "rifle",
+    "label": "Bear Valley - General Methods - Bull (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Cache Creek",
+    "huntCode": "406",
+    "weapon": "rifle",
+    "label": "Cache Creek Period 1 - General Methods - Bull (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Cache Creek",
+    "huntCode": "416",
+    "weapon": "rifle",
+    "label": "Cache Creek Period 2 - General Methods - Antlerless (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "Central Coast",
+    "huntCode": "375",
+    "weapon": "rifle",
+    "label": "Central Coast - General Methods - Antlerless (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 75
+   },
+   {
+    "unit": "Central Coast",
+    "huntCode": "376",
+    "weapon": "rifle",
+    "label": "Central Coast - General Methods - Bull (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "East Park Reservoir",
+    "huntCode": "463",
+    "weapon": "rifle",
+    "label": "East Park Reservoir - General Methods - Antlerless (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "East Park Reservoir",
+    "huntCode": "461",
+    "weapon": "rifle",
+    "label": "East Park Reservoir - General Methods - Bull (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Fort Hunter Liggett",
+    "huntCode": "448",
+    "weapon": "rifle",
+    "label": "Fort Hunter Liggett Period 2 - General Methods - Antlerless (2025 tag quota 6)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 33.3
+   },
+   {
+    "unit": "Fort Hunter Liggett",
+    "huntCode": "447",
+    "weapon": "rifle",
+    "label": "Fort Hunter Liggett Period 3 - General Methods - Bull (2025 tag quota 8)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Gabilan",
+    "huntCode": "377",
+    "weapon": "rifle",
+    "label": "Gabilan - General Methods - Antlerless (2025 tag quota 6)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Gabilan",
+    "huntCode": "378",
+    "weapon": "rifle",
+    "label": "Gabilan - General Methods - Bull (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Goodale",
+    "huntCode": "373",
+    "weapon": "rifle",
+    "label": "Goodale Period 1 - General Methods - Bull (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Goodale",
+    "huntCode": "365",
+    "weapon": "rifle",
+    "label": "Goodale Period 2 - General Methods - Antlerless (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "Goodale",
+    "huntCode": "366",
+    "weapon": "rifle",
+    "label": "Goodale Period 3 - General Methods - Antlerless (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "433",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 1 - General Methods - Antlerless (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "437",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 2 - General Methods - Spike Bull (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "357",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 8 - General Methods - Spike Bull (2025 tag quota 6)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "358",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 9 - General Methods - Antlerless (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "359",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 10 - General Methods - Bull (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "360",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 11 - General Methods - Antlerless (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "362",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 12 - General Methods - Bull (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "363",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 13 - General Methods - Antlerless (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Grizzly Island",
+    "huntCode": "381",
+    "weapon": "rifle",
+    "label": "Grizzly Island Period 13 - General Methods - Bull (2025 tag quota 3)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Independence",
+    "huntCode": "368",
+    "weapon": "rifle",
+    "label": "Independence Period 2 - General Methods - Antlerless (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "Independence",
+    "huntCode": "369",
+    "weapon": "rifle",
+    "label": "Independence Period 2 - General Methods - Bull (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Independence",
+    "huntCode": "370",
+    "weapon": "rifle",
+    "label": "Independence Period 3 - General Methods - Antlerless (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "La Panza",
+    "huntCode": "417",
+    "weapon": "rifle",
+    "label": "La Panza Period 1 - General Methods - Antlerless (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "La Panza",
+    "huntCode": "419",
+    "weapon": "rifle",
+    "label": "La Panza Period 1 - General Methods - Bull (2025 tag quota 6)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "La Panza",
+    "huntCode": "418",
+    "weapon": "rifle",
+    "label": "La Panza Period 2 - General Methods - Antlerless (2025 tag quota 6)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "La Panza",
+    "huntCode": "420",
+    "weapon": "rifle",
+    "label": "La Panza Period 2 - General Methods - Bull (2025 tag quota 6)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 83.3
+   },
+   {
+    "unit": "Lake Pillsbury",
+    "huntCode": "387",
+    "weapon": "rifle",
+    "label": "Lake Pillsbury Period 1 - General Methods - Antlerless (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Lake Pillsbury",
+    "huntCode": "388",
+    "weapon": "rifle",
+    "label": "Lake Pillsbury Period 2 - General Methods - Antlerless (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Lake Pillsbury",
+    "huntCode": "389",
+    "weapon": "rifle",
+    "label": "Lake Pillsbury Period 3 - General Methods - Antlerless (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Lake Pillsbury",
+    "huntCode": "390",
+    "weapon": "rifle",
+    "label": "Lake Pillsbury Period 4 - General Methods - Bull (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Lake Pillsbury",
+    "huntCode": "391",
+    "weapon": "rifle",
+    "label": "Lake Pillsbury Period 5 - General Methods - Bull (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Lone Pine",
+    "huntCode": "486",
+    "weapon": "rifle",
+    "label": "Lone Pine Period 2 - General Methods - Bull (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "San Luis Reservoir",
+    "huntCode": "497",
+    "weapon": "rifle",
+    "label": "San Luis Reservoir - General Methods - Either Sex (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "West Tinemaha",
+    "huntCode": "315",
+    "weapon": "rifle",
+    "label": "West Tinemaha Period 1 General Methods Bull (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "Whitney",
+    "huntCode": "323",
+    "weapon": "rifle",
+    "label": "Whitney Period 2 - General Methods - Bull (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "Whitney",
+    "huntCode": "324",
+    "weapon": "rifle",
+    "label": "Whitney Period 3 - General Methods - Antlerless (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "unit": "5",
+    "huntCode": "780",
+    "weapon": "rifle",
+    "label": "Zone 5 - Big Valley Apprentice - General Methods - Either-Sex (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "6",
+    "huntCode": "766",
+    "weapon": "rifle",
+    "label": "Zone 6 - Surprise Valley Apprentice - General Methods - Either-Sex (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 75
+   },
+   {
+    "unit": "2",
+    "huntCode": "728",
+    "weapon": "archery",
+    "label": "Zone 2 - Clear Lake - Archery - Buck (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "4",
+    "huntCode": "745",
+    "weapon": "archery",
+    "label": "Zone 4 - Lassen - Archery - Buck (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 75
+   },
+   {
+    "unit": "5",
+    "huntCode": "755",
+    "weapon": "archery",
+    "label": "Zone 5 - Big Valley - Archery - Buck (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 0
+   },
+   {
+    "unit": "6",
+    "huntCode": "765",
+    "weapon": "archery",
+    "label": "Zone 6 - Surprise Valley - Archery - Buck (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "1",
+    "huntCode": "710",
+    "weapon": "rifle",
+    "label": "Zone 1 - Mount Dome - General Methods - Buck (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "2",
+    "huntCode": "720",
+    "weapon": "rifle",
+    "label": "Zone 2 - Clear Lake - General Methods - Buck (2025 tag quota 6)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 50
+   },
+   {
+    "unit": "3",
+    "huntCode": "730",
+    "weapon": "rifle",
+    "label": "Zone 3 - Likely Tables Period 1 - General Methods - Buck (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "4",
+    "huntCode": "740",
+    "weapon": "rifle",
+    "label": "Zone 4 - Lassen Period 1 - General Methods - Buck (2025 tag quota 35)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 90.6
+   },
+   {
+    "unit": "4",
+    "huntCode": "742",
+    "weapon": "rifle",
+    "label": "Zone 4 - Lassen Period 2 - General Methods - Buck (2025 tag quota 35)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 89.7
+   },
+   {
+    "unit": "5",
+    "huntCode": "750",
+    "weapon": "rifle",
+    "label": "Zone 5 - Big Valley - General Methods - Buck (2025 tag quota 5)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 50
+   },
+   {
+    "unit": "6",
+    "huntCode": "760",
+    "weapon": "rifle",
+    "label": "Zone 6 - Surprise Valley - General Methods - Buck (2025 tag quota 10)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 80
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "unit": "1",
+    "huntCode": "501",
+    "weapon": "rifle",
+    "label": "Zone 1 - Marble and Clipper Mountains - General Method - Ram (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "2",
+    "huntCode": "502",
+    "weapon": "rifle",
+    "label": "Zone 2 - Old Dad and Kelso Peak Mountains - General Method - Ram (2025 tag quota 3)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "3",
+    "huntCode": "503",
+    "weapon": "rifle",
+    "label": "Zone 3 - Clark and Kingston Mountain Ranges - General Method - Ram (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "4",
+    "huntCode": "504",
+    "weapon": "rifle",
+    "label": "Zone 4 - Orocopia Mountains - General Method - Ram (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "5",
+    "huntCode": "505",
+    "weapon": "rifle",
+    "label": "Zone 5 - San Gorgonio Wilderness - General Method - Ram (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "6",
+    "huntCode": "506",
+    "weapon": "rifle",
+    "label": "Zone 6 - Sheep Hole Mountains - General Method - Ram (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "7",
+    "huntCode": "507",
+    "weapon": "rifle",
+    "label": "Zone 7 - White Mountains - General Method - Ram P1 (2025 tag quota 3)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "7",
+    "huntCode": "511",
+    "weapon": "rifle",
+    "label": "Zone 7 - White Mountains - General Method - Ram P2 (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "8",
+    "huntCode": "508",
+    "weapon": "rifle",
+    "label": "Zone 8 - South Bristol Mountains - General Method - Ram (2025 tag quota 1)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "9",
+    "huntCode": "509",
+    "weapon": "rifle",
+    "label": "Zone 9 - Cady Mountains - General Method - Ram (2025 tag quota 2)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "10",
+    "huntCode": "512",
+    "weapon": "rifle",
+    "label": "Zone 10 - Newberry, Rodman and Ord Mountains (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   },
+   {
+    "unit": "10",
+    "huntCode": "513",
+    "weapon": "rifle",
+    "label": "Zone 10 - Newberry, Rodman and Ord Mountains P2 (2025 tag quota 4)",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 100
+   }
+  ]
+ }
+}

@@ -1,0 +1,2287 @@
+{
+ "state": "OK",
+ "year": 2025,
+ "source": {
+  "name": "Oklahoma Department of Wildlife Conservation — \"Crunch the Numbers and Up Your Drawing Odds\" (Outdoor Oklahoma Journal), 2025-26 controlled hunt draw data tables",
+  "url": "https://www.wildlifedepartment.com/outdoorok/ooj/increase-your-winning-odds-controlled-hunts"
+ },
+ "notes": "ODWC controlled hunts drawing held June 2025 (2025-26 hunts; pronghorn = 2025 season). Per-hunt rows come from the data tables embedded in the ODWC article https://www.wildlifedepartment.com/outdoorok/ooj/increase-your-winning-odds-controlled-hunts (tables \"Deer Hunts\", \"Youth Deer Hunts\", \"Deer Hunts (Nonambulatory, Vehicle)\", \"Elk Hunts\", \"Pronghorn Hunts\": Hunt #, Location & Permit, Hunt Type, Begin/End Date, Applicants, Permits, Draw Ratio). Row sums equal ODWC's published category totals exactly (deer 69,199 applicants / 3,708 permits; youth deer 4,173 / 812; motor-vehicle/non-ambulatory deer 342 / 114; elk 37,906 / 306; pronghorn 13,501 / 40). huntCode = ODWC hunt number. tags = \"Permits\"; applicants = \"Applicants\", which ODWC says INCLUDES 1st through 3rd (elk, youth, non-ambulatory), 1st-2nd (pronghorn) or 1st-5th (deer) choice selections, so it is NOT first-choice applicants and is not split by residency. Residents and nonresidents draw from ONE pool (ODWC publishes no residency split), so draw.resident and draw.nonresident are null and the combined counts sit in tags/applicants. successPct is left null: ODWC publishes only a \"Draw Ratio\" (applicants ÷ permits, e.g. 1 in 216.7) built on all-choice applicants. Points: ODWC uses weighted-random preference points (each point = one extra chance, not highest-points-first); for elk and pronghorn half the permits are first drawn among applicants with 20+ points. No points-needed or per-point-level data is published, so no minPoints/pointLines. unit = the hunt area (WMA / NWR / Corps of Engineers area / county), lightly normalized so draw and harvest spell it the same (e.g. \"Wichita Mts. NWR\" and \"Wichita Mountains WR\" -> \"Wichita Mountains NWR\"; \"Ft.\" -> \"Fort\"; \"COE\" -> \"CoE\"). The full ODWC location string is kept in label. weapon: ODWC \"Gun\" -> rifle (any legal firearm), Muzzleloader -> muzzleloader, Archery -> archery; youth \"Shotgun\"/\"Muzzleloader/Shotgun\" hunts have no weapon set. Season dates are from the same tables. Elk and pronghorn controlled hunts are once in a lifetime. Not included: turkey categories (out of scope); landowner antelope permit drawing (no statistics published); 2026 drawing (June 2026) statistics were not yet published by ODWC as of 2026-10-07. Over-the-counter seasons (statewide deer; elk on private land in open zones with zone quotas; archery pronghorn) have no draw and are not rows here.",
+ "species": {
+  "ELK": [
+   {
+    "huntCode": "1001",
+    "unit": "Cookson WMA",
+    "label": "Elk (Category 1, once in a lifetime): Cookson WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-09-25",
+     "close": "2025-09-26"
+    },
+    "tags": 1,
+    "applicants": 3807,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "1020",
+    "unit": "Wichita Mountains NWR",
+    "label": "Elk (Category 1, once in a lifetime): Wichita Mountains WR - Bull (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-02",
+     "close": "2025-12-04"
+    },
+    "tags": 40,
+    "applicants": 8668,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "1021",
+    "unit": "Wichita Mountains NWR",
+    "label": "Elk (Category 1, once in a lifetime): Wichita Mountains WR - Cow (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-02",
+     "close": "2025-12-04"
+    },
+    "tags": 70,
+    "applicants": 1091,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "1030",
+    "unit": "Wichita Mountains NWR",
+    "label": "Elk (Category 1, once in a lifetime): Wichita Mountains WR (walk-in only) - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-15",
+     "close": "2025-12-19"
+    },
+    "tags": 20,
+    "applicants": 9031,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "1031",
+    "unit": "Wichita Mountains NWR",
+    "label": "Elk (Category 1, once in a lifetime): Wichita Mountains WR (walk-in only) - Cow (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-15",
+     "close": "2025-12-19"
+    },
+    "tags": 45,
+    "applicants": 769,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "1040",
+    "unit": "Wichita Mountains NWR",
+    "label": "Elk (Category 1, once in a lifetime): Wichita Mountains WR (walk-in only) - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2026-01-05",
+     "close": "2026-01-09"
+    },
+    "tags": 20,
+    "applicants": 7937,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "1041",
+    "unit": "Wichita Mountains NWR",
+    "label": "Elk (Category 1, once in a lifetime): Wichita Mountains WR (walk-in only) - Cow (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2026-01-05",
+     "close": "2026-01-09"
+    },
+    "tags": 45,
+    "applicants": 558,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "1050",
+    "unit": "Wichita Mountains NWR",
+    "label": "Elk (Category 1, once in a lifetime): Wichita Mountains WR (walk-in only) - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2026-01-12",
+     "close": "2026-01-16"
+    },
+    "tags": 20,
+    "applicants": 5583,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "1051",
+    "unit": "Wichita Mountains NWR",
+    "label": "Elk (Category 1, once in a lifetime): Wichita Mountains WR (walk-in only) - Cow (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2026-01-12",
+     "close": "2026-01-16"
+    },
+    "tags": 45,
+    "applicants": 462,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "huntCode": "2001",
+    "unit": "Cimarron County",
+    "label": "Pronghorn (Category 2, once in a lifetime): Cimarron County - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-09-04",
+     "close": "2025-09-07"
+    },
+    "tags": 10,
+    "applicants": 5985,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "2002",
+    "unit": "Cimarron County",
+    "label": "Pronghorn (Category 2, once in a lifetime): Cimarron County - Doe Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-09-08",
+     "close": "2025-09-17"
+    },
+    "tags": 15,
+    "applicants": 1263,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "2010",
+    "unit": "Texas County",
+    "label": "Pronghorn (Category 2, once in a lifetime): Texas County - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-09-04",
+     "close": "2025-09-07"
+    },
+    "tags": 5,
+    "applicants": 5483,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "2011",
+    "unit": "Texas County",
+    "label": "Pronghorn (Category 2, once in a lifetime): Texas County - Doe Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-09-08",
+     "close": "2025-09-17"
+    },
+    "tags": 10,
+    "applicants": 770,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   }
+  ],
+  "DEER": [
+   {
+    "huntCode": "3001",
+    "unit": "Atoka WMA",
+    "label": "Deer (Category 3): Atoka WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-21",
+     "close": "2025-11-23"
+    },
+    "tags": 30,
+    "applicants": 1353,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3007",
+    "unit": "Beaver River WMA McFarland Unit",
+    "label": "Deer (Category 3): Beaver River WMA, McFarland Unit - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-22",
+     "close": "2025-11-23"
+    },
+    "tags": 2,
+    "applicants": 523,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3008",
+    "unit": "Beaver River WMA",
+    "label": "Deer (Category 3): Beaver River WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-22",
+     "close": "2025-11-23"
+    },
+    "tags": 2,
+    "applicants": 449,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3020",
+    "unit": "Candy Creek WMA",
+    "label": "Deer (Category 3): Candy Creek WMA - Either Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-25",
+     "close": "2025-11-02"
+    },
+    "tags": 12,
+    "applicants": 311,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3021",
+    "unit": "Candy Creek WMA",
+    "label": "Deer (Category 3): Candy Creek WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-22",
+     "close": "2025-12-07"
+    },
+    "tags": 12,
+    "applicants": 544,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3030",
+    "unit": "Canton WMA",
+    "label": "Deer (Category 3): Canton WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-22",
+     "close": "2025-11-23"
+    },
+    "tags": 75,
+    "applicants": 1001,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3044",
+    "unit": "Cherokee GMA",
+    "label": "Deer (Category 3): Cherokee GMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-12",
+     "close": "2025-11-12"
+    },
+    "tags": 60,
+    "applicants": 1393,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3046",
+    "unit": "Cherokee GMA",
+    "label": "Deer (Category 3): Cherokee GMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-13",
+     "close": "2025-11-13"
+    },
+    "tags": 60,
+    "applicants": 1101,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3060",
+    "unit": "Cookson WMA",
+    "label": "Deer (Category 3): Cookson WMA - Either Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-08",
+     "close": "2025-11-09"
+    },
+    "tags": 12,
+    "applicants": 1141,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3061",
+    "unit": "Cookson WMA",
+    "label": "Deer (Category 3): Cookson WMA - Antlerless Only (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-08",
+     "close": "2025-11-08"
+    },
+    "tags": 23,
+    "applicants": 70,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3062",
+    "unit": "Cookson WMA",
+    "label": "Deer (Category 3): Cookson WMA - Antlerless Only (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-09",
+     "close": "2025-11-09"
+    },
+    "tags": 23,
+    "applicants": 45,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3063",
+    "unit": "Cookson WMA",
+    "label": "Deer (Category 3): Cookson WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-01",
+     "close": "2025-11-02"
+    },
+    "tags": 12,
+    "applicants": 1940,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3064",
+    "unit": "Cookson WMA",
+    "label": "Deer (Category 3): Cookson WMA - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-01",
+     "close": "2025-11-01"
+    },
+    "tags": 18,
+    "applicants": 127,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3065",
+    "unit": "Cookson WMA",
+    "label": "Deer (Category 3): Cookson WMA - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-02",
+     "close": "2025-11-02"
+    },
+    "tags": 18,
+    "applicants": 87,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3080",
+    "unit": "Deep Fork NWR",
+    "label": "Deer (Category 3): Deep Fork NWR - 2 (Only 1 Antlered) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-13",
+     "close": "2025-10-19"
+    },
+    "tags": 50,
+    "applicants": 933,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3081",
+    "unit": "Deep Fork NWR",
+    "label": "Deer (Category 3): Deep Fork NWR - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-11-03",
+     "close": "2025-11-30"
+    },
+    "tags": 300,
+    "applicants": 927,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3090",
+    "unit": "Four Canyon Preserve",
+    "label": "Deer (Category 3): Four Canyon Preserve - Antlerless Only (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-17",
+     "close": "2025-10-18"
+    },
+    "tags": 4,
+    "applicants": 21,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3091",
+    "unit": "Four Canyon Preserve",
+    "label": "Deer (Category 3): Four Canyon Preserve - 2 (Either Sex) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-17",
+     "close": "2025-10-18"
+    },
+    "tags": 2,
+    "applicants": 173,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3092",
+    "unit": "Four Canyon Preserve",
+    "label": "Deer (Category 3): Four Canyon Preserve - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-08"
+    },
+    "tags": 4,
+    "applicants": 47,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3093",
+    "unit": "Four Canyon Preserve",
+    "label": "Deer (Category 3): Four Canyon Preserve - 2 (Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-08"
+    },
+    "tags": 2,
+    "applicants": 473,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3110",
+    "unit": "Fort Gibson WRP",
+    "label": "Deer (Category 3): Fort Gibson WRP - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-10-21",
+     "close": "2025-10-21"
+    },
+    "tags": 50,
+    "applicants": 575,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3111",
+    "unit": "Fort Gibson WRP",
+    "label": "Deer (Category 3): Fort Gibson WRP - Antlerless Only (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-22",
+     "close": "2025-10-22"
+    },
+    "tags": 50,
+    "applicants": 149,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3112",
+    "unit": "Fort Gibson WRP",
+    "label": "Deer (Category 3): Fort Gibson WRP - Antlerless Only (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-18",
+     "close": "2025-11-18"
+    },
+    "tags": 50,
+    "applicants": 137,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3113",
+    "unit": "Fort Gibson WRP",
+    "label": "Deer (Category 3): Fort Gibson WRP - Either Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-19",
+     "close": "2025-11-19"
+    },
+    "tags": 25,
+    "applicants": 986,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3114",
+    "unit": "Fort Gibson WRP",
+    "label": "Deer (Category 3): Fort Gibson WRP - Antlerless Only (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-19",
+     "close": "2025-11-19"
+    },
+    "tags": 25,
+    "applicants": 109,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3120",
+    "unit": "Grady County WMA",
+    "label": "Deer (Category 3): Grady County WMA - Either Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-25",
+     "close": "2025-11-02"
+    },
+    "tags": 10,
+    "applicants": 243,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3121",
+    "unit": "Grady County WMA",
+    "label": "Deer (Category 3): Grady County WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-22",
+     "close": "2025-11-30"
+    },
+    "tags": 10,
+    "applicants": 532,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3150",
+    "unit": "Lexington WMA",
+    "label": "Deer (Category 3): Lexington WMA - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-15",
+     "close": "2025-11-15"
+    },
+    "tags": 135,
+    "applicants": 776,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3151",
+    "unit": "Lexington WMA",
+    "label": "Deer (Category 3): Lexington WMA - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-16",
+     "close": "2025-11-16"
+    },
+    "tags": 135,
+    "applicants": 501,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3152",
+    "unit": "Lexington WMA",
+    "label": "Deer (Category 3): Lexington WMA - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-19",
+     "close": "2025-11-19"
+    },
+    "tags": 135,
+    "applicants": 411,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3153",
+    "unit": "Lexington WMA",
+    "label": "Deer (Category 3): Lexington WMA - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-20",
+     "close": "2025-11-20"
+    },
+    "tags": 135,
+    "applicants": 339,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3160",
+    "unit": "Little River NWR",
+    "label": "Deer (Category 3): Little River NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-31",
+     "close": "2025-11-02"
+    },
+    "tags": 30,
+    "applicants": 605,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3161",
+    "unit": "Little River NWR",
+    "label": "Deer (Category 3): Little River NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 30,
+    "applicants": 696,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3170",
+    "unit": "McAlester AAP",
+    "label": "Deer (Category 3): McAlester AAP Physically Challenged - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-10-10",
+     "close": "2025-10-12"
+    },
+    "tags": 80,
+    "applicants": 192,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3171",
+    "unit": "McAlester AAP",
+    "label": "Deer (Category 3): McAlester AAP - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-10-17",
+     "close": "2025-10-19"
+    },
+    "tags": 275,
+    "applicants": 1980,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3172",
+    "unit": "McAlester AAP",
+    "label": "Deer (Category 3): McAlester AAP - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-10-24",
+     "close": "2025-10-26"
+    },
+    "tags": 275,
+    "applicants": 2664,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3173",
+    "unit": "McAlester AAP",
+    "label": "Deer (Category 3): McAlester AAP - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-10-31",
+     "close": "2025-11-02"
+    },
+    "tags": 275,
+    "applicants": 4011,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3174",
+    "unit": "McAlester AAP",
+    "label": "Deer (Category 3): McAlester AAP - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 275,
+    "applicants": 5038,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3175",
+    "unit": "McAlester AAP",
+    "label": "Deer (Category 3): McAlester AAP - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-11-14",
+     "close": "2025-11-16"
+    },
+    "tags": 275,
+    "applicants": 4811,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3190",
+    "unit": "McCurtain Co. WA",
+    "label": "Deer (Category 3): McCurtain Co. WA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 16,
+    "applicants": 888,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3201",
+    "unit": "McGee Creek WMA",
+    "label": "Deer (Category 3): McGee Creek WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-21",
+     "close": "2025-11-23"
+    },
+    "tags": 65,
+    "applicants": 1293,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3203",
+    "unit": "Neosho WMA",
+    "label": "Deer (Category 3): Neosho WMA - Either Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-08",
+     "close": "2025-11-09"
+    },
+    "tags": 6,
+    "applicants": 237,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3206",
+    "unit": "Oka'Yanahli Preserve",
+    "label": "Deer (Category 3): Oka'Yanahli Preserve - 2 (Antlerless Only) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-03",
+     "close": "2025-10-05"
+    },
+    "tags": 7,
+    "applicants": 116,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3207",
+    "unit": "Oka'Yanahli Preserve",
+    "label": "Deer (Category 3): Oka'Yanahli Preserve - 2 (Antlerless Only) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-12",
+     "close": "2025-12-14"
+    },
+    "tags": 7,
+    "applicants": 92,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3210",
+    "unit": "Okmulgee GMA",
+    "label": "Deer (Category 3): Okmulgee GMA - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-15",
+     "close": "2025-11-16"
+    },
+    "tags": 30,
+    "applicants": 1324,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3220",
+    "unit": "Osage-Western Wall WMA",
+    "label": "Deer (Category 3): Osage-Western Wall WMA - Either Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-11"
+    },
+    "tags": 10,
+    "applicants": 1051,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3223",
+    "unit": "Pontotoc Ridge Preserve",
+    "label": "Deer (Category 3): Pontotoc Ridge Preserve - 2 (Antlerless Only) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-03",
+     "close": "2025-10-05"
+    },
+    "tags": 6,
+    "applicants": 63,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3224",
+    "unit": "Pontotoc Ridge Preserve",
+    "label": "Deer (Category 3): Pontotoc Ridge Preserve - 2 (Antlerless Only) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-10",
+     "close": "2025-10-12"
+    },
+    "tags": 6,
+    "applicants": 55,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3225",
+    "unit": "Pontotoc Ridge Preserve",
+    "label": "Deer (Category 3): Pontotoc Ridge Preserve - 2 (Antlerless Only) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-12",
+     "close": "2025-12-14"
+    },
+    "tags": 6,
+    "applicants": 60,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3230",
+    "unit": "Pushmataha WMA",
+    "label": "Deer (Category 3): Pushmataha WMA - Either Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-12-05",
+     "close": "2025-12-07"
+    },
+    "tags": 50,
+    "applicants": 1149,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3240",
+    "unit": "Salt Plains NWR",
+    "label": "Deer (Category 3): Salt Plains NWR - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-12-01",
+     "close": "2025-12-04"
+    },
+    "tags": 25,
+    "applicants": 455,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3241",
+    "unit": "Salt Plains NWR Wilderness Area",
+    "label": "Deer (Category 3): Salt Plains NWR Wilderness Area - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-12-01",
+     "close": "2025-12-04"
+    },
+    "tags": 10,
+    "applicants": 423,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3242",
+    "unit": "Salt Plains NWR",
+    "label": "Deer (Category 3): Salt Plains NWR - 2 (1st Antlerless, 2nd Either Sex) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-03",
+     "close": "2025-11-05"
+    },
+    "tags": 25,
+    "applicants": 897,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3243",
+    "unit": "Salt Plains NWR Wilderness Area",
+    "label": "Deer (Category 3): Salt Plains NWR Wilderness Area - 2 (1st Antlerless, 2nd Either Sex) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-03",
+     "close": "2025-11-05"
+    },
+    "tags": 10,
+    "applicants": 685,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3244",
+    "unit": "Salt Plains NWR",
+    "label": "Deer (Category 3): Salt Plains NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-12",
+     "close": "2025-11-14"
+    },
+    "tags": 25,
+    "applicants": 2212,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3245",
+    "unit": "Salt Plains NWR Wilderness Area",
+    "label": "Deer (Category 3): Salt Plains NWR Wilderness Area - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-12",
+     "close": "2025-11-14"
+    },
+    "tags": 10,
+    "applicants": 1741,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3246",
+    "unit": "Salt Plains NWR",
+    "label": "Deer (Category 3): Salt Plains NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-17",
+     "close": "2025-11-19"
+    },
+    "tags": 25,
+    "applicants": 1542,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3247",
+    "unit": "Salt Plains NWR Wilderness Area",
+    "label": "Deer (Category 3): Salt Plains NWR Wilderness Area - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-17",
+     "close": "2025-11-19"
+    },
+    "tags": 10,
+    "applicants": 1277,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3275",
+    "unit": "Sans Bois WMA",
+    "label": "Deer (Category 3): Sans Bois WMA - Either Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 15,
+    "applicants": 388,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3276",
+    "unit": "Sans Bois WMA",
+    "label": "Deer (Category 3): Sans Bois WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-24",
+     "close": "2025-10-26"
+    },
+    "tags": 15,
+    "applicants": 668,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3280",
+    "unit": "Sequoyah NWR",
+    "label": "Deer (Category 3): Sequoyah NWR - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-11-10",
+     "close": "2025-11-14"
+    },
+    "tags": 30,
+    "applicants": 1089,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3281",
+    "unit": "Sequoyah NWR",
+    "label": "Deer (Category 3): Sequoyah NWR - 2 (Antlerless Only) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-29",
+     "close": "2025-10-31"
+    },
+    "tags": 30,
+    "applicants": 243,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3282",
+    "unit": "Sequoyah NWR",
+    "label": "Deer (Category 3): Sequoyah NWR - 2 (Antlerless Only) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-19",
+     "close": "2025-11-21"
+    },
+    "tags": 30,
+    "applicants": 223,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3283",
+    "unit": "Sequoyah NWR",
+    "label": "Deer (Category 3): Sequoyah NWR - 2 (Antlerless Only) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-12-03",
+     "close": "2025-12-05"
+    },
+    "tags": 30,
+    "applicants": 228,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3284",
+    "unit": "Sequoyah NWR, Refuge Islands",
+    "label": "Deer (Category 3): Sequoyah NWR, Refuge Islands - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-11-10",
+     "close": "2025-11-14"
+    },
+    "tags": 4,
+    "applicants": 74,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3286",
+    "unit": "Sequoyah Resort Park",
+    "label": "Deer (Category 3): Sequoyah Resort Park - 2 (1 Either Sex, 1 Antlerless) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-12-06",
+     "close": "2025-12-07"
+    },
+    "tags": 24,
+    "applicants": 1113,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3290",
+    "unit": "Spavinaw GMA",
+    "label": "Deer (Category 3): Spavinaw GMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-25",
+     "close": "2025-10-26"
+    },
+    "tags": 20,
+    "applicants": 1286,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3291",
+    "unit": "Spavinaw GMA",
+    "label": "Deer (Category 3): Spavinaw GMA - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-25",
+     "close": "2025-10-26"
+    },
+    "tags": 30,
+    "applicants": 176,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3300",
+    "unit": "Tishomingo NWR",
+    "label": "Deer (Category 3): Tishomingo NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-20",
+     "close": "2025-11-21"
+    },
+    "tags": 20,
+    "applicants": 775,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3320",
+    "unit": "Washita NWR",
+    "label": "Deer (Category 3): Washita NWR - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-11",
+     "close": "2025-11-12"
+    },
+    "tags": 5,
+    "applicants": 122,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3340",
+    "unit": "Wichita Mountains NWR",
+    "label": "Deer (Category 3): Wichita Mountains WR - Antlered Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-18",
+     "close": "2025-11-20"
+    },
+    "tags": 30,
+    "applicants": 8067,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3341",
+    "unit": "Wichita Mountains NWR",
+    "label": "Deer (Category 3): Wichita Mts. NWR - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-18",
+     "close": "2025-11-20"
+    },
+    "tags": 40,
+    "applicants": 514,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3350",
+    "unit": "Salt Plains State Park",
+    "label": "Deer (Category 3): Salt Plains State Park - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-10-14",
+     "close": "2025-10-17"
+    },
+    "tags": 10,
+    "applicants": 349,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3351",
+    "unit": "Salt Plains State Park",
+    "label": "Deer (Category 3): Salt Plains State Park - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-12-08",
+     "close": "2025-12-11"
+    },
+    "tags": 10,
+    "applicants": 354,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "3370",
+    "unit": "Tishomingo NWR",
+    "label": "Deer (Category 3): Tishomingo NWR - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-11-08",
+     "close": "2025-11-16"
+    },
+    "tags": 20,
+    "applicants": 556,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5006",
+    "unit": "Beaver River WMA McFarland Unit",
+    "label": "Youth deer (Category 5): Beaver River WMA, McFarland Unit - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-17",
+     "close": "2025-10-19"
+    },
+    "tags": 15,
+    "applicants": 145,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5009",
+    "unit": "Camp Gruber Cantonment",
+    "label": "Youth deer (Category 5): Camp Gruber Cantonment - 2 (1st Antlerless, 2nd Either Sex) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-28",
+     "close": "2025-11-30"
+    },
+    "tags": 40,
+    "applicants": 130,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5010",
+    "unit": "Cherokee GMA",
+    "label": "Youth deer (Category 5): Cherokee GMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-01",
+     "close": "2025-11-02"
+    },
+    "tags": 50,
+    "applicants": 168,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5014",
+    "unit": "Canton WRP",
+    "label": "Youth deer (Category 5): Canton WRP (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-08",
+     "close": "2025-11-16"
+    },
+    "tags": 2,
+    "applicants": 102,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5015",
+    "unit": "Canton WRP",
+    "label": "Youth deer (Category 5): Canton WRP (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-13",
+     "close": "2025-12-21"
+    },
+    "tags": 2,
+    "applicants": 58,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5020",
+    "unit": "Cookson WMA",
+    "label": "Youth deer (Category 5): Cookson WMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-25",
+     "close": "2025-10-26"
+    },
+    "tags": 30,
+    "applicants": 146,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5025",
+    "unit": "Cross Timbers WMA",
+    "label": "Youth deer (Category 5): Cross Timbers WMA - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-22",
+     "close": "2025-11-30"
+    },
+    "tags": 30,
+    "applicants": 16,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5030",
+    "unit": "Deep Fork NWR",
+    "label": "Youth deer (Category 5): Deep Fork NWR - 2 (Only 1 Antlered) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-20",
+     "close": "2025-10-26"
+    },
+    "tags": 25,
+    "applicants": 70,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5035",
+    "unit": "Eufaula CoE Gaines Creek",
+    "label": "Youth deer (Category 5): Eufaula CoE - Gaines Creek PUA (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-31",
+     "close": "2025-11-02"
+    },
+    "tags": 5,
+    "applicants": 72,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5040",
+    "unit": "Fort Cobb WMA and SP",
+    "label": "Youth deer (Category 5): Fort Cobb WMA and SP - Antlerless Only (Muzzleloader/Shotgun)",
+    "season": {
+     "open": "2025-10-18",
+     "close": "2025-10-19"
+    },
+    "tags": 25,
+    "applicants": 22,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5050",
+    "unit": "Fort Gibson WRP",
+    "label": "Youth deer (Category 5): Fort Gibson WRP - 2 (Only 1 Antlered) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-15",
+     "close": "2025-11-15"
+    },
+    "tags": 20,
+    "applicants": 71,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5055",
+    "unit": "Kaw Lake CoE",
+    "label": "Youth deer (Category 5): Kaw Lake CoE - 2 (1 Either Sex, 1 Doe) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 6,
+    "applicants": 172,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5060",
+    "unit": "Hugo WMA",
+    "label": "Youth deer (Category 5): Hugo WMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-10",
+     "close": "2025-10-12"
+    },
+    "tags": 30,
+    "applicants": 108,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5061",
+    "unit": "Hugo Lake CoE",
+    "label": "Youth deer (Category 5): Hugo Lake CoE (Kiamichi Park) - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-10",
+     "close": "2025-10-12"
+    },
+    "tags": 10,
+    "applicants": 168,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5062",
+    "unit": "Hugo Lake CoE",
+    "label": "Youth deer (Category 5): Hugo Lake CoE (Kiamichi Park) - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-12",
+     "close": "2025-12-14"
+    },
+    "tags": 10,
+    "applicants": 142,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5070",
+    "unit": "James Collins WMA",
+    "label": "Youth deer (Category 5): James Collins WMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-17",
+     "close": "2025-10-19"
+    },
+    "tags": 40,
+    "applicants": 148,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5071",
+    "unit": "James Collins WMA",
+    "label": "Youth deer (Category 5): James Collins WMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-24",
+     "close": "2025-10-26"
+    },
+    "tags": 40,
+    "applicants": 210,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5080",
+    "unit": "Keystone/Heyburn CoE",
+    "label": "Youth deer (Category 5): Keystone/Heyburn CoE - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-05",
+     "close": "2025-12-07"
+    },
+    "tags": 11,
+    "applicants": 125,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5085",
+    "unit": "Little River NWR",
+    "label": "Youth deer (Category 5): Little River NWR - 2 Deer (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-24",
+     "close": "2025-10-26"
+    },
+    "tags": 15,
+    "applicants": 36,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5090",
+    "unit": "McAlester AAP",
+    "label": "Youth deer (Category 5): McAlester AAP - Doe (Shotgun)",
+    "season": {
+     "open": "2025-11-28",
+     "close": "2025-11-30"
+    },
+    "tags": 25,
+    "applicants": 34,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5095",
+    "unit": "Neosho WMA",
+    "label": "Youth deer (Category 5): Neosho WMA - Either-Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-11",
+     "close": "2025-10-12"
+    },
+    "tags": 6,
+    "applicants": 12,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5096",
+    "unit": "Neosho WMA",
+    "label": "Youth deer (Category 5): Neosho WMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-01",
+     "close": "2025-11-02"
+    },
+    "tags": 6,
+    "applicants": 34,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5111",
+    "unit": "Okmulgee GMA",
+    "label": "Youth deer (Category 5): Okmulgee GMA - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-08",
+     "close": "2025-11-09"
+    },
+    "tags": 20,
+    "applicants": 98,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5130",
+    "unit": "Pine Creek WMA",
+    "label": "Youth deer (Category 5): Pine Creek WMA - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 25,
+    "applicants": 96,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5140",
+    "unit": "Pushmataha WMA",
+    "label": "Youth deer (Category 5): Pushmataha WMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-24",
+     "close": "2025-10-26"
+    },
+    "tags": 35,
+    "applicants": 92,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5141",
+    "unit": "Pushmataha WMA",
+    "label": "Youth deer (Category 5): Pushmataha WMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 35,
+    "applicants": 146,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5150",
+    "unit": "Salt Plains NWR",
+    "label": "Youth deer (Category 5): Salt Plains NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-24",
+     "close": "2025-10-26"
+    },
+    "tags": 25,
+    "applicants": 150,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5160",
+    "unit": "Sequoyah NWR",
+    "label": "Youth deer (Category 5): Sequoyah NWR - 2 (Only 1 Antlered) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-17",
+     "close": "2025-10-19"
+    },
+    "tags": 30,
+    "applicants": 124,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5170",
+    "unit": "Sequoyah Resort Park",
+    "label": "Youth deer (Category 5): Sequoyah Resort Park - 2 (1 Either Sex, 1 Antlerless) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-12-13",
+     "close": "2025-12-14"
+    },
+    "tags": 16,
+    "applicants": 196,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5175",
+    "unit": "Skiatook CoE",
+    "label": "Youth deer (Category 5): Skiatook CoE - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-05",
+     "close": "2025-12-07"
+    },
+    "tags": 4,
+    "applicants": 116,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5180",
+    "unit": "Spavinaw GMA",
+    "label": "Youth deer (Category 5): Spavinaw GMA - Either-Sex (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-01",
+     "close": "2025-11-02"
+    },
+    "tags": 40,
+    "applicants": 55,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5181",
+    "unit": "Spavinaw GMA",
+    "label": "Youth deer (Category 5): Spavinaw GMA - Either-Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 40,
+    "applicants": 140,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5190",
+    "unit": "Tenkiller CoE",
+    "label": "Youth deer (Category 5): Tenkiller CoE - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-31",
+     "close": "2025-11-02"
+    },
+    "tags": 10,
+    "applicants": 109,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5200",
+    "unit": "Texoma CoE",
+    "label": "Youth deer (Category 5): Texoma CoE (Burns Run) - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-09"
+    },
+    "tags": 6,
+    "applicants": 122,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5201",
+    "unit": "Texoma CoE",
+    "label": "Youth deer (Category 5): Texoma CoE (Lakeside) - 2 (Only 1 Antlered) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-14",
+     "close": "2025-11-16"
+    },
+    "tags": 8,
+    "applicants": 121,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5210",
+    "unit": "Tishomingo NWR",
+    "label": "Youth deer (Category 5): Tishomingo NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-23",
+     "close": "2025-10-24"
+    },
+    "tags": 20,
+    "applicants": 108,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5220",
+    "unit": "USDA Grazinglands RL",
+    "label": "Youth deer (Category 5): USDA Grazinglands R.L. - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-08"
+    },
+    "tags": 20,
+    "applicants": 109,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5221",
+    "unit": "USDA Grazinglands RL",
+    "label": "Youth deer (Category 5): USDA Grazinglands R.L. - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-12",
+     "close": "2025-12-13"
+    },
+    "tags": 10,
+    "applicants": 102,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5240",
+    "unit": "Washita NWR",
+    "label": "Youth deer (Category 5): Washita NWR - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-10",
+     "close": "2025-10-11"
+    },
+    "tags": 10,
+    "applicants": 46,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5260",
+    "unit": "Washita NWR",
+    "label": "Youth deer (Category 5): Washita NWR - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-07",
+     "close": "2025-11-08"
+    },
+    "tags": 10,
+    "applicants": 40,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "5270",
+    "unit": "Waurika Lake CoE",
+    "label": "Youth deer (Category 5): Waurika Lake CoE - Antlerless Only (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-08",
+     "close": "2025-11-09"
+    },
+    "tags": 5,
+    "applicants": 14,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4001",
+    "unit": "Cherokee GMA",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Cherokee GMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-10-25",
+     "close": "2025-10-26"
+    },
+    "tags": 40,
+    "applicants": 50,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4010",
+    "unit": "Cookson WMA",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Cookson WMA - Either Sex (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-15",
+     "close": "2025-11-16"
+    },
+    "tags": 12,
+    "applicants": 41,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4015",
+    "unit": "Copan CoE Parks",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Copan CoE Parks - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-12-05",
+     "close": "2025-12-07"
+    },
+    "tags": 5,
+    "applicants": 31,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4020",
+    "unit": "Deep Fork NWR",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Deep Fork NWR - 2 (Only 1 Antlered) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-10-27",
+     "close": "2025-11-02"
+    },
+    "tags": 5,
+    "applicants": 13,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4025",
+    "unit": "Fort Gibson WRP",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Fort Gibson WRP - 2 (Only 1 Antlered) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-12-16",
+     "close": "2025-12-17"
+    },
+    "tags": 10,
+    "applicants": 24,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4040",
+    "unit": "Oologah Lake CoE",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Oologah Lake CoE - 2 (1 Doe, 1 Buck) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-14",
+     "close": "2025-11-16"
+    },
+    "tags": 9,
+    "applicants": 64,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4050",
+    "unit": "Salt Plains NWR",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Salt Plains NWR - 2 (1st Antlerless, 2nd Either Sex) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-03",
+     "close": "2025-11-05"
+    },
+    "tags": 1,
+    "applicants": 10,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4051",
+    "unit": "Salt Plains NWR",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Salt Plains NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-12",
+     "close": "2025-11-14"
+    },
+    "tags": 1,
+    "applicants": 24,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4052",
+    "unit": "Salt Plains NWR",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Salt Plains NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-17",
+     "close": "2025-11-19"
+    },
+    "tags": 1,
+    "applicants": 17,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4060",
+    "unit": "Sequoyah NWR",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Sequoyah NWR - 2 (Only 1 Antlered) (Archery)",
+    "weapon": "archery",
+    "season": {
+     "open": "2025-11-10",
+     "close": "2025-11-14"
+    },
+    "tags": 2,
+    "applicants": 6,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4061",
+    "unit": "Sequoyah NWR",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Sequoyah NWR - 2 (Antlerless Only) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-11-19",
+     "close": "2025-11-21"
+    },
+    "tags": 2,
+    "applicants": 8,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4070",
+    "unit": "Sequoyah Resort Park",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Sequoyah Resort Park - 2 (1 Either Sex, 1 Antlerless) (Muzzleloader)",
+    "weapon": "muzzleloader",
+    "season": {
+     "open": "2025-12-20",
+     "close": "2025-12-21"
+    },
+    "tags": 16,
+    "applicants": 21,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "4080",
+    "unit": "Tishomingo NWR",
+    "label": "Motor-vehicle / non-ambulatory deer (Category 4): Tishomingo NWR - 2 (1st Antlerless, 2nd Either Sex) (Gun)",
+    "weapon": "rifle",
+    "season": {
+     "open": "2025-11-06",
+     "close": "2025-11-07"
+    },
+    "tags": 10,
+    "applicants": 33,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   }
+  ]
+ }
+}

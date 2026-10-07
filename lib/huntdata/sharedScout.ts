@@ -41,7 +41,7 @@ function odds(e: Entry): { pct: number | null; text: string } {
     // Show those raw numbers; tier from their ratio, capped at 100%.
     const tags = num(e.tags), apps = num(e.applicants);
     if (tags != null && apps) {
-      return { pct: Math.min(100, Math.round((1000 * tags) / apps) / 10), text: `${tags} licenses for ${apps} applicants (${yr})` };
+      return { pct: Math.min(100, Math.round((1000 * tags) / apps) / 10), text: `${tags} ${tags === 1 ? 'license' : 'licenses'} for ${apps} applicants (${yr})` };
     }
     return { pct: null, text: 'No published odds' };
   }

@@ -12,6 +12,10 @@ import neDraw from './draw/ne.json';
 import ndDraw from './draw/nd.json';
 import ksDraw from './draw/ks.json';
 import nvDraw from './draw/nv.json';
+import okDraw from './draw/ok.json';
+import caDraw from './draw/ca.json';
+import waDraw from './draw/wa.json';
+import orDraw from './draw/or.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -104,22 +108,28 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
 
   // ── Batch C: by April ────────────────────────────────────────────────────
   OR: {
-    code: 'OR', name: 'OREGON', status: 'planned', batch: 'C',
+    code: 'OR', name: 'OREGON', status: 'live', batch: 'C',
     agency: { name: 'Oregon Department of Fish and Wildlife', url: 'https://myodfw.com' },
-    drawSystem: 'hybrid', rulesVerified: false,
-    drawSystemNote: 'Controlled hunts: most tags go to the highest preference-point holders, the rest by random draw. Sheep, goat and moose are random.',
+    // Verified 2026-10-07 against ODFW's 2026 regulations and draw reports
+    // (lib/huntdata/draw/or-research.md).
+    drawSystem: 'hybrid', rulesVerified: true,
+    drawSystemNote: "Controlled deer, elk and pronghorn hunts: 75% of each hunt's tags go to the highest preference-point holders and 25% are drawn at random among the remaining first-choice applicants. Drawing your first choice resets your points to zero; points don't expire. Non-residents get at most 5% of deer and elk tags and 3% of pronghorn tags in each hunt (one tag allowed when a hunt has fewer than 35). Bighorn sheep, mountain goat and premium hunts use no points; bighorn ram and goat tags are once in a lifetime. Applications are due May 15, with results by June 12. Sheep, goat and premium tag numbers are 2026 proposals from ODFW, not final regulations.",
   },
   WA: {
-    code: 'WA', name: 'WASHINGTON', status: 'planned', batch: 'C',
+    code: 'WA', name: 'WASHINGTON', status: 'live', batch: 'C',
     agency: { name: 'Washington Department of Fish and Wildlife', url: 'https://wdfw.wa.gov' },
-    drawSystem: 'bonus-squared', rulesVerified: false,
-    drawSystemNote: 'Special permits use squared points in a random draw. General seasons need no draw.',
+    // Verified 2026-10-07 against the 2026 WDFW Big Game pamphlet
+    // (lib/huntdata/draw/wa-research.md).
+    drawSystem: 'bonus-squared', rulesVerified: true,
+    drawSystemNote: "General seasons need no draw: buy a deer or elk license and hunt the open GMUs for your weapon. Special permits are a weighted-point random draw: each application earns a point, more points mean better odds, and points reset to zero when you're drawn (WDFW has described the weighting as squared points). Residents and non-residents are in the same draw. You buy one application per category, with up to four hunt choices (two for quality deer and elk). Goat, bull moose and any-ram sheep are in effect once in a lifetime. Applications are due in May, with results by the end of June. WDFW doesn't publish odds by point level or by residency, so the odds shown are permits divided by all applicants.",
   },
   CA: {
-    code: 'CA', name: 'CALIFORNIA', status: 'planned', batch: 'C',
+    code: 'CA', name: 'CALIFORNIA', status: 'live', batch: 'C',
     agency: { name: 'California Department of Fish and Wildlife', url: 'https://wildlife.ca.gov' },
-    drawSystem: 'hybrid', rulesVerified: false,
-    drawSystemNote: 'Most premium tags go to the highest preference-point holders, the rest by random draw. Bighorn uses a modified bonus system.',
+    // Verified 2026-10-07 against the 2026 CDFW Big Game Digest
+    // (lib/huntdata/draw/ca-research.md).
+    drawSystem: 'hybrid', rulesVerified: true,
+    drawSystemNote: "Modified preference points for every species. Deer: 90% of a hunt's tags go to the highest point holders and 10% are drawn at random. Elk, pronghorn and bighorn sheep: when a hunt has four or more tags, 75% go by points and the rest at random; a hunt with fewer tags is random only. Party applications average their points. Non-residents can apply, but only one non-resident is drawn for elk and one for pronghorn statewide each year, and they get at most 10% of bighorn tags; a bighorn tag is once in a lifetime. CDFW doesn't split results by residency and doesn't publish odds at each point level, so the odds shown are tags divided by first-choice applicants across everyone — high point holders draw far more often than that. Applications run April 15 to June 2.",
   },
   SD: {
     code: 'SD', name: 'SOUTH DAKOTA', status: 'planned', batch: 'C',
@@ -128,10 +138,12 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
     drawSystemNote: 'Preference points across several draws for deer, antelope and elk. Confirm current rules with GFP.',
   },
   OK: {
-    code: 'OK', name: 'OKLAHOMA', status: 'planned', batch: 'C',
+    code: 'OK', name: 'OKLAHOMA', status: 'live', batch: 'C',
     agency: { name: 'Oklahoma Department of Wildlife Conservation', url: 'https://www.wildlifedepartment.com' },
-    drawSystem: 'preference', rulesVerified: false,
-    drawSystemNote: 'Controlled hunts drawn with preference points. Confirm current rules with ODWC.',
+    // Verified 2026-10-07 against ODWC controlled-hunt pages
+    // (lib/huntdata/draw/ok-research.md).
+    drawSystem: 'preference', rulesVerified: true,
+    drawSystemNote: "Controlled hunts are a weighted lottery: each preference point is one extra entry, so applicants with no points can still draw. Residents and non-residents apply in one pool and both need a current Oklahoma hunting license. Applications run April 1 to May 20, with results after June 10. Elk and pronghorn are once in a lifetime, and half of their permits go first to applicants with 20 or more points. Elk is drawn first, then pronghorn, then deer, and you can win only one hunt a year. Points expire after five years without applying. ODWC's applicant counts include people who listed the hunt as any of their five choices, so permits divided by applicants is not anyone's odds of drawing.",
   },
 
   // ── Batch D: by October 2027 ─────────────────────────────────────────────
@@ -153,6 +165,10 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   ND: ndDraw as DrawFile,
   KS: ksDraw as DrawFile,
   NV: nvDraw as DrawFile,
+  OK: okDraw as DrawFile,
+  CA: caDraw as DrawFile,
+  WA: waDraw as DrawFile,
+  OR: orDraw as DrawFile,
 };
 
 const MODULES: Partial<Record<StateCode, StateModule>> = {

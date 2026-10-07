@@ -45,11 +45,15 @@ const STATE_CENTER: Record<string, [number, number]> = {
   ND: [47.5, -100.5],
   KS: [38.5, -98.4],
   NV: [39.3, -116.6],
+  OK: [35.5, -97.5],
+  CA: [37.5, -119.5],
+  WA: [47.4, -120.5],
+  OR: [44.0, -120.5],
 };
 
 // States with a boundary source in /api/boundary. (Ownership + access are
 // national, so this set is the only gate on whether a unit map renders.)
-const SUPPORTED_STATES = new Set(['WY', 'ID', 'CO', 'MT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV']);
+const SUPPORTED_STATES = new Set(['WY', 'ID', 'CO', 'MT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV', 'OK', 'CA', 'WA', 'OR']);
 
 type ProxyFC = FeatureCollection & { label?: string; isRegion?: boolean };
 type Identify = { lat: number; lng: number; label: string; isPublic: boolean | null; loading: boolean };
@@ -67,6 +71,10 @@ function stateCode(state: string): string {
   if (s === 'NORTH DAKOTA') return 'ND';
   if (s === 'KANSAS') return 'KS';
   if (s === 'NEVADA') return 'NV';
+  if (s === 'OKLAHOMA') return 'OK';
+  if (s === 'CALIFORNIA') return 'CA';
+  if (s === 'WASHINGTON') return 'WA';
+  if (s === 'OREGON') return 'OR';
   return s;
 }
 
@@ -223,7 +231,7 @@ export default function UnitMap({ unit, state, species = '' }: { unit: string; s
   }, [unitBbox]);
 
   if (!supported) {
-    return <Placeholder>Unit maps are available for Wyoming, Idaho, Colorado, Montana, Arizona, New Mexico, Nebraska, North Dakota, Kansas and Nevada so far. {state} maps are coming as the pipeline backfills more states.</Placeholder>;
+    return <Placeholder>Unit maps are available for Wyoming, Idaho, Colorado, Montana, Arizona, New Mexico, Nebraska, North Dakota, Kansas, Nevada, Oklahoma, California, Washington and Oregon so far. {state} maps are coming as the pipeline backfills more states.</Placeholder>;
   }
   if (!boundary && !boundaryErr) return <Placeholder>Loading unit boundary…</Placeholder>;
 

@@ -7,6 +7,20 @@ import type { DrawStat, Hunt, Residency, SpeciesKey, StateModule, Weapon } from 
 const pick = (h: Hunt, r: Residency): DrawStat | null =>
   r === 'resident' ? h.draw.resident : h.draw.nonresident;
 
+// Under 10 hunters, a percentage overstates what's known ("100%" from one
+// hunter), so give the counts instead.
+// Some agencies (CA elk/pronghorn/sheep) print only the percentage; then the
+// hunt's tag count tells us the sample is tiny.
+export function successText(h: NonNullable<Hunt['harvest']>, tags?: number | null): string {
+  if (h.hunters != null && h.harvest != null && h.hunters < 10) {
+    return `${h.harvest} of ${h.hunters} hunter${h.hunters === 1 ? '' : 's'} (too few to judge)`;
+  }
+  if (h.hunters == null && tags != null && tags < 10) {
+    return `${h.successPct}% (only ${tags} tag${tags === 1 ? '' : 's'}, too few to judge)`;
+  }
+  return `${h.successPct}%`;
+}
+
 export function huntsForWeapon(hunts: Hunt[], weapon: Weapon | 'any'): Hunt[] {
   if (weapon === 'any') return hunts;
   // Keep hunts whose weapon is unknown — dropping them would hide real options.
@@ -53,7 +67,7 @@ export function buildGenericScoutDataset(
       atYourPoints: hunterPoints == null ? null : pointLineAt(h, residency, hunterPoints),
       fewestPointsToDraw: s?.minPoints ?? null,
       otc: !!h.otc,
-      hunterSuccess: h.harvest ? `${h.harvest.successPct}%` : null,
+      hunterSuccess: h.harvest ? successText(h.harvest, h.tags) : null,
       hunterSuccessYear: h.harvest?.year ?? null,
       hunterSuccessScope: h.harvest?.scope ?? null,
       dataYear: h.drawYear,
@@ -103,7 +117,7 @@ export function buildGenericDrawSummary(
   const who = residency === 'resident' ? 'Resident' : 'Non-resident';
   const lines = hunts.slice(0, 12).map((h) => {
     const s = statLine(who, residency === 'resident' ? h.draw.resident : h.draw.nonresident);
-    const harvest = h.harvest ? `; hunter success ${h.harvest.successPct}% (${h.harvest.year})` : '';
+    const harvest = h.harvest ? `; hunter success ${successText(h.harvest, h.tags)} (${h.harvest.year})` : '';
     const atPts = hunterPoints == null ? null : successAtPoints(h, residency, hunterPoints);
     const pts = atPts == null ? '' : `; applicants with ${hunterPoints} points drew at ${atPts}%`;
     const mine = h.huntCode === huntCode ? " — THE HUNTER'S HUNT; focus the brief on this one" : '';

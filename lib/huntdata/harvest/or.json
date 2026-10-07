@@ -1,0 +1,6857 @@
+{
+ "state": "OR",
+ "year": 2025,
+ "source": {
+  "name": "Oregon Department of Fish and Wildlife — 2025 big game harvest summaries (mandatory harvest reporting)",
+  "url": "https://myodfw.com/articles/big-game-hunting-harvest-statistics"
+ },
+ "notes": "ODFW 2025-season controlled-hunt harvest, reported PER HUNT AND PER WMU, from ODFW's '2025 Estimated ... Harvest by Zone, Wildlife Management Unit and Hunt, based on Mandatory Harvest Survey Reports' PDFs: https://myodfw.com/sites/default/files/2026-04/Buck_Deer_Any_Legal_Weapon_Harvest_Summary.pdf ; https://myodfw.com/sites/default/files/2026-04/Buck_Deer_Archery_Harvest_Summary.pdf ; https://myodfw.com/sites/default/files/2026-04/Buck_Deer_Muzzleloader_Harvest_Summary.pdf ; https://myodfw.com/sites/default/files/2026-04/Antlerless_Deer_Harvest_Summary.pdf ; https://myodfw.com/sites/default/files/2026-04/Elk_Any_Legal_Weapon_Harvest_Summary.pdf ; https://myodfw.com/sites/default/files/2026-04/Elk_Archery_Harvest_Summary.pdf ; https://myodfw.com/sites/default/files/2026-04/Elk_Muzzleloader_Harvest_Summary.pdf ; https://myodfw.com/sites/default/files/2026-04/Pronghorn_Harvest_Summary.pdf. A hunt that spans several WMUs appears once per WMU (hunters are counted in the WMU they reported hunting most), so one huntCode can have several rows. unit = WMU number (ODFW layer UNIT_NUM) matched from ODFW's unit name. hunters = 'Total Hunters'; harvest = 'Harvest Total'; successPct = ODFW's printed 'Success %' (survey-based estimate; it does not always equal harvest / hunters exactly). Only the 'Controlled' sections are used. Left out: general-season rows, rows with 0 hunters, 3 short rows with blank cells that could not be read safely (119A McKenzie portion, 644A2, 644A3), and a row ODFW printed above 100% (210C2 Scappoose portion, 133%). weapon comes from the report (archery and muzzleloader files; the any-legal-weapon and antlerless files -> rifle unless the hunt name says Bow/Muzzleloader). huntCode is the 2025 hunt number. Western Oregon deer, elk and pronghorn hunt numbers mostly carry over to 2026, but every 2025 EASTERN OREGON DEER hunt (WMU-based, e.g. 131-178) was replaced in 2026 by hunt-area hunts (DG102 etc.), so those 2025 rows only match 2026 draw rows by WMU, not by hunt code. Bighorn sheep and Rocky Mountain goat: ODFW '2025 Oregon Reported ... Harvest' tables (https://myodfw.com/sites/default/files/2026-02/Bighorn_Sheep_Harvest_Summary_2025.pdf ; https://myodfw.com/sites/default/files/2026-02/Rocky_Mountain_Goat_Harvest_Summary_2025.pdf) give tags, harvest and percent success per hunt (success = harvest / tags as ODFW prints it; hunters afield is not published, so hunters = null). Left out: rows ODFW printed above 100% (546A 133%, 568A1 200%, 946A 200%; ODFW notes auction/raffle and tribal tags were filled in some areas) and a second '559A1 S Snake Rvr' line (duplicate hunt number in ODFW's table). Sheep/goat unit = WMU from the hunt number. daysPerHarvest is not set (ODFW publishes days hunted, not days per harvest).",
+ "species": {
+  "DEER": [
+   {
+    "unit": "19",
+    "huntCode": "119A",
+    "weapon": "rifle",
+    "label": "W High Cascade (2025 hunt 119A) — Mckenzie Unit portion",
+    "hunters": 201,
+    "harvest": 42,
+    "successPct": 21.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "119A",
+    "weapon": "rifle",
+    "label": "W High Cascade (2025 hunt 119A) — Santiam Unit portion",
+    "hunters": 400,
+    "harvest": 42,
+    "successPct": 10.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "112",
+    "weapon": "rifle",
+    "label": "Wilson Unit (2025 hunt 112) — Wilson Unit portion",
+    "hunters": 15,
+    "harvest": 4,
+    "successPct": 29.0
+   },
+   {
+    "unit": "22",
+    "huntCode": "119A",
+    "weapon": "rifle",
+    "label": "W High Cascade (2025 hunt 119A) — Dixon Unit portion",
+    "hunters": 91,
+    "harvest": 18,
+    "successPct": 20.0
+   },
+   {
+    "unit": "22",
+    "huntCode": "122",
+    "weapon": "rifle",
+    "label": "Dixon Unit (2025 hunt 122) — Dixon Unit portion",
+    "hunters": 17,
+    "harvest": 15,
+    "successPct": 88.0
+   },
+   {
+    "unit": "22",
+    "huntCode": "123A",
+    "weapon": "rifle",
+    "label": "Umpqua (2025 hunt 123A) — Dixon Unit portion",
+    "hunters": 7,
+    "harvest": 5,
+    "successPct": 80.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "119A",
+    "weapon": "rifle",
+    "label": "W High Cascade (2025 hunt 119A) — Indigo Unit portion",
+    "hunters": 85,
+    "harvest": 3,
+    "successPct": 3.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "123A",
+    "weapon": "rifle",
+    "label": "Umpqua (2025 hunt 123A) — Indigo Unit portion",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "123A",
+    "weapon": "rifle",
+    "label": "Umpqua (2025 hunt 123A) — Melrose Unit portion",
+    "hunters": 31,
+    "harvest": 26,
+    "successPct": 83.0
+   },
+   {
+    "unit": "30",
+    "huntCode": "119A",
+    "weapon": "rifle",
+    "label": "W High Cascade (2025 hunt 119A) — Rogue Unit portion",
+    "hunters": 45,
+    "harvest": 8,
+    "successPct": 19.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "138",
+    "weapon": "rifle",
+    "label": "Grizzly Unit (2025 hunt 138) — Grizzly Unit portion",
+    "hunters": 594,
+    "harvest": 235,
+    "successPct": 40.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "136",
+    "weapon": "rifle",
+    "label": "Maury Unit (2025 hunt 136) — Maury Unit portion",
+    "hunters": 221,
+    "harvest": 79,
+    "successPct": 36.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "139",
+    "weapon": "rifle",
+    "label": "Metolius Unit (2025 hunt 139) — Metolius Unit portion",
+    "hunters": 182,
+    "harvest": 85,
+    "successPct": 46.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "137",
+    "weapon": "rifle",
+    "label": "Ochoco Unit (2025 hunt 137) — Ochoco Unit portion",
+    "hunters": 1473,
+    "harvest": 318,
+    "successPct": 22.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "135",
+    "weapon": "rifle",
+    "label": "Paulina Unit (2025 hunt 135) — Paulina Unit portion",
+    "hunters": 696,
+    "harvest": 183,
+    "successPct": 26.0
+   },
+   {
+    "unit": "34",
+    "huntCode": "134",
+    "weapon": "rifle",
+    "label": "Upper Deschutes Unit (2025 hunt 134) — Upper De- Schutes Unit portion",
+    "hunters": 1235,
+    "harvest": 261,
+    "successPct": 21.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "143A",
+    "weapon": "rifle",
+    "label": "E Biggs (2025 hunt 143A) — Biggs Unit portion",
+    "hunters": 494,
+    "harvest": 259,
+    "successPct": 52.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "143B",
+    "weapon": "rifle",
+    "label": "W Biggs (2025 hunt 143B) — Biggs Unit portion",
+    "hunters": 607,
+    "harvest": 351,
+    "successPct": 58.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "143C",
+    "weapon": "rifle",
+    "label": "John Day Canyon (2025 hunt 143C) — Biggs Unit portion",
+    "hunters": 15,
+    "harvest": 13,
+    "successPct": 85.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "141A",
+    "weapon": "rifle",
+    "label": "Hood-White River (2025 hunt 141A) — Hood Unit portion",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 33.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "142A",
+    "weapon": "rifle",
+    "label": "Hood Unit No. 1 (2025 hunt 142A) — Hood Unit portion",
+    "hunters": 277,
+    "harvest": 73,
+    "successPct": 26.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "142B",
+    "weapon": "rifle",
+    "label": "Hood Unit No. 2 (2025 hunt 142B) — Hood Unit portion",
+    "hunters": 14,
+    "harvest": 8,
+    "successPct": 60.0
+   },
+   {
+    "unit": "40",
+    "huntCode": "140",
+    "weapon": "rifle",
+    "label": "Maupin Unit (2025 hunt 140) — Maupin Unit portion",
+    "hunters": 292,
+    "harvest": 123,
+    "successPct": 42.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "141A",
+    "weapon": "rifle",
+    "label": "Hood-White River (2025 hunt 141A) — White River Unit portion",
+    "hunters": 28,
+    "harvest": 11,
+    "successPct": 38.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "141B",
+    "weapon": "rifle",
+    "label": "White River Unit No. 1 (2025 hunt 141B) — White River Unit portion",
+    "hunters": 788,
+    "harvest": 376,
+    "successPct": 48.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "141C",
+    "weapon": "rifle",
+    "label": "White River Unit No. 2 (2025 hunt 141C) — White River Unit portion",
+    "hunters": 15,
+    "harvest": 13,
+    "successPct": 86.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "141T",
+    "weapon": "rifle",
+    "label": "The Dalles Watershed Youth (2025 hunt 141T) — White River Unit portion",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "165",
+    "weapon": "rifle",
+    "label": "Beulah Unit (2025 hunt 165) — Beulah Unit portion",
+    "hunters": 1301,
+    "harvest": 647,
+    "successPct": 50.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "165T",
+    "weapon": "rifle",
+    "label": "Beulah Unit Youth (2025 hunt 165T) — Beulah Unit portion",
+    "hunters": 21,
+    "harvest": 16,
+    "successPct": 79.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "153",
+    "weapon": "rifle",
+    "label": "Catherine Cr Unit (2025 hunt 153) — Catherine Creek Unit portion",
+    "hunters": 292,
+    "harvest": 129,
+    "successPct": 44.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "158",
+    "weapon": "rifle",
+    "label": "Chesnimnus Unit (2025 hunt 158) — Chesnimnus Unit portion",
+    "hunters": 316,
+    "harvest": 153,
+    "successPct": 49.0
+   },
+   {
+    "unit": "44",
+    "huntCode": "144",
+    "weapon": "rifle",
+    "label": "Columbia Basin Unit (2025 hunt 144) — Columbia Basin Unit portion",
+    "hunters": 1339,
+    "harvest": 817,
+    "successPct": 61.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "150",
+    "weapon": "rifle",
+    "label": "Desolation Unit (2025 hunt 150) — Desolation Unit portion",
+    "hunters": 525,
+    "harvest": 199,
+    "successPct": 38.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "145",
+    "weapon": "rifle",
+    "label": "Fossil Unit No. 1 (2025 hunt 145) — Fossil Unit portion",
+    "hunters": 1105,
+    "harvest": 349,
+    "successPct": 32.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "145A",
+    "weapon": "rifle",
+    "label": "Fossil Unit No. 2 (2025 hunt 145A) — Fossil Unit portion",
+    "hunters": 15,
+    "harvest": 12,
+    "successPct": 79.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "148",
+    "weapon": "rifle",
+    "label": "Heppner Unit No. 1 (2025 hunt 148) — Heppner Unit portion",
+    "hunters": 1658,
+    "harvest": 392,
+    "successPct": 24.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "148A",
+    "weapon": "rifle",
+    "label": "Heppner Unit No. 2 (2025 hunt 148A) — Heppner Unit portion",
+    "hunters": 11,
+    "harvest": 9,
+    "successPct": 89.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "161",
+    "weapon": "rifle",
+    "label": "Imnaha Unit (2025 hunt 161) — Imnaha Unit portion",
+    "hunters": 525,
+    "harvest": 192,
+    "successPct": 37.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "163",
+    "weapon": "rifle",
+    "label": "Keating Unit (2025 hunt 163) — Keating Unit portion",
+    "hunters": 294,
+    "harvest": 178,
+    "successPct": 60.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "164",
+    "weapon": "rifle",
+    "label": "Lookout Mtn Unit (2025 hunt 164) — Lookout Mountain Unit portion",
+    "hunters": 211,
+    "harvest": 117,
+    "successPct": 55.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "160",
+    "weapon": "rifle",
+    "label": "Minam Unit (2025 hunt 160) — Minam Unit portion",
+    "hunters": 340,
+    "harvest": 184,
+    "successPct": 54.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "154A",
+    "weapon": "rifle",
+    "label": "E Mt Emily (2025 hunt 154A) — Mt. Emily Unit portion",
+    "hunters": 110,
+    "harvest": 45,
+    "successPct": 41.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "154B",
+    "weapon": "rifle",
+    "label": "W Mt Emily (2025 hunt 154B) — Mt. Emily Unit portion",
+    "hunters": 257,
+    "harvest": 95,
+    "successPct": 37.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "154C",
+    "weapon": "rifle",
+    "label": "Mt Emily Unit (2025 hunt 154C) — Mt. Emily Unit portion",
+    "hunters": 12,
+    "harvest": 7,
+    "successPct": 58.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "154T",
+    "weapon": "rifle",
+    "label": "Mt Emily Unit Youth (2025 hunt 154T) — Mt. Emily Unit portion",
+    "hunters": 14,
+    "harvest": 9,
+    "successPct": 62.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "146",
+    "weapon": "rifle",
+    "label": "Murderers Cr Unit (2025 hunt 146) — Murderers Creek Unit portion",
+    "hunters": 619,
+    "harvest": 337,
+    "successPct": 54.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "147",
+    "weapon": "rifle",
+    "label": "Northside Unit (2025 hunt 147) — Northside Unit portion",
+    "hunters": 658,
+    "harvest": 221,
+    "successPct": 34.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "162",
+    "weapon": "rifle",
+    "label": "Pine Cr Unit (2025 hunt 162) — Pine Creek Unit portion",
+    "hunters": 180,
+    "harvest": 83,
+    "successPct": 46.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "157",
+    "weapon": "rifle",
+    "label": "Sled Springs Unit (2025 hunt 157) — Sled Springs Unit portion",
+    "hunters": 1083,
+    "harvest": 483,
+    "successPct": 45.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "157A",
+    "weapon": "rifle",
+    "label": "Lower Wallowa Valley (2025 hunt 157A) — Sled Springs Unit portion",
+    "hunters": 58,
+    "harvest": 43,
+    "successPct": 74.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "159",
+    "weapon": "rifle",
+    "label": "Snake Rvr Unit (2025 hunt 159) — Snake River Unit portion",
+    "hunters": 215,
+    "harvest": 108,
+    "successPct": 50.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "152A",
+    "weapon": "rifle",
+    "label": "Starkey (2025 hunt 152A) — Starkey Unit portion",
+    "hunters": 280,
+    "harvest": 88,
+    "successPct": 31.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "151",
+    "weapon": "rifle",
+    "label": "Sumpter Unit (2025 hunt 151) — Sumpter Unit portion",
+    "hunters": 758,
+    "harvest": 358,
+    "successPct": 47.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "149",
+    "weapon": "rifle",
+    "label": "Ukiah Unit (2025 hunt 149) — Ukiah Unit portion",
+    "hunters": 841,
+    "harvest": 192,
+    "successPct": 23.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "155",
+    "weapon": "rifle",
+    "label": "Walla Walla Unit (2025 hunt 155) — Walla Walla Unit portion",
+    "hunters": 179,
+    "harvest": 97,
+    "successPct": 54.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "156",
+    "weapon": "rifle",
+    "label": "Wenaha Unit (2025 hunt 156) — Wenaha Unit portion",
+    "hunters": 208,
+    "harvest": 86,
+    "successPct": 41.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "170A",
+    "weapon": "rifle",
+    "label": "Beatys Butte (2025 hunt 170A) — Beatys Butte Unit portion",
+    "hunters": 110,
+    "harvest": 57,
+    "successPct": 52.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "171A",
+    "weapon": "rifle",
+    "label": "N Juniper (2025 hunt 171A) — Juniper Unit portion",
+    "hunters": 66,
+    "harvest": 15,
+    "successPct": 24.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "171B",
+    "weapon": "rifle",
+    "label": "S Juniper (2025 hunt 171B) — Juniper Unit portion",
+    "hunters": 62,
+    "harvest": 18,
+    "successPct": 29.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "171T",
+    "weapon": "rifle",
+    "label": "Juniper Unit Youth (2025 hunt 171T) — Juniper Unit portion",
+    "hunters": 16,
+    "harvest": 7,
+    "successPct": 46.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "166",
+    "weapon": "rifle",
+    "label": "Malheur Rvr Unit (2025 hunt 166) — Malheur River Unit portion",
+    "hunters": 990,
+    "harvest": 403,
+    "successPct": 41.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "166T",
+    "weapon": "rifle",
+    "label": "Malheur Rvr Unit Youth (2025 hunt 166T) — Malheur River Unit portion",
+    "hunters": 17,
+    "harvest": 14,
+    "successPct": 86.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "167",
+    "weapon": "rifle",
+    "label": "Owyhee Unit (2025 hunt 167) — Owyhee Unit portion",
+    "hunters": 326,
+    "harvest": 204,
+    "successPct": 62.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "167A",
+    "weapon": "rifle",
+    "label": "NE Owyhee (2025 hunt 167A) — Owyhee Unit portion",
+    "hunters": 86,
+    "harvest": 58,
+    "successPct": 68.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "172",
+    "weapon": "rifle",
+    "label": "Silvies Unit (2025 hunt 172) — Silvies Unit portion",
+    "hunters": 717,
+    "harvest": 336,
+    "successPct": 47.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "172T",
+    "weapon": "rifle",
+    "label": "Silvies Unit Youth (2025 hunt 172T) — Silvies Unit portion",
+    "hunters": 22,
+    "harvest": 15,
+    "successPct": 67.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "169A",
+    "weapon": "rifle",
+    "label": "Steens Mtn (2025 hunt 169A) — Steens Mountain Unit portion",
+    "hunters": 281,
+    "harvest": 149,
+    "successPct": 53.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "169T",
+    "weapon": "rifle",
+    "label": "Steens Mtn Unit Youth (2025 hunt 169T) — Steens Mountain Unit portion",
+    "hunters": 21,
+    "harvest": 14,
+    "successPct": 67.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "173",
+    "weapon": "rifle",
+    "label": "Wagontire Unit (2025 hunt 173) — Wagontire Unit portion",
+    "hunters": 108,
+    "harvest": 44,
+    "successPct": 40.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "174A",
+    "weapon": "rifle",
+    "label": "N Warner (2025 hunt 174A) — Warner Unit portion",
+    "hunters": 24,
+    "harvest": 18,
+    "successPct": 77.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "174B",
+    "weapon": "rifle",
+    "label": "S Warner (2025 hunt 174B) — Warner Unit portion",
+    "hunters": 104,
+    "harvest": 53,
+    "successPct": 51.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "174T",
+    "weapon": "rifle",
+    "label": "Warner Unit Youth (2025 hunt 174T) — Warner Unit portion",
+    "hunters": 16,
+    "harvest": 12,
+    "successPct": 77.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "168A",
+    "weapon": "rifle",
+    "label": "Trout Cr Mtns (2025 hunt 168A) — Whitehorse Unit portion",
+    "hunters": 59,
+    "harvest": 47,
+    "successPct": 80.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "168B",
+    "weapon": "rifle",
+    "label": "E Whitehorse (2025 hunt 168B) — Whitehorse Unit portion",
+    "hunters": 186,
+    "harvest": 100,
+    "successPct": 54.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "119A",
+    "weapon": "rifle",
+    "label": "W High Cascade (2025 hunt 119A) — Fort Rock Unit portion",
+    "hunters": 13,
+    "harvest": 3,
+    "successPct": 22.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "177",
+    "weapon": "rifle",
+    "label": "Fort Rock Unit (2025 hunt 177) — Fort Rock Unit portion",
+    "hunters": 1187,
+    "harvest": 226,
+    "successPct": 19.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "177T",
+    "weapon": "rifle",
+    "label": "Fort Rock Unit Youth (2025 hunt 177T) — Fort Rock Unit portion",
+    "hunters": 10,
+    "harvest": 3,
+    "successPct": 29.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "175",
+    "weapon": "rifle",
+    "label": "Interstate Unit (2025 hunt 175) — Interstate Unit portion",
+    "hunters": 754,
+    "harvest": 505,
+    "successPct": 67.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "175T",
+    "weapon": "rifle",
+    "label": "Interstate Unit Youth (2025 hunt 175T) — Interstate Unit portion",
+    "hunters": 17,
+    "harvest": 14,
+    "successPct": 82.0
+   },
+   {
+    "unit": "31",
+    "huntCode": "131",
+    "weapon": "rifle",
+    "label": "Keno Unit (2025 hunt 131) — Keno Unit portion",
+    "hunters": 552,
+    "harvest": 178,
+    "successPct": 32.0
+   },
+   {
+    "unit": "31",
+    "huntCode": "131T",
+    "weapon": "rifle",
+    "label": "Keno Unit Youth (2025 hunt 131T) — Keno Unit portion",
+    "hunters": 21,
+    "harvest": 11,
+    "successPct": 53.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "132",
+    "weapon": "rifle",
+    "label": "Klamath Falls Unit (2025 hunt 132) — Klamath Falls Unit portion",
+    "hunters": 608,
+    "harvest": 265,
+    "successPct": 44.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "132T",
+    "weapon": "rifle",
+    "label": "Klamath Falls Unit Youth (2025 hunt 132T) — Klamath Falls Unit portion",
+    "hunters": 17,
+    "harvest": 13,
+    "successPct": 75.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "176",
+    "weapon": "rifle",
+    "label": "Silver Lake Unit (2025 hunt 176) — Silver Lake Unit portion",
+    "hunters": 968,
+    "harvest": 193,
+    "successPct": 20.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "176T",
+    "weapon": "rifle",
+    "label": "Silver Lake Unit Youth (2025 hunt 176T) — Silver Lake Unit portion",
+    "hunters": 16,
+    "harvest": 2,
+    "successPct": 15.0
+   },
+   {
+    "unit": "33",
+    "huntCode": "133",
+    "weapon": "rifle",
+    "label": "Sprague Unit (2025 hunt 133) — Sprague Unit portion",
+    "hunters": 373,
+    "harvest": 139,
+    "successPct": 37.0
+   },
+   {
+    "unit": "33",
+    "huntCode": "133T",
+    "weapon": "rifle",
+    "label": "Sprague Unit Youth (2025 hunt 133T) — Sprague Unit portion",
+    "hunters": 15,
+    "harvest": 5,
+    "successPct": 33.0
+   },
+   {
+    "unit": "28",
+    "huntCode": "130R",
+    "weapon": "archery",
+    "label": "Rogue-Siskiyou Early Bow (2025 hunt 130R) — Applegate Unit portion",
+    "hunters": 18,
+    "harvest": 13,
+    "successPct": 70.0
+   },
+   {
+    "unit": "29",
+    "huntCode": "130R",
+    "weapon": "archery",
+    "label": "Rogue-Siskiyou Early Bow (2025 hunt 130R) — Evans Creek Unit portion",
+    "hunters": 7,
+    "harvest": 5,
+    "successPct": 75.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "123R1",
+    "weapon": "archery",
+    "label": "Umpqua Bow (2025 hunt 123R1) — Melrose Unit portion",
+    "hunters": 14,
+    "harvest": 8,
+    "successPct": 58.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "138R",
+    "weapon": "archery",
+    "label": "Grizzly Unit Bow (2025 hunt 138R) — Grizzly Unit portion",
+    "hunters": 401,
+    "harvest": 76,
+    "successPct": 19.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "136R",
+    "weapon": "archery",
+    "label": "Maury Unit Bow (2025 hunt 136R) — Maury Unit portion",
+    "hunters": 50,
+    "harvest": 18,
+    "successPct": 35.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "139R1",
+    "weapon": "archery",
+    "label": "Metolius Unit Bow (2025 hunt 139R1) — Metolius Unit portion",
+    "hunters": 158,
+    "harvest": 48,
+    "successPct": 30.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "139R2",
+    "weapon": "archery",
+    "label": "Metolius Unit Late Bow (2025 hunt 139R2) — Metolius Unit portion",
+    "hunters": 20,
+    "harvest": 12,
+    "successPct": 60.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "137R",
+    "weapon": "archery",
+    "label": "Ochoco Unit Bow (2025 hunt 137R) — Ochoco Unit portion",
+    "hunters": 191,
+    "harvest": 32,
+    "successPct": 17.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "135R",
+    "weapon": "archery",
+    "label": "Paulina Unit Bow (2025 hunt 135R) — Paulina Unit portion",
+    "hunters": 222,
+    "harvest": 55,
+    "successPct": 25.0
+   },
+   {
+    "unit": "34",
+    "huntCode": "134R",
+    "weapon": "archery",
+    "label": "Upper Deschutes Unit Bow (2025 hunt 134R) — Upper De- Schutes Unit portion",
+    "hunters": 272,
+    "harvest": 75,
+    "successPct": 28.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "144R",
+    "weapon": "archery",
+    "label": "Columbia Plateau Bow (2025 hunt 144R) — Biggs Unit portion",
+    "hunters": 18,
+    "harvest": 7,
+    "successPct": 38.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "141R",
+    "weapon": "archery",
+    "label": "Hood - White Rvr Bow (2025 hunt 141R) — Hood Unit portion",
+    "hunters": 56,
+    "harvest": 13,
+    "successPct": 24.0
+   },
+   {
+    "unit": "40",
+    "huntCode": "144R",
+    "weapon": "archery",
+    "label": "Columbia Plateau Bow (2025 hunt 144R) — Maupin Unit portion",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "141R",
+    "weapon": "archery",
+    "label": "Hood - White Rvr Bow (2025 hunt 141R) — White River Unit portion",
+    "hunters": 276,
+    "harvest": 80,
+    "successPct": 29.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "165R1",
+    "weapon": "archery",
+    "label": "Beulah Unit Bow (2025 hunt 165R1) — Beulah Unit portion",
+    "hunters": 288,
+    "harvest": 86,
+    "successPct": 30.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "165R2",
+    "weapon": "archery",
+    "label": "Beulah Unit Late Bow (2025 hunt 165R2) — Beulah Unit portion",
+    "hunters": 22,
+    "harvest": 11,
+    "successPct": 50.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "153R",
+    "weapon": "archery",
+    "label": "Catherine Cr Unit Bow (2025 hunt 153R) — Catherine Creek Unit portion",
+    "hunters": 273,
+    "harvest": 58,
+    "successPct": 21.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "158R",
+    "weapon": "archery",
+    "label": "Chesnimnus Unit Bow (2025 hunt 158R) — Chesnimnus Unit portion",
+    "hunters": 121,
+    "harvest": 19,
+    "successPct": 16.0
+   },
+   {
+    "unit": "44",
+    "huntCode": "144R",
+    "weapon": "archery",
+    "label": "Columbia Plateau Bow (2025 hunt 144R) — Columbia Basin Unit portion",
+    "hunters": 51,
+    "harvest": 25,
+    "successPct": 50.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "150R",
+    "weapon": "archery",
+    "label": "Desolation Unit Bow (2025 hunt 150R) — Desolation Unit portion",
+    "hunters": 309,
+    "harvest": 45,
+    "successPct": 14.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "145R",
+    "weapon": "archery",
+    "label": "Fossil Unit Bow (2025 hunt 145R) — Fossil Unit portion",
+    "hunters": 75,
+    "harvest": 11,
+    "successPct": 14.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "148R",
+    "weapon": "archery",
+    "label": "Heppner Unit Bow (2025 hunt 148R) — Heppner Unit portion",
+    "hunters": 456,
+    "harvest": 43,
+    "successPct": 9.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "161R",
+    "weapon": "archery",
+    "label": "Imnaha Unit Bow (2025 hunt 161R) — Imnaha Unit portion",
+    "hunters": 105,
+    "harvest": 13,
+    "successPct": 13.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "163R",
+    "weapon": "archery",
+    "label": "Keating Unit Bow (2025 hunt 163R) — Keating Unit portion",
+    "hunters": 172,
+    "harvest": 44,
+    "successPct": 26.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "164R",
+    "weapon": "archery",
+    "label": "Lookout Mtn Unit Bow (2025 hunt 164R) — Lookout Mountain Unit portion",
+    "hunters": 87,
+    "harvest": 25,
+    "successPct": 29.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "160R",
+    "weapon": "archery",
+    "label": "Minam Unit Bow (2025 hunt 160R) — Minam Unit portion",
+    "hunters": 63,
+    "harvest": 21,
+    "successPct": 33.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "154R",
+    "weapon": "archery",
+    "label": "N Blue Mtns Bow (2025 hunt 154R) — Mt. Emily Unit portion",
+    "hunters": 129,
+    "harvest": 41,
+    "successPct": 32.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "146R1",
+    "weapon": "archery",
+    "label": "Murderers Cr Unit Bow (2025 hunt 146R1) — Murderers Creek Unit portion",
+    "hunters": 371,
+    "harvest": 75,
+    "successPct": 20.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "146R2",
+    "weapon": "archery",
+    "label": "Grant Co Whitetail Bow (2025 hunt 146R2) — Murderers Creek Unit portion",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 67.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "146R2",
+    "weapon": "archery",
+    "label": "Grant Co Whitetail Bow (2025 hunt 146R2) — Northside Unit portion",
+    "hunters": 15,
+    "harvest": 4,
+    "successPct": 23.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "147R",
+    "weapon": "archery",
+    "label": "Northside Unit Bow (2025 hunt 147R) — Northside Unit portion",
+    "hunters": 359,
+    "harvest": 55,
+    "successPct": 15.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "162R",
+    "weapon": "archery",
+    "label": "Pine Cr Unit Bow (2025 hunt 162R) — Pine Creek Unit portion",
+    "hunters": 175,
+    "harvest": 34,
+    "successPct": 19.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "157R",
+    "weapon": "archery",
+    "label": "Sled Springs Unit Bow (2025 hunt 157R) — Sled Springs Unit portion",
+    "hunters": 117,
+    "harvest": 26,
+    "successPct": 23.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "159R",
+    "weapon": "archery",
+    "label": "Snake Rvr Unit Bow (2025 hunt 159R) — Snake River Unit portion",
+    "hunters": 34,
+    "harvest": 3,
+    "successPct": 8.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "152R",
+    "weapon": "archery",
+    "label": "Starkey Bow (2025 hunt 152R) — Starkey Unit portion",
+    "hunters": 390,
+    "harvest": 40,
+    "successPct": 10.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "151R",
+    "weapon": "archery",
+    "label": "Sumpter Unit Bow (2025 hunt 151R) — Sumpter Unit portion",
+    "hunters": 365,
+    "harvest": 80,
+    "successPct": 22.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "149R",
+    "weapon": "archery",
+    "label": "Ukiah Unit Bow (2025 hunt 149R) — Ukiah Unit portion",
+    "hunters": 303,
+    "harvest": 26,
+    "successPct": 9.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "154R",
+    "weapon": "archery",
+    "label": "N Blue Mtns Bow (2025 hunt 154R) — Walla Walla Unit portion",
+    "hunters": 39,
+    "harvest": 11,
+    "successPct": 28.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "154R",
+    "weapon": "archery",
+    "label": "N Blue Mtns Bow (2025 hunt 154R) — Wenaha Unit portion",
+    "hunters": 61,
+    "harvest": 22,
+    "successPct": 36.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "170R",
+    "weapon": "archery",
+    "label": "Beatys Butte Bow (2025 hunt 170R) — Beatys Butte Unit portion",
+    "hunters": 15,
+    "harvest": 6,
+    "successPct": 40.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "171R",
+    "weapon": "archery",
+    "label": "Juniper Unit Bow (2025 hunt 171R) — Juniper Unit portion",
+    "hunters": 25,
+    "harvest": 6,
+    "successPct": 24.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "166R",
+    "weapon": "archery",
+    "label": "Malheur Rvr Unit Bow (2025 hunt 166R) — Malheur River Unit portion",
+    "hunters": 268,
+    "harvest": 54,
+    "successPct": 20.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "167R",
+    "weapon": "archery",
+    "label": "Owyhee Unit Bow (2025 hunt 167R) — Owyhee Unit portion",
+    "hunters": 71,
+    "harvest": 19,
+    "successPct": 27.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "172R",
+    "weapon": "archery",
+    "label": "Silvies Unit Bow (2025 hunt 172R) — Silvies Unit portion",
+    "hunters": 413,
+    "harvest": 85,
+    "successPct": 21.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "169R",
+    "weapon": "archery",
+    "label": "Steens Mtn Bow (2025 hunt 169R) — Steens Mountain Unit portion",
+    "hunters": 76,
+    "harvest": 23,
+    "successPct": 30.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "173R",
+    "weapon": "archery",
+    "label": "Wagontire Unit Bow (2025 hunt 173R) — Wagontire Unit portion",
+    "hunters": 21,
+    "harvest": 5,
+    "successPct": 25.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "174R1",
+    "weapon": "archery",
+    "label": "N Warner Bow (2025 hunt 174R1) — Warner Unit portion",
+    "hunters": 24,
+    "harvest": 11,
+    "successPct": 44.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "174R2",
+    "weapon": "archery",
+    "label": "S Warner Bow (2025 hunt 174R2) — Warner Unit portion",
+    "hunters": 36,
+    "harvest": 10,
+    "successPct": 27.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "168R1",
+    "weapon": "archery",
+    "label": "E Whitehorse Bow (2025 hunt 168R1) — Whitehorse Unit portion",
+    "hunters": 21,
+    "harvest": 6,
+    "successPct": 27.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "168R2",
+    "weapon": "archery",
+    "label": "Trout Cr Mtns Traditional Bow (2025 hunt 168R2) — Whitehorse Unit portion",
+    "hunters": 35,
+    "harvest": 3,
+    "successPct": 8.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "177R",
+    "weapon": "archery",
+    "label": "Fort Rock Unit Bow (2025 hunt 177R) — Fort Rock Unit portion",
+    "hunters": 224,
+    "harvest": 56,
+    "successPct": 25.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "175R",
+    "weapon": "archery",
+    "label": "Interstate Unit Bow (2025 hunt 175R) — Interstate Unit portion",
+    "hunters": 164,
+    "harvest": 81,
+    "successPct": 50.0
+   },
+   {
+    "unit": "31",
+    "huntCode": "131R1",
+    "weapon": "archery",
+    "label": "Keno Unit Bow (2025 hunt 131R1) — Keno Unit portion",
+    "hunters": 174,
+    "harvest": 49,
+    "successPct": 28.0
+   },
+   {
+    "unit": "31",
+    "huntCode": "131R2",
+    "weapon": "archery",
+    "label": "Keno Unit Late Bow (2025 hunt 131R2) — Keno Unit portion",
+    "hunters": 94,
+    "harvest": 36,
+    "successPct": 39.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "132R",
+    "weapon": "archery",
+    "label": "Klamath Falls Unit Bow (2025 hunt 132R) — Klamath Falls Unit portion",
+    "hunters": 105,
+    "harvest": 46,
+    "successPct": 43.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "176R",
+    "weapon": "archery",
+    "label": "Silver Lake Unit Bow (2025 hunt 176R) — Silver Lake Unit portion",
+    "hunters": 75,
+    "harvest": 16,
+    "successPct": 21.0
+   },
+   {
+    "unit": "33",
+    "huntCode": "133R",
+    "weapon": "archery",
+    "label": "Sprague Unit Bow (2025 hunt 133R) — Sprague Unit portion",
+    "hunters": 32,
+    "harvest": 12,
+    "successPct": 38.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "119M",
+    "weapon": "muzzleloader",
+    "label": "McKenzie Unit Muzzleloader (2025 hunt 119M) — Mckenzie Unit portion",
+    "hunters": 324,
+    "harvest": 156,
+    "successPct": 48.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "114M",
+    "weapon": "muzzleloader",
+    "label": "Trask Unit Muzzleloader (2025 hunt 114M) — Trask Unit portion",
+    "hunters": 163,
+    "harvest": 45,
+    "successPct": 28.0
+   },
+   {
+    "unit": "28",
+    "huntCode": "128M",
+    "weapon": "muzzleloader",
+    "label": "Applegate Unit Muzzleloader (2025 hunt 128M) — Applegate Unit portion",
+    "hunters": 296,
+    "harvest": 135,
+    "successPct": 46.0
+   },
+   {
+    "unit": "27",
+    "huntCode": "127M",
+    "weapon": "muzzleloader",
+    "label": "Chetco Unit Muzzleloader (2025 hunt 127M) — Chetco Unit portion",
+    "hunters": 28,
+    "harvest": 5,
+    "successPct": 18.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "121M",
+    "weapon": "muzzleloader",
+    "label": "Indigo Unit Muzzleloader (2025 hunt 121M) — Indigo Unit portion",
+    "hunters": 137,
+    "harvest": 70,
+    "successPct": 51.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "123M1",
+    "weapon": "muzzleloader",
+    "label": "Melrose Unit Muzzleloader (2025 hunt 123M1) — Melrose Unit portion",
+    "hunters": 81,
+    "harvest": 19,
+    "successPct": 23.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "125M",
+    "weapon": "muzzleloader",
+    "label": "Sixes Unit Muzzleloader (2025 hunt 125M) — Sixes Unit portion",
+    "hunters": 27,
+    "harvest": 10,
+    "successPct": 36.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "139M",
+    "weapon": "muzzleloader",
+    "label": "Metolius Unit Muzzleloader (2025 hunt 139M) — Metolius Unit portion",
+    "hunters": 20,
+    "harvest": 13,
+    "successPct": 62.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "141M",
+    "weapon": "muzzleloader",
+    "label": "Hood- N White Rvr Muzzleloader (2025 hunt 141M) — Hood Unit portion",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 50.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "141M",
+    "weapon": "muzzleloader",
+    "label": "Hood- N White Rvr Muzzleloader (2025 hunt 141M) — White River Unit portion",
+    "hunters": 15,
+    "harvest": 13,
+    "successPct": 85.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "152M",
+    "weapon": "muzzleloader",
+    "label": "Grande Ronde Muzzleloader (2025 hunt 152M) — Catherine Creek Unit portion",
+    "hunters": 58,
+    "harvest": 14,
+    "successPct": 25.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "158M",
+    "weapon": "muzzleloader",
+    "label": "Chenimnus Private Muzzleloader (2025 hunt 158M) — Chesnimnus Unit portion",
+    "hunters": 22,
+    "harvest": 7,
+    "successPct": 32.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "145M",
+    "weapon": "muzzleloader",
+    "label": "Flatiron Muzzleloader (2025 hunt 145M) — Fossil Unit portion",
+    "hunters": 60,
+    "harvest": 17,
+    "successPct": 28.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "148M",
+    "weapon": "muzzleloader",
+    "label": "Ditch Cr Muzzleloader (2025 hunt 148M) — Heppner Unit portion",
+    "hunters": 145,
+    "harvest": 42,
+    "successPct": 29.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "161M",
+    "weapon": "muzzleloader",
+    "label": "Imnaha Private Muzzleloader (2025 hunt 161M) — Imnaha Unit portion",
+    "hunters": 23,
+    "harvest": 14,
+    "successPct": 61.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "151M",
+    "weapon": "muzzleloader",
+    "label": "Baker Muzzleloader (2025 hunt 151M) — Keating Unit portion",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 67.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "152M",
+    "weapon": "muzzleloader",
+    "label": "Grande Ronde Muzzleloader (2025 hunt 152M) — Mt. Emily Unit portion",
+    "hunters": 33,
+    "harvest": 11,
+    "successPct": 33.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "151M",
+    "weapon": "muzzleloader",
+    "label": "Baker Muzzleloader (2025 hunt 151M) — Pine Creek Unit portion",
+    "hunters": 20,
+    "harvest": 12,
+    "successPct": 62.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "157M",
+    "weapon": "muzzleloader",
+    "label": "Sled Springs Unit Muzzleloader (2025 hunt 157M) — Sled Springs Unit portion",
+    "hunters": 186,
+    "harvest": 92,
+    "successPct": 49.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "159M",
+    "weapon": "muzzleloader",
+    "label": "Cnake Rvr Private Muzzleloader (2025 hunt 159M) — Snake River Unit portion",
+    "hunters": 12,
+    "harvest": 4,
+    "successPct": 33.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "152M",
+    "weapon": "muzzleloader",
+    "label": "Grande Ronde Muzzleloader (2025 hunt 152M) — Starkey Unit portion",
+    "hunters": 127,
+    "harvest": 34,
+    "successPct": 27.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "151M",
+    "weapon": "muzzleloader",
+    "label": "Baker Muzzleloader (2025 hunt 151M) — Sumpter Unit portion",
+    "hunters": 44,
+    "harvest": 22,
+    "successPct": 50.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "152M",
+    "weapon": "muzzleloader",
+    "label": "Grande Ronde Muzzleloader (2025 hunt 152M) — Wenaha Unit portion",
+    "hunters": 182,
+    "harvest": 80,
+    "successPct": 44.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "166M",
+    "weapon": "muzzleloader",
+    "label": "N Malheur Muzzleloader (2025 hunt 166M) — Malheur River Unit portion",
+    "hunters": 52,
+    "harvest": 19,
+    "successPct": 37.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "172M",
+    "weapon": "muzzleloader",
+    "label": "Silvies Unit Muzzleloader (2025 hunt 172M) — Silvies Unit portion",
+    "hunters": 51,
+    "harvest": 25,
+    "successPct": 50.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "168M",
+    "weapon": "muzzleloader",
+    "label": "NE Whitehorse Muzzleloader (2025 hunt 168M) — Whitehorse Unit portion",
+    "hunters": 20,
+    "harvest": 8,
+    "successPct": 38.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "176M",
+    "weapon": "muzzleloader",
+    "label": "Silver Lake/E Ft. Rock Muzzleloader (2025 hunt 176M) — Fort Rock Unit portion",
+    "hunters": 11,
+    "harvest": 6,
+    "successPct": 50.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "175M",
+    "weapon": "muzzleloader",
+    "label": "Interstate Unit Muzzleloader (2025 hunt 175M) — Interstate Unit portion",
+    "hunters": 24,
+    "harvest": 10,
+    "successPct": 42.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "132M",
+    "weapon": "muzzleloader",
+    "label": "Klamath Falls Unit Muzzleloader (2025 hunt 132M) — Klamath Falls Unit portion",
+    "hunters": 23,
+    "harvest": 19,
+    "successPct": 81.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "176M",
+    "weapon": "muzzleloader",
+    "label": "Silver Lake/E Ft. Rock Muzzleloader (2025 hunt 176M) — Silver Lake Unit portion",
+    "hunters": 43,
+    "harvest": 11,
+    "successPct": 26.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "618",
+    "weapon": "rifle",
+    "label": "Alsea Unit (2025 hunt 618) — Alsea Unit portion",
+    "hunters": 104,
+    "harvest": 50,
+    "successPct": 48.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "618T",
+    "weapon": "rifle",
+    "label": "Alsea Unit Youth (2025 hunt 618T) — Alsea Unit portion",
+    "hunters": 44,
+    "harvest": 24,
+    "successPct": 54.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "619",
+    "weapon": "rifle",
+    "label": "W McKenzie (2025 hunt 619) — Mckenzie Unit portion",
+    "hunters": 455,
+    "harvest": 252,
+    "successPct": 55.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "619T",
+    "weapon": "rifle",
+    "label": "McKenzie Unit Youth (2025 hunt 619T) — Mckenzie Unit portion",
+    "hunters": 141,
+    "harvest": 105,
+    "successPct": 75.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "610",
+    "weapon": "rifle",
+    "label": "Saddle Mtn Unit (2025 hunt 610) — Saddle Mountain Unit portion",
+    "hunters": 317,
+    "harvest": 178,
+    "successPct": 56.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "610T",
+    "weapon": "rifle",
+    "label": "Saddle Mtn Unit Youth (2025 hunt 610T) — Saddle Mountain Unit portion",
+    "hunters": 57,
+    "harvest": 28,
+    "successPct": 50.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "616A1",
+    "weapon": "rifle",
+    "label": "NW Santiam (2025 hunt 616A1) — Santiam Unit portion",
+    "hunters": 74,
+    "harvest": 43,
+    "successPct": 58.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "616A2",
+    "weapon": "rifle",
+    "label": "SW Santiam (2025 hunt 616A2) — Santiam Unit portion",
+    "hunters": 53,
+    "harvest": 32,
+    "successPct": 61.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "616T1",
+    "weapon": "rifle",
+    "label": "SW Santiam Youth (2025 hunt 616T1) — Santiam Unit portion",
+    "hunters": 64,
+    "harvest": 40,
+    "successPct": 61.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "616T2",
+    "weapon": "rifle",
+    "label": "NW Santiam Youth (2025 hunt 616T2) — Santiam Unit portion",
+    "hunters": 26,
+    "harvest": 21,
+    "successPct": 80.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "611",
+    "weapon": "rifle",
+    "label": "Scappoose Unit (2025 hunt 611) — Scappoose Unit portion",
+    "hunters": 54,
+    "harvest": 25,
+    "successPct": 47.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "611T",
+    "weapon": "rifle",
+    "label": "Scappoose Unit Youth (2025 hunt 611T) — Scappoose Unit portion",
+    "hunters": 46,
+    "harvest": 20,
+    "successPct": 44.0
+   },
+   {
+    "unit": "20",
+    "huntCode": "620",
+    "weapon": "rifle",
+    "label": "Siuslaw Unit (2025 hunt 620) — Siuslaw Unit portion",
+    "hunters": 71,
+    "harvest": 20,
+    "successPct": 28.0
+   },
+   {
+    "unit": "20",
+    "huntCode": "620A",
+    "weapon": "rifle",
+    "label": "Camas Swale (2025 hunt 620A) — Siuslaw Unit portion",
+    "hunters": 144,
+    "harvest": 43,
+    "successPct": 30.0
+   },
+   {
+    "unit": "20",
+    "huntCode": "620T1",
+    "weapon": "rifle",
+    "label": "Siuslaw Unit Youth (2025 hunt 620T1) — Siuslaw Unit portion",
+    "hunters": 37,
+    "harvest": 20,
+    "successPct": 53.0
+   },
+   {
+    "unit": "20",
+    "huntCode": "620T2",
+    "weapon": "rifle",
+    "label": "Territorial Youth (2025 hunt 620T2) — Siuslaw Unit portion",
+    "hunters": 11,
+    "harvest": 7,
+    "successPct": 67.0
+   },
+   {
+    "unit": "17",
+    "huntCode": "617",
+    "weapon": "rifle",
+    "label": "Stott Mtn Unit (2025 hunt 617) — Stott Mountain Unit portion",
+    "hunters": 92,
+    "harvest": 49,
+    "successPct": 53.0
+   },
+   {
+    "unit": "17",
+    "huntCode": "617T",
+    "weapon": "rifle",
+    "label": "Stott Mtn Unit Youth (2025 hunt 617T) — Stott Mountain Unit portion",
+    "hunters": 46,
+    "harvest": 31,
+    "successPct": 67.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "614",
+    "weapon": "rifle",
+    "label": "Trask Unit (2025 hunt 614) — Trask Unit portion",
+    "hunters": 397,
+    "harvest": 200,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "614T",
+    "weapon": "rifle",
+    "label": "Trask Unit Youth (2025 hunt 614T) — Trask Unit portion",
+    "hunters": 94,
+    "harvest": 42,
+    "successPct": 45.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "612",
+    "weapon": "rifle",
+    "label": "Wilson Unit (2025 hunt 612) — Wilson Unit portion",
+    "hunters": 177,
+    "harvest": 80,
+    "successPct": 45.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "612T",
+    "weapon": "rifle",
+    "label": "Wilson Unit Youth (2025 hunt 612T) — Wilson Unit portion",
+    "hunters": 50,
+    "harvest": 23,
+    "successPct": 45.0
+   },
+   {
+    "unit": "28",
+    "huntCode": "628",
+    "weapon": "rifle",
+    "label": "Applegate Unit (2025 hunt 628) — Applegate Unit portion",
+    "hunters": 33,
+    "harvest": 29,
+    "successPct": 86.0
+   },
+   {
+    "unit": "27",
+    "huntCode": "627",
+    "weapon": "rifle",
+    "label": "Chetco Unit (2025 hunt 627) — Chetco Unit portion",
+    "hunters": 29,
+    "harvest": 18,
+    "successPct": 62.0
+   },
+   {
+    "unit": "22",
+    "huntCode": "622A",
+    "weapon": "rifle",
+    "label": "W Dixon (2025 hunt 622A) — Dixon Unit portion",
+    "hunters": 47,
+    "harvest": 33,
+    "successPct": 71.0
+   },
+   {
+    "unit": "29",
+    "huntCode": "629",
+    "weapon": "rifle",
+    "label": "Evans Cr Unit (2025 hunt 629) — Evans Creek Unit portion",
+    "hunters": 34,
+    "harvest": 20,
+    "successPct": 59.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "621",
+    "weapon": "rifle",
+    "label": "W Indigo (2025 hunt 621) — Indigo Unit portion",
+    "hunters": 98,
+    "harvest": 54,
+    "successPct": 55.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "623",
+    "weapon": "rifle",
+    "label": "Melrose Unit (2025 hunt 623) — Melrose Unit portion",
+    "hunters": 161,
+    "harvest": 67,
+    "successPct": 42.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "623A",
+    "weapon": "rifle",
+    "label": "Central Melrose (2025 hunt 623A) — Melrose Unit portion",
+    "hunters": 491,
+    "harvest": 187,
+    "successPct": 38.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "623B1",
+    "weapon": "rifle",
+    "label": "N Bank Habitat No. 1 (2025 hunt 623B1) — Melrose Unit portion",
+    "hunters": 15,
+    "harvest": 8,
+    "successPct": 57.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "623B2",
+    "weapon": "rifle",
+    "label": "N Bank Habitat No. 2 (2025 hunt 623B2) — Melrose Unit portion",
+    "hunters": 22,
+    "harvest": 10,
+    "successPct": 47.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "623B3",
+    "weapon": "rifle",
+    "label": "N Bank Habitat No. 3 (2025 hunt 623B3) — Melrose Unit portion",
+    "hunters": 17,
+    "harvest": 5,
+    "successPct": 31.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "623T1",
+    "weapon": "rifle",
+    "label": "N Bank Habitat Area No. 1 Youth (2025 hunt 623T1) — Melrose Unit portion",
+    "hunters": 19,
+    "harvest": 9,
+    "successPct": 50.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "623T2",
+    "weapon": "rifle",
+    "label": "N Bank Habitat Area No. 2 Youth (2025 hunt 623T2) — Melrose Unit portion",
+    "hunters": 25,
+    "harvest": 18,
+    "successPct": 73.0
+   },
+   {
+    "unit": "26",
+    "huntCode": "626",
+    "weapon": "rifle",
+    "label": "Powers Unit (2025 hunt 626) — Powers Unit portion",
+    "hunters": 72,
+    "harvest": 40,
+    "successPct": 56.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "625",
+    "weapon": "rifle",
+    "label": "Sixes Unit (2025 hunt 625) — Sixes Unit portion",
+    "hunters": 72,
+    "harvest": 32,
+    "successPct": 44.0
+   },
+   {
+    "unit": "24",
+    "huntCode": "624",
+    "weapon": "rifle",
+    "label": "Tioga Unit (2025 hunt 624) — Tioga Unit portion",
+    "hunters": 95,
+    "harvest": 40,
+    "successPct": 42.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "638A",
+    "weapon": "rifle",
+    "label": "Lower Willow Cr Agri (2025 hunt 638A) — Grizzly Unit portion",
+    "hunters": 32,
+    "harvest": 22,
+    "successPct": 68.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "640T",
+    "weapon": "rifle",
+    "label": "Mid-Columbia Private Youth (2025 hunt 640T) — Biggs Unit portion",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 67.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "643",
+    "weapon": "rifle",
+    "label": "Biggs Private (2025 hunt 643) — Biggs Unit portion",
+    "hunters": 67,
+    "harvest": 46,
+    "successPct": 68.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "640T",
+    "weapon": "rifle",
+    "label": "Mid-Columbia Private Youth (2025 hunt 640T) — Hood Unit portion",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "642",
+    "weapon": "rifle",
+    "label": "Hood Agri (2025 hunt 642) — Hood Unit portion",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 57.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "640T",
+    "weapon": "rifle",
+    "label": "Mid-Columbia Private Youth (2025 hunt 640T) — White River Unit portion",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "641A",
+    "weapon": "rifle",
+    "label": "The Dalles Orchard (2025 hunt 641A) — White River Unit portion",
+    "hunters": 23,
+    "harvest": 21,
+    "successPct": 90.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "641B",
+    "weapon": "rifle",
+    "label": "Wamic Bench (2025 hunt 641B) — White River Unit portion",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "665A",
+    "weapon": "rifle",
+    "label": "SE Beulah Agri (2025 hunt 665A) — Beulah Unit portion",
+    "hunters": 11,
+    "harvest": 6,
+    "successPct": 50.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "665T",
+    "weapon": "rifle",
+    "label": "Malheur Co Youth (2025 hunt 665T) — Beulah Unit portion",
+    "hunters": 32,
+    "harvest": 29,
+    "successPct": 91.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "660A",
+    "weapon": "rifle",
+    "label": "Upper Wallowa Valley (2025 hunt 660A) — Chesnimnus Unit portion",
+    "hunters": 33,
+    "harvest": 28,
+    "successPct": 86.0
+   },
+   {
+    "unit": "44",
+    "huntCode": "644",
+    "weapon": "rifle",
+    "label": "Columbia Basin Unit (2025 hunt 644) — Columbia Basin Unit portion",
+    "hunters": 79,
+    "harvest": 58,
+    "successPct": 73.0
+   },
+   {
+    "unit": "44",
+    "huntCode": "644T1",
+    "weapon": "rifle",
+    "label": "Umatilla NWR Youth (2025 hunt 644T1) — Columbia Basin Unit portion",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "44",
+    "huntCode": "644T2",
+    "weapon": "rifle",
+    "label": "Umatilla Co Private Youth (2025 hunt 644T2) — Columbia Basin Unit portion",
+    "hunters": 27,
+    "harvest": 19,
+    "successPct": 71.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "647B",
+    "weapon": "rifle",
+    "label": "Middle Fork John Day (2025 hunt 647B) — Desolation Unit portion",
+    "hunters": 7,
+    "harvest": 5,
+    "successPct": 67.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "645",
+    "weapon": "rifle",
+    "label": "Fossil Private (2025 hunt 645) — Fossil Unit portion",
+    "hunters": 45,
+    "harvest": 25,
+    "successPct": 54.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "644T2",
+    "weapon": "rifle",
+    "label": "Umatilla Co Private Youth (2025 hunt 644T2) — Heppner Unit portion",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "648A",
+    "weapon": "rifle",
+    "label": "Heppner Private (2025 hunt 648A) — Heppner Unit portion",
+    "hunters": 31,
+    "harvest": 22,
+    "successPct": 71.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "648T",
+    "weapon": "rifle",
+    "label": "Morrow - Gilliam Co Youth (2025 hunt 648T) — Heppner Unit portion",
+    "hunters": 12,
+    "harvest": 10,
+    "successPct": 80.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "649B",
+    "weapon": "rifle",
+    "label": "W Blue Mtns (2025 hunt 649B) — Heppner Unit portion",
+    "hunters": 11,
+    "harvest": 7,
+    "successPct": 67.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "660A",
+    "weapon": "rifle",
+    "label": "Upper Wallowa Valley (2025 hunt 660A) — Imnaha Unit portion",
+    "hunters": 25,
+    "harvest": 20,
+    "successPct": 81.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "651T1",
+    "weapon": "rifle",
+    "label": "Baker No. 1 Youth (2025 hunt 651T1) — Keating Unit portion",
+    "hunters": 8,
+    "harvest": 8,
+    "successPct": 100.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "651T2",
+    "weapon": "rifle",
+    "label": "Baker No. 2 Youth (2025 hunt 651T2) — Keating Unit portion",
+    "hunters": 8,
+    "harvest": 2,
+    "successPct": 20.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "657B",
+    "weapon": "rifle",
+    "label": "Lower Wallowa Valley (2025 hunt 657B) — Minam Unit portion",
+    "hunters": 31,
+    "harvest": 26,
+    "successPct": 83.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "660A",
+    "weapon": "rifle",
+    "label": "Upper Wallowa Valley (2025 hunt 660A) — Minam Unit portion",
+    "hunters": 72,
+    "harvest": 63,
+    "successPct": 87.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "644T2",
+    "weapon": "rifle",
+    "label": "Umatilla Co Private Youth (2025 hunt 644T2) — Mt. Emily Unit portion",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "649B",
+    "weapon": "rifle",
+    "label": "W Blue Mtns (2025 hunt 649B) — Mt. Emily Unit portion",
+    "hunters": 34,
+    "harvest": 16,
+    "successPct": 48.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "647B",
+    "weapon": "rifle",
+    "label": "Middle Fork John Day (2025 hunt 647B) — Northside Unit portion",
+    "hunters": 23,
+    "harvest": 17,
+    "successPct": 75.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "651T1",
+    "weapon": "rifle",
+    "label": "Baker No. 1 Youth (2025 hunt 651T1) — Pine Creek Unit portion",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "651T2",
+    "weapon": "rifle",
+    "label": "Baker No. 2 Youth (2025 hunt 651T2) — Pine Creek Unit portion",
+    "hunters": 12,
+    "harvest": 6,
+    "successPct": 50.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "657A",
+    "weapon": "rifle",
+    "label": "Flora (2025 hunt 657A) — Sled Springs Unit portion",
+    "hunters": 42,
+    "harvest": 26,
+    "successPct": 62.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "657B",
+    "weapon": "rifle",
+    "label": "Lower Wallowa Valley (2025 hunt 657B) — Sled Springs Unit portion",
+    "hunters": 53,
+    "harvest": 30,
+    "successPct": 56.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "660A",
+    "weapon": "rifle",
+    "label": "Upper Wallowa Valley (2025 hunt 660A) — Sled Springs Unit portion",
+    "hunters": 13,
+    "harvest": 9,
+    "successPct": 73.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "651T1",
+    "weapon": "rifle",
+    "label": "Baker No. 1 Youth (2025 hunt 651T1) — Sumpter Unit portion",
+    "hunters": 8,
+    "harvest": 6,
+    "successPct": 80.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "651T2",
+    "weapon": "rifle",
+    "label": "Baker No. 2 Youth (2025 hunt 651T2) — Sumpter Unit portion",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 75.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "644T2",
+    "weapon": "rifle",
+    "label": "Umatilla Co Private Youth (2025 hunt 644T2) — Ukiah Unit portion",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "649B",
+    "weapon": "rifle",
+    "label": "W Blue Mtns (2025 hunt 649B) — Ukiah Unit portion",
+    "hunters": 82,
+    "harvest": 44,
+    "successPct": 53.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "644T2",
+    "weapon": "rifle",
+    "label": "Umatilla Co Private Youth (2025 hunt 644T2) — Walla Walla Unit portion",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "649B",
+    "weapon": "rifle",
+    "label": "W Blue Mtns (2025 hunt 649B) — Walla Walla Unit portion",
+    "hunters": 30,
+    "harvest": 16,
+    "successPct": 54.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "679A",
+    "weapon": "rifle",
+    "label": "Harney Basin Agri (2025 hunt 679A) — Juniper Unit portion",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "679T",
+    "weapon": "rifle",
+    "label": "Harney Basin Youth (2025 hunt 679T) — Juniper Unit portion",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 75.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "665T",
+    "weapon": "rifle",
+    "label": "Malheur Co Youth (2025 hunt 665T) — Owyhee Unit portion",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 75.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "667A",
+    "weapon": "rifle",
+    "label": "NE Owyhee Agri (2025 hunt 667A) — Owyhee Unit portion",
+    "hunters": 16,
+    "harvest": 10,
+    "successPct": 64.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "679A",
+    "weapon": "rifle",
+    "label": "Harney Basin Agri (2025 hunt 679A) — Silvies Unit portion",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "679T",
+    "weapon": "rifle",
+    "label": "Harney Basin Youth (2025 hunt 679T) — Silvies Unit portion",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "679T",
+    "weapon": "rifle",
+    "label": "Harney Basin Youth (2025 hunt 679T) — Steens Mountain Unit portion",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 40.0
+   }
+  ],
+  "ELK": [
+   {
+    "unit": "18",
+    "huntCode": "215A",
+    "weapon": "rifle",
+    "label": "Willamette Plus (2025 hunt 215A) — Alsea Unit portion",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "218A",
+    "weapon": "rifle",
+    "label": "N Alsea (2025 hunt 218A) — Alsea Unit portion",
+    "hunters": 110,
+    "harvest": 76,
+    "successPct": 69.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "218B",
+    "weapon": "rifle",
+    "label": "S Alsea (2025 hunt 218B) — Alsea Unit portion",
+    "hunters": 91,
+    "harvest": 70,
+    "successPct": 77.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "218C",
+    "weapon": "rifle",
+    "label": "Central Alsea (2025 hunt 218C) — Alsea Unit portion",
+    "hunters": 85,
+    "harvest": 65,
+    "successPct": 77.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "218T",
+    "weapon": "rifle",
+    "label": "Alsea Unit Youth (2025 hunt 218T) — Alsea Unit portion",
+    "hunters": 13,
+    "harvest": 7,
+    "successPct": 55.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "219A",
+    "weapon": "rifle",
+    "label": "W McKenzie (2025 hunt 219A) — Mckenzie Unit portion",
+    "hunters": 48,
+    "harvest": 17,
+    "successPct": 37.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "219B",
+    "weapon": "rifle",
+    "label": "Pengra (2025 hunt 219B) — Mckenzie Unit portion",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "219C",
+    "weapon": "rifle",
+    "label": "Oakridge Private Lands (2025 hunt 219C) — Mckenzie Unit portion",
+    "hunters": 10,
+    "harvest": 5,
+    "successPct": 50.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "219T",
+    "weapon": "rifle",
+    "label": "McKenzie Unit Youth (2025 hunt 219T) — Mckenzie Unit portion",
+    "hunters": 16,
+    "harvest": 8,
+    "successPct": 50.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210",
+    "weapon": "rifle",
+    "label": "Saddle Mtn Unit (2025 hunt 210) — Saddle Mountain Unit portion",
+    "hunters": 121,
+    "harvest": 86,
+    "successPct": 72.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210A1",
+    "weapon": "rifle",
+    "label": "W Saddle Mtn No. 1 (2025 hunt 210A1) — Saddle Mountain Unit portion",
+    "hunters": 38,
+    "harvest": 33,
+    "successPct": 88.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210A2",
+    "weapon": "rifle",
+    "label": "W Saddle Mtn No. 2 (2025 hunt 210A2) — Saddle Mountain Unit portion",
+    "hunters": 40,
+    "harvest": 35,
+    "successPct": 88.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210B1",
+    "weapon": "rifle",
+    "label": "Central Saddle Mtn No. 1 (2025 hunt 210B1) — Saddle Mountain Unit portion",
+    "hunters": 36,
+    "harvest": 26,
+    "successPct": 74.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210B2",
+    "weapon": "rifle",
+    "label": "Central Saddle Mtn No. 2 (2025 hunt 210B2) — Saddle Mountain Unit portion",
+    "hunters": 29,
+    "harvest": 18,
+    "successPct": 62.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210C1",
+    "weapon": "rifle",
+    "label": "Upper Nehalem No. 1 (2025 hunt 210C1) — Saddle Mountain Unit portion",
+    "hunters": 74,
+    "harvest": 60,
+    "successPct": 80.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210C2",
+    "weapon": "rifle",
+    "label": "Upper Nehalem No. 2 (2025 hunt 210C2) — Saddle Mountain Unit portion",
+    "hunters": 77,
+    "harvest": 60,
+    "successPct": 77.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210D",
+    "weapon": "rifle",
+    "label": "Lower Columbia (2025 hunt 210D) — Saddle Mountain Unit portion",
+    "hunters": 89,
+    "harvest": 65,
+    "successPct": 74.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210T",
+    "weapon": "rifle",
+    "label": "Saddle Mtn Unit Youth (2025 hunt 210T) — Saddle Mountain Unit portion",
+    "hunters": 10,
+    "harvest": 7,
+    "successPct": 67.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210X",
+    "weapon": "rifle",
+    "label": "Saddle Mtn Unit No. 1 (2025 hunt 210X) — Saddle Mountain Unit portion",
+    "hunters": 933,
+    "harvest": 207,
+    "successPct": 22.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "210Y",
+    "weapon": "rifle",
+    "label": "Saddle Mtn Unit No. 2 (2025 hunt 210Y) — Saddle Mountain Unit portion",
+    "hunters": 949,
+    "harvest": 206,
+    "successPct": 22.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "212A1",
+    "weapon": "rifle",
+    "label": "Miami-Nehalem No. 1 (2025 hunt 212A1) — Saddle Mountain Unit portion",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "212A2",
+    "weapon": "rifle",
+    "label": "Miami-Nehalem No. 2 (2025 hunt 212A2) — Saddle Mountain Unit portion",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "216B",
+    "weapon": "rifle",
+    "label": "SW Santiam (2025 hunt 216B) — Santiam Unit portion",
+    "hunters": 23,
+    "harvest": 17,
+    "successPct": 73.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "216D",
+    "weapon": "rifle",
+    "label": "NW Santiam (2025 hunt 216D) — Santiam Unit portion",
+    "hunters": 72,
+    "harvest": 29,
+    "successPct": 40.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "216T",
+    "weapon": "rifle",
+    "label": "Santiam Unit Youth (2025 hunt 216T) — Santiam Unit portion",
+    "hunters": 13,
+    "harvest": 8,
+    "successPct": 64.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "210C1",
+    "weapon": "rifle",
+    "label": "Upper Nehalem No. 1 (2025 hunt 210C1) — Scappoose Unit portion",
+    "hunters": 7,
+    "harvest": 6,
+    "successPct": 83.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "211",
+    "weapon": "rifle",
+    "label": "Scappoose Unit (2025 hunt 211) — Scappoose Unit portion",
+    "hunters": 92,
+    "harvest": 57,
+    "successPct": 62.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "211A",
+    "weapon": "rifle",
+    "label": "North Plains (2025 hunt 211A) — Scappoose Unit portion",
+    "hunters": 77,
+    "harvest": 36,
+    "successPct": 46.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "211B",
+    "weapon": "rifle",
+    "label": "N Central Scappoose (2025 hunt 211B) — Scappoose Unit portion",
+    "hunters": 77,
+    "harvest": 53,
+    "successPct": 69.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "211C",
+    "weapon": "rifle",
+    "label": "Banks (2025 hunt 211C) — Scappoose Unit portion",
+    "hunters": 33,
+    "harvest": 16,
+    "successPct": 48.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "211T",
+    "weapon": "rifle",
+    "label": "Scappoose Unit Youth (2025 hunt 211T) — Scappoose Unit portion",
+    "hunters": 18,
+    "harvest": 14,
+    "successPct": 81.0
+   },
+   {
+    "unit": "20",
+    "huntCode": "220",
+    "weapon": "rifle",
+    "label": "Siuslaw Unit (2025 hunt 220) — Siuslaw Unit portion",
+    "hunters": 159,
+    "harvest": 88,
+    "successPct": 55.0
+   },
+   {
+    "unit": "20",
+    "huntCode": "220T",
+    "weapon": "rifle",
+    "label": "Siuslaw Unit Youth (2025 hunt 220T) — Siuslaw Unit portion",
+    "hunters": 9,
+    "harvest": 4,
+    "successPct": 43.0
+   },
+   {
+    "unit": "17",
+    "huntCode": "217A",
+    "weapon": "rifle",
+    "label": "W Stott Mtn (2025 hunt 217A) — Stott Mountain Unit portion",
+    "hunters": 54,
+    "harvest": 34,
+    "successPct": 62.0
+   },
+   {
+    "unit": "17",
+    "huntCode": "217B",
+    "weapon": "rifle",
+    "label": "E Stott Mtn (2025 hunt 217B) — Stott Mountain Unit portion",
+    "hunters": 17,
+    "harvest": 7,
+    "successPct": 40.0
+   },
+   {
+    "unit": "17",
+    "huntCode": "217T",
+    "weapon": "rifle",
+    "label": "Stott Mtn Unit Youth (2025 hunt 217T) — Stott Mountain Unit portion",
+    "hunters": 14,
+    "harvest": 10,
+    "successPct": 78.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214",
+    "weapon": "rifle",
+    "label": "Trask Unit (2025 hunt 214) — Trask Unit portion",
+    "hunters": 102,
+    "harvest": 76,
+    "successPct": 75.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214A1",
+    "weapon": "rifle",
+    "label": "W Trask No. 1 (2025 hunt 214A1) — Trask Unit portion",
+    "hunters": 32,
+    "harvest": 21,
+    "successPct": 67.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214A2",
+    "weapon": "rifle",
+    "label": "W Trask No. 2 (2025 hunt 214A2) — Trask Unit portion",
+    "hunters": 30,
+    "harvest": 21,
+    "successPct": 69.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214B1",
+    "weapon": "rifle",
+    "label": "Central Trask No. 1 (2025 hunt 214B1) — Trask Unit portion",
+    "hunters": 8,
+    "harvest": 8,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214B2",
+    "weapon": "rifle",
+    "label": "Central Trask No. 2 (2025 hunt 214B2) — Trask Unit portion",
+    "hunters": 9,
+    "harvest": 6,
+    "successPct": 62.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214C",
+    "weapon": "rifle",
+    "label": "SE Trask (2025 hunt 214C) — Trask Unit portion",
+    "hunters": 56,
+    "harvest": 42,
+    "successPct": 75.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214D1",
+    "weapon": "rifle",
+    "label": "NE Trask No. 1 (2025 hunt 214D1) — Trask Unit portion",
+    "hunters": 32,
+    "harvest": 15,
+    "successPct": 47.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214D2",
+    "weapon": "rifle",
+    "label": "NE Trask No. 2 (2025 hunt 214D2) — Trask Unit portion",
+    "hunters": 20,
+    "harvest": 11,
+    "successPct": 56.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214E",
+    "weapon": "rifle",
+    "label": "Panther Cr (2025 hunt 214E) — Trask Unit portion",
+    "hunters": 12,
+    "harvest": 7,
+    "successPct": 57.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214T",
+    "weapon": "rifle",
+    "label": "Trask Unit Youth (2025 hunt 214T) — Trask Unit portion",
+    "hunters": 10,
+    "harvest": 5,
+    "successPct": 50.0
+   },
+   {
+    "unit": "15",
+    "huntCode": "215A",
+    "weapon": "rifle",
+    "label": "Willamette Plus (2025 hunt 215A) — Willamette Unit portion",
+    "hunters": 161,
+    "harvest": 99,
+    "successPct": 62.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "212",
+    "weapon": "rifle",
+    "label": "Wilson Unit (2025 hunt 212) — Wilson Unit portion",
+    "hunters": 28,
+    "harvest": 15,
+    "successPct": 53.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "212A1",
+    "weapon": "rifle",
+    "label": "Miami-Nehalem No. 1 (2025 hunt 212A1) — Wilson Unit portion",
+    "hunters": 26,
+    "harvest": 18,
+    "successPct": 71.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "212A2",
+    "weapon": "rifle",
+    "label": "Miami-Nehalem No. 2 (2025 hunt 212A2) — Wilson Unit portion",
+    "hunters": 31,
+    "harvest": 9,
+    "successPct": 29.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "212B",
+    "weapon": "rifle",
+    "label": "Buick Canyon (2025 hunt 212B) — Wilson Unit portion",
+    "hunters": 10,
+    "harvest": 6,
+    "successPct": 60.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "212T1",
+    "weapon": "rifle",
+    "label": "Wilson Unit No. 1 Youth (2025 hunt 212T1) — Wilson Unit portion",
+    "hunters": 10,
+    "harvest": 6,
+    "successPct": 57.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "212T2",
+    "weapon": "rifle",
+    "label": "Wilson Unit No. 2 Youth (2025 hunt 212T2) — Wilson Unit portion",
+    "hunters": 37,
+    "harvest": 30,
+    "successPct": 82.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "212T3",
+    "weapon": "rifle",
+    "label": "Wilson Unit No. 3 Youth (2025 hunt 212T3) — Wilson Unit portion",
+    "hunters": 35,
+    "harvest": 32,
+    "successPct": 92.0
+   },
+   {
+    "unit": "28",
+    "huntCode": "228A",
+    "weapon": "rifle",
+    "label": "Applegate-Evans Cr (2025 hunt 228A) — Applegate Unit portion",
+    "hunters": 14,
+    "harvest": 5,
+    "successPct": 33.0
+   },
+   {
+    "unit": "28",
+    "huntCode": "228T",
+    "weapon": "rifle",
+    "label": "Applegate-Evans Cr Youth (2025 hunt 228T) — Applegate Unit portion",
+    "hunters": 8,
+    "harvest": 2,
+    "successPct": 29.0
+   },
+   {
+    "unit": "27",
+    "huntCode": "225B",
+    "weapon": "rifle",
+    "label": "Curry Private (2025 hunt 225B) — Chetco Unit portion",
+    "hunters": 13,
+    "harvest": 9,
+    "successPct": 75.0
+   },
+   {
+    "unit": "27",
+    "huntCode": "227T",
+    "weapon": "rifle",
+    "label": "Chetco Unit Youth (2025 hunt 227T) — Chetco Unit portion",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 50.0
+   },
+   {
+    "unit": "27",
+    "huntCode": "227X",
+    "weapon": "rifle",
+    "label": "Chetco Unit No. 1 (2025 hunt 227X) — Chetco Unit portion",
+    "hunters": 65,
+    "harvest": 13,
+    "successPct": 20.0
+   },
+   {
+    "unit": "27",
+    "huntCode": "227Y",
+    "weapon": "rifle",
+    "label": "Chetco Unit No. 2 (2025 hunt 227Y) — Chetco Unit portion",
+    "hunters": 60,
+    "harvest": 19,
+    "successPct": 31.0
+   },
+   {
+    "unit": "22",
+    "huntCode": "222A",
+    "weapon": "rifle",
+    "label": "Dixon Unit Private (2025 hunt 222A) — Dixon Unit portion",
+    "hunters": 26,
+    "harvest": 9,
+    "successPct": 36.0
+   },
+   {
+    "unit": "22",
+    "huntCode": "222T",
+    "weapon": "rifle",
+    "label": "Dixon Unit Youth (2025 hunt 222T) — Dixon Unit portion",
+    "hunters": 10,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "29",
+    "huntCode": "228A",
+    "weapon": "rifle",
+    "label": "Applegate-Evans Cr (2025 hunt 228A) — Evans Creek Unit portion",
+    "hunters": 16,
+    "harvest": 3,
+    "successPct": 20.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "221A",
+    "weapon": "rifle",
+    "label": "NW Indigo (2025 hunt 221A) — Indigo Unit portion",
+    "hunters": 14,
+    "harvest": 3,
+    "successPct": 20.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "221C",
+    "weapon": "rifle",
+    "label": "Harness Mtn (2025 hunt 221C) — Indigo Unit portion",
+    "hunters": 9,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "221D",
+    "weapon": "rifle",
+    "label": "S Indigo Private Lands (2025 hunt 221D) — Indigo Unit portion",
+    "hunters": 11,
+    "harvest": 3,
+    "successPct": 29.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "221E",
+    "weapon": "rifle",
+    "label": "Mosby (2025 hunt 221E) — Indigo Unit portion",
+    "hunters": 14,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "221T1",
+    "weapon": "rifle",
+    "label": "Indigo Unit Youth (2025 hunt 221T1) — Indigo Unit portion",
+    "hunters": 17,
+    "harvest": 5,
+    "successPct": 31.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "221T2",
+    "weapon": "rifle",
+    "label": "Sutherlin Youth (2025 hunt 221T2) — Indigo Unit portion",
+    "hunters": 16,
+    "harvest": 9,
+    "successPct": 55.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "223A",
+    "weapon": "rifle",
+    "label": "Melrose Unit (2025 hunt 223A) — Melrose Unit portion",
+    "hunters": 124,
+    "harvest": 73,
+    "successPct": 59.0
+   },
+   {
+    "unit": "26",
+    "huntCode": "226A",
+    "weapon": "rifle",
+    "label": "Powers Unit Private (2025 hunt 226A) — Powers Unit portion",
+    "hunters": 39,
+    "harvest": 26,
+    "successPct": 68.0
+   },
+   {
+    "unit": "26",
+    "huntCode": "226T",
+    "weapon": "rifle",
+    "label": "Powers Unit Youth (2025 hunt 226T) — Powers Unit portion",
+    "hunters": 24,
+    "harvest": 19,
+    "successPct": 80.0
+   },
+   {
+    "unit": "26",
+    "huntCode": "226X",
+    "weapon": "rifle",
+    "label": "Powers Unit No. 1 (2025 hunt 226X) — Powers Unit portion",
+    "hunters": 191,
+    "harvest": 25,
+    "successPct": 13.0
+   },
+   {
+    "unit": "26",
+    "huntCode": "226Y",
+    "weapon": "rifle",
+    "label": "Powers Unit No. 2 (2025 hunt 226Y) — Powers Unit portion",
+    "hunters": 85,
+    "harvest": 26,
+    "successPct": 31.0
+   },
+   {
+    "unit": "30",
+    "huntCode": "230A",
+    "weapon": "rifle",
+    "label": "W Rogue (2025 hunt 230A) — Rogue Unit portion",
+    "hunters": 32,
+    "harvest": 11,
+    "successPct": 33.0
+   },
+   {
+    "unit": "30",
+    "huntCode": "230T1",
+    "weapon": "rifle",
+    "label": "Rogue Unit Youth (2025 hunt 230T1) — Rogue Unit portion",
+    "hunters": 19,
+    "harvest": 11,
+    "successPct": 57.0
+   },
+   {
+    "unit": "30",
+    "huntCode": "230T2",
+    "weapon": "rifle",
+    "label": "W Rogue Youth (2025 hunt 230T2) — Rogue Unit portion",
+    "hunters": 14,
+    "harvest": 7,
+    "successPct": 50.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "225A",
+    "weapon": "rifle",
+    "label": "N Sixes (2025 hunt 225A) — Sixes Unit portion",
+    "hunters": 179,
+    "harvest": 86,
+    "successPct": 48.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "225B",
+    "weapon": "rifle",
+    "label": "Curry Private (2025 hunt 225B) — Sixes Unit portion",
+    "hunters": 16,
+    "harvest": 11,
+    "successPct": 70.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "225T",
+    "weapon": "rifle",
+    "label": "Sixes Unit Youth (2025 hunt 225T) — Sixes Unit portion",
+    "hunters": 61,
+    "harvest": 24,
+    "successPct": 40.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "225X",
+    "weapon": "rifle",
+    "label": "Sixes Unit No. 1 (2025 hunt 225X) — Sixes Unit portion",
+    "hunters": 109,
+    "harvest": 42,
+    "successPct": 39.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "225Y",
+    "weapon": "rifle",
+    "label": "Sixes Unit No. 2 (2025 hunt 225Y) — Sixes Unit portion",
+    "hunters": 125,
+    "harvest": 56,
+    "successPct": 45.0
+   },
+   {
+    "unit": "24",
+    "huntCode": "224C",
+    "weapon": "rifle",
+    "label": "Tiago Unit Private (2025 hunt 224C) — Tioga Unit portion",
+    "hunters": 120,
+    "harvest": 91,
+    "successPct": 76.0
+   },
+   {
+    "unit": "24",
+    "huntCode": "224T",
+    "weapon": "rifle",
+    "label": "Tioga Unit Youth (2025 hunt 224T) — Tioga Unit portion",
+    "hunters": 23,
+    "harvest": 23,
+    "successPct": 100.0
+   },
+   {
+    "unit": "24",
+    "huntCode": "224X",
+    "weapon": "rifle",
+    "label": "Tioga Unit No. 1 (2025 hunt 224X) — Tioga Unit portion",
+    "hunters": 598,
+    "harvest": 127,
+    "successPct": 21.0
+   },
+   {
+    "unit": "24",
+    "huntCode": "224Y",
+    "weapon": "rifle",
+    "label": "Tioga Unit No. 2 (2025 hunt 224Y) — Tioga Unit portion",
+    "hunters": 618,
+    "harvest": 113,
+    "successPct": 18.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "238A",
+    "weapon": "rifle",
+    "label": "Grizzly Grassland (2025 hunt 238A) — Grizzly Unit portion",
+    "hunters": 303,
+    "harvest": 64,
+    "successPct": 21.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "238B1",
+    "weapon": "rifle",
+    "label": "Grizzly Private No. 1 (2025 hunt 238B1) — Grizzly Unit portion",
+    "hunters": 72,
+    "harvest": 20,
+    "successPct": 27.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "238B2",
+    "weapon": "rifle",
+    "label": "Grizzly Private No. 2 (2025 hunt 238B2) — Grizzly Unit portion",
+    "hunters": 132,
+    "harvest": 42,
+    "successPct": 32.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "238T",
+    "weapon": "rifle",
+    "label": "Grizzly Unit Youth (2025 hunt 238T) — Grizzly Unit portion",
+    "hunters": 10,
+    "harvest": 3,
+    "successPct": 33.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "238X",
+    "weapon": "rifle",
+    "label": "Grizzly Unit No. 1 (2025 hunt 238X) — Grizzly Unit portion",
+    "hunters": 48,
+    "harvest": 9,
+    "successPct": 18.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "238Y",
+    "weapon": "rifle",
+    "label": "Grizzly Unit No. 2 (2025 hunt 238Y) — Grizzly Unit portion",
+    "hunters": 53,
+    "harvest": 8,
+    "successPct": 15.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "236A",
+    "weapon": "rifle",
+    "label": "Maury - Hampton Butte (2025 hunt 236A) — Maury Unit portion",
+    "hunters": 10,
+    "harvest": 1,
+    "successPct": 10.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "236T",
+    "weapon": "rifle",
+    "label": "Maury Unit Youth (2025 hunt 236T) — Maury Unit portion",
+    "hunters": 7,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "236X",
+    "weapon": "rifle",
+    "label": "Maury Unit No. 1 (2025 hunt 236X) — Maury Unit portion",
+    "hunters": 10,
+    "harvest": 4,
+    "successPct": 38.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "236Y",
+    "weapon": "rifle",
+    "label": "Maury Unit No. 2 (2025 hunt 236Y) — Maury Unit portion",
+    "hunters": 18,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "234B",
+    "weapon": "rifle",
+    "label": "Tumalo (2025 hunt 234B) — Metolius Unit portion",
+    "hunters": 15,
+    "harvest": 5,
+    "successPct": 33.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "234T",
+    "weapon": "rifle",
+    "label": "E Cascade Youth (2025 hunt 234T) — Metolius Unit portion",
+    "hunters": 10,
+    "harvest": 7,
+    "successPct": 75.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "237A",
+    "weapon": "rifle",
+    "label": "Ochoco Private (2025 hunt 237A) — Ochoco Unit portion",
+    "hunters": 200,
+    "harvest": 53,
+    "successPct": 26.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "237T1",
+    "weapon": "rifle",
+    "label": "Ochoco Unit No. 1 Youth (2025 hunt 237T1) — Ochoco Unit portion",
+    "hunters": 10,
+    "harvest": 6,
+    "successPct": 60.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "237T2",
+    "weapon": "rifle",
+    "label": "Ochoco Unit No. 2 Youth (2025 hunt 237T2) — Ochoco Unit portion",
+    "hunters": 97,
+    "harvest": 30,
+    "successPct": 31.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "237X",
+    "weapon": "rifle",
+    "label": "Ochoco Unit No. 1 (2025 hunt 237X) — Ochoco Unit portion",
+    "hunters": 143,
+    "harvest": 45,
+    "successPct": 32.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "237Y",
+    "weapon": "rifle",
+    "label": "Ochoco Unit No. 2 (2025 hunt 237Y) — Ochoco Unit portion",
+    "hunters": 167,
+    "harvest": 53,
+    "successPct": 32.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "235T",
+    "weapon": "rifle",
+    "label": "Paulina - E Fort Rock Youth (2025 hunt 235T) — Paulina Unit portion",
+    "hunters": 13,
+    "harvest": 3,
+    "successPct": 22.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "235X",
+    "weapon": "rifle",
+    "label": "Paulina - E Fort Rock No. 1 (2025 hunt 235X) — Paulina Unit portion",
+    "hunters": 211,
+    "harvest": 23,
+    "successPct": 11.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "235Y",
+    "weapon": "rifle",
+    "label": "Paulina - E Fort Rock No. 2 (2025 hunt 235Y) — Paulina Unit portion",
+    "hunters": 140,
+    "harvest": 4,
+    "successPct": 3.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "277A",
+    "weapon": "rifle",
+    "label": "North Lake (2025 hunt 277A) — Paulina Unit portion",
+    "hunters": 26,
+    "harvest": 3,
+    "successPct": 13.0
+   },
+   {
+    "unit": "34",
+    "huntCode": "234B",
+    "weapon": "rifle",
+    "label": "Tumalo (2025 hunt 234B) — Upper De- Schutes Unit portion",
+    "hunters": 35,
+    "harvest": 4,
+    "successPct": 11.0
+   },
+   {
+    "unit": "34",
+    "huntCode": "234T",
+    "weapon": "rifle",
+    "label": "E Cascade Youth (2025 hunt 234T) — Upper De- Schutes Unit portion",
+    "hunters": 33,
+    "harvest": 20,
+    "successPct": 59.0
+   },
+   {
+    "unit": "34",
+    "huntCode": "234X",
+    "weapon": "rifle",
+    "label": "E Central Cascades (2025 hunt 234X) — Upper De- Schutes Unit portion",
+    "hunters": 594,
+    "harvest": 64,
+    "successPct": 11.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "244",
+    "weapon": "rifle",
+    "label": "Columbia Plateau (2025 hunt 244) — Biggs Unit portion",
+    "hunters": 248,
+    "harvest": 113,
+    "successPct": 46.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "241B",
+    "weapon": "rifle",
+    "label": "White Rvr - Hood (2025 hunt 241B) — Hood Unit portion",
+    "hunters": 6,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "241T",
+    "weapon": "rifle",
+    "label": "White Rvr - Hood Youth (2025 hunt 241T) — Hood Unit portion",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "241X",
+    "weapon": "rifle",
+    "label": "White Rvr - Hood No. 1 (2025 hunt 241X) — Hood Unit portion",
+    "hunters": 52,
+    "harvest": 6,
+    "successPct": 11.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "241Y",
+    "weapon": "rifle",
+    "label": "White Rvr - Hood No. 2 (2025 hunt 241Y) — Hood Unit portion",
+    "hunters": 126,
+    "harvest": 22,
+    "successPct": 17.0
+   },
+   {
+    "unit": "42",
+    "huntCode": "242",
+    "weapon": "rifle",
+    "label": "Hood Private (2025 hunt 242) — Hood Unit portion",
+    "hunters": 57,
+    "harvest": 21,
+    "successPct": 36.0
+   },
+   {
+    "unit": "40",
+    "huntCode": "244",
+    "weapon": "rifle",
+    "label": "Columbia Plateau (2025 hunt 244) — Maupin Unit portion",
+    "hunters": 89,
+    "harvest": 38,
+    "successPct": 43.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "241A",
+    "weapon": "rifle",
+    "label": "The Dalles Watershed (2025 hunt 241A) — White River Unit portion",
+    "hunters": 27,
+    "harvest": 2,
+    "successPct": 9.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "241B",
+    "weapon": "rifle",
+    "label": "White Rvr - Hood (2025 hunt 241B) — White River Unit portion",
+    "hunters": 36,
+    "harvest": 3,
+    "successPct": 9.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "241C",
+    "weapon": "rifle",
+    "label": "White Rvr Private (2025 hunt 241C) — White River Unit portion",
+    "hunters": 181,
+    "harvest": 50,
+    "successPct": 28.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "241T",
+    "weapon": "rifle",
+    "label": "White Rvr - Hood Youth (2025 hunt 241T) — White River Unit portion",
+    "hunters": 20,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "241X",
+    "weapon": "rifle",
+    "label": "White Rvr - Hood No. 1 (2025 hunt 241X) — White River Unit portion",
+    "hunters": 310,
+    "harvest": 47,
+    "successPct": 15.0
+   },
+   {
+    "unit": "41",
+    "huntCode": "241Y",
+    "weapon": "rifle",
+    "label": "White Rvr - Hood No. 2 (2025 hunt 241Y) — White River Unit portion",
+    "hunters": 723,
+    "harvest": 64,
+    "successPct": 9.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "265A1",
+    "weapon": "rifle",
+    "label": "W Beulah No. 1 (2025 hunt 265A1) — Beulah Unit portion",
+    "hunters": 268,
+    "harvest": 26,
+    "successPct": 10.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "265A2",
+    "weapon": "rifle",
+    "label": "W Beulah No. 2 (2025 hunt 265A2) — Beulah Unit portion",
+    "hunters": 177,
+    "harvest": 35,
+    "successPct": 20.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "265A3",
+    "weapon": "rifle",
+    "label": "W Beulah No. 3 (2025 hunt 265A3) — Beulah Unit portion",
+    "hunters": 77,
+    "harvest": 18,
+    "successPct": 23.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "265B1",
+    "weapon": "rifle",
+    "label": "E Beulah No. 1 (2025 hunt 265B1) — Beulah Unit portion",
+    "hunters": 243,
+    "harvest": 38,
+    "successPct": 16.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "265B2",
+    "weapon": "rifle",
+    "label": "E Beulah No. 2 (2025 hunt 265B2) — Beulah Unit portion",
+    "hunters": 298,
+    "harvest": 83,
+    "successPct": 28.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "253A",
+    "weapon": "rifle",
+    "label": "S Catherine Cr (2025 hunt 253A) — Catherine Creek Unit portion",
+    "hunters": 40,
+    "harvest": 6,
+    "successPct": 16.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "253B",
+    "weapon": "rifle",
+    "label": "Mt Harris (2025 hunt 253B) — Catherine Creek Unit portion",
+    "hunters": 88,
+    "harvest": 41,
+    "successPct": 46.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "253T",
+    "weapon": "rifle",
+    "label": "Catherine Cr Unit Youth (2025 hunt 253T) — Catherine Creek Unit portion",
+    "hunters": 29,
+    "harvest": 9,
+    "successPct": 32.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "253X",
+    "weapon": "rifle",
+    "label": "Catherine Cr Unit (2025 hunt 253X) — Catherine Creek Unit portion",
+    "hunters": 324,
+    "harvest": 129,
+    "successPct": 40.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "258A1",
+    "weapon": "rifle",
+    "label": "Zumwalt No. 1 (2025 hunt 258A1) — Chesnimnus Unit portion",
+    "hunters": 40,
+    "harvest": 23,
+    "successPct": 57.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "258A2",
+    "weapon": "rifle",
+    "label": "Zumwalt No. 2 (2025 hunt 258A2) — Chesnimnus Unit portion",
+    "hunters": 34,
+    "harvest": 13,
+    "successPct": 39.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "258A3",
+    "weapon": "rifle",
+    "label": "Zumwalt No. 3 (2025 hunt 258A3) — Chesnimnus Unit portion",
+    "hunters": 46,
+    "harvest": 17,
+    "successPct": 38.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "258T",
+    "weapon": "rifle",
+    "label": "Chesnimnus Unit Youth (2025 hunt 258T) — Chesnimnus Unit portion",
+    "hunters": 10,
+    "harvest": 8,
+    "successPct": 83.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "258X",
+    "weapon": "rifle",
+    "label": "Chesnimnus Unit No. 1 (2025 hunt 258X) — Chesnimnus Unit portion",
+    "hunters": 273,
+    "harvest": 93,
+    "successPct": 34.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "258Y",
+    "weapon": "rifle",
+    "label": "Chesnimnus Unit No. 2 (2025 hunt 258Y) — Chesnimnus Unit portion",
+    "hunters": 287,
+    "harvest": 60,
+    "successPct": 21.0
+   },
+   {
+    "unit": "44",
+    "huntCode": "244",
+    "weapon": "rifle",
+    "label": "Columbia Plateau (2025 hunt 244) — Columbia Basin Unit portion",
+    "hunters": 346,
+    "harvest": 147,
+    "successPct": 43.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "250T",
+    "weapon": "rifle",
+    "label": "Desolation Unit Youth (2025 hunt 250T) — Desolation Unit portion",
+    "hunters": 16,
+    "harvest": 8,
+    "successPct": 50.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "250X",
+    "weapon": "rifle",
+    "label": "Desolation Unit (2025 hunt 250X) — Desolation Unit portion",
+    "hunters": 767,
+    "harvest": 127,
+    "successPct": 17.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245A1",
+    "weapon": "rifle",
+    "label": "N Fossil Private No. 1 (2025 hunt 245A1) — Fossil Unit portion",
+    "hunters": 44,
+    "harvest": 18,
+    "successPct": 41.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245A2",
+    "weapon": "rifle",
+    "label": "N Fossil Private No. 2 (2025 hunt 245A2) — Fossil Unit portion",
+    "hunters": 96,
+    "harvest": 30,
+    "successPct": 31.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245B1",
+    "weapon": "rifle",
+    "label": "S Fossil Private No. 1 (2025 hunt 245B1) — Fossil Unit portion",
+    "hunters": 36,
+    "harvest": 13,
+    "successPct": 37.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245B2",
+    "weapon": "rifle",
+    "label": "S Fossil Private No. 2 (2025 hunt 245B2) — Fossil Unit portion",
+    "hunters": 80,
+    "harvest": 27,
+    "successPct": 33.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245C",
+    "weapon": "rifle",
+    "label": "Fossil Unit (2025 hunt 245C) — Fossil Unit portion",
+    "hunters": 33,
+    "harvest": 2,
+    "successPct": 7.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245D",
+    "weapon": "rifle",
+    "label": "Fossil Unit Private (2025 hunt 245D) — Fossil Unit portion",
+    "hunters": 348,
+    "harvest": 134,
+    "successPct": 39.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245T",
+    "weapon": "rifle",
+    "label": "Fossil Unit Youth (2025 hunt 245T) — Fossil Unit portion",
+    "hunters": 28,
+    "harvest": 6,
+    "successPct": 21.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245X",
+    "weapon": "rifle",
+    "label": "Fossil Unit No. 1 (2025 hunt 245X) — Fossil Unit portion",
+    "hunters": 130,
+    "harvest": 22,
+    "successPct": 17.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "245Y",
+    "weapon": "rifle",
+    "label": "Fossil Unit No. 2 (2025 hunt 245Y) — Fossil Unit portion",
+    "hunters": 172,
+    "harvest": 18,
+    "successPct": 11.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "247D1",
+    "weapon": "rifle",
+    "label": "Northside - Ritter Private No.1 (2025 hunt 247D1) — Heppner Unit portion",
+    "hunters": 37,
+    "harvest": 13,
+    "successPct": 36.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "247D2",
+    "weapon": "rifle",
+    "label": "Northside - Ritter Private No.2 (2025 hunt 247D2) — Heppner Unit portion",
+    "hunters": 15,
+    "harvest": 9,
+    "successPct": 60.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "248A1",
+    "weapon": "rifle",
+    "label": "Heppner Unit No. 1 (2025 hunt 248A1) — Heppner Unit portion",
+    "hunters": 525,
+    "harvest": 154,
+    "successPct": 29.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "248A2",
+    "weapon": "rifle",
+    "label": "Heppner Unit No. 2 (2025 hunt 248A2) — Heppner Unit portion",
+    "hunters": 352,
+    "harvest": 30,
+    "successPct": 9.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "248B1",
+    "weapon": "rifle",
+    "label": "Ritter No. 1 (2025 hunt 248B1) — Heppner Unit portion",
+    "hunters": 105,
+    "harvest": 36,
+    "successPct": 34.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "248B2",
+    "weapon": "rifle",
+    "label": "Ritter No. 2 (2025 hunt 248B2) — Heppner Unit portion",
+    "hunters": 162,
+    "harvest": 28,
+    "successPct": 17.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "248C",
+    "weapon": "rifle",
+    "label": "Monument (2025 hunt 248C) — Heppner Unit portion",
+    "hunters": 66,
+    "harvest": 32,
+    "successPct": 49.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "261",
+    "weapon": "rifle",
+    "label": "Imnaha Unit (2025 hunt 261) — Imnaha Unit portion",
+    "hunters": 22,
+    "harvest": 9,
+    "successPct": 44.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "261T",
+    "weapon": "rifle",
+    "label": "Imnaha Unit Youth (2025 hunt 261T) — Imnaha Unit portion",
+    "hunters": 10,
+    "harvest": 8,
+    "successPct": 83.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "261X",
+    "weapon": "rifle",
+    "label": "Imnaha Unit (2025 hunt 261X) — Imnaha Unit portion",
+    "hunters": 247,
+    "harvest": 106,
+    "successPct": 43.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "251T",
+    "weapon": "rifle",
+    "label": "Baker Youth (2025 hunt 251T) — Keating Unit portion",
+    "hunters": 22,
+    "harvest": 14,
+    "successPct": 67.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "263",
+    "weapon": "rifle",
+    "label": "Keating Unit (2025 hunt 263) — Keating Unit portion",
+    "hunters": 74,
+    "harvest": 25,
+    "successPct": 33.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "263X",
+    "weapon": "rifle",
+    "label": "Keating Unit (2025 hunt 263X) — Keating Unit portion",
+    "hunters": 198,
+    "harvest": 39,
+    "successPct": 20.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "264A1",
+    "weapon": "rifle",
+    "label": "Lookout Mtn Unit No. 1 (2025 hunt 264A1) — Lookout Mountain Unit portion",
+    "hunters": 104,
+    "harvest": 21,
+    "successPct": 20.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "264A2",
+    "weapon": "rifle",
+    "label": "Lookout Mtn Unit No. 2 (2025 hunt 264A2) — Lookout Mountain Unit portion",
+    "hunters": 109,
+    "harvest": 23,
+    "successPct": 21.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "264A3",
+    "weapon": "rifle",
+    "label": "Lookout Mtn Unit No. 3 (2025 hunt 264A3) — Lookout Mountain Unit portion",
+    "hunters": 99,
+    "harvest": 22,
+    "successPct": 22.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "264T",
+    "weapon": "rifle",
+    "label": "Lookout Mtn Unit Youth (2025 hunt 264T) — Lookout Mountain Unit portion",
+    "hunters": 26,
+    "harvest": 6,
+    "successPct": 22.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "264X",
+    "weapon": "rifle",
+    "label": "Lookout Mtn Unit No. 1 (2025 hunt 264X) — Lookout Mountain Unit portion",
+    "hunters": 111,
+    "harvest": 41,
+    "successPct": 37.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "264Y",
+    "weapon": "rifle",
+    "label": "Lookout Mtn Unit No. 2 (2025 hunt 264Y) — Lookout Mountain Unit portion",
+    "hunters": 109,
+    "harvest": 41,
+    "successPct": 38.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "260T",
+    "weapon": "rifle",
+    "label": "Minam Unit Youth (2025 hunt 260T) — Minam Unit portion",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 33.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "260X",
+    "weapon": "rifle",
+    "label": "Minam Unit No. 1 (2025 hunt 260X) — Minam Unit portion",
+    "hunters": 230,
+    "harvest": 36,
+    "successPct": 16.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "260Y",
+    "weapon": "rifle",
+    "label": "Minam Unit No. 2 (2025 hunt 260Y) — Minam Unit portion",
+    "hunters": 283,
+    "harvest": 33,
+    "successPct": 12.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "244T",
+    "weapon": "rifle",
+    "label": "Umatilla Youth (2025 hunt 244T) — Mt. Emily Unit portion",
+    "hunters": 10,
+    "harvest": 5,
+    "successPct": 50.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "254X",
+    "weapon": "rifle",
+    "label": "Mt Emily Unit No. 1 (2025 hunt 254X) — Mt. Emily Unit portion",
+    "hunters": 175,
+    "harvest": 43,
+    "successPct": 25.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "254Y1",
+    "weapon": "rifle",
+    "label": "Mt Emily Unit No. 2 (2025 hunt 254Y1) — Mt. Emily Unit portion",
+    "hunters": 59,
+    "harvest": 43,
+    "successPct": 74.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "254Y2",
+    "weapon": "rifle",
+    "label": "Mt Emily Unit No. 3 (2025 hunt 254Y2) — Mt. Emily Unit portion",
+    "hunters": 149,
+    "harvest": 39,
+    "successPct": 26.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "246",
+    "weapon": "rifle",
+    "label": "Murderers Cr Unit (2025 hunt 246) — Murderers Creek Unit portion",
+    "hunters": 228,
+    "harvest": 21,
+    "successPct": 9.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "246A",
+    "weapon": "rifle",
+    "label": "W Murderers Cr (2025 hunt 246A) — Murderers Creek Unit portion",
+    "hunters": 392,
+    "harvest": 82,
+    "successPct": 21.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "246B",
+    "weapon": "rifle",
+    "label": "E Murderers Cr (2025 hunt 246B) — Murderers Creek Unit portion",
+    "hunters": 171,
+    "harvest": 26,
+    "successPct": 15.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "246C",
+    "weapon": "rifle",
+    "label": "Murderers Cr Private Lands Plus (2025 hunt 246C) — Murderers Creek Unit portion",
+    "hunters": 97,
+    "harvest": 25,
+    "successPct": 25.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "246T",
+    "weapon": "rifle",
+    "label": "Murderers Cr - Northside Youth (2025 hunt 246T) — Murderers Creek Unit portion",
+    "hunters": 17,
+    "harvest": 3,
+    "successPct": 17.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "246X",
+    "weapon": "rifle",
+    "label": "Murderers Cr Unit (2025 hunt 246X) — Murderers Creek Unit portion",
+    "hunters": 317,
+    "harvest": 73,
+    "successPct": 23.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "246T",
+    "weapon": "rifle",
+    "label": "Murderers Cr - Northside Youth (2025 hunt 246T) — Northside Unit portion",
+    "hunters": 16,
+    "harvest": 3,
+    "successPct": 18.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247",
+    "weapon": "rifle",
+    "label": "Northside Unit (2025 hunt 247) — Northside Unit portion",
+    "hunters": 223,
+    "harvest": 25,
+    "successPct": 11.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247A1",
+    "weapon": "rifle",
+    "label": "Northside Private No. 1 (2025 hunt 247A1) — Northside Unit portion",
+    "hunters": 100,
+    "harvest": 43,
+    "successPct": 43.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247A2",
+    "weapon": "rifle",
+    "label": "Northside Private No. 2 (2025 hunt 247A2) — Northside Unit portion",
+    "hunters": 143,
+    "harvest": 41,
+    "successPct": 28.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247B",
+    "weapon": "rifle",
+    "label": "W Northside (2025 hunt 247B) — Northside Unit portion",
+    "hunters": 217,
+    "harvest": 54,
+    "successPct": 25.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247C",
+    "weapon": "rifle",
+    "label": "E Northside (2025 hunt 247C) — Northside Unit portion",
+    "hunters": 320,
+    "harvest": 61,
+    "successPct": 19.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247D1",
+    "weapon": "rifle",
+    "label": "Northside - Ritter Private No.1 (2025 hunt 247D1) — Northside Unit portion",
+    "hunters": 267,
+    "harvest": 61,
+    "successPct": 23.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247D2",
+    "weapon": "rifle",
+    "label": "Northside - Ritter Private No.2 (2025 hunt 247D2) — Northside Unit portion",
+    "hunters": 42,
+    "harvest": 15,
+    "successPct": 36.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247X",
+    "weapon": "rifle",
+    "label": "Northside Unit (2025 hunt 247X) — Northside Unit portion",
+    "hunters": 273,
+    "harvest": 40,
+    "successPct": 15.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "251T",
+    "weapon": "rifle",
+    "label": "Baker Youth (2025 hunt 251T) — Pine Creek Unit portion",
+    "hunters": 35,
+    "harvest": 16,
+    "successPct": 46.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "262",
+    "weapon": "rifle",
+    "label": "Pine Cr Unit (2025 hunt 262) — Pine Creek Unit portion",
+    "hunters": 114,
+    "harvest": 39,
+    "successPct": 34.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "262X",
+    "weapon": "rifle",
+    "label": "Pine Cr Unit (2025 hunt 262X) — Pine Creek Unit portion",
+    "hunters": 237,
+    "harvest": 75,
+    "successPct": 32.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "257B",
+    "weapon": "rifle",
+    "label": "Flora (2025 hunt 257B) — Sled Springs Unit portion",
+    "hunters": 85,
+    "harvest": 26,
+    "successPct": 31.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "257C",
+    "weapon": "rifle",
+    "label": "Sled Springs Unit (2025 hunt 257C) — Sled Springs Unit portion",
+    "hunters": 45,
+    "harvest": 21,
+    "successPct": 47.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "257T",
+    "weapon": "rifle",
+    "label": "Sled Springs Unit Youth (2025 hunt 257T) — Sled Springs Unit portion",
+    "hunters": 9,
+    "harvest": 4,
+    "successPct": 44.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "257X",
+    "weapon": "rifle",
+    "label": "Sled Springs Unit No. 1 (2025 hunt 257X) — Sled Springs Unit portion",
+    "hunters": 511,
+    "harvest": 158,
+    "successPct": 31.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "257Y",
+    "weapon": "rifle",
+    "label": "Sled Springs Unit No. 2 (2025 hunt 257Y) — Sled Springs Unit portion",
+    "hunters": 217,
+    "harvest": 28,
+    "successPct": 13.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "258A1",
+    "weapon": "rifle",
+    "label": "Zumwalt No. 1 (2025 hunt 258A1) — Sled Springs Unit portion",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 20.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "258A2",
+    "weapon": "rifle",
+    "label": "Zumwalt No. 2 (2025 hunt 258A2) — Sled Springs Unit portion",
+    "hunters": 9,
+    "harvest": 1,
+    "successPct": 17.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "258A3",
+    "weapon": "rifle",
+    "label": "Zumwalt No. 3 (2025 hunt 258A3) — Sled Springs Unit portion",
+    "hunters": 6,
+    "harvest": 2,
+    "successPct": 40.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "259T",
+    "weapon": "rifle",
+    "label": "Snake Rvr Unit Youth (2025 hunt 259T) — Snake River Unit portion",
+    "hunters": 7,
+    "harvest": 4,
+    "successPct": 50.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "259X",
+    "weapon": "rifle",
+    "label": "Snake Rvr Unit No. 1 (2025 hunt 259X) — Snake River Unit portion",
+    "hunters": 76,
+    "harvest": 41,
+    "successPct": 54.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "259Y",
+    "weapon": "rifle",
+    "label": "Snake Rvr Unit No. 2 (2025 hunt 259Y) — Snake River Unit portion",
+    "hunters": 147,
+    "harvest": 91,
+    "successPct": 62.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252A1",
+    "weapon": "rifle",
+    "label": "Starkey No. 1 (2025 hunt 252A1) — Starkey Unit portion",
+    "hunters": 341,
+    "harvest": 114,
+    "successPct": 33.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252A2",
+    "weapon": "rifle",
+    "label": "Starkey No. 2 (2025 hunt 252A2) — Starkey Unit portion",
+    "hunters": 497,
+    "harvest": 56,
+    "successPct": 11.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252B1",
+    "weapon": "rifle",
+    "label": "Starkey Private (2025 hunt 252B1) — Starkey Unit portion",
+    "hunters": 265,
+    "harvest": 112,
+    "successPct": 42.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252B2",
+    "weapon": "rifle",
+    "label": "Starkey (2025 hunt 252B2) — Starkey Unit portion",
+    "hunters": 327,
+    "harvest": 97,
+    "successPct": 30.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252C1",
+    "weapon": "rifle",
+    "label": "Starkey Experimental Forest No. 1 (2025 hunt 252C1) — Starkey Unit portion",
+    "hunters": 16,
+    "harvest": 1,
+    "successPct": 8.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252C2",
+    "weapon": "rifle",
+    "label": "Starkey Experimental Forest No. 2 (2025 hunt 252C2) — Starkey Unit portion",
+    "hunters": 15,
+    "harvest": 9,
+    "successPct": 58.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252T1",
+    "weapon": "rifle",
+    "label": "Starkey Youth (2025 hunt 252T1) — Starkey Unit portion",
+    "hunters": 26,
+    "harvest": 18,
+    "successPct": 70.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252T2",
+    "weapon": "rifle",
+    "label": "Glass Hill Youth (2025 hunt 252T2) — Starkey Unit portion",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251A",
+    "weapon": "rifle",
+    "label": "N Sumpter (2025 hunt 251A) — Sumpter Unit portion",
+    "hunters": 569,
+    "harvest": 94,
+    "successPct": 17.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251B1",
+    "weapon": "rifle",
+    "label": "S Sumpter No. 1 (2025 hunt 251B1) — Sumpter Unit portion",
+    "hunters": 84,
+    "harvest": 28,
+    "successPct": 33.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251B2",
+    "weapon": "rifle",
+    "label": "S Sumpter No. 2 (2025 hunt 251B2) — Sumpter Unit portion",
+    "hunters": 114,
+    "harvest": 50,
+    "successPct": 44.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251C",
+    "weapon": "rifle",
+    "label": "S Sumpter (2025 hunt 251C) — Sumpter Unit portion",
+    "hunters": 127,
+    "harvest": 21,
+    "successPct": 16.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251D1",
+    "weapon": "rifle",
+    "label": "Elkhorn Mtn No. 1 (2025 hunt 251D1) — Sumpter Unit portion",
+    "hunters": 17,
+    "harvest": 3,
+    "successPct": 20.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251D2",
+    "weapon": "rifle",
+    "label": "Elkhorn Mtn No. 2 (2025 hunt 251D2) — Sumpter Unit portion",
+    "hunters": 20,
+    "harvest": 4,
+    "successPct": 18.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251T",
+    "weapon": "rifle",
+    "label": "Baker Youth (2025 hunt 251T) — Sumpter Unit portion",
+    "hunters": 71,
+    "harvest": 36,
+    "successPct": 51.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "244T",
+    "weapon": "rifle",
+    "label": "Umatilla Youth (2025 hunt 244T) — Ukiah Unit portion",
+    "hunters": 31,
+    "harvest": 11,
+    "successPct": 36.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "249A1",
+    "weapon": "rifle",
+    "label": "Ukiah Unit No. 1 (2025 hunt 249A1) — Ukiah Unit portion",
+    "hunters": 447,
+    "harvest": 159,
+    "successPct": 36.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "249A2",
+    "weapon": "rifle",
+    "label": "Ukiah Unit No. 2 (2025 hunt 249A2) — Ukiah Unit portion",
+    "hunters": 418,
+    "harvest": 39,
+    "successPct": 9.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "249B",
+    "weapon": "rifle",
+    "label": "Central Ukiah (2025 hunt 249B) — Ukiah Unit portion",
+    "hunters": 62,
+    "harvest": 16,
+    "successPct": 25.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "249C",
+    "weapon": "rifle",
+    "label": "South Ukiah (2025 hunt 249C) — Ukiah Unit portion",
+    "hunters": 78,
+    "harvest": 22,
+    "successPct": 28.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "249D",
+    "weapon": "rifle",
+    "label": "North Ukiah (2025 hunt 249D) — Ukiah Unit portion",
+    "hunters": 40,
+    "harvest": 15,
+    "successPct": 36.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "249E",
+    "weapon": "rifle",
+    "label": "Ukiah Valley Private (2025 hunt 249E) — Ukiah Unit portion",
+    "hunters": 44,
+    "harvest": 21,
+    "successPct": 47.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "244T",
+    "weapon": "rifle",
+    "label": "Umatilla Youth (2025 hunt 244T) — Walla Walla Unit portion",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 67.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "255A",
+    "weapon": "rifle",
+    "label": "Mill Cr Watershed (2025 hunt 255A) — Walla Walla Unit portion",
+    "hunters": 19,
+    "harvest": 6,
+    "successPct": 33.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "255X",
+    "weapon": "rifle",
+    "label": "Walla Walla Unit No. 1 (2025 hunt 255X) — Walla Walla Unit portion",
+    "hunters": 116,
+    "harvest": 28,
+    "successPct": 24.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "255Y1",
+    "weapon": "rifle",
+    "label": "Walla Walla Unit No. 2 (2025 hunt 255Y1) — Walla Walla Unit portion",
+    "hunters": 27,
+    "harvest": 22,
+    "successPct": 83.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "255Y2",
+    "weapon": "rifle",
+    "label": "Walla Walla Unit No. 3 (2025 hunt 255Y2) — Walla Walla Unit portion",
+    "hunters": 78,
+    "harvest": 32,
+    "successPct": 41.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "256A",
+    "weapon": "rifle",
+    "label": "Bartlett Bench (2025 hunt 256A) — Wenaha Unit portion",
+    "hunters": 32,
+    "harvest": 24,
+    "successPct": 75.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "256X",
+    "weapon": "rifle",
+    "label": "Wenaha Unit No. 1 (2025 hunt 256X) — Wenaha Unit portion",
+    "hunters": 95,
+    "harvest": 11,
+    "successPct": 12.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "256Y1",
+    "weapon": "rifle",
+    "label": "Wenaha Unit No. 2 (2025 hunt 256Y1) — Wenaha Unit portion",
+    "hunters": 38,
+    "harvest": 24,
+    "successPct": 62.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "256Y2",
+    "weapon": "rifle",
+    "label": "Wenaha Unit No. 3 (2025 hunt 256Y2) — Wenaha Unit portion",
+    "hunters": 101,
+    "harvest": 13,
+    "successPct": 13.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "278A2",
+    "weapon": "rifle",
+    "label": "High Desert No. 2 (2025 hunt 278A2) — Beatys Butte Unit portion",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "271A1",
+    "weapon": "rifle",
+    "label": "Silvies - N Juniper No. 1 (2025 hunt 271A1) — Juniper Unit portion",
+    "hunters": 28,
+    "harvest": 3,
+    "successPct": 10.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "271A2",
+    "weapon": "rifle",
+    "label": "Silvies - N Juniper No. 2 (2025 hunt 271A2) — Juniper Unit portion",
+    "hunters": 15,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "278A1",
+    "weapon": "rifle",
+    "label": "High Desert No. 1 (2025 hunt 278A1) — Juniper Unit portion",
+    "hunters": 28,
+    "harvest": 1,
+    "successPct": 5.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "278A2",
+    "weapon": "rifle",
+    "label": "High Desert No. 2 (2025 hunt 278A2) — Juniper Unit portion",
+    "hunters": 11,
+    "harvest": 1,
+    "successPct": 12.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "266A1",
+    "weapon": "rifle",
+    "label": "Drewsey Valley No. 1 (2025 hunt 266A1) — Malheur River Unit portion",
+    "hunters": 70,
+    "harvest": 17,
+    "successPct": 25.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "266A2",
+    "weapon": "rifle",
+    "label": "Drewsey Valley No. 2 (2025 hunt 266A2) — Malheur River Unit portion",
+    "hunters": 33,
+    "harvest": 4,
+    "successPct": 12.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "266B",
+    "weapon": "rifle",
+    "label": "N Malheur Rvr (2025 hunt 266B) — Malheur River Unit portion",
+    "hunters": 223,
+    "harvest": 50,
+    "successPct": 22.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "266C",
+    "weapon": "rifle",
+    "label": "S Malheur Rvr (2025 hunt 266C) — Malheur River Unit portion",
+    "hunters": 75,
+    "harvest": 2,
+    "successPct": 3.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "266T",
+    "weapon": "rifle",
+    "label": "N Malheur Rvr Youth (2025 hunt 266T) — Malheur River Unit portion",
+    "hunters": 9,
+    "harvest": 2,
+    "successPct": 29.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "266X",
+    "weapon": "rifle",
+    "label": "N Malheur Rvr No. 1 (2025 hunt 266X) — Malheur River Unit portion",
+    "hunters": 268,
+    "harvest": 36,
+    "successPct": 13.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "266Y",
+    "weapon": "rifle",
+    "label": "N Malheur Rvr No. 2 (2025 hunt 266Y) — Malheur River Unit portion",
+    "hunters": 305,
+    "harvest": 42,
+    "successPct": 14.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "278A1",
+    "weapon": "rifle",
+    "label": "High Desert No. 1 (2025 hunt 278A1) — Malheur River Unit portion",
+    "hunters": 102,
+    "harvest": 16,
+    "successPct": 15.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "278A2",
+    "weapon": "rifle",
+    "label": "High Desert No. 2 (2025 hunt 278A2) — Malheur River Unit portion",
+    "hunters": 97,
+    "harvest": 10,
+    "successPct": 10.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "278T",
+    "weapon": "rifle",
+    "label": "High Desert Youth (2025 hunt 278T) — Malheur River Unit portion",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "267",
+    "weapon": "rifle",
+    "label": "Owyhee Unit (2025 hunt 267) — Owyhee Unit portion",
+    "hunters": 73,
+    "harvest": 12,
+    "successPct": 16.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "278A1",
+    "weapon": "rifle",
+    "label": "High Desert No. 1 (2025 hunt 278A1) — Owyhee Unit portion",
+    "hunters": 70,
+    "harvest": 31,
+    "successPct": 45.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "278A2",
+    "weapon": "rifle",
+    "label": "High Desert No. 2 (2025 hunt 278A2) — Owyhee Unit portion",
+    "hunters": 97,
+    "harvest": 34,
+    "successPct": 35.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "278T",
+    "weapon": "rifle",
+    "label": "High Desert Youth (2025 hunt 278T) — Owyhee Unit portion",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "271A1",
+    "weapon": "rifle",
+    "label": "Silvies - N Juniper No. 1 (2025 hunt 271A1) — Silvies Unit portion",
+    "hunters": 65,
+    "harvest": 24,
+    "successPct": 36.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "278A1",
+    "weapon": "rifle",
+    "label": "High Desert No. 1 (2025 hunt 278A1) — Steens Mountain Unit portion",
+    "hunters": 30,
+    "harvest": 1,
+    "successPct": 5.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "278A2",
+    "weapon": "rifle",
+    "label": "High Desert No. 2 (2025 hunt 278A2) — Steens Mountain Unit portion",
+    "hunters": 35,
+    "harvest": 3,
+    "successPct": 8.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "273A",
+    "weapon": "rifle",
+    "label": "North Wagontire (2025 hunt 273A) — Wagontire Unit portion",
+    "hunters": 23,
+    "harvest": 5,
+    "successPct": 22.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "278A1",
+    "weapon": "rifle",
+    "label": "High Desert No. 1 (2025 hunt 278A1) — Wagontire Unit portion",
+    "hunters": 62,
+    "harvest": 3,
+    "successPct": 5.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "278A2",
+    "weapon": "rifle",
+    "label": "High Desert No. 2 (2025 hunt 278A2) — Wagontire Unit portion",
+    "hunters": 72,
+    "harvest": 7,
+    "successPct": 10.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "278T",
+    "weapon": "rifle",
+    "label": "High Desert Youth (2025 hunt 278T) — Wagontire Unit portion",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "274X",
+    "weapon": "rifle",
+    "label": "Warner Unit No. 1 (2025 hunt 274X) — Warner Unit portion",
+    "hunters": 31,
+    "harvest": 4,
+    "successPct": 14.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "274Y",
+    "weapon": "rifle",
+    "label": "Warner Unit No. 2 (2025 hunt 274Y) — Warner Unit portion",
+    "hunters": 42,
+    "harvest": 1,
+    "successPct": 3.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "268",
+    "weapon": "rifle",
+    "label": "Whitehorse Unit (2025 hunt 268) — Whitehorse Unit portion",
+    "hunters": 46,
+    "harvest": 11,
+    "successPct": 24.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "278A1",
+    "weapon": "rifle",
+    "label": "High Desert No. 1 (2025 hunt 278A1) — Whitehorse Unit portion",
+    "hunters": 13,
+    "harvest": 4,
+    "successPct": 33.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "278A2",
+    "weapon": "rifle",
+    "label": "High Desert No. 2 (2025 hunt 278A2) — Whitehorse Unit portion",
+    "hunters": 28,
+    "harvest": 4,
+    "successPct": 15.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "234T",
+    "weapon": "rifle",
+    "label": "E Cascade Youth (2025 hunt 234T) — Fort Rock Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "234X",
+    "weapon": "rifle",
+    "label": "E Central Cascades (2025 hunt 234X) — Fort Rock Unit portion",
+    "hunters": 66,
+    "harvest": 1,
+    "successPct": 2.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "235T",
+    "weapon": "rifle",
+    "label": "Paulina - E Fort Rock Youth (2025 hunt 235T) — Fort Rock Unit portion",
+    "hunters": 12,
+    "harvest": 1,
+    "successPct": 12.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "235X",
+    "weapon": "rifle",
+    "label": "Paulina - E Fort Rock No. 1 (2025 hunt 235X) — Fort Rock Unit portion",
+    "hunters": 134,
+    "harvest": 8,
+    "successPct": 6.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "235Y",
+    "weapon": "rifle",
+    "label": "Paulina - E Fort Rock No. 2 (2025 hunt 235Y) — Fort Rock Unit portion",
+    "hunters": 100,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "277A",
+    "weapon": "rifle",
+    "label": "North Lake (2025 hunt 277A) — Fort Rock Unit portion",
+    "hunters": 58,
+    "harvest": 5,
+    "successPct": 9.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "275T",
+    "weapon": "rifle",
+    "label": "Interstate - Silver Lake Unit Youth (2025 hunt 275T) — Interstate Unit portion",
+    "hunters": 11,
+    "harvest": 3,
+    "successPct": 29.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "275X",
+    "weapon": "rifle",
+    "label": "Interstate Unit No. 1 (2025 hunt 275X) — Interstate Unit portion",
+    "hunters": 118,
+    "harvest": 9,
+    "successPct": 7.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "275Y",
+    "weapon": "rifle",
+    "label": "Interstate Unit No. 2 (2025 hunt 275Y) — Interstate Unit portion",
+    "hunters": 83,
+    "harvest": 7,
+    "successPct": 8.0
+   },
+   {
+    "unit": "31",
+    "huntCode": "231T",
+    "weapon": "rifle",
+    "label": "Keno Unit Youth (2025 hunt 231T) — Keno Unit portion",
+    "hunters": 22,
+    "harvest": 8,
+    "successPct": 35.0
+   },
+   {
+    "unit": "31",
+    "huntCode": "231X",
+    "weapon": "rifle",
+    "label": "SE Cascades (2025 hunt 231X) — Keno Unit portion",
+    "hunters": 425,
+    "harvest": 20,
+    "successPct": 5.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "232X",
+    "weapon": "rifle",
+    "label": "Klamath Falls Unit No. 1 (2025 hunt 232X) — Klamath Falls Unit portion",
+    "hunters": 22,
+    "harvest": 1,
+    "successPct": 6.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "232Y",
+    "weapon": "rifle",
+    "label": "Klamath Falls Unit No. 2 (2025 hunt 232Y) — Klamath Falls Unit portion",
+    "hunters": 30,
+    "harvest": 1,
+    "successPct": 4.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "275T",
+    "weapon": "rifle",
+    "label": "Interstate - Silver Lake Unit Youth (2025 hunt 275T) — Silver Lake Unit portion",
+    "hunters": 6,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "276X",
+    "weapon": "rifle",
+    "label": "Silver Lake Unit No. 1 (2025 hunt 276X) — Silver Lake Unit portion",
+    "hunters": 181,
+    "harvest": 6,
+    "successPct": 4.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "276Y",
+    "weapon": "rifle",
+    "label": "Silver Lake Unit No. 2 (2025 hunt 276Y) — Silver Lake Unit portion",
+    "hunters": 117,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "277A",
+    "weapon": "rifle",
+    "label": "North Lake (2025 hunt 277A) — Silver Lake Unit portion",
+    "hunters": 35,
+    "harvest": 3,
+    "successPct": 10.0
+   },
+   {
+    "unit": "33",
+    "huntCode": "231X",
+    "weapon": "rifle",
+    "label": "SE Cascades (2025 hunt 231X) — Sprague Unit portion",
+    "hunters": 12,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "33",
+    "huntCode": "233T",
+    "weapon": "rifle",
+    "label": "Sprague Unit Youth (2025 hunt 233T) — Sprague Unit portion",
+    "hunters": 10,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "33",
+    "huntCode": "233X",
+    "weapon": "rifle",
+    "label": "Sprague No. 1 (2025 hunt 233X) — Sprague Unit portion",
+    "hunters": 106,
+    "harvest": 1,
+    "successPct": 1.0
+   },
+   {
+    "unit": "33",
+    "huntCode": "233Y",
+    "weapon": "rifle",
+    "label": "Sprague No. 2 (2025 hunt 233Y) — Sprague Unit portion",
+    "hunters": 70,
+    "harvest": 2,
+    "successPct": 3.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Alsea Unit portion",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "218R",
+    "weapon": "archery",
+    "label": "Alsea Unit Late Bow (2025 hunt 218R) — Alsea Unit portion",
+    "hunters": 184,
+    "harvest": 16,
+    "successPct": 9.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Mckenzie Unit portion",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 33.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "219R",
+    "weapon": "archery",
+    "label": "McKenzie Unit Late Bow (2025 hunt 219R) — Mckenzie Unit portion",
+    "hunters": 39,
+    "harvest": 3,
+    "successPct": 8.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Saddle Mountain Unit portion",
+    "hunters": 11,
+    "harvest": 2,
+    "successPct": 22.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Santiam Unit portion",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 17.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "216R1",
+    "weapon": "archery",
+    "label": "Santiam Unit Traditional Bow (2025 hunt 216R1) — Santiam Unit portion",
+    "hunters": 10,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "216R2",
+    "weapon": "archery",
+    "label": "Santiam Unit Late Bow (2025 hunt 216R2) — Santiam Unit portion",
+    "hunters": 55,
+    "harvest": 1,
+    "successPct": 2.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Scappoose Unit portion",
+    "hunters": 6,
+    "harvest": 2,
+    "successPct": 40.0
+   },
+   {
+    "unit": "20",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Siuslaw Unit portion",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "17",
+    "huntCode": "217R",
+    "weapon": "archery",
+    "label": "Stott Mtn Unit Late Bow (2025 hunt 217R) — Stott Mountain Unit portion",
+    "hunters": 69,
+    "harvest": 2,
+    "successPct": 4.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Trask Unit portion",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Wilson Unit portion",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "28",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Applegate Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "27",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Chetco Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "22",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Dixon Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "29",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Evans Creek Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "221R",
+    "weapon": "archery",
+    "label": "N Indigo Late Bow (2025 hunt 221R) — Indigo Unit portion",
+    "hunters": 11,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "23",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Melrose Unit portion",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "26",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Powers Unit portion",
+    "hunters": 10,
+    "harvest": 1,
+    "successPct": 12.0
+   },
+   {
+    "unit": "26",
+    "huntCode": "226R",
+    "weapon": "archery",
+    "label": "Powers Unit Bow (2025 hunt 226R) — Powers Unit portion",
+    "hunters": 53,
+    "harvest": 19,
+    "successPct": 37.0
+   },
+   {
+    "unit": "30",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Rogue Unit portion",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Sixes Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "24",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Tioga Unit portion",
+    "hunters": 16,
+    "harvest": 6,
+    "successPct": 38.0
+   },
+   {
+    "unit": "38",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Grizzly Unit portion",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "236R",
+    "weapon": "archery",
+    "label": "Maury Unit Bow (2025 hunt 236R) — Maury Unit portion",
+    "hunters": 22,
+    "harvest": 1,
+    "successPct": 6.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Metolius Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "239R",
+    "weapon": "archery",
+    "label": "Metolius Unit Bow (2025 hunt 239R) — Metolius Unit portion",
+    "hunters": 60,
+    "harvest": 4,
+    "successPct": 6.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Ochoco Unit portion",
+    "hunters": 21,
+    "harvest": 2,
+    "successPct": 12.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "237R",
+    "weapon": "archery",
+    "label": "Ochoco Unit Bow (2025 hunt 237R) — Ochoco Unit portion",
+    "hunters": 400,
+    "harvest": 64,
+    "successPct": 16.0
+   },
+   {
+    "unit": "34",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Upper De- Schutes Unit portion",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "34",
+    "huntCode": "234R",
+    "weapon": "archery",
+    "label": "Upper Deschutes Unit Bow (2025 hunt 234R) — Upper De- Schutes Unit portion",
+    "hunters": 59,
+    "harvest": 4,
+    "successPct": 8.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Beulah Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "265R",
+    "weapon": "archery",
+    "label": "W Beulah Bow (2025 hunt 265R) — Beulah Unit portion",
+    "hunters": 365,
+    "harvest": 68,
+    "successPct": 19.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Catherine Creek Unit portion",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "253R1",
+    "weapon": "archery",
+    "label": "Eagle Cap Zone (2025 hunt 253R1) — Catherine Creek Unit portion",
+    "hunters": 361,
+    "harvest": 68,
+    "successPct": 19.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "253R2",
+    "weapon": "archery",
+    "label": "Eagle Cap Traditional Bow (2025 hunt 253R2) — Catherine Creek Unit portion",
+    "hunters": 33,
+    "harvest": 8,
+    "successPct": 23.0
+   },
+   {
+    "unit": "58",
+    "huntCode": "258R",
+    "weapon": "archery",
+    "label": "Chesnimnus Unit Bow (2025 hunt 258R) — Chesnimnus Unit portion",
+    "hunters": 267,
+    "harvest": 65,
+    "successPct": 24.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Desolation Unit portion",
+    "hunters": 18,
+    "harvest": 4,
+    "successPct": 20.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "250R1",
+    "weapon": "archery",
+    "label": "Desolation Unit Bow (2025 hunt 250R1) — Desolation Unit portion",
+    "hunters": 805,
+    "harvest": 108,
+    "successPct": 13.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "250R2",
+    "weapon": "archery",
+    "label": "N Fork Traditional Bow (2025 hunt 250R2) — Desolation Unit portion",
+    "hunters": 40,
+    "harvest": 4,
+    "successPct": 9.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Heppner Unit portion",
+    "hunters": 15,
+    "harvest": 1,
+    "successPct": 8.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "248R1",
+    "weapon": "archery",
+    "label": "Heppner Unit Bow No. 1 (2025 hunt 248R1) — Heppner Unit portion",
+    "hunters": 112,
+    "harvest": 29,
+    "successPct": 26.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "248R2",
+    "weapon": "archery",
+    "label": "Heppner Unit Bow No. 2 (2025 hunt 248R2) — Heppner Unit portion",
+    "hunters": 1139,
+    "harvest": 242,
+    "successPct": 21.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Imnaha Unit portion",
+    "hunters": 7,
+    "harvest": 2,
+    "successPct": 33.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "253R1",
+    "weapon": "archery",
+    "label": "Eagle Cap Zone (2025 hunt 253R1) — Imnaha Unit portion",
+    "hunters": 276,
+    "harvest": 59,
+    "successPct": 21.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "253R2",
+    "weapon": "archery",
+    "label": "Eagle Cap Traditional Bow (2025 hunt 253R2) — Imnaha Unit portion",
+    "hunters": 21,
+    "harvest": 5,
+    "successPct": 24.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Keating Unit portion",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "253R1",
+    "weapon": "archery",
+    "label": "Eagle Cap Zone (2025 hunt 253R1) — Keating Unit portion",
+    "hunters": 146,
+    "harvest": 27,
+    "successPct": 18.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "253R2",
+    "weapon": "archery",
+    "label": "Eagle Cap Traditional Bow (2025 hunt 253R2) — Keating Unit portion",
+    "hunters": 13,
+    "harvest": 3,
+    "successPct": 20.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Lookout Mountain Unit portion",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Minam Unit portion",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "253R1",
+    "weapon": "archery",
+    "label": "Eagle Cap Zone (2025 hunt 253R1) — Minam Unit portion",
+    "hunters": 104,
+    "harvest": 29,
+    "successPct": 28.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "253R2",
+    "weapon": "archery",
+    "label": "Eagle Cap Traditional Bow (2025 hunt 253R2) — Minam Unit portion",
+    "hunters": 9,
+    "harvest": 1,
+    "successPct": 14.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "254R1",
+    "weapon": "archery",
+    "label": "Mt Emily Unit Bow No. 1 (2025 hunt 254R1) — Mt. Emily Unit portion",
+    "hunters": 56,
+    "harvest": 33,
+    "successPct": 58.0
+   },
+   {
+    "unit": "54",
+    "huntCode": "254R2",
+    "weapon": "archery",
+    "label": "Mt Emily Unit Bow No. 2 (2025 hunt 254R2) — Mt. Emily Unit portion",
+    "hunters": 76,
+    "harvest": 10,
+    "successPct": 13.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Murderers Creek Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "246R",
+    "weapon": "archery",
+    "label": "Murderers Cr Unit Bow (2025 hunt 246R) — Murderers Creek Unit portion",
+    "hunters": 660,
+    "harvest": 88,
+    "successPct": 13.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Northside Unit portion",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "247R",
+    "weapon": "archery",
+    "label": "Northside Unit Bow (2025 hunt 247R) — Northside Unit portion",
+    "hunters": 768,
+    "harvest": 123,
+    "successPct": 16.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Pine Creek Unit portion",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "253R1",
+    "weapon": "archery",
+    "label": "Eagle Cap Zone (2025 hunt 253R1) — Pine Creek Unit portion",
+    "hunters": 209,
+    "harvest": 65,
+    "successPct": 31.0
+   },
+   {
+    "unit": "62",
+    "huntCode": "253R2",
+    "weapon": "archery",
+    "label": "Eagle Cap Traditional Bow (2025 hunt 253R2) — Pine Creek Unit portion",
+    "hunters": 8,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "257R1",
+    "weapon": "archery",
+    "label": "Sled Springs Unit Bow No. 1 (2025 hunt 257R1) — Sled Springs Unit portion",
+    "hunters": 243,
+    "harvest": 58,
+    "successPct": 24.0
+   },
+   {
+    "unit": "57",
+    "huntCode": "257R2",
+    "weapon": "archery",
+    "label": "Sled Springs Unit Bow No. 2 (2025 hunt 257R2) — Sled Springs Unit portion",
+    "hunters": 103,
+    "harvest": 12,
+    "successPct": 11.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Snake River Unit portion",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "259R",
+    "weapon": "archery",
+    "label": "Snake Rvr Unit Bow (2025 hunt 259R) — Snake River Unit portion",
+    "hunters": 145,
+    "harvest": 48,
+    "successPct": 33.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Starkey Unit portion",
+    "hunters": 20,
+    "harvest": 5,
+    "successPct": 25.0
+   },
+   {
+    "unit": "52",
+    "huntCode": "252R",
+    "weapon": "archery",
+    "label": "Starkey Unit Bow (2025 hunt 252R) — Starkey Unit portion",
+    "hunters": 1027,
+    "harvest": 203,
+    "successPct": 20.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Sumpter Unit portion",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Ukiah Unit portion",
+    "hunters": 17,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "249R1",
+    "weapon": "archery",
+    "label": "Ukiah Unit Bow No. 1 (2025 hunt 249R1) — Ukiah Unit portion",
+    "hunters": 186,
+    "harvest": 30,
+    "successPct": 16.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "249R2",
+    "weapon": "archery",
+    "label": "Ukiah Unit Bow No. 2 (2025 hunt 249R2) — Ukiah Unit portion",
+    "hunters": 979,
+    "harvest": 182,
+    "successPct": 19.0
+   },
+   {
+    "unit": "49",
+    "huntCode": "250R2",
+    "weapon": "archery",
+    "label": "N Fork Traditional Bow (2025 hunt 250R2) — Ukiah Unit portion",
+    "hunters": 17,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "255R1",
+    "weapon": "archery",
+    "label": "Walla Walla Unit Bow No. 1 (2025 hunt 255R1) — Walla Walla Unit portion",
+    "hunters": 30,
+    "harvest": 17,
+    "successPct": 58.0
+   },
+   {
+    "unit": "55",
+    "huntCode": "255R2",
+    "weapon": "archery",
+    "label": "Walla Walla Unit Bow No. 2 (2025 hunt 255R2) — Walla Walla Unit portion",
+    "hunters": 26,
+    "harvest": 2,
+    "successPct": 9.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "256R1",
+    "weapon": "archery",
+    "label": "Wenaha Unit Bow No. 1 (2025 hunt 256R1) — Wenaha Unit portion",
+    "hunters": 45,
+    "harvest": 24,
+    "successPct": 53.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "256R2",
+    "weapon": "archery",
+    "label": "Wenaha Unit Bow No. 2 (2025 hunt 256R2) — Wenaha Unit portion",
+    "hunters": 51,
+    "harvest": 7,
+    "successPct": 13.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Malheur River Unit portion",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "266R",
+    "weapon": "archery",
+    "label": "N Malheur Rvr Bow (2025 hunt 266R) — Malheur River Unit portion",
+    "hunters": 352,
+    "harvest": 74,
+    "successPct": 21.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Silvies Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "272R",
+    "weapon": "archery",
+    "label": "Silves Unit Bow (2025 hunt 272R) — Silvies Unit portion",
+    "hunters": 532,
+    "harvest": 53,
+    "successPct": 10.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Fort Rock Unit portion",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Interstate Unit portion",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "31",
+    "huntCode": "200R",
+    "weapon": "archery",
+    "label": "Oregon Youth Bow (2025 hunt 200R) — Keno Unit portion",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "19",
+    "huntCode": "200M",
+    "weapon": "muzzleloader",
+    "label": "Cascade Muzzleloader (2025 hunt 200M) — Mckenzie Unit portion",
+    "hunters": 105,
+    "harvest": 5,
+    "successPct": 5.0
+   },
+   {
+    "unit": "16",
+    "huntCode": "200M",
+    "weapon": "muzzleloader",
+    "label": "Cascade Muzzleloader (2025 hunt 200M) — Santiam Unit portion",
+    "hunters": 73,
+    "harvest": 6,
+    "successPct": 8.0
+   },
+   {
+    "unit": "14",
+    "huntCode": "214M",
+    "weapon": "muzzleloader",
+    "label": "NE Trask Muzzleloader (2025 hunt 214M) — Trask Unit portion",
+    "hunters": 34,
+    "harvest": 12,
+    "successPct": 34.0
+   },
+   {
+    "unit": "22",
+    "huntCode": "200M",
+    "weapon": "muzzleloader",
+    "label": "Cascade Muzzleloader (2025 hunt 200M) — Dixon Unit portion",
+    "hunters": 47,
+    "harvest": 4,
+    "successPct": 8.0
+   },
+   {
+    "unit": "29",
+    "huntCode": "200M",
+    "weapon": "muzzleloader",
+    "label": "Cascade Muzzleloader (2025 hunt 200M) — Evans Creek Unit portion",
+    "hunters": 9,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21",
+    "huntCode": "200M",
+    "weapon": "muzzleloader",
+    "label": "Cascade Muzzleloader (2025 hunt 200M) — Indigo Unit portion",
+    "hunters": 79,
+    "harvest": 1,
+    "successPct": 2.0
+   },
+   {
+    "unit": "30",
+    "huntCode": "200M",
+    "weapon": "muzzleloader",
+    "label": "Cascade Muzzleloader (2025 hunt 200M) — Rogue Unit portion",
+    "hunters": 159,
+    "harvest": 1,
+    "successPct": 1.0
+   },
+   {
+    "unit": "25",
+    "huntCode": "225M",
+    "weapon": "muzzleloader",
+    "label": "Sixer Muzzleloader (2025 hunt 225M) — Sixes Unit portion",
+    "hunters": 32,
+    "harvest": 13,
+    "successPct": 39.0
+   },
+   {
+    "unit": "24",
+    "huntCode": "224M",
+    "weapon": "muzzleloader",
+    "label": "Tioga Unit Muzzleloader (2025 hunt 224M) — Tioga Unit portion",
+    "hunters": 226,
+    "harvest": 83,
+    "successPct": 37.0
+   },
+   {
+    "unit": "39",
+    "huntCode": "234M",
+    "weapon": "muzzleloader",
+    "label": "E Cascade Muzzleloader (2025 hunt 234M) — Metolius Unit portion",
+    "hunters": 20,
+    "harvest": 7,
+    "successPct": 38.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "235M",
+    "weapon": "muzzleloader",
+    "label": "Paulina - E Fort Rock Muzzleloader (2025 hunt 235M) — Paulina Unit portion",
+    "hunters": 19,
+    "harvest": 3,
+    "successPct": 14.0
+   },
+   {
+    "unit": "34",
+    "huntCode": "234M",
+    "weapon": "muzzleloader",
+    "label": "E Cascade Muzzleloader (2025 hunt 234M) — Upper De- Schutes Unit portion",
+    "hunters": 128,
+    "harvest": 35,
+    "successPct": 27.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "265M",
+    "weapon": "muzzleloader",
+    "label": "E Grant Muzzleloader (2025 hunt 265M) — Beulah Unit portion",
+    "hunters": 71,
+    "harvest": 7,
+    "successPct": 11.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "253M",
+    "weapon": "muzzleloader",
+    "label": "Catherine Creek Unit Muzzleloader (2025 hunt 253M) — Catherine Creek Unit portion",
+    "hunters": 103,
+    "harvest": 16,
+    "successPct": 16.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "248M",
+    "weapon": "muzzleloader",
+    "label": "Pole Cr Muzzleloader (2025 hunt 248M) — Heppner Unit portion",
+    "hunters": 26,
+    "harvest": 11,
+    "successPct": 42.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "260M",
+    "weapon": "muzzleloader",
+    "label": "Eagle Cap Muzzleloader (2025 hunt 260M) — Minam Unit portion",
+    "hunters": 32,
+    "harvest": 6,
+    "successPct": 18.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "265M",
+    "weapon": "muzzleloader",
+    "label": "E Grant Muzzleloader (2025 hunt 265M) — Murderers Creek Unit portion",
+    "hunters": 58,
+    "harvest": 10,
+    "successPct": 17.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251M1",
+    "weapon": "muzzleloader",
+    "label": "Elkhorn No. 1 Muzzleloader (2025 hunt 251M1) — Sumpter Unit portion",
+    "hunters": 24,
+    "harvest": 11,
+    "successPct": 47.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "251M2",
+    "weapon": "muzzleloader",
+    "label": "Elkhorn No. 2 Muzzleloader (2025 hunt 251M2) — Sumpter Unit portion",
+    "hunters": 9,
+    "harvest": 1,
+    "successPct": 14.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "278M",
+    "weapon": "muzzleloader",
+    "label": "High Desert Muzzleloader (2025 hunt 278M) — Juniper Unit portion",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 20.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "278M",
+    "weapon": "muzzleloader",
+    "label": "High Desert Muzzleloader (2025 hunt 278M) — Malheur River Unit portion",
+    "hunters": 20,
+    "harvest": 3,
+    "successPct": 12.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "278M",
+    "weapon": "muzzleloader",
+    "label": "High Desert Muzzleloader (2025 hunt 278M) — Owyhee Unit portion",
+    "hunters": 18,
+    "harvest": 8,
+    "successPct": 43.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "278M",
+    "weapon": "muzzleloader",
+    "label": "High Desert Muzzleloader (2025 hunt 278M) — Steens Mountain Unit portion",
+    "hunters": 16,
+    "harvest": 1,
+    "successPct": 8.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "278M",
+    "weapon": "muzzleloader",
+    "label": "High Desert Muzzleloader (2025 hunt 278M) — Wagontire Unit portion",
+    "hunters": 14,
+    "harvest": 1,
+    "successPct": 9.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "278M",
+    "weapon": "muzzleloader",
+    "label": "High Desert Muzzleloader (2025 hunt 278M) — Whitehorse Unit portion",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "234M",
+    "weapon": "muzzleloader",
+    "label": "E Cascade Muzzleloader (2025 hunt 234M) — Fort Rock Unit portion",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 50.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "235M",
+    "weapon": "muzzleloader",
+    "label": "Paulina - E Fort Rock Muzzleloader (2025 hunt 235M) — Fort Rock Unit portion",
+    "hunters": 19,
+    "harvest": 0,
+    "successPct": 0.0
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "unit": "38",
+    "huntCode": "438",
+    "weapon": "rifle",
+    "label": "Grizzly Unit (2025 hunt 438) — Grizzly Unit portion",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "436",
+    "weapon": "rifle",
+    "label": "Maury Unit (2025 hunt 436) — Maury Unit portion",
+    "hunters": 23,
+    "harvest": 16,
+    "successPct": 68.0
+   },
+   {
+    "unit": "36",
+    "huntCode": "436R",
+    "weapon": "archery",
+    "label": "Maury Unit Bow (2025 hunt 436R) — Maury Unit portion",
+    "hunters": 18,
+    "harvest": 4,
+    "successPct": 21.0
+   },
+   {
+    "unit": "37",
+    "huntCode": "437",
+    "weapon": "rifle",
+    "label": "Ochoco Unit (2025 hunt 437) — Ochoco Unit portion",
+    "hunters": 66,
+    "harvest": 26,
+    "successPct": 40.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "435",
+    "weapon": "rifle",
+    "label": "Paulina Unit (2025 hunt 435) — Paulina Unit portion",
+    "hunters": 10,
+    "harvest": 9,
+    "successPct": 90.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "435M",
+    "weapon": "muzzleloader",
+    "label": "Paulina Unit Muzzleloader (2025 hunt 435M) — Paulina Unit portion",
+    "hunters": 6,
+    "harvest": 5,
+    "successPct": 80.0
+   },
+   {
+    "unit": "35",
+    "huntCode": "435R",
+    "weapon": "archery",
+    "label": "Paulina Unit Bow (2025 hunt 435R) — Paulina Unit portion",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "440A1",
+    "weapon": "rifle",
+    "label": "Columbia Plateau No. 1 (2025 hunt 440A1) — Biggs Unit portion",
+    "hunters": 10,
+    "harvest": 3,
+    "successPct": 29.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "440A2",
+    "weapon": "rifle",
+    "label": "Columbia Plateau No. 2 (2025 hunt 440A2) — Biggs Unit portion",
+    "hunters": 9,
+    "harvest": 9,
+    "successPct": 100.0
+   },
+   {
+    "unit": "40",
+    "huntCode": "440A2",
+    "weapon": "rifle",
+    "label": "Columbia Plateau No. 2 (2025 hunt 440A2) — Maupin Unit portion",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "65",
+    "huntCode": "465",
+    "weapon": "rifle",
+    "label": "Beulah Unit (2025 hunt 465) — Beulah Unit portion",
+    "hunters": 24,
+    "harvest": 14,
+    "successPct": 56.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "453T",
+    "weapon": "rifle",
+    "label": "Catherine Cr Unit Youth (2025 hunt 453T) — Catherine Creek Unit portion",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "44",
+    "huntCode": "440A1",
+    "weapon": "rifle",
+    "label": "Columbia Plateau No. 1 (2025 hunt 440A1) — Columbia Basin Unit portion",
+    "hunters": 21,
+    "harvest": 10,
+    "successPct": 47.0
+   },
+   {
+    "unit": "44",
+    "huntCode": "440A2",
+    "weapon": "rifle",
+    "label": "Columbia Plateau No. 2 (2025 hunt 440A2) — Columbia Basin Unit portion",
+    "hunters": 10,
+    "harvest": 8,
+    "successPct": 75.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "445A",
+    "weapon": "rifle",
+    "label": "Fossil Unit No. 1 (2025 hunt 445A) — Fossil Unit portion",
+    "hunters": 11,
+    "harvest": 4,
+    "successPct": 33.0
+   },
+   {
+    "unit": "45",
+    "huntCode": "445B",
+    "weapon": "rifle",
+    "label": "Fossil Unit No. 2 (2025 hunt 445B) — Fossil Unit portion",
+    "hunters": 7,
+    "harvest": 2,
+    "successPct": 25.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "440A1",
+    "weapon": "rifle",
+    "label": "Columbia Plateau No. 1 (2025 hunt 440A1) — Heppner Unit portion",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "48",
+    "huntCode": "440A2",
+    "weapon": "rifle",
+    "label": "Columbia Plateau No. 2 (2025 hunt 440A2) — Heppner Unit portion",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "63",
+    "huntCode": "462",
+    "weapon": "rifle",
+    "label": "Pine Cr - Keating (2025 hunt 462) — Keating Unit portion",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "464",
+    "weapon": "rifle",
+    "label": "Lookout Mtn Unit (2025 hunt 464) — Lookout Mountain Unit portion",
+    "hunters": 7,
+    "harvest": 7,
+    "successPct": 100.0
+   },
+   {
+    "unit": "64",
+    "huntCode": "464R",
+    "weapon": "archery",
+    "label": "Lookout Mtn Unit Bow (2025 hunt 464R) — Lookout Mountain Unit portion",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "446",
+    "weapon": "rifle",
+    "label": "Murderers Cr Unit (2025 hunt 446) — Murderers Creek Unit portion",
+    "hunters": 48,
+    "harvest": 31,
+    "successPct": 64.0
+   },
+   {
+    "unit": "47",
+    "huntCode": "447",
+    "weapon": "rifle",
+    "label": "Northside - Ritter (2025 hunt 447) — Northside Unit portion",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 67.0
+   },
+   {
+    "unit": "51",
+    "huntCode": "451",
+    "weapon": "rifle",
+    "label": "Sumpter Unit (2025 hunt 451) — Sumpter Unit portion",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "470A",
+    "weapon": "rifle",
+    "label": "Beatys Butte No. 1 (2025 hunt 470A) — Beatys Butte Unit portion",
+    "hunters": 64,
+    "harvest": 54,
+    "successPct": 84.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "470B",
+    "weapon": "rifle",
+    "label": "Beatys Butte No. 2 (2025 hunt 470B) — Beatys Butte Unit portion",
+    "hunters": 68,
+    "harvest": 54,
+    "successPct": 80.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "470C",
+    "weapon": "rifle",
+    "label": "Hart Mtn (2025 hunt 470C) — Beatys Butte Unit portion",
+    "hunters": 31,
+    "harvest": 28,
+    "successPct": 93.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "470R",
+    "weapon": "archery",
+    "label": "Beatys Butte Bow (2025 hunt 470R) — Beatys Butte Unit portion",
+    "hunters": 27,
+    "harvest": 9,
+    "successPct": 33.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "470R1",
+    "weapon": "archery",
+    "label": "Hart Mtn Bow (2025 hunt 470R1) — Beatys Butte Unit portion",
+    "hunters": 13,
+    "harvest": 9,
+    "successPct": 71.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "470T",
+    "weapon": "rifle",
+    "label": "Hart Mtn Youth (2025 hunt 470T) — Beatys Butte Unit portion",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "466B",
+    "weapon": "rifle",
+    "label": "Harney Basin (2025 hunt 466B) — Juniper Unit portion",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "470C",
+    "weapon": "rifle",
+    "label": "Hart Mtn (2025 hunt 470C) — Juniper Unit portion",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "470R1",
+    "weapon": "archery",
+    "label": "Hart Mtn Bow (2025 hunt 470R1) — Juniper Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "71",
+    "huntCode": "471A",
+    "weapon": "rifle",
+    "label": "Juniper (2025 hunt 471A) — Juniper Unit portion",
+    "hunters": 56,
+    "harvest": 46,
+    "successPct": 81.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "466A1",
+    "weapon": "rifle",
+    "label": "Malheur Rvr Unit No. 1 (2025 hunt 466A1) — Malheur River Unit portion",
+    "hunters": 81,
+    "harvest": 70,
+    "successPct": 86.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "466A2",
+    "weapon": "rifle",
+    "label": "Malheur Rvr Unit No. 2 (2025 hunt 466A2) — Malheur River Unit portion",
+    "hunters": 79,
+    "harvest": 54,
+    "successPct": 68.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "466B",
+    "weapon": "rifle",
+    "label": "Harney Basin (2025 hunt 466B) — Malheur River Unit portion",
+    "hunters": 12,
+    "harvest": 10,
+    "successPct": 80.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "466R",
+    "weapon": "archery",
+    "label": "Malheur Rvr Unit Bow (2025 hunt 466R) — Malheur River Unit portion",
+    "hunters": 43,
+    "harvest": 12,
+    "successPct": 29.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "467",
+    "weapon": "rifle",
+    "label": "Owyhee Unit (2025 hunt 467) — Owyhee Unit portion",
+    "hunters": 58,
+    "harvest": 38,
+    "successPct": 65.0
+   },
+   {
+    "unit": "67",
+    "huntCode": "467R",
+    "weapon": "archery",
+    "label": "Owyhee Unit Bow (2025 hunt 467R) — Owyhee Unit portion",
+    "hunters": 28,
+    "harvest": 9,
+    "successPct": 30.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "466B",
+    "weapon": "rifle",
+    "label": "Harney Basin (2025 hunt 466B) — Silvies Unit portion",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "472A1",
+    "weapon": "rifle",
+    "label": "Silvies Unit No. 1 (2025 hunt 472A1) — Silvies Unit portion",
+    "hunters": 45,
+    "harvest": 27,
+    "successPct": 59.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "472A2",
+    "weapon": "rifle",
+    "label": "Silvies Unit No. 2 (2025 hunt 472A2) — Silvies Unit portion",
+    "hunters": 42,
+    "harvest": 24,
+    "successPct": 56.0
+   },
+   {
+    "unit": "72",
+    "huntCode": "472B",
+    "weapon": "rifle",
+    "label": "Riley (2025 hunt 472B) — Silvies Unit portion",
+    "hunters": 26,
+    "harvest": 4,
+    "successPct": 18.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "466B",
+    "weapon": "rifle",
+    "label": "Harney Basin (2025 hunt 466B) — Steens Mountain Unit portion",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 33.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "473A",
+    "weapon": "rifle",
+    "label": "N Wagontire (2025 hunt 473A) — Wagontire Unit portion",
+    "hunters": 34,
+    "harvest": 23,
+    "successPct": 68.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "473M",
+    "weapon": "muzzleloader",
+    "label": "Wagontire Unit Muzzleloader (2025 hunt 473M) — Wagontire Unit portion",
+    "hunters": 13,
+    "harvest": 8,
+    "successPct": 62.0
+   },
+   {
+    "unit": "73",
+    "huntCode": "473R",
+    "weapon": "archery",
+    "label": "Wagontire Unit Bow (2025 hunt 473R) — Wagontire Unit portion",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "474A",
+    "weapon": "rifle",
+    "label": "Warner Unit No. 1 (2025 hunt 474A) — Warner Unit portion",
+    "hunters": 48,
+    "harvest": 47,
+    "successPct": 98.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "474B",
+    "weapon": "rifle",
+    "label": "Warner Unit No. 2 (2025 hunt 474B) — Warner Unit portion",
+    "hunters": 51,
+    "harvest": 47,
+    "successPct": 93.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "474R",
+    "weapon": "archery",
+    "label": "Warner Unit Bow (2025 hunt 474R) — Warner Unit portion",
+    "hunters": 32,
+    "harvest": 13,
+    "successPct": 41.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "468",
+    "weapon": "rifle",
+    "label": "Whitehorse Unit (2025 hunt 468) — Whitehorse Unit portion",
+    "hunters": 134,
+    "harvest": 118,
+    "successPct": 88.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "476A",
+    "weapon": "rifle",
+    "label": "Fort Rock - Silver Lake (2025 hunt 476A) — Fort Rock Unit portion",
+    "hunters": 14,
+    "harvest": 13,
+    "successPct": 91.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "476M",
+    "weapon": "muzzleloader",
+    "label": "Fort Rock - Silver Lake Muzzleloader (2025 hunt 476M) — Fort Rock Unit portion",
+    "hunters": 8,
+    "harvest": 3,
+    "successPct": 43.0
+   },
+   {
+    "unit": "77",
+    "huntCode": "477R",
+    "weapon": "archery",
+    "label": "E Slope Bow (2025 hunt 477R) — Fort Rock Unit portion",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "475A",
+    "weapon": "rifle",
+    "label": "E Interstate (2025 hunt 475A) — Interstate Unit portion",
+    "hunters": 35,
+    "harvest": 25,
+    "successPct": 72.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "475M",
+    "weapon": "muzzleloader",
+    "label": "Gerber Reservoir Muzzleloader (2025 hunt 475M) — Interstate Unit portion",
+    "hunters": 30,
+    "harvest": 9,
+    "successPct": 29.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "475R1",
+    "weapon": "archery",
+    "label": "E Interstate Bow (2025 hunt 475R1) — Interstate Unit portion",
+    "hunters": 28,
+    "harvest": 6,
+    "successPct": 22.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "475R2",
+    "weapon": "archery",
+    "label": "Gerber Reservoir Bow (2025 hunt 475R2) — Interstate Unit portion",
+    "hunters": 57,
+    "harvest": 12,
+    "successPct": 21.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "475T",
+    "weapon": "rifle",
+    "label": "Gerber Reservoir Youth (2025 hunt 475T) — Interstate Unit portion",
+    "hunters": 23,
+    "harvest": 17,
+    "successPct": 73.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "432T",
+    "weapon": "rifle",
+    "label": "Swan Lake Youth (2025 hunt 432T) — Klamath Falls Unit portion",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "475M",
+    "weapon": "muzzleloader",
+    "label": "Gerber Reservoir Muzzleloader (2025 hunt 475M) — Klamath Falls Unit portion",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 67.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "475R2",
+    "weapon": "archery",
+    "label": "Gerber Reservoir Bow (2025 hunt 475R2) — Klamath Falls Unit portion",
+    "hunters": 11,
+    "harvest": 3,
+    "successPct": 25.0
+   },
+   {
+    "unit": "32",
+    "huntCode": "475T",
+    "weapon": "rifle",
+    "label": "Gerber Reservoir Youth (2025 hunt 475T) — Klamath Falls Unit portion",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "476A",
+    "weapon": "rifle",
+    "label": "Fort Rock - Silver Lake (2025 hunt 476A) — Silver Lake Unit portion",
+    "hunters": 26,
+    "harvest": 17,
+    "successPct": 65.0
+   },
+   {
+    "unit": "76",
+    "huntCode": "476M",
+    "weapon": "muzzleloader",
+    "label": "Fort Rock - Silver Lake Muzzleloader (2025 hunt 476M) — Silver Lake Unit portion",
+    "hunters": 25,
+    "harvest": 13,
+    "successPct": 50.0
+   },
+   {
+    "unit": "33",
+    "huntCode": "475R2",
+    "weapon": "archery",
+    "label": "Gerber Reservoir Bow (2025 hunt 475R2) — Sprague Unit portion",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "unit": "43",
+    "huntCode": "543A1",
+    "label": "John Day Rvr No. 1 (2025 hunt 543A1; 8 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 8,
+    "successPct": 100.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543A2",
+    "label": "John Day Rvr No. 2 (2025 hunt 543A2; 9 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 100.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543A3",
+    "label": "John Day Rvr No. 3 (2025 hunt 543A3; 9 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 9,
+    "successPct": 100.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543B1",
+    "label": "E Deschutes Rvr No. 1 (2025 hunt 543B1; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543B2",
+    "label": "E Deschutes Rvr No. 2 (2025 hunt 543B2; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 67.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543B3",
+    "label": "E Deschutes Rvr No. 3 (2025 hunt 543B3; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543C1",
+    "label": "W Deschutes Rvr No. 1 (2025 hunt 543C1; 4 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543C2",
+    "label": "W Deschutes Rvr No. 2 (2025 hunt 543C2; 4 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543C3",
+    "label": "W Deschutes Rvr No. 3 (2025 hunt 543C3; 4 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543D1",
+    "label": "John Day Rvr Ewe (2025 hunt 543D1; 30 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 20,
+    "successPct": 67.0
+   },
+   {
+    "unit": "43",
+    "huntCode": "543D2",
+    "label": "Deschutes Rvr Ewe (2025 hunt 543D2; 20 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 15,
+    "successPct": 75.0
+   },
+   {
+    "unit": "46",
+    "huntCode": "546B",
+    "label": "McClellan (2025 hunt 546B; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "556",
+    "label": "Wenaha (2025 hunt 556; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "559A1",
+    "label": "N Snake Rvr (2025 hunt 559A1; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "559A2",
+    "label": "S Snake Rvr (2025 hunt 559A2; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "560B",
+    "label": "Bear Creek (2025 hunt 560B; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "66",
+    "huntCode": "566A",
+    "label": "Riverside (2025 hunt 566A; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "568A2",
+    "label": "Sheepshead Mtns No. 2 (2025 hunt 568A2; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "568B1",
+    "label": "E Whitehorse No. 1 (2025 hunt 568B1; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "68",
+    "huntCode": "568B2",
+    "label": "E Whitehorse No. 2 (2025 hunt 568B2; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "569A1",
+    "label": "Steens Mtn No. 1 (2025 hunt 569A1; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "69",
+    "huntCode": "569B",
+    "label": "N Catlow Rim (2025 hunt 569B; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "570B1",
+    "label": "E Beatys Buttes/Alvord Peaks No. 1 (2025 hunt 570B1; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "570B2",
+    "label": "E Beatys Buttes/Alvord Peaks No. 2 (2025 hunt 570B2; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 67.0
+   },
+   {
+    "unit": "70",
+    "huntCode": "570C",
+    "label": "Coleman - E Guano (2025 hunt 570C; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "74",
+    "huntCode": "574",
+    "label": "Warner Unit (2025 hunt 574; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "575A1",
+    "label": "S Central No. 1 (2025 hunt 575A1; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "75",
+    "huntCode": "575A2",
+    "label": "S Central No. 2 (2025 hunt 575A2; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 100.0
+   }
+  ],
+  "MTNGOAT": [
+   {
+    "unit": "16",
+    "huntCode": "916A",
+    "label": "Central Cascades (2025 hunt 916A; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "950A1",
+    "label": "Elkhorn No. 1 (2025 hunt 950A1; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "950A2",
+    "label": "Elkhorn No. 2 (2025 hunt 950A2; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "50",
+    "huntCode": "950A3",
+    "label": "Elkhorn No. 3 (2025 hunt 950A3; 3 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 67.0
+   },
+   {
+    "unit": "53",
+    "huntCode": "953A",
+    "label": "S Wallowa Mtn (2025 hunt 953A; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "56",
+    "huntCode": "956A",
+    "label": "N Wenaha (2025 hunt 956A; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "959B1",
+    "label": "S Snake Rvr No. 1 (2025 hunt 959B1; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "59",
+    "huntCode": "959B2",
+    "label": "S Snake Rvr No. 2 (2025 hunt 959B2; 2 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "960A1",
+    "label": "E Hurricane Cr (2025 hunt 960A1; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "960A2",
+    "label": "W Hurricane Cr (2025 hunt 960A2; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "60",
+    "huntCode": "960C",
+    "label": "Copper Cr (2025 hunt 960C; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "61",
+    "huntCode": "961A",
+    "label": "Cusick Mtn (2025 hunt 961A; 1 tags; ODFW success = harvest / tags)",
+    "hunters": null,
+    "harvest": 1,
+    "successPct": 100.0
+   }
+  ]
+ }
+}

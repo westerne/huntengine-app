@@ -181,6 +181,89 @@ const NDOW_UNITS: Source = {
   whereFor: (u) => `display_name='${/^\d+$/.test(u) ? u.padStart(3, '0') : u}'`,
 };
 
+// Oklahoma (ODWC) has no hunt-unit layer. Controlled hunts are on named public
+// areas: WMAs come from ODWC's WMA layer (SHORTNAME), pronghorn hunts are whole
+// counties. Refuges, Army Corps lands and McAlester AAP have no official
+// layer, so they get no outline.
+const ODWC_WMA_ALIAS: Record<string, string> = {
+  'ATOKA WMA': 'ATOKA WMA',
+  'CHEROKEE GMA': 'CHEROKEE',
+  'OKMULGEE GMA': 'OKMULGEE',
+  'SPAVINAW GMA': 'SPAVINAW',
+  'MCCURTAIN CO WA': 'MCCURTAIN COUNTY',
+  'OSAGE-WESTERN WALL WMA': 'OSAGE WESTERN WALL',
+  'FORT COBB WMA AND SP': 'FORT COBB',
+  'BEAVER RIVER WMA MCFARLAND UNIT': 'BEAVER RIVER',
+};
+const ODWC_WMA: Source = {
+  url: 'https://services1.arcgis.com/jRf8jjFwxedITdFe/arcgis/rest/services/Public_WMA_Boundaries/FeatureServer/1/query',
+  unitField: 'SHORTNAME',
+  numeric: false,
+  outFields: 'SHORTNAME',
+  labelField: 'SHORTNAME',
+  namedUnits: true,
+  whereFor: (u) => `UPPER(SHORTNAME)='${ODWC_WMA_ALIAS[u] ?? u.replace(/ WMA$/, '')}'`,
+};
+const ODWC_COUNTY: Source = {
+  url: 'https://services1.arcgis.com/jRf8jjFwxedITdFe/arcgis/rest/services/OK77counties/FeatureServer/2/query',
+  unitField: 'COUNTY',
+  numeric: false,
+  outFields: 'COUNTY',
+  labelField: 'COUNTY',
+  namedUnits: true,
+  whereFor: (u) => `UPPER(COUNTY)='${u.replace(/ COUNTY$/, '')}'`,
+};
+
+// California (CDFW BIOS) — one layer per species. Deer has three: zones
+// ("X3a", lower-case suffix), G/J/M/MA special hunts, and A archery hunts.
+const BIOS = 'https://services2.arcgis.com/Uq9r85Potqm3MfRV/arcgis/rest/services';
+const bios = (svc: string, field: string, numeric = false): Source => ({
+  url: `${BIOS}/${svc}/FeatureServer/0/query`,
+  unitField: field,
+  numeric,
+  outFields: field,
+  labelField: field,
+  namedUnits: true,
+  whereFor: (u) => (numeric ? `${field}=${Number(u)}` : `UPPER(${field})='${u}'`),
+});
+const CA_SOURCES: Record<string, Source> = {
+  ELK: bios('biosds786_fpu', 'NAME'),
+  ANTELOPE: bios('biosds787_fpu', 'Zone', true),
+  BIGHORNSHEEP: bios('biosds784_fpu', 'Zone_Num', true),
+};
+function caDeerSource(unit: string): Source {
+  const u = unit.toUpperCase();
+  if (/^(G|J|M|MA)\d/.test(u)) return bios('biosds3241_fpu', 'Zone');
+  if (/^A\d/.test(u)) return bios('biosds3242_fpu', 'Zone');
+  return bios('biosds342_fpu', 'Zone_Nam');
+}
+
+// Washington (WDFW) — GMUs (GMU_Num, integer), plus Elk Areas, Deer Areas,
+// sheep units and goat units on their own layers.
+const WDFW = 'https://geodataservices.wdfw.wa.gov/arcgis/rest/services/MapServices';
+const wdfw = (path: string, field: string, where: (u: string) => string): Source => ({
+  url: `${WDFW}/${path}/query`, unitField: field, numeric: false, outFields: field, labelField: field, namedUnits: true, whereFor: where,
+});
+function waSource(unit: string): Source {
+  const u = unit.toUpperCase();
+  const n = (s: string) => String(Number((s.match(/\d+/) ?? ['0'])[0]));
+  if (/^ELK AREA/.test(u)) return wdfw('HOReferenceService/MapServer/5', 'EA_ID', (x) => `EA_ID=${n(x)}`);
+  if (/^DEER AREA/.test(u)) return wdfw('HOReferenceService/MapServer/4', 'DA_Id', (x) => `DA_Id=${n(x)}`);
+  if (/^SHEEP UNIT/.test(u)) return wdfw('SharedReferenceLayers/MapServer/1', 'BSU_ID', (x) => `BSU_ID=${n(x)}`);
+  if (/^\d+-\d+$/.test(u)) return wdfw('SharedReferenceLayers/MapServer/4', 'MGU_Nu_Code', (x) => `MGU_Nu_Code='${x}'`);
+  return wdfw('HOReferenceService/MapServer/0', 'GMU_Num', (x) => `GMU_Num=${n(x)}`);
+}
+
+// Oregon (ODFW) — wildlife management units, UNIT_NUM numeric. The 2026
+// eastern Oregon deer hunt areas ("DG02") have no official layer yet.
+const ODFW_WMU: Source = {
+  url: 'https://nrimp.dfw.state.or.us/arcgis/rest/services/ODFW_Admin/WildlifeManagementUnits/MapServer/0/query',
+  unitField: 'UNIT_NUM',
+  numeric: true,
+  outFields: 'UNIT_NUM,UNIT_NAME',
+  labelField: 'UNIT_NAME',
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -191,7 +274,7 @@ function speciesKey(species: string): string {
   return 'DEER';
 }
 
-function resolveSource(state: string, species: string): Source | null {
+function resolveSource(state: string, species: string, unit?: string): Source | null {
   if (state === 'ID') return IDFG_GMU;
   if (state === 'WY') return WY_SOURCES[speciesKey(species)] ?? null;
   if (state === 'CO') return CO_SOURCES[speciesKey(species)] ?? null;
@@ -202,6 +285,10 @@ function resolveSource(state: string, species: string): Source | null {
   if (state === 'ND') return ND_SOURCES[speciesKey(species)] ?? null;
   if (state === 'KS') return KDWP_DMU;
   if (state === 'NV') return NDOW_UNITS;
+  if (state === 'OK') return speciesKey(species) === 'ANTELOPE' ? ODWC_COUNTY : ODWC_WMA;
+  if (state === 'WA') return waSource(unit ?? '');
+  if (state === 'OR') return /^\d+$/.test((unit ?? '').trim()) ? ODFW_WMU : null;
+  if (state === 'CA') return speciesKey(species) === 'DEER' ? caDeerSource(unit ?? '') : CA_SOURCES[speciesKey(species)] ?? null;
   return null;
 }
 
@@ -216,7 +303,7 @@ export async function GET(req: Request) {
   // Hunt keys carry a suffix after the area: WY "7-1" (area-type), "143-GEN",
   // ID "1-1" (hunt area in GMU 1). The boundary is the area before the first
   // dash — stripping the dash instead turned "7-1" into area 71.
-  const src = resolveSource(state, species);
+  const src = resolveSource(state, species, searchParams.get('unit') ?? '');
   if (!src) return NextResponse.json({ error: `no boundary source for ${state}/${species}` }, { status: 404 });
   const param = (searchParams.get('unit') || '').trim().toUpperCase();
   const rawUnit = src.namedUnits
