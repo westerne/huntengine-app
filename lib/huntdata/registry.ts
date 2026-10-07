@@ -10,6 +10,7 @@ import azDraw from './draw/az.json';
 import nmDraw from './draw/nm.json';
 import neDraw from './draw/ne.json';
 import ndDraw from './draw/nd.json';
+import ksDraw from './draw/ks.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -76,10 +77,12 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
 
   // ── Batch B: by March ────────────────────────────────────────────────────
   KS: {
-    code: 'KS', name: 'KANSAS', status: 'planned', batch: 'B',
+    code: 'KS', name: 'KANSAS', status: 'live', batch: 'B',
     agency: { name: 'Kansas Department of Wildlife and Parks', url: 'https://ksoutdoors.com' },
-    drawSystem: 'preference', rulesVerified: false,
-    drawSystemNote: 'Non-resident deer permits are drawn by preference points per unit. Confirm current rules with KDWP.',
+    // Verified 2026-10-07 against KDWP deer, antelope and elk pages
+    // (lib/huntdata/draw/ks-research.md).
+    drawSystem: 'preference', rulesVerified: true,
+    drawSystemNote: "Non-resident deer permits are drawn by preference points: the highest point holders draw first; you earn a point each year you miss (or buy one), and points expire after five years without applying. Non-residents must already hold a Kansas non-resident hunting license when applying in April, and choose one unit plus one adjacent unit and one season. A separate mule deer stamp is a random draw for archery or muzzleloader permits in Units 1, 2, 17 and 18. Most resident deer permits are over the counter; resident firearm either-species deer, antelope rifle and muzzleloader permits, and Fort Riley elk (residents only, bonus points) are drawn from applications in May–June.",
   },
   ND: {
     code: 'ND', name: 'NORTH DAKOTA', status: 'live', batch: 'B',
@@ -145,6 +148,7 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   NM: nmDraw as DrawFile,
   NE: neDraw as DrawFile,
   ND: ndDraw as DrawFile,
+  KS: ksDraw as DrawFile,
 };
 
 const MODULES: Partial<Record<StateCode, StateModule>> = {

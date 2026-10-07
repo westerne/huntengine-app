@@ -160,6 +160,17 @@ const ND_SOURCES: Record<string, Source> = {
   DEER: ndgf(33), ANTELOPE: ndgf(43), ELK: ndgf(34), MOOSE: ndgf(38), BIGHORNSHEEP: ndgf(29),
 };
 
+// Kansas Wildlife & Parks — deer management units, DMU as "UNIT 16". Antelope
+// units 2, 17 and 18 are the same polygons. (Unit 19 is a separate layer.)
+const KDWP_DMU: Source = {
+  url: 'https://services1.arcgis.com/q2CglofYX6ACNEeu/arcgis/rest/services/Kansas_Deer_Management_Units/FeatureServer/0/query',
+  unitField: 'DMU',
+  numeric: false,
+  outFields: 'DMU',
+  labelField: 'DMU',
+  whereFor: (u) => `DMU='UNIT ${u.replace(/^0+(?=\d)/, '')}'`,
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -179,6 +190,7 @@ function resolveSource(state: string, species: string): Source | null {
   if (state === 'NM') return NMDGF_GMU;
   if (state === 'NE') return NE_SOURCES[speciesKey(species)] ?? null;
   if (state === 'ND') return ND_SOURCES[speciesKey(species)] ?? null;
+  if (state === 'KS') return KDWP_DMU;
   return null;
 }
 

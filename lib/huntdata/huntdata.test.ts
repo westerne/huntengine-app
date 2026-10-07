@@ -12,7 +12,7 @@ describe('registry', () => {
   });
 
   it('has the live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'MT', 'ND', 'NE', 'NM', 'UT', 'WY']);
+    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'UT', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -542,5 +542,15 @@ describe('North Dakota', () => {
     const out = buildSharedScoutResponse([{ unit: 'E3', huntCode: 'X', tags: 12, applicants: 1840, drawSuccess: null, dataYear: 2026 }], {}, { stateLabel: 'ND', weaponLabel: 'Rifle' });
     expect(out.recommendations[0].currentOdds).toBe('12 licenses for 1840 applicants (2026 draw)');
     expect(out.recommendations[0].tier).toBe('LONG_GAME');
+  });
+});
+
+describe('Kansas', () => {
+  it('loads 2026 KDWP non-resident deer draw stats', () => {
+    const ks = getStateModule('KS')!;
+    const u16 = ks.hunts('DEER').find((h) => h.unit === '16' && /nonresident whitetail/i.test(h.label ?? ''))!;
+    expect(u16.draw.nonresident).toMatchObject({ tags: 1740, applicants: 2369 });
+    expect(u16.draw.nonresident?.successPct).toBeCloseTo(73.4, 1);
+    expect(STATE_INFO.KS.drawSystem).toBe('preference');
   });
 });
