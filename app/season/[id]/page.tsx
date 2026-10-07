@@ -5,6 +5,8 @@ import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { supabaseServer } from '@/lib/supabase/server';
 import type { SavedHunt } from '@/lib/hunts';
+import type { Application, Task } from '@/lib/applications';
+import { officialInfoFor } from '@/lib/huntdata/applicationInfo';
 
 // One saved hunt. Row-level security returns nothing for another member's
 // hunt, so it 404s exactly like a hunt that doesn't exist.
@@ -19,12 +21,22 @@ export default async function HuntPage({ params }: { params: Promise<{ id: strin
   const supabase = await supabaseServer();
   const { data: hunt } = await supabase.from('saved_hunts').select('*').eq('id', id).maybeSingle();
   if (!hunt) notFound();
-  const { data: notes } = await supabase.from('hunt_notes').select('id, body, created_at').eq('hunt_id', id).order('created_at');
+  const [{ data: notes }, { data: application }, { data: tasks }] = await Promise.all([
+    supabase.from('hunt_notes').select('id, body, created_at').eq('hunt_id', id).order('created_at'),
+    supabase.from('applications').select('*').eq('hunt_id', id).maybeSingle(),
+    supabase.from('tasks').select('*').eq('hunt_id', id).order('position'),
+  ]);
 
   return (
     <div className="min-h-screen bg-black text-zinc-100">
       <AppNav current="season" />
-      <HuntWorkspace hunt={hunt as SavedHunt} notes={notes ?? []} />
+      <HuntWorkspace
+        hunt={hunt as SavedHunt}
+        notes={notes ?? []}
+        application={(application as Application | null) ?? null}
+        tasks={(tasks ?? []) as Task[]}
+        official={officialInfoFor(hunt.state, hunt.species, hunt.season_year)}
+      />
     </div>
   );
 }

@@ -6,6 +6,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import ApplicationPanel, { type OfficialInfo } from './ApplicationPanel';
+import type { Application, Task } from '@/lib/applications';
 import {
   canMove, nextAction, RESULT_LABEL, RESULTS, STATUS_LABEL, STATUSES,
   type ApplicationResult, type HuntStatus, type SavedHunt,
@@ -14,7 +16,15 @@ import {
 type Note = { id: string; body: string; created_at: string };
 type Rec = { currentOdds?: string; tier?: string; whyItFits?: string; tradeoffs?: string; season?: string } | null;
 
-export default function HuntWorkspace({ hunt: initial, notes: initialNotes }: { hunt: SavedHunt; notes: Note[] }) {
+export default function HuntWorkspace({
+  hunt: initial, notes: initialNotes, application, tasks, official,
+}: {
+  hunt: SavedHunt;
+  notes: Note[];
+  application: Application | null;
+  tasks: Task[];
+  official: OfficialInfo;
+}) {
   const [hunt, setHunt] = useState(initial);
   const [notes, setNotes] = useState(initialNotes);
   const [draft, setDraft] = useState('');
@@ -55,6 +65,13 @@ export default function HuntWorkspace({ hunt: initial, notes: initialNotes }: { 
     }
   };
 
+  const deleteNote = async (noteId: string) => {
+    if (!window.confirm('Delete this note?')) return;
+    const res = await fetch(`/api/hunts/${hunt.id}/notes/${noteId}`, { method: 'DELETE' });
+    if (res.ok) setNotes((n) => n.filter((x) => x.id !== noteId));
+    else setError('Could not delete the note.');
+  };
+
   const unitText = /^[0-9][0-9A-Z]{0,4}$/i.test(hunt.unit) ? `Unit ${hunt.unit}` : hunt.unit;
 
   return (
@@ -73,7 +90,8 @@ export default function HuntWorkspace({ hunt: initial, notes: initialNotes }: { 
       <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-4" aria-labelledby="status-h">
         <h2 id="status-h" className="text-[11px] uppercase text-zinc-400 font-black tracking-widest">Status</h2>
         <div className="flex flex-wrap gap-2">
-          {STATUSES.filter((s) => s !== hunt.status && canMove(hunt.status, s)).map((s) => (
+          {/* "Applied" comes only from "I submitted my application" below. */}
+          {STATUSES.filter((s) => s !== hunt.status && s !== 'applied' && canMove(hunt.status, s)).map((s) => (
             <button key={s} type="button" disabled={busy} onClick={() => patch({ status: s })}
               className="px-4 py-2 rounded-full border border-zinc-700 text-[11px] font-black uppercase tracking-widest text-zinc-300 hover:border-amber-600 hover:text-white disabled:opacity-50">
               Mark {STATUS_LABEL[s]}
@@ -99,6 +117,11 @@ export default function HuntWorkspace({ hunt: initial, notes: initialNotes }: { 
         {error && <p role="alert" className="text-red-400 text-sm">{error}</p>}
       </section>
 
+      {/* Application (before the hunt is drawn or settled) */}
+      {['considering', 'planned', 'applied'].includes(hunt.status) && (
+        <ApplicationPanel hunt={hunt} application={application} tasks={tasks} official={official} onHunt={setHunt} />
+      )}
+
       {/* Saved recommendation (a snapshot from when it was saved) */}
       {rec && (
         <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-3" aria-labelledby="rec-h">
@@ -119,7 +142,10 @@ export default function HuntWorkspace({ hunt: initial, notes: initialNotes }: { 
           {notes.map((n) => (
             <li key={n.id} className="border-l-2 border-zinc-700 pl-3">
               <p className="text-zinc-200 text-sm whitespace-pre-wrap">{n.body}</p>
-              <p className="text-zinc-600 text-[11px] mt-1">{new Date(n.created_at).toLocaleString()}</p>
+              <p className="text-zinc-600 text-[11px] mt-1">
+                {new Date(n.created_at).toLocaleString()}
+                <button type="button" onClick={() => deleteNote(n.id)} className="ml-3 text-zinc-600 hover:text-red-400 underline">Delete</button>
+              </p>
             </li>
           ))}
         </ul>

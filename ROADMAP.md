@@ -122,6 +122,16 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [ ] **Landing page** on huntquarters.com that lists the states covered and the ones coming next.
 - [ ] **Links from huntaddicts.com** articles into the planner.
 
+## Milestone 2: Applications (built 2026-10-07)
+
+- [x] Decision per saved hunt: Apply / Build points / Watch / Pass
+- [x] Application checklist (steps, not claimed facts), choice order, the hunter's own fee note
+- [x] Official application link per state (`lib/huntdata/applications.json`, checked 2026-10-07); opening it never marks anything applied
+- [x] Deadlines: agency-published dates offered with their source; otherwise the hunter enters them. No 2027 elk/deer/pronghorn deadlines published yet in any of the 8 states
+- [x] "I submitted my application" (explicit) with optional confirmation number → Applied
+- [x] Point-building tasks kept separate from hunts; in-app reminders in My Season "Next up" (overdue first)
+- [ ] Re-check applications.json as states publish 2027 dates (Dec–Feb)
+
 ## Phase 3: Application season (January – June 2027)
 
 - [ ] **Batches B and C**, each going live ahead of its deadlines.

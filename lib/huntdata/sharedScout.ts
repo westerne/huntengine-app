@@ -65,6 +65,7 @@ export function buildSharedScoutResponse(
     return {
       unit: String(e.unit),
       huntCode: String(e.huntCode),
+      label: e.label ? String(e.label) : null,
       state: ctx.stateLabel,
       typicalScore: 'Not in data',
       topEnd: 'Not in data',

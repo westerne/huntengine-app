@@ -1,0 +1,124 @@
+{
+  "checkedOn": "2026-10-07",
+  "states": {
+    "WY": {
+      "applyUrl": "https://wgfapps.wyo.gov/elsapplication/ELSWelcome.aspx",
+      "applyUrlNote": "resolves 200 (linked from wgfd.wyo.gov/licenses-applications)",
+      "datesPageUrl": "https://wgfd.wyo.gov/licenses-applications/application-dates-deadlines",
+      "prerequisites": {
+        "text": "No hunting license or hunter-education proof is needed to apply, but you need a WGFD username/password and are charged the full license fee plus the application fee when you apply (refunded if unsuccessful). Proof of hunter education must be carried in the field.",
+        "source": "https://wgfd.wyo.gov/licenses-applications/application-process"
+      },
+      "deadlines2027": [],
+      "deadlines2026Reference": [
+        { "group": "Nonresident elk", "deadline": "2026-02-02", "timezone": "America/Denver", "source": "https://wgfd.wyo.gov/news-events/big-game-applications-open-2026-27-hunting-season-key-deadlines-approaching", "quote": "Nonresident elk: Feb. 2. (no time stated)" },
+        { "group": "Resident and nonresident moose, bighorn sheep, mountain goat", "deadline": "2026-04-30", "timezone": "America/Denver", "source": "https://wgfd.wyo.gov/news-events/big-game-applications-open-2026-27-hunting-season-key-deadlines-approaching", "quote": "Resident and nonresident moose, bighorn sheep and mountain goat: April 30. (no time stated)" },
+        { "group": "Wild bison", "deadline": "2026-04-30", "timezone": "America/Denver", "source": "https://wgfd.wyo.gov/news-events/big-game-applications-open-2026-27-hunting-season-key-deadlines-approaching", "quote": "Wild bison applications open March 2 and close April 30. (no time stated)" },
+        { "group": "Resident and nonresident deer and pronghorn; resident elk", "deadline": "2026-06-01", "timezone": "America/Denver", "source": "https://wgfd.wyo.gov/news-events/big-game-applications-open-2026-27-hunting-season-key-deadlines-approaching", "quote": "Resident and nonresident deer and pronghorn: June 1. Resident elk: June 1. (no time stated)" }
+      ]
+    },
+    "ID": {
+      "applyUrl": "https://gooutdoorsidaho.com/",
+      "applyUrlNote": "resolves 200 via redirect to https://license.gooutdoorsidaho.com/Licensing/CustomerLookup.aspx (Cloudflare-served, no challenge)",
+      "datesPageUrl": "https://idfg.idaho.gov/licenses/controlled/apply",
+      "prerequisites": {
+        "text": "Residents and nonresidents must hold a valid Idaho hunting license to apply for controlled hunts, and pay a nonrefundable per-species application fee ($6.25 resident / $18.00 nonresident for deer, elk, pronghorn, bear); moose/sheep/goat applicants also pay the tag fee up front.",
+        "source": "https://idfg.idaho.gov/licenses/controlled/apply"
+      },
+      "deadlines2027": [
+        { "group": "Spring black bear controlled hunts", "deadline": "2027-02-15", "timezone": "America/Boise", "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf", "quote": "Spring Black Bear: January 15 - February 15, 2027 (date only; no time stated)" }
+      ],
+      "deadlines2026Reference": [
+        { "group": "Moose, bighorn sheep, mountain goat controlled hunts", "deadline": "2026-04-30", "timezone": "America/Boise", "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-moose-sheep-goat-2025-26.pdf", "quote": "Controlled Hunt Application period is April 1 - 30 (booklet covers 2025 & 2026; no time stated)" },
+        { "group": "Deer, elk, pronghorn, fall black bear controlled hunts (first drawing)", "deadline": "2026-06-05", "timezone": "America/Boise", "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf", "quote": "Deer, Elk, Pronghorn and Fall Black Bear: May 1 - June 5, 2026 (no time stated)" }
+      ]
+    },
+    "CO": {
+      "applyUrl": "https://www.cpwshop.com/licensing.page",
+      "applyUrlNote": "resolves 200 after a Queue-it waiting-room redirect (go.aspiraconnect.com) back to cpwshop.com",
+      "datesPageUrl": "https://cpw.state.co.us/hunting/big-game/primary-draw",
+      "prerequisites": {
+        "text": "A qualifying license must be purchased before (or first in the same cart as) applying for the big game draw; all hunters must buy a habitat stamp with their license, and a per-species application processing fee is charged.",
+        "source": "https://cpw.state.co.us/hunting/big-game/primary-draw"
+      },
+      "deadlines2027": [],
+      "deadlines2026Reference": [
+        { "group": "Primary big game draw (deer, elk, pronghorn, moose, bear, sheep, goat)", "deadline": "2026-04-07T20:00:00", "timezone": "America/Denver", "source": "https://cpw.state.co.us/hunting/big-game/primary-draw", "quote": "this year, the application period opens on March 1, 2026, and closes on April 7 at 8 p.m. Mountain Time" }
+      ]
+    },
+    "MT": {
+      "applyUrl": "https://ols.fwp.mt.gov/",
+      "applyUrlNote": "resolves 200 (FWP Online Licensing System; one early curl attempt with a minimal user-agent got no response, retry returned 200)",
+      "datesPageUrl": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates",
+      "prerequisites": {
+        "text": "Residents must hold a valid general elk (or deer) license to apply for a permit; nonresidents must also apply for a big game or elk/deer combination license, and Conservation (with State Lands), Base Hunting and AIS prevention pass must be purchased separately.",
+        "source": "https://fwp.mt.gov/hunt/regulations/elk"
+      },
+      "deadlines2027": [],
+      "deadlines2026Reference": [
+        { "group": "Nonresident deer/elk/big game combination licenses; deer and elk permits", "deadline": "2026-04-01T23:45:00", "timezone": "America/Denver", "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates", "quote": "The deadline to submit your application is April 1, 2026, at 11:45 pm MST." },
+        { "group": "Moose, bighorn sheep, mountain goat, bison", "deadline": "2026-05-01T23:45:00", "timezone": "America/Denver", "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates", "quote": "The deadline to submit your application is May 1, 2026, at 11:45 pm MST." },
+        { "group": "Antelope, deer B, elk B", "deadline": "2026-06-01T23:45:00", "timezone": "America/Denver", "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates", "quote": "The deadline to submit your application is June 1, 2026, at 11:45 pm MST." }
+      ]
+    },
+    "UT": {
+      "applyUrl": "https://www.utahdraws.com/",
+      "applyUrlNote": "resolves 200 at /internetsales (needs cookies; plain curl without a cookie jar loops between /internetsales and /internetsales/Login)",
+      "datesPageUrl": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "prerequisites": {
+        "text": "Before applying for a big game permit, bonus point or preference point you must have a valid Utah hunting or combination license (can be bought during application), must have passed hunter education if born after Dec. 31, 1965, and pay a nonrefundable application fee ($10 resident / $21 nonresident per species).",
+        "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf"
+      },
+      "deadlines2027": [],
+      "deadlines2026Reference": [
+        { "group": "Big game draw (general deer, limited-entry, once-in-a-lifetime, bonus/preference points)", "deadline": "2026-04-23T23:00:00", "timezone": "America/Denver", "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf", "quote": "BIG GAME APPLICATION ENDS APRIL 23, 11 P.M. MDT" },
+        { "group": "Antlerless big game draw", "deadline": "2026-06-23", "timezone": "America/Denver", "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf", "quote": "The antlerless application period runs from June 9-23, 2026. (no time stated)" }
+      ]
+    },
+    "AZ": {
+      "applyUrl": "https://draw.azgfd.com/",
+      "applyUrlNote": "resolves 200 (agency site azgfd.com itself returns a Cloudflare challenge to curl; read via browser)",
+      "datesPageUrl": "https://www.azgfd.com/hunting/hunt-draw-and-licenses/big-game-draw/",
+      "prerequisites": {
+        "text": "An applicant must possess a valid hunting license at the time of application and the deadline (or buy one with the application), plus pay the application fee; an AZGFD portal account and Customer ID are used to apply.",
+        "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/05/20151617/2026-27-Arizona-Hunting-Regulations.pdf"
+      },
+      "deadlines2027": [
+        { "group": "Spring 2027 hunts: turkey, javelina, bison, bear (draw closes in 2026; already passed)", "deadline": "2026-10-06T23:59:00", "timezone": "America/Phoenix", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "The deadline to submit applications is 11:59 p.m. (Arizona time) on Tuesday, Oct. 6, 2026." }
+      ],
+      "deadlines2026Reference": [
+        { "group": "Pronghorn and elk", "deadline": "2026-02-03T23:59:00", "timezone": "America/Phoenix", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/12/20163130/2026-Pronghorn-and-Elk-Regulations_251223.pdf", "quote": "The deadline to submit applications is 11:59 p.m. (Arizona time) on Tuesday, Feb. 3, 2026." },
+        { "group": "Fall: deer, fall turkey, fall javelina, bighorn sheep, fall bison, sandhill crane", "deadline": "2026-06-02T23:59:00", "timezone": "America/Phoenix", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/05/20151617/2026-27-Arizona-Hunting-Regulations.pdf", "quote": "Hunt permit application deadline is Tuesday, June 2, 2026, at 11:59 p.m. Arizona time." }
+      ]
+    },
+    "NM": {
+      "applyUrl": "https://onlinesales.wildlife.state.nm.us/",
+      "applyUrlNote": "resolves 200",
+      "datesPageUrl": "https://wildlife.dgf.nm.gov/hunting/applications-and-draw-information/",
+      "prerequisites": {
+        "text": "All applicants must first buy a nonrefundable game-hunting (or game-hunting and fishing) license plus the Habitat Management and Access Validation (18+) through the application process, and are charged the application fee and full license fee when applying (license fee refunded if unsuccessful).",
+        "source": "https://wildlife.dgf.nm.gov/hunting/applications-and-draw-information/"
+      },
+      "deadlines2027": [],
+      "deadlines2026Reference": [
+        { "group": "Bear and turkey draw permits", "deadline": "2026-02-11T17:00:00", "timezone": "America/Denver", "source": "https://wildlife.dgf.nm.gov/hunting/applications-and-draw-information/", "quote": "Feb 11, 2026: Deadline to apply for Bear and Turkey Draw Permits. Applications must be completed before 5 p.m. Mountain Time (MT)." },
+        { "group": "Big game draw: Barbary sheep, bighorn sheep, deer, elk, ibex, javelina, pronghorn, oryx, PLO deer", "deadline": "2026-03-18T17:00:00", "timezone": "America/Denver", "source": "https://wildlife.dgf.nm.gov/hunting/applications-and-draw-information/", "quote": "Mar 18, 2026: Deadline to apply for draw licenses for Barbary sheep, bighorn sheep, deer, elk, ibex, javelina, pronghorn, oryx and private-land only deer ... Applications must be completed before 5 p.m. Mountain Daylight Time (MDT)." }
+      ]
+    },
+    "NE": {
+      "applyUrl": "https://www.gooutdoorsne.com/",
+      "applyUrlNote": "resolves 200 (Cloudflare-served, no challenge); agency site outdoornebraska.gov returns a Cloudflare 403 challenge to curl, read via browser",
+      "datesPageUrl": "https://outdoornebraska.gov/permits/hunting-permits/big-game-permits/",
+      "prerequisites": {
+        "text": "No separate hunting license is needed to apply for deer, antelope or elk draw permits, but a nonrefundable application fee is charged (deer $7, antelope $7, elk $11), a hunter/bowhunter education number is required on the application if applicable, and a habitat stamp is required to hunt (most hunters 16+).",
+        "source": "https://outdoornebraska.gov/permits/hunting-permits/big-game-permits/ ; https://outdoornebraska.gov/permits/hunting-permits/permit-stamp-requirements/"
+      },
+      "deadlines2027": [],
+      "deadlines2026Reference": [
+        { "group": "Deer, antelope, elk draw permits (residents; nonresident deer and archery antelope)", "deadline": "2026-06-12T23:59:00", "timezone": "America/Chicago", "source": "https://outdoornebraska.gov/permits/hunting-permits/big-game-permits/", "quote": "Draw permit application dates June 1-12, 2026 ... Mail applications must be received by 5 p.m. CT and internet applications by 11:59 p.m. CT on the final day of the application period." },
+        { "group": "Landowner antelope and elk", "deadline": "2026-05-29T23:59:00", "timezone": "America/Chicago", "source": "https://outdoornebraska.gov/permits/hunting-permits/big-game-permits/", "quote": "Landowner application period May 18-29, 2026 (online by 11:59 p.m. CT on final day per page note)" },
+        { "group": "Bighorn sheep regular-season lottery (residents only)", "deadline": "2026-08-07T17:00:00", "timezone": "America/Chicago", "source": "https://outdoornebraska.gov/permits/hunting-permits/lottery/bighorn-sheep-lottery/", "quote": "between April 20, 2026, after 1 p.m. CST and Aug. 7, 2026, before 5 p.m. CST." }
+      ]
+    }
+  }
+}

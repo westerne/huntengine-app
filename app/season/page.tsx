@@ -4,7 +4,10 @@ import AppNav from '../components/AppNav';
 import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { supabaseServer } from '@/lib/supabase/server';
-import { nextAction, RESULT_LABEL, STATUS_LABEL, type SavedHunt } from '@/lib/hunts';
+import { currentSeasonYear, nextAction, RESULT_LABEL, STATUS_LABEL, type SavedHunt } from '@/lib/hunts';
+import { sortOpenTasks, type Task } from '@/lib/applications';
+import TaskList from './TaskList';
+import AddTask from './AddTask';
 
 // Per-request: depends on the signed-in user.
 export const dynamic = 'force-dynamic';
@@ -48,8 +51,16 @@ export default async function SeasonPage({ searchParams }: { searchParams: Promi
   const { welcome } = await searchParams;
 
   const supabase = await supabaseServer();
-  const { data } = await supabase.from('saved_hunts').select('*').neq('status', 'archived').order('updated_at', { ascending: false });
+  const [{ data }, { data: taskRows }] = await Promise.all([
+    supabase.from('saved_hunts').select('*').neq('status', 'archived').order('updated_at', { ascending: false }),
+    supabase.from('tasks').select('*, saved_hunts(status)').is('done_at', null),
+  ]);
   const hunts = (data ?? []) as SavedHunt[];
+  // "Next up": overdue and dated tasks first, then undated — capped so the
+  // dashboard leads with what matters this week.
+  // Tasks for archived hunts never show here, however the hunt was archived.
+  const live = (taskRows ?? []).filter((t: { saved_hunts?: { status?: string } | null }) => t.saved_hunts?.status !== 'archived');
+  const openTasks = sortOpenTasks(live as Task[]).slice(0, 8);
 
   return (
     <div className="min-h-screen bg-black text-zinc-100">
@@ -57,6 +68,14 @@ export default async function SeasonPage({ searchParams }: { searchParams: Promi
       <main className="max-w-4xl mx-auto px-4 py-10">
         {welcome && <p role="status" className="mb-6 bg-green-950/60 border border-green-800 text-green-200 rounded-xl px-4 py-3 text-sm">Welcome to HuntQuarters. Your membership is active.</p>}
         <h1 className="text-3xl font-black italic uppercase mb-8">My Season</h1>
+
+        {(openTasks.length > 0 || hunts.length > 0) && (
+          <section aria-labelledby="next-up" className="mb-10">
+            <h2 id="next-up" className="text-[11px] uppercase text-zinc-400 font-black tracking-widest mb-3">Next up</h2>
+            <TaskList key={openTasks.map((t) => t.id).join()} initial={openTasks} showHuntLinks emptyText="No open tasks. Decide on a saved hunt to get its application checklist." />
+            <div className="mt-3"><AddTask seasonYear={currentSeasonYear()} /></div>
+          </section>
+        )}
 
         {hunts.length === 0 ? (
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
