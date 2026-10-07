@@ -1,13 +1,16 @@
 'use client';
 
-// Hunt detail workspace: overview (the saved recommendation), status and draw
-// result, and notes. Application checklists, prep plans and reports come in
-// later milestones; nothing here pretends they exist.
+// Hunt detail workspace: overview, status and draw result, the stage's panel
+// (application -> preparation -> report), the hunter's own past lessons, the
+// saved recommendation and notes.
 
 import { useState } from 'react';
 import Link from 'next/link';
 import ApplicationPanel, { type OfficialInfo } from './ApplicationPanel';
 import PreparationPanel, { type PlanRow } from './PreparationPanel';
+import ReportPanel, { type Photo } from './ReportPanel';
+import type { HuntReport } from '@/lib/reports';
+import type { HarvestReportingInfo } from '@/lib/huntdata/harvestReporting';
 import type { PlanInputs } from '@/lib/plans';
 import type { Application, Task } from '@/lib/applications';
 import {
@@ -17,9 +20,16 @@ import {
 
 type Note = { id: string; body: string; created_at: string };
 type Rec = { currentOdds?: string; tier?: string; whyItFits?: string; tradeoffs?: string; season?: string } | null;
+export type PastLesson = {
+  hunt_id: string;
+  harvested: boolean | null; days_hunted: number | null; pressure: string | null;
+  worked: string | null; didnt_work: string | null; change_next: string | null; access_issues: string | null;
+  saved_hunts: { season_year: number; state: string; species: string; unit: string; hunt_code: string | null };
+};
 
 export default function HuntWorkspace({
   hunt: initial, notes: initialNotes, application, tasks, official, plans, prepDefaults,
+  report, photos, userId, harvest, agencyName, agencyUrl, pastLessons,
 }: {
   hunt: SavedHunt;
   notes: Note[];
@@ -28,6 +38,13 @@ export default function HuntWorkspace({
   official: OfficialInfo;
   plans: PlanRow[];
   prepDefaults: Partial<Record<keyof PlanInputs, string>>;
+  report: HuntReport | null;
+  photos: Photo[];
+  userId: string;
+  harvest: HarvestReportingInfo;
+  agencyName: string;
+  agencyUrl: string | null;
+  pastLessons: PastLesson[];
 }) {
   const [hunt, setHunt] = useState(initial);
   const [notes, setNotes] = useState(initialNotes);
@@ -88,7 +105,30 @@ export default function HuntWorkspace({
         <h1 id="hunt-title" className="text-2xl font-black italic uppercase">{hunt.state} {hunt.species} · {unitText}{hunt.hunt_code ? ` · Hunt ${hunt.hunt_code}` : ''}</h1>
         {hunt.label && <p className="text-zinc-400 text-sm mt-1">{hunt.label}</p>}
         <p className="mt-4 text-amber-400 text-sm font-bold">Next: {action.label}</p>
+        {['tag_secured', 'preparing', 'completed'].includes(hunt.status) && (
+          <Link href={`/season/${hunt.id}/print`} className="inline-block mt-4 text-zinc-400 text-[11px] font-black uppercase tracking-widest hover:text-white">Print hunt packet →</Link>
+        )}
       </section>
+
+      {/* The hunter's own lessons from past hunts — shown while deciding and preparing */}
+      {pastLessons.length > 0 && !['completed', 'archived'].includes(hunt.status) && (
+        <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-3" aria-labelledby="lessons-h">
+          <h2 id="lessons-h" className="text-[11px] uppercase text-zinc-400 font-black tracking-widest">From your past {hunt.state} {hunt.species.toLowerCase()} hunts</h2>
+          <ul className="space-y-3">
+            {pastLessons.slice(0, 3).map((l) => (
+              <li key={l.hunt_id} className="border-l-2 border-amber-700 pl-3 text-sm">
+                <Link href={`/season/${l.hunt_id}`} className="text-white font-bold hover:text-amber-400">
+                  {l.saved_hunts.season_year} · {/^[0-9][0-9A-Z]{0,4}$/i.test(l.saved_hunts.unit) ? `Unit ${l.saved_hunts.unit}` : l.saved_hunts.unit} · {l.harvested ? 'Harvested' : 'No harvest'}{l.days_hunted != null ? ` · ${l.days_hunted} days` : ''}
+                </Link>
+                {l.change_next && <p className="text-zinc-300 mt-1"><span className="text-amber-500 font-bold">Change next time:</span> {l.change_next}</p>}
+                {l.worked && <p className="text-zinc-400 mt-1"><span className="font-bold">Worked:</span> {l.worked}</p>}
+                {l.access_issues && <p className="text-zinc-400 mt-1"><span className="font-bold">Access:</span> {l.access_issues}</p>}
+              </li>
+            ))}
+          </ul>
+          <p className="text-zinc-600 text-xs">Your hunt plan uses these notes too.</p>
+        </section>
+      )}
 
       {/* Status */}
       <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-4" aria-labelledby="status-h">
@@ -133,6 +173,21 @@ export default function HuntWorkspace({
           plans={plans}
           prepTasks={tasks.filter((t) => t.kind === 'prep')}
           defaults={prepDefaults}
+          onHunt={setHunt}
+        />
+      )}
+
+      {/* Report: offered once the tag is in hand, the main panel once the hunt is over */}
+      {(['tag_secured', 'preparing', 'completed'].includes(hunt.status) || (hunt.status === 'archived' && report)) && (
+        <ReportPanel
+          hunt={hunt}
+          report={report}
+          photos={photos}
+          userId={userId}
+          harvest={harvest}
+          harvestTasks={tasks.filter((t) => t.kind === 'harvest_report')}
+          agencyName={agencyName}
+          agencyUrl={agencyUrl}
           onHunt={setHunt}
         />
       )}

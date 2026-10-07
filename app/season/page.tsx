@@ -22,8 +22,14 @@ const GROUPS: Array<{ title: string; empty?: string; match: (h: SavedHunt) => bo
   { title: 'Completed', match: (h) => h.status === 'completed' },
 ];
 
-function HuntCard({ h }: { h: SavedHunt }) {
-  const action = nextAction(h);
+type Reported = { hunt_reports?: { completed_at: string | null } | Array<{ completed_at: string | null }> | null };
+const reportDone = (h: SavedHunt & Reported) => {
+  const r = Array.isArray(h.hunt_reports) ? h.hunt_reports[0] : h.hunt_reports;
+  return !!r?.completed_at;
+};
+
+function HuntCard({ h }: { h: SavedHunt & Reported }) {
+  const action = h.status === 'completed' && reportDone(h) ? { label: 'Report done — see it in My History' } : nextAction(h);
   const odds = (h.recommendation as { currentOdds?: string } | null)?.currentOdds;
   return (
     <Link href={`/season/${h.id}`} className="block bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-amber-700 transition-colors">
@@ -54,7 +60,7 @@ export default async function SeasonPage({ searchParams }: { searchParams: Promi
 
   const supabase = await supabaseServer();
   const [{ data }, { data: taskRows }] = await Promise.all([
-    supabase.from('saved_hunts').select('*').neq('status', 'archived').order('updated_at', { ascending: false }),
+    supabase.from('saved_hunts').select('*, hunt_reports(completed_at)').neq('status', 'archived').order('updated_at', { ascending: false }),
     supabase.from('tasks').select('*, saved_hunts(status)').is('done_at', null),
   ]);
   const hunts = (data ?? []) as SavedHunt[];

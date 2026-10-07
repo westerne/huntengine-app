@@ -35,7 +35,7 @@ export type Application = {
 export type Task = {
   id: string;
   hunt_id: string | null;
-  kind: 'application' | 'point' | 'prep' | 'custom';
+  kind: 'application' | 'point' | 'prep' | 'custom' | 'harvest_report';
   title: string;
   due_on: string | null;
   state: string | null;

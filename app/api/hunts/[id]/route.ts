@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { requireMember } from '@/lib/apiAuth';
 import { supabaseServer } from '@/lib/supabase/server';
 import { applyChange, RESULTS, STATUSES } from '@/lib/hunts';
+import { ensureHarvestTask } from '@/lib/harvestTask';
 
 // GET   /api/hunts/:id  → one saved hunt with its notes
 // PATCH /api/hunts/:id  → change status / draw result / label
@@ -42,5 +43,7 @@ export async function PATCH(req: Request, { params }: Ctx) {
 
   const { data, error } = await supabase.from('saved_hunts').update(patch).eq('id', id).select('*').single();
   if (error) return NextResponse.json({ error: 'Could not update this hunt.' }, { status: 500 });
+  // Hunt over: remind them about the state's own harvest report (once).
+  if (data.status === 'completed') await ensureHarvestTask(supabase, data, auth.viewer.userId!, null);
   return NextResponse.json({ hunt: data });
 }

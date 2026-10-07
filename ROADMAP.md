@@ -138,7 +138,18 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [x] Nine sections grounded in the hunt's agency harvest figure, sampled public land and OSM access; gear list → prep checklist
 - [x] Per-section edits; regenerating adds a version and never overwrites edits; version switcher
 - [x] Guardrails: no animal locations, no legal-access claims, no business/emergency contacts (phone numbers stripped server-side), no invented regulations
-- [ ] Printable hunt packet (Milestone 4)
+- [x] Printable hunt packet (Milestone 4)
+
+## Milestone 4: After the hunt (built 2026-10-07)
+
+- [x] Private post-hunt report: dates, days hunted, harvest yes/no, what was taken and measurements, sightings, pressure, access problems, conditions, what worked / didn't / change next time
+- [x] Private photos (Supabase Storage bucket `report-photos`, owner-only, signed links)
+- [x] Finishing a report moves the hunt to Completed; drafts can be saved any time
+- [x] Official harvest reporting shown separately, per state and species (`lib/huntdata/harvestReporting.json`, agency sources only), plus its own task; finishing the app report never marks it done
+- [x] My History: finished hunts with reports, every application and draw result by year (including did-not-draw)
+- [x] The hunter's own lessons: shown on later hunts for the same state and species, and fed into new hunt plans (labeled as their notes)
+- [x] Printable hunt packet: plan, gear checklist, dates, official links, emergency fill-ins; "not an offline navigation map" at the top; no coordinates
+- [ ] Use lessons in Find a Hunt results too (needs the planner to read the account)
 
 ## Phase 3: Application season (January – June 2027)
 

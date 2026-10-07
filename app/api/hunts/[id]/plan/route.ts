@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { requireMember } from '@/lib/apiAuth';
 import { supabaseServer } from '@/lib/supabase/server';
 import { applyChange } from '@/lib/hunts';
 import { buildPlanPrompt, cleanPlan, parseInputs, type PlanContext } from '@/lib/plans';
+import { lessonsBlock, type PastReport } from '@/lib/reports';
 import { STATE_INFO, toStateCode } from '@/lib/huntdata/registry';
 import { harvestForHunt } from '@/lib/huntdata/harvest';
 import { officialInfoFor } from '@/lib/huntdata/applicationInfo';
@@ -58,6 +60,11 @@ export async function POST(req: Request, { params }: Ctx) {
   ]);
   const access = centroid ? await withTimeout(getAccessSummary(centroid.lat, centroid.lng), 8000, null) : null;
   const official = officialInfoFor(hunt.state, hunt.species, hunt.season_year);
+  // The hunter's own finished reports from other hunts (RLS: theirs only).
+  const { data: pastRows } = await supabase.from('hunt_reports')
+    .select('harvested, days_hunted, pressure, worked, didnt_work, change_next, access_issues, conditions, saved_hunts!inner(id, season_year, state, species, unit, hunt_code)')
+    .not('completed_at', 'is', null).neq('hunt_id', id);
+  const past: PastReport[] = (pastRows ?? []).map((r: any) => ({ ...r.saved_hunts, report: r }));
 
   const ctx: PlanContext = {
     state: hunt.state,
@@ -73,6 +80,7 @@ export async function POST(req: Request, { params }: Ctx) {
     harvest: h ? `${h.successPct}% hunter success (${h.year}${h.scope === 'unit' ? ', unit-wide' : ''})` : null,
     publicLand: land?.publicPct != null ? `about ${land.publicPct}% public land (sampled from BLM land status)` : null,
     access: access?.text?.trim() || null,
+    lessons: lessonsBlock(past, hunt),
   };
 
   // ── Generate ───────────────────────────────────────────────────────────

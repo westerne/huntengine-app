@@ -9,6 +9,7 @@ export default function NavLinks({ member, signedIn }: { member: boolean; signed
   const path = usePathname() || '/';
   const section = path.startsWith('/season') ? 'season'
     : path.startsWith('/profile') ? 'profile'
+    : path.startsWith('/history') ? 'history'
     : path === '/' || path.startsWith('/planner') ? 'find'
     : null;
 
@@ -29,6 +30,7 @@ export default function NavLinks({ member, signedIn }: { member: boolean; signed
         <>
           {link('/season', 'My Season', 'season')}
           {link('/planner', 'Find a Hunt', 'find')}
+          {link('/history', 'My History', 'history')}
           {link('/profile', 'My Profile', 'profile')}
         </>
       )}
