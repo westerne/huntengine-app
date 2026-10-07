@@ -1,9 +1,12 @@
 import type { Profile, PlannerFlags } from './types';
 
-export const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV', 'OK', 'CA', 'WA', 'OR', 'SD'];
+export const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV', 'OK', 'CA', 'WA', 'OR', 'SD', 'AK'];
 // Shown but not selectable until their draw data is wired in.
 export const COMING_SOON_STATES: string[] = [];
 export const SPECIES = ['Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
+// Alaska adds these; shown only where a state has them (and in profile interests).
+export const ALASKA_SPECIES = ['Caribou', 'Dall Sheep', 'Bison', 'Muskox'];
+export const ALL_SPECIES = [...SPECIES, ...ALASKA_SPECIES];
 // Species with data, for states that don't have all six (Arizona has no moose or goat).
 const STATE_SPECIES: Record<string, string[]> = {
   AZ: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
@@ -17,6 +20,7 @@ const STATE_SPECIES: Record<string, string[]> = {
   WA: ['Deer', 'Elk', 'Moose', 'Bighorn Sheep', 'Mountain Goat'],
   OR: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
   SD: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],   // goat season closed
+  AK: ['Moose', 'Caribou', 'Dall Sheep', 'Mountain Goat', 'Bison', 'Muskox', 'Elk', 'Deer'],
 };
 export const speciesFor = (st: string) => STATE_SPECIES[st] ?? SPECIES;
 
@@ -54,6 +58,10 @@ export const TROPHY_CONFIG: Record<string, { min: number; max: number; step: num
   'Bighorn Sheep': { min: 140, max: 180, step: 5, label: 'Total Score' },
   'Moose': null,
   'Mountain Goat': null,
+  'Caribou': null,
+  'Dall Sheep': null,
+  'Bison': null,
+  'Muskox': null,
 };
 
 // States with grizzly bear populations relevant to hunting

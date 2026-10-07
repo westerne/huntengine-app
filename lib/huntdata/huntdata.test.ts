@@ -12,7 +12,7 @@ describe('registry', () => {
   });
 
   it('has the live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CA', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'NV', 'OK', 'OR', 'SD', 'UT', 'WA', 'WY']);
+    expect([...LIVE_STATES].sort()).toEqual(['AK', 'AZ', 'CA', 'CO', 'ID', 'KS', 'MT', 'ND', 'NE', 'NM', 'NV', 'OK', 'OR', 'SD', 'UT', 'WA', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -20,7 +20,7 @@ describe('registry', () => {
     expect(toStateCode('wy')).toBe('WY');
     expect(toStateCode('NEW MEXICO')).toBe('NM');
     expect(toStateCode('Narnia')).toBeNull();
-    expect(getStateModule('AK')).toBeNull(); // planned, no data yet
+    expect(getStateModule('ZZ' as never)).toBeNull(); // unknown state
   });
 });
 
@@ -691,5 +691,25 @@ describe('hunt names on screen', () => {
     expect(huntTitle('GMU 105', '1000')).toBe('GMU 105 · Hunt 1000');
     expect(huntTitle('27', null)).toBe('Unit 27');
     expect(humanizeCodes('Put GEN-127-archery first.')).toBe('Put the GMU 127 general season (archery) first.');
+    expect(huntTitle('13A', 'GEN-13A')).toBe('Unit 13A · General season (harvest ticket)');
+    expect(humanizeCodes('Try GEN-13A.')).toBe('Try the Unit 13A general season.');
+  });
+});
+
+describe('Alaska', () => {
+  const ak = getStateModule('AK')!;
+  it('offers drawing hunts and general seasons together, by residency', async () => {
+    const { buildGenericScoutDataset } = await import('./generic');
+    const nr = buildGenericScoutDataset(ak, 'MOOSE', 'nonresident');
+    const res = buildGenericScoutDataset(ak, 'MOOSE', 'resident');
+    expect(nr.some((e) => e.huntCode === 'GEN-13A')).toBe(false);   // residents only
+    expect(res.some((e) => e.huntCode === 'GEN-13A')).toBe(true);
+    expect(res.some((e) => e.huntCode === 'DM160')).toBe(false);    // nonresidents only
+    expect(nr.find((e) => e.huntCode === 'DM160')).toMatchObject({ tags: 2, applicants: 407 });
+    expect(ak.hunts('DALLSHEEP').length).toBeGreaterThan(40);
+    expect(STATE_INFO.AK.drawSystemNote).toMatch(/licensed guide or a resident relative/);
+    const cariR = buildGenericScoutDataset(ak, 'CARIBOU', 'resident');
+    expect(cariR.some((e) => e.huntCode === 'GEN-22D')).toBe(false);   // non-residents only
+    expect(String(cariR.find((e) => e.huntCode === 'GEN-9D')?.label)).toMatch(/open to residents and non-residents/);
   });
 });

@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useState } from 'react';
-import { FITNESS_LEVELS, SPECIES, STATES, STYLE_OPTIONS, EXPERIENCE_OPTIONS } from '../planner/constants';
+import { ALL_SPECIES, FITNESS_LEVELS, SPECIES, STATES, STYLE_OPTIONS, EXPERIENCE_OPTIONS } from '../planner/constants';
 
 type PointRow = { state: string; species: string; points: number; as_of_year: number; verified_on: string | null };
 
@@ -79,7 +79,7 @@ export default function ProfileForm({ email, profile, points: initialPoints }: {
           <label htmlFor="hs" className={label}>Home state (residency)</label>
           <input id="hs" className={inputCls} maxLength={2} placeholder="e.g. WY" value={p.home_state} onChange={(e) => setP({ ...p, home_state: e.target.value.toUpperCase() })} />
         </div>
-        <div className="sm:col-span-2"><span className={label}>Species you hunt</span><Chips name="Species" options={SPECIES} value={p.species_interests} onChange={(v) => setP({ ...p, species_interests: v })} /></div>
+        <div className="sm:col-span-2"><span className={label}>Species you hunt</span><Chips name="Species" options={ALL_SPECIES} value={p.species_interests} onChange={(v) => setP({ ...p, species_interests: v })} /></div>
         <div className="sm:col-span-2"><span className={label}>Weapons</span><Chips name="Weapons" options={['Rifle', 'Archery', 'Muzzleloader']} value={p.weapons} onChange={(v) => setP({ ...p, weapons: v })} /></div>
         <div className="sm:col-span-2"><span className={label}>Hunt styles</span><Chips name="Hunt styles" options={STYLE_OPTIONS} value={p.hunt_styles} onChange={(v) => setP({ ...p, hunt_styles: v })} /></div>
         <div>

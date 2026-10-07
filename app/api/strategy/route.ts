@@ -48,6 +48,8 @@ const speciesKeyMap: Record<string, string> = {
   'elk': 'ELK', 'antelope': 'ANTELOPE', 'pronghorn': 'ANTELOPE',
   'moose': 'MOOSE', 'bighorn sheep': 'BIGHORNSHEEP', 'bighorn': 'BIGHORNSHEEP',
   'sheep': 'BIGHORNSHEEP', 'mountain goat': 'MTNGOAT', 'goat': 'MTNGOAT',
+  'caribou': 'CARIBOU', 'dall sheep': 'DALLSHEEP', 'dall': 'DALLSHEEP',
+  'bison': 'BISON', 'wood bison': 'BISON', 'muskox': 'MUSKOX', 'musk ox': 'MUSKOX',
 };
 
 const stateAliases: Record<string, string> = {

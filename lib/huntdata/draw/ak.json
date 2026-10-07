@@ -1,0 +1,4130 @@
+{
+ "state": "AK",
+ "year": 2025,
+ "source": {
+  "name": "Alaska Department of Fish and Game - Results of the 2025 Permit Hunt Drawing (2026-2027 Alaska Drawing Permit Hunt Supplement, p. 20) and ADF&G hunt pages",
+  "url": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.drawsupplements"
+ },
+ "notes": "ADF&G 2025 drawing (application period Nov. 1 - Dec. 16, 2024; results announced February 2025; hunts in regulatory year 2025-26). Alaska's drawing is a pure random draw with no preference or bonus points: every valid application gets a random draw number per hunt and permits go to the lowest numbers. Residents and nonresidents are in ONE pool per hunt; ADF&G does not publish applicants by residency. tags = 'Permits Available' and applicants = 'Apps Received' from the table 'Results of the 2025 Permit Hunt Drawing' on page 20 of the 2026-2027 Alaska Drawing Permit Hunt Supplement. Apps Received counts application entries, not people (one person may enter the same hunt up to six times; a party application is one entry for two hunters). successPct = Permits Available / Apps Received x 100, rounded to 0.1 and capped at 100 (ADF&G prints the same ratio rounded to whole percent as '% Drawn'; every row agrees within 1 point). Null when nobody applied. Hunts open to both residencies carry the combined rate in BOTH residency stats, with tags/applicants null there (totals are on the row). Single-residency hunts have the other residency set to null. Some hunts cap nonresident permits (e.g. DS102 Tok Management Area: 10% to nonresidents), so the shared rate can overstate nonresident odds. Unit, area, legal animal and residency come from ADF&G's Regulatory Year 2026 hunt pages (index.cfm?adfg=huntingmaps.find_hunt&huntnum=<code>); eight 2025 hunts with no 2026 page (DG856, DI403, DM612, DS003, DS030, DS150, DS233, DS238) come from the 2025-2026 Drawing Permit Hunt Supplement. weapon: 'archery'/'muzzleloader' = certified-weapon-only hunts; 'any' = no weapon restriction listed; omitted where the restriction is mixed (shotgun/crossbow options, or bow-only in part of the area), see label. Bear hunts (DB, DL) are excluded. No deer drawing hunts appear in the 2025 results. Unit spelling matches the SubLabel field of ADF&G's GMUSubunits layer.",
+ "species": {
+  "MOOSE": [
+   {
+    "huntCode": "DM160",
+    "unit": "6A",
+    "label": "Moose (One Bull) — Unit 6A, Cape Suckling to Palm Point [nonresidents only]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 407,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 2,
+      "applicants": 407,
+      "successPct": 0.5
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM167",
+    "unit": "6C",
+    "label": "Moose (One Bull) — Unit 6C, West Copper River Delta [Alaska residents only]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 2311,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 2311,
+      "successPct": 0.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM210",
+    "unit": "7",
+    "units": [
+     "7",
+     "14C"
+    ],
+    "label": "Moose (Bull) — Units 7, 14C, head of Turnagain Arm [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 40,
+    "applicants": 5635,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.7
+     }
+    }
+   },
+   {
+    "huntCode": "DM211",
+    "unit": "7",
+    "units": [
+     "7",
+     "14C"
+    ],
+    "label": "Moose (Antlerless) — Units 7, 14C, head of Turnagain Arm [Alaska residents only]",
+    "weapon": "any",
+    "tags": 35,
+    "applicants": 3336,
+    "draw": {
+     "resident": {
+      "tags": 35,
+      "applicants": 3336,
+      "successPct": 1.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM250",
+    "unit": "11",
+    "label": "Moose (One Bull) — Unit 11, Remainder of Unit 11 [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 199,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 199,
+      "successPct": 1.5
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM335",
+    "unit": "13A",
+    "label": "Moose (Bull with 50-inch or larger antlers or antlers with 4 or more browtines on at least one side) — Unit 13A [nonresidents only]",
+    "weapon": "any",
+    "tags": 15,
+    "applicants": 381,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 15,
+      "applicants": 381,
+      "successPct": 3.9
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM336",
+    "unit": "13B",
+    "label": "Moose (Bull with 50-inch or larger antlers or antlers with 4 or more browtines on at least one side) — Unit 13B [nonresidents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 401,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 25,
+      "applicants": 401,
+      "successPct": 6.2
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM337",
+    "unit": "13C",
+    "label": "Moose (Bull with 50-inch or larger antlers or antlers with 4 or more browtines on at least one side) — Unit 13C [nonresidents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 154,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 25,
+      "applicants": 154,
+      "successPct": 16.2
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM338",
+    "unit": "13D",
+    "label": "Moose (Bull with 50-inch or larger antlers or antlers with 4 or more browtines on at least one side) — Unit 13D [nonresidents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 480,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 25,
+      "applicants": 480,
+      "successPct": 5.2
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM339",
+    "unit": "13E",
+    "label": "Moose (Bull with 50-inch or larger antlers or antlers with 4 or more browtines on at least one side) — Unit 13E [nonresidents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 667,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 25,
+      "applicants": 667,
+      "successPct": 3.7
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM348",
+    "unit": "13D",
+    "label": "Moose (One Bull) — Unit 13D [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 3148,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 3148,
+      "successPct": 0.1
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM400",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Susitna River, Red Shirt Lake [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 1405,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 1405,
+      "successPct": 0.7
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM401",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Susitna River, Figure Eight Lake [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 413,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 413,
+      "successPct": 2.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM402",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Point Mackenzie [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 1643,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 1643,
+      "successPct": 0.6
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM403",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Big Lake [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 2613,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 2613,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM406",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Bald Mountain Ridge [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 1806,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 1806,
+      "successPct": 0.6
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM407",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Matanuska River, North [Alaska residents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 4977,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 4977,
+      "successPct": 0.5
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM408",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Matanuska River, South [Alaska residents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 2020,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 2020,
+      "successPct": 1.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM410",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Knik River [Alaska residents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 6103,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 6103,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM413",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A [Alaska residents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 7942,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 7942,
+      "successPct": 0.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM414",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A [Alaska residents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 7560,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 7560,
+      "successPct": 0.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM416",
+    "unit": "14B",
+    "label": "Moose (One Bull) — Unit 14B [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 2581,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 2581,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM421",
+    "unit": "14C",
+    "label": "Moose (Either sex) — Unit 14C, JBER Qualified Disabled Veterans [residents and nonresidents; certified muzzleloader hunters only]",
+    "weapon": "muzzleloader",
+    "tags": 3,
+    "applicants": 230,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     }
+    }
+   },
+   {
+    "huntCode": "DM422",
+    "unit": "14C",
+    "label": "Moose (Bull) — Unit 14C, Joint Base Elmendorf Richardson [residents and nonresidents; certified muzzleloader hunters only]",
+    "weapon": "muzzleloader",
+    "tags": 10,
+    "applicants": 948,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.1
+     }
+    }
+   },
+   {
+    "huntCode": "DM423",
+    "unit": "14C",
+    "label": "Moose (Antlerless) — Unit 14C, Joint Base Elmendorf Richardson [residents and nonresidents; certified muzzleloader hunters only]",
+    "weapon": "muzzleloader",
+    "tags": 2,
+    "applicants": 150,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     }
+    }
+   },
+   {
+    "huntCode": "DM424",
+    "unit": "14C",
+    "label": "Moose (Bull) — Unit 14C, Joint Base Elmendorf Richardson [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 30,
+    "applicants": 2510,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     }
+    }
+   },
+   {
+    "huntCode": "DM426",
+    "unit": "14C",
+    "label": "Moose (Either sex) — Unit 14C, JBER Qualified Disabled Veterans [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 10,
+    "applicants": 642,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.6
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.6
+     }
+    }
+   },
+   {
+    "huntCode": "DM427",
+    "unit": "14C",
+    "label": "Moose (Either sex) — Unit 14C, JBER [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 15,
+    "applicants": 1125,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     }
+    }
+   },
+   {
+    "huntCode": "DM428",
+    "unit": "14C",
+    "label": "Moose (Bull) — Unit 14C, Joint Base Elmendorf Richardson [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 7,
+    "applicants": 611,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.1
+     }
+    }
+   },
+   {
+    "huntCode": "DM430",
+    "unit": "14C",
+    "label": "Moose (Bull) — Unit 14C, Joint Base Elmendorf Richardson [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 3,
+    "applicants": 284,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.1
+     }
+    }
+   },
+   {
+    "huntCode": "DM441",
+    "unit": "14C",
+    "label": "Moose (Antlerless) — Unit 14C, Knik River & Hunter Creek [Alaska residents only]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 515,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 515,
+      "successPct": 1.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM443",
+    "unit": "14C",
+    "label": "Moose (Antlerless) — Unit 14C, Peters & Little Peters Creek [Alaska residents only]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 601,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 601,
+      "successPct": 0.8
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM444",
+    "unit": "14C",
+    "label": "Moose (Bull) — Unit 14C, northern portion of the remainder of 14C [Alaska residents only; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 2,
+    "applicants": 119,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 119,
+      "successPct": 1.7
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM446",
+    "unit": "14C",
+    "label": "Moose (Bull) — Unit 14C, Ship Creek Drainage above JBER [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 557,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.8
+     }
+    }
+   },
+   {
+    "huntCode": "DM447",
+    "unit": "14C",
+    "label": "Moose (Bull) — Unit 14C, Ship Creek Drainage above JBER [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 801,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     }
+    }
+   },
+   {
+    "huntCode": "DM448",
+    "unit": "14C",
+    "label": "Moose (Bull) — Unit 14C, Birchwood Management Area [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 2,
+    "applicants": 110,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.8
+     }
+    }
+   },
+   {
+    "huntCode": "DM466",
+    "unit": "14C",
+    "label": "Moose (Antlerless moose) — Unit 14C, Anchorage Management Area [Alaska residents only; certified muzzleloader or shotgun hunters only]",
+    "tags": 8,
+    "applicants": 1126,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 1126,
+      "successPct": 0.7
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM467",
+    "unit": "14C",
+    "label": "Moose (Antlerless moose) — Unit 14C, Anchorage Management Area [Alaska residents only; certified muzzleloader or shotgun hunters only]",
+    "tags": 5,
+    "applicants": 307,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 307,
+      "successPct": 1.6
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM470",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A, Susitna River, Red Shirt Lake [Alaska residents only]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 626,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 626,
+      "successPct": 0.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM471",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A, Susitna River, Figure Eight Lake [Alaska residents only]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 158,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 158,
+      "successPct": 1.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM472",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A, Point Mackenzie [Alaska residents only]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 448,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 448,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM473",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A, Big Lake [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 761,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 761,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM476",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A, Bald Mountain Ridge [Alaska residents only]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 589,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 589,
+      "successPct": 0.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM477",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A, Matanuska River, North [Alaska residents only]",
+    "weapon": "any",
+    "tags": 4,
+    "applicants": 1371,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 1371,
+      "successPct": 0.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM478",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A, Matanuska River, South [Alaska residents only]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 365,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 365,
+      "successPct": 0.5
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM480",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A, Knik River [Alaska residents only]",
+    "weapon": "any",
+    "tags": 4,
+    "applicants": 1670,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 1670,
+      "successPct": 0.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM508",
+    "unit": "15B",
+    "label": "Moose (Bull) — Unit 15B, East of the Sterling Highway [Alaska residents only]",
+    "weapon": "any",
+    "tags": 40,
+    "applicants": 4860,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 4860,
+      "successPct": 0.8
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM512",
+    "unit": "15C",
+    "label": "Moose (Bull) — Unit 15C, Northwest [Alaska residents only]",
+    "weapon": "any",
+    "tags": 20,
+    "applicants": 5184,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 5184,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM514",
+    "unit": "15C",
+    "label": "Moose (Bull) — Unit 15C, Northeast [Alaska residents only]",
+    "weapon": "any",
+    "tags": 35,
+    "applicants": 1745,
+    "draw": {
+     "resident": {
+      "tags": 35,
+      "applicants": 1745,
+      "successPct": 2.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM516",
+    "unit": "15C",
+    "label": "Moose (Bull) — Unit 15C, Southwest [Alaska residents only]",
+    "weapon": "any",
+    "tags": 18,
+    "applicants": 2129,
+    "draw": {
+     "resident": {
+      "tags": 18,
+      "applicants": 2129,
+      "successPct": 0.8
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM518",
+    "unit": "15C",
+    "label": "Moose (Bull) — Unit 15C, Southeast [Alaska residents only]",
+    "weapon": "any",
+    "tags": 16,
+    "applicants": 1870,
+    "draw": {
+     "resident": {
+      "tags": 16,
+      "applicants": 1870,
+      "successPct": 0.9
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM549",
+    "unit": "15C",
+    "label": "Moose (Antlerless, taking calves or cows with calves is prohibited) — Unit 15C, Homer [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 65,
+    "applicants": 4806,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.4
+     }
+    }
+   },
+   {
+    "huntCode": "DM570",
+    "unit": "17A",
+    "label": "Moose (Bull with 50-inch or larger antlers or antlers with 4 or more browtines on at least one side) — Unit 17A [nonresidents only]",
+    "weapon": "any",
+    "tags": 20,
+    "applicants": 389,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 20,
+      "applicants": 389,
+      "successPct": 5.1
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM612",
+    "unit": "18",
+    "label": "Moose (Antlerless) — Unit 18, Zone 1 [Alaska residents only]",
+    "weapon": "any",
+    "tags": 100,
+    "applicants": 585,
+    "draw": {
+     "resident": {
+      "tags": 100,
+      "applicants": 585,
+      "successPct": 17.1
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM656",
+    "unit": "19C",
+    "label": "Moose (Bull) — Unit 19C, Remainder [Alaska residents only]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 409,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 409,
+      "successPct": 1.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM681",
+    "unit": "19C",
+    "label": "Moose (Bull with 50-inch antlers or 4 or more brow tines on at least one side) — Unit 19C, Farewell [nonresidents only; nonresidents may NOT use a licensed guide]",
+    "weapon": "any",
+    "tags": 14,
+    "applicants": 652,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 14,
+      "applicants": 652,
+      "successPct": 2.1
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM682",
+    "unit": "19C",
+    "label": "Moose (Bull with 50-inch antlers or 4 or more brow tines on at least one side) — Unit 19C, Farewell [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 24,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 6,
+      "applicants": 24,
+      "successPct": 25.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM766",
+    "unit": "20A",
+    "label": "Moose (Residents: One Bull) — Unit 20A, Wood River CUA East [residents and nonresidents; certified muzzleloader hunters only]",
+    "weapon": "muzzleloader",
+    "tags": 65,
+    "applicants": 469,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 13.9
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 13.9
+     }
+    }
+   },
+   {
+    "huntCode": "DM768",
+    "unit": "20A",
+    "label": "Moose (Bull) — Unit 20A, West Tanana Flats [Alaska residents only]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 1626,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 1626,
+      "successPct": 1.5
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM769",
+    "unit": "20A",
+    "label": "Moose (Bull) — Unit 20A, Central Tanana Flats [Alaska residents only]",
+    "weapon": "any",
+    "tags": 225,
+    "applicants": 2655,
+    "draw": {
+     "resident": {
+      "tags": 225,
+      "applicants": 2655,
+      "successPct": 8.5
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM770",
+    "unit": "20A",
+    "label": "Moose (Bull) — Unit 20A, Western Mtns [Alaska residents only]",
+    "weapon": "any",
+    "tags": 40,
+    "applicants": 5088,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 5088,
+      "successPct": 0.8
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM771",
+    "unit": "20A",
+    "label": "Moose (Bull) — Unit 20A, Central Mtns [Alaska residents only]",
+    "weapon": "any",
+    "tags": 65,
+    "applicants": 1051,
+    "draw": {
+     "resident": {
+      "tags": 65,
+      "applicants": 1051,
+      "successPct": 6.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM772",
+    "unit": "20A",
+    "label": "Moose (Bull) — Unit 20A, East Central Tanana Flats and Mtns [Alaska residents only]",
+    "weapon": "any",
+    "tags": 225,
+    "applicants": 1323,
+    "draw": {
+     "resident": {
+      "tags": 225,
+      "applicants": 1323,
+      "successPct": 17.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM773",
+    "unit": "20A",
+    "label": "Moose (Bull) — Unit 20A, Eastern Tanana Flats and Mtns [Alaska residents only]",
+    "weapon": "any",
+    "tags": 20,
+    "applicants": 1038,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 1038,
+      "successPct": 1.9
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM774",
+    "unit": "20A",
+    "label": "Moose (Bull) — Unit 20A, Yanert Controlled Use Area [Alaska residents only]",
+    "weapon": "any",
+    "tags": 30,
+    "applicants": 873,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 873,
+      "successPct": 3.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM783",
+    "unit": "20B",
+    "label": "Moose (Any Moose) — Unit 20B, Richardson [Alaska residents only; certified muzzleloader, crossbow or bowhunters only]",
+    "tags": 50,
+    "applicants": 1194,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 1194,
+      "successPct": 4.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM784",
+    "unit": "20B",
+    "label": "Moose (Bull with 50-inch antlers or 4 or more brow tines on at least one side) — Unit 20B, Minto Flats Management Area [nonresidents only]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 198,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 8,
+      "applicants": 198,
+      "successPct": 4.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM786",
+    "unit": "20B",
+    "label": "Moose (Antlerless moose) — Unit 20B, Fairbanks Management Area [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 37,
+    "applicants": 254,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 14.6
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 14.6
+     }
+    }
+   },
+   {
+    "huntCode": "DM788",
+    "unit": "20B",
+    "label": "Moose (Antlerless moose) — Unit 20B, Fairbanks Management Area [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 113,
+    "applicants": 1490,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 7.6
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 7.6
+     }
+    }
+   },
+   {
+    "huntCode": "DM789",
+    "unit": "20B",
+    "label": "Moose (Antlerless moose) — Unit 20B, Creamers Field Migratory Waterfowl Refuge [Alaska residents only; certified muzzleloader hunters only]",
+    "weapon": "muzzleloader",
+    "tags": 10,
+    "applicants": 204,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 204,
+      "successPct": 4.9
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM790",
+    "unit": "20D",
+    "label": "Moose (Residents: Bull with spike-fork, 50 inch, or 4 or more brow tines on at least one side) — Unit 20D, Delta Jct Mgmt Area [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 20,
+    "applicants": 3594,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.6
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.6
+     }
+    }
+   },
+   {
+    "huntCode": "DM794",
+    "unit": "20E",
+    "label": "Moose (Bull) — Unit 20E, Lower Ladue and Prindle Volcano [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 322,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 322,
+      "successPct": 3.1
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM795",
+    "unit": "20D",
+    "label": "Moose (Any moose, except a calf or a cow accompanied by a calf, every 4 regulatory years) — Unit 20D, Delta Junction Management Area [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 221,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.7
+     }
+    }
+   },
+   {
+    "huntCode": "DM802",
+    "unit": "21B",
+    "label": "Moose (Resident - Any bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21B, East of the Nowitna River Corridor [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 67,
+    "applicants": 170,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 39.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 39.4
+     }
+    }
+   },
+   {
+    "huntCode": "DM805",
+    "unit": "21B",
+    "label": "Moose (Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21B, Lower Nowitna River Corridor [nonresidents only]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 73,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 2,
+      "applicants": 73,
+      "successPct": 2.7
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM806",
+    "unit": "21B",
+    "label": "Moose (Any bull) — Unit 21B, Lower Nowitna River Corridor [Alaska residents only]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 285,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 285,
+      "successPct": 2.8
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM808",
+    "unit": "21B",
+    "label": "Moose (Resident - Any bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21B, West of the Nowitna River Corridor [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 78,
+    "applicants": 91,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 85.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 85.7
+     }
+    }
+   },
+   {
+    "huntCode": "DM809",
+    "unit": "21B",
+    "label": "Moose (Bull with 50 inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21B, Upper Nowitna Corridor [nonresidents only; nonresidents may NOT use a licensed guide]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 113,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 3,
+      "applicants": 113,
+      "successPct": 2.7
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM810",
+    "unit": "21B",
+    "label": "Moose (Any bull) — Unit 21B, Upper Nowitna Corridor [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 263,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 263,
+      "successPct": 3.8
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM811",
+    "unit": "21B",
+    "label": "Moose (Bull with 50 inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21B, Upper Nowitna Corridor [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 7,
+    "applicants": 6,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 7,
+      "applicants": 6,
+      "successPct": 100.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM814",
+    "unit": "21D",
+    "label": "Moose (Any bull) — Unit 21D, Bear Creek drainage [Alaska residents only]",
+    "weapon": "any",
+    "tags": 16,
+    "applicants": 109,
+    "draw": {
+     "resident": {
+      "tags": 16,
+      "applicants": 109,
+      "successPct": 14.7
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM815",
+    "unit": "21D",
+    "label": "Moose (Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21D, Bear Creek drainage [nonresidents only; nonresidents may NOT use a licensed guide]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 19,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 2,
+      "applicants": 19,
+      "successPct": 10.5
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM816",
+    "unit": "21D",
+    "label": "Moose (Resident - Any bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21D, Yuki/Bishop Creek drainages [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 440,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.7
+     }
+    }
+   },
+   {
+    "huntCode": "DM817",
+    "unit": "21D",
+    "label": "Moose (Resident - Any bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21D, Nulato River/Kaiyuh Flats [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 31,
+    "applicants": 282,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 11.0
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 11.0
+     }
+    }
+   },
+   {
+    "huntCode": "DM818",
+    "unit": "21D",
+    "label": "Moose (Resident - Any bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21D, Papa Willie Creek [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 255,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 9.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 9.8
+     }
+    }
+   },
+   {
+    "huntCode": "DM819",
+    "unit": "21D",
+    "label": "Moose (Bull with 50-inch antlers or antlers with at least 4 or more brow tines on at least one side) — Unit 21D, Bear Creek drainage [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 0,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 2,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM820",
+    "unit": "21D",
+    "label": "Moose (Resident - bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21D, Gisasa/Kateel River drainages [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 15,
+    "applicants": 157,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 9.6
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 9.6
+     }
+    }
+   },
+   {
+    "huntCode": "DM823",
+    "unit": "21C",
+    "units": [
+     "21C",
+     "21D",
+     "24C",
+     "24D"
+    ],
+    "label": "Moose (Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Units 21C, 21D, 24C, 24D, Koyukuk CUA upstream from Gisasa River [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 1,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 1,
+      "successPct": 100.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM825",
+    "unit": "21C",
+    "units": [
+     "21C",
+     "21D",
+     "24C",
+     "24D"
+    ],
+    "label": "Moose (Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Units 21C, 21D, 24C, 24D, Koyukuk CUA upstream from Gisasa River [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 6,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 6,
+      "successPct": 16.7
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM827",
+    "unit": "21C",
+    "units": [
+     "21C",
+     "21D",
+     "24C",
+     "24D"
+    ],
+    "label": "Moose (Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Units 21C, 21D, 24C, 24D, Koyukuk CUA upstream from Gisasa River [nonresidents only; nonresidents may NOT use a licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 108,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 108,
+      "successPct": 0.9
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM828",
+    "unit": "21C",
+    "units": [
+     "21C",
+     "21D",
+     "24C",
+     "24D"
+    ],
+    "label": "Moose (Any bull) — Units 21C, 21D, 24C, 24D, Koyukuk CUA upstream from Gisasa River [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 205,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 205,
+      "successPct": 4.9
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM829",
+    "unit": "21C",
+    "units": [
+     "21C",
+     "21D",
+     "24C",
+     "24D"
+    ],
+    "label": "Moose (Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Units 21C, 21D, 24C, 24D, Koyukuk CUA upstream from Gisasa River [nonresidents only; nonresidents may NOT use a licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 172,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 172,
+      "successPct": 0.6
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM830",
+    "unit": "21C",
+    "units": [
+     "21C",
+     "21D",
+     "24C",
+     "24D"
+    ],
+    "label": "Moose (Any bull) — Units 21C, 21D, 24C, 24D, Koyukuk CUA upstream from Gisasa River [Alaska residents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 895,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 895,
+      "successPct": 1.1
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DM837",
+    "unit": "21E",
+    "label": "Moose (Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21E, Middle Yukon [nonresidents only; nonresidents may NOT use a licensed guide]",
+    "weapon": "any",
+    "tags": 42,
+    "applicants": 884,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 42,
+      "applicants": 884,
+      "successPct": 4.8
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM839",
+    "unit": "21E",
+    "label": "Moose (Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 21E, Middle Yukon [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 18,
+    "applicants": 75,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 18,
+      "applicants": 75,
+      "successPct": 24.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM845",
+    "unit": "22B",
+    "label": "Moose (Bull with 50-inch or larger antlers or antlers with 4 or more browtines on at least one side) — Unit 22B, East of the Darby Mtns [nonresidents only]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 12,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 8,
+      "applicants": 12,
+      "successPct": 66.7
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM855",
+    "unit": "22E",
+    "label": "Moose (Bull with 50-inch or larger antlers or antlers with 4 or more browtines on at least one side) — Unit 22E [nonresidents only]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 297,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 5,
+      "applicants": 297,
+      "successPct": 1.7
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DM892",
+    "unit": "24D",
+    "label": "Moose (Resident - Any bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 24D, Huslia and Dakli River drainages [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 35,
+    "applicants": 34,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 100.0
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 100.0
+     }
+    }
+   },
+   {
+    "huntCode": "DM920",
+    "unit": "24A",
+    "units": [
+     "24A",
+     "25A"
+    ],
+    "label": "Moose (Resident - Any bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Units 24A, 25A, the Dalton Highway Corridor MA [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 20,
+    "applicants": 828,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.4
+     }
+    }
+   },
+   {
+    "huntCode": "DM922",
+    "unit": "24A",
+    "label": "Moose (Resident - Any bull. Nonresident - Bull with 50-inch antlers or antlers with 4 or more brow tines on at least one side) — Unit 24A, within the Dalton Highway Corridor MA [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 50,
+    "applicants": 781,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 6.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 6.4
+     }
+    }
+   },
+   {
+    "huntCode": "DM996",
+    "unit": "26B",
+    "label": "Moose (Bull) — Unit 26B, excluding the Canning River Drainage [Alaska residents only; bow and arrow only inside the Dalton Highway Corridor MA portion]",
+    "tags": 10,
+    "applicants": 233,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 233,
+      "successPct": 4.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "YM412",
+    "unit": "14A",
+    "label": "Moose (Antlerless; calf moose are legal in this hunt) — Unit 14A, Point MacKenzie [Alaska residents only; youth hunt, ages 10-17]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 1894,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 1894,
+      "successPct": 1.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "YM482",
+    "unit": "14A",
+    "label": "Moose (One Bull) — Unit 14A [Alaska residents only; youth hunt, ages 10-17]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 557,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 557,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "YM763",
+    "unit": "20D",
+    "label": "Moose (Antlerless moose, taking calves or cows accompanied by calves is prohibited. Only one moose per lifetime allowed for this hunt) — Unit 20D, Southwest [Alaska residents only; youth hunt, ages 10-17]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 719,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 719,
+      "successPct": 1.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "YM765",
+    "unit": "20D",
+    "label": "Moose (Any Bull. Only one moose per lifetime allowed for this hunt) — Unit 20D, Southwest [Alaska residents only; youth hunt, ages 10-17]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 1022,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 1022,
+      "successPct": 0.5
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   }
+  ],
+  "CARIBOU": [
+   {
+    "huntCode": "DC001",
+    "unit": "7",
+    "label": "Caribou (One Bull Caribou) — Unit 7, Kenai Mountains [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 3952,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     }
+    }
+   },
+   {
+    "huntCode": "DC590",
+    "unit": "14A",
+    "units": [
+     "14A",
+     "14B"
+    ],
+    "label": "Caribou (One (1) Bull Caribou) — Units 14A, 14B, Western Talkeetna Mountains [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 50,
+    "applicants": 9028,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.6
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.6
+     }
+    }
+   },
+   {
+    "huntCode": "DC608",
+    "unit": "15B",
+    "label": "Caribou (One Caribou) — Unit 15B, Killey River [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 60,
+    "applicants": 5100,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     }
+    }
+   },
+   {
+    "huntCode": "DC618",
+    "unit": "15C",
+    "label": "Caribou (One Caribou) — Unit 15C, Fox River [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 812,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     }
+    }
+   },
+   {
+    "huntCode": "DC826",
+    "unit": "20A",
+    "label": "Caribou (Bull) — Unit 20A, Central Alaska Range [nonresidents only; nonresidents may NOT use a licensed guide]",
+    "weapon": "any",
+    "tags": 13,
+    "applicants": 2353,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 13,
+      "applicants": 2353,
+      "successPct": 0.6
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DC827",
+    "unit": "20A",
+    "label": "Caribou (Bull) — Unit 20A, Central Alaska Range [Alaska residents only]",
+    "weapon": "any",
+    "tags": 149,
+    "applicants": 15550,
+    "draw": {
+     "resident": {
+      "tags": 149,
+      "applicants": 15550,
+      "successPct": 1.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DC828",
+    "unit": "20A",
+    "label": "Caribou (Bull) — Unit 20A, Central Alaska Range [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 13,
+    "applicants": 1224,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 13,
+      "applicants": 1224,
+      "successPct": 1.1
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DC923",
+    "unit": "23",
+    "label": "Caribou (One (1) Bull Caribou) — Unit 23 [nonresidents only]",
+    "weapon": "any",
+    "tags": 300,
+    "applicants": 666,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 300,
+      "applicants": 666,
+      "successPct": 45.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "YC831",
+    "unit": "20B",
+    "units": [
+     "20B",
+     "20E",
+     "25C"
+    ],
+    "label": "Caribou (Either Sex) — Units 20B, 20E, 25C, Fortymile caribou hunt (Zones 1 and 3) [residents and nonresidents; youth hunt, ages 10-17]",
+    "weapon": "any",
+    "tags": 30,
+    "applicants": 4572,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.7
+     }
+    }
+   }
+  ],
+  "DALLSHEEP": [
+   {
+    "huntCode": "DS003",
+    "unit": "20D",
+    "units": [
+     "20D",
+     "13B",
+     "20A"
+    ],
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Units 20D, 13B, 20A, Delta Controlled Use Area [nonresidents only; nonresidents accompanied by a resident relative (second-degree kindred) only]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 381,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 381,
+      "successPct": 0.3
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS030",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14C, Northwest [nonresidents only; nonresidents accompanied by a resident relative (second-degree kindred) only]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 392,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 392,
+      "successPct": 0.3
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS065",
+    "unit": "13D",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 13D, East [nonresidents only; nonresidents accompanied by a resident relative (second-degree kindred) only]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 269,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 269,
+      "successPct": 0.4
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS102",
+    "unit": "12",
+    "units": [
+     "12",
+     "13C",
+     "20D"
+    ],
+    "label": "Dall sheep (Full curl ram every 4 regulatory years) — Units 12, 13C, 20D, Tok Management Area [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 4324,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.2
+     }
+    }
+   },
+   {
+    "huntCode": "DS123",
+    "unit": "14C",
+    "label": "Dall sheep (Full Curl) — Unit 14C, Central [Alaska residents only]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 3359,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 3359,
+      "successPct": 0.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS124",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Northeast [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 536,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 536,
+      "successPct": 0.6
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS125",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Northeast [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 264,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 264,
+      "successPct": 1.1
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS126",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Northeast [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 475,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 475,
+      "successPct": 0.6
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS130",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Northwest [Alaska residents only]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 1088,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 1088,
+      "successPct": 0.6
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS131",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Northwest [Alaska residents only]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 516,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 516,
+      "successPct": 1.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS132",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Northwest [Alaska residents only]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 607,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 607,
+      "successPct": 1.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS134",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Upper Eagle River [Alaska residents only]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 642,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 642,
+      "successPct": 0.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS135",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Upper Eagle River [Alaska residents only]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 359,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 359,
+      "successPct": 0.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS136",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Southwest [Alaska residents only]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 1583,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 1583,
+      "successPct": 0.5
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS137",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Southwest [Alaska residents only]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 917,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 917,
+      "successPct": 0.9
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS138",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl) — Unit 14C, Southwest [Alaska residents only]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 788,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 788,
+      "successPct": 1.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS140",
+    "unit": "14C",
+    "label": "Dall sheep (Any ram) — Unit 14C, West [Alaska residents only; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 57,
+    "applicants": 2008,
+    "draw": {
+     "resident": {
+      "tags": 57,
+      "applicants": 2008,
+      "successPct": 2.8
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS141",
+    "unit": "14C",
+    "label": "Dall sheep (Any ram) — Unit 14C, West Eklutna [Alaska residents only; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 24,
+    "applicants": 1097,
+    "draw": {
+     "resident": {
+      "tags": 24,
+      "applicants": 1097,
+      "successPct": 2.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS150",
+    "unit": "7",
+    "units": [
+     "7",
+     "15A"
+    ],
+    "label": "Dall sheep (Full curl (residents); full curl every 4 regulatory years (nonresidents)) — Units 7, 15A, Round Mt. [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 2468,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.0
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.0
+     }
+    }
+   },
+   {
+    "huntCode": "DS160",
+    "unit": "13D",
+    "label": "Dall sheep (Full Curl or larger) — Unit 13D, West [Alaska residents only]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 2566,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 2566,
+      "successPct": 0.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS165",
+    "unit": "13D",
+    "label": "Dall sheep (Full Curl or larger) — Unit 13D, East [Alaska residents only]",
+    "weapon": "any",
+    "tags": 14,
+    "applicants": 2092,
+    "draw": {
+     "resident": {
+      "tags": 14,
+      "applicants": 2092,
+      "successPct": 0.7
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS170",
+    "unit": "14A",
+    "label": "Dall sheep (Full Curl or larger) — Unit 14A, Metal Creek [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 694,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 694,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS175",
+    "unit": "14A",
+    "label": "Dall sheep (Full Curl or larger) — Unit 14A, Metal Creek [Alaska residents only]",
+    "weapon": "any",
+    "tags": 4,
+    "applicants": 384,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 384,
+      "successPct": 1.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS180",
+    "unit": "14A",
+    "label": "Dall sheep (Full Curl or larger) — Unit 14A, Friday Creek [Alaska residents only]",
+    "weapon": "any",
+    "tags": 4,
+    "applicants": 1794,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 1794,
+      "successPct": 0.2
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS185",
+    "unit": "14A",
+    "label": "Dall sheep (Full Curl or larger) — Unit 14A, Friday Creek [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 511,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 511,
+      "successPct": 0.6
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS190",
+    "unit": "14A",
+    "label": "Dall sheep (Full Curl or larger) — Unit 14A, Carpenter Creek [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 419,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 419,
+      "successPct": 0.7
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS195",
+    "unit": "14A",
+    "label": "Dall sheep (Full Curl or larger) — Unit 14A, Carpenter Creek [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 226,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 226,
+      "successPct": 1.3
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS203",
+    "unit": "20D",
+    "units": [
+     "20D",
+     "13B",
+     "20A"
+    ],
+    "label": "Dall sheep (Full curl) — Units 20D, 13B, 20A, Delta Controlled Use Area [Alaska residents only]",
+    "weapon": "any",
+    "tags": 42,
+    "applicants": 4607,
+    "draw": {
+     "resident": {
+      "tags": 42,
+      "applicants": 4607,
+      "successPct": 0.9
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS204",
+    "unit": "20D",
+    "units": [
+     "20D",
+     "13B",
+     "20A"
+    ],
+    "label": "Dall sheep (Full curl) — Units 20D, 13B, 20A, Delta Controlled Use Area [Alaska residents only]",
+    "weapon": "any",
+    "tags": 34,
+    "applicants": 3737,
+    "draw": {
+     "resident": {
+      "tags": 34,
+      "applicants": 3737,
+      "successPct": 0.9
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DS205",
+    "unit": "20D",
+    "units": [
+     "20D",
+     "13B",
+     "20A"
+    ],
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Units 20D, 13B, 20A, Delta Controlled Use Area [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 4,
+    "applicants": 84,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 4,
+      "applicants": 84,
+      "successPct": 4.8
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS206",
+    "unit": "20D",
+    "units": [
+     "20D",
+     "20E"
+    ],
+    "label": "Dall sheep (Resident: Full curl) — Units 20D, 20E, Mt. Harper [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 498,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.4
+     }
+    }
+   },
+   {
+    "huntCode": "DS207",
+    "unit": "20D",
+    "units": [
+     "20D",
+     "13B",
+     "20A"
+    ],
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Units 20D, 13B, 20A, Delta Controlled Use Area [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 52,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 3,
+      "applicants": 52,
+      "successPct": 5.8
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS231",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14C, Northwest [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 131,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 131,
+      "successPct": 0.8
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS232",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14C, Northwest [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 7,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 7,
+      "successPct": 14.3
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS233",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14C, Upper Eagle River [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 293,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 293,
+      "successPct": 0.3
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS236",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14C, Southwest [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 312,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 312,
+      "successPct": 0.3
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS237",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14C, Southwest [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 249,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 249,
+      "successPct": 0.4
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS238",
+    "unit": "14C",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14C, Southwest [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 12,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 12,
+      "successPct": 8.3
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS240",
+    "unit": "14C",
+    "label": "Dall sheep (Any ram every 4 regulatory years) — Unit 14C, West [nonresidents only; certified bowhunters only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "archery",
+    "tags": 3,
+    "applicants": 25,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 3,
+      "applicants": 25,
+      "successPct": 12.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS241",
+    "unit": "14C",
+    "label": "Dall sheep (Any ram every 4 regulatory years) — Unit 14C, West Eklutna [nonresidents only; certified bowhunters only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "archery",
+    "tags": 1,
+    "applicants": 25,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 25,
+      "successPct": 4.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS260",
+    "unit": "13D",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 13D, West [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 984,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 2,
+      "applicants": 984,
+      "successPct": 0.2
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS265",
+    "unit": "13D",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 13D, East [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 2,
+    "applicants": 479,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 2,
+      "applicants": 479,
+      "successPct": 0.4
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS270",
+    "unit": "14A",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14A, Metal Creek [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 228,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 228,
+      "successPct": 0.4
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DS285",
+    "unit": "14A",
+    "label": "Dall sheep (Full curl every 4 regulatory years) — Unit 14A, Friday Creek [nonresidents only; nonresidents must hunt with an Alaska-licensed guide]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 55,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1,
+      "applicants": 55,
+      "successPct": 1.8
+     }
+    },
+    "openTo": "nonresident"
+   }
+  ],
+  "MTNGOAT": [
+   {
+    "huntCode": "DG005",
+    "unit": "1A",
+    "label": "Mountain goat (1 Mountain Goat of either sex; taking of nannies with kids is prohibited) — Unit 1A, Revillagigedo I. East [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 749,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.4
+     }
+    }
+   },
+   {
+    "huntCode": "DG006",
+    "unit": "1A",
+    "label": "Mountain goat (1 Mountain Goat of either sex; taking of nannies with kids is prohibited) — Unit 1A, Revillagigedo I. South [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 23,
+    "applicants": 3352,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.7
+     }
+    }
+   },
+   {
+    "huntCode": "DG008",
+    "unit": "1A",
+    "units": [
+     "1A",
+     "1B"
+    ],
+    "label": "Mountain goat (1 Billy (male) Mountain Goat) — Units 1A, 1B, Cleveland Peninsula south of the Yes Bay / Santa Anna Inlet divide [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 354,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.3
+     }
+    }
+   },
+   {
+    "huntCode": "DG332",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Gilpatrick Mt [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 1583,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.4
+     }
+    }
+   },
+   {
+    "huntCode": "DG334",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Mills Creek [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 7,
+    "applicants": 992,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.7
+     }
+    }
+   },
+   {
+    "huntCode": "DG338",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Cresent Lake [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 9,
+    "applicants": 1952,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.5
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.5
+     }
+    }
+   },
+   {
+    "huntCode": "DG339",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Grant Lake [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 7,
+    "applicants": 571,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.2
+     }
+    }
+   },
+   {
+    "huntCode": "DG342",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Lost Lake [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 1042,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.8
+     }
+    }
+   },
+   {
+    "huntCode": "DG343",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Victor Creek [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 270,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.2
+     }
+    }
+   },
+   {
+    "huntCode": "DG344",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Nellie Juan Lake [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 8,
+    "applicants": 387,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.1
+     }
+    }
+   },
+   {
+    "huntCode": "DG345",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Whidbey Bay [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 35,
+    "applicants": 645,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.4
+     }
+    }
+   },
+   {
+    "huntCode": "DG346",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Resurrection Peninsula [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 45,
+    "applicants": 2449,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.8
+     }
+    }
+   },
+   {
+    "huntCode": "DG347",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Seward [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 14,
+    "applicants": 1040,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     }
+    }
+   },
+   {
+    "huntCode": "DG351",
+    "unit": "7",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 7, Petrof Lake [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 14,
+    "applicants": 116,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 12.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 12.1
+     }
+    }
+   },
+   {
+    "huntCode": "DG352",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Brown Mt [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 25,
+    "applicants": 383,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 6.5
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 6.5
+     }
+    }
+   },
+   {
+    "huntCode": "DG354",
+    "unit": "15B",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15B, Skilak Glacier [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 448,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     }
+    }
+   },
+   {
+    "huntCode": "DG356",
+    "unit": "15B",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15B, Indian Creek [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 11,
+    "applicants": 510,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.2
+     }
+    }
+   },
+   {
+    "huntCode": "DG357",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Tustumena Glacier [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 16,
+    "applicants": 327,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 4.9
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 4.9
+     }
+    }
+   },
+   {
+    "huntCode": "DG358",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Fox River [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 18,
+    "applicants": 311,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.8
+     }
+    }
+   },
+   {
+    "huntCode": "DG359",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Bradley Lake [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 30,
+    "applicants": 440,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 6.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 6.8
+     }
+    }
+   },
+   {
+    "huntCode": "DG360",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Dixon Glacier [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 45,
+    "applicants": 845,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.3
+     }
+    }
+   },
+   {
+    "huntCode": "DG361",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Halibut Cove [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 24,
+    "applicants": 427,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.6
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 5.6
+     }
+    }
+   },
+   {
+    "huntCode": "DG362",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Sadie Cove [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 20,
+    "applicants": 1121,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.8
+     }
+    }
+   },
+   {
+    "huntCode": "DG363",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Port Dick [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 30,
+    "applicants": 713,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 4.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 4.2
+     }
+    }
+   },
+   {
+    "huntCode": "DG364",
+    "unit": "15C",
+    "label": "Mountain goat (Either sex, taking of nannies with kids is prohibited) — Unit 15C, Port Dick [Alaska residents only]",
+    "weapon": "any",
+    "tags": 16,
+    "applicants": 413,
+    "draw": {
+     "resident": {
+      "tags": 16,
+      "applicants": 413,
+      "successPct": 3.9
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DG471",
+    "unit": "8",
+    "label": "Mountain goat (One goat, either sex. Nannies with kids are protected and can not be legally harvested) — Unit 8, Wild Creek - Center Mt [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 35,
+    "applicants": 546,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 6.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 6.4
+     }
+    }
+   },
+   {
+    "huntCode": "DG472",
+    "unit": "8",
+    "label": "Mountain goat (One goat, either sex. Nannies with kids are protected and can not be legally harvested) — Unit 8, Crown Mt [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 12,
+    "applicants": 316,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 3.8
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 3.8
+     }
+    }
+   },
+   {
+    "huntCode": "DG473",
+    "unit": "8",
+    "label": "Mountain goat (One goat, either sex. Nannies with kids are protected and can not be legally harvested) — Unit 8, Hidden Basin - East Terror Lake [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 12,
+    "applicants": 480,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.5
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.5
+     }
+    }
+   },
+   {
+    "huntCode": "DG474",
+    "unit": "8",
+    "label": "Mountain goat (One goat, either sex. Nannies with kids are protected and can not be legally harvested) — Unit 8, Uganik River [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 70,
+    "applicants": 699,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 10.0
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 10.0
+     }
+    }
+   },
+   {
+    "huntCode": "DG476",
+    "unit": "8",
+    "label": "Mountain goat (One goat, either sex. Nannies with kids are protected and can not be legally harvested) — Unit 8, Kiliuda Bay [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 50,
+    "applicants": 457,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 10.9
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 10.9
+     }
+    }
+   },
+   {
+    "huntCode": "DG478",
+    "unit": "8",
+    "label": "Mountain goat (One goat, either sex. Nannies with kids are protected and can not be legally harvested) — Unit 8, South Road System [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 80,
+    "applicants": 3360,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.4
+     }
+    }
+   },
+   {
+    "huntCode": "DG479",
+    "unit": "8",
+    "label": "Mountain goat (One goat, either sex. Nannies with kids are protected and can not be legally harvested) — Unit 8, North Road System [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 50,
+    "applicants": 2364,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.1
+     }
+    }
+   },
+   {
+    "huntCode": "DG720",
+    "unit": "13D",
+    "label": "Mountain goat (One (1) mountain goat, the taking of nannies with kids is prohibited) — Unit 13D [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 15,
+    "applicants": 1570,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.0
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.0
+     }
+    }
+   },
+   {
+    "huntCode": "DG852",
+    "unit": "14C",
+    "label": "Mountain goat (One (1) mountain goat, preferably male. The taking of nannies with kids is prohibited) — Unit 14C, East Fork Eklutna [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 1389,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.2
+     }
+    }
+   },
+   {
+    "huntCode": "DG854",
+    "unit": "14C",
+    "label": "Mountain goat (One (1) mountain goat, preferably male. The taking of nannies with kids is prohibited) — Unit 14C, Eagle River [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 1962,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.5
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.5
+     }
+    }
+   },
+   {
+    "huntCode": "DG856",
+    "unit": "14C",
+    "label": "Mountain goat — Unit 14C, Glacier Creek [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 399,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.3
+     }
+    }
+   },
+   {
+    "huntCode": "DG858",
+    "unit": "14C",
+    "label": "Mountain goat (One (1) mountain goat, preferably male. The taking of nannies with kids is prohibited) — Unit 14C, Bird Creek [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 4,
+    "applicants": 1041,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.4
+     }
+    }
+   },
+   {
+    "huntCode": "DG889",
+    "unit": "14C",
+    "label": "Mountain goat (One (1) mountain goat, preferably male. The taking of nannies with kids is prohibited) — Unit 14C, Lake George [nonresidents only]",
+    "weapon": "any",
+    "tags": 7,
+    "applicants": 355,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 7,
+      "applicants": 355,
+      "successPct": 2.0
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DG890",
+    "unit": "14A",
+    "label": "Mountain goat (One (1) mountain goat, the taking of nannies with kids is prohibited) — Unit 14A, Metal Creek [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 20,
+    "applicants": 1167,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 1.7
+     }
+    }
+   },
+   {
+    "huntCode": "DG891",
+    "unit": "14A",
+    "label": "Mountain goat (One (1) mountain goat, the taking of nannies with kids is prohibited) — Unit 14A, Marcus Baker [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 30,
+    "applicants": 874,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 3.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 3.4
+     }
+    }
+   }
+  ],
+  "BISON": [
+   {
+    "huntCode": "DI351",
+    "unit": "19C",
+    "units": [
+     "19C",
+     "19D"
+    ],
+    "label": "Bison (Either sex) — Units 19C, 19D [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 7643,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     }
+    }
+   },
+   {
+    "huntCode": "DI352",
+    "unit": "19C",
+    "units": [
+     "19C",
+     "19D"
+    ],
+    "label": "Bison (Bull) — Units 19C, 19D [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 5117,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     }
+    }
+   },
+   {
+    "huntCode": "DI403",
+    "unit": "20D",
+    "label": "Bison (Bull) — Unit 20D, Delta [residents and nonresidents; weapons restrictions apply; orientation required]",
+    "tags": 30,
+    "applicants": 33276,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     }
+    }
+   },
+   {
+    "huntCode": "DI454",
+    "unit": "11",
+    "units": [
+     "11",
+     "13D"
+    ],
+    "label": "Bison (Either Sex) — Units 11, 13D, Copper River (Unit 11 and a portion of 13D) [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 2913,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.0
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.0
+     }
+    }
+   }
+  ],
+  "MUSKOX": [
+   {
+    "huntCode": "DX001",
+    "unit": "18",
+    "label": "Muskox (One Bull Muskox) — Unit 18, Nunivak Island [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 5,
+    "applicants": 1740,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.3
+     }
+    }
+   },
+   {
+    "huntCode": "DX003",
+    "unit": "18",
+    "label": "Muskox (One Bull Muskox) — Unit 18, Nunivak Island [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 40,
+    "applicants": 7274,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.5
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.5
+     }
+    }
+   },
+   {
+    "huntCode": "DX080",
+    "unit": "21D",
+    "units": [
+     "21D",
+     "24D"
+    ],
+    "label": "Muskox (One Bull Muskox) — Units 21D, 24D [Alaska residents only]",
+    "weapon": "any",
+    "tags": 3,
+    "applicants": 698,
+    "draw": {
+     "resident": {
+      "tags": 3,
+      "applicants": 698,
+      "successPct": 0.4
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "DX112",
+    "unit": "26B",
+    "label": "Muskox (One Bull Muskox) — Unit 26B, East of the Dalton Hwy [Alaska residents only; bow and arrow only inside the Dalton Highway Corridor MA portion]",
+    "tags": 4,
+    "applicants": 10063,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 10063,
+      "successPct": 0.0
+     },
+     "nonresident": null
+    },
+    "openTo": "resident"
+   }
+  ],
+  "ELK": [
+   {
+    "huntCode": "DE318",
+    "unit": "3",
+    "label": "Elk (1 Bull Elk) — Unit 3, Etolin and associated islands [residents and nonresidents; certified bowhunters only]",
+    "weapon": "archery",
+    "tags": 25,
+    "applicants": 315,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 7.9
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 7.9
+     }
+    }
+   },
+   {
+    "huntCode": "DE321",
+    "unit": "3",
+    "label": "Elk (1 Bull Elk) — Unit 3, Etolin and associated islands [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 50,
+    "applicants": 1029,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 4.9
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 4.9
+     }
+    }
+   },
+   {
+    "huntCode": "DE323",
+    "unit": "3",
+    "label": "Elk (1 Bull Elk) — Unit 3, Etolin and associated islands [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 50,
+    "applicants": 483,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 10.4
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 10.4
+     }
+    }
+   },
+   {
+    "huntCode": "DE324",
+    "unit": "3",
+    "label": "Elk (1 Bull Elk) — Unit 3, Zarembo Island [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 1,
+    "applicants": 1554,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.1
+     }
+    }
+   },
+   {
+    "huntCode": "DE702",
+    "unit": "8",
+    "label": "Elk (One Bull Elk) — Unit 8, Raspberry Island [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 3579,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.2
+     }
+    }
+   },
+   {
+    "huntCode": "DE704",
+    "unit": "8",
+    "label": "Elk (One Bull Elk) — Unit 8, Raspberry Island [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 6,
+    "applicants": 2524,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.2
+     }
+    }
+   },
+   {
+    "huntCode": "DE706",
+    "unit": "8",
+    "label": "Elk (One Antlerless Elk) — Unit 8, Raspberry Island [nonresidents only]",
+    "weapon": "any",
+    "tags": 10,
+    "applicants": 99,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 10,
+      "applicants": 99,
+      "successPct": 10.1
+     }
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "DE711",
+    "unit": "8",
+    "label": "Elk (One Bull Elk) — Unit 8, SW Afognak Island [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 15,
+    "applicants": 3025,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.5
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 0.5
+     }
+    }
+   },
+   {
+    "huntCode": "DE713",
+    "unit": "8",
+    "label": "Elk (One Antlerless Elk) — Unit 8, SW Afognak Island [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 120,
+    "applicants": 1121,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 10.7
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 10.7
+     }
+    }
+   },
+   {
+    "huntCode": "DE715",
+    "unit": "8",
+    "label": "Elk (One Elk, either sex) — Unit 8, Remainder [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 46,
+    "applicants": 2069,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.2
+     }
+    }
+   },
+   {
+    "huntCode": "DE717",
+    "unit": "8",
+    "label": "Elk (One Elk, Either sex) — Unit 8, Remainder [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 46,
+    "applicants": 1432,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 3.2
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 3.2
+     }
+    }
+   },
+   {
+    "huntCode": "DE721",
+    "unit": "8",
+    "label": "Elk (One Elk, Either sex) — Unit 8, East Afognak Is [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 31,
+    "applicants": 1324,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.3
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 2.3
+     }
+    }
+   },
+   {
+    "huntCode": "DE723",
+    "unit": "8",
+    "label": "Elk (One Elk, Either sex) — Unit 8, East Afognak Is [residents and nonresidents]",
+    "weapon": "any",
+    "tags": 31,
+    "applicants": 1046,
+    "draw": {
+     "resident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 3.0
+     },
+     "nonresident": {
+      "tags": null,
+      "applicants": null,
+      "successPct": 3.0
+     }
+    }
+   }
+  ]
+ }
+}

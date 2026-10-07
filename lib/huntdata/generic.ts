@@ -53,7 +53,8 @@ export function buildGenericScoutDataset(
   weapon: Weapon | 'any' = 'any',
   hunterPoints?: number,
 ): Array<Record<string, unknown>> {
-  return huntsForWeapon(mod.hunts(species), weapon).map((h) => {
+  // Hunts closed to this hunter's residency are never offered.
+  return huntsForWeapon(mod.hunts(species), weapon).filter((h) => !h.openTo || h.openTo === residency).map((h) => {
     const s = pick(h, residency);
     return {
       unit: h.unit,

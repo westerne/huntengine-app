@@ -165,7 +165,7 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [ ] "I drew a tag" mode with deeper e-scouting for that one unit.
 - [ ] Gear lists that link to Altitude Outdoors and MTN HNTR.
 - [ ] Find where Vizirack fits, for example scoring the animal after the hunt.
-- [ ] **Batch D: Alaska**, live before applications open November 1.
+- [x] **Batch D: Alaska** live (2026-10-07): 219 drawing hunts (2025 drawing) plus general seasons and registration permits (2025 interim harvest), with resident-only / non-resident-only hunts filtered and the non-resident guide rule stated. Refresh with the 2026 drawing results (2027-28 supplement, ~Nov 1).
 - [ ] Load 2027 draw results for every state with the import scripts.
 
 ---

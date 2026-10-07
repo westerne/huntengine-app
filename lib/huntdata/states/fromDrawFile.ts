@@ -39,6 +39,7 @@ export function drawFileModule(info: StateInfo, file: DrawFile): StateModule {
         applicants: row.applicants ?? null,
         draw: row.draw,
         otc: row.otc || undefined,
+        openTo: row.openTo,
         pointLines: row.pointLines,
         harvest: harvestForHunt(info.code, sp, row.huntCode, row.unit, row.weapon ?? weaponFromLabel(`${row.label ?? ''} ${row.huntCode}`)),
       }));

@@ -1,0 +1,3239 @@
+{
+ "state": "AK",
+ "year": 2026,
+ "source": {
+  "name": "Alaska Department of Fish and Game — 2026-2027 Alaska Hunting Regulations (effective July 1, 2026 - June 30, 2027), unit tables; hunt lists checked against ADF&G Harvest Information RY2025",
+  "url": "https://www.adfg.alaska.gov/index.cfm?adfg=wildliferegulations.hunting"
+ },
+ "notes": "Over-the-counter options for Alaska: no drawing. Two kinds of rows. (1) huntCode \"GEN-<unit>\": a general season (harvest ticket, \"HT\" in the regulations) for that species in that unit or subunit for the 2026-2027 regulatory year; the harvest ticket is free with a hunting license and nonresidents also need a locking tag. A GEN row usually covers only part of the unit, or a short season, or an antler / bag restriction; read the unit table. Matching hunter-success rows are in lib/huntdata/harvest/ak.json (same huntCode, RY2025, split by residency). (2) huntCode = ADF&G registration hunt number (R...): permits issued to anyone who signs up during the stated period (online at hunt.alaska.gov or in person at listed offices or villages), no drawing; some have limited permits, first-come, or \"season may be announced\" terms. \"(residents only)\" / \"(nonresidents only)\" in the label = only that residency may get the permit, read from the regulation rows and checked against RY2025 reports; a label without either means open to both or not confirmed (see research notes). Nonresident rules that apply to every row: Dall sheep, mountain goat (and brown bear) require a licensed guide or a resident relative within the second degree of kindred; nonresident sheep hunters may take one ram every four regulatory years; nonresident moose hunters must complete the Nonresident Moose Hunter Orientation. Drawing (D/Y), Tier II (T), community (C) and targeted (A) hunts are not listed here. tags / applicants and draw stats are null by design.",
+ "species": {
+  "MOOSE": [
+   {
+    "huntCode": "GEN-6A",
+    "unit": "6A",
+    "label": "General season (harvest ticket) — moose, Unit 6A (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-6D",
+    "unit": "6D",
+    "label": "General season (harvest ticket) — moose, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-7",
+    "unit": "7",
+    "label": "General season (harvest ticket) — moose, Unit 7",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-11",
+    "unit": "11",
+    "label": "General season (harvest ticket) — moose, Unit 11",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-12",
+    "unit": "12",
+    "label": "General season (harvest ticket) — moose, Unit 12 (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-13A",
+    "unit": "13A",
+    "label": "General season (harvest ticket) — moose, Unit 13A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-13B",
+    "unit": "13B",
+    "label": "General season (harvest ticket) — moose, Unit 13B (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-13C",
+    "unit": "13C",
+    "label": "General season (harvest ticket) — moose, Unit 13C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-13D",
+    "unit": "13D",
+    "label": "General season (harvest ticket) — moose, Unit 13D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-13E",
+    "unit": "13E",
+    "label": "General season (harvest ticket) — moose, Unit 13E (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-14A",
+    "unit": "14A",
+    "label": "General season (harvest ticket) — moose, Unit 14A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-14B",
+    "unit": "14B",
+    "label": "General season (harvest ticket) — moose, Unit 14B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-14C",
+    "unit": "14C",
+    "label": "General season (harvest ticket) — moose, Unit 14C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-15A",
+    "unit": "15A",
+    "label": "General season (harvest ticket) — moose, Unit 15A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-15B",
+    "unit": "15B",
+    "label": "General season (harvest ticket) — moose, Unit 15B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-15C",
+    "unit": "15C",
+    "label": "General season (harvest ticket) — moose, Unit 15C (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-16A",
+    "unit": "16A",
+    "label": "General season (harvest ticket) — moose, Unit 16A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-16B",
+    "unit": "16B",
+    "label": "General season (harvest ticket) — moose, Unit 16B (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-17B",
+    "unit": "17B",
+    "label": "General season (harvest ticket) — moose, Unit 17B (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-17C",
+    "unit": "17C",
+    "label": "General season (harvest ticket) — moose, Unit 17C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-18",
+    "unit": "18",
+    "label": "General season (harvest ticket) — moose, Unit 18 (open to residents and non-residents; non-resident limit: one antlered bull)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19B",
+    "unit": "19B",
+    "label": "General season (harvest ticket) — moose, Unit 19B (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19C",
+    "unit": "19C",
+    "label": "General season (harvest ticket) — moose, Unit 19C (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19D",
+    "unit": "19D",
+    "label": "General season (harvest ticket) — moose, Unit 19D (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20E",
+    "unit": "20E",
+    "label": "General season (harvest ticket) — moose, Unit 20E (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-21B",
+    "unit": "21B",
+    "label": "General season (harvest ticket) — moose, Unit 21B (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-21C",
+    "unit": "21C",
+    "label": "General season (harvest ticket) — moose, Unit 21C (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-22A",
+    "unit": "22A",
+    "label": "General season (harvest ticket) — moose, Unit 22A (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-22B",
+    "unit": "22B",
+    "label": "General season (harvest ticket) — moose, Unit 22B (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-22E",
+    "unit": "22E",
+    "label": "General season (harvest ticket) — moose, Unit 22E (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-23",
+    "unit": "23",
+    "label": "General season (harvest ticket) — moose, Unit 23 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-24A",
+    "unit": "24A",
+    "label": "General season (harvest ticket) — moose, Unit 24A (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-24B",
+    "unit": "24B",
+    "label": "General season (harvest ticket) — moose, Unit 24B (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25A",
+    "unit": "25A",
+    "label": "General season (harvest ticket) — moose, Unit 25A (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25B",
+    "unit": "25B",
+    "label": "General season (harvest ticket) — moose, Unit 25B (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25D",
+    "unit": "25D",
+    "label": "General season (harvest ticket) — moose, Unit 25D (open to residents and non-residents; non-resident limit: bulls with 50-inch antlers or the listed brow-tine count only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-26A",
+    "unit": "26A",
+    "label": "General season (harvest ticket) — moose, Unit 26A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-26B",
+    "unit": "26B",
+    "label": "General season (harvest ticket) — moose, Unit 26B (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM022",
+    "unit": "1A",
+    "label": "Registration permit RM022 — moose, Unit 1A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM038",
+    "unit": "3",
+    "units": [
+     "1B",
+     "1C",
+     "3"
+    ],
+    "label": "Registration permit RM038 — moose, Units 1B, 1C, 3",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM046",
+    "unit": "1C",
+    "label": "Registration permit RM046 — moose, Unit 1C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM049",
+    "unit": "1C",
+    "label": "Registration permit RM049 — moose, Unit 1C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM061",
+    "unit": "5A",
+    "label": "Registration permit RM061 — moose, Unit 5A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM062",
+    "unit": "5B",
+    "label": "Registration permit RM062 — moose, Unit 5B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM160",
+    "unit": "6A",
+    "units": [
+     "6A",
+     "6D"
+    ],
+    "label": "Registration permit RM160 — moose, Units 6A, 6D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM164",
+    "unit": "6B",
+    "label": "Registration permit RM164 — moose, Unit 6B (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM271",
+    "unit": "9E",
+    "units": [
+     "9A",
+     "9D",
+     "9E"
+    ],
+    "label": "Registration permit RM271 — moose, Units 9A, 9D, 9E (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM272",
+    "unit": "9B",
+    "units": [
+     "9B",
+     "9C"
+    ],
+    "label": "Registration permit RM272 — moose, Units 9B, 9C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM281",
+    "unit": "9E",
+    "units": [
+     "9A",
+     "9B",
+     "9E"
+    ],
+    "label": "Registration permit RM281 — moose, Units 9A, 9B, 9E (nonresidents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "RM282",
+    "unit": "9B",
+    "units": [
+     "9B",
+     "9C"
+    ],
+    "label": "Registration permit RM282 — moose, Units 9B, 9C (nonresidents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "RM291",
+    "unit": "11",
+    "units": [
+     "11",
+     "12"
+    ],
+    "label": "Registration permit RM291 — moose, Units 11, 12",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM435",
+    "unit": "14C",
+    "label": "Registration permit RM435 — moose, Unit 14C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM445",
+    "unit": "14C",
+    "label": "Registration permit RM445 — moose, Unit 14C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM571",
+    "unit": "17A",
+    "label": "Registration permit RM571 — moose, Unit 17A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM572",
+    "unit": "15B",
+    "label": "Registration permit RM572 — moose, Unit 15B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM573",
+    "unit": "17A",
+    "label": "Registration permit RM573 — moose, Unit 17A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM575",
+    "unit": "17A",
+    "label": "Registration permit RM575 — moose, Unit 17A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM576",
+    "unit": "17A",
+    "label": "Registration permit RM576 — moose, Unit 17A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM583",
+    "unit": "17C",
+    "units": [
+     "17B",
+     "17C"
+    ],
+    "label": "Registration permit RM583 — moose, Units 17B, 17C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM585",
+    "unit": "17C",
+    "units": [
+     "17B",
+     "17C"
+    ],
+    "label": "Registration permit RM585 — moose, Units 17B, 17C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM587",
+    "unit": "17B",
+    "units": [
+     "17B",
+     "17C"
+    ],
+    "label": "Registration permit RM587 — moose, Units 17B, 17C (nonresidents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "RM615",
+    "unit": "18",
+    "label": "Registration permit RM615 — moose, Unit 18 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM617",
+    "unit": "18",
+    "label": "Registration permit RM617 — moose, Unit 18 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM620",
+    "unit": "18",
+    "label": "Registration permit RM620 — moose, Unit 18 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM621",
+    "unit": "18",
+    "label": "Registration permit RM621 — moose, Unit 18 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM650",
+    "unit": "19D",
+    "label": "Registration permit RM650 — moose, Unit 19D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM653",
+    "unit": "19C",
+    "label": "Registration permit RM653 — moose, Unit 19C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM655",
+    "unit": "19C",
+    "label": "Registration permit RM655 — moose, Unit 19C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM660",
+    "unit": "19D",
+    "label": "Registration permit RM660 — moose, Unit 19D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM682",
+    "unit": "19E",
+    "label": "Registration permit RM682 — moose, Unit 19E (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM749",
+    "unit": "20D",
+    "label": "Registration permit RM749 — moose, Unit 20D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM768",
+    "unit": "20A",
+    "label": "Registration permit RM768 — moose, Unit 20A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM781",
+    "unit": "20B",
+    "units": [
+     "20",
+     "20A",
+     "20B",
+     "20C",
+     "20F",
+     "25C",
+     "25D"
+    ],
+    "label": "Registration permit RM781 — moose, Units 20, 20A, 20B, 20C, 20F, 25C, 25D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM831",
+    "unit": "21D",
+    "label": "Registration permit RM831 — moose, Unit 21D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM832",
+    "unit": "21D",
+    "units": [
+     "21C",
+     "21D",
+     "24",
+     "24C",
+     "24D"
+    ],
+    "label": "Registration permit RM832 — moose, Units 21C, 21D, 24, 24C, 24D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM833",
+    "unit": "24B",
+    "units": [
+     "24B",
+     "24C"
+    ],
+    "label": "Registration permit RM833 — moose, Units 24B, 24C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM834",
+    "unit": "21D",
+    "units": [
+     "21",
+     "21B",
+     "21C",
+     "21D",
+     "24",
+     "24D"
+    ],
+    "label": "Registration permit RM834 — moose, Units 21, 21B, 21C, 21D, 24, 24D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM835",
+    "unit": "21A",
+    "label": "Registration permit RM835 — moose, Unit 21A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM836",
+    "unit": "21E",
+    "label": "Registration permit RM836 — moose, Unit 21E",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM837",
+    "unit": "21E",
+    "label": "Registration permit RM837 — moose, Unit 21E (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM838",
+    "unit": "24C",
+    "units": [
+     "21C",
+     "24C",
+     "24D"
+    ],
+    "label": "Registration permit RM838 — moose, Units 21C, 24C, 24D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM840",
+    "unit": "22D",
+    "units": [
+     "22",
+     "22B",
+     "22C",
+     "22D"
+    ],
+    "label": "Registration permit RM840 — moose, Units 22, 22B, 22C, 22D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM841",
+    "unit": "22A",
+    "label": "Registration permit RM841 — moose, Unit 22A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM843",
+    "unit": "22B",
+    "label": "Registration permit RM843 — moose, Unit 22B (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM844",
+    "unit": "22A",
+    "label": "Registration permit RM844 — moose, Unit 22A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM849",
+    "unit": "22C",
+    "label": "Registration permit RM849 — moose, Unit 22C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RM865",
+    "unit": "20E",
+    "label": "Registration permit RM865 — moose, Unit 20E",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RM880",
+    "unit": "23",
+    "label": "Registration permit RM880 — moose, Unit 23 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   }
+  ],
+  "CARIBOU": [
+   {
+    "huntCode": "GEN-9D",
+    "unit": "9D",
+    "label": "General season (harvest ticket) — caribou, Unit 9D (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-10",
+    "unit": "10",
+    "label": "General season (harvest ticket) — caribou, Unit 10",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-12",
+    "unit": "12",
+    "label": "General season (harvest ticket) — caribou, Unit 12 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "GEN-16A",
+    "unit": "16A",
+    "label": "General season (harvest ticket) — caribou, Unit 16A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-16B",
+    "unit": "16B",
+    "label": "General season (harvest ticket) — caribou, Unit 16B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19C",
+    "unit": "19C",
+    "label": "General season (harvest ticket) — caribou, Unit 19C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19D",
+    "unit": "19D",
+    "label": "General season (harvest ticket) — caribou, Unit 19D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20B",
+    "unit": "20B",
+    "label": "General season (harvest ticket) — caribou, Unit 20B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20F",
+    "unit": "20F",
+    "label": "General season (harvest ticket) — caribou, Unit 20F",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-21A",
+    "unit": "21A",
+    "label": "General season (harvest ticket) — caribou, Unit 21A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-21B",
+    "unit": "21B",
+    "label": "General season (harvest ticket) — caribou, Unit 21B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-21C",
+    "unit": "21C",
+    "label": "General season (harvest ticket) — caribou, Unit 21C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-21D",
+    "unit": "21D",
+    "label": "General season (harvest ticket) — caribou, Unit 21D (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-21E",
+    "unit": "21E",
+    "label": "General season (harvest ticket) — caribou, Unit 21E",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-22A",
+    "unit": "22A",
+    "label": "General season (harvest ticket) — caribou, Unit 22A (nonresidents only; residents hunt under registration permit RC800)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "GEN-22B",
+    "unit": "22B",
+    "label": "General season (harvest ticket) — caribou, Unit 22B (nonresidents only; residents hunt under registration permit RC800)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "GEN-22C",
+    "unit": "22C",
+    "label": "General season (harvest ticket) — caribou, Unit 22C (nonresidents only; residents hunt under registration permit RC800)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "GEN-22D",
+    "unit": "22D",
+    "label": "General season (harvest ticket) — caribou, Unit 22D (nonresidents only; residents hunt under registration permit RC800)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "GEN-22E",
+    "unit": "22E",
+    "label": "General season (harvest ticket) — caribou, Unit 22E (nonresidents only; residents hunt under registration permit RC800)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "GEN-24A",
+    "unit": "24A",
+    "label": "General season (harvest ticket) — caribou, Unit 24A (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-24B",
+    "unit": "24B",
+    "label": "General season (harvest ticket) — caribou, Unit 24B (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-24C",
+    "unit": "24C",
+    "label": "General season (harvest ticket) — caribou, Unit 24C (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-24D",
+    "unit": "24D",
+    "label": "General season (harvest ticket) — caribou, Unit 24D (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25A",
+    "unit": "25A",
+    "label": "General season (harvest ticket) — caribou, Unit 25A (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25B",
+    "unit": "25B",
+    "label": "General season (harvest ticket) — caribou, Unit 25B (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25D",
+    "unit": "25D",
+    "label": "General season (harvest ticket) — caribou, Unit 25D (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-26A",
+    "unit": "26A",
+    "label": "General season (harvest ticket) — caribou, Unit 26A (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-26B",
+    "unit": "26B",
+    "label": "General season (harvest ticket) — caribou, Unit 26B (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-26C",
+    "unit": "26C",
+    "label": "General season (harvest ticket) — caribou, Unit 26C (open to residents and non-residents; non-resident limit: smaller bag, bulls only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RC080",
+    "unit": "8",
+    "label": "Registration permit RC080 — caribou, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RC205",
+    "unit": "10",
+    "label": "Registration permit RC205 — caribou, Unit 10",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RC501",
+    "unit": "17A",
+    "units": [
+     "17A",
+     "17C"
+    ],
+    "label": "Registration permit RC501 — caribou, Units 17A, 17C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RC503",
+    "unit": "9B",
+    "units": [
+     "9B",
+     "9C",
+     "17B",
+     "18",
+     "19A"
+    ],
+    "label": "Registration permit RC503 — caribou, Units 9B, 9C, 17B, 18, 19A (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RC795",
+    "unit": "19D",
+    "label": "Registration permit RC795 — caribou, Unit 19D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RC800",
+    "unit": "22D",
+    "units": [
+     "22B",
+     "22D",
+     "22E"
+    ],
+    "label": "Registration permit RC800 — caribou, Units 22B, 22D, 22E (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RC835",
+    "unit": "20D",
+    "units": [
+     "12",
+     "20D"
+    ],
+    "label": "Registration permit RC835 — caribou, Units 12, 20D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RC860",
+    "unit": "20E",
+    "units": [
+     "20B",
+     "20D",
+     "20E",
+     "25C"
+    ],
+    "label": "Registration permit RC860 — caribou, Units 20B, 20D, 20E, 25C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RC867",
+    "unit": "25C",
+    "units": [
+     "20B",
+     "20D",
+     "20E",
+     "25C"
+    ],
+    "label": "Registration permit RC867 — caribou, Units 20B, 20D, 20E, 25C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RC907",
+    "unit": "23",
+    "units": [
+     "23",
+     "26B"
+    ],
+    "label": "Registration permit RC907 — caribou, Units 23, 26B (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   }
+  ],
+  "DALLSHEEP": [
+   {
+    "huntCode": "GEN-7",
+    "unit": "7",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 7 (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-9",
+    "unit": "9",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 9 (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-11",
+    "unit": "11",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 11 (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-12",
+    "unit": "12",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 12 (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-13A",
+    "unit": "13A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-13B",
+    "unit": "13B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-13C",
+    "unit": "13C",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13C (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-13D",
+    "unit": "13D",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13D (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-13E",
+    "unit": "13E",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13E (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-14A",
+    "unit": "14A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 14A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-14B",
+    "unit": "14B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 14B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-15A",
+    "unit": "15A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 15A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-15B",
+    "unit": "15B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 15B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-15C",
+    "unit": "15C",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 15C (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-16A",
+    "unit": "16A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 16A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-16B",
+    "unit": "16B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 16B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19A",
+    "unit": "19A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 19A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19B",
+    "unit": "19B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 19B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19D",
+    "unit": "19D",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 19D (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-19E",
+    "unit": "19E",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 19E (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20A",
+    "unit": "20A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20B",
+    "unit": "20B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20C",
+    "unit": "20C",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20C (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20D",
+    "unit": "20D",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20D (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20E",
+    "unit": "20E",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20E (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-20F",
+    "unit": "20F",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20F (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-24A",
+    "unit": "24A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 24A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-24B",
+    "unit": "24B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 24B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25A",
+    "unit": "25A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25B",
+    "unit": "25B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25C",
+    "unit": "25C",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25C (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-25D",
+    "unit": "25D",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25D (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-26A",
+    "unit": "26A",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26A (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-26B",
+    "unit": "26B",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26B (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-26C",
+    "unit": "26C",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26C (open to residents and non-residents; non-resident limit: guide or resident relative required; one ram every four regulatory years)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RS380",
+    "unit": "19C",
+    "label": "Registration permit RS380 — Dall sheep, Unit 19C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RS595",
+    "unit": "25A",
+    "units": [
+     "25A",
+     "26C"
+    ],
+    "label": "Registration permit RS595 — Dall sheep, Units 25A, 26C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   }
+  ],
+  "MTNGOAT": [
+   {
+    "huntCode": "RG001",
+    "unit": "1A",
+    "label": "Registration permit RG001 — mountain goat, Unit 1A (nonresidents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "RG002",
+    "unit": "1A",
+    "units": [
+     "1A",
+     "1B"
+    ],
+    "label": "Registration permit RG002 — mountain goat, Units 1A, 1B (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RG004",
+    "unit": "1B",
+    "label": "Registration permit RG004 — mountain goat, Unit 1B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG012",
+    "unit": "1C",
+    "label": "Registration permit RG012 — mountain goat, Unit 1C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG013",
+    "unit": "1C",
+    "label": "Registration permit RG013 — mountain goat, Unit 1C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG014",
+    "unit": "1C",
+    "label": "Registration permit RG014 — mountain goat, Unit 1C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG015",
+    "unit": "1C",
+    "label": "Registration permit RG015 — mountain goat, Unit 1C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG023",
+    "unit": "1D",
+    "label": "Registration permit RG023 — mountain goat, Unit 1D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG024",
+    "unit": "1D",
+    "label": "Registration permit RG024 — mountain goat, Unit 1D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG025",
+    "unit": "1D",
+    "label": "Registration permit RG025 — mountain goat, Unit 1D (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RG026",
+    "unit": "1D",
+    "label": "Registration permit RG026 — mountain goat, Unit 1D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG150",
+    "unit": "4",
+    "label": "Registration permit RG150 — mountain goat, Unit 4",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG170",
+    "unit": "5A",
+    "label": "Registration permit RG170 — mountain goat, Unit 5A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG202",
+    "unit": "6A",
+    "label": "Registration permit RG202 — mountain goat, Unit 6A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG204",
+    "unit": "6A",
+    "label": "Registration permit RG204 — mountain goat, Unit 6A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG206",
+    "unit": "6A",
+    "label": "Registration permit RG206 — mountain goat, Unit 6A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG212",
+    "unit": "6A",
+    "label": "Registration permit RG212 — mountain goat, Unit 6A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG220",
+    "unit": "6B",
+    "label": "Registration permit RG220 — mountain goat, Unit 6B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG226",
+    "unit": "6B",
+    "units": [
+     "6A",
+     "6B"
+    ],
+    "label": "Registration permit RG226 — mountain goat, Units 6A, 6B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG230",
+    "unit": "6C",
+    "label": "Registration permit RG230 — mountain goat, Unit 6C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG231",
+    "unit": "6C",
+    "label": "Registration permit RG231 — mountain goat, Unit 6C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG232",
+    "unit": "6C",
+    "label": "Registration permit RG232 — mountain goat, Unit 6C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG242",
+    "unit": "6D",
+    "label": "Registration permit RG242 — mountain goat, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG243",
+    "unit": "6D",
+    "label": "Registration permit RG243 — mountain goat, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG244",
+    "unit": "6D",
+    "label": "Registration permit RG244 — mountain goat, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG245",
+    "unit": "6D",
+    "label": "Registration permit RG245 — mountain goat, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG248",
+    "unit": "6D",
+    "label": "Registration permit RG248 — mountain goat, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG249",
+    "unit": "6D",
+    "label": "Registration permit RG249 — mountain goat, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG252",
+    "unit": "6D",
+    "label": "Registration permit RG252 — mountain goat, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG266",
+    "unit": "6D",
+    "label": "Registration permit RG266 — mountain goat, Unit 6D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG331",
+    "unit": "7",
+    "label": "Registration permit RG331 — mountain goat, Unit 7",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG334",
+    "unit": "7",
+    "label": "Registration permit RG334 — mountain goat, Unit 7",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG342",
+    "unit": "7",
+    "label": "Registration permit RG342 — mountain goat, Unit 7",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG344",
+    "unit": "7",
+    "label": "Registration permit RG344 — mountain goat, Unit 7",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG345",
+    "unit": "7",
+    "label": "Registration permit RG345 — mountain goat, Unit 7",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG346",
+    "unit": "7",
+    "label": "Registration permit RG346 — mountain goat, Unit 7",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG347",
+    "unit": "7",
+    "label": "Registration permit RG347 — mountain goat, Unit 7",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG352",
+    "unit": "7",
+    "units": [
+     "7",
+     "15"
+    ],
+    "label": "Registration permit RG352 — mountain goat, Units 7, 15",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG358",
+    "unit": "15",
+    "label": "Registration permit RG358 — mountain goat, Unit 15",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG359",
+    "unit": "15",
+    "label": "Registration permit RG359 — mountain goat, Unit 15",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG360",
+    "unit": "15",
+    "label": "Registration permit RG360 — mountain goat, Unit 15",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG361",
+    "unit": "15",
+    "label": "Registration permit RG361 — mountain goat, Unit 15",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG362",
+    "unit": "15C",
+    "label": "Registration permit RG362 — mountain goat, Unit 15C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG363",
+    "unit": "15",
+    "label": "Registration permit RG363 — mountain goat, Unit 15",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG364",
+    "unit": "15C",
+    "label": "Registration permit RG364 — mountain goat, Unit 15C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RG365",
+    "unit": "15C",
+    "label": "Registration permit RG365 — mountain goat, Unit 15C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG374",
+    "unit": "15C",
+    "label": "Registration permit RG374 — mountain goat, Unit 15C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG375",
+    "unit": "15C",
+    "label": "Registration permit RG375 — mountain goat, Unit 15C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RG471",
+    "unit": "8",
+    "label": "Registration permit RG471 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG472",
+    "unit": "8",
+    "label": "Registration permit RG472 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG473",
+    "unit": "8",
+    "label": "Registration permit RG473 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG474",
+    "unit": "8",
+    "label": "Registration permit RG474 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG476",
+    "unit": "8",
+    "label": "Registration permit RG476 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG478",
+    "unit": "8",
+    "label": "Registration permit RG478 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG479",
+    "unit": "8",
+    "label": "Registration permit RG479 — mountain goat, Unit 8 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RG480",
+    "unit": "8",
+    "label": "Registration permit RG480 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG488",
+    "unit": "8",
+    "label": "Registration permit RG488 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG489",
+    "unit": "8",
+    "label": "Registration permit RG489 — mountain goat, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG580",
+    "unit": "11",
+    "units": [
+     "11",
+     "13D"
+    ],
+    "label": "Registration permit RG580 — mountain goat, Units 11, 13D",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG862",
+    "unit": "14C",
+    "label": "Registration permit RG862 — mountain goat, Unit 14C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG864",
+    "unit": "14C",
+    "label": "Registration permit RG864 — mountain goat, Unit 14C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG868",
+    "unit": "14C",
+    "label": "Registration permit RG868 — mountain goat, Unit 14C (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RG869",
+    "unit": "14C",
+    "label": "Registration permit RG869 — mountain goat, Unit 14C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG878",
+    "unit": "14C",
+    "label": "Registration permit RG878 — mountain goat, Unit 14C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG879",
+    "unit": "14C",
+    "label": "Registration permit RG879 — mountain goat, Unit 14C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG881",
+    "unit": "14C",
+    "label": "Registration permit RG881 — mountain goat, Unit 14C (nonresidents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "nonresident"
+   },
+   {
+    "huntCode": "RG890",
+    "unit": "14A",
+    "label": "Registration permit RG890 — mountain goat, Unit 14A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RG891",
+    "unit": "14A",
+    "label": "Registration permit RG891 — mountain goat, Unit 14A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   }
+  ],
+  "MUSKOX": [
+   {
+    "huntCode": "RX060",
+    "unit": "18",
+    "label": "Registration permit RX060 — muskox, Unit 18",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RX061",
+    "unit": "18",
+    "label": "Registration permit RX061 — muskox, Unit 18",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RX070",
+    "unit": "18",
+    "label": "Registration permit RX070 — muskox, Unit 18",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RX071",
+    "unit": "18",
+    "label": "Registration permit RX071 — muskox, Unit 18",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RX110",
+    "unit": "26B",
+    "label": "Registration permit RX110 — muskox, Unit 26B (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   }
+  ],
+  "ELK": [
+   {
+    "huntCode": "RE325",
+    "unit": "3",
+    "label": "Registration permit RE325 — elk, Unit 3",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RE706",
+    "unit": "8",
+    "label": "Registration permit RE706 — elk, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RE752",
+    "unit": "8",
+    "label": "Registration permit RE752 — elk, Unit 8 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   },
+   {
+    "huntCode": "RE755",
+    "unit": "8",
+    "label": "Registration permit RE755 — elk, Unit 8",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "RE756",
+    "unit": "8",
+    "label": "Registration permit RE756 — elk, Unit 8 (residents only)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "openTo": "resident"
+   }
+  ],
+  "DEER": [
+   {
+    "huntCode": "GEN-1A",
+    "unit": "1A",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 1A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-1B",
+    "unit": "1B",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 1B",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-1C",
+    "unit": "1C",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 1C",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-2",
+    "unit": "2",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 2",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-3",
+    "unit": "3",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 3 (open to residents and non-residents; part of the unit is closed to non-residents)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-4",
+    "unit": "4",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 4 (open to residents and non-residents; non-resident limit: smaller bag)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-5A",
+    "unit": "5A",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 5A",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-6",
+    "unit": "6",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 6 (open to residents and non-residents; non-resident limit: smaller bag)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-8",
+    "unit": "8",
+    "label": "General season (harvest ticket) — Sitka black-tailed deer, Unit 8 (open to residents and non-residents; non-resident limit: smaller bag)",
+    "otc": true,
+    "tags": null,
+    "applicants": null,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   }
+  ]
+ }
+}

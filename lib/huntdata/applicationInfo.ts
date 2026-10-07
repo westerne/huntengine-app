@@ -25,6 +25,10 @@ const SPECIES_WORDS: Record<string, RegExp> = {
   'Moose': /\bmoose\b/i,
   'Bighorn Sheep': /\b(sheep|bighorn)\b/i,
   'Mountain Goat': /\bgoat\b/i,
+  'Caribou': /\bcaribou\b/i,
+  'Dall Sheep': /\b(sheep|dall)\b/i,
+  'Bison': /\bbison\b/i,
+  'Muskox': /\bmusk ?ox(en)?\b/i,
 };
 
 export function officialInfoFor(state: string, species: string, seasonYear: number): OfficialInfo {

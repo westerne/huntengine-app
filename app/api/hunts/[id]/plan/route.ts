@@ -23,6 +23,7 @@ type Ctx = { params: Promise<{ id: string }> };
 
 const SPECIES_KEY: Record<string, SpeciesKey> = {
   'Deer': 'DEER', 'Mule Deer': 'DEER', 'Elk': 'ELK', 'Antelope': 'ANTELOPE', 'Moose': 'MOOSE', 'Bighorn Sheep': 'BIGHORNSHEEP', 'Mountain Goat': 'MTNGOAT',
+  'Caribou': 'CARIBOU', 'Dall Sheep': 'DALLSHEEP', 'Bison': 'BISON', 'Muskox': 'MUSKOX',
 };
 
 function withTimeout<T>(p: Promise<T>, ms: number, fallback: T): Promise<T> {

@@ -519,6 +519,41 @@
    ],
    "reportUrl": "https://gfp.sd.gov/userdocs/docs/2026bhsheep.pdf",
    "summary": "South Dakota has no required harvest report for deer, elk or antelope; GFP sends email surveys. A bighorn sheep must be inspected and plugged by GFP within 24 hours."
+  },
+  "AK": {
+   "rules": [
+    {
+     "species": [
+      "MOOSE",
+      "CARIBOU",
+      "DALLSHEEP",
+      "MTNGOAT",
+      "BISON",
+      "MUSKOX",
+      "ELK",
+      "DEER"
+     ],
+     "applies": "Every harvest ticket and every drawing, registration or Tier permit, even if you didn’t hunt",
+     "type": "mandatory_report",
+     "deadline": "Harvest tickets: within 15 days of taking your bag limit or of the season closing. Permits: by the deadline printed on the permit (often 15 days)",
+     "consequence": "Ineligible for any permits the next regulatory year, and you may be cited",
+     "source": "https://www.adfg.alaska.gov/static/regulations/wildliferegulations/pdfs/regulations_complete.pdf",
+     "quote": "If you fail to report, you will be ineligible for any permits the following regulatory year, and you may be cited"
+    },
+    {
+     "species": [
+      "DALLSHEEP"
+     ],
+     "applies": "Every ram taken: horns must be sealed by ADF&G (some hunts, like 14C, require 10 days)",
+     "type": "mandatory_check",
+     "deadline": "Within 30 days of the kill, or sooner if your permit or harvest ticket says so; before the horns leave Alaska",
+     "consequence": null,
+     "source": "https://www.adfg.alaska.gov/static/regulations/wildliferegulations/pdfs/regulations_complete.pdf",
+     "quote": "must be permanently sealed prior to exporting from Alaska"
+    }
+   ],
+   "reportUrl": "https://hunt.alaska.gov",
+   "summary": "Alaska requires a report for every harvest ticket and permit, even if you didn’t hunt; miss one and you can’t get any permit the next year. Dall sheep horns must be sealed by ADF&G within 30 days."
   }
  }
 }

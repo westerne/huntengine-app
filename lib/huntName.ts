@@ -13,7 +13,10 @@ export function unitText(u: string): string {
 export function huntCodeText(code: string | null | undefined): string {
   if (!code) return '';
   const g = /^GEN-[^-]+-(\w+)$/i.exec(code);
-  return g ? `General season · ${WEAPON[g[1].toLowerCase()] ?? g[1]}` : `Hunt ${code}`;
+  if (g) return `General season · ${WEAPON[g[1].toLowerCase()] ?? g[1]}`;
+  // Alaska: GEN-<unit>, a harvest-ticket general season.
+  if (/^GEN-[0-9A-Z]+$/i.test(code)) return 'General season (harvest ticket)';
+  return `Hunt ${code}`;
 }
 
 export function huntTitle(unit: string, code: string | null | undefined): string {
@@ -23,5 +26,7 @@ export function huntTitle(unit: string, code: string | null | undefined): string
 
 // The same, inside model-written prose ("put GEN-127-any first").
 export function humanizeCodes(text: string): string {
-  return text.replace(/\bGEN-([0-9A-Z]+)-(\w+)\b/gi, (_m, u, w) => `the GMU ${u} general season (${WEAPON[String(w).toLowerCase()] ?? w})`);
+  return text
+    .replace(/\bGEN-([0-9A-Z]+)-(\w+)\b/gi, (_m, u, w) => `the GMU ${u} general season (${WEAPON[String(w).toLowerCase()] ?? w})`)
+    .replace(/\bGEN-([0-9A-Z]+)\b/gi, (_m, u) => `the Unit ${u} general season`);
 }

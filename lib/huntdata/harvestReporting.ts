@@ -30,6 +30,7 @@ const DATA = data as unknown as FileShape;
 
 export const SPECIES_KEY: Record<string, string> = {
   'Deer': 'DEER', 'Mule Deer': 'DEER', 'Elk': 'ELK', 'Antelope': 'ANTELOPE', 'Moose': 'MOOSE', 'Bighorn Sheep': 'BIGHORNSHEEP', 'Mountain Goat': 'MTNGOAT',
+  'Caribou': 'CARIBOU', 'Dall Sheep': 'DALLSHEEP', 'Bison': 'BISON', 'Muskox': 'MUSKOX',
 };
 
 export function harvestReportingFor(state: string, species: string): HarvestReportingInfo {

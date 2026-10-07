@@ -17,6 +17,8 @@ import caDraw from './draw/ca.json';
 import waDraw from './draw/wa.json';
 import orDraw from './draw/or.json';
 import sdDraw from './draw/sd.json';
+import akDraw from './draw/ak.json';
+import akGeneral from './draw/ak-general.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -167,16 +169,27 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
 
   // ── Batch D: by October 2027 ─────────────────────────────────────────────
   AK: {
-    code: 'AK', name: 'ALASKA', status: 'planned', batch: 'D',
+    code: 'AK', name: 'ALASKA', status: 'live', batch: 'D',
     agency: { name: 'Alaska Department of Fish and Game', url: 'https://www.adfg.alaska.gov' },
-    drawSystem: 'random', rulesVerified: false,
-    drawSystemNote: 'Drawing permits are a random draw with no points. Non-residents need a guide for sheep, goat and brown bear.',
+    // Verified 2026-10-07 against the 2026-27 ADF&G Drawing Supplement and
+    // hunting regulations (lib/huntdata/draw/ak-research.md, ak-general-research.md).
+    drawSystem: 'random', rulesVerified: true,
+    drawSystemNote: "Most Alaska moose, caribou, Dall sheep and deer hunting needs no draw: buy a license and a harvest ticket for a general season, or sign up for a registration permit. Drawing permits are a pure random draw with no points: apply online November 1 to December 15, results in mid-February, $5 per hunt ($10 bison and muskox), up to six hunts per species, and you can't win the same hunt two years in a row. Many hunts and general seasons are residents only or non-residents only. NON-RESIDENTS hunting Dall sheep, mountain goat or brown bear must be accompanied by an Alaska-licensed guide or a resident relative (19 or older, second-degree kindred); non-US citizens need a guide for all big game. Non-residents may take one full-curl ram every four years and face antler limits on moose in most units; every non-resident moose hunter must complete ADF&G's orientation. Odds shown for hunts open to both residencies are overall rates; ADF&G doesn't split applicants by residency.",
   },
 };
 
 // States added through generated draw files (scripts/draw/build<ST>Draw.mjs).
 // Adding a state: import its draw file here, set its STATE_INFO status to
 // 'live', and add its boundary source and planner species list.
+// Alaska keeps drawing hunts and over-the-counter (general season /
+// registration) hunts in separate researched files; offer them together.
+function mergeDrawFiles(draw: DrawFile, extra: DrawFile): DrawFile {
+  const keys = new Set([...Object.keys(draw.species), ...Object.keys(extra.species)]) as Set<keyof DrawFile['species']>;
+  const species: DrawFile['species'] = {};
+  for (const k of keys) species[k] = [...(draw.species[k] ?? []), ...(extra.species[k] ?? [])];
+  return { ...draw, notes: `${draw.notes ?? ''} ${extra.notes ?? ''}`.trim(), species };
+}
+
 const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   AZ: azDraw as DrawFile,
   NM: nmDraw as DrawFile,
@@ -189,6 +202,7 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   WA: waDraw as DrawFile,
   OR: orDraw as DrawFile,
   SD: sdDraw as DrawFile,
+  AK: mergeDrawFiles(akDraw as DrawFile, akGeneral as DrawFile),
 };
 
 const MODULES: Partial<Record<StateCode, StateModule>> = {

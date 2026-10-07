@@ -3,7 +3,7 @@
 // Add a reminder or a point-building task (not tied to a saved hunt).
 
 import { useState } from 'react';
-import { SPECIES, STATES } from '../planner/constants';
+import { ALL_SPECIES, STATES } from '../planner/constants';
 
 export default function AddTask({ seasonYear }: { seasonYear: number }) {
   const [open, setOpen] = useState(false);
@@ -42,7 +42,7 @@ export default function AddTask({ seasonYear }: { seasonYear: number }) {
       {kind === 'point' ? (
         <div className="flex flex-wrap gap-2">
           <select aria-label="State" className={inputCls} value={state} onChange={(e) => setState(e.target.value)}>{STATES.map((s) => <option key={s}>{s}</option>)}</select>
-          <select aria-label="Species" className={inputCls} value={species} onChange={(e) => setSpecies(e.target.value)}>{SPECIES.map((s) => <option key={s}>{s}</option>)}</select>
+          <select aria-label="Species" className={inputCls} value={species} onChange={(e) => setSpecies(e.target.value)}>{ALL_SPECIES.map((s) => <option key={s}>{s}</option>)}</select>
         </div>
       ) : (
         <input aria-label="Reminder" className={`${inputCls} w-full`} placeholder="e.g. Renew hunter ed card" value={title} onChange={(e) => setTitle(e.target.value)} />

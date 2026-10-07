@@ -1,0 +1,4049 @@
+{
+ "state": "AK",
+ "year": 2025,
+ "source": {
+  "name": "Alaska Department of Fish and Game, Division of Wildlife Conservation — Harvest Information: General Harvest Reports (report 330 \"Hunter AK Residency and Success by Unit\") and Harvest Lookup & Data Download, regulatory year 2025 (interim)",
+  "url": "https://secure.wildlife.alaska.gov/DWC/HarvestInformation/GeneralReports/"
+ },
+ "notes": "ADF&G regulatory year (RY) 2025 = July 1, 2025 - June 30, 2026, pulled 2026-10-07 from ADF&G's Harvest Information tool; ADF&G labels every recent year \"Interim\", so late harvest reports can still change these numbers. Built from hunter harvest reports (permit reports and harvest-ticket reports). hunters = ADF&G \"Total Hunters\" = hunters who reported hunting (successful + unsuccessful); harvest = \"Successful\"; successPct = harvest / hunters x 100, rounded to 0.1. Hunters who did not hunt or did not report are not counted. Three scopes. (1) Drawing permit hunts (huntCode = ADF&G hunt number, D... and youth Y... hunts) and (2) Registration permit hunts (R...): one row per hunt, all residencies combined, taken from report 330 filtered to that hunt (its \"Total\" row); unit = the unit with the most hunters in that report, label lists every unit reported. ADF&G left the unit blank for 29 hunts (mostly Unit 7, 14C and 15 sheep/goat/moose hunts, plus DX001 and RX110); their unit comes from the hunt's row in the 2026-2027 regulations. Hunts the report tool does not list (e.g., Unit 7/15 goat registration hunts RG334-RG374, DM819, RM849) had no hunters in ADF&G's RY2025 harvest records and have no row. (3) General season (harvest ticket) hunts: huntCode \"GEN-<unit>\" with residency rows (resident / nonresident; hunters with no residency recorded are left out). Moose (hunt GM000) and Dall sheep (GS000) come straight from report 330 filtered to ADF&G's \"General Season\" hunt. ADF&G's report tool has no general-season filter for caribou, so caribou GEN rows are DERIVED: the unit's total for all caribou hunts minus every caribou permit hunt reported in that unit (the result matches ADF&G's GC000 harvest-record download for every unit, without residency). Caribou bags in Units 24-26 allow several animals; ADF&G counts reports, so a hunter may count more than once there. GEN rows are kept only for units that have a harvest-ticket season in the 2026-2027 Alaska Hunting Regulations (see lib/huntdata/draw/ak-general-research.md); a handful of general-season reports coded to units with no harvest-ticket season (e.g., moose in Units 1-5, 9, 20A-20D after those went to permits) and reports with an unknown subunit were left out, as were nonresident reports in resident-only units. Not included: Sitka black-tailed deer (ADF&G publishes deer hunters and deer per hunter by unit, not the share of hunters who took a deer, so no successPct; see the research notes), bears, Tier I/II (T...), community (C...), targeted (A...) and S-prefixed subsistence hunts, and hunts with no hunters reported. Hunt numbers are reused across years, so rows describe the RY2025 version of each hunt.",
+ "species": {
+  "MOOSE": [
+   {
+    "unit": "6A",
+    "huntCode": "GEN-6A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 6A, residents (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "6A",
+    "huntCode": "GEN-6A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 6A, nonresidents (RY2025)",
+    "hunters": 35,
+    "harvest": 9,
+    "successPct": 25.7
+   },
+   {
+    "unit": "6D",
+    "huntCode": "GEN-6D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 6D, residents (RY2025)",
+    "hunters": 58,
+    "harvest": 12,
+    "successPct": 20.7
+   },
+   {
+    "unit": "6D",
+    "huntCode": "GEN-6D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 6D, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "7",
+    "huntCode": "GEN-7",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 7, residents (RY2025)",
+    "hunters": 204,
+    "harvest": 22,
+    "successPct": 10.8
+   },
+   {
+    "unit": "7",
+    "huntCode": "GEN-7",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 7, nonresidents (RY2025)",
+    "hunters": 12,
+    "harvest": 2,
+    "successPct": 16.7
+   },
+   {
+    "unit": "11",
+    "huntCode": "GEN-11",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 11, residents (RY2025)",
+    "hunters": 48,
+    "harvest": 8,
+    "successPct": 16.7
+   },
+   {
+    "unit": "11",
+    "huntCode": "GEN-11",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 11, nonresidents (RY2025)",
+    "hunters": 22,
+    "harvest": 13,
+    "successPct": 59.1
+   },
+   {
+    "unit": "12",
+    "huntCode": "GEN-12",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 12, residents (RY2025)",
+    "hunters": 450,
+    "harvest": 65,
+    "successPct": 14.4
+   },
+   {
+    "unit": "12",
+    "huntCode": "GEN-12",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 12, nonresidents (RY2025)",
+    "hunters": 54,
+    "harvest": 30,
+    "successPct": 55.6
+   },
+   {
+    "unit": "13A",
+    "huntCode": "GEN-13A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 13A, residents (RY2025)",
+    "hunters": 1167,
+    "harvest": 189,
+    "successPct": 16.2
+   },
+   {
+    "unit": "13B",
+    "huntCode": "GEN-13B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 13B, residents (RY2025)",
+    "hunters": 720,
+    "harvest": 107,
+    "successPct": 14.9
+   },
+   {
+    "unit": "13C",
+    "huntCode": "GEN-13C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 13C, residents (RY2025)",
+    "hunters": 224,
+    "harvest": 43,
+    "successPct": 19.2
+   },
+   {
+    "unit": "13D",
+    "huntCode": "GEN-13D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 13D, residents (RY2025)",
+    "hunters": 289,
+    "harvest": 47,
+    "successPct": 16.3
+   },
+   {
+    "unit": "13E",
+    "huntCode": "GEN-13E",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 13E, residents (RY2025)",
+    "hunters": 624,
+    "harvest": 115,
+    "successPct": 18.4
+   },
+   {
+    "unit": "14A",
+    "huntCode": "GEN-14A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 14A, residents (RY2025)",
+    "hunters": 2155,
+    "harvest": 264,
+    "successPct": 12.3
+   },
+   {
+    "unit": "14A",
+    "huntCode": "GEN-14A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 14A, nonresidents (RY2025)",
+    "hunters": 63,
+    "harvest": 16,
+    "successPct": 25.4
+   },
+   {
+    "unit": "14B",
+    "huntCode": "GEN-14B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 14B, residents (RY2025)",
+    "hunters": 482,
+    "harvest": 48,
+    "successPct": 10.0
+   },
+   {
+    "unit": "14B",
+    "huntCode": "GEN-14B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 14B, nonresidents (RY2025)",
+    "hunters": 29,
+    "harvest": 10,
+    "successPct": 34.5
+   },
+   {
+    "unit": "14C",
+    "huntCode": "GEN-14C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 14C, residents (RY2025)",
+    "hunters": 244,
+    "harvest": 32,
+    "successPct": 13.1
+   },
+   {
+    "unit": "14C",
+    "huntCode": "GEN-14C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 14C, nonresidents (RY2025)",
+    "hunters": 9,
+    "harvest": 1,
+    "successPct": 11.1
+   },
+   {
+    "unit": "15A",
+    "huntCode": "GEN-15A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 15A, residents (RY2025)",
+    "hunters": 634,
+    "harvest": 76,
+    "successPct": 12.0
+   },
+   {
+    "unit": "15B",
+    "huntCode": "GEN-15B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 15B, residents (RY2025)",
+    "hunters": 454,
+    "harvest": 59,
+    "successPct": 13.0
+   },
+   {
+    "unit": "15B",
+    "huntCode": "GEN-15B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 15B, nonresidents (RY2025)",
+    "hunters": 37,
+    "harvest": 12,
+    "successPct": 32.4
+   },
+   {
+    "unit": "15C",
+    "huntCode": "GEN-15C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 15C, residents (RY2025)",
+    "hunters": 1327,
+    "harvest": 178,
+    "successPct": 13.4
+   },
+   {
+    "unit": "15C",
+    "huntCode": "GEN-15C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 15C, nonresidents (RY2025)",
+    "hunters": 50,
+    "harvest": 15,
+    "successPct": 30.0
+   },
+   {
+    "unit": "16A",
+    "huntCode": "GEN-16A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 16A, residents (RY2025)",
+    "hunters": 724,
+    "harvest": 82,
+    "successPct": 11.3
+   },
+   {
+    "unit": "16A",
+    "huntCode": "GEN-16A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 16A, nonresidents (RY2025)",
+    "hunters": 58,
+    "harvest": 16,
+    "successPct": 27.6
+   },
+   {
+    "unit": "16B",
+    "huntCode": "GEN-16B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 16B, residents (RY2025)",
+    "hunters": 416,
+    "harvest": 64,
+    "successPct": 15.4
+   },
+   {
+    "unit": "16B",
+    "huntCode": "GEN-16B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 16B, nonresidents (RY2025)",
+    "hunters": 121,
+    "harvest": 36,
+    "successPct": 29.8
+   },
+   {
+    "unit": "17B",
+    "huntCode": "GEN-17B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 17B, residents (RY2025)",
+    "hunters": 29,
+    "harvest": 14,
+    "successPct": 48.3
+   },
+   {
+    "unit": "17B",
+    "huntCode": "GEN-17B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 17B, nonresidents (RY2025)",
+    "hunters": 154,
+    "harvest": 61,
+    "successPct": 39.6
+   },
+   {
+    "unit": "17C",
+    "huntCode": "GEN-17C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 17C, residents (RY2025)",
+    "hunters": 35,
+    "harvest": 12,
+    "successPct": 34.3
+   },
+   {
+    "unit": "18",
+    "huntCode": "GEN-18",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 18, residents (RY2025)",
+    "hunters": 794,
+    "harvest": 561,
+    "successPct": 70.7
+   },
+   {
+    "unit": "18",
+    "huntCode": "GEN-18",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 18, nonresidents (RY2025)",
+    "hunters": 506,
+    "harvest": 448,
+    "successPct": 88.5
+   },
+   {
+    "unit": "19B",
+    "huntCode": "GEN-19B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 19B, residents (RY2025)",
+    "hunters": 26,
+    "harvest": 15,
+    "successPct": 57.7
+   },
+   {
+    "unit": "19B",
+    "huntCode": "GEN-19B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 19B, nonresidents (RY2025)",
+    "hunters": 84,
+    "harvest": 39,
+    "successPct": 46.4
+   },
+   {
+    "unit": "19C",
+    "huntCode": "GEN-19C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 19C, residents (RY2025)",
+    "hunters": 44,
+    "harvest": 10,
+    "successPct": 22.7
+   },
+   {
+    "unit": "19C",
+    "huntCode": "GEN-19C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 19C, nonresidents (RY2025)",
+    "hunters": 101,
+    "harvest": 59,
+    "successPct": 58.4
+   },
+   {
+    "unit": "19D",
+    "huntCode": "GEN-19D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 19D, residents (RY2025)",
+    "hunters": 50,
+    "harvest": 32,
+    "successPct": 64.0
+   },
+   {
+    "unit": "19D",
+    "huntCode": "GEN-19D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 19D, nonresidents (RY2025)",
+    "hunters": 21,
+    "harvest": 12,
+    "successPct": 57.1
+   },
+   {
+    "unit": "20E",
+    "huntCode": "GEN-20E",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 20E, residents (RY2025)",
+    "hunters": 15,
+    "harvest": 1,
+    "successPct": 6.7
+   },
+   {
+    "unit": "20E",
+    "huntCode": "GEN-20E",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 20E, nonresidents (RY2025)",
+    "hunters": 9,
+    "harvest": 1,
+    "successPct": 11.1
+   },
+   {
+    "unit": "21B",
+    "huntCode": "GEN-21B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 21B, residents (RY2025)",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 62.5
+   },
+   {
+    "unit": "21B",
+    "huntCode": "GEN-21B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 21B, nonresidents (RY2025)",
+    "hunters": 14,
+    "harvest": 9,
+    "successPct": 64.3
+   },
+   {
+    "unit": "21C",
+    "huntCode": "GEN-21C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 21C, residents (RY2025)",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40.0
+   },
+   {
+    "unit": "21C",
+    "huntCode": "GEN-21C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 21C, nonresidents (RY2025)",
+    "hunters": 31,
+    "harvest": 15,
+    "successPct": 48.4
+   },
+   {
+    "unit": "22A",
+    "huntCode": "GEN-22A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 22A, residents (RY2025)",
+    "hunters": 12,
+    "harvest": 7,
+    "successPct": 58.3
+   },
+   {
+    "unit": "22A",
+    "huntCode": "GEN-22A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 22A, nonresidents (RY2025)",
+    "hunters": 34,
+    "harvest": 28,
+    "successPct": 82.4
+   },
+   {
+    "unit": "22B",
+    "huntCode": "GEN-22B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 22B, residents (RY2025)",
+    "hunters": 19,
+    "harvest": 7,
+    "successPct": 36.8
+   },
+   {
+    "unit": "22B",
+    "huntCode": "GEN-22B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 22B, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "22E",
+    "huntCode": "GEN-22E",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 22E, residents (RY2025)",
+    "hunters": 40,
+    "harvest": 19,
+    "successPct": 47.5
+   },
+   {
+    "unit": "23",
+    "huntCode": "GEN-23",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 23, residents (RY2025)",
+    "hunters": 13,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "24A",
+    "huntCode": "GEN-24A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 24A, residents (RY2025)",
+    "hunters": 47,
+    "harvest": 15,
+    "successPct": 31.9
+   },
+   {
+    "unit": "24A",
+    "huntCode": "GEN-24A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 24A, nonresidents (RY2025)",
+    "hunters": 43,
+    "harvest": 15,
+    "successPct": 34.9
+   },
+   {
+    "unit": "24B",
+    "huntCode": "GEN-24B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 24B, residents (RY2025)",
+    "hunters": 55,
+    "harvest": 18,
+    "successPct": 32.7
+   },
+   {
+    "unit": "24B",
+    "huntCode": "GEN-24B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 24B, nonresidents (RY2025)",
+    "hunters": 45,
+    "harvest": 12,
+    "successPct": 26.7
+   },
+   {
+    "unit": "25A",
+    "huntCode": "GEN-25A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 25A, residents (RY2025)",
+    "hunters": 47,
+    "harvest": 15,
+    "successPct": 31.9
+   },
+   {
+    "unit": "25A",
+    "huntCode": "GEN-25A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 25A, nonresidents (RY2025)",
+    "hunters": 99,
+    "harvest": 31,
+    "successPct": 31.3
+   },
+   {
+    "unit": "25B",
+    "huntCode": "GEN-25B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 25B, residents (RY2025)",
+    "hunters": 90,
+    "harvest": 23,
+    "successPct": 25.6
+   },
+   {
+    "unit": "25B",
+    "huntCode": "GEN-25B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 25B, nonresidents (RY2025)",
+    "hunters": 18,
+    "harvest": 4,
+    "successPct": 22.2
+   },
+   {
+    "unit": "25D",
+    "huntCode": "GEN-25D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 25D, residents (RY2025)",
+    "hunters": 63,
+    "harvest": 18,
+    "successPct": 28.6
+   },
+   {
+    "unit": "25D",
+    "huntCode": "GEN-25D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — moose, Unit 25D, nonresidents (RY2025)",
+    "hunters": 8,
+    "harvest": 2,
+    "successPct": 25.0
+   },
+   {
+    "unit": "26A",
+    "huntCode": "GEN-26A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 26A, residents (RY2025)",
+    "hunters": 7,
+    "harvest": 4,
+    "successPct": 57.1
+   },
+   {
+    "unit": "26B",
+    "huntCode": "GEN-26B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — moose, Unit 26B, residents (RY2025)",
+    "hunters": 7,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "6C",
+    "huntCode": "DM167",
+    "label": "Drawing permit DM167 — moose, Unit 6C (RY2025)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM210",
+    "label": "Drawing permit DM210 — moose, Units 7, 14C (RY2025)",
+    "hunters": 33,
+    "harvest": 19,
+    "successPct": 57.6
+   },
+   {
+    "unit": "7",
+    "huntCode": "DM211",
+    "label": "Drawing permit DM211 — moose, Units 7, 14C (RY2025)",
+    "hunters": 28,
+    "harvest": 9,
+    "successPct": 32.1
+   },
+   {
+    "unit": "11",
+    "huntCode": "DM250",
+    "label": "Drawing permit DM250 — moose, Unit 11 (RY2025)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "13A",
+    "huntCode": "DM335",
+    "label": "Drawing permit DM335 — moose, Unit 13A (RY2025)",
+    "hunters": 10,
+    "harvest": 4,
+    "successPct": 40.0
+   },
+   {
+    "unit": "13B",
+    "huntCode": "DM336",
+    "label": "Drawing permit DM336 — moose, Units 13B, 20F (RY2025)",
+    "hunters": 18,
+    "harvest": 7,
+    "successPct": 38.9
+   },
+   {
+    "unit": "13C",
+    "huntCode": "DM337",
+    "label": "Drawing permit DM337 — moose, Unit 13C (RY2025)",
+    "hunters": 12,
+    "harvest": 3,
+    "successPct": 25.0
+   },
+   {
+    "unit": "13D",
+    "huntCode": "DM338",
+    "label": "Drawing permit DM338 — moose, Units 13A, 13C, 13D (RY2025)",
+    "hunters": 18,
+    "harvest": 3,
+    "successPct": 16.7
+   },
+   {
+    "unit": "13E",
+    "huntCode": "DM339",
+    "label": "Drawing permit DM339 — moose, Unit 13E (RY2025)",
+    "hunters": 17,
+    "harvest": 3,
+    "successPct": 17.6
+   },
+   {
+    "unit": "13D",
+    "huntCode": "DM348",
+    "label": "Drawing permit DM348 — moose, Unit 13D (RY2025)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM400",
+    "label": "Drawing permit DM400 — moose, Unit 14A (RY2025)",
+    "hunters": 9,
+    "harvest": 4,
+    "successPct": 44.4
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM401",
+    "label": "Drawing permit DM401 — moose, Unit 14A (RY2025)",
+    "hunters": 9,
+    "harvest": 2,
+    "successPct": 22.2
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM402",
+    "label": "Drawing permit DM402 — moose, Unit 14A (RY2025)",
+    "hunters": 8,
+    "harvest": 1,
+    "successPct": 12.5
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM403",
+    "label": "Drawing permit DM403 — moose, Unit 14A (RY2025)",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM406",
+    "label": "Drawing permit DM406 — moose, Unit 14A (RY2025)",
+    "hunters": 10,
+    "harvest": 4,
+    "successPct": 40.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM407",
+    "label": "Drawing permit DM407 — moose, Unit 14A (RY2025)",
+    "hunters": 22,
+    "harvest": 14,
+    "successPct": 63.6
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM408",
+    "label": "Drawing permit DM408 — moose, Unit 14A (RY2025)",
+    "hunters": 24,
+    "harvest": 8,
+    "successPct": 33.3
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM410",
+    "label": "Drawing permit DM410 — moose, Unit 14A (RY2025)",
+    "hunters": 23,
+    "harvest": 16,
+    "successPct": 69.6
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM413",
+    "label": "Drawing permit DM413 — moose, Unit 14A (RY2025)",
+    "hunters": 23,
+    "harvest": 17,
+    "successPct": 73.9
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM414",
+    "label": "Drawing permit DM414 — moose, Unit 14A (RY2025)",
+    "hunters": 20,
+    "harvest": 17,
+    "successPct": 85.0
+   },
+   {
+    "unit": "14B",
+    "huntCode": "DM416",
+    "label": "Drawing permit DM416 — moose, Unit 14B (RY2025)",
+    "hunters": 10,
+    "harvest": 3,
+    "successPct": 30.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM421",
+    "label": "Drawing permit DM421 — moose, Unit 14C (RY2025)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM422",
+    "label": "Drawing permit DM422 — moose, Unit 14C (RY2025)",
+    "hunters": 8,
+    "harvest": 6,
+    "successPct": 75.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM423",
+    "label": "Drawing permit DM423 — moose, Unit 14C (RY2025)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM424",
+    "label": "Drawing permit DM424 — moose, Unit 14C (RY2025)",
+    "hunters": 25,
+    "harvest": 10,
+    "successPct": 40.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM426",
+    "label": "Drawing permit DM426 — moose, Unit 14C (RY2025)",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 62.5
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM427",
+    "label": "Drawing permit DM427 — moose, Unit 14C (RY2025)",
+    "hunters": 13,
+    "harvest": 8,
+    "successPct": 61.5
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM428",
+    "label": "Drawing permit DM428 — moose, Unit 14C (RY2025)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM430",
+    "label": "Drawing permit DM430 — moose, Unit 14C (RY2025)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM441",
+    "label": "Drawing permit DM441 — moose, Unit 14C (RY2025)",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM443",
+    "label": "Drawing permit DM443 — moose, Unit 14C (RY2025)",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM444",
+    "label": "Drawing permit DM444 — moose, Unit 14C (RY2025)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM446",
+    "label": "Drawing permit DM446 — moose, Unit 14C (RY2025)",
+    "hunters": 10,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM447",
+    "label": "Drawing permit DM447 — moose, Unit 14C (RY2025)",
+    "hunters": 7,
+    "harvest": 2,
+    "successPct": 28.6
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM448",
+    "label": "Drawing permit DM448 — moose, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM466",
+    "label": "Drawing permit DM466 — moose, Unit 14C (RY2025)",
+    "hunters": 7,
+    "harvest": 5,
+    "successPct": 71.4
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DM467",
+    "label": "Drawing permit DM467 — moose, Unit 14C (RY2025)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM470",
+    "label": "Drawing permit DM470 — moose, Unit 14A (RY2025)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM471",
+    "label": "Drawing permit DM471 — moose, Unit 14A (RY2025)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM472",
+    "label": "Drawing permit DM472 — moose, Unit 14A (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM473",
+    "label": "Drawing permit DM473 — moose, Unit 14A (RY2025)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM476",
+    "label": "Drawing permit DM476 — moose, Unit 14A (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM477",
+    "label": "Drawing permit DM477 — moose, Unit 14A (RY2025)",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM478",
+    "label": "Drawing permit DM478 — moose, Unit 14A (RY2025)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DM480",
+    "label": "Drawing permit DM480 — moose, Unit 14A (RY2025)",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75.0
+   },
+   {
+    "unit": "15B",
+    "huntCode": "DM508",
+    "label": "Drawing permit DM508 — moose, Unit 15B (RY2025)",
+    "hunters": 35,
+    "harvest": 22,
+    "successPct": 62.9
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DM512",
+    "label": "Drawing permit DM512 — moose, Unit 15C (RY2025)",
+    "hunters": 20,
+    "harvest": 15,
+    "successPct": 75.0
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DM514",
+    "label": "Drawing permit DM514 — moose, Unit 15C (RY2025)",
+    "hunters": 25,
+    "harvest": 11,
+    "successPct": 44.0
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DM516",
+    "label": "Drawing permit DM516 — moose, Unit 15C (RY2025)",
+    "hunters": 18,
+    "harvest": 14,
+    "successPct": 77.8
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DM518",
+    "label": "Drawing permit DM518 — moose, Unit 15C (RY2025)",
+    "hunters": 16,
+    "harvest": 11,
+    "successPct": 68.8
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DM549",
+    "label": "Drawing permit DM549 — moose, Unit 15C (RY2025)",
+    "hunters": 53,
+    "harvest": 39,
+    "successPct": 73.6
+   },
+   {
+    "unit": "17A",
+    "huntCode": "DM570",
+    "label": "Drawing permit DM570 — moose, Unit 17A (RY2025)",
+    "hunters": 17,
+    "harvest": 8,
+    "successPct": 47.1
+   },
+   {
+    "unit": "18",
+    "huntCode": "DM612",
+    "label": "Drawing permit DM612 — moose, Unit 18 (RY2025)",
+    "hunters": 84,
+    "harvest": 48,
+    "successPct": 57.1
+   },
+   {
+    "unit": "19C",
+    "huntCode": "DM656",
+    "label": "Drawing permit DM656 — moose, Unit 19C (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "19C",
+    "huntCode": "DM681",
+    "label": "Drawing permit DM681 — moose, Unit 19C (RY2025)",
+    "hunters": 10,
+    "harvest": 10,
+    "successPct": 100.0
+   },
+   {
+    "unit": "19C",
+    "huntCode": "DM682",
+    "label": "Drawing permit DM682 — moose, Unit 19C (RY2025)",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 66.7
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DM766",
+    "label": "Drawing permit DM766 — moose, Unit 20A (RY2025)",
+    "hunters": 36,
+    "harvest": 16,
+    "successPct": 44.4
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DM768",
+    "label": "Drawing permit DM768 — moose, Unit 20A (RY2025)",
+    "hunters": 19,
+    "harvest": 11,
+    "successPct": 57.9
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DM769",
+    "label": "Drawing permit DM769 — moose, Unit 20A (RY2025)",
+    "hunters": 139,
+    "harvest": 45,
+    "successPct": 32.4
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DM770",
+    "label": "Drawing permit DM770 — moose, Unit 20A (RY2025)",
+    "hunters": 35,
+    "harvest": 20,
+    "successPct": 57.1
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DM771",
+    "label": "Drawing permit DM771 — moose, Unit 20A (RY2025)",
+    "hunters": 42,
+    "harvest": 21,
+    "successPct": 50.0
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DM772",
+    "label": "Drawing permit DM772 — moose, Unit 20A (RY2025)",
+    "hunters": 108,
+    "harvest": 54,
+    "successPct": 50.0
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DM773",
+    "label": "Drawing permit DM773 — moose, Unit 20A (RY2025)",
+    "hunters": 14,
+    "harvest": 8,
+    "successPct": 57.1
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DM774",
+    "label": "Drawing permit DM774 — moose, Unit 20A (RY2025)",
+    "hunters": 23,
+    "harvest": 11,
+    "successPct": 47.8
+   },
+   {
+    "unit": "20B",
+    "huntCode": "DM783",
+    "label": "Drawing permit DM783 — moose, Unit 20B (RY2025)",
+    "hunters": 29,
+    "harvest": 2,
+    "successPct": 6.9
+   },
+   {
+    "unit": "20B",
+    "huntCode": "DM784",
+    "label": "Drawing permit DM784 — moose, Unit 20B (RY2025)",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 20.0
+   },
+   {
+    "unit": "20B",
+    "huntCode": "DM786",
+    "label": "Drawing permit DM786 — moose, Unit 20B (RY2025)",
+    "hunters": 27,
+    "harvest": 7,
+    "successPct": 25.9
+   },
+   {
+    "unit": "20B",
+    "huntCode": "DM788",
+    "label": "Drawing permit DM788 — moose, Unit 20B (RY2025)",
+    "hunters": 84,
+    "harvest": 25,
+    "successPct": 29.8
+   },
+   {
+    "unit": "20B",
+    "huntCode": "DM789",
+    "label": "Drawing permit DM789 — moose, Unit 20B (RY2025)",
+    "hunters": 8,
+    "harvest": 1,
+    "successPct": 12.5
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DM790",
+    "label": "Drawing permit DM790 — moose, Unit 20D (RY2025)",
+    "hunters": 17,
+    "harvest": 10,
+    "successPct": 58.8
+   },
+   {
+    "unit": "20E",
+    "huntCode": "DM794",
+    "label": "Drawing permit DM794 — moose, Unit 20E (RY2025)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DM795",
+    "label": "Drawing permit DM795 — moose, Unit 20D (RY2025)",
+    "hunters": 6,
+    "harvest": 6,
+    "successPct": 100.0
+   },
+   {
+    "unit": "21B",
+    "huntCode": "DM802",
+    "label": "Drawing permit DM802 — moose, Unit 21B (RY2025)",
+    "hunters": 19,
+    "harvest": 3,
+    "successPct": 15.8
+   },
+   {
+    "unit": "21B",
+    "huntCode": "DM805",
+    "label": "Drawing permit DM805 — moose, Unit 21B (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21B",
+    "huntCode": "DM806",
+    "label": "Drawing permit DM806 — moose, Unit 21B (RY2025)",
+    "hunters": 6,
+    "harvest": 2,
+    "successPct": 33.3
+   },
+   {
+    "unit": "21B",
+    "huntCode": "DM808",
+    "label": "Drawing permit DM808 — moose, Unit 21B (RY2025)",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 14.3
+   },
+   {
+    "unit": "21B",
+    "huntCode": "DM809",
+    "label": "Drawing permit DM809 — moose, Unit 21B (RY2025)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3
+   },
+   {
+    "unit": "21B",
+    "huntCode": "DM810",
+    "label": "Drawing permit DM810 — moose, Unit 21B (RY2025)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60.0
+   },
+   {
+    "unit": "21B",
+    "huntCode": "DM811",
+    "label": "Drawing permit DM811 — moose, Unit 21B (RY2025)",
+    "hunters": 6,
+    "harvest": 2,
+    "successPct": 33.3
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM814",
+    "label": "Drawing permit DM814 — moose, Unit 21D (RY2025)",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50.0
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM816",
+    "label": "Drawing permit DM816 — moose, Unit 21D (RY2025)",
+    "hunters": 23,
+    "harvest": 11,
+    "successPct": 47.8
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM817",
+    "label": "Drawing permit DM817 — moose, Unit 21D (RY2025)",
+    "hunters": 25,
+    "harvest": 12,
+    "successPct": 48.0
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM818",
+    "label": "Drawing permit DM818 — moose, Unit 21D (RY2025)",
+    "hunters": 16,
+    "harvest": 11,
+    "successPct": 68.8
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM820",
+    "label": "Drawing permit DM820 — moose, Unit 21D (RY2025)",
+    "hunters": 7,
+    "harvest": 4,
+    "successPct": 57.1
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM827",
+    "label": "Drawing permit DM827 — moose, Unit 21D (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM828",
+    "label": "Drawing permit DM828 — moose, Unit 21D (RY2025)",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40.0
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM829",
+    "label": "Drawing permit DM829 — moose, Unit 21D (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21D",
+    "huntCode": "DM830",
+    "label": "Drawing permit DM830 — moose, Unit 21D (RY2025)",
+    "hunters": 6,
+    "harvest": 3,
+    "successPct": 50.0
+   },
+   {
+    "unit": "21E",
+    "huntCode": "DM837",
+    "label": "Drawing permit DM837 — moose, Unit 21E (RY2025)",
+    "hunters": 36,
+    "harvest": 25,
+    "successPct": 69.4
+   },
+   {
+    "unit": "21E",
+    "huntCode": "DM839",
+    "label": "Drawing permit DM839 — moose, Unit 21E (RY2025)",
+    "hunters": 14,
+    "harvest": 9,
+    "successPct": 64.3
+   },
+   {
+    "unit": "22B",
+    "huntCode": "DM845",
+    "label": "Drawing permit DM845 — moose, Unit 22B (RY2025)",
+    "hunters": 5,
+    "harvest": 4,
+    "successPct": 80.0
+   },
+   {
+    "unit": "22E",
+    "huntCode": "DM855",
+    "label": "Drawing permit DM855 — moose, Unit 22E (RY2025)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "24D",
+    "huntCode": "DM892",
+    "label": "Drawing permit DM892 — moose, Unit 24D (RY2025)",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50.0
+   },
+   {
+    "unit": "24A",
+    "huntCode": "DM920",
+    "label": "Drawing permit DM920 — moose, Unit 24A (RY2025)",
+    "hunters": 16,
+    "harvest": 3,
+    "successPct": 18.8
+   },
+   {
+    "unit": "24A",
+    "huntCode": "DM922",
+    "label": "Drawing permit DM922 — moose, Unit 24A (RY2025)",
+    "hunters": 41,
+    "harvest": 6,
+    "successPct": 14.6
+   },
+   {
+    "unit": "26B",
+    "huntCode": "DM996",
+    "label": "Drawing permit DM996 — moose, Unit 26B (RY2025)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60.0
+   },
+   {
+    "unit": "1A",
+    "huntCode": "RM022",
+    "label": "Registration permit RM022 — moose, Unit 1A (RY2025)",
+    "hunters": 26,
+    "harvest": 7,
+    "successPct": 26.9
+   },
+   {
+    "unit": "3",
+    "huntCode": "RM038",
+    "label": "Registration permit RM038 — moose, Units 1B, 1C, 3 (RY2025)",
+    "hunters": 811,
+    "harvest": 147,
+    "successPct": 18.1
+   },
+   {
+    "unit": "1C",
+    "huntCode": "RM046",
+    "label": "Registration permit RM046 — moose, Unit 1C (RY2025)",
+    "hunters": 188,
+    "harvest": 48,
+    "successPct": 25.5
+   },
+   {
+    "unit": "1C",
+    "huntCode": "RM049",
+    "label": "Registration permit RM049 — moose, Unit 1C (RY2025)",
+    "hunters": 70,
+    "harvest": 14,
+    "successPct": 20.0
+   },
+   {
+    "unit": "5A",
+    "huntCode": "RM061",
+    "label": "Registration permit RM061 — moose, Unit 5A (RY2025)",
+    "hunters": 151,
+    "harvest": 64,
+    "successPct": 42.4
+   },
+   {
+    "unit": "5B",
+    "huntCode": "RM062",
+    "label": "Registration permit RM062 — moose, Unit 5B (RY2025)",
+    "hunters": 44,
+    "harvest": 23,
+    "successPct": 52.3
+   },
+   {
+    "unit": "6A",
+    "huntCode": "RM160",
+    "label": "Registration permit RM160 — moose, Units 6A, 6D (RY2025)",
+    "hunters": 21,
+    "harvest": 13,
+    "successPct": 61.9
+   },
+   {
+    "unit": "6B",
+    "huntCode": "RM164",
+    "label": "Registration permit RM164 — moose, Unit 6B (RY2025)",
+    "hunters": 98,
+    "harvest": 26,
+    "successPct": 26.5
+   },
+   {
+    "unit": "9E",
+    "huntCode": "RM271",
+    "label": "Registration permit RM271 — moose, Units 9A, 9D, 9E (RY2025)",
+    "hunters": 63,
+    "harvest": 17,
+    "successPct": 27.0
+   },
+   {
+    "unit": "9B",
+    "huntCode": "RM272",
+    "label": "Registration permit RM272 — moose, Units 9B, 9C (RY2025)",
+    "hunters": 256,
+    "harvest": 87,
+    "successPct": 34.0
+   },
+   {
+    "unit": "9E",
+    "huntCode": "RM281",
+    "label": "Registration permit RM281 — moose, Units 9A, 9B, 9E (RY2025)",
+    "hunters": 119,
+    "harvest": 71,
+    "successPct": 59.7
+   },
+   {
+    "unit": "9B",
+    "huntCode": "RM282",
+    "label": "Registration permit RM282 — moose, Units 9B, 9C (RY2025)",
+    "hunters": 82,
+    "harvest": 25,
+    "successPct": 30.5
+   },
+   {
+    "unit": "11",
+    "huntCode": "RM291",
+    "label": "Registration permit RM291 — moose, Units 11, 12 (RY2025)",
+    "hunters": 175,
+    "harvest": 13,
+    "successPct": 7.4
+   },
+   {
+    "unit": "14C",
+    "huntCode": "RM435",
+    "label": "Registration permit RM435 — moose, Unit 14C (RY2025)",
+    "hunters": 63,
+    "harvest": 3,
+    "successPct": 4.8
+   },
+   {
+    "unit": "14C",
+    "huntCode": "RM445",
+    "label": "Registration permit RM445 — moose, Unit 14C (RY2025)",
+    "hunters": 106,
+    "harvest": 4,
+    "successPct": 3.8
+   },
+   {
+    "unit": "17A",
+    "huntCode": "RM571",
+    "label": "Registration permit RM571 — moose, Unit 17A (RY2025)",
+    "hunters": 152,
+    "harvest": 8,
+    "successPct": 5.3
+   },
+   {
+    "unit": "15B",
+    "huntCode": "RM572",
+    "label": "Registration permit RM572 — moose, Unit 15B (RY2025)",
+    "hunters": 81,
+    "harvest": 30,
+    "successPct": 37.0
+   },
+   {
+    "unit": "17A",
+    "huntCode": "RM573",
+    "label": "Registration permit RM573 — moose, Unit 17A (RY2025)",
+    "hunters": 174,
+    "harvest": 59,
+    "successPct": 33.9
+   },
+   {
+    "unit": "17A",
+    "huntCode": "RM575",
+    "label": "Registration permit RM575 — moose, Unit 17A (RY2025)",
+    "hunters": 54,
+    "harvest": 5,
+    "successPct": 9.3
+   },
+   {
+    "unit": "17A",
+    "huntCode": "RM576",
+    "label": "Registration permit RM576 — moose, Unit 17A (RY2025)",
+    "hunters": 85,
+    "harvest": 37,
+    "successPct": 43.5
+   },
+   {
+    "unit": "17C",
+    "huntCode": "RM583",
+    "label": "Registration permit RM583 — moose, Units 17B, 17C (RY2025)",
+    "hunters": 707,
+    "harvest": 230,
+    "successPct": 32.5
+   },
+   {
+    "unit": "17C",
+    "huntCode": "RM585",
+    "label": "Registration permit RM585 — moose, Units 17B, 17C (RY2025)",
+    "hunters": 59,
+    "harvest": 15,
+    "successPct": 25.4
+   },
+   {
+    "unit": "17B",
+    "huntCode": "RM587",
+    "label": "Registration permit RM587 — moose, Units 17B, 17C (RY2025)",
+    "hunters": 34,
+    "harvest": 17,
+    "successPct": 50.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "RM605",
+    "label": "Registration permit RM605 — moose, Unit 18 (RY2025)",
+    "hunters": 57,
+    "harvest": 44,
+    "successPct": 77.2
+   },
+   {
+    "unit": "18",
+    "huntCode": "RM615",
+    "label": "Registration permit RM615 — moose, Unit 18 (RY2025)",
+    "hunters": 986,
+    "harvest": 268,
+    "successPct": 27.2
+   },
+   {
+    "unit": "18",
+    "huntCode": "RM617",
+    "label": "Registration permit RM617 — moose, Unit 18 (RY2025)",
+    "hunters": 36,
+    "harvest": 6,
+    "successPct": 16.7
+   },
+   {
+    "unit": "18",
+    "huntCode": "RM620",
+    "label": "Registration permit RM620 — moose, Unit 18 (RY2025)",
+    "hunters": 18,
+    "harvest": 7,
+    "successPct": 38.9
+   },
+   {
+    "unit": "18",
+    "huntCode": "RM621",
+    "label": "Registration permit RM621 — moose, Unit 18 (RY2025)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "19D",
+    "huntCode": "RM650",
+    "label": "Registration permit RM650 — moose, Unit 19D (RY2025)",
+    "hunters": 188,
+    "harvest": 82,
+    "successPct": 43.6
+   },
+   {
+    "unit": "19C",
+    "huntCode": "RM653",
+    "label": "Registration permit RM653 — moose, Unit 19C (RY2025)",
+    "hunters": 117,
+    "harvest": 52,
+    "successPct": 44.4
+   },
+   {
+    "unit": "19C",
+    "huntCode": "RM655",
+    "label": "Registration permit RM655 — moose, Unit 19C (RY2025)",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40.0
+   },
+   {
+    "unit": "19D",
+    "huntCode": "RM660",
+    "label": "Registration permit RM660 — moose, Unit 19D (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "19E",
+    "huntCode": "RM682",
+    "label": "Registration permit RM682 — moose, Unit 19E (RY2025)",
+    "hunters": 24,
+    "harvest": 14,
+    "successPct": 58.3
+   },
+   {
+    "unit": "20D",
+    "huntCode": "RM749",
+    "label": "Registration permit RM749 — moose, Unit 20D (RY2025)",
+    "hunters": 954,
+    "harvest": 147,
+    "successPct": 15.4
+   },
+   {
+    "unit": "20B",
+    "huntCode": "RM781",
+    "label": "Registration permit RM781 — moose, Units 20, 20A, 20B, 20C, 20F, 25C, 25D (RY2025)",
+    "hunters": 4670,
+    "harvest": 770,
+    "successPct": 16.5
+   },
+   {
+    "unit": "21D",
+    "huntCode": "RM831",
+    "label": "Registration permit RM831 — moose, Unit 21D (RY2025)",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 16.7
+   },
+   {
+    "unit": "21D",
+    "huntCode": "RM832",
+    "label": "Registration permit RM832 — moose, Units 21C, 21D, 24, 24C, 24D (RY2025)",
+    "hunters": 285,
+    "harvest": 130,
+    "successPct": 45.6
+   },
+   {
+    "unit": "24B",
+    "huntCode": "RM833",
+    "label": "Registration permit RM833 — moose, Units 24B, 24C (RY2025)",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21D",
+    "huntCode": "RM834",
+    "label": "Registration permit RM834 — moose, Units 21, 21B, 21C, 21D, 24, 24D (RY2025)",
+    "hunters": 473,
+    "harvest": 153,
+    "successPct": 32.3
+   },
+   {
+    "unit": "21A",
+    "huntCode": "RM835",
+    "label": "Registration permit RM835 — moose, Unit 21A (RY2025)",
+    "hunters": 146,
+    "harvest": 61,
+    "successPct": 41.8
+   },
+   {
+    "unit": "21E",
+    "huntCode": "RM836",
+    "label": "Registration permit RM836 — moose, Unit 21E (RY2025)",
+    "hunters": 219,
+    "harvest": 147,
+    "successPct": 67.1
+   },
+   {
+    "unit": "21E",
+    "huntCode": "RM837",
+    "label": "Registration permit RM837 — moose, Unit 21E (RY2025)",
+    "hunters": 9,
+    "harvest": 5,
+    "successPct": 55.6
+   },
+   {
+    "unit": "24C",
+    "huntCode": "RM838",
+    "label": "Registration permit RM838 — moose, Units 21C, 24C, 24D (RY2025)",
+    "hunters": 39,
+    "harvest": 10,
+    "successPct": 25.6
+   },
+   {
+    "unit": "22D",
+    "huntCode": "RM840",
+    "label": "Registration permit RM840 — moose, Units 22, 22B, 22C, 22D (RY2025)",
+    "hunters": 450,
+    "harvest": 96,
+    "successPct": 21.3
+   },
+   {
+    "unit": "22A",
+    "huntCode": "RM841",
+    "label": "Registration permit RM841 — moose, Unit 22A (RY2025)",
+    "hunters": 129,
+    "harvest": 65,
+    "successPct": 50.4
+   },
+   {
+    "unit": "22B",
+    "huntCode": "RM843",
+    "label": "Registration permit RM843 — moose, Unit 22B (RY2025)",
+    "hunters": 27,
+    "harvest": 12,
+    "successPct": 44.4
+   },
+   {
+    "unit": "22A",
+    "huntCode": "RM844",
+    "label": "Registration permit RM844 — moose, Unit 22A (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20E",
+    "huntCode": "RM865",
+    "label": "Registration permit RM865 — moose, Unit 20E (RY2025)",
+    "hunters": 831,
+    "harvest": 102,
+    "successPct": 12.3
+   },
+   {
+    "unit": "23",
+    "huntCode": "RM880",
+    "label": "Registration permit RM880 — moose, Unit 23 (RY2025)",
+    "hunters": 345,
+    "harvest": 94,
+    "successPct": 27.2
+   },
+   {
+    "unit": "14A",
+    "huntCode": "YM412",
+    "label": "Drawing permit (youth) YM412 — moose, Unit 14A (RY2025)",
+    "hunters": 24,
+    "harvest": 6,
+    "successPct": 25.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "YM482",
+    "label": "Drawing permit (youth) YM482 — moose, Unit 14A (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20D",
+    "huntCode": "YM763",
+    "label": "Drawing permit (youth) YM763 — moose, Unit 20D (RY2025)",
+    "hunters": 10,
+    "harvest": 8,
+    "successPct": 80.0
+   },
+   {
+    "unit": "20D",
+    "huntCode": "YM765",
+    "label": "Drawing permit (youth) YM765 — moose, Unit 20D (RY2025)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   }
+  ],
+  "CARIBOU": [
+   {
+    "unit": "9D",
+    "huntCode": "GEN-9D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 9D, residents (RY2025)",
+    "hunters": 57,
+    "harvest": 33,
+    "successPct": 57.9
+   },
+   {
+    "unit": "9D",
+    "huntCode": "GEN-9D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 9D, nonresidents (RY2025)",
+    "hunters": 105,
+    "harvest": 85,
+    "successPct": 81.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "GEN-10",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 10, residents (RY2025)",
+    "hunters": 200,
+    "harvest": 112,
+    "successPct": 56.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "GEN-10",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 10, nonresidents (RY2025)",
+    "hunters": 132,
+    "harvest": 91,
+    "successPct": 68.9
+   },
+   {
+    "unit": "12",
+    "huntCode": "GEN-12",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 12, residents (RY2025)",
+    "hunters": 30,
+    "harvest": 2,
+    "successPct": 6.7
+   },
+   {
+    "unit": "16A",
+    "huntCode": "GEN-16A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 16A, residents (RY2025)",
+    "hunters": 14,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "16A",
+    "huntCode": "GEN-16A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 16A, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "16B",
+    "huntCode": "GEN-16B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 16B, residents (RY2025)",
+    "hunters": 9,
+    "harvest": 1,
+    "successPct": 11.1
+   },
+   {
+    "unit": "16B",
+    "huntCode": "GEN-16B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 16B, nonresidents (RY2025)",
+    "hunters": 34,
+    "harvest": 14,
+    "successPct": 41.2
+   },
+   {
+    "unit": "19C",
+    "huntCode": "GEN-19C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 19C, residents (RY2025)",
+    "hunters": 47,
+    "harvest": 11,
+    "successPct": 23.4
+   },
+   {
+    "unit": "19C",
+    "huntCode": "GEN-19C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 19C, nonresidents (RY2025)",
+    "hunters": 91,
+    "harvest": 44,
+    "successPct": 48.4
+   },
+   {
+    "unit": "19D",
+    "huntCode": "GEN-19D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 19D, residents (RY2025)",
+    "hunters": 15,
+    "harvest": 4,
+    "successPct": 26.7
+   },
+   {
+    "unit": "19D",
+    "huntCode": "GEN-19D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 19D, nonresidents (RY2025)",
+    "hunters": 9,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20B",
+    "huntCode": "GEN-20B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 20B, residents (RY2025)",
+    "hunters": 5,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20B",
+    "huntCode": "GEN-20B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 20B, nonresidents (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20F",
+    "huntCode": "GEN-20F",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 20F, residents (RY2025)",
+    "hunters": 10,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21A",
+    "huntCode": "GEN-21A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 21A, residents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21A",
+    "huntCode": "GEN-21A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 21A, nonresidents (RY2025)",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 14.3
+   },
+   {
+    "unit": "21B",
+    "huntCode": "GEN-21B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 21B, nonresidents (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21C",
+    "huntCode": "GEN-21C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 21C, residents (RY2025)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3
+   },
+   {
+    "unit": "21C",
+    "huntCode": "GEN-21C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 21C, nonresidents (RY2025)",
+    "hunters": 7,
+    "harvest": 2,
+    "successPct": 28.6
+   },
+   {
+    "unit": "21D",
+    "huntCode": "GEN-21D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 21D, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "21E",
+    "huntCode": "GEN-21E",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 21E, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "22C",
+    "huntCode": "GEN-22C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 22C, nonresidents (RY2025)",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75.0
+   },
+   {
+    "unit": "22D",
+    "huntCode": "GEN-22D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 22D, nonresidents (RY2025)",
+    "hunters": 42,
+    "harvest": 40,
+    "successPct": 95.2
+   },
+   {
+    "unit": "22E",
+    "huntCode": "GEN-22E",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 22E, nonresidents (RY2025)",
+    "hunters": 28,
+    "harvest": 20,
+    "successPct": 71.4
+   },
+   {
+    "unit": "24A",
+    "huntCode": "GEN-24A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 24A, residents (RY2025)",
+    "hunters": 84,
+    "harvest": 20,
+    "successPct": 23.8
+   },
+   {
+    "unit": "24A",
+    "huntCode": "GEN-24A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 24A, nonresidents (RY2025)",
+    "hunters": 23,
+    "harvest": 6,
+    "successPct": 26.1
+   },
+   {
+    "unit": "24B",
+    "huntCode": "GEN-24B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 24B, residents (RY2025)",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "24B",
+    "huntCode": "GEN-24B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 24B, nonresidents (RY2025)",
+    "hunters": 9,
+    "harvest": 1,
+    "successPct": 11.1
+   },
+   {
+    "unit": "24C",
+    "huntCode": "GEN-24C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 24C, residents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "24C",
+    "huntCode": "GEN-24C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 24C, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "24D",
+    "huntCode": "GEN-24D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 24D, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "25A",
+    "huntCode": "GEN-25A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 25A, residents (RY2025)",
+    "hunters": 116,
+    "harvest": 72,
+    "successPct": 62.1
+   },
+   {
+    "unit": "25A",
+    "huntCode": "GEN-25A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 25A, nonresidents (RY2025)",
+    "hunters": 329,
+    "harvest": 219,
+    "successPct": 66.6
+   },
+   {
+    "unit": "25B",
+    "huntCode": "GEN-25B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 25B, residents (RY2025)",
+    "hunters": 8,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "25B",
+    "huntCode": "GEN-25B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 25B, nonresidents (RY2025)",
+    "hunters": 6,
+    "harvest": 2,
+    "successPct": 33.3
+   },
+   {
+    "unit": "25D",
+    "huntCode": "GEN-25D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 25D, residents (RY2025)",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 14.3
+   },
+   {
+    "unit": "25D",
+    "huntCode": "GEN-25D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 25D, nonresidents (RY2025)",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 16.7
+   },
+   {
+    "unit": "26A",
+    "huntCode": "GEN-26A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 26A, residents (RY2025)",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "26A",
+    "huntCode": "GEN-26A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 26A, nonresidents (RY2025)",
+    "hunters": 194,
+    "harvest": 158,
+    "successPct": 81.4
+   },
+   {
+    "unit": "26B",
+    "huntCode": "GEN-26B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 26B, residents (RY2025)",
+    "hunters": 1047,
+    "harvest": 426,
+    "successPct": 40.7
+   },
+   {
+    "unit": "26B",
+    "huntCode": "GEN-26B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 26B, nonresidents (RY2025)",
+    "hunters": 1268,
+    "harvest": 603,
+    "successPct": 47.6
+   },
+   {
+    "unit": "26C",
+    "huntCode": "GEN-26C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — caribou, Unit 26C, residents (RY2025)",
+    "hunters": 29,
+    "harvest": 18,
+    "successPct": 62.1
+   },
+   {
+    "unit": "26C",
+    "huntCode": "GEN-26C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — caribou, Unit 26C, nonresidents (RY2025)",
+    "hunters": 39,
+    "harvest": 29,
+    "successPct": 74.4
+   },
+   {
+    "unit": "7",
+    "huntCode": "DC001",
+    "label": "Drawing permit DC001 — caribou, Unit 7 (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14B",
+    "huntCode": "DC590",
+    "label": "Drawing permit DC590 — caribou, Units 14A, 14B (RY2025)",
+    "hunters": 15,
+    "harvest": 13,
+    "successPct": 86.7
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DC618",
+    "label": "Drawing permit DC618 — caribou, Unit 15C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DC826",
+    "label": "Drawing permit DC826 — caribou, Unit 20A (RY2025)",
+    "hunters": 12,
+    "harvest": 6,
+    "successPct": 50.0
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DC827",
+    "label": "Drawing permit DC827 — caribou, Unit 20A (RY2025)",
+    "hunters": 77,
+    "harvest": 38,
+    "successPct": 49.4
+   },
+   {
+    "unit": "20A",
+    "huntCode": "DC828",
+    "label": "Drawing permit DC828 — caribou, Unit 20A (RY2025)",
+    "hunters": 9,
+    "harvest": 8,
+    "successPct": 88.9
+   },
+   {
+    "unit": "23",
+    "huntCode": "DC923",
+    "label": "Drawing permit DC923 — caribou, Unit 23 (RY2025)",
+    "hunters": 9,
+    "harvest": 8,
+    "successPct": 88.9
+   },
+   {
+    "unit": "8",
+    "huntCode": "RC080",
+    "label": "Registration permit RC080 — caribou, Unit 8 (RY2025)",
+    "hunters": 20,
+    "harvest": 12,
+    "successPct": 60.0
+   },
+   {
+    "unit": "10",
+    "huntCode": "RC205",
+    "label": "Registration permit RC205 — caribou, Unit 10 (RY2025)",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 14.3
+   },
+   {
+    "unit": "19D",
+    "huntCode": "RC795",
+    "label": "Registration permit RC795 — caribou, Unit 19D (RY2025)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "22D",
+    "huntCode": "RC800",
+    "label": "Registration permit RC800 — caribou, Units 22B, 22D, 22E (RY2025)",
+    "hunters": 83,
+    "harvest": 73,
+    "successPct": 88.0
+   },
+   {
+    "unit": "20D",
+    "huntCode": "RC835",
+    "label": "Registration permit RC835 — caribou, Units 12, 20D (RY2025)",
+    "hunters": 151,
+    "harvest": 24,
+    "successPct": 15.9
+   },
+   {
+    "unit": "20E",
+    "huntCode": "RC860",
+    "label": "Registration permit RC860 — caribou, Units 20B, 20D, 20E, 25C (RY2025)",
+    "hunters": 989,
+    "harvest": 214,
+    "successPct": 21.6
+   },
+   {
+    "unit": "25C",
+    "huntCode": "RC867",
+    "label": "Registration permit RC867 — caribou, Units 20B, 20D, 20E, 25C (RY2025)",
+    "hunters": 791,
+    "harvest": 202,
+    "successPct": 25.5
+   },
+   {
+    "unit": "23",
+    "huntCode": "RC907",
+    "label": "Registration permit RC907 — caribou, Units 23, 26B (RY2025)",
+    "hunters": 594,
+    "harvest": 500,
+    "successPct": 84.2
+   },
+   {
+    "unit": "25C",
+    "huntCode": "YC831",
+    "label": "Drawing permit (youth) YC831 — caribou, Units 20E, 25C (RY2025)",
+    "hunters": 26,
+    "harvest": 23,
+    "successPct": 88.5
+   }
+  ],
+  "DALLSHEEP": [
+   {
+    "unit": "7",
+    "huntCode": "GEN-7",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 7, residents (RY2025)",
+    "hunters": 33,
+    "harvest": 4,
+    "successPct": 12.1
+   },
+   {
+    "unit": "11",
+    "huntCode": "GEN-11",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 11, residents (RY2025)",
+    "hunters": 147,
+    "harvest": 40,
+    "successPct": 27.2
+   },
+   {
+    "unit": "11",
+    "huntCode": "GEN-11",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 11, nonresidents (RY2025)",
+    "hunters": 17,
+    "harvest": 11,
+    "successPct": 64.7
+   },
+   {
+    "unit": "12",
+    "huntCode": "GEN-12",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 12, residents (RY2025)",
+    "hunters": 249,
+    "harvest": 55,
+    "successPct": 22.1
+   },
+   {
+    "unit": "12",
+    "huntCode": "GEN-12",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 12, nonresidents (RY2025)",
+    "hunters": 24,
+    "harvest": 19,
+    "successPct": 79.2
+   },
+   {
+    "unit": "13A",
+    "huntCode": "GEN-13A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13A, residents (RY2025)",
+    "hunters": 114,
+    "harvest": 19,
+    "successPct": 16.7
+   },
+   {
+    "unit": "13A",
+    "huntCode": "GEN-13A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13A, nonresidents (RY2025)",
+    "hunters": 9,
+    "harvest": 2,
+    "successPct": 22.2
+   },
+   {
+    "unit": "13B",
+    "huntCode": "GEN-13B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13B, residents (RY2025)",
+    "hunters": 11,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "13B",
+    "huntCode": "GEN-13B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13B, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "13C",
+    "huntCode": "GEN-13C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13C, residents (RY2025)",
+    "hunters": 26,
+    "harvest": 5,
+    "successPct": 19.2
+   },
+   {
+    "unit": "13C",
+    "huntCode": "GEN-13C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13C, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "13D",
+    "huntCode": "GEN-13D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13D, residents (RY2025)",
+    "hunters": 32,
+    "harvest": 1,
+    "successPct": 3.1
+   },
+   {
+    "unit": "13D",
+    "huntCode": "GEN-13D",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13D, nonresidents (RY2025)",
+    "hunters": 8,
+    "harvest": 2,
+    "successPct": 25.0
+   },
+   {
+    "unit": "13E",
+    "huntCode": "GEN-13E",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13E, residents (RY2025)",
+    "hunters": 45,
+    "harvest": 4,
+    "successPct": 8.9
+   },
+   {
+    "unit": "13E",
+    "huntCode": "GEN-13E",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 13E, nonresidents (RY2025)",
+    "hunters": 8,
+    "harvest": 3,
+    "successPct": 37.5
+   },
+   {
+    "unit": "14A",
+    "huntCode": "GEN-14A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 14A, residents (RY2025)",
+    "hunters": 38,
+    "harvest": 5,
+    "successPct": 13.2
+   },
+   {
+    "unit": "14A",
+    "huntCode": "GEN-14A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 14A, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14B",
+    "huntCode": "GEN-14B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 14B, residents (RY2025)",
+    "hunters": 11,
+    "harvest": 4,
+    "successPct": 36.4
+   },
+   {
+    "unit": "15A",
+    "huntCode": "GEN-15A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 15A, residents (RY2025)",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "15B",
+    "huntCode": "GEN-15B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 15B, residents (RY2025)",
+    "hunters": 18,
+    "harvest": 2,
+    "successPct": 11.1
+   },
+   {
+    "unit": "15B",
+    "huntCode": "GEN-15B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 15B, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "15C",
+    "huntCode": "GEN-15C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 15C, residents (RY2025)",
+    "hunters": 16,
+    "harvest": 4,
+    "successPct": 25.0
+   },
+   {
+    "unit": "15C",
+    "huntCode": "GEN-15C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 15C, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "16A",
+    "huntCode": "GEN-16A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 16A, residents (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "16B",
+    "huntCode": "GEN-16B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 16B, residents (RY2025)",
+    "hunters": 21,
+    "harvest": 6,
+    "successPct": 28.6
+   },
+   {
+    "unit": "16B",
+    "huntCode": "GEN-16B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 16B, nonresidents (RY2025)",
+    "hunters": 18,
+    "harvest": 4,
+    "successPct": 22.2
+   },
+   {
+    "unit": "19B",
+    "huntCode": "GEN-19B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 19B, residents (RY2025)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3
+   },
+   {
+    "unit": "19B",
+    "huntCode": "GEN-19B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 19B, nonresidents (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "19E",
+    "huntCode": "GEN-19E",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 19E, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20A",
+    "huntCode": "GEN-20A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20A, residents (RY2025)",
+    "hunters": 127,
+    "harvest": 19,
+    "successPct": 15.0
+   },
+   {
+    "unit": "20A",
+    "huntCode": "GEN-20A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20A, nonresidents (RY2025)",
+    "hunters": 51,
+    "harvest": 35,
+    "successPct": 68.6
+   },
+   {
+    "unit": "20B",
+    "huntCode": "GEN-20B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20B, residents (RY2025)",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 20.0
+   },
+   {
+    "unit": "20C",
+    "huntCode": "GEN-20C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20C, residents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20E",
+    "huntCode": "GEN-20E",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20E, residents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20F",
+    "huntCode": "GEN-20F",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 20F, residents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "24A",
+    "huntCode": "GEN-24A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 24A, residents (RY2025)",
+    "hunters": 13,
+    "harvest": 4,
+    "successPct": 30.8
+   },
+   {
+    "unit": "24B",
+    "huntCode": "GEN-24B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 24B, residents (RY2025)",
+    "hunters": 4,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "24B",
+    "huntCode": "GEN-24B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 24B, nonresidents (RY2025)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7
+   },
+   {
+    "unit": "25A",
+    "huntCode": "GEN-25A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25A, residents (RY2025)",
+    "hunters": 39,
+    "harvest": 8,
+    "successPct": 20.5
+   },
+   {
+    "unit": "25A",
+    "huntCode": "GEN-25A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25A, nonresidents (RY2025)",
+    "hunters": 42,
+    "harvest": 18,
+    "successPct": 42.9
+   },
+   {
+    "unit": "25B",
+    "huntCode": "GEN-25B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25B, residents (RY2025)",
+    "hunters": 7,
+    "harvest": 1,
+    "successPct": 14.3
+   },
+   {
+    "unit": "25C",
+    "huntCode": "GEN-25C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25C, residents (RY2025)",
+    "hunters": 13,
+    "harvest": 1,
+    "successPct": 7.7
+   },
+   {
+    "unit": "25C",
+    "huntCode": "GEN-25C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25C, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "25D",
+    "huntCode": "GEN-25D",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 25D, residents (RY2025)",
+    "hunters": 6,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "26A",
+    "huntCode": "GEN-26A",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26A, residents (RY2025)",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "26A",
+    "huntCode": "GEN-26A",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26A, nonresidents (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "26B",
+    "huntCode": "GEN-26B",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26B, residents (RY2025)",
+    "hunters": 35,
+    "harvest": 7,
+    "successPct": 20.0
+   },
+   {
+    "unit": "26B",
+    "huntCode": "GEN-26B",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26B, nonresidents (RY2025)",
+    "hunters": 10,
+    "harvest": 4,
+    "successPct": 40.0
+   },
+   {
+    "unit": "26C",
+    "huntCode": "GEN-26C",
+    "residency": "resident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26C, residents (RY2025)",
+    "hunters": 38,
+    "harvest": 9,
+    "successPct": 23.7
+   },
+   {
+    "unit": "26C",
+    "huntCode": "GEN-26C",
+    "residency": "nonresident",
+    "label": "General season (harvest ticket) — Dall sheep, Unit 26C, nonresidents (RY2025)",
+    "hunters": 21,
+    "harvest": 15,
+    "successPct": 71.4
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DS003",
+    "label": "Drawing permit DS003 — Dall sheep, Unit 20D (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS030",
+    "label": "Drawing permit DS030 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "13D",
+    "huntCode": "DS065",
+    "label": "Drawing permit DS065 — Dall sheep, Unit 13D (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "12",
+    "huntCode": "DS102",
+    "label": "Drawing permit DS102 — Dall sheep, Units 12, 13C, 20D (RY2025)",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS123",
+    "label": "Drawing permit DS123 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS124",
+    "label": "Drawing permit DS124 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS125",
+    "label": "Drawing permit DS125 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS126",
+    "label": "Drawing permit DS126 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS130",
+    "label": "Drawing permit DS130 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 16.7
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS131",
+    "label": "Drawing permit DS131 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 16.7
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS132",
+    "label": "Drawing permit DS132 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 5,
+    "harvest": 1,
+    "successPct": 20.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS134",
+    "label": "Drawing permit DS134 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS135",
+    "label": "Drawing permit DS135 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS136",
+    "label": "Drawing permit DS136 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 8,
+    "harvest": 3,
+    "successPct": 37.5
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS137",
+    "label": "Drawing permit DS137 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS138",
+    "label": "Drawing permit DS138 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 6,
+    "harvest": 2,
+    "successPct": 33.3
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS140",
+    "label": "Drawing permit DS140 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 40,
+    "harvest": 2,
+    "successPct": 5.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS141",
+    "label": "Drawing permit DS141 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 19,
+    "harvest": 1,
+    "successPct": 5.3
+   },
+   {
+    "unit": "13D",
+    "huntCode": "DS160",
+    "label": "Drawing permit DS160 — Dall sheep, Unit 13D (RY2025)",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 42.9
+   },
+   {
+    "unit": "13D",
+    "huntCode": "DS165",
+    "label": "Drawing permit DS165 — Dall sheep, Unit 13D (RY2025)",
+    "hunters": 10,
+    "harvest": 4,
+    "successPct": 40.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DS170",
+    "label": "Drawing permit DS170 — Dall sheep, Unit 14A (RY2025)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DS175",
+    "label": "Drawing permit DS175 — Dall sheep, Unit 14A (RY2025)",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DS180",
+    "label": "Drawing permit DS180 — Dall sheep, Unit 14A (RY2025)",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DS185",
+    "label": "Drawing permit DS185 — Dall sheep, Unit 14A (RY2025)",
+    "hunters": 2,
+    "harvest": 1,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DS190",
+    "label": "Drawing permit DS190 — Dall sheep, Unit 14A (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DS195",
+    "label": "Drawing permit DS195 — Dall sheep, Unit 14A (RY2025)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DS203",
+    "label": "Drawing permit DS203 — Dall sheep, Units 13B, 20A, 20D (RY2025)",
+    "hunters": 33,
+    "harvest": 7,
+    "successPct": 21.2
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DS204",
+    "label": "Drawing permit DS204 — Dall sheep, Units 20A, 20D (RY2025)",
+    "hunters": 20,
+    "harvest": 4,
+    "successPct": 20.0
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DS205",
+    "label": "Drawing permit DS205 — Dall sheep, Units 20A, 20D (RY2025)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DS206",
+    "label": "Drawing permit DS206 — Dall sheep, Unit 20D (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DS207",
+    "label": "Drawing permit DS207 — Dall sheep, Units 20A, 20D (RY2025)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS231",
+    "label": "Drawing permit DS231 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS233",
+    "label": "Drawing permit DS233 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS236",
+    "label": "Drawing permit DS236 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS237",
+    "label": "Drawing permit DS237 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS238",
+    "label": "Drawing permit DS238 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS240",
+    "label": "Drawing permit DS240 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DS241",
+    "label": "Drawing permit DS241 — Dall sheep, Unit 14C (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "13D",
+    "huntCode": "DS260",
+    "label": "Drawing permit DS260 — Dall sheep, Unit 13D (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "13D",
+    "huntCode": "DS265",
+    "label": "Drawing permit DS265 — Dall sheep, Unit 13D (RY2025)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DS270",
+    "label": "Drawing permit DS270 — Dall sheep, Unit 14A (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "19C",
+    "huntCode": "RS380",
+    "label": "Registration permit RS380 — Dall sheep, Unit 19C (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   }
+  ],
+  "MTNGOAT": [
+   {
+    "unit": "1A",
+    "huntCode": "DG005",
+    "label": "Drawing permit DG005 — mountain goat, Unit 1A (RY2025)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3
+   },
+   {
+    "unit": "1A",
+    "huntCode": "DG006",
+    "label": "Drawing permit DG006 — mountain goat, Unit 1A (RY2025)",
+    "hunters": 19,
+    "harvest": 16,
+    "successPct": 84.2
+   },
+   {
+    "unit": "1A",
+    "huntCode": "DG008",
+    "label": "Drawing permit DG008 — mountain goat, Unit 1A (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG332",
+    "label": "Drawing permit DG332 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG334",
+    "label": "Drawing permit DG334 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 42.9
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG338",
+    "label": "Drawing permit DG338 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 7,
+    "harvest": 4,
+    "successPct": 57.1
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG339",
+    "label": "Drawing permit DG339 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 6,
+    "harvest": 1,
+    "successPct": 16.7
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG342",
+    "label": "Drawing permit DG342 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 42.9
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG343",
+    "label": "Drawing permit DG343 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 4,
+    "harvest": 3,
+    "successPct": 75.0
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG344",
+    "label": "Drawing permit DG344 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG345",
+    "label": "Drawing permit DG345 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 17,
+    "harvest": 9,
+    "successPct": 52.9
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG346",
+    "label": "Drawing permit DG346 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 27,
+    "harvest": 9,
+    "successPct": 33.3
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG347",
+    "label": "Drawing permit DG347 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50.0
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG351",
+    "label": "Drawing permit DG351 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "7",
+    "huntCode": "DG352",
+    "label": "Drawing permit DG352 — mountain goat, Unit 7 (RY2025)",
+    "hunters": 10,
+    "harvest": 7,
+    "successPct": 70.0
+   },
+   {
+    "unit": "15",
+    "huntCode": "DG354",
+    "label": "Drawing permit DG354 — mountain goat, Unit 15 (RY2025)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "15",
+    "huntCode": "DG356",
+    "label": "Drawing permit DG356 — mountain goat, Unit 15 (RY2025)",
+    "hunters": 9,
+    "harvest": 5,
+    "successPct": 55.6
+   },
+   {
+    "unit": "15",
+    "huntCode": "DG357",
+    "label": "Drawing permit DG357 — mountain goat, Unit 15 (RY2025)",
+    "hunters": 7,
+    "harvest": 2,
+    "successPct": 28.6
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DG358",
+    "label": "Drawing permit DG358 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 62.5
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DG359",
+    "label": "Drawing permit DG359 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 17,
+    "harvest": 9,
+    "successPct": 52.9
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DG360",
+    "label": "Drawing permit DG360 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 36,
+    "harvest": 15,
+    "successPct": 41.7
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DG361",
+    "label": "Drawing permit DG361 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 11,
+    "harvest": 4,
+    "successPct": 36.4
+   },
+   {
+    "unit": "15",
+    "huntCode": "DG362",
+    "label": "Drawing permit DG362 — mountain goat, Unit 15 (RY2025)",
+    "hunters": 12,
+    "harvest": 3,
+    "successPct": 25.0
+   },
+   {
+    "unit": "15",
+    "huntCode": "DG363",
+    "label": "Drawing permit DG363 — mountain goat, Unit 15 (RY2025)",
+    "hunters": 16,
+    "harvest": 11,
+    "successPct": 68.8
+   },
+   {
+    "unit": "15C",
+    "huntCode": "DG364",
+    "label": "Drawing permit DG364 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "DG471",
+    "label": "Drawing permit DG471 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 28,
+    "harvest": 21,
+    "successPct": 75.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "DG472",
+    "label": "Drawing permit DG472 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 66.7
+   },
+   {
+    "unit": "8",
+    "huntCode": "DG473",
+    "label": "Drawing permit DG473 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 10,
+    "harvest": 8,
+    "successPct": 80.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "DG474",
+    "label": "Drawing permit DG474 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 38,
+    "harvest": 21,
+    "successPct": 55.3
+   },
+   {
+    "unit": "8",
+    "huntCode": "DG476",
+    "label": "Drawing permit DG476 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 32,
+    "harvest": 17,
+    "successPct": 53.1
+   },
+   {
+    "unit": "8",
+    "huntCode": "DG478",
+    "label": "Drawing permit DG478 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 58,
+    "harvest": 26,
+    "successPct": 44.8
+   },
+   {
+    "unit": "8",
+    "huntCode": "DG479",
+    "label": "Drawing permit DG479 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 41,
+    "harvest": 24,
+    "successPct": 58.5
+   },
+   {
+    "unit": "13D",
+    "huntCode": "DG720",
+    "label": "Drawing permit DG720 — mountain goat, Unit 13D (RY2025)",
+    "hunters": 9,
+    "harvest": 4,
+    "successPct": 44.4
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DG852",
+    "label": "Drawing permit DG852 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 3,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DG854",
+    "label": "Drawing permit DG854 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 8,
+    "harvest": 4,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DG856",
+    "label": "Drawing permit DG856 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 50.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DG858",
+    "label": "Drawing permit DG858 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "DG889",
+    "label": "Drawing permit DG889 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DG890",
+    "label": "Drawing permit DG890 — mountain goat, Unit 14A (RY2025)",
+    "hunters": 8,
+    "harvest": 1,
+    "successPct": 12.5
+   },
+   {
+    "unit": "14A",
+    "huntCode": "DG891",
+    "label": "Drawing permit DG891 — mountain goat, Unit 14A (RY2025)",
+    "hunters": 14,
+    "harvest": 6,
+    "successPct": 42.9
+   },
+   {
+    "unit": "1A",
+    "huntCode": "RG001",
+    "label": "Registration permit RG001 — mountain goat, Unit 1A (RY2025)",
+    "hunters": 9,
+    "harvest": 7,
+    "successPct": 77.8
+   },
+   {
+    "unit": "1A",
+    "huntCode": "RG002",
+    "label": "Registration permit RG002 — mountain goat, Units 1A, 1B (RY2025)",
+    "hunters": 59,
+    "harvest": 26,
+    "successPct": 44.1
+   },
+   {
+    "unit": "1B",
+    "huntCode": "RG004",
+    "label": "Registration permit RG004 — mountain goat, Unit 1B (RY2025)",
+    "hunters": 42,
+    "harvest": 20,
+    "successPct": 47.6
+   },
+   {
+    "unit": "1C",
+    "huntCode": "RG012",
+    "label": "Registration permit RG012 — mountain goat, Unit 1C (RY2025)",
+    "hunters": 9,
+    "harvest": 3,
+    "successPct": 33.3
+   },
+   {
+    "unit": "1C",
+    "huntCode": "RG013",
+    "label": "Registration permit RG013 — mountain goat, Unit 1C (RY2025)",
+    "hunters": 59,
+    "harvest": 35,
+    "successPct": 59.3
+   },
+   {
+    "unit": "1C",
+    "huntCode": "RG014",
+    "label": "Registration permit RG014 — mountain goat, Unit 1C (RY2025)",
+    "hunters": 13,
+    "harvest": 5,
+    "successPct": 38.5
+   },
+   {
+    "unit": "1C",
+    "huntCode": "RG015",
+    "label": "Registration permit RG015 — mountain goat, Unit 1C (RY2025)",
+    "hunters": 10,
+    "harvest": 4,
+    "successPct": 40.0
+   },
+   {
+    "unit": "1D",
+    "huntCode": "RG023",
+    "label": "Registration permit RG023 — mountain goat, Unit 1D (RY2025)",
+    "hunters": 15,
+    "harvest": 2,
+    "successPct": 13.3
+   },
+   {
+    "unit": "1D",
+    "huntCode": "RG024",
+    "label": "Registration permit RG024 — mountain goat, Unit 1D (RY2025)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60.0
+   },
+   {
+    "unit": "1D",
+    "huntCode": "RG025",
+    "label": "Registration permit RG025 — mountain goat, Unit 1D (RY2025)",
+    "hunters": 6,
+    "harvest": 2,
+    "successPct": 33.3
+   },
+   {
+    "unit": "1D",
+    "huntCode": "RG026",
+    "label": "Registration permit RG026 — mountain goat, Unit 1D (RY2025)",
+    "hunters": 17,
+    "harvest": 6,
+    "successPct": 35.3
+   },
+   {
+    "unit": "4",
+    "huntCode": "RG150",
+    "label": "Registration permit RG150 — mountain goat, Unit 4 (RY2025)",
+    "hunters": 79,
+    "harvest": 38,
+    "successPct": 48.1
+   },
+   {
+    "unit": "5A",
+    "huntCode": "RG170",
+    "label": "Registration permit RG170 — mountain goat, Unit 5A (RY2025)",
+    "hunters": 3,
+    "harvest": 2,
+    "successPct": 66.7
+   },
+   {
+    "unit": "6A",
+    "huntCode": "RG202",
+    "label": "Registration permit RG202 — mountain goat, Unit 6A (RY2025)",
+    "hunters": 3,
+    "harvest": 3,
+    "successPct": 100.0
+   },
+   {
+    "unit": "6A",
+    "huntCode": "RG204",
+    "label": "Registration permit RG204 — mountain goat, Unit 6A (RY2025)",
+    "hunters": 2,
+    "harvest": 2,
+    "successPct": 100.0
+   },
+   {
+    "unit": "6A",
+    "huntCode": "RG206",
+    "label": "Registration permit RG206 — mountain goat, Unit 6A (RY2025)",
+    "hunters": 3,
+    "harvest": 1,
+    "successPct": 33.3
+   },
+   {
+    "unit": "6A",
+    "huntCode": "RG212",
+    "label": "Registration permit RG212 — mountain goat, Unit 6A (RY2025)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "6B",
+    "huntCode": "RG220",
+    "label": "Registration permit RG220 — mountain goat, Unit 6B (RY2025)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "6B",
+    "huntCode": "RG226",
+    "label": "Registration permit RG226 — mountain goat, Units 6A, 6B (RY2025)",
+    "hunters": 11,
+    "harvest": 5,
+    "successPct": 45.5
+   },
+   {
+    "unit": "6C",
+    "huntCode": "RG230",
+    "label": "Registration permit RG230 — mountain goat, Unit 6C (RY2025)",
+    "hunters": 9,
+    "harvest": 2,
+    "successPct": 22.2
+   },
+   {
+    "unit": "6C",
+    "huntCode": "RG231",
+    "label": "Registration permit RG231 — mountain goat, Unit 6C (RY2025)",
+    "hunters": 18,
+    "harvest": 7,
+    "successPct": 38.9
+   },
+   {
+    "unit": "6C",
+    "huntCode": "RG232",
+    "label": "Registration permit RG232 — mountain goat, Unit 6C (RY2025)",
+    "hunters": 18,
+    "harvest": 4,
+    "successPct": 22.2
+   },
+   {
+    "unit": "6D",
+    "huntCode": "RG242",
+    "label": "Registration permit RG242 — mountain goat, Unit 6D (RY2025)",
+    "hunters": 25,
+    "harvest": 15,
+    "successPct": 60.0
+   },
+   {
+    "unit": "6D",
+    "huntCode": "RG243",
+    "label": "Registration permit RG243 — mountain goat, Unit 6D (RY2025)",
+    "hunters": 2,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "6D",
+    "huntCode": "RG244",
+    "label": "Registration permit RG244 — mountain goat, Unit 6D (RY2025)",
+    "hunters": 4,
+    "harvest": 2,
+    "successPct": 50.0
+   },
+   {
+    "unit": "6D",
+    "huntCode": "RG245",
+    "label": "Registration permit RG245 — mountain goat, Unit 6D (RY2025)",
+    "hunters": 17,
+    "harvest": 5,
+    "successPct": 29.4
+   },
+   {
+    "unit": "6D",
+    "huntCode": "RG248",
+    "label": "Registration permit RG248 — mountain goat, Unit 6D (RY2025)",
+    "hunters": 12,
+    "harvest": 3,
+    "successPct": 25.0
+   },
+   {
+    "unit": "6D",
+    "huntCode": "RG249",
+    "label": "Registration permit RG249 — mountain goat, Unit 6D (RY2025)",
+    "hunters": 14,
+    "harvest": 5,
+    "successPct": 35.7
+   },
+   {
+    "unit": "6D",
+    "huntCode": "RG252",
+    "label": "Registration permit RG252 — mountain goat, Unit 6D (RY2025)",
+    "hunters": 17,
+    "harvest": 9,
+    "successPct": 52.9
+   },
+   {
+    "unit": "6D",
+    "huntCode": "RG266",
+    "label": "Registration permit RG266 — mountain goat, Unit 6D (RY2025)",
+    "hunters": 20,
+    "harvest": 6,
+    "successPct": 30.0
+   },
+   {
+    "unit": "15C",
+    "huntCode": "RG362",
+    "label": "Registration permit RG362 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40.0
+   },
+   {
+    "unit": "15C",
+    "huntCode": "RG364",
+    "label": "Registration permit RG364 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 9,
+    "harvest": 4,
+    "successPct": 44.4
+   },
+   {
+    "unit": "15C",
+    "huntCode": "RG365",
+    "label": "Registration permit RG365 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 14,
+    "harvest": 7,
+    "successPct": 50.0
+   },
+   {
+    "unit": "15C",
+    "huntCode": "RG375",
+    "label": "Registration permit RG375 — mountain goat, Unit 15C (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "RG473",
+    "label": "Registration permit RG473 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "RG476",
+    "label": "Registration permit RG476 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 8,
+    "harvest": 5,
+    "successPct": 62.5
+   },
+   {
+    "unit": "8",
+    "huntCode": "RG478",
+    "label": "Registration permit RG478 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 24,
+    "harvest": 8,
+    "successPct": 33.3
+   },
+   {
+    "unit": "8",
+    "huntCode": "RG479",
+    "label": "Registration permit RG479 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "RG480",
+    "label": "Registration permit RG480 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 294,
+    "harvest": 133,
+    "successPct": 45.2
+   },
+   {
+    "unit": "8",
+    "huntCode": "RG488",
+    "label": "Registration permit RG488 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 16,
+    "harvest": 3,
+    "successPct": 18.8
+   },
+   {
+    "unit": "8",
+    "huntCode": "RG489",
+    "label": "Registration permit RG489 — mountain goat, Unit 8 (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "11",
+    "huntCode": "RG580",
+    "label": "Registration permit RG580 — mountain goat, Units 11, 13D (RY2025)",
+    "hunters": 23,
+    "harvest": 10,
+    "successPct": 43.5
+   },
+   {
+    "unit": "14C",
+    "huntCode": "RG868",
+    "label": "Registration permit RG868 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 14,
+    "harvest": 3,
+    "successPct": 21.4
+   },
+   {
+    "unit": "14C",
+    "huntCode": "RG869",
+    "label": "Registration permit RG869 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 38,
+    "harvest": 10,
+    "successPct": 26.3
+   },
+   {
+    "unit": "14C",
+    "huntCode": "RG878",
+    "label": "Registration permit RG878 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 9,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "14C",
+    "huntCode": "RG879",
+    "label": "Registration permit RG879 — mountain goat, Unit 14C (RY2025)",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25.0
+   }
+  ],
+  "BISON": [
+   {
+    "unit": "19C",
+    "huntCode": "DI351",
+    "label": "Drawing permit DI351 — bison, Unit 19C (RY2025)",
+    "hunters": 9,
+    "harvest": 8,
+    "successPct": 88.9
+   },
+   {
+    "unit": "19C",
+    "huntCode": "DI352",
+    "label": "Drawing permit DI352 — bison, Unit 19C (RY2025)",
+    "hunters": 5,
+    "harvest": 5,
+    "successPct": 100.0
+   },
+   {
+    "unit": "20D",
+    "huntCode": "DI403",
+    "label": "Drawing permit DI403 — bison, Unit 20D (RY2025)",
+    "hunters": 30,
+    "harvest": 26,
+    "successPct": 86.7
+   },
+   {
+    "unit": "11",
+    "huntCode": "DI454",
+    "label": "Drawing permit DI454 — bison, Unit 11 (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   }
+  ],
+  "MUSKOX": [
+   {
+    "unit": "18",
+    "huntCode": "DX001",
+    "label": "Drawing permit DX001 — muskox, Unit 18 (RY2025)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "DX003",
+    "label": "Drawing permit DX003 — muskox, Unit 18 (RY2025)",
+    "hunters": 37,
+    "harvest": 37,
+    "successPct": 100.0
+   },
+   {
+    "unit": "26B",
+    "huntCode": "DX112",
+    "label": "Drawing permit DX112 — muskox, Unit 26B (RY2025)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "RX060",
+    "label": "Registration permit RX060 — muskox, Unit 18 (RY2025)",
+    "hunters": 4,
+    "harvest": 4,
+    "successPct": 100.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "RX061",
+    "label": "Registration permit RX061 — muskox, Unit 18 (RY2025)",
+    "hunters": 35,
+    "harvest": 35,
+    "successPct": 100.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "RX070",
+    "label": "Registration permit RX070 — muskox, Unit 18 (RY2025)",
+    "hunters": 16,
+    "harvest": 16,
+    "successPct": 100.0
+   },
+   {
+    "unit": "18",
+    "huntCode": "RX071",
+    "label": "Registration permit RX071 — muskox, Unit 18 (RY2025)",
+    "hunters": 16,
+    "harvest": 16,
+    "successPct": 100.0
+   },
+   {
+    "unit": "26B",
+    "huntCode": "RX110",
+    "label": "Registration permit RX110 — muskox, Unit 26B (RY2025)",
+    "hunters": 1,
+    "harvest": 0,
+    "successPct": 0.0
+   }
+  ],
+  "ELK": [
+   {
+    "unit": "3",
+    "huntCode": "DE318",
+    "label": "Drawing permit DE318 — elk, Unit 3 (RY2025)",
+    "hunters": 9,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "3",
+    "huntCode": "DE321",
+    "label": "Drawing permit DE321 — elk, Unit 3 (RY2025)",
+    "hunters": 16,
+    "harvest": 2,
+    "successPct": 12.5
+   },
+   {
+    "unit": "3",
+    "huntCode": "DE323",
+    "label": "Drawing permit DE323 — elk, Unit 3 (RY2025)",
+    "hunters": 14,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "3",
+    "huntCode": "DE324",
+    "label": "Drawing permit DE324 — elk, Unit 3 (RY2025)",
+    "hunters": 1,
+    "harvest": 1,
+    "successPct": 100.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE702",
+    "label": "Drawing permit DE702 — elk, Unit 8 (RY2025)",
+    "hunters": 4,
+    "harvest": 1,
+    "successPct": 25.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE704",
+    "label": "Drawing permit DE704 — elk, Unit 8 (RY2025)",
+    "hunters": 5,
+    "harvest": 3,
+    "successPct": 60.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE706",
+    "label": "Drawing permit DE706 — elk, Unit 8 (RY2025)",
+    "hunters": 5,
+    "harvest": 2,
+    "successPct": 40.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE711",
+    "label": "Drawing permit DE711 — elk, Unit 8 (RY2025)",
+    "hunters": 9,
+    "harvest": 6,
+    "successPct": 66.7
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE713",
+    "label": "Drawing permit DE713 — elk, Unit 8 (RY2025)",
+    "hunters": 47,
+    "harvest": 13,
+    "successPct": 27.7
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE715",
+    "label": "Drawing permit DE715 — elk, Unit 8 (RY2025)",
+    "hunters": 36,
+    "harvest": 16,
+    "successPct": 44.4
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE717",
+    "label": "Drawing permit DE717 — elk, Unit 8 (RY2025)",
+    "hunters": 31,
+    "harvest": 18,
+    "successPct": 58.1
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE721",
+    "label": "Drawing permit DE721 — elk, Unit 8 (RY2025)",
+    "hunters": 17,
+    "harvest": 4,
+    "successPct": 23.5
+   },
+   {
+    "unit": "8",
+    "huntCode": "DE723",
+    "label": "Drawing permit DE723 — elk, Unit 8 (RY2025)",
+    "hunters": 15,
+    "harvest": 8,
+    "successPct": 53.3
+   },
+   {
+    "unit": "3",
+    "huntCode": "RE325",
+    "label": "Registration permit RE325 — elk, Unit 3 (RY2025)",
+    "hunters": 23,
+    "harvest": 0,
+    "successPct": 0.0
+   },
+   {
+    "unit": "8",
+    "huntCode": "RE706",
+    "label": "Registration permit RE706 — elk, Unit 8 (RY2025)",
+    "hunters": 19,
+    "harvest": 5,
+    "successPct": 26.3
+   },
+   {
+    "unit": "8",
+    "huntCode": "RE752",
+    "label": "Registration permit RE752 — elk, Unit 8 (RY2025)",
+    "hunters": 7,
+    "harvest": 2,
+    "successPct": 28.6
+   },
+   {
+    "unit": "8",
+    "huntCode": "RE755",
+    "label": "Registration permit RE755 — elk, Unit 8 (RY2025)",
+    "hunters": 60,
+    "harvest": 20,
+    "successPct": 33.3
+   },
+   {
+    "unit": "8",
+    "huntCode": "RE756",
+    "label": "Registration permit RE756 — elk, Unit 8 (RY2025)",
+    "hunters": 7,
+    "harvest": 6,
+    "successPct": 85.7
+   }
+  ]
+ }
+}

@@ -15,6 +15,7 @@ export type DrawRow = {
   tags?: number | null;      // total tags when not split by residency
   applicants?: number | null; // total applicants when not split by residency
   otc?: boolean;             // general / over-the-counter season, no draw (e.g. WA general GMUs)
+  openTo?: 'resident' | 'nonresident'; // hunt limited to one residency (e.g. AK resident-only seasons)
   draw: {
     resident: DrawStat | null;
     nonresident: DrawStat | null;

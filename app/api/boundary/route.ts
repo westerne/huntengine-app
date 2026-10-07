@@ -264,8 +264,23 @@ const ODFW_WMU: Source = {
   labelField: 'UNIT_NAME',
 };
 
+// Alaska (ADF&G) — game management subunits, SubLabel as written ("13A", "7").
+const ADFG_GMU: Source = {
+  url: 'https://gis.adfg.alaska.gov/ags/rest/services/wc_public/GMUSubunits/FeatureServer/4/query',
+  unitField: 'SubLabel',
+  numeric: false,
+  outFields: 'SubLabel',
+  labelField: 'SubLabel',
+  namedUnits: true,
+  whereFor: (u) => `UPPER(SubLabel)='${u}'`,
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
+  if (x.includes('DALL')) return 'DALLSHEEP';
+  if (x.includes('CARIBOU')) return 'CARIBOU';
+  if (x.includes('BISON')) return 'BISON';
+  if (x.includes('MUSK')) return 'MUSKOX';
   if (x.includes('ELK')) return 'ELK';
   if (x.includes('ANTELOPE') || x.includes('PRONGHORN')) return 'ANTELOPE';
   if (x.includes('MOOSE')) return 'MOOSE';
@@ -287,6 +302,7 @@ function resolveSource(state: string, species: string, unit?: string): Source | 
   if (state === 'NV') return NDOW_UNITS;
   if (state === 'OK') return speciesKey(species) === 'ANTELOPE' ? ODWC_COUNTY : ODWC_WMA;
   if (state === 'WA') return waSource(unit ?? '');
+  if (state === 'AK') return ADFG_GMU;
   if (state === 'OR') return /^\d+$/.test((unit ?? '').trim()) ? ODFW_WMU : null;
   if (state === 'CA') return speciesKey(species) === 'DEER' ? caDeerSource(unit ?? '') : CA_SOURCES[speciesKey(species)] ?? null;
   return null;

@@ -10,7 +10,9 @@ export type StateCode =
   | 'SD' | 'NE' | 'KS' | 'ND' | 'OK'
   | 'AK';
 
-export type SpeciesKey = 'DEER' | 'ELK' | 'ANTELOPE' | 'MOOSE' | 'BIGHORNSHEEP' | 'MTNGOAT';
+export type SpeciesKey = 'DEER' | 'ELK' | 'ANTELOPE' | 'MOOSE' | 'BIGHORNSHEEP' | 'MTNGOAT'
+  // Alaska only
+  | 'CARIBOU' | 'DALLSHEEP' | 'BISON' | 'MUSKOX';
 
 export type Residency = 'resident' | 'nonresident';
 
@@ -65,6 +67,7 @@ export type Hunt = {
   // approximate, and must be presented as such.
   dataQuality: 'official' | 'estimated';
   otc?: boolean;                // general / over-the-counter, no draw
+  openTo?: Residency;           // only residents (or only non-residents) may hunt it
   tags?: number | null;         // total licenses, when not split by residency
   applicants?: number | null;   // total first-choice applicants, when not split
   draw: {
