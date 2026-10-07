@@ -272,6 +272,7 @@ export default function App() {
               drawReality={state.drawReality}
               actionPlan={state.actionPlan}
               stateCode={profile.states[0]}
+              species={profile.species}
               drawableCount={state.drawableUnits.length}
               onLearnMore={briefFor}
               onShowDrawable={() => setState((s) => ({ ...s, showDrawablePanel: true }))}

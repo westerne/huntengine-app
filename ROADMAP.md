@@ -151,6 +151,17 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [x] Printable hunt packet: plan, gear checklist, dates, official links, emergency fill-ins; "not an offline navigation map" at the top; no coordinates
 - [ ] Use lessons in Find a Hunt results too (needs the planner to read the account)
 
+## My Hunt Calendar (built 2026-10-07; spec: docs/SPEC_HUNT_CALENDAR.md)
+
+- [x] 5-year calendar: draw targets, bucket list, OTC options; this season's to-dos first; "Add to My Season" hands off to the application workflow
+- [x] Points ledger projected per year; draw outlooks (points last needed vs. yours; chance within 5 years)
+- [x] Guided setup ("Start planning") builds a starting calendar from the draw data; spreadsheet import as an option
+- [x] Compare 2–4 hunts: one recommendation with tradeoffs (incl. public land), reliability of each state's odds, your notes; from the calendar, Find a Hunt or a hunt picker
+- [ ] Email reminders for deadlines and draw results
+- [ ] Unit deep dive after drawing (web research; never relays spots)
+- [ ] Fees and license prerequisites per state (agency sources), so cost can show
+- [ ] Partner / party applications
+
 ## Phase 3: Application season (January – June 2027)
 
 - [x] **Batches B and C** live (2026-10-07): KS, ND, NV, then OK, CA, WA, OR, SD. 16 of 17 states; Alaska is Batch D.

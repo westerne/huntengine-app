@@ -10,7 +10,7 @@ import { KIND_LABEL, PLAN_KINDS, type Outlook, type PlanItem, type PlanKind, typ
 import { huntTitle } from '@/lib/huntName';
 import { STATES, speciesFor } from '../planner/constants';
 
-export type CalItem = PlanItem & { outlook: Outlook; huntLabel: string | null; residency: 'resident' | 'nonresident' };
+export type CalItem = PlanItem & { outlook: Outlook; huntLabel: string | null; residency: 'resident' | 'nonresident'; compareKey: string | null };
 export type LedgerRow = {
   state: string; species: string; current: number | null; usesPoints: boolean; live: boolean;
   byYear: Record<number, number> | null;
@@ -35,7 +35,7 @@ function OutlookLine({ o }: { o: Outlook }) {
   return <p className={`text-xs mt-1 ${cls}`}>{o.text}</p>;
 }
 
-function ItemCard({ item, years, thisYear, onError }: { item: CalItem; years: number[]; thisYear: number; onError: (e: string) => void }) {
+function ItemCard({ item, years, thisYear, onError, picked, onPick }: { item: CalItem; years: number[]; thisYear: number; onError: (e: string) => void; picked: boolean; onPick: (k: string) => void }) {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const act = async (fn: () => Promise<unknown>) => {
@@ -66,6 +66,11 @@ function ItemCard({ item, years, thisYear, onError }: { item: CalItem; years: nu
               ? <Link href={`/season/${item.saved_hunt_id}`} className="text-amber-500 text-[10px] font-black uppercase tracking-widest hover:text-amber-400">In My Season →</Link>
               : <button type="button" disabled={busy} onClick={() => act(() => send(`/api/plan-items/${item.id}/to-season`, 'POST'))}
                   className="bg-amber-600 text-white px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-amber-500 disabled:opacity-50">Add to My Season</button>
+          )}
+          {item.compareKey && (
+            <label className="flex items-center gap-1 text-zinc-400 text-[10px] font-black uppercase tracking-widest cursor-pointer">
+              <input type="checkbox" checked={picked} onChange={() => onPick(item.compareKey!)} className="accent-amber-600" />Compare
+            </label>
           )}
           <button type="button" disabled={busy} aria-label={`Remove ${item.state} ${item.species}`}
             onClick={() => window.confirm('Remove this from your calendar?') && act(() => send(`/api/plan-items/${item.id}`, 'DELETE'))}
@@ -179,6 +184,8 @@ export default function CalendarView({ years, items, ledger, flags, homeState, h
   const router = useRouter();
   const [adding, setAdding] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [picked, setPicked] = useState<string[]>([]);
+  const onPick = (k: string) => setPicked((p) => (p.includes(k) ? p.filter((x) => x !== k) : [...p, k].slice(-4)));
   const thisYear = years[0];
   const inWindow = (i: CalItem) => i.target_year != null && years.includes(i.target_year);
   const unplaced = items.filter((i) => !inWindow(i));
@@ -240,7 +247,7 @@ export default function CalendarView({ years, items, ledger, flags, homeState, h
               <section key={y} aria-labelledby={`y-${y}`} className="space-y-3">
                 <h2 id={`y-${y}`} className="text-xl font-black italic text-white">{y}{y === thisYear ? <span className="text-amber-500 text-xs not-italic ml-2 uppercase tracking-widest">this season</span> : null}</h2>
                 {f.map((x, i) => <p key={i} className={`text-xs ${x.level === 'warn' ? 'text-amber-300' : 'text-zinc-500'}`}>{x.level === 'warn' ? '⚠ ' : ''}{x.text}</p>)}
-                {list.length > 0 && <ul className="space-y-2">{list.map((i) => <ItemCard key={i.id} item={i} years={years} thisYear={thisYear} onError={setError} />)}</ul>}
+                {list.length > 0 && <ul className="space-y-2">{list.map((i) => <ItemCard key={i.id} item={i} years={years} thisYear={thisYear} onError={setError} picked={!!i.compareKey && picked.includes(i.compareKey)} onPick={onPick} />)}</ul>}
               </section>
             );
           })}
@@ -249,10 +256,19 @@ export default function CalendarView({ years, items, ledger, flags, homeState, h
             <section aria-labelledby="unplaced-h" className="space-y-3">
               <h2 id="unplaced-h" className="text-[11px] uppercase text-zinc-400 font-black tracking-widest">Not on a year yet</h2>
               <p className="text-zinc-500 text-xs">Bucket-list hunts and OTC options to fit in. Pick a year to place one.</p>
-              <ul className="space-y-2">{unplaced.map((i) => <ItemCard key={i.id} item={i} years={years} thisYear={thisYear} onError={setError} />)}</ul>
+              <ul className="space-y-2">{unplaced.map((i) => <ItemCard key={i.id} item={i} years={years} thisYear={thisYear} onError={setError} picked={!!i.compareKey && picked.includes(i.compareKey)} onPick={onPick} />)}</ul>
             </section>
           )}
         </>
+      )}
+
+      {picked.length > 0 && (
+        <div className="sticky bottom-4 z-30 flex justify-center">
+          <Link href={`/compare?h=${picked.map(encodeURIComponent).join(',')}`}
+            className={`px-5 py-3 rounded-full text-[11px] font-black uppercase tracking-widest shadow-xl ${picked.length > 1 ? 'bg-amber-600 text-white hover:bg-amber-500' : 'bg-zinc-800 text-zinc-400 pointer-events-none'}`}>
+            {picked.length > 1 ? `Compare ${picked.length} hunts →` : 'Pick one more to compare'}
+          </Link>
+        </div>
       )}
 
       <Ledger rows={ledger} years={years} />

@@ -68,6 +68,7 @@ export type Hunt = {
   dataQuality: 'official' | 'estimated';
   otc?: boolean;                // general / over-the-counter, no draw
   openTo?: Residency;           // only residents (or only non-residents) may hunt it
+  season?: { open: string; close: string }; // ISO dates, when the agency publishes them with the draw data
   tags?: number | null;         // total licenses, when not split by residency
   applicants?: number | null;   // total first-choice applicants, when not split
   draw: {

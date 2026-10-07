@@ -7,6 +7,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { huntTitle } from '@/lib/huntName';
+import { speciesKeyOf } from '@/lib/species';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Rec = any;
@@ -77,6 +78,7 @@ export default function ScoutResults({
   onShowDrawable,
   searchSummary,
   save,
+  species,
 }: {
   recommendations: Rec[];
   drawReality: any | null;
@@ -87,6 +89,7 @@ export default function ScoutResults({
   onShowDrawable: () => void;
   searchSummary: ReactNode;
   save?: SaveProps;
+  species?: string;
 }) {
   const [lead, ...rest] = recommendations;
   const alternatives = rest.slice(0, 3);
@@ -111,6 +114,14 @@ export default function ScoutResults({
             {actionPlan?.headline || `Apply for ${huntName(lead)}`}
           </h2>
           {drawReality?.summary && <p className="text-zinc-300 text-sm leading-relaxed mt-3">{drawReality.summary}</p>}
+          {save && species && speciesKeyOf(species, stateCode) && (
+            <Link
+              href={`/compare?h=${[lead, ...alternatives].filter((r) => r.huntCode).slice(0, 4).map((r) => encodeURIComponent(`${stateCode}~${speciesKeyOf(species, stateCode)}~${r.huntCode}`)).join(',')}`}
+              className="inline-block mt-4 text-amber-500 text-[11px] font-black uppercase tracking-widest hover:text-amber-400"
+            >
+              Compare these side by side →
+            </Link>
+          )}
         </div>
 
         <div className="px-6 md:px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-5 border-b border-zinc-800">

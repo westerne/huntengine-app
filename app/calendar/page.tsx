@@ -63,7 +63,7 @@ export default async function CalendarPage() {
     if (!mod) outlook = { kind: 'none', text: `We don't have ${i.state} draw data.` };
     else if (!hunt && i.kind === 'otc') outlook = { kind: 'otc', text: 'Over-the-counter option.' };
     else outlook = drawOutlook(hunt, residencyFor(i.state), years, projections.get(pairKey(i.state, i.species)) ?? null);
-    return { ...i, outlook, huntLabel: hunt?.label ?? null, residency: residencyFor(i.state) };
+    return { ...i, outlook, huntLabel: hunt?.label ?? null, residency: residencyFor(i.state), compareKey: hunt ? `${hunt.state}~${hunt.species}~${hunt.huntCode}` : null };
   });
 
   return (
