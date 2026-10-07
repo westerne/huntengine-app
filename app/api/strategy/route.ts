@@ -13,6 +13,8 @@ import { buildScoutPrompt, ScoutPromptParams } from './promptBuilder';
 import { WYOMING_ANTELOPE_UNITS } from './wyoantelopedata';
 import { buildWyomingAntelopeScoutDataset } from './wyoantelopeScoutAdapter';
 import { hasValidBetaAccess } from '@/lib/betaAccess';
+import { getViewer } from '@/lib/membership';
+import { accountsEnabled } from '@/lib/supabase/config';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
@@ -105,11 +107,17 @@ export async function POST(req: Request) {
         { status: 429, headers: { 'Retry-After': String(rl.retryAfterSec) } }
       );
     }
+    // Access: a valid beta code (until launch) or an active member.
     if (!hasValidBetaAccess(req)) {
-      return NextResponse.json(
-        { error: 'Invalid or missing beta access code.' },
-        { status: 401 }
-      );
+      const viewer = await getViewer();
+      if (!viewer.member) {
+        return NextResponse.json(
+          { error: accountsEnabled()
+              ? (viewer.userId ? 'An active HuntQuarters membership is required.' : 'Sign in to continue.')
+              : 'Invalid or missing beta access code.' },
+          { status: viewer.userId ? 402 : 401 }
+        );
+      }
     }
 
     const { mode, formData, context = '' } = await req.json();

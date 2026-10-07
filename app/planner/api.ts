@@ -14,6 +14,7 @@ export function betaHeaders(): Record<string, string> {
 
 export function messageForStatus(status: number): string {
   if (status === 401) return 'Invalid beta access code — please re-enter it.';
+  if (status === 402) return 'An active HuntQuarters membership is required.';
   if (status === 429) return 'Too many requests — please wait a few minutes and try again.';
   return 'Engine error during analysis. Please try again.';
 }

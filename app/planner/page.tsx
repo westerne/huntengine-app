@@ -18,6 +18,9 @@ import PlanSteps from './PlanSteps';
 import ScoutResults from './ScoutResults';
 import SearchSummary from './SearchSummary';
 import BriefView, { BRIEF_TABS } from './BriefView';
+import AccountGate from './AccountGate';
+import { accountsEnabled } from '@/lib/supabase/config';
+import { pointsFor, prefillFromAccount, savePayload, type Me } from './account';
 
 const isBriefTab = (s: FlowStep): s is (typeof BRIEF_TABS)[number] => (BRIEF_TABS as readonly string[]).includes(s);
 
@@ -29,13 +32,32 @@ export default function App() {
   const updateProfile = (patch: Partial<Profile>) => setState((s) => ({ ...s, profile: { ...s.profile, ...patch } }));
   const goTo = (step: FlowStep) => setState((s) => ({ ...s, step }));
 
-  // ─── Beta access gate ──────────────────────────────────────────────────────
+  // ─── Access: accounts (when Supabase is configured) or the beta code ──────
+  const accounts = accountsEnabled();
+  const [me, setMe] = useState<Me | null>(null);
   const [betaReady, setBetaReady] = useState(false);
   useEffect(() => {
     try {
       if ((sessionStorage.getItem(BETA_KEY) || '').trim()) setBetaReady(true);
     } catch {}
+    if (!accounts) return;
+    fetch('/api/me').then((r) => r.json()).then((m: Me) => {
+      setMe(m);
+      // Members: fill the questionnaire from their saved profile and points.
+      if (m.accounts && m.member) setState((s) => ({ ...s, profile: prefillFromAccount(s.profile, m) }));
+    }).catch(() => setMe({ accounts: true, signedIn: false, member: false }));
+    // Deep links from My Season: /planner?start=find | tag
+    const start = new URLSearchParams(window.location.search).get('start');
+    if (start === 'find') setState((s) => ({ ...s, step: 'scout-1', entryMode: 'needs-tag' }));
+    if (start === 'tag') setState((s) => ({ ...s, step: 'plan-1', entryMode: 'has-tag' }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const isMember = !!(me && me.accounts && me.member);
+  // A member's saved points follow the species they pick.
+  useEffect(() => {
+    if (me && me.accounts && me.member) updateProfile({ points: pointsFor(me.points, profile.species) });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profile.species]);
   const enterBeta = (code: string) => {
     try { sessionStorage.setItem(BETA_KEY, code); } catch {}
     setState((s) => ({ ...s, error: null }));
@@ -126,6 +148,27 @@ export default function App() {
     }
   };
 
+  // ─── Save to My Season ─────────────────────────────────────────────────────
+  // Saved state per card, keyed by hunt code (or unit), so a card shows
+  // "Saved" and links to the existing record instead of saving twice.
+  const [saved, setSaved] = useState<Record<string, { id?: string; busy?: boolean; error?: string }>>({});
+  const saveKey = (rec: any) => String(rec.huntCode ?? rec.unit ?? '');
+  const saveHunt = async (rec: any, extra: { status?: string; source?: string } = {}) => {
+    const key = saveKey(rec);
+    setSaved((m) => ({ ...m, [key]: { busy: true } }));
+    try {
+      const res = await fetch('/api/hunts', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(savePayload(rec, profile, extra)),
+      });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || 'Could not save.');
+      setSaved((m) => ({ ...m, [key]: { id: j.hunt?.id } }));
+    } catch (e) {
+      setSaved((m) => ({ ...m, [key]: { error: e instanceof Error ? e.message : 'Could not save.' } }));
+    }
+  };
+
   // Brief for a specific hunt picked off the results or the drawable panel.
   const briefFor = (rec: any) =>
     handlePlanSubmit({ ...profile, unit: rec.unit, huntCode: rec.huntCode, selectedState: rec.state || profile.states[0] });
@@ -150,7 +193,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-amber-500/30">
-      {!betaReady && <BetaGate error={state.error} onEnter={enterBeta} />}
+      {accounts
+        ? me && !isMember && !betaReady && <AccountGate signedIn={me.accounts && me.signedIn} />
+        : !betaReady && <BetaGate error={state.error} onEnter={enterBeta} />}
 
       {state.loading && (
         <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-6 text-center" role="status" aria-live="polite">
@@ -223,6 +268,7 @@ export default function App() {
               onLearnMore={briefFor}
               onShowDrawable={() => setState((s) => ({ ...s, showDrawablePanel: true }))}
               searchSummary={<SearchSummary profile={profile} flags={flags} />}
+              save={isMember ? { state: saved, keyOf: saveKey, onSave: (rec) => saveHunt(rec) } : undefined}
             />
           </div>
         )}
@@ -235,6 +281,10 @@ export default function App() {
             huntPlan={state.huntPlan}
             gearList={state.gearList}
             map={{ unit: state.planUnit, state: state.planState, species: state.planSpecies }}
+            save={isMember && state.entryMode === 'has-tag' ? {
+              saved: saved[state.planUnit],
+              onSave: () => saveHunt({ unit: state.planUnit, state: state.planState }, { status: 'tag_secured', source: 'has_tag' }),
+            } : undefined}
           />
         )}
       </div>

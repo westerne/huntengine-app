@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import type { FlowStep } from './types';
 
 // Leaflet touches `window`, so load the map client-side only.
@@ -23,7 +24,7 @@ type BriefTab = (typeof BRIEF_TABS)[number];
 const asList = (v: any): any[] => (Array.isArray(v) ? v : typeof v === 'object' && v !== null ? Object.values(v) : []);
 
 export default function BriefView({
-  tab, onTab, unitBrief, huntPlan, gearList, map,
+  tab, onTab, unitBrief, huntPlan, gearList, map, save,
 }: {
   tab: BriefTab;
   onTab: (t: FlowStep) => void;
@@ -31,6 +32,7 @@ export default function BriefView({
   huntPlan: any;
   gearList: any;
   map: { unit: string; state: string; species: string };
+  save?: { saved?: { id?: string; busy?: boolean; error?: string }; onSave: () => void };
 }) {
   return (
     <div className="max-w-4xl mx-auto space-y-10 animate-in fade-in duration-1000 text-left">
@@ -41,6 +43,18 @@ export default function BriefView({
           </button>
         ))}
       </div>
+      {save && (
+        <div className="flex justify-center">
+          {save.saved?.id ? (
+            <Link href={`/season/${save.saved.id}`} className="text-green-400 text-[11px] font-black uppercase tracking-widest">✓ Saved to My Season as Tag secured — open it</Link>
+          ) : (
+            <button type="button" disabled={save.saved?.busy} onClick={save.onSave} className="bg-amber-600 text-white px-6 py-3 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px] disabled:opacity-50">
+              {save.saved?.busy ? 'Saving…' : 'Save this tag to My Season'}
+            </button>
+          )}
+          {save.saved?.error && <p role="alert" className="text-red-400 text-xs ml-3">{save.saved.error}</p>}
+        </div>
+      )}
       <h2 className="text-4xl font-black italic uppercase border-l-8 border-amber-600 pl-8 leading-none">
         {tab === 'unit-brief' ? 'Unit Visualization' : tab.replace('-', ' ')}
       </h2>

@@ -5,6 +5,7 @@
 // search details one click away. Labels are plain words, never color alone.
 
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Rec = any;
@@ -35,6 +36,28 @@ function TierTag({ tier }: { tier: string }) {
   return <span className={`text-[10px] font-black uppercase tracking-widest ${t.color}`}>{t.label}</span>;
 }
 
+type SaveProps = {
+  state: Record<string, { id?: string; busy?: boolean; error?: string }>;
+  keyOf: (rec: Rec) => string;
+  onSave: (rec: Rec) => void;
+};
+
+// "Save to My Season" — becomes a link to the saved record once saved.
+function SaveButton({ rec, save }: { rec: Rec; save?: SaveProps }) {
+  if (!save) return null;
+  const s = save.state[save.keyOf(rec)];
+  if (s?.id) return <Link href={`/season/${s.id}`} className="text-green-400 text-[10px] font-black uppercase tracking-widest hover:text-green-300">✓ Saved — open in My Season</Link>;
+  return (
+    <span className="inline-flex flex-col">
+      <button type="button" disabled={s?.busy} onClick={() => save.onSave(rec)}
+        className="text-amber-500 text-[10px] font-black uppercase tracking-widest hover:text-amber-400 disabled:opacity-50">
+        {s?.busy ? 'Saving…' : '+ Save to My Season'}
+      </button>
+      {s?.error && <span role="alert" className="text-red-400 text-[10px] mt-1">{s.error}</span>}
+    </span>
+  );
+}
+
 function Fact({ label, value, accent }: { label: string; value: ReactNode; accent?: string }) {
   return (
     <div>
@@ -53,6 +76,7 @@ export default function ScoutResults({
   onLearnMore,
   onShowDrawable,
   searchSummary,
+  save,
 }: {
   recommendations: Rec[];
   drawReality: any | null;
@@ -62,6 +86,7 @@ export default function ScoutResults({
   onLearnMore: (rec: Rec) => void;
   onShowDrawable: () => void;
   searchSummary: ReactNode;
+  save?: SaveProps;
 }) {
   const [lead, ...rest] = recommendations;
   const alternatives = rest.slice(0, 3);
@@ -113,12 +138,15 @@ export default function ScoutResults({
             </div>
           )}
 
-          <button
-            onClick={() => onLearnMore(lead)}
-            className="w-full md:w-auto px-8 bg-amber-600 text-white py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px] shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
-          >
-            Get the unit brief
-          </button>
+          <div className="flex flex-col md:flex-row md:items-center gap-4">
+            <button
+              onClick={() => onLearnMore(lead)}
+              className="w-full md:w-auto px-8 bg-amber-600 text-white py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px] shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+            >
+              Get the unit brief
+            </button>
+            <SaveButton rec={lead} save={save} />
+          </div>
         </div>
       </section>
 
@@ -136,6 +164,7 @@ export default function ScoutResults({
                 <div className="flex-1">
                   <p className="text-green-400 text-sm font-bold">{rec.currentOdds}</p>
                   {rec.whyItFits && <p className="text-zinc-400 text-xs mt-1 leading-relaxed">{rec.whyItFits}</p>}
+                  <div className="mt-2"><SaveButton rec={rec} save={save} /></div>
                 </div>
                 <button
                   onClick={() => onLearnMore(rec)}
@@ -177,9 +206,12 @@ export default function ScoutResults({
               </div>
               {rec.whyItFits && <p className="text-zinc-300 text-sm leading-relaxed">{rec.whyItFits}</p>}
               {rec.tradeoffs && <p className="text-zinc-500 text-xs mt-2 italic border-l-2 border-zinc-700 pl-3">{rec.tradeoffs}</p>}
-              <button onClick={() => onLearnMore(rec)} className="mt-4 text-amber-500 text-[10px] font-black uppercase tracking-widest hover:text-amber-400">
-                Get the unit brief →
-              </button>
+              <div className="mt-4 flex flex-wrap gap-6">
+                <button onClick={() => onLearnMore(rec)} className="text-amber-500 text-[10px] font-black uppercase tracking-widest hover:text-amber-400">
+                  Get the unit brief →
+                </button>
+                <SaveButton rec={rec} save={save} />
+              </div>
             </div>
           ))}
         </div>
