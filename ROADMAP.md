@@ -132,6 +132,14 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [x] Point-building tasks kept separate from hunts; in-app reminders in My Season "Next up" (overdue first)
 - [ ] Re-check applications.json as states publish 2027 dates (Dec–Feb)
 
+## Milestone 3: Hunt prep (built 2026-10-07)
+
+- [x] "Your Hunt Plan" on hunts with a tag secured: real dates, days, weapon, party, camp, fitness, limitations, scouting time, familiarity, goals (prefilled from the search and profile)
+- [x] Nine sections grounded in the hunt's agency harvest figure, sampled public land and OSM access; gear list → prep checklist
+- [x] Per-section edits; regenerating adds a version and never overwrites edits; version switcher
+- [x] Guardrails: no animal locations, no legal-access claims, no business/emergency contacts (phone numbers stripped server-side), no invented regulations
+- [ ] Printable hunt packet (Milestone 4)
+
 ## Phase 3: Application season (January – June 2027)
 
 - [ ] **Batches B and C**, each going live ahead of its deadlines.
