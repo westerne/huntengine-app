@@ -204,6 +204,43 @@ const ODWC_WMA: Source = {
   namedUnits: true,
   whereFor: (u) => `UPPER(SHORTNAME)='${ODWC_WMA_ALIAS[u] ?? u.replace(/ WMA$/, '')}'`,
 };
+// Oklahoma hunt areas outside ODWC's WMA layer (lib/huntdata/draw/gaps-research.md):
+// national wildlife refuges (USFWS), Army Corps lakes (USACE Tulsa District fee
+// land — the whole lake's land, not just the hunted part) and military sites (DoD
+// via USDOT/BTS). Keys are the unit as the route cleans it (upper case, no punctuation).
+const fixedWhere = (url: string, field: string, where: string): Source => ({
+  url, unitField: field, numeric: false, outFields: field, labelField: field, namedUnits: true, whereFor: () => where,
+});
+const FWS = 'https://services.arcgis.com/QVENGdaPbd4LUkLV/arcgis/rest/services/National_Wildlife_Refuge_System_Boundaries/FeatureServer/0/query';
+const USACE = 'https://services8.arcgis.com/GvI5dZtQIoT0Fznq/arcgis/rest/services/SiteAreaFee/FeatureServer/1/query';
+const DOD = 'https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_Military_Bases/FeatureServer/0/query';
+const refuge = (name: string) => fixedWhere(FWS, 'ORGNAME', `ORGNAME='${name}'`);
+const lake = (...ids: string[]) => fixedWhere(USACE, 'sdsFeatureName', `projID IN (${ids.map((i) => `'${i}'`).join(',')})`);
+const base = (name: string) => fixedWhere(DOD, 'siteName', `siteName='${name}' AND stateNameCode='ok'`);
+const OK_OTHER: Record<string, Source> = {
+  'WICHITA MOUNTAINS NWR': refuge('WICHITA MOUNTAINS WILDLIFE REFUGE'),
+  'DEEP FORK NWR': refuge('DEEP FORK NATIONAL WILDLIFE REFUGE'),
+  'LITTLE RIVER NWR': refuge('LITTLE RIVER NATIONAL WILDLIFE REFUGE'),
+  'SALT PLAINS NWR': refuge('SALT PLAINS NATIONAL WILDLIFE REFUGE'),
+  'SALT PLAINS NWR WILDERNESS AREA': refuge('SALT PLAINS NATIONAL WILDLIFE REFUGE'),   // no sub-area layer
+  'SEQUOYAH NWR': refuge('SEQUOYAH NATIONAL WILDLIFE REFUGE'),
+  'SEQUOYAH NWR REFUGE ISLANDS': refuge('SEQUOYAH NATIONAL WILDLIFE REFUGE'),         // no sub-area layer
+  'TISHOMINGO NWR': refuge('TISHOMINGO NATIONAL WILDLIFE REFUGE'),
+  'WASHITA NWR': refuge('WASHITA NATIONAL WILDLIFE REFUGE'),
+  'KAW LAKE COE': lake('KAW'),
+  'HUGO LAKE COE': lake('HUGO'),
+  'SKIATOOK COE': lake('SKIATO'),
+  'TENKILLER COE': lake('TENKIL'),
+  'TEXOMA COE': lake('TEXOMA'),
+  'WAURIKA LAKE COE': lake('WAURIK'),
+  'OOLOGAH LAKE COE': lake('OOLOGA'),
+  'COPAN COE PARKS': lake('COPAN'),
+  'EUFAULA COE GAINES CREEK': lake('EUFAUL'),
+  'KEYSTONEHEYBURN COE': lake('KEYSTO', 'HEYBUR'),
+  'MCALESTER AAP': base('McAlester Army Ammunition Plant'),
+  'CAMP GRUBER CANTONMENT': base('NG Camp Gruber'),
+};
+
 const ODWC_COUNTY: Source = {
   url: 'https://services1.arcgis.com/jRf8jjFwxedITdFe/arcgis/rest/services/OK77counties/FeatureServer/2/query',
   unitField: 'COUNTY',
@@ -275,6 +312,16 @@ const ADFG_GMU: Source = {
   whereFor: (u) => `UPPER(SubLabel)='${u}'`,
 };
 
+const ODFW_DEER_AREAS: Source = {
+  url: 'https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/MD_HuntAreas/FeatureServer/21/query',
+  unitField: 'HuntArea',
+  numeric: false,
+  outFields: 'HuntArea,HerdRange',
+  labelField: 'HerdRange',
+  namedUnits: true,
+  whereFor: (u) => `HuntArea='${u.replace(/^([A-Z]{2})-?(\d{2})$/, '$1-$2')}'`,
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('DALL')) return 'DALLSHEEP';
@@ -300,10 +347,19 @@ function resolveSource(state: string, species: string, unit?: string): Source | 
   if (state === 'ND') return ND_SOURCES[speciesKey(species)] ?? null;
   if (state === 'KS') return KDWP_DMU;
   if (state === 'NV') return NDOW_UNITS;
-  if (state === 'OK') return speciesKey(species) === 'ANTELOPE' ? ODWC_COUNTY : ODWC_WMA;
+  if (state === 'OK') {
+    const key = (unit ?? '').toUpperCase().replace(/[^A-Z0-9 -]/g, '').replace(/\s+/g, ' ').trim();
+    return OK_OTHER[key] ?? (speciesKey(species) === 'ANTELOPE' ? ODWC_COUNTY : ODWC_WMA);
+  }
   if (state === 'WA') return waSource(unit ?? '');
   if (state === 'AK') return ADFG_GMU;
-  if (state === 'OR') return /^\d+$/.test((unit ?? '').trim()) ? ODFW_WMU : null;
+  if (state === 'OR') {
+    const u = (unit ?? '').trim();
+    if (/^\d+$/.test(u)) return ODFW_WMU;
+    // 2026 eastern Oregon deer hunt areas: "DG02" here, "DG-02" in ODFW's layer.
+    if (/^[A-Z]{2}\d{2}$/i.test(u)) return ODFW_DEER_AREAS;
+    return null;
+  }
   if (state === 'CA') return speciesKey(species) === 'DEER' ? caDeerSource(unit ?? '') : CA_SOURCES[speciesKey(species)] ?? null;
   return null;
 }

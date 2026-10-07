@@ -37,10 +37,21 @@
      "consequence": null,
      "source": "https://wgfd.wyo.gov/media/33697/download?inline=",
      "quote": "Any person harvesting a mountain goat in Wyoming shall within fifteen (15) consecutive days following the harvest present the horns attached to the skull plate for registration."
+    },
+    {
+     "species": [
+      "MOOSE"
+     ],
+     "applies": "Only moose hunters in hunt areas where the Department asks for biological samples; Wyoming's moose regulation has no horn or skull registration like sheep and goat",
+     "type": "mandatory_check",
+     "deadline": null,
+     "consequence": null,
+     "source": "https://wgfd.wyo.gov/media/33696/download?inline=",
+     "quote": "The Department may mandate hunters submit biological samples from harvested moose from designated hunt areas within Wyoming."
     }
    ],
    "reportUrl": "https://wgfd.wyo.gov/hunting-trapping/harvest-reports-surveys",
-   "summary": "Deer, elk and pronghorn hunters only fill out a survey if they are picked and emailed one; there is no penalty. If you take a bighorn sheep or mountain goat, you must bring the horns to a Game and Fish office within 15 days. We could not confirm a moose rule."
+   "summary": "Deer, elk and pronghorn hunters only fill out a survey if they are picked and emailed one; there is no penalty. If you take a bighorn sheep or mountain goat, you must bring the horns to a Game and Fish office within 15 days. Moose have no registration rule, but hunters in some areas may be told to turn in samples."
   },
   "ID": {
    "rules": [
@@ -132,10 +143,32 @@
      "consequence": null,
      "source": "https://cpw.state.co.us/activities/hunting/big-game/hunting-mountain-goat/mountain-goat-field",
      "quote": "Hunters who hunted but did not harvest are still required to submit a completed mandatory report within 30 days after the close of the season."
+    },
+    {
+     "species": [
+      "MOOSE"
+     ],
+     "applies": "Anyone who takes a moose; bring it to CPW in person with the head and antlers attached, the lower jaw and the Mandatory Report Form (cow hunters can bring just an incisor instead of the head)",
+     "type": "mandatory_check",
+     "deadline": "On or before the 5th business day after harvest",
+     "consequence": null,
+     "source": "https://cpw.state.co.us/activities/hunting/big-game/hunting-moose/moose-field",
+     "quote": "Hunters are required to bring their harvest in for inspection on or before the 5th business day after harvest. The hunter must be present at the inspection."
+    },
+    {
+     "species": [
+      "MOOSE"
+     ],
+     "applies": "Moose tag holders who did not hunt or did not harvest",
+     "type": "mandatory_report",
+     "deadline": "Within 30 days after the season closes",
+     "consequence": null,
+     "source": "https://cpw.state.co.us/activities/hunting/big-game/hunting-moose/moose-field",
+     "quote": "If hunters did not hunt and did not harvest, they are still required to submit a completed mandatory report within 30 days after the close of the season."
     }
    ],
    "reportUrl": "https://cpw.state.co.us/activities/hunting/big-game/hunting-bighorn-sheep/bighorn-sheep-field",
-   "summary": "Deer, elk and pronghorn hunters only answer a survey if CPW picks them. Sheep and goat hunters must bring a kill in within 5 working days, and everyone else with a tag must file a report within 30 days after the season. We could not confirm a moose rule. Some rifle elk and deer hunt codes also require CWD head samples."
+   "summary": "Deer, elk and pronghorn hunters only answer a survey if CPW picks them. Moose, sheep and goat hunters must bring a kill in for inspection within 5 business days, and those who don't fill their tag must file a report within 30 days after the season. Some rifle elk and deer hunt codes also require CWD head samples."
   },
   "MT": {
    "rules": [
@@ -336,10 +369,21 @@
      "consequence": null,
      "source": "https://gf.nd.gov/node/7462",
      "quote": "The surveys the Department uses measure unsuccessful hunters directly, and if there is bias from non-reporting, it can be dealt with by measuring the form and extent of non-response, or through statistical procedures (e.g. weighting)."
+    },
+    {
+     "species": [
+      "BIGHORNSHEEP"
+     ],
+     "applies": "Anyone who takes a bighorn sheep; NDGF staff must plug the horns (no deadline is stated)",
+     "type": "mandatory_check",
+     "deadline": null,
+     "consequence": null,
+     "source": "https://gf.nd.gov/regulations/moose-elk-sheep",
+     "quote": "Anyone who harvests a bighorn sheep in North Dakota must have it plugged by North Dakota Game and Fish Department personnel."
     }
    ],
    "reportUrl": "https://gf.nd.gov/regulations/moose-elk-sheep",
-   "summary": "North Dakota elk and moose lottery license holders must report by Jan. 15, 2027, or may lose eligibility for 2027 lotteries. Deer hunters get a survey only. We could not confirm the bighorn sheep or pronghorn rules (the 2026 proclamation PDF is a scanned image)."
+   "summary": "North Dakota elk and moose lottery license holders must report by Jan. 15, 2027, or may lose eligibility for 2027 lotteries. Bighorn sheep must be plugged by Game and Fish staff. Deer hunters get a survey only. The 2026 pronghorn proclamation lists no check-in or report rule."
   },
   "KS": {
    "rules": [
@@ -356,7 +400,7 @@
     }
    ],
    "reportUrl": "https://www.ksoutdoors.gov/licenses-permits-fees/hunting-licenses-permit-fees/e-tagging",
-   "summary": "Kansas antelope hunters must finish an electronic check-in before moving the animal. We could not confirm the elk or deer rules from current official pages because KDWP's regulation PDFs block automated access. Older KDWP material says elk hunters must contact staff within two days, but that is not verified for 2026."
+   "summary": "Kansas antelope hunters must finish an electronic check-in before moving the animal. We found no mandatory check for deer or elk in the Kansas regulations we could read; the current elk rule (amended Dec. 27, 2024) no longer has the old two-day contact rule. KDWP's own pages block automated access, so permit-specific conditions were not checked."
   },
   "NV": {
    "rules": [
@@ -386,10 +430,32 @@
      "consequence": null,
      "source": "https://www.ndow.org/wp-content/uploads/2025/07/CR25-07-2025-2026-and-2026-2027-Big-Game-Seasons.pdf",
      "quote": "A person who harvests a moose shall, within 5 days after harvesting it, personally present the skull and any antlers of the moose, if applicable, to a representative of the Department for inspection"
+    },
+    {
+     "species": [
+      "BIGHORNSHEEP"
+     ],
+     "applies": "Anyone who kills a bighorn ram; bring the skull and horns to NDOW in person so a seal can be plugged into a horn (or an ID number branded on it)",
+     "type": "mandatory_check",
+     "deadline": "Within 5 business days after the kill",
+     "consequence": "It is unlawful to possess or sell ram horns without the seal or branded number",
+     "source": "https://www.leg.state.nv.us/NAC/NAC-502.html#NAC502Sec345",
+     "quote": "A person who kills a ram, regardless of subspecies, shall, within 5 business days after killing it, personally present the skull and horns of the ram to a representative of the Department for inspection."
+    },
+    {
+     "species": [
+      "MTNGOAT"
+     ],
+     "applies": "Anyone who takes a mountain goat; bring the skull, hide and the edible meat (or the carcass) to NDOW in person",
+     "type": "mandatory_check",
+     "deadline": "Within 5 days after harvest",
+     "consequence": null,
+     "source": "https://www.leg.state.nv.us/NAC/NAC-502.html#NAC502Sec364",
+     "quote": "A person who harvests a mountain goat shall, within 5 days after harvesting it, personally present the skull, hide and any edible portion of the animal, or its carcass, to a representative of the Department for inspection."
     }
    ],
    "reportUrl": "https://www.ndowlicensing.com",
-   "summary": "Every Nevada big game tag needs a harvest questionnaire by Jan. 31, even if you didn't hunt. Miss it and you can't apply for that species next year unless you file it and pay $50. Moose must be shown to NDOW within 5 days. We could not confirm the sheep and goat inspection rule."
+   "summary": "Every Nevada big game tag needs a harvest questionnaire by Jan. 31, even if you didn't hunt. Miss it and you can't apply for that species next year unless you file it and pay $50. Moose and mountain goats must be shown to NDOW within 5 days, and bighorn rams within 5 business days so a horn can be sealed."
   },
   "OK": {
    "rules": [
@@ -482,13 +548,35 @@
      "applies": "Every deer, elk and pronghorn tag, even if you didn’t hunt or got nothing (bighorn sheep and mountain goat are not part of this report)",
      "type": "mandatory_report",
      "deadline": "By January 31 for the previous year’s hunts (April 15 for late tags)",
-     "consequence": "A 5 penalty for unreported deer and elk tags, paid when you buy a hunting license two years later",
+     "consequence": "A $25 penalty for unreported deer and elk tags, paid when you buy a hunting license two years later",
      "source": "https://myodfw.com/articles/report-your-hunt",
      "quote": "Every hunter who purchased a deer, elk, cougar, bear, pronghorn or turkey tag needs to report"
+    },
+    {
+     "species": [
+      "BIGHORNSHEEP"
+     ],
+     "applies": "Every bighorn sheep tag holder, successful or not, checks out with the local ODFW district office; if you took a ram, one horn gets a permanent ID pin",
+     "type": "mandatory_check",
+     "deadline": "Within 3 business days after your hunt ends",
+     "consequence": null,
+     "source": "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=2957",
+     "quote": "All hunters are required to arrange check out through the local ODFW District office within three business days of completion of their hunt and schedule having one horn pinned if successful in harvesting a bighorn."
+    },
+    {
+     "species": [
+      "MTNGOAT"
+     ],
+     "applies": "Every mountain goat tag holder, successful or not, checks out with the local ODFW district office; if you took a goat, ODFW inspects it",
+     "type": "mandatory_check",
+     "deadline": "Within 3 business days after your hunt ends",
+     "consequence": null,
+     "source": "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=2957",
+     "quote": "All hunters are required to arrange check out through the local ODFW District office within three business days of completion of their hunt and schedule inspection of the animal if successful in harvesting a Rocky Mountain goat."
     }
    ],
    "reportUrl": "https://myodfw.com/articles/report-your-hunt",
-   "summary": "Every Oregon deer, elk and pronghorn tag needs a hunt report by January 31, even if you didn’t hunt. Missing a deer or elk report costs 5 later. Sheep and goat tags are not part of it; we haven’t verified their check-in rules."
+   "summary": "Every Oregon deer, elk and pronghorn tag needs a hunt report by January 31, even if you didn’t hunt. Missing a deer or elk report costs $25 later. Bighorn sheep and mountain goat hunters must check out with the local ODFW office within 3 business days after the hunt; ODFW pins a ram’s horn or inspects the goat."
   },
   "SD": {
    "rules": [
