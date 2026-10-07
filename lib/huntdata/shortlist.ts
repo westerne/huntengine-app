@@ -19,7 +19,11 @@ const RESTRICTED = /\b(youth|juniors?|ham|champ|challenged|disabled|military|tri
 const ANTLERLESS = /\b(antlerless|cow|doe|ewe)\b/i;
 
 export function oddsOf(e: Entry): number | null {
-  return num(e.drawSuccessAtYourPoints) ?? num(e.drawSuccess);
+  const published = num(e.drawSuccessAtYourPoints) ?? num(e.drawSuccess);
+  if (published != null) return published;
+  // Licenses ÷ applicants when that's all the agency publishes.
+  const tags = num(e.tags), apps = num(e.applicants);
+  return tags != null && apps ? Math.min(100, (100 * tags) / apps) : null;
 }
 
 // Map the planner's "trophy vs opportunity" answer to a goal.

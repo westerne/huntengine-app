@@ -12,7 +12,7 @@ describe('registry', () => {
   });
 
   it('has the live states wired in', () => {
-    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'MT', 'NE', 'NM', 'UT', 'WY']);
+    expect([...LIVE_STATES].sort()).toEqual(['AZ', 'CO', 'ID', 'MT', 'ND', 'NE', 'NM', 'UT', 'WY']);
     for (const c of LIVE_STATES) expect(STATE_INFO[c].status).toBe('live');
   });
 
@@ -526,5 +526,21 @@ describe('weapon from label', () => {
     const rifle = buildGenericScoutDataset(ne, 'DEER', 'nonresident', 'rifle', 0).map((e) => e.huntCode);
     expect(rifle).not.toContain('DEER-STATEWIDE-ARCHERY');
     expect(rifle).not.toContain('DEER-STATEWIDE-MUZZLELOADER');
+  });
+});
+
+describe('North Dakota', () => {
+  const nd = getStateModule('ND')!;
+  it('loads 2026 NDGF lottery results with bonus-point tables for deer', () => {
+    const deer = nd.hunts('DEER');
+    expect(deer.length).toBeGreaterThan(50);
+    expect(deer.some((h) => (h.pointLines?.resident?.length ?? 0) > 0)).toBe(true);
+    expect(STATE_INFO.ND.rulesVerified).toBe(true);
+  });
+  it('elk (licenses + applicants only) still gets honest SCOUT odds text', async () => {
+    const { buildSharedScoutResponse } = await import('./sharedScout');
+    const out = buildSharedScoutResponse([{ unit: 'E3', huntCode: 'X', tags: 12, applicants: 1840, drawSuccess: null, dataYear: 2026 }], {}, { stateLabel: 'ND', weaponLabel: 'Rifle' });
+    expect(out.recommendations[0].currentOdds).toBe('12 licenses for 1840 applicants (2026 draw)');
+    expect(out.recommendations[0].tier).toBe('LONG_GAME');
   });
 });

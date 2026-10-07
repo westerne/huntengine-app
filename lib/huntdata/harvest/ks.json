@@ -1,0 +1,48 @@
+{
+ "state": "KS",
+ "year": 2024,
+ "speciesYear": {
+  "ELK": 2024
+ },
+ "source": {
+  "name": "Kansas Department of Wildlife and Parks — big game harvest reports",
+  "url": "https://www.ksoutdoors.gov/home/showpublisheddocument/1396/638967132842170000"
+ },
+ "notes": "ELK: 2024-25 Elk Harvest Report https://www.ksoutdoors.gov/home/showpublisheddocument/1396/638967132842170000 — KDWP mail/e-mail harvest survey of all elk hunters plus Fort Riley mandatory registration; reported harvest, not expanded for nonrespondents (KDWP: response rate 62%). Rows are the success figures printed in the report text; per-unit success appears only in charts and is not used. Fort Riley rows use unit \"2\" (Fort Riley is Sub-unit 2A inside elk Unit 2; KDWP's Elk_Units layer has no 2A polygon); hunters = Fort Riley permit holders who hunted. Statewide rows use unit \"Statewide\". All any-elk permits, statewide (Fort Riley + over-the-counter Units 2 & 3): KDWP prints 34 elk on 782 permits (19%), but 34/782 = 4.3%; the printed 19% is used and hunters left null (the permit count looks like a misprint — report also says 229 elk permits were sold in total). ANTELOPE: 2024 Pronghorn (Antelope) Harvest Report https://www.ksoutdoors.gov/home/showpublisheddocument/968/638956046306330000 — harvest success by unit and by weapon is shown only as charts (Figures 8 and 14) with no printed values; the text gives only a statewide estimate of 175 pronghorn harvested in 2024. No ANTELOPE rows written. DEER: KDWP does not currently publish a deer harvest / hunter-success report on ksoutdoors.gov (checked the deer, deer-management and research pages and site search). KDWP's ArcGIS Deer_Combined/FeatureServer/2 table has deer harvest counts by unit only for 2017-2021 with no hunter counts, so success cannot be computed; not used. No DEER rows written.",
+ "species": {
+  "ELK": [
+   {
+    "unit": "2",
+    "weapon": "any",
+    "label": "Fort Riley any-elk (draw permit; Sub-unit 2A, inside Unit 2)",
+    "hunters": 12,
+    "harvest": 10,
+    "successPct": 83.3
+   },
+   {
+    "unit": "2",
+    "weapon": "any",
+    "label": "Fort Riley antlerless-only (draw permit; Sub-unit 2A, inside Unit 2)",
+    "hunters": 18,
+    "harvest": 8,
+    "successPct": 44.4
+   },
+   {
+    "unit": "Statewide",
+    "weapon": "any",
+    "label": "All any-elk permits, statewide (Fort Riley + over-the-counter Units 2 & 3) — 34 elk on 782 permits as printed",
+    "hunters": null,
+    "harvest": 34,
+    "successPct": 19
+   },
+   {
+    "unit": "Statewide",
+    "weapon": "any",
+    "label": "All antlerless-only elk permits, statewide (Fort Riley + over-the-counter Units 2 & 3) — 13 elk on 51 permits as printed",
+    "hunters": null,
+    "harvest": 13,
+    "successPct": 25
+   }
+  ]
+ }
+}

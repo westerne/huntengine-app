@@ -30,7 +30,8 @@ export function validateHunts(hunts: Hunt[]): DataProblem[] {
     seen.add(key);
     if (h.drawYear != null && (h.drawYear < 2015 || h.drawYear > thisYear + 1)) out.push(`drawYear ${h.drawYear} looks wrong`);
     if (h.dataQuality === 'official' && h.drawYear == null) out.push('official data needs a drawYear');
-    if (!h.otc && !h.draw.resident && !h.draw.nonresident) out.push('no draw data for either residency');
+    // Combined (not split by residency) tags/applicants count as draw data.
+    if (!h.otc && !h.draw.resident && !h.draw.nonresident && h.tags == null && h.applicants == null) out.push('no draw data for either residency');
     if (!countOk(h.tags)) out.push(`tags ${h.tags} is not a whole number ≥ 0`);
     if (!countOk(h.applicants)) out.push(`applicants ${h.applicants} is not a whole number ≥ 0`);
     checkStat('resident', h.draw.resident, out);

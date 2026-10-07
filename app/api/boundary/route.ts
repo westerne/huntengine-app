@@ -143,6 +143,23 @@ const NE_SOURCES: Record<string, Source> = {
   BIGHORNSHEEP: ngpc('Bighorn_Hunting_Units_2022'),
 };
 
+// North Dakota Game & Fish — per-species layers on the State GIS hub, UNIT_ID
+// as written ("4A", "3F2", "1-A", "E1E", "M10", "B1"). Dashes are part of the
+// id here, so units are taken whole.
+const NDGF_BASE = 'https://ndgishub.nd.gov/arcgis/rest/services/Applications/GNF_GeneralInformation/MapServer';
+const ndgf = (layer: number): Source => ({
+  url: `${NDGF_BASE}/${layer}/query`,
+  unitField: 'UNIT_ID',
+  numeric: false,
+  outFields: 'UNIT_ID',
+  labelField: 'UNIT_ID',
+  namedUnits: true,
+  whereFor: (u) => `UNIT_ID='${u}'`,
+});
+const ND_SOURCES: Record<string, Source> = {
+  DEER: ndgf(33), ANTELOPE: ndgf(43), ELK: ndgf(34), MOOSE: ndgf(38), BIGHORNSHEEP: ndgf(29),
+};
+
 function speciesKey(species: string): string {
   const x = (species || '').toUpperCase();
   if (x.includes('ELK')) return 'ELK';
@@ -161,6 +178,7 @@ function resolveSource(state: string, species: string): Source | null {
   if (state === 'AZ') return AZGFD_GMU;
   if (state === 'NM') return NMDGF_GMU;
   if (state === 'NE') return NE_SOURCES[speciesKey(species)] ?? null;
+  if (state === 'ND') return ND_SOURCES[speciesKey(species)] ?? null;
   return null;
 }
 
@@ -179,7 +197,7 @@ export async function GET(req: Request) {
   if (!src) return NextResponse.json({ error: `no boundary source for ${state}/${species}` }, { status: 404 });
   const param = (searchParams.get('unit') || '').trim().toUpperCase();
   const rawUnit = src.namedUnits
-    ? param.replace(/[^A-Z0-9 ]/g, '').replace(/\s+/g, ' ').trim()
+    ? param.replace(/[^A-Z0-9 -]/g, '').replace(/\s+/g, ' ').trim()
     : param.split('-')[0].replace(/[^A-Z0-9]/g, '');
   if (!rawUnit) return NextResponse.json({ error: 'unit required' }, { status: 400 });
 

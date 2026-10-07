@@ -1,0 +1,236 @@
+{
+ "state": "ND",
+ "year": 2025,
+ "speciesYear": {
+  "DEER": 2025,
+  "ANTELOPE": 2025,
+  "ELK": 2025,
+  "MOOSE": 2025,
+  "BIGHORNSHEEP": 2025
+ },
+ "source": {
+  "name": "North Dakota Game and Fish Department — harvest news releases",
+  "url": "https://gf.nd.gov/news-releases"
+ },
+ "notes": "Sources: ELK/MOOSE/BIGHORNSHEEP https://gf.nd.gov/news/9092 (\"2025 Big 3 Harvest Statistics\"); DEER https://gf.nd.gov/news/9150 (\"2025 Deer Season Summarized\", post-season survey); ANTELOPE https://gf.nd.gov/magazine/2026/aug-sept/2026-hunting-season-outlook (statewide figures for the 2025 season). ELK/MOOSE: per-unit rows as printed by NDGF (hunters, bulls, cows/calves, success rate). harvest = bulls + cows/calves (computed); successPct = NDGF figure (checked against the counts). Rows cover every hunter in the unit — any-elk/any-moose and antlerless licenses together, lottery and landowner-preference — so no huntCode; attach by unit only, as unit-level context. Unit sums reconcile to the release totals. DEER/ANTELOPE: NDGF does not publish unit-level harvest. Rows with unit \"STATEWIDE\" are statewide figures by license type (hunters/harvest null where the release gives only a percentage). Deer unit \"MUZ\" = statewide muzzleloader season and matches the draw file's MUZ rows (both license types together). Archery is included for context; resident deer bow licenses are not a lottery. BIGHORNSHEEP: one statewide row; the 10 hunters include NDGF lottery and auction licenses and 2 licenses issued by Three Affiliated Tribes Fish and Wildlife.",
+ "species": {
+  "DEER": [
+   {
+    "unit": "STATEWIDE",
+    "label": "Deer gun — all regular-season license types (statewide)",
+    "weapon": "rifle",
+    "hunters": 36353,
+    "harvest": 20877,
+    "successPct": 57
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Deer gun — Any Antlered Deer (statewide)",
+    "weapon": "rifle",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 65
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Deer gun — Any Antlerless Deer (statewide)",
+    "weapon": "rifle",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 56
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Deer gun — Antlered Whitetail Deer (statewide)",
+    "weapon": "rifle",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 53
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Deer gun — Antlerless Whitetail Deer (statewide)",
+    "weapon": "rifle",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 45
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Deer gun — Antlered Mule Deer (statewide)",
+    "weapon": "rifle",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 82
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Deer gun — Antlerless Mule Deer (statewide)",
+    "weapon": "rifle",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 82
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Deer gun — gratis (landowner) licenses (statewide)",
+    "weapon": "rifle",
+    "hunters": 9453,
+    "harvest": 4452,
+    "successPct": 47
+   },
+   {
+    "unit": "MUZ",
+    "label": "Muzzleloader season, antlered + antlerless whitetail (102 antlered, 113 antlerless taken)",
+    "weapon": "muzzleloader",
+    "hunters": 665,
+    "harvest": 215,
+    "successPct": 32
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Archery season, all deer licenses (resident + nonresident; not a lottery for residents)",
+    "weapon": "archery",
+    "hunters": 22944,
+    "harvest": 6610,
+    "successPct": 29
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "unit": "STATEWIDE",
+    "label": "All pronghorn hunters (lottery + gratis licenses), statewide",
+    "weapon": "any",
+    "hunters": 1120,
+    "harvest": 729,
+    "successPct": 65
+   },
+   {
+    "unit": "STATEWIDE",
+    "label": "Pronghorn lottery-license hunters, statewide",
+    "weapon": "any",
+    "hunters": null,
+    "harvest": null,
+    "successPct": 87
+   }
+  ],
+  "ELK": [
+   {
+    "unit": "E1E",
+    "label": "All elk hunters in unit (any + antlerless, lottery + landowner): 33 bulls, 36 cows/calves",
+    "weapon": "any",
+    "hunters": 134,
+    "harvest": 69,
+    "successPct": 51.49
+   },
+   {
+    "unit": "E1W",
+    "label": "All elk hunters in unit (any + antlerless, lottery + landowner): 43 bulls, 62 cows/calves",
+    "weapon": "any",
+    "hunters": 191,
+    "harvest": 105,
+    "successPct": 54.97
+   },
+   {
+    "unit": "E2",
+    "label": "All elk hunters in unit (any + antlerless, lottery + landowner): 59 bulls, 75 cows/calves",
+    "weapon": "any",
+    "hunters": 199,
+    "harvest": 134,
+    "successPct": 67.34
+   },
+   {
+    "unit": "E3",
+    "label": "All elk hunters in unit (any + antlerless, lottery + landowner): 121 bulls, 121 cows/calves",
+    "weapon": "any",
+    "hunters": 364,
+    "harvest": 242,
+    "successPct": 66.48
+   },
+   {
+    "unit": "E4",
+    "label": "All elk hunters in unit (any + antlerless, lottery + landowner): 18 bulls, 1 cows/calves",
+    "weapon": "any",
+    "hunters": 22,
+    "harvest": 19,
+    "successPct": 86.36
+   },
+   {
+    "unit": "E6",
+    "label": "All elk hunters in unit (any + antlerless, lottery + landowner): 2 bulls, 1 cows/calves",
+    "weapon": "any",
+    "hunters": 13,
+    "harvest": 3,
+    "successPct": 23.08
+   },
+   {
+    "unit": "E7",
+    "label": "All elk hunters in unit (any + antlerless, lottery + landowner): 4 bulls, 0 cows/calves",
+    "weapon": "any",
+    "hunters": 6,
+    "harvest": 4,
+    "successPct": 66.67
+   }
+  ],
+  "MOOSE": [
+   {
+    "unit": "M5",
+    "label": "All moose hunters in unit (any + antlerless, lottery + landowner): 2 bulls, 1 cows/calves",
+    "weapon": "any",
+    "hunters": 7,
+    "harvest": 3,
+    "successPct": 42.86
+   },
+   {
+    "unit": "M6",
+    "label": "All moose hunters in unit (any + antlerless, lottery + landowner): 8 bulls, 0 cows/calves",
+    "weapon": "any",
+    "hunters": 10,
+    "harvest": 8,
+    "successPct": 80
+   },
+   {
+    "unit": "M8",
+    "label": "All moose hunters in unit (any + antlerless, lottery + landowner): 12 bulls, 1 cows/calves",
+    "weapon": "any",
+    "hunters": 15,
+    "harvest": 13,
+    "successPct": 86.67
+   },
+   {
+    "unit": "M9",
+    "label": "All moose hunters in unit (any + antlerless, lottery + landowner): 33 bulls, 35 cows/calves",
+    "weapon": "any",
+    "hunters": 80,
+    "harvest": 68,
+    "successPct": 85
+   },
+   {
+    "unit": "M10",
+    "label": "All moose hunters in unit (any + antlerless, lottery + landowner): 61 bulls, 45 cows/calves",
+    "weapon": "any",
+    "hunters": 114,
+    "harvest": 106,
+    "successPct": 92.98
+   },
+   {
+    "unit": "M11",
+    "label": "All moose hunters in unit (any + antlerless, lottery + landowner): 31 bulls, 16 cows/calves",
+    "weapon": "any",
+    "hunters": 55,
+    "harvest": 47,
+    "successPct": 85.45
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "unit": "STATEWIDE",
+    "label": "All bighorn sheep hunters (NDGF lottery + auction licenses, plus licenses issued by Three Affiliated Tribes Fish and Wildlife)",
+    "weapon": "any",
+    "hunters": 10,
+    "harvest": 10,
+    "successPct": 100
+   }
+  ]
+ }
+}

@@ -36,6 +36,7 @@ export function drawFileModule(info: StateInfo, file: DrawFile): StateModule {
         drawYear: file.year,
         dataQuality: 'official',
         tags: row.tags ?? null,
+        applicants: row.applicants ?? null,
         draw: row.draw,
         pointLines: row.pointLines,
         harvest: harvestForHunt(info.code, sp, row.huntCode, row.unit, row.weapon ?? weaponFromLabel(`${row.label ?? ''} ${row.huntCode}`)),

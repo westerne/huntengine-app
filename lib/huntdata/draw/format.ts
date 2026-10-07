@@ -13,6 +13,7 @@ export type DrawRow = {
   weapon?: Weapon;
   season?: { open: string; close: string }; // ISO dates, only if published with the draw data
   tags?: number | null;      // total tags when not split by residency
+  applicants?: number | null; // total applicants when not split by residency
   draw: {
     resident: DrawStat | null;
     nonresident: DrawStat | null;

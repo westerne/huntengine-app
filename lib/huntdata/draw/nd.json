@@ -1,0 +1,10172 @@
+{
+ "state": "ND",
+ "year": 2026,
+ "source": {
+  "name": "North Dakota Game and Fish Department — 2026 Lottery Statistics",
+  "url": "https://gf.nd.gov/hunting/lotteries"
+ },
+ "notes": "Years: DEER 2026, ANTELOPE 2026, ELK 2026, MOOSE 2026, BIGHORNSHEEP 2026. Pages: https://gf.nd.gov/licensing/lotteries/summary/deer ; https://gf.nd.gov/licensing/lotteries/summary/deer-nonresident ; https://gf.nd.gov/licensing/lotteries/summary/pronghorn ; https://gf.nd.gov/licensing/lotteries/summary/elk ; https://gf.nd.gov/licensing/lotteries/summary/moose ; https://gf.nd.gov/licensing/lotteries/summary/bighorn-sheep. DEER/ANTELOPE: NDGF tables give FIRST-CHOICE results in the first (weighted bonus-point) lottery at each bonus-point level as successful/total applicants. pointLines = those cells (only levels with ≥1 applicant kept; points 20 means \"20+\"). applicants = \"Total Applicants\" (equals the sum of the point columns; checked). successPct = sum of first-choice successes across point levels ÷ Total Applicants × 100, computed here; NDGF does not print a per-license percentage. DEER resident: DrawRow.tags = \"Total Availability\" (all licenses for the unit/type); draw.resident.tags = \"*Total Issued in Resident Drawing\" as printed (after gratis/landowner and 1% nonresident deductions; it can exceed first-choice successes because 2nd-choice and later drawings also issue licenses). Deer nonresident: draw.nonresident.tags = \"Available in Lottery\" from the nonresident page (nonresident gun licenses = about 1% of the allocation, minus nonresident gratis); nonresidents compete only against nonresidents. NDGF footnote: minor inconsistencies are possible from voided/revoked/refunded licenses and bonus-point-only purchases. Unit \"MUZ\" = statewide muzzleloader season (weapon muzzleloader); all other deer rows are the regular deer gun season (any legal firearm, stored as weapon \"rifle\"). ANTELOPE: residents only (NDGF). unit = NDGF ArcGIS \"Pronghorn Units\" spelling (\"1-A\"); the lottery prints \"01A\", kept in huntCode and label. DrawRow.tags = \"Total Availability\"; draw.resident.tags = Total Availability − Gratis Deduction (lottery licenses, computed). Licenses are valid in the bow-only portion and the later gun/bow portion, so weapon \"any\". ELK/MOOSE: residents only; once-in-a-lifetime. NDGF publishes only \"Available Licenses\" and \"Total Applicants\" per unit/type — no drawn counts and no bonus-point table — so successPct and pointLines are null/absent. Some antlerless elk rows print applicants equal to licenses (e.g. E1W antlerless 125/125); kept as printed. Landowner-preference licenses are issued outside the lottery. BIGHORNSHEEP: once-in-a-lifetime; residents and nonresidents may apply (no more than one license may go to a nonresident by law). Applicants apply statewide, not by unit; the lottery is held ~Sept 1 after surveys and winners then choose a unit (B1–B5). NDGF prints one statewide line per year (licenses available, applicants) without a residency split, so draw.resident/nonresident are null and the numbers are in the row label and tags.",
+ "species": {
+  "DEER": [
+   {
+    "huntCode": "DEER-1-ANY-ANTLERED",
+    "unit": "1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 193,
+      "applicants": 801,
+      "successPct": 24.1
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 13,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 233,
+       "drawn": 11
+      },
+      {
+       "points": 1,
+       "applicants": 263,
+       "drawn": 47
+      },
+      {
+       "points": 2,
+       "applicants": 149,
+       "drawn": 45
+      },
+      {
+       "points": 3,
+       "applicants": 100,
+       "drawn": 39
+      },
+      {
+       "points": 4,
+       "applicants": 50,
+       "drawn": 48
+      },
+      {
+       "points": 5,
+       "applicants": 6,
+       "drawn": 3
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-1-ANY-ANTLERLESS",
+    "unit": "1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 42,
+      "applicants": 154,
+      "successPct": 27.3
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 68,
+       "drawn": 15
+      },
+      {
+       "points": 1,
+       "applicants": 69,
+       "drawn": 21
+      },
+      {
+       "points": 2,
+       "applicants": 15,
+       "drawn": 5
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2A-ANY-ANTLERED",
+    "unit": "2A",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 0,
+      "applicants": 845,
+      "successPct": 0
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 32,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 109,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 234,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 216,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 189,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 87,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 10,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2B-ANY-ANTLERED",
+    "unit": "2B",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 700,
+    "draw": {
+     "resident": {
+      "tags": 159,
+      "applicants": 2656,
+      "successPct": 6
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 63,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 447,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 677,
+       "drawn": 11
+      },
+      {
+       "points": 2,
+       "applicants": 577,
+       "drawn": 6
+      },
+      {
+       "points": 3,
+       "applicants": 450,
+       "drawn": 7
+      },
+      {
+       "points": 4,
+       "applicants": 340,
+       "drawn": 83
+      },
+      {
+       "points": 5,
+       "applicants": 141,
+       "drawn": 36
+      },
+      {
+       "points": 6,
+       "applicants": 22,
+       "drawn": 14
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 16,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 20,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2B-ANY-ANTLERLESS",
+    "unit": "2B",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 1,
+      "applicants": 613,
+      "successPct": 0
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 7,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 192,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 246,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 131,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 29,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2C-ANY-ANTLERED",
+    "unit": "2C",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 600,
+    "draw": {
+     "resident": {
+      "tags": 11,
+      "applicants": 1904,
+      "successPct": 0.6
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 63,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 322,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 478,
+       "drawn": 2
+      },
+      {
+       "points": 2,
+       "applicants": 385,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 386,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 246,
+       "drawn": 4
+      },
+      {
+       "points": 5,
+       "applicants": 75,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 11,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 13,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2C-ANY-ANTLERLESS",
+    "unit": "2C",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 0,
+      "applicants": 260,
+      "successPct": 0
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 1,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 74,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 131,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 44,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 3,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2D-ANY-ANTLERED",
+    "unit": "2D",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 500,
+    "draw": {
+     "resident": {
+      "tags": 327,
+      "applicants": 1132,
+      "successPct": 28.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 48,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 359,
+       "drawn": 34
+      },
+      {
+       "points": 1,
+       "applicants": 420,
+       "drawn": 126
+      },
+      {
+       "points": 2,
+       "applicants": 231,
+       "drawn": 96
+      },
+      {
+       "points": 3,
+       "applicants": 92,
+       "drawn": 41
+      },
+      {
+       "points": 4,
+       "applicants": 24,
+       "drawn": 24
+      },
+      {
+       "points": 5,
+       "applicants": 6,
+       "drawn": 6
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2D-ANY-ANTLERLESS",
+    "unit": "2D",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 103,
+      "applicants": 138,
+      "successPct": 74.6
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 3,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 112,
+       "drawn": 80
+      },
+      {
+       "points": 1,
+       "applicants": 15,
+       "drawn": 12
+      },
+      {
+       "points": 2,
+       "applicants": 8,
+       "drawn": 8
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2E-ANY-ANTLERED",
+    "unit": "2E",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 500,
+    "draw": {
+     "resident": {
+      "tags": 0,
+      "applicants": 1417,
+      "successPct": 0
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 28,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 193,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 388,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 334,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 271,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 147,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 76,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2F1-ANY-ANTLERED",
+    "unit": "2F1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 500,
+    "draw": {
+     "resident": {
+      "tags": 277,
+      "applicants": 1403,
+      "successPct": 19.7
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 47,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 387,
+       "drawn": 31
+      },
+      {
+       "points": 1,
+       "applicants": 569,
+       "drawn": 98
+      },
+      {
+       "points": 2,
+       "applicants": 291,
+       "drawn": 79
+      },
+      {
+       "points": 3,
+       "applicants": 122,
+       "drawn": 37
+      },
+      {
+       "points": 4,
+       "applicants": 28,
+       "drawn": 26
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 5
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2F1-ANY-ANTLERLESS",
+    "unit": "2F1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 400,
+    "draw": {
+     "resident": {
+      "tags": 283,
+      "applicants": 227,
+      "successPct": 93
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 1,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 179,
+       "drawn": 171
+      },
+      {
+       "points": 1,
+       "applicants": 25,
+       "drawn": 21
+      },
+      {
+       "points": 2,
+       "applicants": 19,
+       "drawn": 16
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2F2-ANY-ANTLERED",
+    "unit": "2F2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 33,
+      "applicants": 1373,
+      "successPct": 2.4
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 28,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 209,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 411,
+       "drawn": 5
+      },
+      {
+       "points": 2,
+       "applicants": 372,
+       "drawn": 6
+      },
+      {
+       "points": 3,
+       "applicants": 234,
+       "drawn": 4
+      },
+      {
+       "points": 4,
+       "applicants": 123,
+       "drawn": 11
+      },
+      {
+       "points": 5,
+       "applicants": 21,
+       "drawn": 5
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2F2-ANY-ANTLERLESS",
+    "unit": "2F2",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 0,
+      "applicants": 275,
+      "successPct": 0
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 1,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 90,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 126,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 49,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2G-ANY-ANTLERED",
+    "unit": "2G",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 26,
+      "applicants": 623,
+      "successPct": 4.2
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 17,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 146,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 187,
+       "drawn": 7
+      },
+      {
+       "points": 2,
+       "applicants": 162,
+       "drawn": 5
+      },
+      {
+       "points": 3,
+       "applicants": 103,
+       "drawn": 5
+      },
+      {
+       "points": 4,
+       "applicants": 22,
+       "drawn": 7
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2G1-ANY-ANTLERED",
+    "unit": "2G1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 400,
+    "draw": {
+     "resident": {
+      "tags": 0,
+      "applicants": 1710,
+      "successPct": 0
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 73,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 167,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 368,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 401,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 423,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 250,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 92,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2G2-ANY-ANTLERED",
+    "unit": "2G2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 400,
+    "draw": {
+     "resident": {
+      "tags": 0,
+      "applicants": 1166,
+      "successPct": 0
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 46,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 113,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 338,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 487,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 167,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 55,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 18,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2H-ANY-ANTLERED",
+    "unit": "2H",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 800,
+    "draw": {
+     "resident": {
+      "tags": 668,
+      "applicants": 1339,
+      "successPct": 49.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 48,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 737,
+       "drawn": 222
+      },
+      {
+       "points": 1,
+       "applicants": 453,
+       "drawn": 315
+      },
+      {
+       "points": 2,
+       "applicants": 109,
+       "drawn": 94
+      },
+      {
+       "points": 3,
+       "applicants": 29,
+       "drawn": 26
+      },
+      {
+       "points": 4,
+       "applicants": 10,
+       "drawn": 10
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 13,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2H-ANY-ANTLERLESS",
+    "unit": "2H",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 224,
+      "applicants": 135,
+      "successPct": 91.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 5,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 119,
+       "drawn": 108
+      },
+      {
+       "points": 1,
+       "applicants": 11,
+       "drawn": 11
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2I-ANY-ANTLERED",
+    "unit": "2I",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 800,
+    "draw": {
+     "resident": {
+      "tags": 496,
+      "applicants": 1933,
+      "successPct": 25.6
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 52,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 619,
+       "drawn": 44
+      },
+      {
+       "points": 1,
+       "applicants": 627,
+       "drawn": 134
+      },
+      {
+       "points": 2,
+       "applicants": 419,
+       "drawn": 157
+      },
+      {
+       "points": 3,
+       "applicants": 195,
+       "drawn": 90
+      },
+      {
+       "points": 4,
+       "applicants": 65,
+       "drawn": 63
+      },
+      {
+       "points": 5,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2I-ANY-ANTLERLESS",
+    "unit": "2I",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 400,
+    "draw": {
+     "resident": {
+      "tags": 235,
+      "applicants": 267,
+      "successPct": 88
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 4,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 208,
+       "drawn": 185
+      },
+      {
+       "points": 1,
+       "applicants": 38,
+       "drawn": 32
+      },
+      {
+       "points": 2,
+       "applicants": 19,
+       "drawn": 17
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2J1-ANY-ANTLERED",
+    "unit": "2J1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 600,
+    "draw": {
+     "resident": {
+      "tags": 403,
+      "applicants": 1211,
+      "successPct": 33.3
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 33,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 455,
+       "drawn": 72
+      },
+      {
+       "points": 1,
+       "applicants": 453,
+       "drawn": 162
+      },
+      {
+       "points": 2,
+       "applicants": 196,
+       "drawn": 95
+      },
+      {
+       "points": 3,
+       "applicants": 87,
+       "drawn": 55
+      },
+      {
+       "points": 4,
+       "applicants": 14,
+       "drawn": 13
+      },
+      {
+       "points": 5,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2J1-ANY-ANTLERLESS",
+    "unit": "2J1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 192,
+      "applicants": 161,
+      "successPct": 96.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 4,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 132,
+       "drawn": 128
+      },
+      {
+       "points": 1,
+       "applicants": 22,
+       "drawn": 21
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2J2-ANY-ANTLERED",
+    "unit": "2J2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 600,
+    "draw": {
+     "resident": {
+      "tags": 353,
+      "applicants": 1548,
+      "successPct": 22.8
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 57,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 469,
+       "drawn": 36
+      },
+      {
+       "points": 1,
+       "applicants": 516,
+       "drawn": 93
+      },
+      {
+       "points": 2,
+       "applicants": 347,
+       "drawn": 111
+      },
+      {
+       "points": 3,
+       "applicants": 165,
+       "drawn": 66
+      },
+      {
+       "points": 4,
+       "applicants": 46,
+       "drawn": 42
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2J2-ANY-ANTLERLESS",
+    "unit": "2J2",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 500,
+    "draw": {
+     "resident": {
+      "tags": 375,
+      "applicants": 251,
+      "successPct": 96.4
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 5,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 202,
+       "drawn": 197
+      },
+      {
+       "points": 1,
+       "applicants": 35,
+       "drawn": 32
+      },
+      {
+       "points": 2,
+       "applicants": 10,
+       "drawn": 9
+      },
+      {
+       "points": 3,
+       "applicants": 4,
+       "drawn": 4
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2K1-ANY-ANTLERED",
+    "unit": "2K1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 900,
+    "draw": {
+     "resident": {
+      "tags": 625,
+      "applicants": 1717,
+      "successPct": 36.4
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 59,
+      "successPct": 3.4
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 707,
+       "drawn": 124
+      },
+      {
+       "points": 1,
+       "applicants": 558,
+       "drawn": 216
+      },
+      {
+       "points": 2,
+       "applicants": 300,
+       "drawn": 176
+      },
+      {
+       "points": 3,
+       "applicants": 115,
+       "drawn": 76
+      },
+      {
+       "points": 4,
+       "applicants": 34,
+       "drawn": 32
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 15,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 8,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 3,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2K1-ANY-ANTLERLESS",
+    "unit": "2K1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 600,
+    "draw": {
+     "resident": {
+      "tags": 456,
+      "applicants": 252,
+      "successPct": 94.4
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 3,
+      "successPct": 33.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 211,
+       "drawn": 202
+      },
+      {
+       "points": 1,
+       "applicants": 29,
+       "drawn": 24
+      },
+      {
+       "points": 2,
+       "applicants": 10,
+       "drawn": 10
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2K2-ANY-ANTLERED",
+    "unit": "2K2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 800,
+    "draw": {
+     "resident": {
+      "tags": 384,
+      "applicants": 2440,
+      "successPct": 15.7
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 76,
+      "successPct": 1.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 584,
+       "drawn": 18
+      },
+      {
+       "points": 1,
+       "applicants": 699,
+       "drawn": 48
+      },
+      {
+       "points": 2,
+       "applicants": 531,
+       "drawn": 58
+      },
+      {
+       "points": 3,
+       "applicants": 379,
+       "drawn": 75
+      },
+      {
+       "points": 4,
+       "applicants": 218,
+       "drawn": 157
+      },
+      {
+       "points": 5,
+       "applicants": 20,
+       "drawn": 19
+      },
+      {
+       "points": 6,
+       "applicants": 6,
+       "drawn": 6
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 18,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2K2-ANY-ANTLERLESS",
+    "unit": "2K2",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 600,
+    "draw": {
+     "resident": {
+      "tags": 381,
+      "applicants": 353,
+      "successPct": 96.6
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 9,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 273,
+       "drawn": 268
+      },
+      {
+       "points": 1,
+       "applicants": 41,
+       "drawn": 38
+      },
+      {
+       "points": 2,
+       "applicants": 22,
+       "drawn": 20
+      },
+      {
+       "points": 3,
+       "applicants": 7,
+       "drawn": 6
+      },
+      {
+       "points": 4,
+       "applicants": 6,
+       "drawn": 5
+      },
+      {
+       "points": 5,
+       "applicants": 4,
+       "drawn": 4
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-2L-ANY-ANTLERED",
+    "unit": "2L",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 0,
+      "applicants": 351,
+      "successPct": 0
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 39,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 32,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 132,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 118,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 54,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3A1-ANY-ANTLERED",
+    "unit": "3A1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 2200,
+    "draw": {
+     "resident": {
+      "tags": 1886,
+      "applicants": 3477,
+      "successPct": 54.2
+     },
+     "nonresident": {
+      "tags": 7,
+      "applicants": 184,
+      "successPct": 3.8
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1954,
+       "drawn": 734
+      },
+      {
+       "points": 1,
+       "applicants": 1116,
+       "drawn": 791
+      },
+      {
+       "points": 2,
+       "applicants": 314,
+       "drawn": 271
+      },
+      {
+       "points": 3,
+       "applicants": 58,
+       "drawn": 55
+      },
+      {
+       "points": 4,
+       "applicants": 22,
+       "drawn": 21
+      },
+      {
+       "points": 5,
+       "applicants": 11,
+       "drawn": 11
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 48,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 52,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 25,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 21,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 12,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 13,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 11,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3A1-ANY-ANTLERLESS",
+    "unit": "3A1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 1800,
+    "draw": {
+     "resident": {
+      "tags": 1417,
+      "applicants": 236,
+      "successPct": 97.9
+     },
+     "nonresident": {
+      "tags": 11,
+      "applicants": 17,
+      "successPct": 64.7
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 203,
+       "drawn": 198
+      },
+      {
+       "points": 1,
+       "applicants": 22,
+       "drawn": 22
+      },
+      {
+       "points": 2,
+       "applicants": 8,
+       "drawn": 8
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 13,
+       "drawn": 9
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3A2-ANY-ANTLERED",
+    "unit": "3A2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 1400,
+    "draw": {
+     "resident": {
+      "tags": 1258,
+      "applicants": 1622,
+      "successPct": 77.6
+     },
+     "nonresident": {
+      "tags": 6,
+      "applicants": 81,
+      "successPct": 7.4
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1184,
+       "drawn": 839
+      },
+      {
+       "points": 1,
+       "applicants": 392,
+       "drawn": 375
+      },
+      {
+       "points": 2,
+       "applicants": 34,
+       "drawn": 32
+      },
+      {
+       "points": 3,
+       "applicants": 9,
+       "drawn": 9
+      },
+      {
+       "points": 4,
+       "applicants": 3,
+       "drawn": 3
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 18,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 23,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 17,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 10,
+       "drawn": 3
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3A2-ANY-ANTLERLESS",
+    "unit": "3A2",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 1000,
+    "draw": {
+     "resident": {
+      "tags": 797,
+      "applicants": 265,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 8,
+      "applicants": 14,
+      "successPct": 50
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 240,
+       "drawn": 240
+      },
+      {
+       "points": 1,
+       "applicants": 17,
+       "drawn": 17
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 12,
+       "drawn": 5
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3A3-ANY-ANTLERED",
+    "unit": "3A3",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 1300,
+    "draw": {
+     "resident": {
+      "tags": 902,
+      "applicants": 2873,
+      "successPct": 31.4
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 116,
+      "successPct": 1.7
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1130,
+       "drawn": 141
+      },
+      {
+       "points": 1,
+       "applicants": 936,
+       "drawn": 311
+      },
+      {
+       "points": 2,
+       "applicants": 512,
+       "drawn": 253
+      },
+      {
+       "points": 3,
+       "applicants": 223,
+       "drawn": 128
+      },
+      {
+       "points": 4,
+       "applicants": 61,
+       "drawn": 57
+      },
+      {
+       "points": 5,
+       "applicants": 7,
+       "drawn": 7
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 23,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 34,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 18,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 13,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3A3-ANY-ANTLERLESS",
+    "unit": "3A3",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 1200,
+    "draw": {
+     "resident": {
+      "tags": 1001,
+      "applicants": 396,
+      "successPct": 96.5
+     },
+     "nonresident": {
+      "tags": 7,
+      "applicants": 4,
+      "successPct": 100
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 344,
+       "drawn": 333
+      },
+      {
+       "points": 1,
+       "applicants": 40,
+       "drawn": 39
+      },
+      {
+       "points": 2,
+       "applicants": 10,
+       "drawn": 8
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 4,
+       "drawn": 4
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3A4-ANY-ANTLERED",
+    "unit": "3A4",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 1300,
+    "draw": {
+     "resident": {
+      "tags": 942,
+      "applicants": 2541,
+      "successPct": 37.1
+     },
+     "nonresident": {
+      "tags": 3,
+      "applicants": 89,
+      "successPct": 3.4
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1158,
+       "drawn": 217
+      },
+      {
+       "points": 1,
+       "applicants": 814,
+       "drawn": 348
+      },
+      {
+       "points": 2,
+       "applicants": 380,
+       "drawn": 234
+      },
+      {
+       "points": 3,
+       "applicants": 142,
+       "drawn": 100
+      },
+      {
+       "points": 4,
+       "applicants": 38,
+       "drawn": 35
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 22,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 19,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 23,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3A4-ANY-ANTLERLESS",
+    "unit": "3A4",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 700,
+    "draw": {
+     "resident": {
+      "tags": 507,
+      "applicants": 534,
+      "successPct": 94.9
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 6,
+      "successPct": 33.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 457,
+       "drawn": 438
+      },
+      {
+       "points": 1,
+       "applicants": 55,
+       "drawn": 50
+      },
+      {
+       "points": 2,
+       "applicants": 16,
+       "drawn": 13
+      },
+      {
+       "points": 3,
+       "applicants": 5,
+       "drawn": 5
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3B1-ANY-ANTLERED",
+    "unit": "3B1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 450,
+    "draw": {
+     "resident": {
+      "tags": 241,
+      "applicants": 2074,
+      "successPct": 11.6
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 157,
+      "successPct": 0.6
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 416,
+       "drawn": 2
+      },
+      {
+       "points": 1,
+       "applicants": 441,
+       "drawn": 13
+      },
+      {
+       "points": 2,
+       "applicants": 373,
+       "drawn": 19
+      },
+      {
+       "points": 3,
+       "applicants": 447,
+       "drawn": 25
+      },
+      {
+       "points": 4,
+       "applicants": 272,
+       "drawn": 111
+      },
+      {
+       "points": 5,
+       "applicants": 109,
+       "drawn": 59
+      },
+      {
+       "points": 6,
+       "applicants": 11,
+       "drawn": 8
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 4,
+       "drawn": 3
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 46,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 34,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 20,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 13,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 13,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3B1-ANY-ANTLERLESS",
+    "unit": "3B1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 400,
+    "draw": {
+     "resident": {
+      "tags": 293,
+      "applicants": 129,
+      "successPct": 97.7
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 2,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 96,
+       "drawn": 95
+      },
+      {
+       "points": 1,
+       "applicants": 16,
+       "drawn": 15
+      },
+      {
+       "points": 2,
+       "applicants": 6,
+       "drawn": 5
+      },
+      {
+       "points": 3,
+       "applicants": 8,
+       "drawn": 8
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3B2-ANY-ANTLERED",
+    "unit": "3B2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 450,
+    "draw": {
+     "resident": {
+      "tags": 338,
+      "applicants": 697,
+      "successPct": 48.5
+     },
+     "nonresident": {
+      "tags": 3,
+      "applicants": 52,
+      "successPct": 5.8
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 265,
+       "drawn": 49
+      },
+      {
+       "points": 1,
+       "applicants": 191,
+       "drawn": 94
+      },
+      {
+       "points": 2,
+       "applicants": 146,
+       "drawn": 113
+      },
+      {
+       "points": 3,
+       "applicants": 69,
+       "drawn": 56
+      },
+      {
+       "points": 4,
+       "applicants": 25,
+       "drawn": 25
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 13,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 13,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3B2-ANY-ANTLERLESS",
+    "unit": "3B2",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 239,
+      "applicants": 92,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 72,
+       "drawn": 72
+      },
+      {
+       "points": 1,
+       "applicants": 14,
+       "drawn": 14
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3B3-ANTLERED-WT",
+    "unit": "3B3",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 58,
+      "applicants": 207,
+      "successPct": 28
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 4,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 81,
+       "drawn": 6
+      },
+      {
+       "points": 1,
+       "applicants": 58,
+       "drawn": 16
+      },
+      {
+       "points": 2,
+       "applicants": 37,
+       "drawn": 14
+      },
+      {
+       "points": 3,
+       "applicants": 16,
+       "drawn": 8
+      },
+      {
+       "points": 4,
+       "applicants": 15,
+       "drawn": 14
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3B3-ANY-ANTLERED",
+    "unit": "3B3",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 177,
+      "applicants": 847,
+      "successPct": 20.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 19,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 293,
+       "drawn": 20
+      },
+      {
+       "points": 1,
+       "applicants": 271,
+       "drawn": 47
+      },
+      {
+       "points": 2,
+       "applicants": 142,
+       "drawn": 33
+      },
+      {
+       "points": 3,
+       "applicants": 92,
+       "drawn": 33
+      },
+      {
+       "points": 4,
+       "applicants": 46,
+       "drawn": 41
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3B3-ANY-ANTLERLESS",
+    "unit": "3B3",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 110,
+      "applicants": 134,
+      "successPct": 81.3
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 5,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 93,
+       "drawn": 71
+      },
+      {
+       "points": 1,
+       "applicants": 32,
+       "drawn": 29
+      },
+      {
+       "points": 2,
+       "applicants": 8,
+       "drawn": 8
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3C-ANY-ANTLERED",
+    "unit": "3C",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 500,
+    "draw": {
+     "resident": {
+      "tags": 314,
+      "applicants": 1224,
+      "successPct": 25.6
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 46,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 343,
+       "drawn": 15
+      },
+      {
+       "points": 1,
+       "applicants": 274,
+       "drawn": 25
+      },
+      {
+       "points": 2,
+       "applicants": 213,
+       "drawn": 31
+      },
+      {
+       "points": 3,
+       "applicants": 180,
+       "drawn": 45
+      },
+      {
+       "points": 4,
+       "applicants": 198,
+       "drawn": 181
+      },
+      {
+       "points": 5,
+       "applicants": 14,
+       "drawn": 14
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3C-ANY-ANTLERLESS",
+    "unit": "3C",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 200,
+      "applicants": 207,
+      "successPct": 96.6
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 3,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 170,
+       "drawn": 164
+      },
+      {
+       "points": 1,
+       "applicants": 20,
+       "drawn": 19
+      },
+      {
+       "points": 2,
+       "applicants": 9,
+       "drawn": 9
+      },
+      {
+       "points": 3,
+       "applicants": 5,
+       "drawn": 5
+      },
+      {
+       "points": 4,
+       "applicants": 3,
+       "drawn": 3
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3D1-ANY-ANTLERED",
+    "unit": "3D1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 500,
+    "draw": {
+     "resident": {
+      "tags": 370,
+      "applicants": 842,
+      "successPct": 43.9
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 42,
+      "successPct": 4.8
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 418,
+       "drawn": 102
+      },
+      {
+       "points": 1,
+       "applicants": 274,
+       "drawn": 152
+      },
+      {
+       "points": 2,
+       "applicants": 94,
+       "drawn": 68
+      },
+      {
+       "points": 3,
+       "applicants": 32,
+       "drawn": 26
+      },
+      {
+       "points": 4,
+       "applicants": 19,
+       "drawn": 17
+      },
+      {
+       "points": 5,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 16,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 5,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3D1-ANY-ANTLERLESS",
+    "unit": "3D1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 400,
+    "draw": {
+     "resident": {
+      "tags": 329,
+      "applicants": 79,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 2,
+      "successPct": 50
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 75,
+       "drawn": 75
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3D2-ANTLERED-WT",
+    "unit": "3D2",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 72,
+      "applicants": 59,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 3,
+      "successPct": 33.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 48,
+       "drawn": 48
+      },
+      {
+       "points": 1,
+       "applicants": 10,
+       "drawn": 10
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3D2-ANY-ANTLERED",
+    "unit": "3D2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 700,
+    "draw": {
+     "resident": {
+      "tags": 511,
+      "applicants": 1093,
+      "successPct": 46.7
+     },
+     "nonresident": {
+      "tags": 3,
+      "applicants": 53,
+      "successPct": 5.7
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 567,
+       "drawn": 162
+      },
+      {
+       "points": 1,
+       "applicants": 375,
+       "drawn": 225
+      },
+      {
+       "points": 2,
+       "applicants": 104,
+       "drawn": 82
+      },
+      {
+       "points": 3,
+       "applicants": 33,
+       "drawn": 28
+      },
+      {
+       "points": 4,
+       "applicants": 9,
+       "drawn": 8
+      },
+      {
+       "points": 5,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 6,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3D2-ANY-ANTLERLESS",
+    "unit": "3D2",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 700,
+    "draw": {
+     "resident": {
+      "tags": 587,
+      "applicants": 145,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 3,
+      "applicants": 8,
+      "successPct": 37.5
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 129,
+       "drawn": 129
+      },
+      {
+       "points": 1,
+       "applicants": 10,
+       "drawn": 10
+      },
+      {
+       "points": 2,
+       "applicants": 5,
+       "drawn": 5
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3E1-ANTLERED-WT",
+    "unit": "3E1",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 228,
+      "applicants": 261,
+      "successPct": 87.4
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 16,
+      "successPct": 12.5
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 220,
+       "drawn": 189
+      },
+      {
+       "points": 1,
+       "applicants": 33,
+       "drawn": 33
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3E1-ANTLERLESS-WT",
+    "unit": "3E1",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 39,
+      "applicants": 16,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 15,
+       "drawn": 15
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3E1-ANY-ANTLERED",
+    "unit": "3E1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 600,
+    "draw": {
+     "resident": {
+      "tags": 460,
+      "applicants": 1272,
+      "successPct": 36.2
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 40,
+      "successPct": 2.5
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 568,
+       "drawn": 96
+      },
+      {
+       "points": 1,
+       "applicants": 428,
+       "drawn": 185
+      },
+      {
+       "points": 2,
+       "applicants": 153,
+       "drawn": 93
+      },
+      {
+       "points": 3,
+       "applicants": 85,
+       "drawn": 52
+      },
+      {
+       "points": 4,
+       "applicants": 29,
+       "drawn": 28
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 3
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3E1-ANY-ANTLERLESS",
+    "unit": "3E1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 500,
+    "draw": {
+     "resident": {
+      "tags": 398,
+      "applicants": 155,
+      "successPct": 98.7
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 7,
+      "successPct": 14.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 129,
+       "drawn": 128
+      },
+      {
+       "points": 1,
+       "applicants": 19,
+       "drawn": 19
+      },
+      {
+       "points": 2,
+       "applicants": 6,
+       "drawn": 5
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3E2-ANTLERED-WT",
+    "unit": "3E2",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 150,
+    "draw": {
+     "resident": {
+      "tags": 113,
+      "applicants": 137,
+      "successPct": 82.5
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 3,
+      "successPct": 33.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 112,
+       "drawn": 88
+      },
+      {
+       "points": 1,
+       "applicants": 21,
+       "drawn": 21
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3E2-ANTLERLESS-WT",
+    "unit": "3E2",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 85,
+      "applicants": 10,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 2,
+      "successPct": 50
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 10,
+       "drawn": 10
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3E2-ANY-ANTLERED",
+    "unit": "3E2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 700,
+    "draw": {
+     "resident": {
+      "tags": 531,
+      "applicants": 1306,
+      "successPct": 40.7
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 62,
+      "successPct": 3.2
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 662,
+       "drawn": 147
+      },
+      {
+       "points": 1,
+       "applicants": 434,
+       "drawn": 224
+      },
+      {
+       "points": 2,
+       "applicants": 158,
+       "drawn": 115
+      },
+      {
+       "points": 3,
+       "applicants": 46,
+       "drawn": 39
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 13,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3E2-ANY-ANTLERLESS",
+    "unit": "3E2",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 700,
+    "draw": {
+     "resident": {
+      "tags": 602,
+      "applicants": 200,
+      "successPct": 97.5
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 7,
+      "successPct": 14.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 162,
+       "drawn": 159
+      },
+      {
+       "points": 1,
+       "applicants": 23,
+       "drawn": 22
+      },
+      {
+       "points": 2,
+       "applicants": 9,
+       "drawn": 8
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 4,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 5,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3F1-ANTLERED-WT",
+    "unit": "3F1",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 269,
+      "applicants": 120,
+      "successPct": 99.2
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 11,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 108,
+       "drawn": 108
+      },
+      {
+       "points": 1,
+       "applicants": 10,
+       "drawn": 10
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3F1-ANTLERLESS-WT",
+    "unit": "3F1",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 26,
+      "applicants": 1,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 1,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3F1-ANY-ANTLERED",
+    "unit": "3F1",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 400,
+    "draw": {
+     "resident": {
+      "tags": 359,
+      "applicants": 700,
+      "successPct": 51.1
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 53,
+      "successPct": 1.9
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 364,
+       "drawn": 125
+      },
+      {
+       "points": 1,
+       "applicants": 235,
+       "drawn": 149
+      },
+      {
+       "points": 2,
+       "applicants": 78,
+       "drawn": 63
+      },
+      {
+       "points": 3,
+       "applicants": 9,
+       "drawn": 8
+      },
+      {
+       "points": 4,
+       "applicants": 10,
+       "drawn": 9
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3F1-ANY-ANTLERLESS",
+    "unit": "3F1",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 400,
+    "draw": {
+     "resident": {
+      "tags": 272,
+      "applicants": 76,
+      "successPct": 97.4
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 7,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 63,
+       "drawn": 61
+      },
+      {
+       "points": 1,
+       "applicants": 9,
+       "drawn": 9
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3F2-ANTLERED-WT",
+    "unit": "3F2",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 266,
+      "applicants": 73,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 7,
+      "successPct": 14.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 63,
+       "drawn": 63
+      },
+      {
+       "points": 1,
+       "applicants": 8,
+       "drawn": 8
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3F2-ANTLERLESS-WT",
+    "unit": "3F2",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 23,
+      "applicants": 3,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 3
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3F2-ANY-ANTLERED",
+    "unit": "3F2",
+    "label": "Any Antlered Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 1300,
+    "draw": {
+     "resident": {
+      "tags": 1157,
+      "applicants": 1427,
+      "successPct": 81.1
+     },
+     "nonresident": {
+      "tags": 6,
+      "applicants": 128,
+      "successPct": 4.7
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1092,
+       "drawn": 834
+      },
+      {
+       "points": 1,
+       "applicants": 283,
+       "drawn": 272
+      },
+      {
+       "points": 2,
+       "applicants": 30,
+       "drawn": 29
+      },
+      {
+       "points": 3,
+       "applicants": 11,
+       "drawn": 11
+      },
+      {
+       "points": 4,
+       "applicants": 8,
+       "drawn": 8
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 32,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 49,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 18,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 14,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 7,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-3F2-ANY-ANTLERLESS",
+    "unit": "3F2",
+    "label": "Any Antlerless Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 1000,
+    "draw": {
+     "resident": {
+      "tags": 430,
+      "applicants": 138,
+      "successPct": 97.8
+     },
+     "nonresident": {
+      "tags": 2,
+      "applicants": 8,
+      "successPct": 25
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 122,
+       "drawn": 119
+      },
+      {
+       "points": 1,
+       "applicants": 14,
+       "drawn": 14
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 6,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 2,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4A-ANTLERED-MD",
+    "unit": "4A",
+    "label": "Antlered Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 150,
+    "draw": {
+     "resident": {
+      "tags": 80,
+      "applicants": 1237,
+      "successPct": 6.5
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 108,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 201,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 221,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 198,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 220,
+       "drawn": 3
+      },
+      {
+       "points": 4,
+       "applicants": 214,
+       "drawn": 20
+      },
+      {
+       "points": 5,
+       "applicants": 114,
+       "drawn": 27
+      },
+      {
+       "points": 6,
+       "applicants": 49,
+       "drawn": 16
+      },
+      {
+       "points": 7,
+       "applicants": 17,
+       "drawn": 10
+      },
+      {
+       "points": 8,
+       "applicants": 3,
+       "drawn": 3
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 21,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 24,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 19,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4A-ANTLERED-WT",
+    "unit": "4A",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 53,
+      "applicants": 248,
+      "successPct": 21.4
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 13,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 117,
+       "drawn": 10
+      },
+      {
+       "points": 1,
+       "applicants": 84,
+       "drawn": 21
+      },
+      {
+       "points": 2,
+       "applicants": 34,
+       "drawn": 14
+      },
+      {
+       "points": 3,
+       "applicants": 9,
+       "drawn": 6
+      },
+      {
+       "points": 4,
+       "applicants": 4,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4A-ANTLERLESS-MD",
+    "unit": "4A",
+    "label": "Antlerless Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 19,
+      "applicants": 37,
+      "successPct": 51.4
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 19,
+       "drawn": 6
+      },
+      {
+       "points": 1,
+       "applicants": 13,
+       "drawn": 10
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4A-ANTLERLESS-WT",
+    "unit": "4A",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 19,
+      "applicants": 21,
+      "successPct": 90.5
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 15,
+       "drawn": 13
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4B-ANTLERED-MD",
+    "unit": "4B",
+    "label": "Antlered Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 300,
+    "draw": {
+     "resident": {
+      "tags": 238,
+      "applicants": 3307,
+      "successPct": 7.2
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 436,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 457,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 551,
+       "drawn": 5
+      },
+      {
+       "points": 2,
+       "applicants": 458,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 518,
+       "drawn": 3
+      },
+      {
+       "points": 4,
+       "applicants": 517,
+       "drawn": 35
+      },
+      {
+       "points": 5,
+       "applicants": 412,
+       "drawn": 59
+      },
+      {
+       "points": 6,
+       "applicants": 248,
+       "drawn": 65
+      },
+      {
+       "points": 7,
+       "applicants": 99,
+       "drawn": 46
+      },
+      {
+       "points": 8,
+       "applicants": 38,
+       "drawn": 20
+      },
+      {
+       "points": 9,
+       "applicants": 7,
+       "drawn": 3
+      },
+      {
+       "points": 10,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 75,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 75,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 45,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 40,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 36,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 24,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 23,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 28,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 19,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 18,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 18,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 19,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 20,
+       "applicants": 4,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4B-ANTLERED-WT",
+    "unit": "4B",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 79,
+      "applicants": 180,
+      "successPct": 43.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 20,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 104,
+       "drawn": 30
+      },
+      {
+       "points": 1,
+       "applicants": 54,
+       "drawn": 34
+      },
+      {
+       "points": 2,
+       "applicants": 12,
+       "drawn": 9
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 5,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4B-ANTLERLESS-MD",
+    "unit": "4B",
+    "label": "Antlerless Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 69,
+      "applicants": 95,
+      "successPct": 70.5
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 52,
+       "drawn": 30
+      },
+      {
+       "points": 1,
+       "applicants": 34,
+       "drawn": 32
+      },
+      {
+       "points": 2,
+       "applicants": 5,
+       "drawn": 4
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4B-ANTLERLESS-WT",
+    "unit": "4B",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 36,
+      "applicants": 6,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 2,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 5,
+       "drawn": 5
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4C-ANTLERED-MD",
+    "unit": "4C",
+    "label": "Antlered Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 161,
+      "applicants": 2749,
+      "successPct": 5.8
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 388,
+      "successPct": 0.3
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 331,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 396,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 404,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 386,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 419,
+       "drawn": 19
+      },
+      {
+       "points": 5,
+       "applicants": 342,
+       "drawn": 27
+      },
+      {
+       "points": 6,
+       "applicants": 201,
+       "drawn": 31
+      },
+      {
+       "points": 7,
+       "applicants": 156,
+       "drawn": 28
+      },
+      {
+       "points": 8,
+       "applicants": 77,
+       "drawn": 35
+      },
+      {
+       "points": 9,
+       "applicants": 27,
+       "drawn": 13
+      },
+      {
+       "points": 10,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 11,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 12,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 20,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 91,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 71,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 34,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 27,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 20,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 27,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 19,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 12,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 18,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 19,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 20,
+       "applicants": 2,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4C-ANTLERED-WT",
+    "unit": "4C",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 81,
+      "applicants": 156,
+      "successPct": 51.9
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 25,
+      "successPct": 4
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 66,
+       "drawn": 21
+      },
+      {
+       "points": 1,
+       "applicants": 60,
+       "drawn": 37
+      },
+      {
+       "points": 2,
+       "applicants": 16,
+       "drawn": 12
+      },
+      {
+       "points": 3,
+       "applicants": 9,
+       "drawn": 7
+      },
+      {
+       "points": 4,
+       "applicants": 5,
+       "drawn": 4
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4C-ANTLERLESS-MD",
+    "unit": "4C",
+    "label": "Antlerless Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 35,
+      "applicants": 89,
+      "successPct": 39.3
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 1,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 34,
+       "drawn": 6
+      },
+      {
+       "points": 1,
+       "applicants": 30,
+       "drawn": 12
+      },
+      {
+       "points": 2,
+       "applicants": 12,
+       "drawn": 7
+      },
+      {
+       "points": 3,
+       "applicants": 8,
+       "drawn": 6
+      },
+      {
+       "points": 4,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4C-ANTLERLESS-WT",
+    "unit": "4C",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 36,
+      "applicants": 10,
+      "successPct": 90
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 1,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 1,
+       "applicants": 5,
+       "drawn": 4
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4D-ANTLERED-MD",
+    "unit": "4D",
+    "label": "Antlered Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 250,
+    "draw": {
+     "resident": {
+      "tags": 198,
+      "applicants": 2571,
+      "successPct": 7.7
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 250,
+      "successPct": 0.4
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 355,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 419,
+       "drawn": 5
+      },
+      {
+       "points": 2,
+       "applicants": 381,
+       "drawn": 3
+      },
+      {
+       "points": 3,
+       "applicants": 406,
+       "drawn": 4
+      },
+      {
+       "points": 4,
+       "applicants": 359,
+       "drawn": 24
+      },
+      {
+       "points": 5,
+       "applicants": 290,
+       "drawn": 49
+      },
+      {
+       "points": 6,
+       "applicants": 212,
+       "drawn": 57
+      },
+      {
+       "points": 7,
+       "applicants": 102,
+       "drawn": 37
+      },
+      {
+       "points": 8,
+       "applicants": 33,
+       "drawn": 13
+      },
+      {
+       "points": 9,
+       "applicants": 9,
+       "drawn": 3
+      },
+      {
+       "points": 10,
+       "applicants": 4,
+       "drawn": 2
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 52,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 43,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 17,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 27,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 16,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 15,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 23,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 18,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 20,
+       "applicants": 2,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4D-ANTLERED-WT",
+    "unit": "4D",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 79,
+      "applicants": 157,
+      "successPct": 50.3
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 10,
+      "successPct": 10
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 88,
+       "drawn": 30
+      },
+      {
+       "points": 1,
+       "applicants": 49,
+       "drawn": 31
+      },
+      {
+       "points": 2,
+       "applicants": 9,
+       "drawn": 8
+      },
+      {
+       "points": 3,
+       "applicants": 6,
+       "drawn": 5
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4D-ANTLERLESS-MD",
+    "unit": "4D",
+    "label": "Antlerless Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 73,
+      "applicants": 146,
+      "successPct": 50
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 4,
+      "successPct": 25
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 82,
+       "drawn": 27
+      },
+      {
+       "points": 1,
+       "applicants": 43,
+       "drawn": 31
+      },
+      {
+       "points": 2,
+       "applicants": 18,
+       "drawn": 13
+      },
+      {
+       "points": 3,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4D-ANTLERLESS-WT",
+    "unit": "4D",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 38,
+      "applicants": 14,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 8,
+       "drawn": 8
+      },
+      {
+       "points": 1,
+       "applicants": 5,
+       "drawn": 5
+      },
+      {
+       "points": 2,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4E-ANTLERED-MD",
+    "unit": "4E",
+    "label": "Antlered Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 150,
+    "draw": {
+     "resident": {
+      "tags": 129,
+      "applicants": 1040,
+      "successPct": 12.4
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 95,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 197,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 195,
+       "drawn": 3
+      },
+      {
+       "points": 2,
+       "applicants": 170,
+       "drawn": 7
+      },
+      {
+       "points": 3,
+       "applicants": 217,
+       "drawn": 13
+      },
+      {
+       "points": 4,
+       "applicants": 161,
+       "drawn": 50
+      },
+      {
+       "points": 5,
+       "applicants": 86,
+       "drawn": 44
+      },
+      {
+       "points": 6,
+       "applicants": 10,
+       "drawn": 8
+      },
+      {
+       "points": 7,
+       "applicants": 4,
+       "drawn": 3
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 16,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4E-ANTLERED-WT",
+    "unit": "4E",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 150,
+    "draw": {
+     "resident": {
+      "tags": 130,
+      "applicants": 95,
+      "successPct": 98.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 9,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 79,
+       "drawn": 78
+      },
+      {
+       "points": 1,
+       "applicants": 8,
+       "drawn": 8
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 3,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4E-ANTLERLESS-MD",
+    "unit": "4E",
+    "label": "Antlerless Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 39,
+      "applicants": 39,
+      "successPct": 94.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 31,
+       "drawn": 29
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 2,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4E-ANTLERLESS-WT",
+    "unit": "4E",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 6,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 1,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 3
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4F-ANTLERED-MD",
+    "unit": "4F",
+    "label": "Antlered Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 150,
+    "draw": {
+     "resident": {
+      "tags": 134,
+      "applicants": 362,
+      "successPct": 36.7
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 77,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 148,
+       "drawn": 20
+      },
+      {
+       "points": 1,
+       "applicants": 118,
+       "drawn": 53
+      },
+      {
+       "points": 2,
+       "applicants": 55,
+       "drawn": 31
+      },
+      {
+       "points": 3,
+       "applicants": 26,
+       "drawn": 16
+      },
+      {
+       "points": 4,
+       "applicants": 10,
+       "drawn": 9
+      },
+      {
+       "points": 5,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 9,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 11,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 6,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 18,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 20,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4F-ANTLERED-WT",
+    "unit": "4F",
+    "label": "Antlered Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 200,
+    "draw": {
+     "resident": {
+      "tags": 181,
+      "applicants": 102,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 1,
+      "applicants": 10,
+      "successPct": 10
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 91,
+       "drawn": 91
+      },
+      {
+       "points": 1,
+       "applicants": 7,
+       "drawn": 7
+      },
+      {
+       "points": 2,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 3,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 3,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 2,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4F-ANTLERLESS-MD",
+    "unit": "4F",
+    "label": "Antlerless Mule Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 41,
+      "applicants": 17,
+      "successPct": 94.1
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 1,
+      "successPct": 0
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 13,
+       "drawn": 13
+      },
+      {
+       "points": 1,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 4,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-4F-ANTLERLESS-WT",
+    "unit": "4F",
+    "label": "Antlerless Whitetail Deer — Deer gun",
+    "weapon": "rifle",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 41,
+      "applicants": 12,
+      "successPct": 100
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 0,
+      "successPct": null
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 12,
+       "drawn": 12
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-MUZ-ANTLERED-WT",
+    "unit": "MUZ",
+    "label": "Antlered Whitetail Deer — Muzzleloader (statewide)",
+    "weapon": "muzzleloader",
+    "tags": 375,
+    "draw": {
+     "resident": {
+      "tags": 372,
+      "applicants": 14863,
+      "successPct": 2.5
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 507,
+      "successPct": 0.6
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 1749,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 2023,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 1353,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 1273,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 1164,
+       "drawn": 4
+      },
+      {
+       "points": 5,
+       "applicants": 1106,
+       "drawn": 8
+      },
+      {
+       "points": 6,
+       "applicants": 1028,
+       "drawn": 15
+      },
+      {
+       "points": 7,
+       "applicants": 916,
+       "drawn": 7
+      },
+      {
+       "points": 8,
+       "applicants": 890,
+       "drawn": 28
+      },
+      {
+       "points": 9,
+       "applicants": 893,
+       "drawn": 41
+      },
+      {
+       "points": 10,
+       "applicants": 703,
+       "drawn": 43
+      },
+      {
+       "points": 11,
+       "applicants": 526,
+       "drawn": 42
+      },
+      {
+       "points": 12,
+       "applicants": 433,
+       "drawn": 48
+      },
+      {
+       "points": 13,
+       "applicants": 312,
+       "drawn": 41
+      },
+      {
+       "points": 14,
+       "applicants": 239,
+       "drawn": 29
+      },
+      {
+       "points": 15,
+       "applicants": 136,
+       "drawn": 29
+      },
+      {
+       "points": 16,
+       "applicants": 71,
+       "drawn": 23
+      },
+      {
+       "points": 17,
+       "applicants": 35,
+       "drawn": 8
+      },
+      {
+       "points": 18,
+       "applicants": 11,
+       "drawn": 3
+      },
+      {
+       "points": 19,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 20,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 157,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 97,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 36,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 25,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 39,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 18,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 22,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 20,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 18,
+       "drawn": 0
+      },
+      {
+       "points": 9,
+       "applicants": 15,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 17,
+       "drawn": 0
+      },
+      {
+       "points": 11,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 10,
+       "drawn": 2
+      },
+      {
+       "points": 14,
+       "applicants": 7,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 16,
+       "applicants": 4,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 18,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "DEER-MUZ-ANTLERLESS-WT",
+    "unit": "MUZ",
+    "label": "Antlerless Whitetail Deer — Muzzleloader (statewide)",
+    "weapon": "muzzleloader",
+    "tags": 375,
+    "draw": {
+     "resident": {
+      "tags": 372,
+      "applicants": 1036,
+      "successPct": 35.9
+     },
+     "nonresident": {
+      "tags": 0,
+      "applicants": 12,
+      "successPct": 25
+     }
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 402,
+       "drawn": 65
+      },
+      {
+       "points": 1,
+       "applicants": 380,
+       "drawn": 138
+      },
+      {
+       "points": 2,
+       "applicants": 155,
+       "drawn": 87
+      },
+      {
+       "points": 3,
+       "applicants": 57,
+       "drawn": 40
+      },
+      {
+       "points": 4,
+       "applicants": 19,
+       "drawn": 19
+      },
+      {
+       "points": 5,
+       "applicants": 9,
+       "drawn": 9
+      },
+      {
+       "points": 6,
+       "applicants": 3,
+       "drawn": 3
+      },
+      {
+       "points": 7,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 8,
+       "applicants": 4,
+       "drawn": 4
+      },
+      {
+       "points": 9,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 10,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ],
+     "nonresident": [
+      {
+       "points": 0,
+       "applicants": 8,
+       "drawn": 1
+      },
+      {
+       "points": 1,
+       "applicants": 4,
+       "drawn": 2
+      }
+     ]
+    }
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "huntCode": "ANTELOPE-01A-ANY",
+    "unit": "1-A",
+    "label": "Any Pronghorn — unit 01A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 130,
+    "draw": {
+     "resident": {
+      "tags": 68,
+      "applicants": 3044,
+      "successPct": 2.2
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 427,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 378,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 283,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 288,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 275,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 273,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 261,
+       "drawn": 4
+      },
+      {
+       "points": 7,
+       "applicants": 230,
+       "drawn": 5
+      },
+      {
+       "points": 8,
+       "applicants": 193,
+       "drawn": 11
+      },
+      {
+       "points": 9,
+       "applicants": 172,
+       "drawn": 6
+      },
+      {
+       "points": 10,
+       "applicants": 105,
+       "drawn": 9
+      },
+      {
+       "points": 11,
+       "applicants": 80,
+       "drawn": 19
+      },
+      {
+       "points": 12,
+       "applicants": 46,
+       "drawn": 5
+      },
+      {
+       "points": 13,
+       "applicants": 26,
+       "drawn": 6
+      },
+      {
+       "points": 14,
+       "applicants": 6,
+       "drawn": 1
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-01D-ANY",
+    "unit": "1-D",
+    "label": "Any Pronghorn — unit 01D (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 55,
+      "applicants": 2363,
+      "successPct": 2.3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 375,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 311,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 222,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 250,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 223,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 231,
+       "drawn": 8
+      },
+      {
+       "points": 6,
+       "applicants": 228,
+       "drawn": 4
+      },
+      {
+       "points": 7,
+       "applicants": 153,
+       "drawn": 5
+      },
+      {
+       "points": 8,
+       "applicants": 123,
+       "drawn": 8
+      },
+      {
+       "points": 9,
+       "applicants": 103,
+       "drawn": 12
+      },
+      {
+       "points": 10,
+       "applicants": 62,
+       "drawn": 5
+      },
+      {
+       "points": 11,
+       "applicants": 37,
+       "drawn": 6
+      },
+      {
+       "points": 12,
+       "applicants": 29,
+       "drawn": 1
+      },
+      {
+       "points": 13,
+       "applicants": 8,
+       "drawn": 1
+      },
+      {
+       "points": 14,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 16,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-02A-ANY",
+    "unit": "2-A",
+    "label": "Any Pronghorn — unit 02A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 70,
+    "draw": {
+     "resident": {
+      "tags": 35,
+      "applicants": 675,
+      "successPct": 5.2
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 118,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 89,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 71,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 64,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 64,
+       "drawn": 3
+      },
+      {
+       "points": 5,
+       "applicants": 58,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 68,
+       "drawn": 5
+      },
+      {
+       "points": 7,
+       "applicants": 60,
+       "drawn": 7
+      },
+      {
+       "points": 8,
+       "applicants": 36,
+       "drawn": 5
+      },
+      {
+       "points": 9,
+       "applicants": 29,
+       "drawn": 5
+      },
+      {
+       "points": 10,
+       "applicants": 11,
+       "drawn": 5
+      },
+      {
+       "points": 11,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 3,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-02B-ANY",
+    "unit": "2-B",
+    "label": "Any Pronghorn — unit 02B (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 55,
+    "draw": {
+     "resident": {
+      "tags": 38,
+      "applicants": 1056,
+      "successPct": 3.6
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 156,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 105,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 87,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 117,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 118,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 117,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 95,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 77,
+       "drawn": 7
+      },
+      {
+       "points": 8,
+       "applicants": 78,
+       "drawn": 6
+      },
+      {
+       "points": 9,
+       "applicants": 45,
+       "drawn": 7
+      },
+      {
+       "points": 10,
+       "applicants": 25,
+       "drawn": 4
+      },
+      {
+       "points": 11,
+       "applicants": 18,
+       "drawn": 5
+      },
+      {
+       "points": 12,
+       "applicants": 14,
+       "drawn": 4
+      },
+      {
+       "points": 13,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-03A-ANY",
+    "unit": "3-A",
+    "label": "Any Pronghorn — unit 03A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 20,
+    "draw": {
+     "resident": {
+      "tags": 12,
+      "applicants": 286,
+      "successPct": 4.2
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 39,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 29,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 32,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 29,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 27,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 29,
+       "drawn": 1
+      },
+      {
+       "points": 6,
+       "applicants": 25,
+       "drawn": 0
+      },
+      {
+       "points": 7,
+       "applicants": 31,
+       "drawn": 4
+      },
+      {
+       "points": 8,
+       "applicants": 16,
+       "drawn": 3
+      },
+      {
+       "points": 9,
+       "applicants": 11,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 7,
+       "drawn": 2
+      },
+      {
+       "points": 11,
+       "applicants": 10,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-03B-ANY",
+    "unit": "3-B",
+    "label": "Any Pronghorn — unit 03B (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 80,
+    "draw": {
+     "resident": {
+      "tags": 41,
+      "applicants": 1069,
+      "successPct": 3.7
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 156,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 143,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 108,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 102,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 121,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 90,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 79,
+       "drawn": 5
+      },
+      {
+       "points": 7,
+       "applicants": 80,
+       "drawn": 5
+      },
+      {
+       "points": 8,
+       "applicants": 63,
+       "drawn": 6
+      },
+      {
+       "points": 9,
+       "applicants": 50,
+       "drawn": 6
+      },
+      {
+       "points": 10,
+       "applicants": 31,
+       "drawn": 7
+      },
+      {
+       "points": 11,
+       "applicants": 25,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 15,
+       "drawn": 6
+      },
+      {
+       "points": 13,
+       "applicants": 5,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-04A-ANY",
+    "unit": "4-A",
+    "label": "Any Pronghorn — unit 04A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 110,
+    "draw": {
+     "resident": {
+      "tags": 64,
+      "applicants": 1652,
+      "successPct": 3.9
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 236,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 154,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 122,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 172,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 195,
+       "drawn": 3
+      },
+      {
+       "points": 5,
+       "applicants": 198,
+       "drawn": 4
+      },
+      {
+       "points": 6,
+       "applicants": 173,
+       "drawn": 3
+      },
+      {
+       "points": 7,
+       "applicants": 152,
+       "drawn": 10
+      },
+      {
+       "points": 8,
+       "applicants": 98,
+       "drawn": 15
+      },
+      {
+       "points": 9,
+       "applicants": 74,
+       "drawn": 13
+      },
+      {
+       "points": 10,
+       "applicants": 44,
+       "drawn": 7
+      },
+      {
+       "points": 11,
+       "applicants": 17,
+       "drawn": 3
+      },
+      {
+       "points": 12,
+       "applicants": 11,
+       "drawn": 3
+      },
+      {
+       "points": 13,
+       "applicants": 3,
+       "drawn": 2
+      },
+      {
+       "points": 14,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-04C-ANY",
+    "unit": "4-C",
+    "label": "Any Pronghorn — unit 04C (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 33,
+      "applicants": 322,
+      "successPct": 10.2
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 62,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 54,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 42,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 32,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 40,
+       "drawn": 3
+      },
+      {
+       "points": 5,
+       "applicants": 28,
+       "drawn": 5
+      },
+      {
+       "points": 6,
+       "applicants": 23,
+       "drawn": 5
+      },
+      {
+       "points": 7,
+       "applicants": 15,
+       "drawn": 6
+      },
+      {
+       "points": 8,
+       "applicants": 19,
+       "drawn": 11
+      },
+      {
+       "points": 9,
+       "applicants": 3,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 2,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-05A-ANY",
+    "unit": "5-A",
+    "label": "Any Pronghorn — unit 05A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 54,
+      "applicants": 607,
+      "successPct": 8.9
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 103,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 74,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 77,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 94,
+       "drawn": 2
+      },
+      {
+       "points": 4,
+       "applicants": 62,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 75,
+       "drawn": 11
+      },
+      {
+       "points": 6,
+       "applicants": 39,
+       "drawn": 7
+      },
+      {
+       "points": 7,
+       "applicants": 35,
+       "drawn": 9
+      },
+      {
+       "points": 8,
+       "applicants": 26,
+       "drawn": 12
+      },
+      {
+       "points": 9,
+       "applicants": 15,
+       "drawn": 9
+      },
+      {
+       "points": 10,
+       "applicants": 6,
+       "drawn": 2
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-06A-ANY",
+    "unit": "6-A",
+    "label": "Any Pronghorn — unit 06A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 160,
+    "draw": {
+     "resident": {
+      "tags": 80,
+      "applicants": 1017,
+      "successPct": 7.9
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 206,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 137,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 120,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 129,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 105,
+       "drawn": 9
+      },
+      {
+       "points": 5,
+       "applicants": 104,
+       "drawn": 11
+      },
+      {
+       "points": 6,
+       "applicants": 74,
+       "drawn": 8
+      },
+      {
+       "points": 7,
+       "applicants": 65,
+       "drawn": 13
+      },
+      {
+       "points": 8,
+       "applicants": 43,
+       "drawn": 17
+      },
+      {
+       "points": 9,
+       "applicants": 21,
+       "drawn": 12
+      },
+      {
+       "points": 10,
+       "applicants": 8,
+       "drawn": 6
+      },
+      {
+       "points": 11,
+       "applicants": 2,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 3,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-07A-ANY",
+    "unit": "7-A",
+    "label": "Any Pronghorn — unit 07A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 100,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 706,
+      "successPct": 7.1
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 172,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 94,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 94,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 100,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 74,
+       "drawn": 7
+      },
+      {
+       "points": 5,
+       "applicants": 57,
+       "drawn": 11
+      },
+      {
+       "points": 6,
+       "applicants": 40,
+       "drawn": 4
+      },
+      {
+       "points": 7,
+       "applicants": 31,
+       "drawn": 6
+      },
+      {
+       "points": 8,
+       "applicants": 22,
+       "drawn": 6
+      },
+      {
+       "points": 9,
+       "applicants": 10,
+       "drawn": 8
+      },
+      {
+       "points": 10,
+       "applicants": 8,
+       "drawn": 3
+      },
+      {
+       "points": 11,
+       "applicants": 2,
+       "drawn": 2
+      },
+      {
+       "points": 12,
+       "applicants": 2,
+       "drawn": 2
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-08A-ANY",
+    "unit": "8-A",
+    "label": "Any Pronghorn — unit 08A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 40,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 369,
+      "successPct": 5.4
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 84,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 69,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 36,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 49,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 32,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 34,
+       "drawn": 3
+      },
+      {
+       "points": 6,
+       "applicants": 28,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 17,
+       "drawn": 5
+      },
+      {
+       "points": 8,
+       "applicants": 7,
+       "drawn": 2
+      },
+      {
+       "points": 9,
+       "applicants": 4,
+       "drawn": 2
+      },
+      {
+       "points": 10,
+       "applicants": 7,
+       "drawn": 4
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-09A-ANY",
+    "unit": "9-A",
+    "label": "Any Pronghorn — unit 09A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 40,
+    "draw": {
+     "resident": {
+      "tags": 24,
+      "applicants": 282,
+      "successPct": 8.5
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 73,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 50,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 38,
+       "drawn": 3
+      },
+      {
+       "points": 3,
+       "applicants": 30,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 28,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 17,
+       "drawn": 5
+      },
+      {
+       "points": 6,
+       "applicants": 22,
+       "drawn": 5
+      },
+      {
+       "points": 7,
+       "applicants": 10,
+       "drawn": 4
+      },
+      {
+       "points": 8,
+       "applicants": 7,
+       "drawn": 2
+      },
+      {
+       "points": 9,
+       "applicants": 6,
+       "drawn": 3
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-09C-ANY",
+    "unit": "9-C",
+    "label": "Any Pronghorn — unit 09C (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 40,
+    "draw": {
+     "resident": {
+      "tags": 20,
+      "applicants": 628,
+      "successPct": 3.2
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 160,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 110,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 81,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 61,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 50,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 42,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 33,
+       "drawn": 2
+      },
+      {
+       "points": 7,
+       "applicants": 27,
+       "drawn": 1
+      },
+      {
+       "points": 8,
+       "applicants": 16,
+       "drawn": 2
+      },
+      {
+       "points": 9,
+       "applicants": 25,
+       "drawn": 3
+      },
+      {
+       "points": 10,
+       "applicants": 9,
+       "drawn": 2
+      },
+      {
+       "points": 11,
+       "applicants": 8,
+       "drawn": 5
+      },
+      {
+       "points": 12,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 17,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-10A-ANY",
+    "unit": "10-A",
+    "label": "Any Pronghorn — unit 10A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 27,
+      "applicants": 351,
+      "successPct": 7.7
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 70,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 83,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 36,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 27,
+       "drawn": 1
+      },
+      {
+       "points": 4,
+       "applicants": 34,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 32,
+       "drawn": 3
+      },
+      {
+       "points": 6,
+       "applicants": 25,
+       "drawn": 5
+      },
+      {
+       "points": 7,
+       "applicants": 27,
+       "drawn": 7
+      },
+      {
+       "points": 8,
+       "applicants": 9,
+       "drawn": 4
+      },
+      {
+       "points": 9,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 10,
+       "applicants": 5,
+       "drawn": 4
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-11A-ANY",
+    "unit": "11-A",
+    "label": "Any Pronghorn — unit 11A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 90,
+    "draw": {
+     "resident": {
+      "tags": 45,
+      "applicants": 855,
+      "successPct": 5.3
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 199,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 127,
+       "drawn": 1
+      },
+      {
+       "points": 2,
+       "applicants": 107,
+       "drawn": 1
+      },
+      {
+       "points": 3,
+       "applicants": 99,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 94,
+       "drawn": 2
+      },
+      {
+       "points": 5,
+       "applicants": 76,
+       "drawn": 5
+      },
+      {
+       "points": 6,
+       "applicants": 64,
+       "drawn": 9
+      },
+      {
+       "points": 7,
+       "applicants": 37,
+       "drawn": 9
+      },
+      {
+       "points": 8,
+       "applicants": 23,
+       "drawn": 6
+      },
+      {
+       "points": 9,
+       "applicants": 13,
+       "drawn": 4
+      },
+      {
+       "points": 10,
+       "applicants": 9,
+       "drawn": 5
+      },
+      {
+       "points": 11,
+       "applicants": 5,
+       "drawn": 2
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 15,
+       "applicants": 1,
+       "drawn": 1
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-13A-ANY",
+    "unit": "13-A",
+    "label": "Any Pronghorn — unit 13A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 60,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 1099,
+      "successPct": 2.7
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 234,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 221,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 125,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 123,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 114,
+       "drawn": 1
+      },
+      {
+       "points": 5,
+       "applicants": 95,
+       "drawn": 2
+      },
+      {
+       "points": 6,
+       "applicants": 73,
+       "drawn": 4
+      },
+      {
+       "points": 7,
+       "applicants": 47,
+       "drawn": 8
+      },
+      {
+       "points": 8,
+       "applicants": 30,
+       "drawn": 8
+      },
+      {
+       "points": 9,
+       "applicants": 17,
+       "drawn": 3
+      },
+      {
+       "points": 10,
+       "applicants": 8,
+       "drawn": 2
+      },
+      {
+       "points": 11,
+       "applicants": 6,
+       "drawn": 1
+      },
+      {
+       "points": 12,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 13,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 14,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-17A-ANY",
+    "unit": "17-A",
+    "label": "Any Pronghorn — unit 17A (bow season, then gun/bow season)",
+    "weapon": "any",
+    "tags": 10,
+    "draw": {
+     "resident": {
+      "tags": 5,
+      "applicants": 240,
+      "successPct": 2.1
+     },
+     "nonresident": null
+    },
+    "pointLines": {
+     "resident": [
+      {
+       "points": 0,
+       "applicants": 75,
+       "drawn": 0
+      },
+      {
+       "points": 1,
+       "applicants": 63,
+       "drawn": 0
+      },
+      {
+       "points": 2,
+       "applicants": 19,
+       "drawn": 0
+      },
+      {
+       "points": 3,
+       "applicants": 20,
+       "drawn": 0
+      },
+      {
+       "points": 4,
+       "applicants": 14,
+       "drawn": 0
+      },
+      {
+       "points": 5,
+       "applicants": 10,
+       "drawn": 0
+      },
+      {
+       "points": 6,
+       "applicants": 11,
+       "drawn": 1
+      },
+      {
+       "points": 7,
+       "applicants": 8,
+       "drawn": 0
+      },
+      {
+       "points": 8,
+       "applicants": 4,
+       "drawn": 1
+      },
+      {
+       "points": 9,
+       "applicants": 9,
+       "drawn": 1
+      },
+      {
+       "points": 10,
+       "applicants": 5,
+       "drawn": 2
+      },
+      {
+       "points": 11,
+       "applicants": 1,
+       "drawn": 0
+      },
+      {
+       "points": 12,
+       "applicants": 1,
+       "drawn": 0
+      }
+     ]
+    }
+   }
+  ],
+  "ELK": [
+   {
+    "huntCode": "ELK-E1E-ANY",
+    "unit": "E1E",
+    "label": "Any Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 25,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 4222,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E1E-ANTLERLESS",
+    "unit": "E1E",
+    "label": "Antlerless Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 91,
+    "draw": {
+     "resident": {
+      "tags": 91,
+      "applicants": 143,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E1W-ANY",
+    "unit": "E1W",
+    "label": "Any Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 30,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 2635,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E1W-ANTLERLESS",
+    "unit": "E1W",
+    "label": "Antlerless Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 125,
+    "draw": {
+     "resident": {
+      "tags": 125,
+      "applicants": 125,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E2-ANY",
+    "unit": "E2",
+    "label": "Any Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 42,
+    "draw": {
+     "resident": {
+      "tags": 42,
+      "applicants": 6745,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E2-ANTLERLESS",
+    "unit": "E2",
+    "label": "Antlerless Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 148,
+    "draw": {
+     "resident": {
+      "tags": 148,
+      "applicants": 148,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E3-ANY",
+    "unit": "E3",
+    "label": "Any Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 91,
+    "draw": {
+     "resident": {
+      "tags": 91,
+      "applicants": 9304,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E3-ANTLERLESS",
+    "unit": "E3",
+    "label": "Antlerless Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 228,
+    "draw": {
+     "resident": {
+      "tags": 228,
+      "applicants": 228,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E4-ANY",
+    "unit": "E4",
+    "label": "Any Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 10,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 1147,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E6-ANY",
+    "unit": "E6",
+    "label": "Any Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 2,
+    "draw": {
+     "resident": {
+      "tags": 2,
+      "applicants": 414,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E6-ANTLERLESS",
+    "unit": "E6",
+    "label": "Antlerless Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 10,
+    "draw": {
+     "resident": {
+      "tags": 10,
+      "applicants": 14,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ELK-E7-ANY",
+    "unit": "E7",
+    "label": "Any Elk — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 12,
+    "draw": {
+     "resident": {
+      "tags": 12,
+      "applicants": 1143,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   }
+  ],
+  "MOOSE": [
+   {
+    "huntCode": "MOOSE-M10-ANY",
+    "unit": "M10",
+    "label": "Any Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 52,
+    "draw": {
+     "resident": {
+      "tags": 52,
+      "applicants": 10811,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "MOOSE-M10-ANTLERLESS",
+    "unit": "M10",
+    "label": "Antlerless Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 50,
+    "draw": {
+     "resident": {
+      "tags": 50,
+      "applicants": 511,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "MOOSE-M11-ANY",
+    "unit": "M11",
+    "label": "Any Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 26,
+    "draw": {
+     "resident": {
+      "tags": 26,
+      "applicants": 4907,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "MOOSE-M11-ANTLERLESS",
+    "unit": "M11",
+    "label": "Antlerless Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 25,
+    "draw": {
+     "resident": {
+      "tags": 25,
+      "applicants": 212,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "MOOSE-M5-ANY",
+    "unit": "M5",
+    "label": "Any Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 6,
+    "draw": {
+     "resident": {
+      "tags": 6,
+      "applicants": 480,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "MOOSE-M6-ANY",
+    "unit": "M6",
+    "label": "Any Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 9,
+    "draw": {
+     "resident": {
+      "tags": 9,
+      "applicants": 1583,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "MOOSE-M8-ANY",
+    "unit": "M8",
+    "label": "Any Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 13,
+    "draw": {
+     "resident": {
+      "tags": 13,
+      "applicants": 2326,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "MOOSE-M9-ANY",
+    "unit": "M9",
+    "label": "Any Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 28,
+    "draw": {
+     "resident": {
+      "tags": 28,
+      "applicants": 7238,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "MOOSE-M9-ANTLERLESS",
+    "unit": "M9",
+    "label": "Antlerless Moose — once-in-a-lifetime lottery (bow or firearm)",
+    "weapon": "any",
+    "tags": 40,
+    "draw": {
+     "resident": {
+      "tags": 40,
+      "applicants": 451,
+      "successPct": null
+     },
+     "nonresident": null
+    }
+   }
+  ],
+  "BIGHORNSHEEP": [
+   {
+    "huntCode": "BIGHORNSHEEP-STATEWIDE",
+    "unit": "STATEWIDE",
+    "units": [
+     "B1",
+     "B2",
+     "B3",
+     "B4",
+     "B5"
+    ],
+    "label": "Bighorn sheep (ram) — once-in-a-lifetime lottery; applicants apply statewide and pick a unit after drawing (2026: 5 licenses, 22,739 resident + nonresident applicants combined)",
+    "weapon": "any",
+    "tags": 5,
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    },
+    "applicants": 22739
+   }
+  ]
+ }
+}

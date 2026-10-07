@@ -1,0 +1,618 @@
+{
+ "state": "KS",
+ "year": 2026,
+ "source": {
+  "name": "Kansas Department of Wildlife and Parks — 2026 Deer Quotas and Draw Statistics; 2026 Antelope Draw Statistics",
+  "url": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer/deer-quotas-and-draw-statistics"
+ },
+ "notes": "KDWP 2026 deer and 2026 antelope draws. Deer: https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer/deer-quotas-and-draw-statistics ; antelope: https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/antelope (section \"2026 Antelope Draw Statistics\"). Both are HTML tables on ksoutdoors.gov. Point system: deer and antelope use PREFERENCE points (highest points drawn first; ties drawn at random; group applications drawn at the group's lowest point level). Elk uses BONUS points (extra chances), but KDWP publishes no per-hunt elk draw statistics, so no ELK rows. The nonresident Mule Deer Stamp is a random draw (points do not count). pointLines are NOT filled: KDWP prints permits ISSUED at each preference-point level but not applicants per level. minPoints = lowest point level with ≥1 permit issued (includes any 2nd-4th choice / group draws at that level). DEER nonresident whitetail either-sex (DEER-NR-WT-ES-<unit>): one row per deer management unit 1-18; the applicant picks archery, muzzleloader or firearm and one adjacent unit, but KDWP does not split the stats by season, so weapon is unset. tags = permit quota. applicants = 1st-choice applications to the unit. successPct = permits issued in the unit (sum of the issued-by-PP table) ÷ 1st-choice applications × 100. KDWP also prints 2nd/3rd/4th-choice application counts and the issued counts can include lower-choice draws, so this is permits-per-first-choice-applicant, an upper bound on pure first-choice odds; it is not a KDWP-published percentage. DEER nonresident Mule Deer Stamp (DEER-NR-MD-STAMP-<unit>, units 1, 2, 17, 18): tags = stamps issued, applicants = first-choice stamp applications, successPct = issued ÷ applications. Only nonresidents who drew an archery or muzzleloader whitetail permit in those units are entered. DEER resident firearm either-species/either-sex (DEER-R-ESES-FA-WEST / -EAST): drawn by zone (West = units 1, 2, 17, 18; East = 3, 4, 5, 7, 16); unit = first unit of the zone, units = all. weapon \"rifle\" = firearm season, any legal equipment. applicants = printed total 1st-choice applications (includes general, landowner/tenant, youth and nonresident-tenant applicants; nonresident tenants apply in the resident draw). successPct = permits drawn ÷ applicants. pools general / landowner-tenant / youth use the drawn split printed in the page summary sentence; pool tags are not printed (null). ANTELOPE (resident only; firearm and muzzleloader by unit 2, 17, 18; archery is over the counter, not drawn): tags = general + landowner/tenant quota (by law half of the permits go to each). applicants = general + landowner/tenant + youth first-choice applications as printed (youth applications are printed separately and KDWP does not say which pool they draw in, so pool \"general\" applicants exclude youth). successPct = permits issued ÷ applicants. \"-\" cells in the issued-by-PP table are read as 0. Units: deer and antelope unit numbers are KDWP deer management unit numbers (\"16\"); in the KDWP ArcGIS layers the field value is \"UNIT 16\" (see ks-research.md). No season dates are published with the draw statistics. Resident ESES WEST: applications table says units \"1, 12, 17, 18\", other tables say \"1, 2, 17, 18\" (latter used). Resident ESES EAST: printed total 168 first-choice applications ≠ sum of printed parts 176 (general 158 + landowner/tenant 10 + youth 7 + nonresident tenant 1); printed total used. Antelope Unit 18 ML: page prints 0 landowner/tenant first-choice applications but 2 landowner/tenant permits issued; that pool's successPct left null. Antelope: sum of per-hunt first-choice applications (general + landowner/tenant + youth) 1745 ≠ printed Total Applications 1733; per-hunt figures kept as printed. ANTELOPE-R-FA-2: permits issued 89 ≠ quota 88 (group-draw overage or table inconsistency).",
+ "species": {
+  "DEER": [
+   {
+    "huntCode": "DEER-NR-WT-ES-1",
+    "unit": "1",
+    "label": "Nonresident Whitetail Either-sex — Unit 1 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 389,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 389,
+      "applicants": 748,
+      "successPct": 52.1,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-2",
+    "unit": "2",
+    "label": "Nonresident Whitetail Either-sex — Unit 2 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 303,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 303,
+      "applicants": 499,
+      "successPct": 60.7,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-3",
+    "unit": "3",
+    "label": "Nonresident Whitetail Either-sex — Unit 3 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 689,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 689,
+      "applicants": 1379,
+      "successPct": 50,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-4",
+    "unit": "4",
+    "label": "Nonresident Whitetail Either-sex — Unit 4 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 442,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 442,
+      "applicants": 827,
+      "successPct": 53.4,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-5",
+    "unit": "5",
+    "label": "Nonresident Whitetail Either-sex — Unit 5 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 679,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 679,
+      "applicants": 944,
+      "successPct": 72,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-6",
+    "unit": "6",
+    "label": "Nonresident Whitetail Either-sex — Unit 6 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 604,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 604,
+      "applicants": 863,
+      "successPct": 70,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-7",
+    "unit": "7",
+    "label": "Nonresident Whitetail Either-sex — Unit 7 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 1372,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1372,
+      "applicants": 2498,
+      "successPct": 55,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-8",
+    "unit": "8",
+    "label": "Nonresident Whitetail Either-sex — Unit 8 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 1841,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1841,
+      "applicants": 3330,
+      "successPct": 55.3,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-9",
+    "unit": "9",
+    "label": "Nonresident Whitetail Either-sex — Unit 9 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 1206,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1206,
+      "applicants": 2024,
+      "successPct": 59.6,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-10",
+    "unit": "10",
+    "label": "Nonresident Whitetail Either-sex — Unit 10 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 1304,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1304,
+      "applicants": 2274,
+      "successPct": 57.3,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-11",
+    "unit": "11",
+    "label": "Nonresident Whitetail Either-sex — Unit 11 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 3564,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 3564,
+      "applicants": 6315,
+      "successPct": 56.4,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-12",
+    "unit": "12",
+    "label": "Nonresident Whitetail Either-sex — Unit 12 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 2303,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 2303,
+      "applicants": 3978,
+      "successPct": 57.9,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-13",
+    "unit": "13",
+    "label": "Nonresident Whitetail Either-sex — Unit 13 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 636,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 636,
+      "applicants": 949,
+      "successPct": 67,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-14",
+    "unit": "14",
+    "label": "Nonresident Whitetail Either-sex — Unit 14 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 2079,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 2079,
+      "applicants": 4317,
+      "successPct": 48.2,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-15",
+    "unit": "15",
+    "label": "Nonresident Whitetail Either-sex — Unit 15 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 1705,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1705,
+      "applicants": 2580,
+      "successPct": 66.1,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-16",
+    "unit": "16",
+    "label": "Nonresident Whitetail Either-sex — Unit 16 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 1740,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 1740,
+      "applicants": 2369,
+      "successPct": 73.4,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-17",
+    "unit": "17",
+    "label": "Nonresident Whitetail Either-sex — Unit 17 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 619,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 619,
+      "applicants": 812,
+      "successPct": 76.2,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-WT-ES-18",
+    "unit": "18",
+    "label": "Nonresident Whitetail Either-sex — Unit 18 (archery, muzzleloader or firearm; also valid in one chosen adjacent unit)",
+    "tags": 228,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 228,
+      "applicants": 297,
+      "successPct": 76.8,
+      "minPoints": 0
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-MD-STAMP-1",
+    "unit": "1",
+    "label": "Nonresident Mule Deer Stamp — Unit 1 (add-on for an archery or muzzleloader whitetail permit; converts it to either-species)",
+    "tags": 19,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 19,
+      "applicants": 164,
+      "successPct": 11.6
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-MD-STAMP-2",
+    "unit": "2",
+    "label": "Nonresident Mule Deer Stamp — Unit 2 (add-on for an archery or muzzleloader whitetail permit; converts it to either-species)",
+    "tags": 15,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 15,
+      "applicants": 90,
+      "successPct": 16.7
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-MD-STAMP-17",
+    "unit": "17",
+    "label": "Nonresident Mule Deer Stamp — Unit 17 (add-on for an archery or muzzleloader whitetail permit; converts it to either-species)",
+    "tags": 30,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 30,
+      "applicants": 201,
+      "successPct": 14.9
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-NR-MD-STAMP-18",
+    "unit": "18",
+    "label": "Nonresident Mule Deer Stamp — Unit 18 (add-on for an archery or muzzleloader whitetail permit; converts it to either-species)",
+    "tags": 15,
+    "draw": {
+     "resident": null,
+     "nonresident": {
+      "tags": 15,
+      "applicants": 86,
+      "successPct": 17.4
+     }
+    }
+   },
+   {
+    "huntCode": "DEER-R-ESES-FA-WEST",
+    "unit": "1",
+    "units": [
+     "1",
+     "2",
+     "17",
+     "18"
+    ],
+    "label": "Resident Firearm Either-species/Either-sex — West zone (Units 1, 2, 17, 18)",
+    "weapon": "rifle",
+    "tags": 854,
+    "draw": {
+     "resident": {
+      "tags": 854,
+      "applicants": 2000,
+      "successPct": 42.7,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "general",
+        "tags": null,
+        "applicants": 1623,
+        "successPct": 42.7
+       },
+       {
+        "name": "landowner-tenant",
+        "tags": null,
+        "applicants": 249,
+        "successPct": 47
+       },
+       {
+        "name": "youth",
+        "tags": null,
+        "applicants": 127,
+        "successPct": 34.6
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "DEER-R-ESES-FA-EAST",
+    "unit": "3",
+    "units": [
+     "3",
+     "4",
+     "5",
+     "7",
+     "16"
+    ],
+    "label": "Resident Firearm Either-species/Either-sex — East zone (Units 3, 4, 5, 7, 16)",
+    "weapon": "rifle",
+    "tags": 39,
+    "draw": {
+     "resident": {
+      "tags": 39,
+      "applicants": 168,
+      "successPct": 23.2,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "general",
+        "tags": null,
+        "applicants": 158,
+        "successPct": 20.9
+       },
+       {
+        "name": "landowner-tenant",
+        "tags": null,
+        "applicants": 10,
+        "successPct": 40
+       },
+       {
+        "name": "youth",
+        "tags": null,
+        "applicants": 7,
+        "successPct": 28.6
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   }
+  ],
+  "ANTELOPE": [
+   {
+    "huntCode": "ANTELOPE-R-ML-2",
+    "unit": "2",
+    "label": "Resident Muzzleloader Antelope — Unit 2",
+    "weapon": "muzzleloader",
+    "tags": 22,
+    "draw": {
+     "resident": {
+      "tags": 22,
+      "applicants": 90,
+      "successPct": 24.4,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "general",
+        "tags": 11,
+        "applicants": 75,
+        "successPct": 14.7,
+        "minPoints": 6
+       },
+       {
+        "name": "landowner-tenant",
+        "tags": 11,
+        "applicants": 13,
+        "successPct": 84.6,
+        "minPoints": 1
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-R-FA-2",
+    "unit": "2",
+    "label": "Resident Firearm Antelope — Unit 2",
+    "weapon": "rifle",
+    "tags": 88,
+    "draw": {
+     "resident": {
+      "tags": 88,
+      "applicants": 942,
+      "successPct": 9.4,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "general",
+        "tags": 44,
+        "applicants": 776,
+        "successPct": 5.8,
+        "minPoints": 6
+       },
+       {
+        "name": "landowner-tenant",
+        "tags": 44,
+        "applicants": 117,
+        "successPct": 37.6,
+        "minPoints": 1
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-R-ML-17",
+    "unit": "17",
+    "label": "Resident Muzzleloader Antelope — Unit 17",
+    "weapon": "muzzleloader",
+    "tags": 8,
+    "draw": {
+     "resident": {
+      "tags": 8,
+      "applicants": 46,
+      "successPct": 17.4,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "general",
+        "tags": 4,
+        "applicants": 40,
+        "successPct": 10,
+        "minPoints": 6
+       },
+       {
+        "name": "landowner-tenant",
+        "tags": 4,
+        "applicants": 4,
+        "successPct": 100,
+        "minPoints": 0
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-R-FA-17",
+    "unit": "17",
+    "label": "Resident Firearm Antelope — Unit 17",
+    "weapon": "rifle",
+    "tags": 30,
+    "draw": {
+     "resident": {
+      "tags": 30,
+      "applicants": 442,
+      "successPct": 6.8,
+      "minPoints": 1,
+      "pools": [
+       {
+        "name": "general",
+        "tags": 15,
+        "applicants": 375,
+        "successPct": 4,
+        "minPoints": 6
+       },
+       {
+        "name": "landowner-tenant",
+        "tags": 15,
+        "applicants": 40,
+        "successPct": 37.5,
+        "minPoints": 1
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-R-ML-18",
+    "unit": "18",
+    "label": "Resident Muzzleloader Antelope — Unit 18",
+    "weapon": "muzzleloader",
+    "tags": 4,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 25,
+      "successPct": 16,
+      "minPoints": 0,
+      "pools": [
+       {
+        "name": "general",
+        "tags": 2,
+        "applicants": 22,
+        "successPct": 9.1,
+        "minPoints": 6
+       },
+       {
+        "name": "landowner-tenant",
+        "tags": 2,
+        "applicants": 0,
+        "successPct": null,
+        "minPoints": 0
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "ANTELOPE-R-FA-18",
+    "unit": "18",
+    "label": "Resident Firearm Antelope — Unit 18",
+    "weapon": "rifle",
+    "tags": 4,
+    "draw": {
+     "resident": {
+      "tags": 4,
+      "applicants": 200,
+      "successPct": 2,
+      "minPoints": 4,
+      "pools": [
+       {
+        "name": "general",
+        "tags": 2,
+        "applicants": 162,
+        "successPct": 1.2,
+        "minPoints": 7
+       },
+       {
+        "name": "landowner-tenant",
+        "tags": 2,
+        "applicants": 19,
+        "successPct": 10.5,
+        "minPoints": 4
+       }
+      ]
+     },
+     "nonresident": null
+    }
+   }
+  ]
+ }
+}

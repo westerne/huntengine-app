@@ -6,6 +6,7 @@ import coHarvest from './co.json';
 import idHarvest from './id.json';
 import mtHarvest from './mt.json';
 import nmHarvest from './nm.json';
+import ndHarvest from './nd.json';
 import utHarvest from './ut.json';
 import wyHarvest from './wy.json';
 
@@ -17,6 +18,7 @@ const HARVEST: Partial<Record<StateCode, HarvestFile>> = {
   ID: idHarvest as HarvestFile,
   MT: mtHarvest as HarvestFile,
   NM: nmHarvest as HarvestFile,
+  ND: ndHarvest as HarvestFile,
   UT: utHarvest as HarvestFile,
   WY: wyHarvest as HarvestFile,
 };
@@ -41,6 +43,9 @@ const UNIT_FALLBACK: Partial<Record<StateCode, boolean>> = {
   AZ: false,
   //   NM: no — every row is an NMDGF hunt code.
   NM: false,
+  //   ND: yes — elk/moose harvest is reported per unit (any + antlerless
+  //       combined), labelled unit-wide; deer/pronghorn are statewide only.
+  ND: true,
 };
 
 export function getHarvestFile(state: StateCode): HarvestFile | null {

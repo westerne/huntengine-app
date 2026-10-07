@@ -9,6 +9,7 @@ import type { DrawFile } from './draw/format';
 import azDraw from './draw/az.json';
 import nmDraw from './draw/nm.json';
 import neDraw from './draw/ne.json';
+import ndDraw from './draw/nd.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -81,10 +82,12 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
     drawSystemNote: 'Non-resident deer permits are drawn by preference points per unit. Confirm current rules with KDWP.',
   },
   ND: {
-    code: 'ND', name: 'NORTH DAKOTA', status: 'planned', batch: 'B',
+    code: 'ND', name: 'NORTH DAKOTA', status: 'live', batch: 'B',
     agency: { name: 'North Dakota Game and Fish Department', url: 'https://gf.nd.gov' },
-    drawSystem: 'bonus', rulesVerified: false,
-    drawSystemNote: 'Weighted bonus points for deer and antelope; elk, moose and bighorn are mostly once-in-a-lifetime and limited for non-residents.',
+    // Verified 2026-10-07 against gf.nd.gov lottery pages and the 2026
+    // elk/moose/sheep proclamation. See lib/huntdata/draw/nd-research.md.
+    drawSystem: 'bonus', rulesVerified: true,
+    drawSystemNote: "Deer gun, muzzleloader deer and pronghorn are weighted bonus-point lotteries: with 1–3 points you get twice your points in extra chances, and from 4 points up your points are cubed. Points are lost when you draw your first choice and kept only if you apply at least every other year. Elk, moose and bighorn sheep are once-in-a-lifetime lotteries without bonus points. Elk, moose and pronghorn are residents-only; non-residents draw deer gun licenses from a separate pool of about 1% of licenses, and at most one bighorn license may go to a non-resident.",
   },
   NV: {
     code: 'NV', name: 'NEVADA', status: 'planned', batch: 'B',
@@ -141,6 +144,7 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   AZ: azDraw as DrawFile,
   NM: nmDraw as DrawFile,
   NE: neDraw as DrawFile,
+  ND: ndDraw as DrawFile,
 };
 
 const MODULES: Partial<Record<StateCode, StateModule>> = {

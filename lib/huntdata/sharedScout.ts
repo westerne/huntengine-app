@@ -36,7 +36,15 @@ function odds(e: Entry): { pct: number | null; text: string } {
   const pct = atPts ?? num(e.drawSuccess);
   const yr = e.dataYear ? `${e.dataYear} draw` : 'last draw';
   if (e.otc) return { pct: 100, text: 'Over the counter — no draw' };
-  if (pct == null) return { pct: null, text: 'No published odds' };
+  if (pct == null) {
+    // Some agencies (e.g. ND elk/moose) publish only licenses and applicants.
+    // Show those raw numbers; tier from their ratio, capped at 100%.
+    const tags = num(e.tags), apps = num(e.applicants);
+    if (tags != null && apps) {
+      return { pct: Math.min(100, Math.round((1000 * tags) / apps) / 10), text: `${tags} licenses for ${apps} applicants (${yr})` };
+    }
+    return { pct: null, text: 'No published odds' };
+  }
   const line = e.atYourPoints as { drawn: number; applicants: number; points: number } | null | undefined;
   // A bare "0%" reads like missing data; say how many tried.
   if (atPts === 0 && line) return { pct, text: `0 of ${line.applicants} applicants at your points drew (${yr})` };

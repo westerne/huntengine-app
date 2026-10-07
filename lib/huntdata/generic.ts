@@ -47,7 +47,7 @@ export function buildGenericScoutDataset(
       label: h.label ?? null,
       weapon: h.weapon ?? null,
       tags: s?.tags ?? h.tags ?? null,
-      applicants: s?.applicants ?? null,
+      applicants: s?.applicants ?? h.applicants ?? null,
       drawSuccess: s?.successPct ?? null,
       drawSuccessAtYourPoints: hunterPoints == null ? null : successAtPoints(h, residency, hunterPoints),
       atYourPoints: hunterPoints == null ? null : pointLineAt(h, residency, hunterPoints),
