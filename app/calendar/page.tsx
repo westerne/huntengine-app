@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { supabaseServer } from '@/lib/supabase/server';
+import { readProfile } from './readProfile';
 import { currentSeasonYear } from '@/lib/hunts';
 import {
   calendarYears, drawOutlook, findHunt, projectPoints, usesPoints, yearFlags,
@@ -26,7 +27,7 @@ export default async function CalendarPage() {
   const [{ data: itemRows, error }, { data: pointRows }, { data: profile }] = await Promise.all([
     supabase.from('plan_items').select('*').order('target_year', { nullsFirst: false }).order('position').order('created_at'),
     supabase.from('hunter_points').select('state, species, points, as_of_year'),
-    supabase.from('profiles').select('home_state, planning').eq('user_id', viewer.userId).maybeSingle(),
+    readProfile(supabase, viewer.userId),
   ]);
   const items = (itemRows ?? []) as PlanItem[];
   const balances = (pointRows ?? []) as PointBalance[];

@@ -90,7 +90,7 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
     if (!review) return;
     setBusy(true); setError(null);
     try {
-      const items = review.suggestions.filter((s) => s.keep).map(({ keep, why, ...s }) => ({ ...s, notes: why })); // eslint-disable-line @typescript-eslint/no-unused-vars
+      const items = review.suggestions.filter((s) => s.keep).map(({ keep, why, recommended, ...s }) => ({ ...s, notes: s.kind === 'bucket' ? why : null })); // eslint-disable-line @typescript-eslint/no-unused-vars
       const res = await fetch('/api/calendar/import', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ points: review.points, items }) });
       const j = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(j.error || 'Could not save.');

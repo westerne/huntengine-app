@@ -3,7 +3,7 @@
 // nothing promises a draw year.
 
 import type { Hunt, Residency, StateModule } from './huntdata/schema';
-import { successAtPoints } from './huntdata/generic';
+import { successAtPoints, successText } from './huntdata/generic';
 import { speciesKeyOf } from './species';
 
 export const CALENDAR_YEARS = 5;
@@ -118,7 +118,9 @@ export function drawOutlook(
     return { year, points, pct: pct1(p), cumulative: pct1(100 * (1 - miss)) };
   });
 
-  if (perYear.every((r) => r.pct == null)) return { kind: 'none', text: 'No published draw odds for this hunt.' };
+  // Some states publish only the fewest points that drew (e.g. Wyoming
+  // non-resident pools) — that's still an honest outlook.
+  if (perYear.every((r) => r.pct == null) && minPoints == null) return { kind: 'none', text: 'No published draw odds for this hunt.' };
 
   const firstYearAtMin = minPoints != null && pointsByYear
     ? years.find((y) => (pointsByYear[y] ?? -1) >= minPoints) ?? null
@@ -127,13 +129,19 @@ export function drawOutlook(
   const yr = hunt.drawYear ?? 'last year';
   const parts: string[] = [];
   if (minPoints != null && minPoints > 0) {
-    parts.push(firstYearAtMin
-      ? `In ${yr} it took ${minPoints} points; you'd have that in ${firstYearAtMin}.`
-      : `In ${yr} it took ${minPoints} points — more than you'd have by ${last.year}.`);
+    const pts = minPoints === 1 ? '1 point' : `${minPoints} points`;
+    parts.push(!pointsByYear
+      ? `In ${yr} tags went to applicants with as few as ${pts}.`
+      : firstYearAtMin
+        ? `In ${yr} it took ${pts}; you'd have that in ${firstYearAtMin}.`
+        : `In ${yr} it took ${pts} — more than you'd have by ${last.year}.`);
   }
   if (last.cumulative != null) {
-    parts.push(`About a ${Math.round(last.cumulative)}% chance of drawing at least once by ${last.year}, if odds stay like ${yr}'s.`);
+    parts.push(last.cumulative >= 99
+      ? `Very likely to draw by ${last.year} if odds stay like ${yr}'s.`
+      : `About a ${Math.round(last.cumulative)}% chance of drawing at least once by ${last.year}, if odds stay like ${yr}'s.`);
   }
+  if (hunt.harvest) parts.push(`Hunter success ${successText(hunt.harvest, hunt.tags)} (${hunt.harvest.year}).`);
   return { kind: 'draw', basis, dataYear: hunt.drawYear, minPoints, firstYearAtMin, perYear, text: parts.join(' ') };
 }
 

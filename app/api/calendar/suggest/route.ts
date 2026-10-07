@@ -21,7 +21,13 @@ export async function POST(req: Request) {
   // Only a covered state is saved as home; "another state" means non-resident everywhere.
   if (answers.homeState && stateCodeOf(answers.homeState)) profilePatch.home_state = answers.homeState;
   // Answers are kept even if saving them fails; suggestions don't depend on it.
-  await supabase.from('profiles').upsert(profilePatch, { onConflict: 'user_id' });
+  const { error: saveErr } = await supabase.from('profiles').upsert(profilePatch, { onConflict: 'user_id' });
+  if (saveErr) {
+    console.error('calendar/suggest: could not save setup answers', saveErr.code, saveErr.message);
+    // Still save the home state, which sets residency everywhere.
+    const { planning: _drop, ...rest } = profilePatch; // eslint-disable-line @typescript-eslint/no-unused-vars
+    if (rest.home_state) await supabase.from('profiles').upsert(rest, { onConflict: 'user_id' });
+  }
 
   const { suggestions, notes } = suggestCalendar(answers, calendarYears(currentSeasonYear()));
   return NextResponse.json({ suggestions, notes, points: answers.points });

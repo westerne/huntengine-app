@@ -227,7 +227,7 @@ export default function CalendarView({ years, items, ledger, flags, homeState, h
                   {items.filter((i) => i.target_year === thisYear).map((i) => (
                     <li key={i.id}>{i.kind === 'otc' ? 'Buy an OTC tag' : 'Apply'}: {i.state} {i.species}{i.unit || i.hunt_code ? ` · ${huntTitle(i.unit ?? i.hunt_code!, i.unit ? i.hunt_code : null)}` : ''}{i.saved_hunt_id ? ' (in My Season)' : ''}</li>
                   ))}
-                  {pointOnly.map((r) => <li key={`${r.state}|${r.species}`}>Keep building: buy a {r.state} {r.species.toLowerCase()} point (or apply) — nothing planned there in {thisYear}.</li>)}
+                  {pointOnly.length > 0 && <li>Keep building points (buy a point or apply) — nothing planned there in {thisYear}: {pointOnly.map((r) => `${r.state} ${r.species.toLowerCase()}`).join(', ')}.</li>}
                 </ul>
               )}
             <p className="text-zinc-600 text-xs">&quot;Add to My Season&quot; on a {thisYear} hunt starts its application checklist and deadline reminders.</p>

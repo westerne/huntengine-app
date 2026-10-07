@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { supabaseServer } from '@/lib/supabase/server';
+import { readProfile } from '../readProfile';
 import { currentSeasonYear } from '@/lib/hunts';
 import { calendarYears } from '@/lib/calendar';
 import type { SetupAnswers } from '@/lib/suggest';
@@ -19,7 +20,7 @@ export default async function SetupPage() {
 
   const supabase = await supabaseServer();
   const [{ data: profile }, { data: points }] = await Promise.all([
-    supabase.from('profiles').select('home_state, planning').eq('user_id', viewer.userId).maybeSingle(),
+    readProfile(supabase, viewer.userId),
     supabase.from('hunter_points').select('state, species, points'),
   ]);
   const prior = (profile?.planning ?? null) as Partial<SetupAnswers> | null;

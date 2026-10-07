@@ -37,3 +37,6 @@ create policy "own plan items" on public.plan_items
 -- Guided setup answers (interests, how long they'll wait, units they know,
 -- bucket list) — kept so suggestions can be rebuilt later.
 alter table public.profiles add column if not exists planning jsonb;
+
+-- Make the API see the new columns right away.
+notify pgrst, 'reload schema';

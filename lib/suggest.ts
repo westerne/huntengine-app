@@ -30,6 +30,8 @@ export type Suggestion = {
 };
 
 const pl = (n: number | null | undefined) => (n === 1 ? '1 point' : `${n} points`);
+// Published hunter success as a number; tiny samples ('too few to judge') don't count.
+const hsOf = (e: Record<string, unknown>) => { const t = String(e.hunterSuccess ?? ''); return !t || /too few/.test(t) ? null : parseFloat(t) || null; };
 const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
 const norm = (u: unknown) => String(u ?? '').trim().toLowerCase().replace(/^(unit|gmu)\s+/, '').replace(/^0+(?=\d)/, '');
 
@@ -38,6 +40,9 @@ export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions
   const notes: string[] = [];
   const thisYear = years[0];
   const seen = new Set<string>();
+  // Draw-now vs keep-building pairs in one state/species: drawing the first
+  // resets the points the second needs, so the hunter picks one.
+  const tradeoffs: Array<[Suggestion, Suggestion]> = [];
 
   for (const pair of a.interests) {
     const mod = getStateModule(pair.state);
@@ -66,6 +71,7 @@ export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions
     let list = [...short, ...byPoints.sort((x, y) => (parseFloat(String(y.hunterSuccess)) || 0) - (parseFloat(String(x.hunterSuccess)) || 0)).slice(0, 12)];
     if (a.newUnits === 'known' && known.size) list = [...list].sort((x, y) => Number(known.has(norm(y.unit))) - Number(known.has(norm(x.unit))));
     const before = out.length;
+    let nowSug: Suggestion | null = null;
 
     const base = { state: mod.code, species };
     const tag = (e: Record<string, unknown>) => ({ unit: String(e.unit), hunt_code: String(e.huntCode), label: (e.label as string) ?? null });
@@ -82,6 +88,7 @@ export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions
           ? `${Math.round(o)}% of applicants${pts != null ? ` at ${pl(pts)}` : ''} drew it in ${yr(now)}.${success(now)}`
           : `In ${yr(now)} tags went to applicants with as few as ${pl(num(now.fewestPointsToDraw))}; you have ${pl(pts)}. Not a guarantee.${success(now)}` });
       seen.add(`${mod.code}|${now.huntCode}`);
+      nowSug = out[out.length - 1];
     }
 
     // 2. A better hunt within reach of your points (preference/bonus states).
@@ -91,11 +98,20 @@ export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions
         .filter((e) => !e.otc && !seen.has(`${mod.code}|${e.huntCode}`))
         .map((e) => ({ e, need: num(e.fewestPointsToDraw) }))
         .filter((x) => x.need != null && x.need > pts && x.need - pts <= span)
-        .sort((x, y) => (parseFloat(String(y.e.hunterSuccess)) || 0) - (parseFloat(String(x.e.hunterSuccess)) || 0))[0];
+        // Waiting has to buy something: with a draw-now option, only suggest
+        // a hunt with clearly better published hunter success (5+ points higher).
+        .filter((x) => !now || (hsOf(x.e) != null && hsOf(now) != null && hsOf(x.e)! >= hsOf(now)! + 5))
+        .sort((x, y) => (hsOf(y.e) ?? 0) - (hsOf(x.e) ?? 0))[0];
       if (reach) {
         out.push({ ...base, ...tag(reach.e), kind: 'target', target_year: thisYear + (reach.need! - pts), recommended: true,
           why: `In ${yr(reach.e)} it took ${pl(reach.need)}; you'd have that in ${thisYear + (reach.need! - pts)} if you apply or buy a point each year.${success(reach.e)}` });
         seen.add(`${mod.code}|${reach.e.huntCode}`);
+        const reachSug = out[out.length - 1];
+        if (nowSug) {
+          nowSug.why += ` Drawing it uses your ${mod.code} ${species.toLowerCase()} points.`;
+          reachSug.why += ` Only if you don't draw hunt ${nowSug.hunt_code} first — that resets your points.`;
+          tradeoffs.push([nowSug, reachSug]);
+        }
       }
     }
 
@@ -133,6 +149,13 @@ export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions
     const nowOnes = out.filter((s) => s.kind === 'target' && s.target_year === thisYear && s.species === sp);
     const best = [...nowOnes].sort((x, y) => pct(y.why) - pct(x.why))[0];
     for (const s of nowOnes) s.recommended = s === best;
+  }
+  // Use points now or keep building: follow how long they said they'd wait.
+  for (const [n, r] of tradeoffs) {
+    const build = a.wait !== 'now';
+    n.recommended = n.recommended && !build;
+    r.recommended = build;
+    notes.push(`${n.state} ${n.species.toLowerCase()}: draw hunt ${n.hunt_code} now, or keep building for hunt ${r.hunt_code} in ${r.target_year} — not both. We ticked ${build ? 'the one worth waiting for' : 'the draw now'}, since you ${build ? "said you'll build points" : 'want to hunt this season'}.`);
   }
   if (a.interests.length) notes.push('Private-land-only hunts are left out — they need landowner permission before you apply.');
 

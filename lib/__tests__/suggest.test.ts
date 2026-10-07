@@ -59,3 +59,22 @@ describe('suggestion guards', () => {
     expect(deerNow.filter((s) => s.recommended)).toHaveLength(Math.min(1, deerNow.length));
   });
 });
+
+describe('use points now or keep building', () => {
+  it('offers both as an either/or and ticks one by how long the hunter will wait', () => {
+    const ans = { ...base, homeState: 'XX', interests: [{ state: 'OR', species: 'Elk' }], points: [{ state: 'OR', species: 'Elk', points: 6 }] };
+    const long = suggestCalendar({ ...ans, wait: 'long' }, ys);
+    const now = suggestCalendar({ ...ans, wait: 'now' }, ys);
+    const pair = long.suggestions.filter((s) => s.kind === 'target');
+    // A keep-building pick must beat the draw-now pick on hunter success.
+    const pct = (w: string) => parseFloat((w.match(/Hunter success ([\d.]+)%/) ?? [])[1] ?? '0');
+    if (pair.length === 2) expect(pct(pair[1].why)).toBeGreaterThanOrEqual(pct(pair[0].why) + 5);
+    if (pair.length === 2) {
+      expect(pair[0].why).toMatch(/uses your OR elk points/);
+      expect(pair[1].why).toMatch(/resets your points/);
+      expect(pair.map((s) => s.recommended)).toEqual([false, true]);
+      expect(long.notes.join(' ')).toMatch(/not both/);
+    }
+    expect(now.suggestions.filter((s) => s.kind === 'target' && s.target_year! > 2027)).toHaveLength(0);
+  });
+});
