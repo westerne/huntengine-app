@@ -7,7 +7,7 @@ Do everything in **Stripe test mode** first. Once a full test signup works, repe
 ## 1. Supabase (accounts + database)
 
 1. Create a new Supabase project called **HuntQuarters**. Keep it separate from GeoMutt.
-2. Open **SQL Editor** and run each file in `supabase/migrations/` in order (`0001_…`, `0002_…`, `0003_…`, `0004_…`). Each one is safe to re-run.
+2. Open **SQL Editor** and run each file in `supabase/migrations/` in order (`0001_…` through `0006_…`). Each one is safe to re-run.
 3. Under **Authentication → URL Configuration**:
    - Site URL: `https://huntengine-app.vercel.app` (or the final domain).
    - Redirect URLs: add `https://huntengine-app.vercel.app/auth/callback` and `http://localhost:3400/auth/callback`.
