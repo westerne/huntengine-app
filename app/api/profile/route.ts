@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { normalizeSpecies } from '@/lib/species';
 import { requireMember } from '@/lib/apiAuth';
 import { supabaseServer } from '@/lib/supabase/server';
 
@@ -21,7 +22,7 @@ export async function PUT(req: Request) {
     user_id: userId,
     display_name: s(p.display_name, 80),
     home_state: s(p.home_state, 4)?.toUpperCase() ?? null,
-    species_interests: arr(p.species_interests),
+    species_interests: arr(p.species_interests).map((x) => normalizeSpecies(x)),
     weapons: arr(p.weapons),
     hunt_styles: arr(p.hunt_styles),
     fitness: s(p.fitness, 40),
@@ -39,7 +40,7 @@ export async function PUT(req: Request) {
       .map((r: Record<string, unknown>) => ({
         user_id: userId,
         state: String(r.state).toUpperCase(),
-        species: String(r.species),
+        species: normalizeSpecies(String(r.species)),
         points: Number(r.points),
         as_of_year: Number.isInteger(r.as_of_year) ? r.as_of_year : new Date().getFullYear(),
         verified_on: typeof r.verified_on === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(r.verified_on) ? r.verified_on : null,

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { normalizeSpecies } from '@/lib/species';
 import { requireMember } from '@/lib/apiAuth';
 import { supabaseServer } from '@/lib/supabase/server';
 
@@ -32,7 +33,7 @@ export async function POST(req: Request) {
     hunt_id: typeof body.hunt_id === 'string' ? body.hunt_id : null,   // RLS checks it's theirs
     kind, title, due_on: due,
     state: typeof body.state === 'string' ? body.state.slice(0, 4).toUpperCase() : null,
-    species: typeof body.species === 'string' ? body.species.slice(0, 40) : null,
+    species: typeof body.species === 'string' ? normalizeSpecies(body.species.slice(0, 40)) : null,
     season_year: Number.isInteger(body.season_year) ? body.season_year : null,
     position: Number.isInteger(body.position) ? body.position : 100,
   }).select('*').single();

@@ -53,7 +53,8 @@ const speciesKeyMap: Record<string, string> = {
 const stateAliases: Record<string, string> = {
   'WY': 'WYOMING', 'ID': 'IDAHO', 'MT': 'MONTANA', 'CO': 'COLORADO',
   'UT': 'UTAH', 'NV': 'NEVADA', 'AZ': 'ARIZONA', 'NM': 'NEW MEXICO',
-  'OR': 'OREGON', 'WA': 'WASHINGTON',
+  'OR': 'OREGON', 'WA': 'WASHINGTON', 'CA': 'CALIFORNIA', 'NE': 'NEBRASKA',
+  'ND': 'NORTH DAKOTA', 'SD': 'SOUTH DAKOTA', 'KS': 'KANSAS', 'OK': 'OKLAHOMA', 'AK': 'ALASKA',
 };
 
 const utahUnitAliases: Record<string, string> = {
@@ -688,7 +689,7 @@ export async function POST(req: Request) {
       : '';
 
     const geographicGuardrails = `
-      SPECIES: This is a ${speciesLabel} hunt in ${stateName}. EVERY section must be about ${speciesLabel} specifically — trophy scores, behavior, terrain use, and rut timing must all match ${speciesLabel}. NEVER write about mule deer (or any other species) unless ${speciesLabel} IS that species.
+      SPECIES: This is a ${speciesLabel} hunt in ${stateName}. EVERY section must be about ${speciesLabel} specifically — trophy scores, behavior, terrain use, and rut timing must all match ${speciesLabel}. ${isDeer ? "Deer hunts can be mule deer, whitetail or either: use the hunt's own description to say which, and never assume mule deer." : `NEVER write about deer (or any other species) unless ${speciesLabel} IS that species.`}
       ${geoAnchor}
       ${trophyInstruction}
       ${habitatBlock}

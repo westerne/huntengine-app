@@ -58,7 +58,7 @@ export type HuntPlannerState = {
 
 export const INITIAL_PROFILE: Profile = {
   states: ['WY'],
-  species: 'Mule Deer',
+  species: 'Deer',
   residency: 'Resident',
   points: {},
   weapons: ['Any'],
@@ -94,7 +94,7 @@ export const INITIAL_STATE: HuntPlannerState = {
   gearList: null,
   planUnit: '',
   planState: 'WY',
-  planSpecies: 'Mule Deer',
+  planSpecies: 'Deer',
   planRec: null,
   loading: false,
   loadingMessage: '',

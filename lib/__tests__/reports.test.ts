@@ -80,3 +80,15 @@ describe('official harvest reporting', () => {
     }
   });
 });
+
+describe('species names', () => {
+  it('stores "Mule Deer" as "Deer" and leaves others alone', async () => {
+    const { normalizeSpecies } = await import('../species');
+    expect(normalizeSpecies('Mule Deer')).toBe('Deer');
+    expect(normalizeSpecies(' mule deer ')).toBe('Deer');
+    expect(normalizeSpecies('Elk')).toBe('Elk');
+    expect(normalizeSpecies(null)).toBeNull();
+    const { harvestReportingFor } = await import('../huntdata/harvestReporting');
+    expect(harvestReportingFor('UT', 'Deer').required).toBe('yes');
+  });
+});

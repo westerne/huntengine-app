@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { normalizeSpecies } from '@/lib/species';
 import { requireMember } from '@/lib/apiAuth';
 import { supabaseServer } from '@/lib/supabase/server';
 import { currentSeasonYear, STATUSES, type HuntStatus } from '@/lib/hunts';
@@ -27,7 +28,7 @@ export async function POST(req: Request) {
   if (!body || typeof body !== 'object') return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
 
   const state = str(body.state, 4)?.toUpperCase();
-  const species = str(body.species, 40);
+  const species = normalizeSpecies(str(body.species, 40));
   const unit = str(body.unit, 80);
   if (!state || !species || !unit) return NextResponse.json({ error: 'State, species and unit are required.' }, { status: 400 });
 

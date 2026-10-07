@@ -3,20 +3,20 @@ import type { Profile, PlannerFlags } from './types';
 export const STATES = ['WY', 'CO', 'MT', 'ID', 'UT', 'AZ', 'NM', 'NE', 'ND', 'KS', 'NV', 'OK', 'CA', 'WA', 'OR', 'SD'];
 // Shown but not selectable until their draw data is wired in.
 export const COMING_SOON_STATES: string[] = [];
-export const SPECIES = ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
+export const SPECIES = ['Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep', 'Mountain Goat'];
 // Species with data, for states that don't have all six (Arizona has no moose or goat).
 const STATE_SPECIES: Record<string, string[]> = {
-  AZ: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
-  NM: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
-  NE: ['Mule Deer', 'Elk', 'Antelope'],
-  ND: ['Mule Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep'],
-  KS: ['Mule Deer', 'Antelope'],   // KDWP publishes no per-hunt elk draw stats
-  NV: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
-  OK: ['Mule Deer', 'Elk', 'Antelope'],
-  CA: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
-  WA: ['Mule Deer', 'Elk', 'Moose', 'Bighorn Sheep', 'Mountain Goat'],
-  OR: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
-  SD: ['Mule Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],   // goat season closed   // controlled hunts only; "deer" is mostly whitetail
+  AZ: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
+  NM: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
+  NE: ['Deer', 'Elk', 'Antelope'],
+  ND: ['Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep'],
+  KS: ['Deer', 'Antelope'],   // KDWP publishes no per-hunt elk draw stats
+  NV: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
+  OK: ['Deer', 'Elk', 'Antelope'],
+  CA: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
+  WA: ['Deer', 'Elk', 'Moose', 'Bighorn Sheep', 'Mountain Goat'],
+  OR: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
+  SD: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],   // goat season closed
 };
 export const speciesFor = (st: string) => STATE_SPECIES[st] ?? SPECIES;
 
@@ -49,7 +49,7 @@ export const SCOUTING_OPTIONS = ['None', 'Minimal', 'Several Days', 'Local'];
 
 export const TROPHY_CONFIG: Record<string, { min: number; max: number; step: number; label: string } | null> = {
   'Elk': { min: 260, max: 380, step: 10, label: 'B&C Gross' },
-  'Mule Deer': { min: 140, max: 200, step: 5, label: 'Typical Frames' },
+  'Deer': { min: 140, max: 200, step: 5, label: 'Typical Frames (mule deer)' },
   'Antelope': { min: 65, max: 80, step: 2, label: 'B&C Score' },
   'Bighorn Sheep': { min: 140, max: 180, step: 5, label: 'Total Score' },
   'Moose': null,
@@ -66,7 +66,7 @@ const RANDOM_DRAW_STATES = ['ID', 'NM'];
 export function plannerFlags(p: Profile): PlannerFlags {
   const selState = p.states[0];
   const isWyResidentNoPoints = selState === 'WY' && p.residency === 'Resident'
-    && (p.species === 'Mule Deer' || p.species === 'Antelope' || p.species === 'Elk');
+    && (p.species === 'Deer' || p.species === 'Antelope' || p.species === 'Elk');
   return {
     selState,
     noPointSystem: isWyResidentNoPoints || RANDOM_DRAW_STATES.includes(selState),

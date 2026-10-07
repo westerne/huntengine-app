@@ -18,6 +18,7 @@ type ApplicationsFile = { checkedOn: string | null; states: Record<string, State
 const DATA = applications as unknown as ApplicationsFile;
 
 const SPECIES_WORDS: Record<string, RegExp> = {
+  'Deer': /\bdeer\b/i,
   'Mule Deer': /\bdeer\b/i,
   'Elk': /\belk\b/i,
   'Antelope': /\b(antelope|pronghorn)\b/i,

@@ -2,6 +2,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { normalizeSpecies } from '@/lib/species';
 import type { Profile } from './types';
 import { FITNESS_LEVELS, STATES, STYLE_OPTIONS, speciesFor, withState } from './constants';
 
@@ -35,7 +36,7 @@ export function prefillFromAccount(base: Profile, me: Extract<Me, { member: true
 // The planner keeps one points number per state for the current species.
 export function pointsFor(rows: Array<{ state: string; species: string; points: number }>, species: string): Record<string, number> {
   const out: Record<string, number> = {};
-  for (const r of rows) if (r.species === species) out[r.state] = Number(r.points) || 0;
+  for (const r of rows) if (normalizeSpecies(r.species) === normalizeSpecies(species)) out[r.state] = Number(r.points) || 0;
   return out;
 }
 

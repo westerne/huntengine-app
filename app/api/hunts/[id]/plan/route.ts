@@ -22,7 +22,7 @@ export const maxDuration = 60;
 type Ctx = { params: Promise<{ id: string }> };
 
 const SPECIES_KEY: Record<string, SpeciesKey> = {
-  'Mule Deer': 'DEER', 'Elk': 'ELK', 'Antelope': 'ANTELOPE', 'Moose': 'MOOSE', 'Bighorn Sheep': 'BIGHORNSHEEP', 'Mountain Goat': 'MTNGOAT',
+  'Deer': 'DEER', 'Mule Deer': 'DEER', 'Elk': 'ELK', 'Antelope': 'ANTELOPE', 'Moose': 'MOOSE', 'Bighorn Sheep': 'BIGHORNSHEEP', 'Mountain Goat': 'MTNGOAT',
 };
 
 function withTimeout<T>(p: Promise<T>, ms: number, fallback: T): Promise<T> {
