@@ -244,6 +244,14 @@ export default function UnitMap({ unit, state, species = '' }: { unit: string; s
           <TileLayer url={OWNERSHIP_TILES} opacity={0.5} maxNativeZoom={14} maxZoom={18} />
         )}
 
+        {/* State (and, zoomed in, county) lines + place names — always on,
+            above the imagery and land status so they're never hidden. */}
+        <TileLayer
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}"
+          maxZoom={18}
+          zIndex={5}
+        />
+
         {showRoads && <RoadsLayer onStatus={setRoadsTooFar} />}
 
         {boundary && boundary.features.length > 0 && (
