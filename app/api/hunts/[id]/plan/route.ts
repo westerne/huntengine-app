@@ -5,6 +5,7 @@ import { requireMember } from '@/lib/apiAuth';
 import { supabaseServer } from '@/lib/supabase/server';
 import { applyChange } from '@/lib/hunts';
 import { buildPlanPrompt, cleanPlan, parseInputs, type PlanContext } from '@/lib/plans';
+import { groundPlan } from '@/lib/planGuard';
 import { lessonsBlock, type PastReport } from '@/lib/reports';
 import { STATE_INFO, toStateCode } from '@/lib/huntdata/registry';
 import { harvestForHunt } from '@/lib/huntdata/harvest';
@@ -98,6 +99,16 @@ export async function POST(req: Request, { params }: Ctx) {
   } catch {
     // Nothing saved; the form keeps everything the hunter typed.
     return NextResponse.json({ error: 'The plan couldn’t be generated just now. Your answers are kept — try again.' }, { status: 502 });
+  }
+
+  // Tag quotas, season dates and trophy scores are never given to the model,
+  // so any it writes are invented. The prompt already forbids them and they
+  // still appear, so they are replaced before the plan is saved or shown.
+  const grounded = groundPlan(generated, ctx, inputs);
+  generated = grounded.plan;
+  if (grounded.found.length) {
+    console.log('UNGROUNDED:', hunt.state, hunt.species, hunt.unit,
+      grounded.found.map((f) => `${f.kind}:${f.text}`).join(' | '));
   }
 
   // ── Save: dates on the hunt, a new plan version ────────────────────────
