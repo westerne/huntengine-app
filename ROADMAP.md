@@ -1,6 +1,6 @@
 # HuntQuarters Roadmap
 
-_Last updated: October 5, 2026_
+_Last updated: November 2, 2026_
 
 ## Where this fits
 
@@ -22,27 +22,30 @@ Every phase below is aimed at that date.
 
 ## Where it stands today
 
-The draw data and features below date from June 30, 2026. Phase 0 cleanup was done October 5.
+_Checked November 2, 2026 against the code on `main`._
 
 **Works now**
-- A planner (`/planner`, also the front page) with a beta code gate and a per-IP rate limit.
+
+- **All 17 target states are live** (`lib/huntdata/registry.ts`), Alaska included. The batch table below is finished.
 - **SCOUT** picks units and **BRIEF** writes a full unit plan. Both use `gpt-4o` and are fed real draw data.
-- **Draw data**
-
-  | State | Species covered | Data |
-  |---|---|---|
-  | Wyoming | Deer, elk, antelope | 2025 draw data from WGFD |
-  | Idaho | 6 species | 2025 controlled-hunt odds |
-  | Colorado | 4 species | 2026 draw success % |
-  | Montana | 6 species | 2026 draw success % |
-  | Utah | Limited-entry units | Hand-entered |
-
+- **Accounts and database:** Supabase email + password sign-in, with six migrations (`supabase/migrations/0001`–`0006`) covering saved hunts, applications and tasks, hunt plans, hunt reports and the calendar.
+- **Payments:** Stripe annual membership with promotion codes, webhook and billing portal (`app/api/stripe/`).
+- **My Season** (`/season`): saved hunts by status, application checklists, point-building tasks, draw results.
+- **My Hunt Calendar** (`/calendar`): 5-year plan, points ledger, draw outlooks, guided setup, spreadsheet import.
+- **Compare** (`/compare`): 2–4 hunts side by side with one recommendation.
+- **My History** (`/history`): finished hunts, post-hunt reports, and every application and draw result by year.
+- **Hunt plans:** nine grounded sections, per-section edits, versioning, printable packet.
 - **E-scouting map**: unit boundaries, BLM land status, roads and trailheads from OpenStreetMap, and percent-public-land for each unit.
+- **Tests:** `npm test` runs 210 tests across 8 files. All passing.
+- The beta code gate and per-IP rate limit still guard the strategy API (`app/api/strategy/route.ts`).
 
 **Missing**
-- No accounts, saved plans, database or payments. Stripe was taken out in June.
-- Only 5 of the 17 target states have data.
-- No tests.
+- Per-member usage limits. OpenAI spend is still unbounded per account.
+- Email reminders for deadlines and draw results.
+- A landing page on huntquarters.com, and links in from huntaddicts.com.
+- Multi-state planning. SCOUT still handles one state at a time.
+- 2027 draw data. Every state's numbers are 2025 or 2026 and refresh as agencies publish.
+- One name. The beta gate says HuntQuarters, the planner header says HuntEngine.
 
 ## Target: 17 states
 
@@ -56,11 +59,11 @@ Launch in January with the states that are ready. Add the rest during the season
 
 | Batch | States | Why this order | Approx. nonresident deadlines* |
 |---|---|---|---|
-| Live now | WY, ID, CO, MT, UT | Already have draw data | Jan 31 (WY elk) – early June |
+| Live now | ~~WY, ID, CO, MT, UT~~ (all live) | Already have draw data | Jan 31 (WY elk) – early June |
 | **A: before launch** | ~~AZ, NE, NM~~ (all live) | Earliest deadlines after WY elk | AZ elk/antelope early Feb; NE Feb–Mar; NM mid-March |
 | **B: by March** | ~~KS, ND, NV~~ (all live) | Spring deadlines | KS April; ND elk/moose/sheep March; NV May |
-| **C: by April** | OR, WA, CA, SD, OK | Late spring deadlines | OR May 15; WA late May; CA early June; SD and OK spring/summer |
-| **D: by October 2027** | AK | Applications run Nov 1 – Dec 15 | Dec 15 |
+| **C: by April** | ~~OR, WA, CA, SD, OK~~ (all live) | Late spring deadlines | OR May 15; WA late May; CA early June; SD and OK spring/summer |
+| **D: by October 2027** | ~~AK~~ (live) | Applications run Nov 1 – Dec 15 | Dec 15 |
 
 \*Deadlines move every year. Check each state's agency before using them in the product.
 
@@ -98,7 +101,7 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [x] **State registry** with all 17 states, their agencies and draw systems (`lib/huntdata/registry.ts`). Draw-rule notes for planned states are marked unverified until checked against the agency.
 - [x] **Adapters** that read WY, ID, CO, MT and UT into the shared format without changing their existing prompts.
 - [x] **Shared SCOUT and BRIEF builders** (`lib/huntdata/generic.ts`). A new state only has to produce its hunts and it gets SCOUT and BRIEF automatically.
-- [ ] **Import scripts** that turn each agency's published files (PDF, CSV, KML) into that format. Next year's data then becomes a re-run, not a rewrite.
+- [ ] **Import scripts** that turn each agency's published files (PDF, CSV, KML) into that format. Next year's data then becomes a re-run, not a rewrite. Draw builders exist for CO, ID, MT, AZ, KS, ND, NE, NM and NV (`scripts/`, `scripts/draw/`) and harvest builders for ten states (`scripts/harvest/`). Still hand-built: UT and the Batch C/D states (OR, WA, CA, SD, OK, AK).
 - [ ] Move WY, ID, CO, MT and UT onto the new format. Fix their gaps along the way:
   - [x] Harvest success rates for all five (`scripts/harvest/`, `lib/huntdata/harvest/`): WY 2025, CO 2025, ID 2025, MT 2025 (elk and antelope 2024), UT 2024. Shown in SCOUT and BRIEF.
   - [ ] Utah: confirm which DWR hunts match "Plateau" antelope and "Uintas East Moose" (no harvest rate until then)
@@ -110,7 +113,7 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [x] **Tests** (`npm test`): every live state's data passes validation, spot checks match source numbers, and the shared builders work.
 - [x] **SCOUT unit guard:** any unit the AI makes up is dropped before the hunter sees it.
 - [ ] Colorado bighorn sheep and mountain goat hunts (none loaded today).
-- [ ] Break up the planner (70KB) and prompt builder (80KB) so new states don't make them bigger.
+- [ ] Break up the planner and prompt builder so new states don't make them bigger. The planner is split: `app/planner/page.tsx` is 16KB and each screen has its own file. `app/api/strategy/promptBuilder.ts` is still 84KB.
 
 ## Phase 2: Membership launch + Batch A (December – early January)
 
@@ -184,7 +187,7 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 ## Open decisions
 
 - **Price and tiers** for the membership.
-- **Login and database provider.** GeoMutt already uses Supabase, so that's the easy default.
+- ~~**Login and database provider.**~~ Settled: Supabase, in use since October.
 - **AI model.** Every call uses `gpt-4o`. It's worth comparing cost and quality against newer models before members put real load on it.
 - **Batch order.** The table above follows deadlines. Change it if member demand points somewhere else.
 - **What huntquarters.com shows today**, and whether it should point to the app.
