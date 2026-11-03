@@ -82,17 +82,45 @@ function allowedFigures(ctx: PlanContext): Set<string> {
   return out;
 }
 
+// What a piece of generated text is allowed to assert, because it was given.
+export type Allowed = { dates: Set<string>; figures: Set<string> };
+
+// Everything numeric in the facts the model was handed. BRIEF assembles its
+// DATA blocks into one string, so "may only repeat numbers it was given" is
+// exactly expressible: any figure not in here was not supplied.
+export function allowedFromFacts(facts: string): Allowed {
+  const figures = new Set<string>();
+  for (const m of facts.matchAll(/\d+(?:\.\d+)?/g)) figures.add(digits(m[0]));
+  const dates = new Set<string>();
+  for (const m of facts.matchAll(DATES)) {
+    const key = dateKey(m[0]);
+    if (key) dates.add(key);
+  }
+  return { dates, figures };
+}
+
 export function scrubUngrounded(
   text: string,
   ctx: PlanContext,
   inputs: PlanInputs,
 ): { text: string; found: Ungrounded[] } {
+  return scrubText(text, { dates: allowedDates(inputs), figures: allowedFigures(ctx) });
+}
+
+export function scrubText(text: string, allowed: Allowed): { text: string; found: Ungrounded[] } {
   const found: Ungrounded[] = [];
-  const dateOk = allowedDates(inputs);
-  const figureOk = allowedFigures(ctx);
+  const dateOk = allowed.dates;
+  const figureOk = allowed.figures;
   let out = text;
 
+  // A figure the model was handed may be repeated; anything else was invented.
+  const supplied = (m: string) => {
+    const n = m.match(/\d[\d,]*(?:\.\d+)?/)?.[0];
+    return n != null && figureOk.has(digits(n.replace(/,/g, '')));
+  };
+
   out = out.replace(TAGS, (m) => {
+    if (supplied(m)) return m;
     found.push({ kind: 'tags', text: m });
     return '[tag numbers not supplied — check the regulations]';
   });
@@ -105,6 +133,7 @@ export function scrubUngrounded(
   });
 
   out = out.replace(TROPHY, (m) => {
+    if (supplied(m)) return m;
     found.push({ kind: 'trophy', text: m });
     return '[trophy figures not supplied]';
   });
@@ -144,4 +173,24 @@ export function groundPlan(
     return { item: item.text, ...(why ? { why: why.text } : {}) };
   });
   return { plan: { sections, gear }, found };
+}
+
+// BRIEF's sections, against the DATA blocks it was given. Same rule as the
+// hunt plan, applied to the other door: the brief has no hunter dates at all,
+// so any day-level date in it is invented unless the agency figures carried
+// one.
+export function groundBrief(
+  brief: Record<string, unknown>,
+  facts: string,
+): { brief: Record<string, unknown>; found: Ungrounded[] } {
+  const allowed = allowedFromFacts(facts);
+  const found: Ungrounded[] = [];
+  const out: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(brief)) {
+    if (typeof value !== 'string') { out[key] = value; continue; }
+    const r = scrubText(value, allowed);
+    out[key] = r.text;
+    found.push(...r.found);
+  }
+  return { brief: out, found };
 }

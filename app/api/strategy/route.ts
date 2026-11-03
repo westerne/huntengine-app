@@ -18,6 +18,7 @@ import { accountsEnabled } from '@/lib/supabase/config';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
 import { hasDrawSignal, noDataAnswer, pointsForState } from '@/lib/scoutData';
+import { groundBrief } from '@/lib/planGuard';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR } from './idahoDraw';
@@ -758,6 +759,17 @@ Nearest town. Cell service reality. Water sources. Weather windows. What can go 
     });
 
     const briefParsed = JSON.parse(briefResponse.choices[0].message.content || "{}");
+
+    // The brief may only repeat numbers it was handed. geographicGuardrails is
+    // the whole of what it was given, so any figure outside it was invented.
+    // That is the prompt's own TRUTH ADHERENCE rule, checked rather than asked
+    // for — the hunt plan forbade the same things and testers saw them anyway.
+    const groundedBrief = groundBrief(briefParsed.brief ?? {}, geographicGuardrails);
+    briefParsed.brief = groundedBrief.brief;
+    if (groundedBrief.found.length) {
+      console.log('UNGROUNDED BRIEF:', stateName, speciesLabel, unitResolved,
+        groundedBrief.found.map((f) => `${f.kind}:${f.text}`).join(' | '));
+    }
 
     // ─── 9. TACTICAL + GEAR PROMPT ────────────────────────────────────────────
     const unitContext = unitStats ? `

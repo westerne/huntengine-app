@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { groundPlan, scrubUngrounded } from '../planGuard';
+import { groundBrief, groundPlan, scrubUngrounded } from '../planGuard';
 import { cleanPlan, type PlanContext, type PlanInputs } from '../plans';
 
 const ctx = (over: Partial<PlanContext> = {}): PlanContext => ({
@@ -88,5 +88,47 @@ describe('groundPlan', () => {
     const { plan: out, found } = groundPlan(plan, ctx(), inputs());
     expect(found).toEqual([]);
     expect(out.sections.scouting).toBe('Glass the north-facing timber at first light.');
+  });
+});
+
+describe('grounding the unit brief', () => {
+  // What the route hands the model: its assembled DATA blocks.
+  const facts = 'HARVEST: 59% hunter success (2025). PUBLIC LAND: approximately 75% public land. TROPHY ESTIMATE: Typical Mature: 320 inches.';
+
+  it('keeps every figure the brief was given', () => {
+    const { brief, found } = groundBrief({
+      odds: 'Hunter success ran 59% in 2025 and the unit is about 75% public land.',
+      trophy: 'Mature bulls go 320 inches here.',
+    }, facts);
+    expect(found).toEqual([]);
+    expect(brief.odds).toContain('59%');
+    expect(brief.trophy).toContain('320 inches');
+  });
+
+  it('replaces figures it was not given', () => {
+    const { brief, found } = groundBrief({
+      tags: 'The unit offers 250 tags.',
+      dates: 'The season opens September 15.',
+      odds: 'Draw odds sit near 12% for non-residents.',
+    }, facts);
+    expect(brief.tags).toMatch(/\[tag numbers not supplied/);
+    expect(brief.dates).toMatch(/\[dates not supplied/);
+    expect(brief.odds).toMatch(/\[figure not supplied]/);
+    expect(found.map((f) => f.kind).sort()).toEqual(['date', 'figure', 'tags']);
+  });
+
+  it('allows a tag count that was supplied', () => {
+    const { brief, found } = groundBrief(
+      { tags: 'There were 250 tags last year.' },
+      'DRAW: 250 licences issued in 2026.',
+    );
+    expect(brief.tags).toContain('250 tags');
+    expect(found).toEqual([]);
+  });
+
+  it('leaves non-string sections alone', () => {
+    const { brief } = groundBrief({ list: ['a', 'b'], n: 3 }, facts);
+    expect(brief.list).toEqual(['a', 'b']);
+    expect(brief.n).toBe(3);
   });
 });
