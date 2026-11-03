@@ -17,6 +17,7 @@ import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
+import { noDataAnswer } from '@/lib/scoutData';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
@@ -389,6 +390,15 @@ export async function POST(req: Request) {
       const scoutDataset = usesSharedBuilders
         ? buildShortlist(enriched as Array<Record<string, unknown>>, { goal: goalFrom(formData.sacrificeTrophy) })
         : enriched;
+
+      // No hunts for this state and species (CO sheep/goat and UT goat are
+      // offered by the planner but aren't loaded). Prompting the model with an
+      // empty dataset still produced confident prose, so answer plainly and
+      // don't generate.
+      if (!(scoutDataset as unknown[]).length) {
+        console.log('NO SCOUT DATA:', stateName, speciesKey);
+        return NextResponse.json(noDataAnswer(stateName, speciesLabel));
+      }
 
       // ── Build and send scout prompt ───────────────────────────────────────
       const promptParams: ScoutPromptParams = {

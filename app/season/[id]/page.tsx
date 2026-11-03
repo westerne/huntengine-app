@@ -10,6 +10,7 @@ import type { PlanRow } from './PreparationPanel';
 import type { Photo } from './ReportPanel';
 import type { HuntReport } from '@/lib/reports';
 import { harvestReportingFor } from '@/lib/huntdata/harvestReporting';
+import { prefillWeapon } from '@/lib/plans';
 import { STATE_INFO, toStateCode } from '@/lib/huntdata/registry';
 
 // One saved hunt. Row-level security returns nothing for another member's
@@ -48,9 +49,8 @@ export default async function HuntPage({ params }: { params: Promise<{ id: strin
   const agency = code ? STATE_INFO[code]?.agency : null;
   // Prefill the prep form from what we already know: the saved search, then the profile.
   const si = (hunt.search_inputs ?? {}) as { weapons?: string[] };
-  const searchWeapon = (si.weapons ?? []).find((w) => w !== 'Any');
   const prepDefaults = {
-    weapon: searchWeapon ?? profile?.weapons?.[0] ?? undefined,
+    weapon: prefillWeapon(si.weapons, profile?.weapons),
     camp_style: profile?.hunt_styles?.[0] ?? undefined,
     fitness: profile?.fitness ?? undefined,
     limitations: profile?.access_notes ?? undefined,

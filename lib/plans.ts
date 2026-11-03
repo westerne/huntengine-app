@@ -63,6 +63,18 @@ export function parseInputs(body: Record<string, unknown>): { inputs: PlanInputs
   };
 }
 
+// Which weapon to put in front of the hunter before they've chosen one.
+// The saved search wins. A profile that lists every weapon the hunter owns
+// says nothing about this hunt, and taking the first would hand an archer a
+// rifle plan — so prefill from the profile only when it names exactly one.
+export function prefillWeapon(searchWeapons: string[] | null | undefined, profileWeapons: string[] | null | undefined): string | undefined {
+  const real = (list: string[] | null | undefined) => (list ?? []).filter((w) => w && w !== 'Any');
+  const fromSearch = real(searchWeapons)[0];
+  if (fromSearch) return fromSearch;
+  const fromProfile = real(profileWeapons);
+  return fromProfile.length === 1 ? fromProfile[0] : undefined;
+}
+
 // Phone numbers in generated text are never trustworthy (we don't verify
 // outfitters, ranger stations or hospitals). 911 is the only number allowed.
 const PHONE = /(?:\+?1[\s.-]?)?\(?\b\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\b/g;
@@ -149,6 +161,7 @@ STRICT RULES
 - Never invent regulations, season dates, bag limits, fees or tag rules. In "rules_references" tell them what to check in the official ${ctx.seasonYear} regulations and point to the agency site above.
 - Don't invent hunter success, trophy scores or population numbers; use only the figures above.
 - If hunt dates are not set, say the strategy depends on them and give the approach for early vs late in the season.
+- If the weapon is not given, never assume one. Don't write rifle ranges, archery stalking distances or muzzleloader loads; give the approach that holds for any weapon and say what changes by weapon.
 
 Return ONLY this JSON:
 {
