@@ -222,3 +222,32 @@ describe('every state and species the planner offers', () => {
     expect(dead).toEqual([]);
   });
 });
+
+describe('shortlisting when the hunter cannot draw most of it', () => {
+  const hunt = (over: Record<string, unknown>): Record<string, unknown> =>
+    ({ unit: 'u', huntCode: 'c', label: null, otc: false, ...over });
+
+  it('puts a hunt they can draw above a better one they cannot', () => {
+    const trophy = hunt({ huntCode: 'TROPHY', hunterSuccess: '84%', drawSuccessAtYourPoints: 0, drawSuccess: 0.2 });
+    const reachable = hunt({ huntCode: 'REACHABLE', hunterSuccess: '65%', drawSuccessAtYourPoints: 7.7, drawSuccess: 0.9 });
+    const order = buildShortlist([trophy, reachable] as never, { size: 2 }).map((h) => (h as { huntCode: string }).huntCode);
+    expect(order).toEqual(['REACHABLE', 'TROPHY']);
+  });
+
+  it('still ranks on hunter success once both are drawable', () => {
+    // Same odds band, so the band quotas don't decide it and rank does.
+    const better = hunt({ huntCode: 'BETTER', hunterSuccess: '80%', drawSuccessAtYourPoints: 20 });
+    const worse = hunt({ huntCode: 'WORSE', hunterSuccess: '50%', drawSuccessAtYourPoints: 25 });
+    const order = buildShortlist([worse, better] as never, { size: 2 }).map((h) => (h as { huntCode: string }).huntCode);
+    expect(order).toEqual(['BETTER', 'WORSE']);
+  });
+
+  it('keeps the undrawable ones rather than dropping them', () => {
+    // A hunter with no chance this year still wants to see what to build toward.
+    const rows = [
+      hunt({ huntCode: 'A', hunterSuccess: '84%', drawSuccessAtYourPoints: 0 }),
+      hunt({ huntCode: 'B', hunterSuccess: '70%', drawSuccessAtYourPoints: 0 }),
+    ];
+    expect(buildShortlist(rows as never, { size: 8 })).toHaveLength(2);
+  });
+});

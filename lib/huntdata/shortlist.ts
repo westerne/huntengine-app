@@ -64,9 +64,18 @@ export function buildShortlist<T extends Entry>(dataset: T[], opts: ShortlistOpt
     return true;
   });
 
-  // Within a band, prefer higher hunter success, then better odds.
+  // Can the hunter draw it at all? A hunt that needs more points than they
+  // hold reads 0% at their level, and no amount of trophy quality makes up
+  // for a chance of nothing. Nevada elk at six points was eight hunts needing
+  // seven to twenty-three, ranked on hunter success, while a hunt they could
+  // draw at 7.7% missed the list.
+  const drawable = (e: T) => ((num(e.drawSuccessAtYourPoints) ?? oddsOf(e)) ?? 0) > 0;
+
+  // Then prefer higher hunter success, then better odds.
   const rank = (a: T, b: T) =>
-    (pct(b.hunterSuccess) ?? -1) - (pct(a.hunterSuccess) ?? -1) || (oddsOf(b) ?? 0) - (oddsOf(a) ?? 0);
+    Number(drawable(b)) - Number(drawable(a))
+    || (pct(b.hunterSuccess) ?? -1) - (pct(a.hunterSuccess) ?? -1)
+    || (oddsOf(b) ?? 0) - (oddsOf(a) ?? 0);
 
   // A hunt with no odds can't be banded by them: without this it lands in the
   // long-shot band and is presented as under 15%, which nobody published.
