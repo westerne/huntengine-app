@@ -22,7 +22,7 @@ import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
 import { coloradoHuntsForUnit, COLORADO_DRAW_YEAR, buildColoradoScoutDataset } from './coloradoDraw';
-import { montanaHuntsForUnit, MONTANA_DRAW_YEAR, buildMontanaScoutDataset } from './montanaDraw';
+import { montanaHuntsForUnit, MONTANA_DRAW_YEAR } from './montanaDraw';
 import { getStateModule } from '@/lib/huntdata/registry';
 import { buildGenericDrawSummary, buildGenericScoutDataset } from '@/lib/huntdata/generic';
 import { filterToKnownUnits } from '@/lib/huntdata/unitGuard';
@@ -30,6 +30,7 @@ import { buildSharedScoutResponse } from '@/lib/huntdata/sharedScout';
 import { buildShortlist, goalFrom } from '@/lib/huntdata/shortlist';
 import { buildHarvestBlock, enrichScoutDataset, harvestPromptNote } from '@/lib/huntdata/harvest';
 import { toStateCode } from '@/lib/huntdata/registry';
+import { HAND_BUILT_SCOUT_STATES } from '@/lib/huntdata/scoutStates';
 import type { SpeciesKey } from '@/lib/huntdata/schema';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -150,7 +151,7 @@ export async function POST(req: Request) {
     // use the shared SCOUT/BRIEF builders instead of a hand-tuned branch.
     const stateModule = getStateModule(stateName);
     const usesSharedBuilders = !!stateModule
-      && !['WYOMING', 'IDAHO', 'COLORADO', 'MONTANA', 'UTAH'].includes(stateName);
+      && !HAND_BUILT_SCOUT_STATES.includes(stateName);
     const isDeer = speciesKey === 'DEER';
     const isElk = speciesKey === 'ELK';
     const isAntelope = speciesKey === 'ANTELOPE';
@@ -350,10 +351,6 @@ export async function POST(req: Request) {
         // Colorado: real choice-1 draw-success % per hunt code (preference points).
         : isColorado
         ? buildColoradoScoutDataset(speciesKey)
-
-        // Montana: limited-permit draw success per district (bonus-point draw).
-        : isMontana
-        ? buildMontanaScoutDataset(speciesKey)
 
         : usesSharedBuilders
         ? buildGenericScoutDataset(

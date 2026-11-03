@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { noDataAnswer, pointsForState, titleCaseState } from '../scoutData';
 import { prefillWeapon } from '../plans';
+import { getStateModule } from '../huntdata/registry';
+import { HAND_BUILT_SCOUT_STATES } from '../huntdata/scoutStates';
+import { buildGenericScoutDataset } from '../huntdata/generic';
 
 describe('no data for a state and species', () => {
   it('says so plainly instead of leaving the model to fill the gap', () => {
@@ -65,5 +68,26 @@ describe('points for the state being searched', () => {
     expect(pointsForState({}, 'WY')).toBe(0);
     expect(pointsForState({ WY: Number.NaN }, 'WY')).toBe(0);
     expect(pointsForState({ WY: -2 }, 'WY')).toBe(0);
+  });
+});
+
+describe('states SCOUT still hand-builds', () => {
+  it('is down to four, with Montana moved across', () => {
+    expect([...HAND_BUILT_SCOUT_STATES].sort()).toEqual(['COLORADO', 'IDAHO', 'UTAH', 'WYOMING']);
+    expect(HAND_BUILT_SCOUT_STATES).not.toContain('MONTANA');
+  });
+
+  it('Montana keeps every species and gains hunts on the shared builders', () => {
+    const mod = getStateModule('MT')!;
+    // What buildMontanaScoutDataset produced per species, measured before the
+    // move. The shared adapter beat all six, which is why Montana went first.
+    const handBuilt: Record<string, number> = {
+      DEER: 30, ELK: 34, ANTELOPE: 54, MOOSE: 74, BIGHORNSHEEP: 35, MTNGOAT: 31,
+    };
+    for (const [species, was] of Object.entries(handBuilt)) {
+      expect(mod.species).toContain(species);
+      const now = buildGenericScoutDataset(mod, species as never, 'nonresident', 'any', 3).length;
+      expect(now).toBeGreaterThanOrEqual(was);
+    }
   });
 });
