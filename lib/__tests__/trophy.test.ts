@@ -6,6 +6,7 @@ import { WYOMING_DEER_UNITS } from '../../app/api/strategy/wyodeerdata';
 import { WYOMING_ANTELOPE_UNITS } from '../../app/api/strategy/wyoantelopedata';
 import { buildWyomingDeerScoutDataset } from '../../app/api/strategy/wyodeerScoutAdapter';
 import { buildWyomingAntelopeScoutDataset } from '../../app/api/strategy/wyoantelopeScoutAdapter';
+import { buildScoutPrompt } from '../../app/api/strategy/promptBuilder';
 
 describe('which trophy figures we can stand behind', () => {
   it('trusts only field-sourced entries', () => {
@@ -91,6 +92,54 @@ describe('the Wyoming datasets as the model now receives them', () => {
       expect(e.topEnd).toBeNull();
     }
     expect(Object.keys(WYOMING_ANTELOPE_UNITS).length).toBeGreaterThan(100);
+  });
+});
+
+describe('the prompts never exclude a hunt for a figure we withheld', () => {
+  // Withholding the figures was only half the job: a prompt that says "do not
+  // recommend a unit unless topEnd beats X" quietly empties the whole list once
+  // most units carry no topEnd. The Wyoming resident deer brief did exactly
+  // that in production — four drawable regions in drawReality and an empty
+  // recommendations array. Any rule that drops a hunt on size has to be about
+  // a SOURCED figure.
+  const DROPS = /do not recommend|don't recommend|=\s*EXCLUDE|DO NOT include|leave .*\bout\b|exclude it/i;
+  // The rules that say NOT to drop a hunt read the same to a regex.
+  const KEEPS = /do not (exclude|drop|mark)|don't (exclude|drop)|never (leave|drop)|not a failure|UNKNOWN/i;
+
+  const params = (isResident: boolean, speciesKey: string, scoutDataset: unknown[]) => ({
+    stateName: 'WYOMING', speciesKey, isResident, hunterPoints: 0, trophyFloor: 170,
+    timeline: 'This Year', huntStyle: 'Backcountry', fitness: 'High', weaponLabel: 'Any weapon',
+    allowedHuntTypeCodes: ['1'], seasonLabel: 'Mid', seasonContext: '', sacrificeTrophy: 'middle',
+    knownAreas: '', pastExperience: 'First time hunting this species', hunterContext: '',
+    daysToHunt: '5', scoutingAvailability: 'Minimal', notes: '',
+    includeSpecialDraw: true, grizzlyComfort: true,
+    scoutDataset: scoutDataset as never[], formData: {},
+  });
+
+  const deer = buildWyomingDeerScoutDataset();
+  const antelope = buildWyomingAntelopeScoutDataset(['1']);
+
+  const LIVE: Array<[string, ReturnType<typeof params>]> = [
+    ['resident deer', params(true, 'DEER', deer)],
+    ['non-resident deer', params(false, 'DEER', deer)],
+    ['resident antelope', params(true, 'ANTELOPE', antelope)],
+    ['non-resident antelope', params(false, 'ANTELOPE', antelope)],
+  ];
+
+  for (const [who, p] of LIVE) {
+    it(`${who}: only drops a hunt on size when the figure is sourced`, () => {
+      const prompt = buildScoutPrompt(p);
+      const offenders = prompt
+        .split('\n')
+        .filter((l) => /topEnd/.test(l) && DROPS.test(l) && !KEEPS.test(l) && !/sourced/i.test(l));
+      expect(offenders).toEqual([]);
+    });
+  }
+
+  it('tells the resident deer brief that a missing figure is unknown, not a failure', () => {
+    const prompt = buildScoutPrompt(params(true, 'DEER', deer));
+    expect(prompt).toMatch(/topEnd is null[\s\S]{0,200}UNKNOWN, not a failure/);
+    expect(prompt).toMatch(/Never leave one out for having no figure/);
   });
 });
 

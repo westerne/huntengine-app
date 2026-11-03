@@ -640,8 +640,9 @@ ${sep}
 STEP 2 — SCORE UNITS
 ${sep}
 
-TROPHY UPGRADE FILTER — HARD RULE:
-Only recommend limited quota units where topEnd EXCEEDS ${otcBaselineTopEnd}". If topEnd <= ${otcBaselineTopEnd}", do not recommend it.
+TROPHY UPGRADE FILTER — applies ONLY where a figure exists:
+A unit with a SOURCED topEnd at or below ${otcBaselineTopEnd}" is no upgrade on size — do not sell it as one.
+A unit whose topEnd is null has no sourced figure at all. That is UNKNOWN, not a failure: keep it in the set, rank it on draw odds, quota, season and terrain, and say in tradeoffs that antler size isn't sourced for it. Most Wyoming areas are in that position, so excluding them would leave this hunter with nothing to apply for.
 
 1. DRAWABILITY:
 - OTC general region = 10/10 (guaranteed, always DRAW_NOW)
@@ -651,9 +652,10 @@ Only recommend limited quota units where topEnd EXCEEDS ${otcBaselineTopEnd}". I
 - Limited quota residentOdds < 5% = 1-3
 
 2. TROPHY UPGRADE VALUE (weight heavily for limited quota):
-- topEnd exceeds OTC baseline by 15"+ = 9-10
-- topEnd exceeds baseline by 5-14" = 6-8
-- topEnd at or below baseline = EXCLUDE
+- sourced topEnd exceeds OTC baseline by 15"+ = 9-10
+- sourced topEnd exceeds baseline by 5-14" = 6-8
+- sourced topEnd at or below baseline = no size upgrade; keep it only if the odds, season or terrain earn it, and say that plainly
+- topEnd null = not scored on size at all. Do not mark the unit down for it and do not exclude it; score it on drawability alone
 
 ${sharedScoringBlock(p)}
 
@@ -671,8 +673,8 @@ ${sep}
 RECOMMENDATION REQUIREMENTS (minimum 7, ideally 8):
 - MUST include ${knownLabel} as DRAW_NOW with terrain and trophy description
 - MUST include at minimum: Unit 128-1 (Dubois/Wind River Front rut hunt, 200"+), Unit 141-1 (Hoback/Jackson, 200"+), Unit 102-1 (Aspen Mountain/Rock Springs, 200"+) — these are Wyoming's premier limited quota deer units and belong in every resident recommendation set when the hunter wants a trophy upgrade. Output these with the EXACT dataset keys "128-1", "141-1", "102-1" — never as bare numbers.
-- MUST include 4-5 total limited quota units that beat ${otcBaselineTopEnd}" topEnd ceiling, ranked by odds
-- DO NOT include any limited quota unit with topEnd at or below ${otcBaselineTopEnd}"
+- MUST include 4-5 total limited quota units, ranked by odds — those with a sourced topEnd above ${otcBaselineTopEnd}" first, then the ones whose antler figure isn't sourced
+- Leave a limited quota unit out only when its SOURCED topEnd is at or below ${otcBaselineTopEnd}" AND its odds are no better than the general regions. Never leave one out for having no figure
 - currentOdds = residentOdds value exactly
 - tier: for resident limited quota units — "DRAW_NOW" if residentOdds >= 15%, "BUILD_AND_WAIT" if 5-14%, "LONG_GAME" if under 5%. But always note in whyItFits that residents apply every year regardless — this is an annual lottery, not a multi-year wait.
 - terrain field: 2-4 word descriptor ONLY (e.g. "Alpine canyon drainage", "High desert mesa", "Timbered river breaks") — never paste the full description string into the terrain field
