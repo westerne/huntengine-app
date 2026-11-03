@@ -17,7 +17,7 @@ import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
-import { noDataAnswer } from '@/lib/scoutData';
+import { noDataAnswer, pointsForState } from '@/lib/scoutData';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
@@ -219,7 +219,7 @@ export async function POST(req: Request) {
           residentOnly: true,
         });
       }
-      const hunterPoints = formData.points?.[stateRaw] ?? formData.points?.['WY'] ?? 0;
+      const hunterPoints = pointsForState(formData.points, stateRaw);
       const trophyFloor = parseInt(formData.trophyQuality || '0');
       const timeline = formData.drawTimeline || 'This Year';
       const huntStyle = formData.huntStyles?.join(', ') || 'Any';

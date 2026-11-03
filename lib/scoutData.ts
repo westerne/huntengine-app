@@ -51,3 +51,20 @@ export function noDataAnswer(stateName: string, speciesLabel: string): ScoutAnsw
     noData: true,
   };
 }
+
+// The hunter's points for the state being searched.
+//
+// There is no sensible fallback. Points are per state, so borrowing another
+// state's balance invents a number the hunter doesn't have — and it doesn't
+// stay abstract: buildGenericScoutDataset feeds it to successAtPoints, which
+// prints "applicants with N points drew at X%" on the card. SCOUT used to
+// fall back to Wyoming, left over from when the app was Wyoming-only, so a
+// hunter with 3 WY elk points searching Colorado was shown Colorado odds at
+// three points they don't hold. BRIEF never did this.
+export function pointsForState(
+  points: Record<string, number> | null | undefined,
+  stateCode: string,
+): number {
+  const n = Number(points?.[stateCode]);
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}

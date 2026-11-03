@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { noDataAnswer, titleCaseState } from '../scoutData';
+import { noDataAnswer, pointsForState, titleCaseState } from '../scoutData';
 import { prefillWeapon } from '../plans';
 
 describe('no data for a state and species', () => {
@@ -42,5 +42,28 @@ describe('weapon prefill', () => {
   it('leaves it unset rather than guessing', () => {
     expect(prefillWeapon(null, null)).toBeUndefined();
     expect(prefillWeapon(['Any'], ['Any'])).toBeUndefined();
+  });
+});
+
+describe('points for the state being searched', () => {
+  const points = { WY: 3, UT: 8 };
+
+  it('uses the state the hunter is searching', () => {
+    expect(pointsForState(points, 'WY')).toBe(3);
+    expect(pointsForState(points, 'UT')).toBe(8);
+  });
+
+  it('returns zero for a state with no balance, never another state’s', () => {
+    // SCOUT used to fall back to Wyoming here, so a Colorado search was priced
+    // at three points the hunter doesn't hold.
+    expect(pointsForState(points, 'CO')).toBe(0);
+    expect(pointsForState(points, 'AZ')).toBe(0);
+  });
+
+  it('treats missing, empty and junk balances as none', () => {
+    expect(pointsForState(null, 'WY')).toBe(0);
+    expect(pointsForState({}, 'WY')).toBe(0);
+    expect(pointsForState({ WY: Number.NaN }, 'WY')).toBe(0);
+    expect(pointsForState({ WY: -2 }, 'WY')).toBe(0);
   });
 });
