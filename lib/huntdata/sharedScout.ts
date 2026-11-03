@@ -6,7 +6,15 @@
 // the model skipped still gets a card, explained from its data alone.
 
 import { humanizeCodes } from '../huntName';
+import { scrubTrophyText } from '../planGuard';
 import { tierFor, type Tier } from './scoutFacts';
+
+// None of the shared-builder states publishes an antler figure — every card
+// below says "Not in data" for typicalScore and topEnd. The prose was another
+// matter: the prompt said never to invent trophy scores, and nothing checked.
+// An empty allowed set means any score in the write-up is replaced.
+const noTrophy = (s: string | undefined | null): string =>
+  typeof s === 'string' && s ? scrubTrophyText(s, new Set<string>()).text : (s ?? '');
 
 type Entry = Record<string, unknown>;
 
@@ -88,8 +96,8 @@ export function buildSharedScoutResponse(
       pressureRating: x.pressureRating ?? '—',
       totalScore: 0,
       tier,
-      whyItFits: stripPassClaims(x.whyItFits) || dataOnlyWhy(e, o),
-      tradeoffs: stripPassClaims(x.tradeoffs) || (x.whyItFits ? '' : 'No AI write-up for this hunt — figures shown are from agency data only.'),
+      whyItFits: noTrophy(stripPassClaims(x.whyItFits)) || dataOnlyWhy(e, o),
+      tradeoffs: noTrophy(stripPassClaims(x.tradeoffs)) || (x.whyItFits ? '' : 'No AI write-up for this hunt — figures shown are from agency data only.'),
       _odds: o.pct,
     };
   });

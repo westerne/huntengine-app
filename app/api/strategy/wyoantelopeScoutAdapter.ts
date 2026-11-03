@@ -5,17 +5,22 @@
 // tag (no general regions, no UNIT_IN_REGION substructure, no wilderness/guide
 // rules). So this is a flat map of the latest draw year per product.
 
+import { trophyFacts } from "@/lib/trophy";
 import { WYOMING_ANTELOPE_UNITS } from "./wyoantelopedata";
 
 export type ScoutAntelopeEntry = {
   unit: string;                 // "57-1"
   areaNumber: number;
   huntType: string;
-  typical: string;
-  topEnd: string;
+  // Null for all but 3 of Wyoming's 121 antelope products: the file says its
+  // trophy figures are "placeholders — not yet sourced. Do not present as field
+  // truth." So they are withheld rather than softened in the prompt.
+  typical: string | null;
+  topEnd: string | null;
+  trophySourced: boolean;
+  trophyNote: string | null;
   trait: string;
   description: string;
-  trophyEstimated: boolean;     // true when typical/topEnd is a placeholder, not field-sourced
 
   residentOdds: string;
   residentQuota: number | string;
@@ -43,11 +48,12 @@ export function buildWyomingAntelopeScoutDataset(allowedTypes: string[]): ScoutA
         unit: key,
         areaNumber: unit.areaNumbers?.[0] ?? 0,
         huntType: unit.huntType,
-        typical: unit.typical,
-        topEnd: unit.topEnd,
+        typical: trophyFacts(unit).typical,
+        topEnd: trophyFacts(unit).topEnd,
+        trophySourced: trophyFacts(unit).sourced,
+        trophyNote: trophyFacts(unit).note,
         trait: unit.trait,
         description: unit.description,
-        trophyEstimated: unit.dataCompleteness === "NEEDS_TROPHY_DATA",
         residentOdds: latest?.resident.approxOdds ?? "N/A",
         residentQuota: latest?.resident.quota ?? "N/A",
         residentApplicants: latest?.resident.firstChoiceApplicants ?? "N/A",

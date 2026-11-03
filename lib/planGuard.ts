@@ -107,6 +107,21 @@ export function scrubUngrounded(
   return scrubText(text, { dates: allowedDates(inputs), figures: allowedFigures(ctx) });
 }
 
+// Just the trophy pass. The SCOUT shortlist's prose legitimately carries draw
+// odds, quotas and point levels straight from the dataset, so running the full
+// scrub over it would strip figures we did supply. Antler scores are the one
+// thing SCOUT must not invent, and for most Wyoming areas we now supply none.
+export function scrubTrophyText(text: string, figures: Set<string>): { text: string; found: Ungrounded[] } {
+  const found: Ungrounded[] = [];
+  const out = text.replace(TROPHY, (m) => {
+    const n = m.match(/\d[\d,]*(?:\.\d+)?/)?.[0];
+    if (n != null && figures.has(digits(n.replace(/,/g, '')))) return m;
+    found.push({ kind: 'trophy', text: m });
+    return '[antler size not sourced for this area]';
+  });
+  return { text: out, found };
+}
+
 export function scrubText(text: string, allowed: Allowed): { text: string; found: Ungrounded[] } {
   const found: Ungrounded[] = [];
   const dateOk = allowed.dates;

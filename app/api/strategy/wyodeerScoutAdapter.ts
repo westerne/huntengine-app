@@ -12,31 +12,36 @@
 //
 // SCOUT sees real draw decisions, not geographic substructure.
 
+import { trophyFacts } from "@/lib/trophy";
 import { WYOMING_DEER_UNITS, WyomingDeerUnit } from "./wyodeerdata";
 import { getWildernessInfo, WildernessStatus } from "./wyodeerWildernessClassification";
 
 export type ScoutNotableUnit = {
   areaNumber: number;
   unitName: string;          // the V2 key, e.g. "143-GEN"
-  typical: string;
-  topEnd: string;
+  // Null unless this unit has a field-sourced figure. All 100 UNIT_IN_REGION
+  // entries are estimates, so these are null for every one of them — handing
+  // the model a precise-looking number and asking it in the prompt to soften it
+  // never held, and the figures were parsed back out to score hunts as well.
+  typical: string | null;
+  topEnd: string | null;
+  trophySourced: boolean;
+  trophyNote: string | null;
   trait: string;
   terrain: string;           // 2-4 word descriptor extracted from trait
   publicPct?: number;
   wildernessPct?: number;
   buckPerHundredDoe?: number;
-  // True when this unit's typical/topEnd are a REGION-LEVEL estimate, not a
-  // unit-sourced figure (dataCompleteness === "NEEDS_TROPHY_DATA"). The prompt
-  // uses this to frame the numbers honestly rather than as precise unit truth.
-  trophyEstimated: boolean;
 };
 
 export type ScoutDeerEntry = {
   unit: string;              // region key like "G" or LQ key like "141-1"
   productType: "GENERAL_REGION" | "LIMITED_QUOTA" | "LIMITED_QUOTA_WHITETAIL";
   areaNumbers: number[];
-  typical: string;
-  topEnd: string;
+  typical: string | null;
+  topEnd: string | null;
+  trophySourced: boolean;
+  trophyNote: string | null;
   trait: string;
   description: string;
   huntType: string;
@@ -136,14 +141,15 @@ function buildScoutEntry(key: string, unit: WyomingDeerUnit): ScoutDeerEntry {
         notableUnits.push({
           areaNumber: childUnit.areaNumbers![0],
           unitName: childKey,
-          typical: childUnit.typical,
-          topEnd: childUnit.topEnd,
+          typical: trophyFacts(childUnit).typical,
+          topEnd: trophyFacts(childUnit).topEnd,
+          trophySourced: trophyFacts(childUnit).sourced,
+          trophyNote: trophyFacts(childUnit).note,
           trait: childUnit.trait,
           terrain: extractTerrain(childUnit.trait),
           publicPct: childUnit.publicPct,
           wildernessPct: childUnit.wildernessPct,
           buckPerHundredDoe: childUnit.buckPerHundredDoe,
-          trophyEstimated: childUnit.dataCompleteness === "NEEDS_TROPHY_DATA",
         });
       }
     }
@@ -155,8 +161,10 @@ function buildScoutEntry(key: string, unit: WyomingDeerUnit): ScoutDeerEntry {
     unit: key,
     productType: unit.productType as "GENERAL_REGION" | "LIMITED_QUOTA" | "LIMITED_QUOTA_WHITETAIL",
     areaNumbers: unit.areaNumbers ?? [],
-    typical: unit.typical,
-    topEnd: unit.topEnd,
+    typical: trophyFacts(unit).typical,
+    topEnd: trophyFacts(unit).topEnd,
+    trophySourced: trophyFacts(unit).sourced,
+    trophyNote: trophyFacts(unit).note,
     trait: unit.trait,
     description: unit.description,
     huntType: unit.huntType,

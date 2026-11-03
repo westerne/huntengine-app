@@ -4,6 +4,8 @@
 // Each state's draw logic lives in this file (Wyoming/Idaho/Utah/Colorado).
 // Shared blocks (hunter profile, scoring, output schema) live here too.
 
+import { sourcedTopEndInches } from '@/lib/trophy';
+
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 
 export type ScoutPromptParams = {
@@ -67,7 +69,8 @@ HUNTER PROFILE:
 export function sharedScoringBlock(p: ScoutPromptParams): string {
   return `
 2. TROPHY MATCH
-- topEnd must reach ${p.trophyFloor}". topEnd 20"+ above floor = 9-10. Just meeting floor = 5-6.
+- Score this ONLY where topEnd is present. topEnd must reach ${p.trophyFloor}". topEnd 20"+ above floor = 9-10. Just meeting floor = 5-6.
+- topEnd null / trophySourced false means we have NO measured figure for that area. That is UNKNOWN, not below the floor: score the hunt on draw odds and hunter success alone, do not mark it down, and do not exclude it. Say in tradeoffs that antler size isn't sourced for it. Never print a score, range or inch figure for such an area, not even a rough one.
 - If hunter will sacrifice trophy for drawability, relax and note the tradeoff explicitly.
 
 3. ACCESS & STYLE MATCH
@@ -141,7 +144,7 @@ export function sharedWhyItFitsRules(p: ScoutPromptParams): string {
   const terrainGuidance = isElk
     ? `Use the actual area name, drainage, and geographic location from the data. For elk, areas are numeric (e.g. "Area 7 Laramie Peak", "Area 100 Red Desert", "Area 56 Wapiti Ridge"). For HYBRID areas, explicitly note "you can hunt this area with general license during X dates; the LQ unlocks Y" — that's the value proposition. 2-4 word terrain descriptor only in the terrain field (e.g. "Alpine timber drainage", "Sage rim country", "Wilderness backcountry") — NOT the full description string.`
     : `Use the actual unit name, drainage, and geographic location from the data. For GENERAL_REGION entries, cite a specific notableUnit inside that region to anchor the geography — e.g. "Region G includes Unit 143 (South Piney, core Wyoming Range) and Unit 145 (Salt River Range on the Idaho border)". For LIMITED_QUOTA entries, the unit IS the geography. 2-4 word terrain descriptor only in the terrain field (e.g. "Alpine canyon drainage" or "High desert mesa country") — NOT the full description string.
-   TROPHY-NUMBER HONESTY: When you cite a notableUnit's typical/topEnd and that notableUnit has trophyEstimated=true, present the figures as a REGION-LEVEL ESTIMATE (e.g. "this part of the region estimates around 160-175\" class") — never as a precise, measured, unit-specific figure. Only state trophy numbers as hard unit data when trophyEstimated is false or absent.`;
+   TROPHY-NUMBER HONESTY: every notableUnit carries trophySourced=false and typical/topEnd null, because none of them has a field-sourced antler figure. Cite them for GEOGRAPHY ONLY — name, drainage, terrain, public-land share, buck-to-doe ratio. Give NO antler score, range or inch figure for a notableUnit, not even a hedged or "region-level" one. Where the hunter asks about size, say the region's own sourced range if the region has one, and say plainly that per-unit figures aren't sourced yet.`;
 
   return `
 WHYFITS REQUIREMENTS — every entry must include ALL five of these:
@@ -217,8 +220,8 @@ OUTPUT — return ONLY valid JSON. No markdown, no extra keys, no explanation ou
     {
       "unit": string,${huntCodeField}
       "state": string,
-      "typicalScore": string,
-      "topEnd": string,
+      "typicalScore": string | null,
+      "topEnd": string | null,
       "currentOdds": string,
       "poolType": "Regular" | "Special" | "OTC",
       "season": string,
@@ -233,8 +236,8 @@ OUTPUT — return ONLY valid JSON. No markdown, no extra keys, no explanation ou
     {
       "unit": string,${huntCodeField}
       "state": string,
-      "typicalScore": string,
-      "topEnd": string,
+      "typicalScore": string | null,
+      "topEnd": string | null,
       "drawFeasibility": string,
       "currentOdds": string,
       "predictedOdds": string,
@@ -255,6 +258,10 @@ OUTPUT — return ONLY valid JSON. No markdown, no extra keys, no explanation ou
 }
 
 UNIT KEY FORMAT — see rules below.
+
+typicalScore / topEnd RULES:
+- Copy the dataset's typical and topEnd for that unit, verbatim. These are the only antler figures that exist.
+- Where the dataset has them null (trophySourced false), return null for BOTH. Do not estimate, do not round, do not substitute a statewide or neighbouring-unit figure, do not write "~160\"" or "likely 150-170\"". null is the correct and expected answer for most Wyoming units, and the write-up should say antler size isn't sourced for that area.
 
 drawableUnits RULES:
 - Include EVERY unit from the dataset where regular pool OR special pool is accessible for this hunter (or residentOdds >= 15% for residents, or OTC general regions).
@@ -355,7 +362,7 @@ Put every recommended unit in drawableUnits too.
 - currentOdds = the district's ${succField} range; cite specific permits. Low % = high demand; high % = easy.
 - NO EXACT POINTS: set nrMinPoints to 0; say bonus points "improve odds but never guarantee — confirm on MT FWP".
 - MUST include at least 1 general/OTC option (Montana deer & elk general licenses need no draw): poolType "OTC", currentOdds "OTC — no draw required".
-- Do NOT exclude a district for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the district number; topEnd/typicalScore are not in the data, so give realistic estimates.
+- Do NOT exclude a district for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the district number; topEnd/typicalScore are not in the data, so return null for both — give no antler figure, not even an approximate one.
 
 ${sharedWhyItFitsRules(p)}
 
@@ -499,7 +506,7 @@ SLOT 1-3: DRAW_NOW — regular or special pool accessible. MUST include Region W
 SLOT 4-5: RANDOM_PLAY — best combined random odds units.
 SLOT 6-7: BUILD_AND_WAIT / LONG_GAME — trophy units worth building toward (e.g. 141-1, 102-1, 128-1).
 
-- All units topEnd >= ${trophyFloor}" or flag the gap explicitly in tradeoffs
+- Units with a topEnd should be >= ${trophyFloor}" or flag the gap explicitly in tradeoffs. Units with topEnd null have no sourced figure — say so in tradeoffs and judge them on draw odds and terrain; never drop one for failing a floor we have no number for.
 - currentOdds must follow the odds calculation rules above exactly
 - tier: "DRAW_NOW" | "RANDOM_PLAY" | "BUILD_AND_WAIT" | "LONG_GAME"
 
@@ -518,14 +525,21 @@ function buildWyomingDeerResidentPrompt(p: ScoutPromptParams): string {
     new RegExp(`\\b${r}\\b`, 'i').test(knownAreas || '')
   );
 
-  // Find the best topEnd among known general regions — OTC baseline
+  // Find the best topEnd among known general regions — OTC baseline.
+  //
+  // This number goes on to tell the model which limited-quota units have "zero
+  // value", so it may only be built from field-sourced figures. Wyoming's 17
+  // general regions are all FULL, so in practice it is; sourcedTopEndInches
+  // keeps it that way if that ever changes.
   let otcBaselineTopEnd = trophyFloor;
+  let baselineIsSourced = false;
   if (Array.isArray(scoutDataset)) {
     for (const unit of scoutDataset) {
       const key = (unit.unit || '').toUpperCase();
       if (generalRegionKeys.includes(key)) {
-        const topEndNum = parseInt((unit.topEnd || '0').replace(/[^0-9]/g, ''));
-        if (topEndNum > otcBaselineTopEnd) otcBaselineTopEnd = topEndNum;
+        const topEndNum = sourcedTopEndInches(unit);
+        if (topEndNum != null) baselineIsSourced = true;
+        if (topEndNum != null && topEndNum > otcBaselineTopEnd) otcBaselineTopEnd = topEndNum;
       }
     }
   }
@@ -583,15 +597,16 @@ ${sep}
 OTC BASELINE — READ THIS BEFORE SCORING ANYTHING
 ${sep}
 
-${hasKnownRegions
+${hasKnownRegions && baselineIsSourced
   ? `This hunter already has guaranteed OTC access to ${knownLabel} (topEnd ${otcBaselineTopEnd}"+). They hunt these every year as a fallback. Their strategy is simple: apply for a limited quota unit that offers a meaningful trophy upgrade over what they already have guaranteed, then hunt OTC if they don't draw.
 
 LIMITED QUOTA RECOMMENDATIONS MUST:
-- Have topEnd that EXCEEDS ${otcBaselineTopEnd}" to be worth recommending
-- Units with topEnd at or below ${otcBaselineTopEnd}" have zero value to this hunter — they already have access to units that good
-- Units 78-1, 81-1, 125-1, 120-1, 36-1 and similar mid-tier units only qualify if their topEnd meaningfully beats ${otcBaselineTopEnd}"
-- The right limited quota targets for this hunter are the elite units: 128-1 (Dubois rut, 200"+), 141-1 (Hoback, 200"+), 102-1 (Aspen Mountain, 200"+), 87-1 (Ferris, 190"+), 89-1 (Rattlesnake), 130-1 (Big Sandy, 205"+) — units where a tag is a genuine trophy upgrade`
-  : `Wyoming residents have guaranteed OTC access to all general regions. Always note the best available general region as the guaranteed fallback, and only recommend limited quota units that offer a meaningful trophy upgrade.`
+- Where a unit HAS a sourced topEnd, it should exceed ${otcBaselineTopEnd}" to be worth recommending on size
+- A unit with a sourced topEnd at or below ${otcBaselineTopEnd}" is no upgrade on size — say so rather than implying one
+- Where a unit's topEnd is null we have no sourced figure: do NOT treat that as failing the bar and do NOT invent one. Judge it on draw odds, quota, season and terrain, and say in tradeoffs that antler size isn't sourced for it
+- Units 78-1, 81-1, 125-1, 120-1, 36-1 and similar mid-tier units only qualify on size if their sourced topEnd meaningfully beats ${otcBaselineTopEnd}"
+- The elite units are the usual upgrade: 128-1 (Dubois rut), 141-1 (Hoback), 102-1 (Aspen Mountain), 87-1 (Ferris), 89-1 (Rattlesnake), 130-1 (Big Sandy). Quote each one's own topEnd from the data — do not carry a figure over from this list or from another unit`
+  : `Wyoming residents have guaranteed OTC access to all general regions. Always note the best available general region as the guaranteed fallback, and only recommend limited quota units that offer a meaningful upgrade — on draw odds, season, terrain or a sourced trophy figure where one exists.`
 }
 
 THE HUNTER'S STRATEGY:
@@ -717,10 +732,12 @@ RULE — MINIMUM 7 RECOMMENDATIONS. RULE — whyItFits must cite the actual area
 
 WEAPON FILTER: Hunter selected ${weaponLabel}. Dataset is pre-filtered to this weapon type.
 
-TROPHY DATA HONESTY: Most areas have trophyEstimated=true — their typical/topEnd are
-placeholder statewide estimates, not field-sourced per-area numbers. When trophyEstimated
-is true, present trophy ranges as a rough statewide estimate and say plainly that per-area
-trophy data is still being built. Never present an estimate as a precise measured figure.
+TROPHY DATA HONESTY: nearly every area here has trophySourced=false and typical/topEnd
+null, because Wyoming's per-area antler figures are not sourced yet. Where they are null
+you have NO horn or antler figure for that area: give none — no range, no estimate, no
+"roughly", no statewide number stood in for a local one. Say that per-area trophy data is
+still being built, and judge the hunt on draw odds, quota, season and terrain instead.
+Only quote a figure where typical/topEnd are actually present.
 
 ${sharedHunterProfile(p)}
 
@@ -753,7 +770,7 @@ BUILD_AND_WAIT / LONG_GAME: exact points needed and approximate years.
 RECOMMENDATION REQUIREMENTS (minimum 7):
 - Mix accessible DRAW_NOW areas and aspirational high-point premium areas.
 - currentOdds follows the odds rules above; tier set accordingly.
-- topEnd >= ${trophyFloor}" or flag the gap in tradeoffs (and note trophy is an estimate).
+- Where a unit has a sourced topEnd, flag it in tradeoffs if below ${trophyFloor}". Where topEnd is null we have no figure: give none and say so, and do not rank the hunt down for it.
 
 ${sharedWhyItFitsRules(p)}
 
@@ -784,9 +801,11 @@ nrRegularMinPoints, nrRandomOdds, or any nonresident concept.
 
 WEAPON FILTER: Hunter selected ${weaponLabel}. Dataset is pre-filtered to this weapon type.
 
-TROPHY DATA HONESTY: Most areas have trophyEstimated=true — their typical/topEnd are
-placeholder statewide estimates, not field-sourced. Present those as rough estimates and say
-plainly that per-area trophy data is still being built. Never present an estimate as precise truth.
+TROPHY DATA HONESTY: nearly every area here has trophySourced=false and typical/topEnd
+null, because Wyoming's per-area antler figures are not sourced yet. Where they are null
+you have NO horn figure for that area: give none — no range, no estimate, no "roughly".
+Say that per-area trophy data is still being built, and judge the hunt on draw odds,
+quota, season and terrain instead. Only quote a figure where typical/topEnd are present.
 
 ${sharedHunterProfile(p)}
 
@@ -819,7 +838,7 @@ ${sep}
 RECOMMENDATION REQUIREMENTS (minimum 7):
 - Mix high-odds drawable areas and premium low-odds lottery areas.
 - currentOdds = residentOdds exactly.
-- topEnd >= ${trophyFloor}" or flag the gap (and note trophy is an estimate).
+- Where a unit has a sourced topEnd, flag it in tradeoffs if below ${trophyFloor}". Where topEnd is null we have no figure: give none and say so, and do not rank the hunt down for it.
 
 ${sharedWhyItFitsRules(p)}
 
@@ -1156,7 +1175,7 @@ ${sharedOutputSchema(false, 'ELK')}
 // ─── IDAHO ────────────────────────────────────────────────────────────────────
 
 function buildIdahoNRPrompt(p: ScoutPromptParams): string {
-  const { trophyFloor, knownAreas, scoutDataset } = p;
+  const { knownAreas, scoutDataset } = p;
 
   return `
 You are HuntEngine.ai — a western hunting intelligence system built from real field experience.
@@ -1187,7 +1206,7 @@ Score and rank. Minimum 7 recommendations.
 - Tier by probability (NOT points): nonResidentOdds ≥ 20% → DRAW_NOW; 8–20% → RANDOM_PLAY; < 8% → BUILD_AND_WAIT or LONG_GAME (a low-odds lottery, framed honestly).
 - MUST include at least 1 GENERAL-SEASON / OTC option as a guaranteed fallback: poolType "OTC", currentOdds "OTC — no draw required".
 - The "unit" field in your output MUST equal the dataset entry's "unit" (hunt area) EXACTLY. Ignore the Wyoming key-format rules below — they do not apply to Idaho.
-- topEnd/typicalScore are not in the data; give realistic Idaho estimates and flag they are estimates. Flag any below ${trophyFloor}".
+- topEnd/typicalScore are not in the data, so return null for both — give no antler figure, not even an approximate one, and do not rank on size.
 
 ${sharedWhyItFitsRules(p)}
 
@@ -1196,7 +1215,7 @@ ${sharedOutputSchema(false)}
 }
 
 function buildIdahoResidentPrompt(p: ScoutPromptParams): string {
-  const { trophyFloor, knownAreas, scoutDataset } = p;
+  const { knownAreas, scoutDataset } = p;
 
   return `
 You are HuntEngine.ai — a western hunting intelligence system built from real field experience.
@@ -1226,7 +1245,7 @@ Score and rank. Minimum 6 recommendations.
 - Tier by probability (NOT points): residentOdds ≥ 25% → DRAW_NOW; 10–25% → RANDOM_PLAY; < 10% → BUILD_AND_WAIT or LONG_GAME (a low-odds lottery, framed honestly).
 - MUST include at least 1 GENERAL-SEASON / OTC option as a guaranteed fallback: poolType "OTC", currentOdds "OTC — no draw required".
 - The "unit" field in your output MUST equal the dataset entry's "unit" (hunt area) EXACTLY. Ignore the Wyoming key-format rules below — they do not apply to Idaho.
-- topEnd/typicalScore are not in the data; give realistic Idaho estimates and flag they are estimates. Flag any below ${trophyFloor}".
+- topEnd/typicalScore are not in the data, so return null for both — give no antler figure, not even an approximate one, and do not rank on size.
 
 ${sharedWhyItFitsRules(p)}
 
@@ -1325,7 +1344,7 @@ Put every recommended unit in drawableUnits too.
 - Tier by bestNonResSuccess: >=60% → DRAW_NOW; 25–60% → RANDOM_PLAY; <25% → BUILD_AND_WAIT or LONG_GAME.
 - NO EXACT POINTS: set nrMinPoints to 0 and do NOT state a specific number of preference points required; say points "vary — confirm current line on CPW".
 - MUST include at least 1 OTC option (Colorado has broad OTC archery elk and rifle 2nd/3rd-season elk in many GMUs): poolType "OTC", currentOdds "OTC — no draw required".
-- Do NOT exclude a unit for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the GMU number from the data; topEnd/typicalScore are not in the data, so give realistic estimates.
+- Do NOT exclude a unit for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the GMU number from the data; topEnd/typicalScore are not in the data, so return null for both — give no antler figure, not even an approximate one.
 
 ${sharedWhyItFitsRules(p)}
 
@@ -1365,7 +1384,7 @@ Put every recommended unit in drawableUnits too.
 - For a RESIDENT, currentOdds = the unit's resDrawSuccess range; cite specific huntCodes. Tier by bestResSuccess. Low success % = high demand (many points); high % = easy / low points.
 - NO EXACT POINTS: do NOT state a specific number of preference points required; say points "vary — confirm current line on CPW".
 - MUST include at least 1 OTC option (broad OTC archery elk and rifle 2nd/3rd-season elk): poolType "OTC", currentOdds "OTC — no draw required".
-- Do NOT exclude a unit for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the GMU number from the data; topEnd/typicalScore are not in the data, so give realistic estimates.
+- Do NOT exclude a unit for trophy size — include it and flag if below ${trophyFloor}". The "unit" field in output = the GMU number from the data; topEnd/typicalScore are not in the data, so return null for both — give no antler figure, not even an approximate one.
 
 ${sharedWhyItFitsRules(p)}
 

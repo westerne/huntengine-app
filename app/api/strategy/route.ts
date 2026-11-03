@@ -19,6 +19,7 @@ import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
 import { hasDrawSignal, noDataAnswer, pointsForState } from '@/lib/scoutData';
 import { groundBrief } from '@/lib/planGuard';
+import { groundScoutTrophy, trophyFacts } from '@/lib/trophy';
 import { rankLegacy } from '@/lib/huntdata/legacyRank';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
@@ -462,7 +463,16 @@ export async function POST(req: Request) {
       }
       const { result: scoutResult, dropped } = filterToKnownUnits(parsed, scoutDataset as Array<{ unit?: unknown }>);
       if (dropped.length) console.warn("SCOUT dropped units not in dataset:", stateName, speciesKey, dropped);
-      return NextResponse.json(scoutResult);
+      // Antler figures are the one thing the shortlist could still invent: the
+      // brief and the plan have been scrubbed for a while, this never was. Most
+      // Wyoming areas now supply no figure at all, so a number on one of those
+      // cards came from the model and is replaced rather than shipped.
+      const { result: guarded, stripped } = groundScoutTrophy(
+        scoutResult as Record<string, unknown>,
+        scoutDataset as Array<{ unit?: unknown; typical?: unknown; topEnd?: unknown }>,
+      );
+      if (stripped.length) console.warn("SCOUT stripped unsourced trophy figures:", stateName, speciesKey, stripped);
+      return NextResponse.json(guarded);
     }
 
     // ─── 6. BRIEF MODE — DRAW SUMMARY ────────────────────────────────────────
@@ -648,13 +658,17 @@ export async function POST(req: Request) {
       ? `GEOGRAPHIC ANCHOR: This unit is strictly located in: ${idahoUnit.description}`
       : `LOCATION: Analyze ${stateName} ${speciesLabel} Area ${unitResolved}.`;
 
-    const trophyEstimated = unitStats?.dataCompleteness === 'NEEDS_TROPHY_DATA';
-    const trophyInstruction = !hasData
+    // Only FULL entries carry a field-sourced antler figure. The old code
+    // treated NEEDS_FIELD_DATA as "PRIMARY TRUTH DATA" — that's the 17 whitetail
+    // sub-tags and 12 limited-quota areas whose numbers come from an aggregated
+    // table — and softened NEEDS_TROPHY_DATA in words while still handing over
+    // the figures. A number in the facts block is also a number planGuard then
+    // allows through, so saying "treat this as approximate" bought nothing.
+    const trophy = trophyFacts(unitStats ?? {});
+    const trophyInstruction = !hasData || !trophy.sourced
       // No measured trophy data: say so instead of inventing score ranges.
-      ? `NO TROPHY DATA: There is no measured trophy data for ${stateName} ${speciesLabel} Area ${unitResolved}. In TROPHY AUDIT, say plainly that unit-specific trophy data isn't available. You may describe in general terms what a mature ${speciesLabel} looks like and what age class to target, but give NO antler/horn score numbers or ranges for this unit.`
-      : trophyEstimated
-      ? `TROPHY ESTIMATE (region-level, not unit-sourced): Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}. Present these as an approximate regional estimate for this area — do NOT state them as precise, measured, unit-specific figures.`
-      : `PRIMARY TRUTH DATA: Typical Mature: ${unitStats?.typical}, Top-End Potential: ${unitStats?.topEnd}, Key Trait: ${unitStats?.trait}.`;
+      ? `NO TROPHY DATA: there is no field-sourced trophy figure for ${stateName} ${speciesLabel} Area ${unitResolved}. In TROPHY AUDIT, say plainly that unit-specific trophy data isn't available yet. You may describe in general terms what a mature ${speciesLabel} looks like and what age class to target, but give NO antler/horn score numbers or ranges for this unit — not even approximate, regional or statewide ones.${unitStats?.trait ? ` Key trait (not a size figure): ${unitStats.trait}` : ''}`
+      : `PRIMARY TRUTH DATA: Typical Mature: ${trophy.typical}, Top-End Potential: ${trophy.topEnd}, Key Trait: ${unitStats?.trait}.`;
 
     // Habitat metrics (V2) — pass through if available
     const habitatBlock = unitStats?.publicPct != null || unitStats?.buckPerHundredDoe != null
