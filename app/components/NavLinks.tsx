@@ -11,7 +11,7 @@ export default function NavLinks({ member, signedIn }: { member: boolean; signed
     : path.startsWith('/season') ? 'season'
     : path.startsWith('/profile') ? 'profile'
     : path.startsWith('/history') ? 'history'
-    : path === '/' || path.startsWith('/planner') ? 'find'
+    : path === '/' || path.startsWith('/find') || path.startsWith('/planner') ? 'find'
     : null;
 
   const link = (href: string, label: string, key: string) => (
@@ -33,7 +33,7 @@ export default function NavLinks({ member, signedIn }: { member: boolean; signed
         <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto min-w-0 [scrollbar-width:none]">
           {link('/calendar', 'My Calendar', 'calendar')}
           {link('/season', 'My Season', 'season')}
-          {link('/planner', 'Find a Hunt', 'find')}
+          {link('/find', 'Find a Hunt', 'find')}
           {link('/history', 'My History', 'history')}
           {link('/profile', 'My Profile', 'profile')}
         </div>

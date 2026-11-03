@@ -154,7 +154,7 @@ export default function HuntWorkspace({
               ))}
             </div>
             {hunt.application_result === 'unsuccessful' && (
-              <p className="text-zinc-400 text-sm mt-3">This hunt stays in your history. <Link href="/planner?start=find" className="text-amber-500 underline">Find another hunt</Link></p>
+              <p className="text-zinc-400 text-sm mt-3">This hunt stays in your history. <Link href="/find" className="text-amber-500 underline">Find another hunt</Link></p>
             )}
           </div>
         )}

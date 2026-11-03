@@ -111,7 +111,7 @@ export default async function SeasonPage({ searchParams }: { searchParams: Promi
               );
             })}
             <div className="flex gap-3 pt-4">
-              <Link href="/planner?start=find" className="text-amber-500 text-[11px] font-black uppercase tracking-widest hover:text-amber-400">+ Find another hunt</Link>
+              <Link href="/find" className="text-amber-500 text-[11px] font-black uppercase tracking-widest hover:text-amber-400">+ Find another hunt</Link>
               <Link href="/planner?start=tag" className="text-zinc-400 text-[11px] font-black uppercase tracking-widest hover:text-white">+ Add a tag I have</Link>
             </div>
           </div>

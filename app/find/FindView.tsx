@@ -1,15 +1,18 @@
 'use client';
 
-// Find a Hunt, step 1 and 2: pick a state and species, then see what your
-// points actually buy — before being asked anything else.
+// Find a Hunt, steps 1 to 3: pick a state and species, see what your points
+// actually buy, then say what you're after and have the list re-ordered around
+// it.
 //
 // The reality panel costs nothing (no model call), so it loads as soon as the
-// pair is chosen. Questions that narrow the list come after, and only where
-// they'd change it.
+// pair is chosen. The asking comes after, so a hunter is never questioned
+// before he knows whether there is anything to question him about.
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { STATES, speciesFor } from '../planner/constants';
+import AskBox from './AskBox';
+import Matches, { type Narrowed } from './Matches';
 
 const inputCls = 'bg-black border border-zinc-800 p-3 rounded-xl text-zinc-200 outline-none focus:border-amber-500';
 
@@ -72,6 +75,9 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
   const [reality, setReality] = useState<Reality | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showCow, setShowCow] = useState(false);
+  const [narrowed, setNarrowed] = useState<Narrowed | null>(null);
+  const [matching, setMatching] = useState(false);
+  const [askError, setAskError] = useState<string | null>(null);
 
   // Every state change is a fetch; nothing is set synchronously here, so the
   // loading state is derived from whether the answer matches what's selected.
@@ -85,8 +91,29 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
         setError(null); setShowCow(false); setReality(j);
       })
       .catch(() => { if (live) setError('Could not read the draw data.'); });
+    // A match belongs to one state and species; changing either throws it out
+    // rather than leaving Nevada's answer sitting under Utah's hunts.
+    setNarrowed(null); setAskError(null);
     return () => { live = false; };
   }, [state, species]);
+
+  const ask = async (text: string) => {
+    setMatching(true); setAskError(null);
+    try {
+      const r = await fetch('/api/huntdata/narrow', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ state, species, text }),
+      });
+      const j = await r.json();
+      if (!r.ok) { setAskError(j.error || 'Could not match that.'); return; }
+      setNarrowed(j);
+    } catch {
+      setAskError('Could not match that.');
+    } finally {
+      setMatching(false);
+    }
+  };
 
   const answered = !!reality && reality.state === state && reality.species === species;
   const busy = !answered && !error;
@@ -138,7 +165,16 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
             </p>
           </div>
 
-          {reality.reachable.length > 0 && (
+          {/* Nothing to narrow unless something is reachable, so the question
+              only appears once it would change an answer. */}
+          {reality.reachable.length > 0 && !narrowed && (
+            <AskBox onAsk={ask} busy={matching} />
+          )}
+          {askError && <p role="alert" className="text-red-400 text-sm">{askError}</p>}
+
+          {narrowed ? (
+            <Matches n={narrowed} onChange={() => setNarrowed(null)} />
+          ) : reality.reachable.length > 0 && (
             <div className="space-y-2">
               <h3 className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
                 Within reach ({reality.reachable.length})
@@ -172,7 +208,8 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
             </div>
           )}
 
-          {reality.antlerless.length > 0 && (
+          {/* Folded into the match list once he's said whether meat matters. */}
+          {!narrowed && reality.antlerless.length > 0 && (
             <div className="space-y-2">
               <button
                 type="button"
@@ -192,12 +229,14 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
           )}
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href={`/planner?start=find&state=${state}&species=${encodeURIComponent(species)}`}
-              className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500"
-            >
-              Look at these units
-            </Link>
+            {!narrowed && (
+              <Link
+                href={`/planner?start=find&state=${state}&species=${encodeURIComponent(species)}`}
+                className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500"
+              >
+                Look at these units
+              </Link>
+            )}
             <Link
               href="/calendar"
               className="border border-zinc-700 text-zinc-200 px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-zinc-800"

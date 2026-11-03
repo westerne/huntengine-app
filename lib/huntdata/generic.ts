@@ -61,6 +61,10 @@ export function buildGenericScoutDataset(
       huntCode: h.huntCode,
       label: h.label ?? null,
       weapon: h.weapon ?? null,
+      // Only NV, OK and part of WA publish dates with the draw results. Where
+      // they're here, timing questions ("September", "after the rut") can be
+      // answered from the agency's own calendar instead of guessed at.
+      season: h.season ?? null,
       tags: s?.tags ?? h.tags ?? null,
       applicants: s?.applicants ?? h.applicants ?? null,
       drawSuccess: s?.successPct ?? null,
