@@ -73,9 +73,17 @@ describe('points for the state being searched', () => {
 });
 
 describe('states SCOUT still hand-builds', () => {
-  it('is down to Wyoming and Utah', () => {
-    expect([...HAND_BUILT_SCOUT_STATES].sort()).toEqual(['UTAH', 'WYOMING']);
-    for (const moved of ['MONTANA', 'COLORADO', 'IDAHO']) expect(HAND_BUILT_SCOUT_STATES).not.toContain(moved);
+  it('is down to Wyoming alone', () => {
+    expect(HAND_BUILT_SCOUT_STATES).toEqual(['WYOMING']);
+  });
+
+  it('Utah returns the hunts it always did', () => {
+    const mod = getStateModule('UT')!;
+    const sizes: Record<string, number> = { DEER: 12, ELK: 11, ANTELOPE: 3, MOOSE: 3, BIGHORNSHEEP: 7 };
+    expect(mod.species).toEqual(Object.keys(sizes));
+    for (const [species, n] of Object.entries(sizes)) {
+      expect(buildGenericScoutDataset(mod, species as never, 'nonresident', 'any', 3)).toHaveLength(n);
+    }
   });
 
   it('Montana keeps every species and gains hunts on the shared builders', () => {

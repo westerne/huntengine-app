@@ -15,18 +15,19 @@
 // hand-built builder, species for species and unit for unit, so only who
 // picks changed.
 //
-// Left:
-//   Utah  - the adapter has 12 deer and 11 elk hunts against Colorado's
-//           hundreds. Thin either way, but measure before moving it.
-//   Wyoming - blocked twice over. Its hunts publish the fewest points that
-//           drew rather than a draw-success percentage, so buildShortlist
-//           ranks none of them and returns nothing (suggestCalendar works
-//           around this with its own byPoints fallback). And the adapter
-//           covers deer, elk and antelope only, while SCOUT also answers for
-//           moose, sheep and goat from the hand-built data. Both are data
-//           jobs, not code.
+// Utah followed on the same measurement: its adapter returns the same hunts
+// as HUNT_DATA, name for name, across all five species it covers. The data is
+// thin (12 deer, 11 elk) but it was thin before, so nothing was traded away.
+//
+// Wyoming is the last one, and what holds it is data. Its adapter covers deer,
+// elk and antelope, while SCOUT also answers moose, sheep and goat out of
+// HUNT_DATA — moving it today would lose three species. Its other blocker is
+// gone: hunts that publish only the fewest points that drew are rankable now,
+// so buildShortlist fills for all three species it does cover. Wyoming also
+// keeps hand-tuned branches for its deer regions and its antelope type codes,
+// which the generic builder has no equivalent for.
 //
 // This lives on its own rather than in registry.ts, which pulls in every
 // state's draw data — a route importing it for one constant got an undefined
 // at request time.
-export const HAND_BUILT_SCOUT_STATES: readonly string[] = ['WYOMING', 'UTAH'];
+export const HAND_BUILT_SCOUT_STATES: readonly string[] = ['WYOMING'];
