@@ -4,6 +4,7 @@ import { prefillWeapon } from '../plans';
 import { getStateModule } from '../huntdata/registry';
 import { HAND_BUILT_SCOUT_STATES } from '../huntdata/scoutStates';
 import { buildGenericScoutDataset } from '../huntdata/generic';
+import { buildShortlist } from '../huntdata/shortlist';
 
 describe('no data for a state and species', () => {
   it('says so plainly instead of leaving the model to fill the gap', () => {
@@ -72,9 +73,9 @@ describe('points for the state being searched', () => {
 });
 
 describe('states SCOUT still hand-builds', () => {
-  it('is down to four, with Montana moved across', () => {
-    expect([...HAND_BUILT_SCOUT_STATES].sort()).toEqual(['COLORADO', 'IDAHO', 'UTAH', 'WYOMING']);
-    expect(HAND_BUILT_SCOUT_STATES).not.toContain('MONTANA');
+  it('is down to three, with Montana and Colorado moved across', () => {
+    expect([...HAND_BUILT_SCOUT_STATES].sort()).toEqual(['IDAHO', 'UTAH', 'WYOMING']);
+    for (const moved of ['MONTANA', 'COLORADO']) expect(HAND_BUILT_SCOUT_STATES).not.toContain(moved);
   });
 
   it('Montana keeps every species and gains hunts on the shared builders', () => {
@@ -89,5 +90,27 @@ describe('states SCOUT still hand-builds', () => {
       const now = buildGenericScoutDataset(mod, species as never, 'nonresident', 'any', 3).length;
       expect(now).toBeGreaterThanOrEqual(was);
     }
+  });
+});
+
+describe('Colorado on the shared builders', () => {
+  const mod = () => getStateModule('CO')!;
+
+  it('can be shortlisted: every hunt has a draw figure', () => {
+    for (const species of ['DEER', 'ELK', 'ANTELOPE', 'MOOSE']) {
+      const hunts = buildGenericScoutDataset(mod(), species as never, 'nonresident', 'any', 3);
+      expect(hunts.length).toBeGreaterThan(0);
+      expect(hunts.every((h) => h.drawSuccess != null)).toBe(true);
+      expect(buildShortlist(hunts as never, { size: 8 })).toHaveLength(8);
+    }
+  });
+
+  it('filters by weapon, which the hand-built dataset could not', () => {
+    const all = buildGenericScoutDataset(mod(), 'ELK' as never, 'nonresident', 'any', 3).length;
+    const rifle = buildGenericScoutDataset(mod(), 'ELK' as never, 'nonresident', 'rifle', 3).length;
+    const archery = buildGenericScoutDataset(mod(), 'ELK' as never, 'nonresident', 'archery', 3).length;
+    expect(rifle).toBeLessThan(all);
+    expect(archery).toBeLessThan(rifle);
+    expect(archery).toBeGreaterThan(0);
   });
 });

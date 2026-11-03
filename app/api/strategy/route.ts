@@ -21,7 +21,7 @@ import { noDataAnswer, pointsForState } from '@/lib/scoutData';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
-import { coloradoHuntsForUnit, COLORADO_DRAW_YEAR, buildColoradoScoutDataset } from './coloradoDraw';
+import { coloradoHuntsForUnit, COLORADO_DRAW_YEAR } from './coloradoDraw';
 import { montanaHuntsForUnit, MONTANA_DRAW_YEAR } from './montanaDraw';
 import { getStateModule } from '@/lib/huntdata/registry';
 import { buildGenericDrawSummary, buildGenericScoutDataset } from '@/lib/huntdata/generic';
@@ -347,10 +347,6 @@ export async function POST(req: Request) {
         // Idaho: real controlled-hunt draw odds (pure random, no points).
         : isIdaho
         ? buildIdahoScoutDataset(speciesKey, IDAHO_GMU_UNITS)
-
-        // Colorado: real choice-1 draw-success % per hunt code (preference points).
-        : isColorado
-        ? buildColoradoScoutDataset(speciesKey)
 
         : usesSharedBuilders
         ? buildGenericScoutDataset(
