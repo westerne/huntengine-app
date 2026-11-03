@@ -177,7 +177,7 @@ export function cleanSetupAnswers(b: Record<string, unknown>, stateOf: (s: strin
     return state && species ? { state, species } : null;
   };
   const weapons = ['any', 'rifle', 'archery', 'muzzleloader'];
-  return {
+  const cleaned: SetupAnswers = {
     homeState: typeof b.homeState === 'string' ? stateOf(b.homeState) ?? (/^[A-Z]{2}$/i.test(b.homeState) ? b.homeState.toUpperCase() : null) : null,
     weapon: weapons.includes(b.weapon as string) ? (b.weapon as SetupAnswers['weapon']) : 'any',
     wait: (['now', 'few', 'long'] as const).includes(b.wait as Wait) ? (b.wait as Wait) : 'few',
@@ -198,4 +198,24 @@ export function cleanSetupAnswers(b: Record<string, unknown>, stateOf: (s: strin
       return p ? { ...p, unit: typeof r.unit === 'string' && r.unit.trim() ? r.unit.trim().slice(0, 60) : null } : null;
     }).filter((x): x is { state: string; species: string; unit: string | null } => !!x),
   };
+  return { ...cleaned, interests: withPointsAsInterests(cleaned) };
+}
+
+// suggestCalendar only ever loops over `interests`, so a point balance with no
+// matching interest produces nothing — a hunter who says "8 Utah elk points"
+// and nothing else gets an empty calendar. Holding points in a state and
+// species IS the statement of interest, which is what lets onboarding ask
+// where your points are instead of asking that and then asking what you're
+// after. Explicit interests still stand on their own, for a hunter starting
+// with none.
+export function withPointsAsInterests(a: SetupAnswers): SetupAnswers['interests'] {
+  const out = [...a.interests];
+  const seen = new Set(out.map((i) => `${i.state}|${i.species}`));
+  for (const p of a.points) {
+    const key = `${p.state}|${p.species}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ state: p.state, species: p.species });
+  }
+  return out;
 }

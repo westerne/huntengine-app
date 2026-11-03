@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { suggestCalendar, type SetupAnswers } from '../suggest';
+import { cleanSetupAnswers, suggestCalendar, withPointsAsInterests, type SetupAnswers } from '../suggest';
+import { stateCodeOf } from '../sheetImport';
 import { calendarYears } from '../calendar';
 
 const ys = calendarYears(2027);
@@ -76,5 +77,37 @@ describe('use points now or keep building', () => {
       expect(long.notes.join(' ')).toMatch(/not both/);
     }
     expect(now.suggestions.filter((s) => s.kind === 'target' && s.target_year! > 2027)).toHaveLength(0);
+  });
+});
+
+describe('points imply interest', () => {
+  const base = { homeState: 'CO', weapon: 'any', wait: 'few', newUnits: 'either', knownUnits: [], bucket: [] } as const;
+
+  it('treats a point balance as a state and species the hunter is after', () => {
+    const a = { ...base, interests: [], points: [{ state: 'UT', species: 'Elk', points: 8 }] } as never;
+    expect(withPointsAsInterests(a)).toEqual([{ state: 'UT', species: 'Elk' }]);
+  });
+
+  it('keeps explicit interests and does not duplicate them', () => {
+    const a = {
+      ...base,
+      interests: [{ state: 'UT', species: 'Elk' }, { state: 'WY', species: 'Deer' }],
+      points: [{ state: 'UT', species: 'Elk', points: 8 }, { state: 'CO', species: 'Deer', points: 2 }],
+    } as never;
+    expect(withPointsAsInterests(a)).toEqual([
+      { state: 'UT', species: 'Elk' },
+      { state: 'WY', species: 'Deer' },
+      { state: 'CO', species: 'Deer' },
+    ]);
+  });
+
+  it('leaves a hunter with neither with nothing', () => {
+    expect(withPointsAsInterests({ ...base, interests: [], points: [] } as never)).toEqual([]);
+  });
+
+  it('applies through cleanSetupAnswers, so the API sees it too', () => {
+    const a = cleanSetupAnswers({ homeState: 'CO', wait: 'few', points: [{ state: 'UT', species: 'Elk', points: 8 }] }, stateCodeOf);
+    expect(a.interests).toEqual([{ state: 'UT', species: 'Elk' }]);
+    expect(a.points).toEqual([{ state: 'UT', species: 'Elk', points: 8 }]);
   });
 });
