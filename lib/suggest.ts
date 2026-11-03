@@ -35,6 +35,11 @@ const hsOf = (e: Record<string, unknown>) => { const t = String(e.hunterSuccess 
 const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
 const norm = (u: unknown) => String(u ?? '').trim().toLowerCase().replace(/^(unit|gmu)\s+/, '').replace(/^0+(?=\d)/, '');
 
+// "I'll wait for the right tag": how many points beyond the hunter's current
+// balance a suggestion may require. SetupAnswers documents this wait as five
+// years or more, which is what this follows.
+export const LONG_WAIT_SPAN = 5;
+
 export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions: Suggestion[]; notes: string[] } {
   const out: Suggestion[] = [];
   const notes: string[] = [];
@@ -93,7 +98,11 @@ export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions
 
     // 2. A better hunt within reach of your points (preference/bonus states).
     if (a.wait !== 'now' && pts != null) {
-      const span = a.wait === 'few' ? 3 : years.length - 1;
+      // Not years.length: the calendar now opens on three years, and deriving
+      // the patient hunter's horizon from the display would have searched a
+      // narrower range for "I'll wait for the right tag" than for "within
+      // about 3 years". The window extends to whatever gets planned.
+      const span = a.wait === 'few' ? 3 : LONG_WAIT_SPAN;
       const reach = list
         .filter((e) => !e.otc && !seen.has(`${mod.code}|${e.huntCode}`))
         .map((e) => ({ e, need: num(e.fewestPointsToDraw) }))

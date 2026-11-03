@@ -6,7 +6,9 @@ import type { Hunt, Residency, StateModule } from './huntdata/schema';
 import { successAtPoints, successText } from './huntdata/generic';
 import { speciesKeyOf } from './species';
 
-export const CALENDAR_YEARS = 5;
+export const CALENDAR_YEARS = 3;
+// How far yearsCovering will stretch for a distant plan before it stops.
+export const MAX_CALENDAR_YEARS = 15;
 export const PLAN_KINDS = ['target', 'bucket', 'otc'] as const;
 export type PlanKind = (typeof PLAN_KINDS)[number];
 export const KIND_LABEL: Record<PlanKind, string> = { target: 'Draw target', bucket: 'Bucket list', otc: 'OTC option' };
@@ -29,6 +31,22 @@ export type PointBalance = { state: string; species: string; points: number; as_
 
 export function calendarYears(start: number, n = CALENDAR_YEARS): number[] {
   return Array.from({ length: n }, (_, i) => start + i);
+}
+
+// Three years is what most hunters are actually planning, so that is what the
+// calendar shows. It is a starting window, not a limit: a hunter building
+// points for a 2033 sheep tag must still see that hunt, so any year something
+// is actually planned in is added, and the run stays unbroken so the grid and
+// the points ledger don't skip years.
+export function yearsCovering(base: number[], targets: Array<number | null | undefined>): number[] {
+  const years = [...base];
+  const hits = targets.filter((y): y is number => typeof y === 'number' && Number.isFinite(y));
+  if (!hits.length) return years;
+  const from = Math.min(years[0] ?? Math.min(...hits), ...hits);
+  const to = Math.max(years[years.length - 1] ?? Math.max(...hits), ...hits);
+  // A far-off bucket-list year shouldn't render a hundred empty rows.
+  const capped = Math.min(to, from + MAX_CALENDAR_YEARS - 1);
+  return Array.from({ length: capped - from + 1 }, (_, i) => from + i);
 }
 
 // Species with no points at all inside a point state (verified in each

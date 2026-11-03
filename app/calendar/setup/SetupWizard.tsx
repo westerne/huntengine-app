@@ -8,7 +8,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import type { SetupAnswers, Suggestion } from '@/lib/suggest';
-import { KIND_LABEL } from '@/lib/calendar';
+import { KIND_LABEL, yearsCovering } from '@/lib/calendar';
 import { huntTitle } from '@/lib/huntName';
 import { STATES, speciesFor } from '../../planner/constants';
 
@@ -90,6 +90,9 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
 
   if (review) {
     const kept = review.suggestions.filter((s) => s.keep).length;
+    // A patient hunter can be pointed at a year past the opening window, so
+    // the year picker has to offer it or they cannot keep the suggestion.
+    const yearOptions = yearsCovering(years, review.suggestions.map((s) => s.target_year));
     return (
       <main className="max-w-3xl mx-auto px-4 py-10 space-y-6">
         <h1 className="text-3xl font-black italic uppercase">Your starting calendar</h1>
@@ -110,7 +113,7 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
                 </label>
                 <select aria-label="Year" className={`${inputCls} text-xs py-1`} value={s.target_year ?? ''} onChange={(e) => setReview({ ...review, suggestions: review.suggestions.map((x, j) => j === i ? { ...x, target_year: e.target.value ? Number(e.target.value) : null } : x) })}>
                   <option value="">No year</option>
-                  {years.map((y) => <option key={y} value={y}>{y}</option>)}
+                  {yearOptions.map((y) => <option key={y} value={y}>{y}</option>)}
                 </select>
               </div>
             </li>

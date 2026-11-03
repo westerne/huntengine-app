@@ -5,7 +5,7 @@ import { supabaseServer } from '@/lib/supabase/server';
 import { readProfile } from './readProfile';
 import { currentSeasonYear } from '@/lib/hunts';
 import {
-  calendarYears, drawOutlook, findHunt, projectPoints, usesPoints, yearFlags,
+  calendarYears, drawOutlook, findHunt, projectPoints, usesPoints, yearFlags, yearsCovering,
   type Outlook, type PlanItem, type PointBalance,
 } from '@/lib/calendar';
 import { getStateModule } from '@/lib/huntdata/registry';
@@ -34,7 +34,8 @@ export default async function CalendarPage() {
   const home = profile?.home_state ?? null;
   // Setup answer "another state": non-resident everywhere, no need to ask again.
   const homeKnown = !!home || (profile?.planning as { homeState?: string } | null)?.homeState === 'XX';
-  const years = calendarYears(currentSeasonYear());
+  // Opens on three years and stretches to cover anything planned further out.
+  const years = yearsCovering(calendarYears(currentSeasonYear()), items.map((i) => i.target_year));
   const residencyFor = (state: string) => (home && home === state ? 'resident' : 'nonresident') as 'resident' | 'nonresident';
   const pairKey = (state: string, species: string) => `${state}|${speciesKeyOf(species, state) ?? species}`;
 

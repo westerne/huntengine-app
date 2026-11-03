@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { calendarYears, drawOutlook, findHunt, projectPoints, usesPoints, yearFlags } from '../calendar';
+import { calendarYears, drawOutlook, findHunt, projectPoints, usesPoints, yearFlags, yearsCovering } from '../calendar';
 import { guessMapping, parseImport, splitRows, stateCodeOf } from '../sheetImport';
 import { canonicalSpecies, speciesKeyOf } from '../species';
 import { getStateModule } from '../huntdata/registry';
 
 describe('points projection', () => {
   it('adds a point each year and resets the year after a draw', () => {
-    const ys = calendarYears(2027);
+    const ys = calendarYears(2027, 5);
     expect(ys).toEqual([2027, 2028, 2029, 2030, 2031]);
     expect(projectPoints(3, ys)).toEqual({ 2027: 3, 2028: 4, 2029: 5, 2030: 6, 2031: 7 });
     expect(projectPoints(3, ys, [2028])).toEqual({ 2027: 3, 2028: 4, 2029: 0, 2030: 1, 2031: 2 });
@@ -20,7 +20,7 @@ describe('points projection', () => {
 });
 
 describe('draw outlook', () => {
-  const ys = calendarYears(2027);
+  const ys = calendarYears(2027, 5);
   it('uses the point table and says when you’d have last year’s points', () => {
     const or = getStateModule('OR')!;
     const h = findHunt(or, 'Deer', '112', null)!;
@@ -102,5 +102,28 @@ describe('spreadsheet import', () => {
     expect(speciesKeyOf('Pronghorn')).toBe('ANTELOPE');
     expect(canonicalSpecies('sheep', 'NV')).toBe('Bighorn Sheep');
     expect(canonicalSpecies('Mule Deer')).toBe('Deer');
+  });
+});
+
+describe('the calendar window', () => {
+  it('opens on three years', () => {
+    expect(calendarYears(2027)).toEqual([2027, 2028, 2029]);
+  });
+
+  it('stretches to cover anything planned past the window', () => {
+    const base = calendarYears(2027);
+    expect(yearsCovering(base, [2032])).toEqual([2027, 2028, 2029, 2030, 2031, 2032]);
+    expect(yearsCovering(base, [null, undefined])).toEqual(base);
+    expect(yearsCovering(base, [2028])).toEqual(base);
+  });
+
+  it('reaches backwards for a year already behind the window', () => {
+    expect(yearsCovering(calendarYears(2027), [2025])).toEqual([2025, 2026, 2027, 2028, 2029]);
+  });
+
+  it('stops before a distant bucket-list year renders a hundred rows', () => {
+    const ys = yearsCovering(calendarYears(2027), [2099]);
+    expect(ys).toHaveLength(15);
+    expect(ys[0]).toBe(2027);
   });
 });
