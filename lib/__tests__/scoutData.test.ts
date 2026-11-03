@@ -116,15 +116,14 @@ describe('Colorado on the shared builders', () => {
 });
 
 describe('why Wyoming and Utah have not moved', () => {
-  it('Wyoming publishes points-that-drew, not odds, so nothing shortlists', () => {
+  it('Wyoming shortlists now that points-that-drew is rankable', () => {
     const mod = getStateModule('WY')!;
     for (const species of ['DEER', 'ELK', 'ANTELOPE']) {
       const hunts = buildGenericScoutDataset(mod, species as never, 'nonresident', 'any', 3);
-      expect(hunts.length).toBeGreaterThan(0);
+      // Still no published odds — that is the data, and it is not the blocker.
       expect(hunts.every((h) => h.drawSuccess == null)).toBe(true);
       expect(hunts.filter((h) => h.fewestPointsToDraw != null).length).toBeGreaterThan(0);
-      // The blocker: plenty of hunts, none of them rankable.
-      expect(buildShortlist(hunts as never, { size: 8 })).toHaveLength(0);
+      expect(buildShortlist(hunts as never, { size: 8 })).toHaveLength(8);
     }
   });
 
@@ -140,5 +139,28 @@ describe('why Wyoming and Utah have not moved', () => {
     for (const [species, n] of Object.entries(sizes)) {
       expect(buildGenericScoutDataset(mod, species as never, 'nonresident', 'any', 3)).toHaveLength(n);
     }
+  });
+});
+
+describe('shortlisting hunts that publish no odds', () => {
+  const hunt = (over: Record<string, unknown>) => ({ unit: '1', huntCode: 'X', label: null, otc: false, ...over });
+
+  it('prefers a published figure over points-that-drew', () => {
+    const withOdds = hunt({ huntCode: 'ODDS', drawSuccess: 60, hunterSuccess: '20%' });
+    const pointsOnly = hunt({ huntCode: 'PTS', fewestPointsToDraw: 2, hunterSuccess: '90%' });
+    const picked = buildShortlist([pointsOnly, withOdds] as never, { size: 1 });
+    expect((picked[0] as { huntCode: string }).huntCode).toBe('ODDS');
+  });
+
+  it('ranks points-only hunts by hunter success, then by points needed', () => {
+    const a = hunt({ huntCode: 'A', fewestPointsToDraw: 9, hunterSuccess: '50%' });
+    const b = hunt({ huntCode: 'B', fewestPointsToDraw: 1, hunterSuccess: '50%' });
+    const c = hunt({ huntCode: 'C', fewestPointsToDraw: 9, hunterSuccess: '80%' });
+    const order = buildShortlist([a, b, c] as never, { size: 3 }).map((h) => (h as { huntCode: string }).huntCode);
+    expect(order).toEqual(['C', 'B', 'A']);
+  });
+
+  it('still drops a hunt with neither', () => {
+    expect(buildShortlist([hunt({ hunterSuccess: '90%' })] as never, { size: 3 })).toHaveLength(0);
   });
 });

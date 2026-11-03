@@ -55,7 +55,11 @@ export function buildShortlist<T extends Entry>(dataset: T[], opts: ShortlistOpt
     const label = String(e.label ?? '');
     if (RESTRICTED.test(label)) return false;
     if (isPrivateOnly(e)) return false;
-    if (oddsOf(e) == null && !e.otc) return false;
+    // Rankable if the agency publishes odds, or it is over the counter, or it
+    // publishes the fewest points that drew. Wyoming's non-resident pools
+    // publish only the last of those, and dropping them here left the whole
+    // state unshortlistable.
+    if (oddsOf(e) == null && !e.otc && num(e.fewestPointsToDraw) == null) return false;
     if (goal !== 'opportunity' && isAntlerless(e)) return false;
     return true;
   });
@@ -64,9 +68,19 @@ export function buildShortlist<T extends Entry>(dataset: T[], opts: ShortlistOpt
   const rank = (a: T, b: T) =>
     (pct(b.hunterSuccess) ?? -1) - (pct(a.hunterSuccess) ?? -1) || (oddsOf(b) ?? 0) - (oddsOf(a) ?? 0);
 
-  const likely = eligible.filter((e) => e.otc || (oddsOf(e) ?? 0) >= 50).sort(rank);
-  const fair = eligible.filter((e) => !e.otc && (oddsOf(e) ?? 0) >= 15 && (oddsOf(e) ?? 0) < 50).sort(rank);
-  const long = eligible.filter((e) => !e.otc && (oddsOf(e) ?? 0) < 15).sort(rank);
+  // A hunt with no odds can't be banded by them: without this it lands in the
+  // long-shot band and is presented as under 15%, which nobody published.
+  const banded = (e: T) => oddsOf(e) != null;
+  const likely = eligible.filter((e) => e.otc || (banded(e) && oddsOf(e)! >= 50)).sort(rank);
+  const fair = eligible.filter((e) => !e.otc && banded(e) && oddsOf(e)! >= 15 && oddsOf(e)! < 50).sort(rank);
+  const long = eligible.filter((e) => !e.otc && banded(e) && oddsOf(e)! < 15).sort(rank);
+  // Points-only hunts: best hunter success first, then the ones needing fewest
+  // points. They fill once banded hunts run out, so a state publishing both
+  // still leads with real odds.
+  const byPoints = eligible.filter((e) => !e.otc && !banded(e)).sort(
+    (a, b) => (pct(b.hunterSuccess) ?? -1) - (pct(a.hunterSuccess) ?? -1)
+      || (num(a.fewestPointsToDraw) ?? 99) - (num(b.fewestPointsToDraw) ?? 99),
+  );
 
   // Trophy hunters get more long shots; opportunity hunters more likely draws.
   const quota = goal === 'trophy' ? [2, 3, 3] : goal === 'opportunity' ? [4, 3, 1] : [3, 3, 2];
@@ -81,6 +95,6 @@ export function buildShortlist<T extends Entry>(dataset: T[], opts: ShortlistOpt
   take(fair, quota[1]);
   take(long, quota[2]);
   // Top up from any band if one was short.
-  for (const band of [fair, likely, long]) take(band, size - picked.length);
+  for (const band of [fair, likely, long, byPoints]) take(band, size - picked.length);
   return picked.slice(0, size);
 }
