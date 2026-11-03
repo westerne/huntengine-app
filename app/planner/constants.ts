@@ -22,7 +22,7 @@ const STATE_SPECIES: Record<string, string[]> = {
   CA: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],
   WA: ['Deer', 'Elk', 'Moose', 'Bighorn Sheep', 'Mountain Goat'],
   OR: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
-  SD: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep'],   // goat season closed
+  SD: ['Deer', 'Elk', 'Antelope'],   // goat season closed; the 3 sheep hunts carry no draw data
   AK: ['Moose', 'Caribou', 'Dall Sheep', 'Mountain Goat', 'Bison', 'Muskox', 'Elk', 'Deer'],
 };
 export const speciesFor = (st: string) => STATE_SPECIES[st] ?? SPECIES;

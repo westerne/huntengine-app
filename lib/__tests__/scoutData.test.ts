@@ -5,6 +5,8 @@ import { getStateModule } from '../huntdata/registry';
 import { HAND_BUILT_SCOUT_STATES } from '../huntdata/scoutStates';
 import { buildGenericScoutDataset } from '../huntdata/generic';
 import { buildShortlist } from '../huntdata/shortlist';
+import { speciesFor, STATES } from '../../app/planner/constants';
+import { speciesKeyOf } from '../species';
 
 describe('no data for a state and species', () => {
   it('says so plainly instead of leaving the model to fill the gap', () => {
@@ -192,5 +194,31 @@ describe('hunts that say nothing about drawing them', () => {
     })).toBe(false);
     expect(hasDrawSignal({})).toBe(false);
     expect(hasDrawSignal({ drawSuccess: null, tags: '' })).toBe(false);
+  });
+});
+
+describe('every state and species the planner offers', () => {
+  // Wyoming answers from hand-tuned branches that this can't rebuild; its
+  // three species are covered by the live checks instead.
+  const sharedStates = STATES.filter((s) => s !== 'WY');
+
+  it('has at least one hunt with something to say about drawing it', () => {
+    const dead: string[] = [];
+    for (const state of sharedStates) {
+      const mod = getStateModule(state);
+      if (!mod) { dead.push(`${state}: no adapter`); continue; }
+      for (const species of speciesFor(state)) {
+        const key = speciesKeyOf(species, state);
+        if (!key || !mod.species.includes(key as never)) { dead.push(`${state} ${species}: not in adapter`); continue; }
+        // Resident-only species answer with the residency rule, which is a
+        // real answer and not an invented one, so they need no draw data.
+        if (mod.residentOnly?.[key as never]) continue;
+        const rows = buildGenericScoutDataset(mod, key as never, 'nonresident', 'any', 3);
+        if (!rows.some((r) => hasDrawSignal(r))) dead.push(`${state} ${species}: ${rows.length} hunts, none with draw data`);
+      }
+    }
+    // A pair with nothing behind it is a dead end: the hunter picks it and is
+    // told we have no data. Don't offer it.
+    expect(dead).toEqual([]);
   });
 });
