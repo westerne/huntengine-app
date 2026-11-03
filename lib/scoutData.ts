@@ -68,3 +68,31 @@ export function pointsForState(
   const n = Number(points?.[stateCode]);
   return Number.isFinite(n) && n > 0 ? n : 0;
 }
+
+// Does this hunt carry anything about drawing it?
+//
+// A dataset can be non-empty and still say nothing. Wyoming's moose, sheep and
+// goat live in HUNT_DATA as three, two and two units of description — typical
+// antler width, terrain, a note on genetics — with no odds, points, tags or
+// licence counts anywhere. SCOUT fed those to the model and got back "all
+// units require more points or have low random odds", which is a claim about
+// data the app does not have.
+//
+// Both dataset shapes are checked: the shared format's fields, and the legacy
+// hand-built ones, where a missing figure is the string "N/A".
+export function hasDrawSignal(entry: Record<string, unknown>): boolean {
+  const real = (v: unknown) => {
+    if (v == null) return false;
+    const s = String(v).trim();
+    return s !== '' && s.toUpperCase() !== 'N/A';
+  };
+  if (entry.otc === true) return true;
+  for (const key of [
+    'drawSuccess', 'drawSuccessAtYourPoints', 'fewestPointsToDraw', 'tags', 'applicants',
+    'residentOdds', 'residentOdds2025', 'nrRegularMinPoints', 'nrRandomOdds', 'nrRandomOdds2025',
+    'resDrawSuccess', 'nonResDrawSuccess', 'bestResSuccess', 'bestNonResSuccess',
+  ]) {
+    if (real(entry[key])) return true;
+  }
+  return false;
+}

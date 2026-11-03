@@ -17,7 +17,7 @@ import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
-import { noDataAnswer, pointsForState } from '@/lib/scoutData';
+import { hasDrawSignal, noDataAnswer, pointsForState } from '@/lib/scoutData';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR } from './idahoDraw';
@@ -384,7 +384,11 @@ export async function POST(req: Request) {
       // offered by the planner but aren't loaded). Prompting the model with an
       // empty dataset still produced confident prose, so answer plainly and
       // don't generate.
-      if (!(scoutDataset as unknown[]).length) {
+      // Empty, or full of hunts that say nothing about drawing them. Wyoming
+      // moose is three units of description with no odds or points, and the
+      // model duly invented a verdict about them.
+      const scoutRows = scoutDataset as Array<Record<string, unknown>>;
+      if (!scoutRows.length || !scoutRows.some(hasDrawSignal)) {
         console.log('NO SCOUT DATA:', stateName, speciesKey);
         return NextResponse.json(noDataAnswer(stateName, speciesLabel));
       }

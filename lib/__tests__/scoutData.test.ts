@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { noDataAnswer, pointsForState, titleCaseState } from '../scoutData';
+import { hasDrawSignal, noDataAnswer, pointsForState, titleCaseState } from '../scoutData';
 import { prefillWeapon } from '../plans';
 import { getStateModule } from '../huntdata/registry';
 import { HAND_BUILT_SCOUT_STATES } from '../huntdata/scoutStates';
@@ -170,5 +170,27 @@ describe('shortlisting hunts that publish no odds', () => {
 
   it('still drops a hunt with neither', () => {
     expect(buildShortlist([hunt({ hunterSuccess: '90%' })] as never, { size: 3 })).toHaveLength(0);
+  });
+});
+
+describe('hunts that say nothing about drawing them', () => {
+  it('spots the real fields in either dataset shape', () => {
+    expect(hasDrawSignal({ drawSuccess: 42 })).toBe(true);
+    expect(hasDrawSignal({ fewestPointsToDraw: 3 })).toBe(true);
+    expect(hasDrawSignal({ otc: true })).toBe(true);
+    expect(hasDrawSignal({ nrRegularMinPoints: 5 })).toBe(true);
+    expect(hasDrawSignal({ resDrawSuccess: '20-80%' })).toBe(true);
+  });
+
+  it('treats the hand-built placeholder as nothing', () => {
+    // What Wyoming moose actually looks like: description only, every draw
+    // field the legacy mapper fills set to the string N/A.
+    expect(hasDrawSignal({
+      unit: '1', typical: '35-42" width', topEnd: '50"+',
+      trait: 'Shoshone river bottom genetics.', description: 'Northwest WY, north of Cody.',
+      residentOdds: 'N/A', nrRegularMinPoints: 'N/A', nrRandomOdds: 'N/A',
+    })).toBe(false);
+    expect(hasDrawSignal({})).toBe(false);
+    expect(hasDrawSignal({ drawSuccess: null, tags: '' })).toBe(false);
   });
 });

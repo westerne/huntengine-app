@@ -14,6 +14,7 @@ const STATE_SPECIES: Record<string, string[]> = {
   NE: ['Deer', 'Elk', 'Antelope'],
   ND: ['Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep'],
   KS: ['Deer', 'Antelope'],   // KDWP publishes no per-hunt elk draw stats
+  WY: ['Deer', 'Elk', 'Antelope'],   // moose, sheep and goat have no draw data loaded
   CO: ['Deer', 'Elk', 'Antelope', 'Moose'],   // no sheep or goat hunts loaded yet
   UT: ['Deer', 'Elk', 'Antelope', 'Moose', 'Bighorn Sheep'],   // no goat hunts loaded yet
   NV: ['Deer', 'Elk', 'Antelope', 'Bighorn Sheep', 'Mountain Goat'],
