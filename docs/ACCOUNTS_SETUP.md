@@ -10,7 +10,14 @@ Do everything in **Stripe test mode** first. Once a full test signup works, repe
 2. Open **SQL Editor** and run each file in `supabase/migrations/` in order (`0001_…` through `0006_…`). Each one is safe to re-run.
 3. Under **Authentication → URL Configuration**:
    - Site URL: `https://huntengine-app.vercel.app` (or the final domain).
-   - Redirect URLs: add `https://huntengine-app.vercel.app/auth/callback` and `http://localhost:3400/auth/callback`.
+   - Redirect URLs: the app sends people to `/auth/callback` with a `next` query string —
+     `?next=/join` after sign-up and `?next=/reset-password` after a password reset — so allow the
+     whole path:
+     - `https://huntengine-app.vercel.app/auth/callback**`
+     - `http://localhost:3000/auth/callback**`
+
+     (Listing the two exact URLs for each origin works too. The local port is 3000 — `npm run dev`
+     and `.claude/launch.json` both use it.)
 4. Under **Authentication → Providers → Email**, keep "Confirm email" on.
 5. From **Project Settings → API**, copy:
    - the Project URL
