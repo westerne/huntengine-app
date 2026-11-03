@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { drawReality } from '../huntdata/reality';
 import { getStateModule } from '../huntdata/registry';
 import { buildGenericScoutDataset } from '../huntdata/generic';
+import { isPrivateOnly } from '../huntdata/shortlist';
 
 const hunt = (over: Record<string, unknown>): Record<string, unknown> =>
   ({ unit: 'u', huntCode: 'c', label: null, dataYear: 2026, ...over });
@@ -94,14 +95,55 @@ describe('against the real draw data', () => {
     expect(r.headline).toMatch(/Nevada/);
   });
 
-  it('Colorado admits it cannot price the hunter, because the data cannot', () => {
+  it('Colorado admits it cannot price the hunter, but still shows the hunts', () => {
     const mod = getStateModule('CO')!;
     const hunts = buildGenericScoutDataset(mod, 'ELK' as never, 'nonresident', 'rifle', 3);
     const r = drawReality(hunts, { points: 3, state: 'Colorado', species: 'Elk', thisYear: 2027 });
     expect(r.basis).toBe('published-rate');
-    expect(r.reachable).toHaveLength(0);
+    expect(r.priced).toBe(false);
     expect(r.headline).toMatch(/not by point level/);
     expect(r.headline).toMatch(/can't put a number on your own chance/);
+    // Refusing to price him is not a reason to show him nothing: CPW publishes
+    // a rate for every hunt, and an empty page made the state look unsupported.
+    expect(r.reachable.length).toBeGreaterThan(0);
+    expect(r.best!.odds).toBeNull();
+    expect(r.best!.publishedRate).not.toBeNull();
+    // Ordered by the figure we do have.
+    expect(r.reachable[0].publishedRate!).toBeGreaterThanOrEqual(r.reachable[1].publishedRate!);
+  });
+
+  it('Colorado deer is the whole catalogue, not a handful', () => {
+    const mod = getStateModule('CO')!;
+    const hunts = buildGenericScoutDataset(mod, 'DEER' as never, 'nonresident', 'any', 3);
+    const r = drawReality(hunts, { points: 3, state: 'Colorado', species: 'Deer', thisYear: 2027 });
+    expect(r.considered).toBeGreaterThan(600);
+    expect(r.reachable.length).toBeGreaterThan(100);
+    expect(r.headline).toMatch(/drew more than half the people who applied/);
+  });
+
+  it('never leads with a private-land tag just because it drew at 100%', () => {
+    const mod = getStateModule('CO')!;
+    const hunts = buildGenericScoutDataset(mod, 'DEER' as never, 'nonresident', 'any', 0);
+    const r = drawReality(hunts, { points: 0, state: 'Colorado', species: 'Deer', thisYear: 2027 });
+    // CPW marks private-land-only hunts with a P season (DE043P3R). They draw
+    // freely because you need landowner permission to apply at all, so sorting
+    // by draw rate put two of them in the easiest eight.
+    expect(r.setAside).toBeGreaterThan(100);
+    expect(r.considered).toBe(hunts.length - r.setAside);
+    for (const h of [...r.reachable, ...r.antlerless]) {
+      expect(isPrivateOnly({ huntCode: h.huntCode, label: h.label })).toBe(false);
+    }
+    expect(r.caveat).toMatch(/private-land tags you'd need permission for/);
+  });
+
+  it('Utah deer is thin, and says the best rate rather than "0 drew more than half"', () => {
+    const mod = getStateModule('UT')!;
+    const hunts = buildGenericScoutDataset(mod, 'DEER' as never, 'nonresident', 'any', 12);
+    const r = drawReality(hunts, { points: 12, state: 'Utah', species: 'Deer', thisYear: 2027 });
+    expect(r.priced).toBe(false);
+    expect(r.reachable.length).toBeGreaterThan(0);
+    expect(r.headline).toMatch(/None of the \d+ hunts drew even half/);
+    expect(r.headline).toMatch(/the best was/);
   });
 
   it('Nevada at six points is cow tags, and says so instead of claiming 100%', () => {

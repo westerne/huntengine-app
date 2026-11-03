@@ -24,12 +24,14 @@ type Hunt = {
   odds: number | null;
   hunterSuccess: number | null;
   pointsNeeded: number | null;
+  publishedRate: number | null;
 };
 
 type Reality = {
   points: number;
   considered: number;
   basis: 'your-points' | 'points-to-draw' | 'published-rate' | 'none';
+  priced: boolean;
   reachable: Hunt[];
   antlerless: Hunt[];
   best: Hunt | null;
@@ -45,6 +47,8 @@ type Reality = {
   species: string;
   speciesKey: string;
   seasonYear: number;
+  counts: { reachable: number; antlerless: number; soon: number };
+  setAside: number;
 };
 
 const pctText = (n: number) => (n >= 10 ? `${Math.round(n)}%` : `${n.toFixed(1)}%`);
@@ -62,6 +66,14 @@ function HuntRow({ h, showOdds, r }: { h: Hunt; showOdds: boolean; r: Reality })
       <span className="text-right shrink-0">
         {showOdds && h.odds != null && (
           <span className="block text-amber-500 font-black text-sm">{pctText(h.odds)}</span>
+        )}
+        {/* An overall rate is the hunt's, not his. Shown in a different colour
+            and spelled out, so it can't be mistaken for his own chance. */}
+        {!showOdds && h.publishedRate != null && (
+          <>
+            <span className="block text-zinc-300 font-black text-sm">{pctText(h.publishedRate)}</span>
+            <span className="block text-zinc-500 text-[10px] uppercase tracking-widest">drew overall</span>
+          </>
         )}
         {h.pointsNeeded != null && (
           <span className="block text-zinc-500 text-[10px] uppercase tracking-widest">
@@ -204,8 +216,12 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
             <Matches n={narrowed} onChange={() => setNarrowed(null)} />
           ) : reality.reachable.length > 0 && (
             <div className="space-y-2">
+              {/* "Within reach" is a claim about him. Where all we have is the
+                  hunt's own rate, the heading says what the order means. */}
               <h3 className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
-                Within reach ({reality.reachable.length})
+                {reality.priced
+                  ? `Within reach (${reality.counts.reachable})`
+                  : `Easiest to draw first (${Math.min(8, reality.reachable.length)} of ${reality.counts.reachable})`}
               </h3>
               <ul className="space-y-2">
                 {reality.reachable.slice(0, 8).map((h) => (
@@ -273,7 +289,7 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
                 onClick={() => setShowCow((v) => !v)}
                 className="text-[10px] font-black uppercase tracking-widest text-amber-600 hover:text-amber-500"
               >
-                {showCow ? 'Hide' : 'Show'} antlerless tags ({reality.antlerless.length})
+                {showCow ? 'Hide' : 'Show'} antlerless tags ({reality.counts.antlerless})
               </button>
               {showCow && (
                 <ul className="space-y-2">

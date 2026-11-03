@@ -105,7 +105,16 @@ function MatchCard({
           </span>
         </span>
         <span className="text-right shrink-0">
-          {m.odds != null && <span className="block text-amber-500 font-black text-sm">{pctText(m.odds)}</span>}
+          {m.odds != null
+            ? <span className="block text-amber-500 font-black text-sm">{pctText(m.odds)}</span>
+            // Colorado and Utah publish a rate per hunt and nothing by point
+            // level. That figure is the hunt's, not his, and says so.
+            : m.publishedRate != null && (
+              <>
+                <span className="block text-zinc-300 font-black text-sm">{pctText(m.publishedRate)}</span>
+                <span className="block text-zinc-500 text-[10px] uppercase tracking-widest">drew overall</span>
+              </>
+            )}
           {m.pointsNeeded != null && (
             <span className="block text-zinc-500 text-[10px] uppercase tracking-widest">
               {m.pointsNeeded} pt{m.pointsNeeded === 1 ? '' : 's'} drew

@@ -11,7 +11,7 @@
 // "what last year's result implies", which is said plainly rather than
 // dressed up as a forecast.
 
-import { isAntlerless, oddsOf } from './shortlist';
+import { isAntlerless, isPrivateOnly, oddsOf, RESTRICTED } from './shortlist';
 
 type Entry = Record<string, unknown>;
 
@@ -58,6 +58,15 @@ export type DrawReality = {
   //                   this hunter — Colorado is the big one
   // 'none'            nothing to go on
   basis: 'your-points' | 'points-to-draw' | 'published-rate' | 'none';
+  // Hunts dropped as private-land-only or restricted, so the page can account
+  // for the difference between what the state publishes and what we show.
+  setAside: number;
+  // Do the lists below carry THIS hunter's chance, or only the hunt's overall
+  // rate? Colorado publishes 781 deer hunts with a rate each and nothing by
+  // point level: we can show every one of them, we just can't say what any of
+  // them means for him. Treating that as "nothing to show" left the state
+  // looking empty, which is worse than saying what we don't know.
+  priced: boolean;
   reachable: ReachableHunt[];        // antlered only — the tag most hunters mean
   antlerless: ReachableHunt[];       // cow and doe tags, drawable far more easily
   best: ReachableHunt | null;
@@ -105,10 +114,16 @@ function headlineFor(r: Omit<DrawReality, 'headline' | 'caveat'>, hunts: Reachab
   // so we can describe the hunts without pretending to know this hunter's
   // chance. Saying so is better than quoting a rate that isn't theirs.
   if (r.basis === 'published-rate') {
-    const easy = r.considered
-      ? hunts.filter((h) => (h.publishedRate ?? 0) >= 50).length
-      : 0;
-    return `${state} publishes how each ${sp} hunt drew overall, not by point level, so we can't put a number on your own chance with ${held}. Of ${r.considered} hunts, ${easy} drew more than half the people who applied.`;
+    const easy = hunts.filter((h) => (h.publishedRate ?? 0) >= 50).length;
+    const lead = `${state} publishes how each ${sp} hunt drew overall, not by point level, so we can't put a number on your own chance with ${held}.`;
+    // "0 drew more than half" is true but tells him nothing to act on, so when
+    // nothing is easy we give the best rate there is instead.
+    const spread = easy > 0
+      ? `Of ${r.considered} hunts, ${easy} drew more than half the people who applied — they're first below.`
+      : r.best?.publishedRate != null
+      ? `None of the ${r.considered} hunts drew even half the people who applied; the best was ${pctText(r.best.publishedRate)}, and it's first below.`
+      : `We have ${r.considered} hunts for you to look through below.`;
+    return `${lead} ${spread}`;
   }
   if (r.basis === 'none') {
     return `We have ${r.considered} ${sp} hunts for ${state} but no draw figures behind them, so there is nothing honest to say about your chance.`;
@@ -159,21 +174,36 @@ export function drawReality(
   },
 ): DrawReality {
   const points = Math.max(0, Math.floor(opts.points) || 0);
-  const considered = hunts.length;
 
-  const looked = hunts.map(look);
+  // Private-land-only hunts draw freely because you need landowner permission
+  // before you can even apply, and restricted hunts (youth, military,
+  // disability) aren't open to most hunters. Both float straight to the top of
+  // a list ordered by draw rate: two of Colorado's eight easiest deer hunts
+  // were private-land tags at 100%, which is the most misleading thing we could
+  // have led with. The shortlist has always dropped them; this didn't.
+  const open = hunts.filter((e) => !isPrivateOnly(e as never) && !RESTRICTED.test(String(e.label ?? '')));
+  const setAside = hunts.length - open.length;
+  const considered = open.length;
+
+  const looked = open.map(look);
   const basis = basisOf(looked);
 
-  // With odds at their level, reachable means a real chance. With only a
-  // points-to-draw figure it means their points clear the bar. With neither
-  // we don't claim anything about this hunter.
+  // With odds at their level, showing a hunt means a real chance. With only a
+  // points-to-draw figure it means their points clear the bar. With only a
+  // published rate we show it anyway and say plainly that the figure is the
+  // hunt's, not theirs — the alternative was an empty page for Colorado.
   const within = basis === 'your-points'
     ? (h: typeof looked[number]) => (h.odds ?? 0) > 0
     : basis === 'points-to-draw'
     ? (h: typeof looked[number]) => h.pointsNeeded != null && h.pointsNeeded <= points
+    : basis === 'published-rate'
+    ? (h: typeof looked[number]) => h.publishedRate != null
     : () => false;
+  // Rank on whichever figure we actually have, so an unpriced list still leads
+  // with the hunts that drew most freely.
+  const rate = (h: ReachableHunt) => h.odds ?? h.publishedRate ?? -1;
   const byOdds = (a: ReachableHunt, b: ReachableHunt) =>
-    (b.odds ?? 0) - (a.odds ?? 0) || (b.hunterSuccess ?? -1) - (a.hunterSuccess ?? -1);
+    rate(b) - rate(a) || (b.hunterSuccess ?? -1) - (a.hunterSuccess ?? -1);
 
   // Cow and doe tags draw far more easily and are a different hunt. Mixing
   // them in made Nevada read as "100% at six points" when every one of those
@@ -205,6 +235,8 @@ export function drawReality(
     points,
     considered,
     basis,
+    setAside,
+    priced: basis === 'your-points' || basis === 'points-to-draw',
     reachable,
     antlerless,
     best: reachable[0] ?? null,
@@ -216,8 +248,13 @@ export function drawReality(
   return {
     ...base,
     headline: headlineFor(base, looked, opts.species, opts.state),
-    caveat: base.dataYear
-      ? `Based on the ${base.dataYear} draw. Point creep and demand move these every year, so treat a date as what last year's result implies, not a promise.`
-      : 'Point creep and demand move these every year, so treat a date as what the last published draw implies, not a promise.',
+    caveat: [
+      base.dataYear
+        ? `Based on the ${base.dataYear} draw. Point creep and demand move these every year, so treat a date as what last year's result implies, not a promise.`
+        : 'Point creep and demand move these every year, so treat a date as what the last published draw implies, not a promise.',
+      setAside
+        ? `${setAside} ${setAside === 1 ? 'hunt is' : 'hunts are'} left out: private-land tags you'd need permission for, and hunts limited to youth, military or disabled hunters.`
+        : '',
+    ].filter(Boolean).join(' '),
   };
 }

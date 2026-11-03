@@ -31,8 +31,21 @@ export async function GET(req: Request) {
     cutoffIsADate: cutoffIsADate(ctx.mod.code),
   });
 
+  // Colorado deer is 781 hunts, 546 of them antlered, and the page shows eight.
+  // Sending them all was a 127 KB response to fill one screen on a phone in a
+  // parking lot. The counts are sent separately so the headings stay truthful.
+  const LIST_CAP = 24;
+
   return NextResponse.json({
     ...reality,
+    reachable: reality.reachable.slice(0, LIST_CAP),
+    antlerless: reality.antlerless.slice(0, LIST_CAP),
+    soon: reality.soon.slice(0, LIST_CAP),
+    counts: {
+      reachable: reality.reachable.length,
+      antlerless: reality.antlerless.length,
+      soon: reality.soon.length,
+    },
     state: ctx.mod.code,
     species: ctx.species,
     // The compare screen keys on the schema's species key, not the label.
