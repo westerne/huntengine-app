@@ -71,6 +71,10 @@ export function buildGenericScoutDataset(
       drawSuccessAtYourPoints: hunterPoints == null ? null : successAtPoints(h, residency, hunterPoints),
       atYourPoints: hunterPoints == null ? null : pointLineAt(h, residency, hunterPoints),
       fewestPointsToDraw: s?.minPoints ?? null,
+      // What drawing actually looked like for people who HAD those points. In a
+      // lottery state the cutoff on its own is noise: Nevada's unit 111 early
+      // hunt "took 7 points", and 1 of the 267 applicants holding 7 drew it.
+      drawSuccessAtPointsNeeded: s?.minPoints == null ? null : successAtPoints(h, residency, s.minPoints),
       otc: !!h.otc,
       hunterSuccess: h.harvest ? successText(h.harvest, h.tags) : null,
       hunterSuccessYear: h.harvest?.year ?? null,

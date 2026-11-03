@@ -31,6 +31,36 @@ describe('what your points actually buy', () => {
     expect(r.headline).toMatch(/took 10 points, which you'd have in 2031/);
   });
 
+  it('says the points only buy a ticket where the draw is a lottery', () => {
+    const r = drawReality(
+      [hunt({ huntCode: 'A', drawSuccessAtYourPoints: 0, fewestPointsToDraw: 7, drawSuccessAtPointsNeeded: 0.4 })],
+      { points: 6, state: 'Nevada', species: 'Elk', thisYear: 2027, cutoffIsADate: false },
+    );
+    expect(r.soon[0].oddsAtThatLevel).toBe(0.4);
+    expect(r.headline).toMatch(/you'd have in 2028/);
+    expect(r.headline).toMatch(/Nevada draws by lottery/);
+    expect(r.headline).toMatch(/only 0\.4% of applicants drew/);
+    expect(r.headline).toMatch(/in the hat, not the tag/);
+  });
+
+  it('leaves the date to stand where tags go out in point order', () => {
+    const r = drawReality(
+      [hunt({ huntCode: 'A', drawSuccessAtYourPoints: 0, fewestPointsToDraw: 7 })],
+      { points: 6, state: 'Colorado', species: 'Elk', thisYear: 2027, cutoffIsADate: true },
+    );
+    expect(r.headline).toMatch(/you'd have in 2028/);
+    expect(r.headline).not.toMatch(/lottery/);
+  });
+
+  it('still warns about the lottery when the level has no published figure', () => {
+    const r = drawReality(
+      [hunt({ huntCode: 'A', drawSuccessAtYourPoints: 0, fewestPointsToDraw: 7 })],
+      { points: 6, state: 'Nevada', species: 'Elk', thisYear: 2027, cutoffIsADate: false },
+    );
+    expect(r.soon[0].oddsAtThatLevel).toBeNull();
+    expect(r.headline).toMatch(/into the draw rather than the tag/);
+  });
+
   it('refuses to dress up a twenty-year wait as a plan', () => {
     const r = drawReality([hunt({ huntCode: 'A', drawSuccessAtYourPoints: 0, fewestPointsToDraw: 23 })],
       { points: 6, state: 'Nevada', species: 'Elk', thisYear: 2027 });
@@ -83,6 +113,21 @@ describe('against the real draw data', () => {
     expect(r.antlerless.length).toBeGreaterThan(r.reachable.length);
     expect(r.bestAntlerless!.odds!).toBeGreaterThan(r.best!.odds!);
     expect(r.headline).not.toMatch(/100%/);
+  });
+
+  it("carries Nevada's real point-level odds through, not just the cutoff", () => {
+    const mod = getStateModule('NV')!;
+    const hunts = buildGenericScoutDataset(mod, 'ELK' as never, 'nonresident', 'rifle', 6);
+    const r = drawReality(hunts, {
+      points: 6, state: 'Nevada', species: 'Elk', thisYear: 2027, cutoffIsADate: false,
+    });
+    // NDOW gave unit 111's early hunt 7 tags against 4,279 applicants, and 1 of
+    // the 267 holding 7 points drew. "You'd have 7 points in 2028" on its own
+    // sent a hunter building toward a 0.4% chance.
+    const early = r.soon.find((h) => h.huntCode === '4151-111-Early')!;
+    expect(early.pointsNeeded).toBe(7);
+    expect(early.oddsAtThatLevel!).toBeLessThan(1);
+    expect(early.cutoffIsADate).toBe(false);
   });
 
   it('Wyoming clears a bar rather than quoting odds it does not publish', () => {

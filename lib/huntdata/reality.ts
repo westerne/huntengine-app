@@ -40,6 +40,13 @@ export type FutureHunt = ReachableHunt & {
   yearsAway: number;
   year: number;
   farOff: boolean;
+  // What applicants who already held those points actually drew at. In a
+  // lottery state this is the number that matters: the cutoff is a door, and
+  // this says how many people got through it.
+  oddsAtThatLevel: number | null;
+  // True only where tags go out in point order, so reaching the cutoff really
+  // is the tag rather than an entry in a draw.
+  cutoffIsADate: boolean;
 };
 
 export type DrawReality = {
@@ -65,7 +72,7 @@ export type DrawReality = {
 // odds". Falling back to the overall published rate reads as a personal
 // number and isn't one: it said Nevada's best was 100% when the hunter's own
 // best was 11%, because some hunt drew everyone who applied for it.
-const look = (e: Entry): ReachableHunt & { antlerless: boolean } => ({
+const look = (e: Entry): ReachableHunt & { antlerless: boolean; oddsAtPointsNeeded: number | null } => ({
   antlerless: isAntlerless(e as never),
   unit: String(e.unit ?? ''),
   huntCode: e.huntCode == null ? null : String(e.huntCode),
@@ -74,6 +81,7 @@ const look = (e: Entry): ReachableHunt & { antlerless: boolean } => ({
   publishedRate: oddsOf(e as never),
   hunterSuccess: pct(e.hunterSuccess),
   pointsNeeded: num(e.fewestPointsToDraw),
+  oddsAtPointsNeeded: num(e.drawSuccessAtPointsNeeded),
 });
 
 // What the state's data lets us say about this hunter specifically.
@@ -122,16 +130,33 @@ function headlineFor(r: Omit<DrawReality, 'headline' | 'caveat'>, hunts: Reachab
   }
   const next = r.soon[0];
   if (next) {
-    return next.farOff
-      ? `${held} doesn't draw an antlered ${sp} in ${state}. The nearest took ${ptsText(next.pointsNeeded)}, which is ${next.yearsAway} years away at a point a year — far enough out that it isn't really a plan.${cow}`
-      : `${held} doesn't draw an antlered ${sp} in ${state} yet. The nearest took ${ptsText(next.pointsNeeded)}, which you'd have in ${next.year} if you apply or buy a point every year.${cow}`;
+    if (next.farOff) {
+      return `${held} doesn't draw an antlered ${sp} in ${state}. The nearest took ${ptsText(next.pointsNeeded)}, which is ${next.yearsAway} years away at a point a year — far enough out that it isn't really a plan.${cow}`;
+    }
+    // Reaching the cutoff is only a date where tags go out in point order.
+    // In a lottery state, say what the people who already had those points
+    // actually drew at, or a hunter builds five years toward a 0.4% chance.
+    const lottery = !next.cutoffIsADate
+      ? next.oddsAtThatLevel != null
+        ? ` ${state} draws by lottery, though — at that point level only ${pctText(next.oddsAtThatLevel)} of applicants drew, so the points get you in the hat, not the tag.`
+        : ` ${state} draws by lottery, though, so those points get you into the draw rather than the tag.`
+      : '';
+    return `${held} doesn't draw an antlered ${sp} in ${state} yet. The nearest took ${ptsText(next.pointsNeeded)}, which you'd have in ${next.year} if you apply or buy a point every year.${lottery}${cow}`;
   }
   return `${held} doesn't draw an antlered ${sp} in ${state}, and we have no point figures to say what would.${cow}`;
 }
 
 export function drawReality(
   hunts: Entry[],
-  opts: { points: number; state: string; species: string; thisYear: number },
+  opts: {
+    points: number;
+    state: string;
+    species: string;
+    thisYear: number;
+    // True only in a preference state, where reaching the cutoff is the tag.
+    // Elsewhere the cutoff is a door into a lottery and is said that way.
+    cutoffIsADate?: boolean;
+  },
 ): DrawReality {
   const points = Math.max(0, Math.floor(opts.points) || 0);
   const considered = hunts.length;
@@ -162,7 +187,14 @@ export function drawReality(
     .filter((h): h is typeof looked[number] & { pointsNeeded: number } => h.pointsNeeded != null && h.pointsNeeded > points)
     .map((h) => {
       const yearsAway = h.pointsNeeded - points;
-      return { ...h, yearsAway, year: opts.thisYear + yearsAway, farOff: yearsAway > FAR_OFF_YEARS };
+      return {
+        ...h,
+        yearsAway,
+        year: opts.thisYear + yearsAway,
+        farOff: yearsAway > FAR_OFF_YEARS,
+        oddsAtThatLevel: h.oddsAtPointsNeeded,
+        cutoffIsADate: !!opts.cutoffIsADate,
+      };
     })
     // Soonest first, then the better hunt where the wait is the same.
     .sort((a, b) => a.yearsAway - b.yearsAway || (b.hunterSuccess ?? -1) - (a.hunterSuccess ?? -1));

@@ -30,6 +30,29 @@ describe('compare columns', () => {
   });
 });
 
+describe('clearing the points bar is not the same as drawing', () => {
+  it('refuses to date a Nevada hunt off the points cutoff', () => {
+    // NDOW published "6 points drew" and "11.1% at 6 points" for this hunt.
+    // Nevada is squared-bonus, so the cutoff is a door, not a date — reading it
+    // as one put "likely to draw by 2027" above an 11% chance.
+    const c = col('NV', 'Elk', '4151-104-Late', 'nonresident', 6);
+    expect(c.clearsBarIn).toBe(2027);
+    expect(c.likelyBy).toBeNull();
+    expect(c.chanceBy5!).toBeLessThan(50);
+  });
+
+  it('still dates a Kansas hunt off the cutoff, because tags go in point order', () => {
+    // Kansas is a preference state: clearing the bar really is the tag.
+    const c = col('KS', 'Antelope', 'ANTELOPE-R-ML-2', 'resident', 1);
+    expect(c.clearsBarIn).toBe(2027);
+    expect(c.likelyBy).toBe(2027);
+  });
+
+  it('states the window as a year rather than a hard-coded five', () => {
+    expect(col('NV', 'Elk', '4151-104-Late', 'nonresident', 6).throughYear).toBe(ys[ys.length - 1]);
+  });
+});
+
 describe('the recommendation', () => {
   it('weighs drawing odds against hunter success and states the tradeoff', () => {
     const easy = col('OR', 'Elk', '210A2', 'nonresident', 6);
@@ -39,5 +62,26 @@ describe('the recommendation', () => {
     expect(r.key).not.toBe(closed.key);
     expect(r.why).toMatch(/hunter success/);
     expect(pickBest([closed])).toBeNull();
+  });
+
+  it('never offers an earlier year as the reason an alternative lost', () => {
+    // The old wording was always "but you'd likely wait until <year>", which
+    // read as a downside even when that year was sooner than the pick's.
+    const cow = col('NV', 'Elk', '4181-076-Late', 'nonresident', 6);   // 25%, 50.7% fill
+    const bull = col('NV', 'Elk', '4151-104-Late', 'nonresident', 6);  // 11%, 65.2% fill
+    const r = pickBest([cow, bull])!;
+    expect(r.key).toBe(cow.key);
+    expect(r.tradeoff).toMatch(/higher hunter success \(65\.2%\)/);
+    expect(r.tradeoff).toMatch(/chance of drawing it .* is lower/);
+    expect(r.tradeoff).not.toMatch(/wait until/);
+  });
+
+  it('says a bar was cleared rather than claiming a date, where that is all we have', () => {
+    const wy = col('WY', 'Elk', '125-1', 'nonresident', 9);
+    if (wy.likelyBy == null && wy.chanceBy5 == null) {
+      const r = pickBest([wy])!;
+      expect(r.why).toMatch(/clear the points bar|no published odds/);
+      expect(r.why).not.toMatch(/likely to draw by/);
+    }
   });
 });

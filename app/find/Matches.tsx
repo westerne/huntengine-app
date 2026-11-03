@@ -8,7 +8,10 @@
 // and the figures are the agency's, so a card can be wrong about a hunt only if
 // the state's own published draw is.
 
+import { useState } from 'react';
 import Link from 'next/link';
+import { compareKey, MAX_COMPARE } from '@/lib/compare';
+import AddToPlan from './AddToPlan';
 
 export type Match = {
   unit: string;
@@ -21,6 +24,7 @@ export type Match = {
   hunterSuccess: string | null;
   pointsNeeded: number | null;
   antlerless: boolean;
+  otc: boolean;
   matched: string[];
   missed: string[];
   unknown: string[];
@@ -29,6 +33,8 @@ export type Match = {
 export type Narrowed = {
   state: string;
   species: string;
+  speciesKey: string;
+  seasonYear: number;
   wants: string[];
   cannot: Array<{ key: string; text: string }>;
   readback: string;
@@ -55,7 +61,17 @@ function Chip({ kind, children }: { kind: 'yes' | 'no' | 'maybe'; children: Reac
   );
 }
 
-function MatchCard({ m, labels, lead }: { m: Match; labels: Record<string, string>; lead: boolean }) {
+function MatchCard({
+  m, labels, lead, n, picked, onPick, full,
+}: {
+  m: Match;
+  labels: Record<string, string>;
+  lead: boolean;
+  n: Narrowed;
+  picked: boolean;
+  onPick: () => void;
+  full: boolean;
+}) {
   const facts = [
     m.season,
     m.tags != null ? `${m.tags} tag${m.tags === 1 ? '' : 's'}` : null,
@@ -66,16 +82,27 @@ function MatchCard({ m, labels, lead }: { m: Match; labels: Record<string, strin
   const kind = m.antlerless ? 'Cow or doe tag' : null;
 
   return (
-    <li className="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-4 space-y-2">
+    <li className={`bg-zinc-900 border rounded-xl px-4 py-4 space-y-2 ${picked ? 'border-amber-700' : 'border-zinc-800'}`}>
       <div className="flex items-start justify-between gap-4">
-        <span className="min-w-0">
+        <span className="min-w-0 flex items-start gap-3">
+          <input
+            type="checkbox"
+            checked={picked}
+            onChange={onPick}
+            // Ticking a fifth would silently drop one on the compare screen.
+            disabled={!picked && full}
+            aria-label={`Compare ${m.unit}${m.huntCode ? ` ${m.huntCode}` : ''}`}
+            className="mt-1 accent-amber-600 shrink-0 disabled:opacity-30"
+          />
+          <span className="min-w-0">
           <span className="block text-white font-black uppercase italic text-sm">
             {lead && <span className="text-amber-600 not-italic">Best fit · </span>}
             {m.unit}{m.huntCode && m.huntCode !== m.unit ? ` · ${m.huntCode}` : ''}
             {kind && <span className="text-zinc-500 not-italic font-bold"> — {kind}</span>}
           </span>
           {m.label && <span className="block text-zinc-500 text-xs mt-0.5">{m.label}</span>}
-          {facts && <span className="block text-zinc-400 text-xs mt-1">{facts}</span>}
+            {facts && <span className="block text-zinc-400 text-xs mt-1">{facts}</span>}
+          </span>
         </span>
         <span className="text-right shrink-0">
           {m.odds != null && <span className="block text-amber-500 font-black text-sm">{pctText(m.odds)}</span>}
@@ -96,12 +123,43 @@ function MatchCard({ m, labels, lead }: { m: Match; labels: Record<string, strin
           {m.unknown.map((k) => <Chip key={k} kind="maybe">{labels[k] ?? k} unknown</Chip>)}
         </div>
       )}
+      <div className="flex flex-wrap items-center gap-4 pt-1">
+        <Link
+          href={`/compare?h=${encodeURIComponent(compareKey(n.state, n.speciesKey, m.huntCode ?? m.unit))}`}
+          className="text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-white"
+        >
+          All the data →
+        </Link>
+        <AddToPlan
+          target={{
+            state: n.state,
+            species: n.species,
+            unit: m.unit,
+            huntCode: m.huntCode,
+            label: m.label,
+            year: n.seasonYear,
+            otc: m.otc,
+          }}
+          note={m.matched.length ? `Matched: ${m.matched.map((k) => labels[k] ?? k).join(', ')}.` : undefined}
+        />
+      </div>
     </li>
   );
 }
 
 export default function Matches({ n, onChange }: { n: Narrowed; onChange: () => void }) {
   const relaxedText = n.relaxed.map((k) => n.wantLabels[k] ?? k).join(' or ');
+  const [picked, setPicked] = useState<string[]>([]);
+
+  const idOf = (m: Match) => m.huntCode ?? m.unit;
+  const toggle = (id: string) =>
+    setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : p.length < MAX_COMPARE ? [...p, id] : p));
+
+  // Comparing one hunt against nothing isn't a comparison, so below two we
+  // offer the top few instead of disabling the button and explaining why.
+  const topFew = n.picks.slice(0, Math.min(3, n.picks.length)).map(idOf);
+  const toCompare = picked.length >= 2 ? picked : topFew;
+  const compareHref = `/compare?h=${toCompare.map((c) => encodeURIComponent(compareKey(n.state, n.speciesKey, c))).join(',')}`;
 
   return (
     <section aria-labelledby="matches-h" className="space-y-5">
@@ -163,6 +221,10 @@ export default function Matches({ n, onChange }: { n: Narrowed; onChange: () => 
                 m={m}
                 labels={n.wantLabels}
                 lead={i === 0 && n.picks.length > 1}
+                n={n}
+                picked={picked.includes(idOf(m))}
+                onPick={() => toggle(idOf(m))}
+                full={picked.length >= MAX_COMPARE}
               />
             ))}
           </ul>
@@ -189,14 +251,24 @@ export default function Matches({ n, onChange }: { n: Narrowed; onChange: () => 
         </div>
       )}
 
-      {n.picks.length > 0 && (
-        <div className="flex flex-wrap gap-3 pt-2">
+      {n.picks.length > 1 && (
+        <div className="flex flex-wrap items-center gap-3 pt-2">
           <Link
-            href={`/planner?start=find&state=${n.state}&species=${encodeURIComponent(n.species)}`}
+            href={compareHref}
             className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500"
           >
-            Dig into these units
+            {picked.length >= 2
+              ? `Compare these ${picked.length}`
+              : `Compare the top ${toCompare.length}`}
           </Link>
+          <span className="text-zinc-600 text-xs">
+            {picked.length >= 2
+              ? `Side by side: odds, how reliable they are, when you'd likely draw, and what hunters filled.`
+              : picked.length === 1
+              ? 'Tick one more to compare exactly what you want.'
+              : 'Or tick the ones you want to compare.'}
+            {picked.length >= MAX_COMPARE && ` ${MAX_COMPARE} is the most we can line up.`}
+          </span>
         </div>
       )}
     </section>

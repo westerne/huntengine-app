@@ -39,7 +39,12 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
   const missing: string[] = [];
   await Promise.all(keys.map(async (k) => {
     const mod = getStateModule(k.state);
-    const hunt = mod?.hunts(k.speciesKey as SpeciesKey).find((x) => x.huntCode === k.code);
+    // Case-insensitive: the hunt lists uppercase codes in CSS, so "4151-104-LATE"
+    // is what a hunter reads off the screen and pastes, while NDOW published
+    // "4151-104-Late". Matching exactly turned that into "couldn't find it".
+    const eq = (a: string) => a.toLowerCase() === k.code.toLowerCase();
+    const hunts = mod?.hunts(k.speciesKey as SpeciesKey);
+    const hunt = hunts?.find((x) => x.huntCode === k.code) ?? hunts?.find((x) => eq(x.huntCode));
     if (!mod || !hunt) { missing.push(`${k.state} ${k.code}`); return; }
     const species = SPECIES_NAME[hunt.species];
     const residency = home === mod.code ? 'resident' : 'nonresident';
@@ -63,7 +68,9 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
     };
   }));
   // Keep the order the hunter chose.
-  cols.sort((a, b) => keys.findIndex((k) => `${k.state}~${k.speciesKey}~${k.code}` === a.key) - keys.findIndex((k) => `${k.state}~${k.speciesKey}~${k.code}` === b.key));
+  const asked = (key: string) =>
+    keys.findIndex((k) => `${k.state}~${k.speciesKey}~${k.code}`.toLowerCase() === key.toLowerCase());
+  cols.sort((a, b) => asked(a.key) - asked(b.key));
 
   return (
     <div className="min-h-screen bg-black text-zinc-100">

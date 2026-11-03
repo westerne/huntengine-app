@@ -14,18 +14,37 @@ export type YourNotes = { planned: string[]; reports: string[] };
 
 const inputCls = 'bg-black border border-zinc-800 p-2 rounded-lg text-zinc-200 text-sm outline-none focus:border-amber-500';
 
-const ROWS: Array<{ label: string; get: (c: CompareColumn) => string }> = [
+// The window is however many years the calendar covers, so the labels say the
+// year rather than a hard-coded "5 years" the figures stopped matching when the
+// calendar went to three.
+const rowsFor = (years: number[]): Array<{ label: string; get: (c: CompareColumn) => string }> => {
+  const last = years.length ? years[years.length - 1] : null;
+  return [
   { label: 'Odds this season', get: (c) => c.oddsNow },
   { label: 'How reliable', get: (c) => c.reliability },
-  { label: 'Likely to draw by', get: (c) => (!c.openToYou ? '—' : c.outlook.kind === 'otc' ? 'No draw' : c.likelyBy ? String(c.likelyBy) : 'Not within 5 years') },
-  { label: 'Chance within 5 years', get: (c) => (c.chanceBy5 == null ? '—' : c.chanceBy5 >= 99 ? 'Very likely' : `About ${Math.round(c.chanceBy5)}%`) },
+  {
+    label: 'Likely to draw by',
+    get: (c) =>
+      !c.openToYou ? '—'
+        : c.outlook.kind === 'otc' ? 'No draw'
+        : c.likelyBy ? String(c.likelyBy)
+        // Clearing the bar isn't drawing in a bonus or random state, so it is
+        // said as what it is rather than printed as a date.
+        : c.clearsBarIn ? `Points bar cleared in ${c.clearsBarIn}, then a lottery`
+        : last ? `Not by ${last}` : 'Not published',
+  },
+  {
+    label: last ? `Chance by ${last}` : 'Chance in the years ahead',
+    get: (c) => (c.chanceBy5 == null ? '—' : c.chanceBy5 >= 99 ? 'Very likely' : `About ${Math.round(c.chanceBy5)}%`),
+  },
   { label: 'Hunter success', get: (c) => c.hunterSuccess },
   { label: 'Public land', get: (c) => c.publicLand ?? 'Not available' },
   { label: 'Season', get: (c) => c.season ?? 'See the regulations' },
   { label: 'Weapon', get: (c) => c.weapon ?? 'See the regulations' },
   { label: 'Trophy', get: (c) => c.trophy },
   { label: 'Cost', get: (c) => c.cost },
-];
+  ];
+};
 
 function AddHunt({ keys }: { keys: string[] }) {
   const router = useRouter();
@@ -116,7 +135,10 @@ export default function CompareView({ cols, pick, notes, missing, years, homeSta
               .filter((x) => x.p != null && mine != null && x.p >= mine + 25).sort((a, b) => b.p! - a.p!)[0];
             return alt ? <p className="text-zinc-400 text-sm">Public land: {alt.c.state} {alt.c.huntCode} is about {alt.p}% public vs about {mine}% for our pick — worth it if you hunt without private access.</p> : null;
           })()}
-          <p className="text-zinc-600 text-xs">Weighs your chance of drawing within five years against hunter success. Trophy quality and cost aren&apos;t in our data yet.</p>
+          <p className="text-zinc-600 text-xs">
+            Weighs your chance of drawing {years.length ? `by ${years[years.length - 1]}` : 'in the years ahead'} against
+            hunter success. Trophy quality and cost aren&apos;t in our data yet.
+          </p>
         </section>
       )}
 
@@ -140,7 +162,7 @@ export default function CompareView({ cols, pick, notes, missing, years, homeSta
               </tr>
             </thead>
             <tbody>
-              {ROWS.map((r) => (
+              {rowsFor(years).map((r) => (
                 <tr key={r.label} className="border-t border-zinc-800 align-top">
                   <th className="text-left p-3 text-[10px] uppercase tracking-widest text-zinc-500 font-black">{r.label}</th>
                   {cols.map((c) => <td key={c.key} className="p-3 text-zinc-300">{r.label === 'Public land' ? (land[c.key] ?? 'Checking…') : r.get(c)}</td>)}

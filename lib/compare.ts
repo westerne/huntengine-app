@@ -4,6 +4,7 @@
 
 import type { Hunt, Residency } from './huntdata/schema';
 import { successText } from './huntdata/generic';
+import { cutoffIsADate } from './huntdata/drawSystem';
 import { drawOutlook, type Outlook } from './calendar';
 import { SPECIES_NAME } from './species';
 
@@ -22,8 +23,14 @@ export type CompareColumn = {
   oddsNow: string;             // this season, at your points
   reliability: string;         // how much to trust that number
   outlook: Outlook;
-  likelyBy: number | null;     // first year with ≥50% cumulative chance (or the points cutoff)
+  // First year he's more likely than not to have drawn. Only a real date: in a
+  // bonus or random state the points cutoff is NOT one (see cutoffIsADate).
+  likelyBy: number | null;
+  // First year he'd clear the fewest-points-that-drew bar. In a lottery state
+  // that is a door opening, not a tag.
+  clearsBarIn: number | null;
   chanceBy5: number | null;    // cumulative chance by the last calendar year
+  throughYear: number | null;  // the last calendar year that chance covers
   hunterSuccess: string;
   hunterSuccessPct: number | null;   // null when unpublished or too few to judge
   season: string | null;
@@ -57,6 +64,7 @@ function reliabilityFor(hunt: Hunt, o: Outlook): string {
 
 const fmtDate = (iso: string) => new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 
+
 export function compareColumn(
   hunt: Hunt,
   residency: Residency,
@@ -67,8 +75,12 @@ export function compareColumn(
   const openToYou = !hunt.openTo || hunt.openTo === residency;
   const first = o.kind === 'draw' ? o.perYear[0] : null;
   const last = o.kind === 'draw' ? o.perYear[o.perYear.length - 1] : null;
+  // Where tags go in point order the cutoff is the answer, earlier or later
+  // than the odds would suggest: you don't draw before you clear the bar, and
+  // once you clear it you do. Everywhere else only compounding odds can date it.
+  const byOdds = o.kind === 'draw' ? o.perYear.find((r) => (r.cumulative ?? 0) >= 50)?.year ?? null : null;
   const likely = o.kind === 'draw'
-    ? (o.perYear.find((r) => (r.cumulative ?? 0) >= 50)?.year ?? o.firstYearAtMin ?? null)
+    ? (cutoffIsADate(hunt.state) && o.firstYearAtMin != null ? o.firstYearAtMin : byOdds)
     : o.kind === 'otc' ? years[0] : null;
 
   let oddsNow: string;
@@ -96,7 +108,9 @@ export function compareColumn(
     reliability: openToYou ? reliabilityFor(hunt, o) : '—',
     outlook: o,
     likelyBy: openToYou ? likely : null,
+    clearsBarIn: openToYou && o.kind === 'draw' ? o.firstYearAtMin : null,
     chanceBy5: openToYou ? (o.kind === 'otc' ? 100 : last?.cumulative ?? null) : null,
+    throughYear: years.length ? years[years.length - 1] : null,
     hunterSuccess: hsText,
     hunterSuccessPct: h && !tiny ? h.successPct : null,
     season: hunt.season ? `${fmtDate(hunt.season.open)} – ${fmtDate(hunt.season.close)}` : null,
@@ -109,24 +123,44 @@ export function compareColumn(
 // The recommendation: the best mix of drawing within the calendar window and
 // hunter success. Closed hunts never win; missing figures are called out.
 export function pickBest(cols: CompareColumn[]): { key: string; why: string; tradeoff: string | null } | null {
-  const open = cols.filter((c) => c.openToYou && (c.chanceBy5 != null || c.likelyBy != null));
+  const open = cols.filter((c) => c.openToYou && (c.chanceBy5 != null || c.likelyBy != null || c.clearsBarIn != null));
   if (!open.length) return null;
-  // Ranking only (never shown): a points-cutoff hunt likely within the window
-  // counts as better-than-even; unpublished hunter success as average.
-  const chance = (c: CompareColumn) => c.chanceBy5 ?? (c.likelyBy != null ? 60 : 0);
+  // Ranking only (never shown): a hunt he's likely to have drawn counts as
+  // better-than-even, one where he merely clears the points bar as a coin toss
+  // in a lottery, and unpublished hunter success as average.
+  const chance = (c: CompareColumn) => c.chanceBy5 ?? (c.likelyBy != null ? 60 : c.clearsBarIn != null ? 40 : 0);
   const score = (c: CompareColumn) => chance(c) / 100 * (c.hunterSuccessPct ?? 35);
   const ranked = [...open].sort((a, b) => score(b) - score(a));
   const best = ranked[0];
   const name = (c: CompareColumn) => `${c.state} ${c.huntCode}`;
-  const draw = best.outlook.kind === 'otc' ? 'no draw needed' : best.likelyBy ? `likely to draw by ${best.likelyBy}` : `about a ${Math.round(best.chanceBy5 ?? 0)}% chance to draw within five years`;
-  const why = `${name(best)}: ${draw}, hunter success ${best.hunterSuccessPct != null ? `${best.hunterSuccessPct}%` : 'not published (we assumed average)'}.`;
+  const by = (c: CompareColumn) => (c.throughYear ? `by ${c.throughYear}` : 'within the next few years');
+  // What we can honestly say about drawing it, in descending order of how much
+  // the data actually supports.
+  const drawText = (c: CompareColumn) =>
+    c.outlook.kind === 'otc' ? 'no draw needed'
+      : c.likelyBy != null ? `likely to draw by ${c.likelyBy}`
+      : c.chanceBy5 != null ? `about a ${Math.round(c.chanceBy5)}% chance to draw ${by(c)}`
+      : c.clearsBarIn != null ? `you'd clear the points bar in ${c.clearsBarIn}, then it's a lottery`
+      : 'no published odds to go on';
+  const why = `${name(best)}: ${drawText(best)}, hunter success ${best.hunterSuccessPct != null ? `${best.hunterSuccessPct}%` : 'not published (we assumed average)'}.`;
 
   // Tradeoff: the strongest alternative on hunter success, if it beats the pick there.
   const better = open.filter((c) => c !== best && (c.hunterSuccessPct ?? 0) > (best.hunterSuccessPct ?? 0) + 4)
     .sort((a, b) => (b.hunterSuccessPct ?? 0) - (a.hunterSuccessPct ?? 0))[0];
   let tradeoff: string | null = null;
   if (better) {
-    tradeoff = `${name(better)} has higher hunter success (${better.hunterSuccessPct}%), but ${better.likelyBy ? `you'd likely wait until ${better.likelyBy}` : `only about a ${Math.round(better.chanceBy5 ?? 0)}% chance to draw within five years`}.`;
+    // Say the reason it lost, not a stock one. It ranked below the pick on
+    // chance × success, so the cost is a worse chance or a longer wait — and
+    // naming the wrong one read as "but you'd wait until 2027" against a pick
+    // of 2028, which is sooner.
+    const worseChance = better.chanceBy5 != null && best.chanceBy5 != null && better.chanceBy5 < best.chanceBy5 - 1;
+    const worseWait = better.likelyBy != null && best.likelyBy != null && better.likelyBy > best.likelyBy;
+    const cost = worseChance
+      ? `your chance of drawing it ${by(better)} is lower — about ${Math.round(better.chanceBy5!)}% against ${Math.round(best.chanceBy5!)}%`
+      : worseWait
+      ? `you'd likely wait until ${better.likelyBy}`
+      : `it's ${drawText(better)}`;
+    tradeoff = `${name(better)} has higher hunter success (${better.hunterSuccessPct}%), but ${cost}.`;
   } else if (ranked[1]) {
     tradeoff = `${name(ranked[1])} is the runner-up.`;
   }

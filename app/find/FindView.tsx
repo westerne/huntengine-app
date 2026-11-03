@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { STATES, speciesFor } from '../planner/constants';
 import AskBox from './AskBox';
 import Matches, { type Narrowed } from './Matches';
+import AddToPlan from './AddToPlan';
 
 const inputCls = 'bg-black border border-zinc-800 p-3 rounded-xl text-zinc-200 outline-none focus:border-amber-500';
 
@@ -33,19 +34,25 @@ type Reality = {
   antlerless: Hunt[];
   best: Hunt | null;
   bestAntlerless: Hunt | null;
-  soon: Array<Hunt & { pointsNeeded: number; yearsAway: number; year: number; farOff: boolean }>;
+  soon: Array<Hunt & {
+    pointsNeeded: number; yearsAway: number; year: number; farOff: boolean;
+    oddsAtThatLevel: number | null; cutoffIsADate: boolean;
+  }>;
   headline: string;
   caveat: string;
   residency: 'resident' | 'nonresident';
   state: string;
   species: string;
+  speciesKey: string;
+  seasonYear: number;
 };
 
 const pctText = (n: number) => (n >= 10 ? `${Math.round(n)}%` : `${n.toFixed(1)}%`);
 
-function HuntRow({ h, showOdds }: { h: Hunt; showOdds: boolean }) {
+function HuntRow({ h, showOdds, r }: { h: Hunt; showOdds: boolean; r: Reality }) {
   return (
-    <li className="flex items-start justify-between gap-4 bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3">
+    <li className="bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 space-y-2">
+      <div className="flex items-start justify-between gap-4">
       <span className="min-w-0">
         <span className="block text-white font-black uppercase italic text-sm">
           {h.unit}{h.huntCode && h.huntCode !== h.unit ? ` · ${h.huntCode}` : ''}
@@ -65,6 +72,27 @@ function HuntRow({ h, showOdds }: { h: Hunt; showOdds: boolean }) {
           <span className="block text-zinc-400 text-[10px] uppercase tracking-widest">{h.hunterSuccess}% success</span>
         )}
       </span>
+      </div>
+      {/* Same two moves as a matched card, so skipping the question doesn't
+          leave a hunter with nothing to do about what he's looking at. */}
+      <div className="flex flex-wrap items-center gap-4">
+        <Link
+          href={`/compare?h=${encodeURIComponent(`${r.state}~${r.speciesKey}~${h.huntCode ?? h.unit}`)}`}
+          className="text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-white"
+        >
+          All the data →
+        </Link>
+        <AddToPlan
+          target={{
+            state: r.state,
+            species: r.species,
+            unit: h.unit,
+            huntCode: h.huntCode,
+            label: h.label,
+            year: r.seasonYear,
+          }}
+        />
+      </div>
     </li>
   );
 }
@@ -181,7 +209,7 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
               </h3>
               <ul className="space-y-2">
                 {reality.reachable.slice(0, 8).map((h) => (
-                  <HuntRow key={`${h.unit}|${h.huntCode}`} h={h} showOdds={!!showOdds} />
+                  <HuntRow key={`${h.unit}|${h.huntCode}`} h={h} showOdds={!!showOdds} r={reality} />
                 ))}
               </ul>
             </div>
@@ -189,8 +217,12 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
 
           {reality.soon.length > 0 && (
             <div className="space-y-2">
+              {/* Not "worth building toward": in a lottery state the soonest
+                  hunt is often the worst bet — Nevada's nearest is 0.4% at the
+                  points it takes, and one four years further out is 17%. The
+                  list is a timeline, and each row says what it's really worth. */}
               <h3 className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
-                Worth building toward
+                If you keep applying
               </h3>
               <ul className="space-y-2">
                 {reality.soon.filter((h) => !h.farOff).slice(0, 4).map((h) => (
@@ -201,6 +233,31 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
                     <span className="block text-zinc-400 text-xs mt-1">
                       Took {h.pointsNeeded} points — you&apos;d have that in {h.year}
                       {h.hunterSuccess != null ? `, and ${h.hunterSuccess}% of hunters filled` : ''}.
+                    </span>
+                    {/* Reaching the cutoff is the tag only where tags go out in
+                        point order. Elsewhere it's a ticket, and saying so is
+                        the difference between a plan and five wasted years. */}
+                    {!h.cutoffIsADate && (
+                      <span className="block text-zinc-500 text-xs mt-1">
+                        {h.oddsAtThatLevel != null
+                          ? `Still a lottery at that level — ${pctText(h.oddsAtThatLevel)} of applicants holding ${h.pointsNeeded} points drew.`
+                          : 'Still a lottery at that level — the points get you into the draw, not the tag.'}
+                      </span>
+                    )}
+                    {/* A hunt years out is only a plan once it has a year
+                        against it, which is what the calendar is for. */}
+                    <span className="block mt-2">
+                      <AddToPlan
+                        target={{
+                          state: reality.state,
+                          species: reality.species,
+                          unit: h.unit,
+                          huntCode: h.huntCode,
+                          label: h.label,
+                          year: h.year,
+                        }}
+                        note={`Took ${h.pointsNeeded} points in the last published draw.`}
+                      />
                     </span>
                   </li>
                 ))}
@@ -221,7 +278,7 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
               {showCow && (
                 <ul className="space-y-2">
                   {reality.antlerless.slice(0, 8).map((h) => (
-                    <HuntRow key={`${h.unit}|${h.huntCode}`} h={h} showOdds={!!showOdds} />
+                    <HuntRow key={`${h.unit}|${h.huntCode}`} h={h} showOdds={!!showOdds} r={reality} />
                   ))}
                 </ul>
               )}
@@ -229,12 +286,17 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
           )}
 
           <div className="flex flex-wrap gap-3 pt-2">
-            {!narrowed && (
+            {/* Was the four-screen questionnaire, which asked again for what
+                this page already knows. The reachable hunts go straight to the
+                side-by-side instead. */}
+            {!narrowed && reality.reachable.length > 1 && (
               <Link
-                href={`/planner?start=find&state=${state}&species=${encodeURIComponent(species)}`}
+                href={`/compare?h=${reality.reachable.slice(0, 3)
+                  .map((h) => encodeURIComponent(`${reality.state}~${reality.speciesKey}~${h.huntCode ?? h.unit}`))
+                  .join(',')}`}
                 className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500"
               >
-                Look at these units
+                Compare the top {Math.min(3, reality.reachable.length)}
               </Link>
             )}
             <Link

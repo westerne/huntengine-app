@@ -4,6 +4,7 @@ import { requireMember } from '@/lib/apiAuth';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { asWeapon, loadDrawContext } from '@/lib/huntdata/drawContext';
 import { drawReality } from '@/lib/huntdata/reality';
+import { cutoffIsADate } from '@/lib/huntdata/drawSystem';
 import { currentSeasonYear } from '@/lib/hunts';
 import {
   BLIND_SPOTS, WANTS, WANT_KEYS, BLIND_SPOT_KEYS,
@@ -123,6 +124,7 @@ export async function POST(req: Request) {
     state: ctx.stateName,
     species: ctx.species,
     thisYear: currentSeasonYear(),
+    cutoffIsADate: cutoffIsADate(ctx.mod.code),
   });
   const widened = wants.includes('anyAnimal');
   const codes = new Set(
@@ -140,12 +142,16 @@ export async function POST(req: Request) {
   return NextResponse.json({
     state: ctx.mod.code,
     species: ctx.species,
+    // The compare screen is keyed on the schema's species key, not the label,
+    // so the page can hand a pick straight to /compare without a round trip.
+    speciesKey: ctx.key,
     points: ctx.points,
     wants,
     cannot: cannot.map((k) => ({ key: k, text: BLIND_SPOTS[k] })),
     readback,
     relaxed,
     excluded,
+    seasonYear: currentSeasonYear(),
     considered: pool.length,
     // The reality headline counts antlered hunts only. If "meat matters" pulled
     // cow tags in, the pool is bigger than that sentence said, and the page has
@@ -162,6 +168,7 @@ export async function POST(req: Request) {
       hunterSuccess: p.entry.hunterSuccess == null ? null : String(p.entry.hunterSuccess),
       pointsNeeded: typeof p.entry.fewestPointsToDraw === 'number' ? p.entry.fewestPointsToDraw : null,
       antlerless: isAntlerless(p.entry as never),
+      otc: !!p.entry.otc,
       matched: p.matched,
       missed: p.missed,
       unknown: p.unknown,

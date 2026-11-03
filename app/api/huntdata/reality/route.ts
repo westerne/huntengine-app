@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { requireMember } from '@/lib/apiAuth';
 import { asWeapon, loadDrawContext } from '@/lib/huntdata/drawContext';
 import { drawReality } from '@/lib/huntdata/reality';
+import { cutoffIsADate } from '@/lib/huntdata/drawSystem';
 import { currentSeasonYear } from '@/lib/hunts';
 
 // GET /api/huntdata/reality?state=NV&species=Elk[&weapon=rifle]
@@ -27,13 +28,17 @@ export async function GET(req: Request) {
     state: ctx.stateName,
     species: ctx.species,
     thisYear: currentSeasonYear(),
+    cutoffIsADate: cutoffIsADate(ctx.mod.code),
   });
 
   return NextResponse.json({
     ...reality,
     state: ctx.mod.code,
     species: ctx.species,
+    // The compare screen keys on the schema's species key, not the label.
+    speciesKey: ctx.key,
     residency: ctx.residency,
     weapon: ctx.weapon,
+    seasonYear: currentSeasonYear(),
   });
 }
