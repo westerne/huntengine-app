@@ -73,9 +73,9 @@ describe('points for the state being searched', () => {
 });
 
 describe('states SCOUT still hand-builds', () => {
-  it('is down to three, with Montana and Colorado moved across', () => {
-    expect([...HAND_BUILT_SCOUT_STATES].sort()).toEqual(['IDAHO', 'UTAH', 'WYOMING']);
-    for (const moved of ['MONTANA', 'COLORADO']) expect(HAND_BUILT_SCOUT_STATES).not.toContain(moved);
+  it('is down to Wyoming and Utah', () => {
+    expect([...HAND_BUILT_SCOUT_STATES].sort()).toEqual(['UTAH', 'WYOMING']);
+    for (const moved of ['MONTANA', 'COLORADO', 'IDAHO']) expect(HAND_BUILT_SCOUT_STATES).not.toContain(moved);
   });
 
   it('Montana keeps every species and gains hunts on the shared builders', () => {
@@ -112,5 +112,33 @@ describe('Colorado on the shared builders', () => {
     expect(rifle).toBeLessThan(all);
     expect(archery).toBeLessThan(rifle);
     expect(archery).toBeGreaterThan(0);
+  });
+});
+
+describe('why Wyoming and Utah have not moved', () => {
+  it('Wyoming publishes points-that-drew, not odds, so nothing shortlists', () => {
+    const mod = getStateModule('WY')!;
+    for (const species of ['DEER', 'ELK', 'ANTELOPE']) {
+      const hunts = buildGenericScoutDataset(mod, species as never, 'nonresident', 'any', 3);
+      expect(hunts.length).toBeGreaterThan(0);
+      expect(hunts.every((h) => h.drawSuccess == null)).toBe(true);
+      expect(hunts.filter((h) => h.fewestPointsToDraw != null).length).toBeGreaterThan(0);
+      // The blocker: plenty of hunts, none of them rankable.
+      expect(buildShortlist(hunts as never, { size: 8 })).toHaveLength(0);
+    }
+  });
+
+  it('and its adapter covers three species where SCOUT answers for six', () => {
+    expect(getStateModule('WY')!.species).toEqual(['DEER', 'ELK', 'ANTELOPE']);
+  });
+
+  it('Idaho returns the same rows it always did, so only who picks changed', () => {
+    const mod = getStateModule('ID')!;
+    const sizes: Record<string, number> = {
+      DEER: 147, ELK: 182, ANTELOPE: 54, MOOSE: 94, BIGHORNSHEEP: 28, MTNGOAT: 19,
+    };
+    for (const [species, n] of Object.entries(sizes)) {
+      expect(buildGenericScoutDataset(mod, species as never, 'nonresident', 'any', 3)).toHaveLength(n);
+    }
   });
 });

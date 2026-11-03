@@ -20,7 +20,7 @@ import { getAccessSummary } from '@/lib/access';
 import { noDataAnswer, pointsForState } from '@/lib/scoutData';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
-import { idahoHuntsForUnit, IDAHO_DRAW_YEAR, buildIdahoScoutDataset } from './idahoDraw';
+import { idahoHuntsForUnit, IDAHO_DRAW_YEAR } from './idahoDraw';
 import { coloradoHuntsForUnit, COLORADO_DRAW_YEAR } from './coloradoDraw';
 import { montanaHuntsForUnit, MONTANA_DRAW_YEAR } from './montanaDraw';
 import { getStateModule } from '@/lib/huntdata/registry';
@@ -343,10 +343,6 @@ export async function POST(req: Request) {
 
         : isWyoming && isAntelope
         ? buildWyomingAntelopeScoutDataset(allowedAntelopeTypes)
-
-        // Idaho: real controlled-hunt draw odds (pure random, no points).
-        : isIdaho
-        ? buildIdahoScoutDataset(speciesKey, IDAHO_GMU_UNITS)
 
         : usesSharedBuilders
         ? buildGenericScoutDataset(
