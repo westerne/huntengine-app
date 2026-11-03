@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import type { FlowStep, HuntPlannerState, Profile } from './types';
 import { INITIAL_STATE } from './types';
-import { PLAN_STEPS, SCOUT_STEPS, plannerFlags } from './constants';
+import { PLAN_STEPS, SCOUT_STEPS, STATES, plannerFlags, speciesFor } from './constants';
 import { BETA_KEY, failureMessage, messageForStatus, postStrategy } from './api';
 import BetaGate from './BetaGate';
 import DrawablePanel from './DrawablePanel';
@@ -42,15 +42,27 @@ export default function App() {
       if ((sessionStorage.getItem(BETA_KEY) || '').trim()) setBetaReady(true);
     } catch {}
     if (!accounts) return;
+    // Deep links: /planner?start=find|tag, optionally with the state and
+    // species already chosen. /find sends those, having just shown the hunter
+    // what their points buy there — asking again would throw that away.
+    const params = new URLSearchParams(window.location.search);
+    const start = params.get('start');
+    const st = (params.get('state') || '').toUpperCase();
+    const sp = params.get('species') || '';
+    const chosen = STATES.includes(st)
+      ? { states: [st], ...(speciesFor(st).includes(sp) ? { species: sp } : {}) }
+      : {};
+
     fetch('/api/me').then((r) => r.json()).then((m: Me) => {
       setMe(m);
-      // Members: fill the questionnaire from their saved profile and points.
-      if (m.accounts && m.member) setState((s) => ({ ...s, profile: prefillFromAccount(s.profile, m) }));
+      // Members: fill the questionnaire from their saved profile and points,
+      // then let an explicit deep-link choice win — it arrives first but the
+      // prefill resolves later and would otherwise overwrite it.
+      if (m.accounts && m.member) setState((s) => ({ ...s, profile: { ...prefillFromAccount(s.profile, m), ...chosen } }));
     }).catch(() => setMe({ accounts: true, signedIn: false, member: false }));
-    // Deep links from My Season: /planner?start=find | tag
-    const start = new URLSearchParams(window.location.search).get('start');
-    if (start === 'find') setState((s) => ({ ...s, step: 'scout-1', entryMode: 'needs-tag' }));
-    if (start === 'tag') setState((s) => ({ ...s, step: 'plan-1', entryMode: 'has-tag' }));
+
+    if (start === 'find') setState((s) => ({ ...s, step: 'scout-1', entryMode: 'needs-tag', profile: { ...s.profile, ...chosen } }));
+    if (start === 'tag') setState((s) => ({ ...s, step: 'plan-1', entryMode: 'has-tag', profile: { ...s.profile, ...chosen } }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const isMember = !!(me && me.accounts && me.member);
