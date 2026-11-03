@@ -97,8 +97,8 @@ export default function CompareView({ cols, pick, notes, missing, years, homeSta
   return (
     <main className="max-w-6xl mx-auto px-4 py-10 space-y-8">
       <div>
-        <h1 className="text-3xl font-black italic uppercase">Compare hunts</h1>
-        <p className="text-zinc-500 text-sm mt-1">Side by side, at your points{homeState ? ` (home state ${homeState})` : ' — set your home state in My Profile for resident odds'}. Numbers are last year&apos;s published results, not a forecast.</p>
+        <h1 className="text-3xl font-black italic uppercase">{cols.length === 1 ? 'This hunt' : 'Compare hunts'}</h1>
+        <p className="text-zinc-500 text-sm mt-1">{cols.length === 1 ? 'Everything we have on it' : 'Side by side'}, at your points{homeState ? ` (home state ${homeState})` : ' — set your home state in My Profile for resident odds'}. Numbers are last year&apos;s published results, not a forecast.</p>
       </div>
 
       {missing.length > 0 && <p className="text-amber-300 text-sm">Couldn&apos;t find {missing.join(', ')} in our data.</p>}

@@ -68,6 +68,9 @@ function ItemCard({ item, years, thisYear, onError, picked, onPick }: { item: Ca
                   className="bg-amber-600 text-white px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-amber-500 disabled:opacity-50">Add to My Season</button>
           )}
           {item.compareKey && (
+            <Link href={`/compare?h=${encodeURIComponent(item.compareKey)}`} className="text-amber-500 text-[10px] font-black uppercase tracking-widest hover:text-amber-400">Look closer →</Link>
+          )}
+          {item.compareKey && (
             <label className="flex items-center gap-1 text-zinc-400 text-[10px] font-black uppercase tracking-widest cursor-pointer">
               <input type="checkbox" checked={picked} onChange={() => onPick(item.compareKey!)} className="accent-amber-600" />Compare
             </label>
