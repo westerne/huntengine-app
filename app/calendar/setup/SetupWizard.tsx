@@ -1,6 +1,6 @@
 'use client';
 
-// "Start planning": five short steps (each skippable), then a starting
+// "Start planning": two short steps, then a starting
 // calendar built from the draw data for the hunter to accept or drop.
 // Nothing goes on the calendar until they press "Add to my calendar".
 
@@ -10,74 +10,60 @@ import { useRouter } from 'next/navigation';
 import type { SetupAnswers, Suggestion } from '@/lib/suggest';
 import { KIND_LABEL } from '@/lib/calendar';
 import { huntTitle } from '@/lib/huntName';
-import { ALL_SPECIES, STATES, speciesFor } from '../../planner/constants';
+import { STATES, speciesFor } from '../../planner/constants';
 
 const inputCls = 'bg-black border border-zinc-800 p-2 rounded-lg text-zinc-200 text-sm outline-none focus:border-amber-500';
 const chip = (on: boolean) => `px-3 py-2 rounded-full border text-[11px] font-black uppercase tracking-widest ${on ? 'bg-amber-700 border-amber-600 text-white' : 'border-zinc-700 text-zinc-300 hover:border-amber-600'}`;
 const RANDOM_DRAW = ['ID', 'NM', 'AK'];
-const STEPS = ['About you', 'What you’re after', 'Your points', 'Units you know', 'Bucket list'];
+const STEPS = ['Your points', 'How soon'];
 
 type Pair = { state: string; species: string };
-
-function PairRows({ rows, onChange, withUnit, unitRequired, addLabel }: {
-  rows: Array<Pair & { unit?: string | null }>; onChange: (r: Array<Pair & { unit?: string | null }>) => void;
-  withUnit: boolean; unitRequired?: boolean; addLabel: string;
-}) {
-  const [draft, setDraft] = useState({ state: 'CO', species: 'Elk', unit: '' });
-  return (
-    <div className="space-y-3">
-      {rows.length > 0 && (
-        <ul className="space-y-2">
-          {rows.map((r, i) => (
-            <li key={i} className="flex items-center justify-between bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm">
-              <span className="text-zinc-200">{r.state} {r.species}{r.unit ? ` · ${r.unit}` : ''}</span>
-              <button type="button" onClick={() => onChange(rows.filter((_, j) => j !== i))} className="text-zinc-500 hover:text-red-400 text-[10px] font-black uppercase tracking-widest">Remove</button>
-            </li>
-          ))}
-        </ul>
-      )}
-      <div className="flex flex-wrap gap-2 items-center">
-        <select aria-label="State" className={inputCls} value={draft.state} onChange={(e) => setDraft((d) => ({ ...d, state: e.target.value, species: speciesFor(e.target.value).includes(d.species) ? d.species : speciesFor(e.target.value)[0] }))}>
-          {STATES.map((s) => <option key={s}>{s}</option>)}
-        </select>
-        <select aria-label="Species" className={inputCls} value={draft.species} onChange={(e) => setDraft((d) => ({ ...d, species: e.target.value }))}>
-          {speciesFor(draft.state).map((s) => <option key={s}>{s}</option>)}
-        </select>
-        {withUnit && <input aria-label="Unit" placeholder={unitRequired ? 'Unit' : 'Unit (optional)'} className={`${inputCls} w-36`} value={draft.unit} onChange={(e) => setDraft((d) => ({ ...d, unit: e.target.value }))} />}
-        <button type="button" disabled={unitRequired && !draft.unit.trim()}
-          onClick={() => { onChange([...rows, { state: draft.state, species: draft.species, unit: draft.unit.trim() || null }]); setDraft((d) => ({ ...d, unit: '' })); }}
-          className="text-amber-500 text-[11px] font-black uppercase tracking-widest disabled:opacity-40">+ {addLabel}</button>
-      </div>
-    </div>
-  );
-}
+// A balance the hunter holds, or — with points null — somewhere they want to
+// hunt but have none yet. Both are the same row.
+type Row = Pair & { points: number | null };
 
 export default function SetupWizard({ initial, years }: { initial: SetupAnswers; years: number[] }) {
   const router = useRouter();
   const [a, setA] = useState<SetupAnswers>(initial);
   const [step, setStep] = useState(0);
-  const [states, setStates] = useState<string[]>([...new Set(initial.interests.map((p) => p.state))]);
-  const [species, setSpecies] = useState<string[]>([...new Set(initial.interests.map((p) => p.species))]);
+  const [rows, setRows] = useState<Row[]>(() => {
+    const out: Row[] = initial.points.map((p) => ({ state: p.state, species: p.species, points: p.points }));
+    const seen = new Set(out.map((r) => r.state + '|' + r.species));
+    for (const i of initial.interests) {
+      if (!seen.has(i.state + '|' + i.species)) out.push({ state: i.state, species: i.species, points: null });
+    }
+    return out;
+  });
+  const [draft, setDraft] = useState({ state: 'CO', species: 'Elk', points: '' });
   const [review, setReview] = useState<{ suggestions: Array<Suggestion & { keep: boolean }>; notes: string[]; points: SetupAnswers['points'] } | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const set = <K extends keyof SetupAnswers>(k: K, v: SetupAnswers[K]) => setA((x) => ({ ...x, [k]: v }));
 
-  // Interests are every chosen state × chosen species that the state has.
-  const interests: Pair[] = states.flatMap((st) => species.filter((sp) => speciesFor(st).includes(sp)).map((sp) => ({ state: st, species: sp })));
-  const pointPairs = interests.filter((p) => !RANDOM_DRAW.includes(p.state));
-  const ptsOf = (p: Pair) => a.points.find((x) => x.state === p.state && x.species === p.species)?.points;
-  const setPts = (p: Pair, v: string) => {
-    const rest = a.points.filter((x) => !(x.state === p.state && x.species === p.species));
-    set('points', v === '' ? rest : [...rest, { ...p, points: Number(v) }]);
+  // One list drives both answers. Every row is a state and species the hunter
+  // is after; a row that also carries a number is a balance. Where your points
+  // are and what you want to hunt are the same question, which is why this is
+  // one step and not two — and why "none yet" is just a row with no number
+  // rather than a different path through the wizard.
+  const interests: Pair[] = rows.map(({ state, species }) => ({ state, species }));
+  const points = rows
+    .filter((r) => r.points != null && !RANDOM_DRAW.includes(r.state))
+    .map((r) => ({ state: r.state, species: r.species, points: r.points as number }));
+
+  const addRow = () => {
+    const key = draft.state + '|' + draft.species;
+    if (rows.some((r) => r.state + '|' + r.species === key)) return;
+    const n = draft.points === '' ? null : Number(draft.points);
+    setRows((l) => [...l, { state: draft.state, species: draft.species, points: n }]);
+    setDraft((d) => ({ ...d, points: '' }));
   };
-  // Functional updates, so quick taps never work from a stale list.
-  const toggle = (v: string, fn: (f: (l: string[]) => string[]) => void) => fn((list) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]));
+  const setRowPoints = (i: number, v: string) =>
+    setRows((l) => l.map((r, j) => (j === i ? { ...r, points: v === '' ? null : Number(v) } : r)));
 
   const build = async () => {
     setBusy(true); setError(null);
     try {
-      const res = await fetch('/api/calendar/suggest', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...a, interests }) });
+      const res = await fetch('/api/calendar/suggest', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...a, interests, points }) });
       const j = await res.json();
       if (!res.ok) throw new Error(j.error || 'Could not build suggestions.');
       setReview({ suggestions: j.suggestions.map((s: Suggestion) => ({ ...s, keep: s.recommended })), notes: j.notes, points: j.points });
@@ -166,67 +152,50 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
             </select>
             <p className="text-zinc-600 text-xs mt-1">Sets whether you&apos;re a resident or non-resident in each state.</p>
           </div>
-          <fieldset>
-            <legend className="text-[10px] font-black uppercase text-zinc-500 tracking-widest mb-2">Weapon</legend>
-            <div className="flex flex-wrap gap-2">
-              {(['any', 'rifle', 'archery', 'muzzleloader'] as const).map((w) => <button key={w} type="button" aria-pressed={a.weapon === w} onClick={() => set('weapon', w)} className={chip(a.weapon === w)}>{w === 'any' ? 'Any' : w}</button>)}
+
+          <div className="space-y-3">
+            <p className="text-zinc-400 text-sm">Where do you have points? Add a state and species for each balance. Just starting out? Add what you want to hunt and leave the points blank — that works too.</p>
+            {rows.length > 0 && (
+              <ul className="space-y-2">
+                {rows.map((r, i) => (
+                  <li key={r.state + '|' + r.species} className="flex items-center justify-between gap-3 bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm">
+                    <span className="text-zinc-200">{r.state} {r.species}</span>
+                    <span className="flex items-center gap-3">
+                      {RANDOM_DRAW.includes(r.state)
+                        ? <span className="text-zinc-500 text-xs">Random draw — no points</span>
+                        : <input inputMode="numeric" aria-label={r.state + ' ' + r.species + ' points'} className={`${inputCls} w-20`} placeholder="Points" value={r.points ?? ''} onChange={(e) => setRowPoints(i, e.target.value.replace(/[^0-9]/g, ''))} />}
+                      <button type="button" onClick={() => setRows((l) => l.filter((_, j) => j !== i))} className="text-zinc-500 hover:text-red-400 text-[10px] font-black uppercase tracking-widest">Remove</button>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <div className="flex flex-wrap gap-2 items-center">
+              <select aria-label="State" className={inputCls} value={draft.state} onChange={(e) => setDraft((d) => ({ ...d, state: e.target.value, species: speciesFor(e.target.value).includes(d.species) ? d.species : speciesFor(e.target.value)[0] }))}>
+                {STATES.map((s) => <option key={s}>{s}</option>)}
+              </select>
+              <select aria-label="Species" className={inputCls} value={draft.species} onChange={(e) => setDraft((d) => ({ ...d, species: e.target.value }))}>
+                {speciesFor(draft.state).map((s) => <option key={s}>{s}</option>)}
+              </select>
+              {!RANDOM_DRAW.includes(draft.state) && (
+                <input inputMode="numeric" aria-label="Points" placeholder="Points (optional)" className={`${inputCls} w-36`} value={draft.points} onChange={(e) => setDraft((d) => ({ ...d, points: e.target.value.replace(/[^0-9]/g, '') }))} />
+              )}
+              <button type="button" onClick={addRow} className="text-amber-500 text-[11px] font-black uppercase tracking-widest">+ Add</button>
             </div>
-          </fieldset>
-          <fieldset>
-            <legend className="text-[10px] font-black uppercase text-zinc-500 tracking-widest mb-2">How long will you wait for a tag?</legend>
-            <div className="flex flex-wrap gap-2">
-              {([['now', 'Hunt this season'], ['few', 'Within about 3 years'], ['long', 'I’ll build points 5+ years']] as const).map(([v, l]) => <button key={v} type="button" aria-pressed={a.wait === v} onClick={() => set('wait', v)} className={chip(a.wait === v)}>{l}</button>)}
-            </div>
-          </fieldset>
+            <p className="text-zinc-600 text-xs">Not sure of a balance? Leave it blank — each state&apos;s licensing site has it, and you can fill it in later.</p>
+          </div>
         </section>
       )}
 
       {step === 1 && (
         <section className="space-y-6">
           <fieldset>
-            <legend className="text-[10px] font-black uppercase text-zinc-500 tracking-widest mb-2">Species</legend>
-            <div className="flex flex-wrap gap-2">{ALL_SPECIES.map((s) => <button key={s} type="button" aria-pressed={species.includes(s)} onClick={() => toggle(s, setSpecies)} className={chip(species.includes(s))}>{s}</button>)}</div>
-          </fieldset>
-          <fieldset>
-            <legend className="text-[10px] font-black uppercase text-zinc-500 tracking-widest mb-2">States you&apos;d hunt</legend>
-            <div className="flex flex-wrap gap-2">{STATES.map((s) => <button key={s} type="button" aria-pressed={states.includes(s)} onClick={() => toggle(s, setStates)} className={chip(states.includes(s))}>{s}</button>)}</div>
-          </fieldset>
-          <fieldset>
-            <legend className="text-[10px] font-black uppercase text-zinc-500 tracking-widest mb-2">Units</legend>
+            <legend className="text-zinc-400 text-sm mb-3">How soon do you want to hunt?</legend>
             <div className="flex flex-wrap gap-2">
-              {([['new', 'Show me new units'], ['known', 'Stick near units I know'], ['either', 'Either']] as const).map(([v, l]) => <button key={v} type="button" aria-pressed={a.newUnits === v} onClick={() => set('newUnits', v)} className={chip(a.newUnits === v)}>{l}</button>)}
+              {([['now', 'This season'], ['few', 'Within about 3 years'], ['long', 'I’ll wait for the right tag']] as const).map(([v, l]) => <button key={v} type="button" aria-pressed={a.wait === v} onClick={() => set('wait', v)} className={chip(a.wait === v)}>{l}</button>)}
             </div>
           </fieldset>
-          <p className="text-zinc-500 text-sm">{interests.length ? `${interests.length} state and species combination${interests.length === 1 ? '' : 's'} to look at.` : 'Pick at least one species and one state that has it.'}</p>
-        </section>
-      )}
-
-      {step === 2 && (
-        <section className="space-y-4">
-          <p className="text-zinc-400 text-sm">Your current points. Leave blank if you have none or aren&apos;t sure — you can check on each state&apos;s licensing site later. Idaho, New Mexico and Alaska are random draws with no points.</p>
-          {pointPairs.length === 0 && <p className="text-zinc-500 text-sm">Nothing to fill in — go back and pick states and species, or skip.</p>}
-          <div className="grid sm:grid-cols-2 gap-2">
-            {pointPairs.map((p) => (
-              <label key={`${p.state}|${p.species}`} className="flex items-center justify-between gap-3 bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm">
-                <span className="text-zinc-200">{p.state} {p.species}</span>
-                <input inputMode="numeric" className={`${inputCls} w-20`} placeholder="0" value={ptsOf(p) ?? ''} onChange={(e) => setPts(p, e.target.value.replace(/[^\d]/g, ''))} />
-              </label>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {step === 3 && (
-        <section className="space-y-4">
-          <p className="text-zinc-400 text-sm">Units you&apos;ve hunted or know well (optional). We use these to {a.newUnits === 'new' ? 'steer you to new ground' : a.newUnits === 'known' ? 'keep you near what you know' : 'mark what you know'}.</p>
-          <PairRows rows={a.knownUnits} onChange={(r) => set('knownUnits', r.map((x) => ({ state: x.state, species: x.species, unit: x.unit ?? '' })))} withUnit unitRequired addLabel="Add unit" />
-        </section>
-      )}
-
-      {step === 4 && (
-        <section className="space-y-4">
-          <p className="text-zinc-400 text-sm">Someday hunts — the ones you&apos;d build points or save up for (e.g. Arizona elk, Alaska Dall sheep).</p>
-          <PairRows rows={a.bucket} onChange={(r) => set('bucket', r)} withUnit addLabel="Add to bucket list" />
+          <p className="text-zinc-500 text-sm">{interests.length ? `${interests.length} state and species combination${interests.length === 1 ? '' : 's'} to look at${points.length ? `, ${points.length} with points` : ''}.` : 'Go back and add at least one state and species.'}</p>
         </section>
       )}
 
@@ -234,9 +203,8 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
       <div className="flex flex-wrap gap-3 items-center">
         {step > 0 && <button type="button" onClick={() => setStep(step - 1)} className="text-zinc-400 text-[11px] font-black uppercase tracking-widest">← Back</button>}
         {step < STEPS.length - 1
-          ? <button type="button" onClick={() => setStep(step + 1)} className="bg-zinc-100 text-black px-6 py-3 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px]">Next</button>
+          ? <button type="button" disabled={!interests.length} onClick={() => setStep(step + 1)} className="bg-zinc-100 text-black px-6 py-3 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px] disabled:opacity-50">Next</button>
           : <button type="button" disabled={busy || (!interests.length && !a.bucket.length)} onClick={build} className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500 disabled:opacity-50">{busy ? 'Building…' : 'Build my calendar'}</button>}
-        {step < STEPS.length - 1 && step > 1 && <button type="button" onClick={() => setStep(step + 1)} className="text-zinc-500 text-[11px] font-black uppercase tracking-widest">Skip</button>}
       </div>
     </main>
   );
