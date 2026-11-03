@@ -111,3 +111,34 @@ describe('points imply interest', () => {
     expect(a.points).toEqual([{ state: 'UT', species: 'Elk', points: 8 }]);
   });
 });
+
+describe('weapon is asked only where it would change the list', () => {
+  const oregonDeer = { ...base, homeState: 'NV', interests: [{ state: 'OR', species: 'Deer' }], points: [{ state: 'OR', species: 'Deer', points: 4 }] };
+
+  it('offers the weapons actually present when the hunter has not picked one', () => {
+    const r = suggestCalendar(oregonDeer, ys);
+    expect(r.refine.weapons).toContain('rifle');
+    expect(r.refine.weapons.length).toBeGreaterThan(1);   // never a question with one answer
+    expect(r.refine.weapons).not.toContain('any');
+  });
+
+  it('keeps offering after a choice, so it can be changed or widened', () => {
+    // Weapon is no longer asked in onboarding. If the offer disappeared once
+    // picked, a hunter who chose rifle could never get back to archery.
+    const any = suggestCalendar(oregonDeer, ys).refine.weapons;
+    for (const weapon of ['rifle', 'archery', 'muzzleloader'] as const) {
+      expect(suggestCalendar({ ...oregonDeer, weapon }, ys).refine.weapons).toEqual(any);
+    }
+  });
+
+  it('narrowing changes what comes back', () => {
+    const any = suggestCalendar(oregonDeer, ys);
+    const narrowed = suggestCalendar({ ...oregonDeer, weapon: any.refine.weapons[0] as 'rifle' }, ys);
+    const codes = (r: { suggestions: Array<{ hunt_code: string | null }> }) => r.suggestions.map((s) => s.hunt_code).join(',');
+    expect(codes(narrowed)).not.toBe(codes(any));
+  });
+
+  it('asks nothing when there is nothing to suggest', () => {
+    expect(suggestCalendar(base, ys).refine.weapons).toEqual([]);
+  });
+});

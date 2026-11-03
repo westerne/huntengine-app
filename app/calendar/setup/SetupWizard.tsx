@@ -35,7 +35,7 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
     return out;
   });
   const [draft, setDraft] = useState({ state: 'CO', species: 'Elk', points: '' });
-  const [review, setReview] = useState<{ suggestions: Array<Suggestion & { keep: boolean }>; notes: string[]; points: SetupAnswers['points'] } | null>(null);
+  const [review, setReview] = useState<{ suggestions: Array<Suggestion & { keep: boolean }>; notes: string[]; points: SetupAnswers['points']; refine: { weapons: string[] } } | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const set = <K extends keyof SetupAnswers>(k: K, v: SetupAnswers[K]) => setA((x) => ({ ...x, [k]: v }));
@@ -60,13 +60,15 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
   const setRowPoints = (i: number, v: string) =>
     setRows((l) => l.map((r, j) => (j === i ? { ...r, points: v === '' ? null : Number(v) } : r)));
 
-  const build = async () => {
+  const build = async (weapon?: SetupAnswers['weapon']) => {
     setBusy(true); setError(null);
     try {
-      const res = await fetch('/api/calendar/suggest', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...a, interests, points }) });
+      if (weapon) set('weapon', weapon);
+      const answers = weapon ? { ...a, weapon } : a;
+      const res = await fetch('/api/calendar/suggest', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...answers, interests, points }) });
       const j = await res.json();
       if (!res.ok) throw new Error(j.error || 'Could not build suggestions.');
-      setReview({ suggestions: j.suggestions.map((s: Suggestion) => ({ ...s, keep: s.recommended })), notes: j.notes, points: j.points });
+      setReview({ suggestions: j.suggestions.map((s: Suggestion) => ({ ...s, keep: s.recommended })), notes: j.notes, points: j.points, refine: j.refine ?? { weapons: [] } });
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not build suggestions.');
     } finally { setBusy(false); }
@@ -119,6 +121,19 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
             </li>
           ))}
         </ul>
+        {review.refine.weapons.length > 1 && (
+          <div className="border border-zinc-800 rounded-xl p-4 space-y-3">
+            <p className="text-zinc-300 text-sm">These cover every weapon. Narrow them if you hunt with one.</p>
+            <div className="flex flex-wrap gap-2">
+              {(['any', ...review.refine.weapons] as const).map((w) => (
+                <button key={w} type="button" disabled={busy} aria-pressed={a.weapon === w}
+                  onClick={() => build(w as SetupAnswers['weapon'])}
+                  className={chip(a.weapon === w)}>{w === 'any' ? 'Any weapon' : w}</button>
+              ))}
+            </div>
+            <p className="text-zinc-600 text-xs">We kept this out of the questions up front — it only matters once there is a list to narrow.</p>
+          </div>
+        )}
         {review.notes.length > 0 && (
           <div className="border border-zinc-800 rounded-xl p-4 space-y-1">
             {review.notes.map((n, i) => <p key={i} className="text-zinc-400 text-sm">{n}</p>)}
@@ -207,7 +222,7 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
         {step > 0 && <button type="button" onClick={() => setStep(step - 1)} className="text-zinc-400 text-[11px] font-black uppercase tracking-widest">← Back</button>}
         {step < STEPS.length - 1
           ? <button type="button" disabled={!interests.length} onClick={() => setStep(step + 1)} className="bg-zinc-100 text-black px-6 py-3 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px] disabled:opacity-50">Next</button>
-          : <button type="button" disabled={busy || (!interests.length && !a.bucket.length)} onClick={build} className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500 disabled:opacity-50">{busy ? 'Building…' : 'Build my calendar'}</button>}
+          : <button type="button" disabled={busy || (!interests.length && !a.bucket.length)} onClick={() => build()} className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500 disabled:opacity-50">{busy ? 'Building…' : 'Build my calendar'}</button>}
       </div>
     </main>
   );

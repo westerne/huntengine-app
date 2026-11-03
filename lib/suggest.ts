@@ -40,11 +40,14 @@ const norm = (u: unknown) => String(u ?? '').trim().toLowerCase().replace(/^(uni
 // years or more, which is what this follows.
 export const LONG_WAIT_SPAN = 5;
 
-export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions: Suggestion[]; notes: string[] } {
+export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions: Suggestion[]; notes: string[]; refine: { weapons: string[] } } {
   const out: Suggestion[] = [];
   const notes: string[] = [];
   const thisYear = years[0];
   const seen = new Set<string>();
+  // Which weapons the hunts under consideration are actually for. Only worth
+  // asking the hunter about when more than one shows up.
+  const weaponsSeen = new Set<string>();
   // Draw-now vs keep-building pairs in one state/species: drawing the first
   // resets the points the second needs, so the hunter picks one.
   const tradeoffs: Array<[Suggestion, Suggestion]> = [];
@@ -75,6 +78,7 @@ export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions
       && !RESTRICTED.test(String(e.label ?? '')) && !isAntlerless(e) && !isPrivateOnly(e));
     let list = [...short, ...byPoints.sort((x, y) => (parseFloat(String(y.hunterSuccess)) || 0) - (parseFloat(String(x.hunterSuccess)) || 0)).slice(0, 12)];
     if (a.newUnits === 'known' && known.size) list = [...list].sort((x, y) => Number(known.has(norm(y.unit))) - Number(known.has(norm(x.unit))));
+    for (const h of mod.hunts(key)) { const w = String(h.weapon ?? '').toLowerCase(); if (w && w !== 'any') weaponsSeen.add(w); }
     const before = out.length;
     let nowSug: Suggestion | null = null;
 
@@ -174,7 +178,12 @@ export function suggestCalendar(a: SetupAnswers, years: number[]): { suggestions
     const open = years.find((y) => !taken.has(y));
     if (open) { s.target_year = open; taken.add(open); }
   }
-  return { suggestions: out, notes };
+  // Weapon left onboarding, so it is offered here instead: at the point it
+  // would change the list, and only when it would. Offered whatever the
+  // hunter has already chosen, because otherwise picking rifle once would
+  // leave no way back to archery or to seeing everything.
+  const weapons = [...weaponsSeen].sort();
+  return { suggestions: out, notes, refine: { weapons: weapons.length > 1 ? weapons : [] } };
 }
 
 // Validate setup answers from the browser. Unknown states/species are dropped.

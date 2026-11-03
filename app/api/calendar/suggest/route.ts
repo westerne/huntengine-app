@@ -46,6 +46,6 @@ export async function POST(req: Request) {
     }
   }
 
-  const { suggestions, notes } = suggestCalendar(answers, calendarYears(currentSeasonYear()));
-  return NextResponse.json({ suggestions, notes, points: answers.points });
+  const { suggestions, notes, refine } = suggestCalendar(answers, calendarYears(currentSeasonYear()));
+  return NextResponse.json({ suggestions, notes, refine, points: answers.points });
 }
