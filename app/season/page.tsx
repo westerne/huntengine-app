@@ -90,7 +90,11 @@ export default async function SeasonPage({ searchParams }: { searchParams: Promi
             <p className="text-zinc-200 font-bold mb-2">Nothing saved yet.</p>
             <p className="text-zinc-400 text-sm mb-6">Find hunts that fit your points and goals, or set up a hunt you&apos;ve already drawn.</p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/planner?start=find" className="flex-1 text-center bg-amber-600 text-white py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-xs">Find a Hunt</Link>
+              {/* Nothing saved yet, so this is the same situation as the
+                  landing page: plan first. "Find another hunt" below, for a
+                  hunter who already has hunts, still goes straight to the
+                  unit picker. */}
+              <Link href="/calendar/setup" className="flex-1 text-center bg-amber-600 text-white py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-xs">Start Planning</Link>
               <Link href="/planner?start=tag" className="flex-1 text-center border-2 border-zinc-700 text-white py-4 font-black rounded-xl hover:bg-zinc-800 uppercase tracking-widest text-xs">I Already Have a Tag</Link>
             </div>
           </div>

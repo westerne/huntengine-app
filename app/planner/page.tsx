@@ -7,6 +7,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import type { FlowStep, HuntPlannerState, Profile } from './types';
 import { INITIAL_STATE } from './types';
 import { PLAN_STEPS, SCOUT_STEPS, plannerFlags } from './constants';
@@ -245,13 +246,15 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl text-left">
               <div className="bg-zinc-900 border border-zinc-800 p-10 rounded-3xl hover:border-amber-900/50 transition-all">
                 <h2 className="text-2xl font-black mb-2 italic text-zinc-300 uppercase tracking-tighter">Find a Hunt</h2>
-                <p className="text-zinc-500 mb-8 text-sm">Analyze states and units based on points and trophy goals.</p>
-                <button type="button" onClick={() => setState((s) => ({ ...s, step: 'scout-1', entryMode: 'needs-tag' }))} className="w-full border-2 border-zinc-700 text-white py-4 font-black rounded-xl hover:bg-zinc-800 uppercase tracking-widest text-xs">Start Scouting</button>
+                <p className="text-zinc-500 mb-8 text-sm">Build your next seasons from your points, then compare the hunts worth applying for.</p>
+                {/* Planning first: the unit picker runs inside it, not before
+                    it. Reached as a tool from My Season via ?start=find. */}
+                <Link href="/calendar/setup" className="block w-full text-center border-2 border-zinc-700 text-white py-4 font-black rounded-xl hover:bg-zinc-800 uppercase tracking-widest text-xs">Start Planning</Link>
               </div>
               <div className="bg-zinc-900 border border-zinc-800 p-10 rounded-3xl hover:border-amber-900/50 transition-all">
                 <h2 className="text-2xl font-black mb-2 italic text-amber-500 uppercase tracking-tighter">I Already Have a Tag</h2>
-                <p className="text-zinc-500 mb-8 text-sm">Get a unit brief, hunt plan and gear list for your hunt.</p>
-                <button type="button" onClick={() => setState((s) => ({ ...s, step: 'plan-1', entryMode: 'has-tag' }))} className="w-full bg-zinc-100 text-black py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-xs transition-colors">Start Planning</button>
+                <p className="text-zinc-500 mb-8 text-sm">Drew it or bought it — get a unit brief, hunt plan and gear list.</p>
+                <button type="button" onClick={() => setState((s) => ({ ...s, step: 'plan-1', entryMode: 'has-tag' }))} className="w-full bg-zinc-100 text-black py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-xs transition-colors">Start Scouting</button>
               </div>
             </div>
           </div>
