@@ -8,6 +8,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { huntTitle } from '@/lib/huntName';
 import { speciesKeyOf } from '@/lib/species';
+import { trophyRange } from '@/lib/trophy';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Rec = any;
@@ -212,7 +213,7 @@ export default function ScoutResults({
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                 <Fact label="Your odds" value={rec.currentOdds} accent="text-green-400" />
                 <Fact label="Season" value={seasonText(rec)} />
-                <Fact label="Typical / top end" value={`${rec.typicalScore || '—'} / ${rec.topEndScore || rec.topEnd || '—'}`} />
+                <Fact label="Typical / top end" value={trophyRange(rec.typicalScore, rec.topEndScore || rec.topEnd)} />
                 <Fact label="Terrain" value={rec.terrain || rec.terrainType} />
               </div>
               {rec.whyItFits && <p className="text-zinc-300 text-sm leading-relaxed">{rec.whyItFits}</p>}

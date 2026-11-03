@@ -144,3 +144,30 @@ export function groundScoutTrophy<T extends Record<string, unknown>>(
   }
   return { result, stripped };
 }
+
+// ─── Showing it to the hunter ────────────────────────────────────────────────
+//
+// Three different things now arrive at a card meaning "no figure": null from
+// the Wyoming adapters, the string "Not in data" from the shared-builder
+// states, and the odd older placeholder. All three rendered as an em dash, so
+// a card read "— / —", which looks like a broken row rather than a fact about
+// our data.
+
+export const NO_FIGURE = 'Not sourced';
+
+const missing = (v: unknown): boolean => {
+  const s = typeof v === 'string' ? v.trim() : '';
+  return !s || /^(—|-|n\/?a|not in data|not sourced|unknown|tbd)$/i.test(s);
+};
+
+// "typical / top end", collapsing to one phrase when we have neither.
+export function trophyRange(typical: unknown, topEnd: unknown): string {
+  const a = missing(typical);
+  const b = missing(topEnd);
+  if (a && b) return NO_FIGURE;
+  return `${a ? NO_FIGURE.toLowerCase() : String(typical).trim()} / ${b ? NO_FIGURE.toLowerCase() : String(topEnd).trim()}`;
+}
+
+// The figure alone, or null where there is none — for a slot too tight to
+// carry a label, where a bare "Not sourced" would say less than nothing.
+export const trophyFigureOrNull = (v: unknown): string | null => (missing(v) ? null : String(v).trim());

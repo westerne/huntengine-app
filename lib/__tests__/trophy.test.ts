@@ -7,6 +7,7 @@ import { WYOMING_ANTELOPE_UNITS } from '../../app/api/strategy/wyoantelopedata';
 import { buildWyomingDeerScoutDataset } from '../../app/api/strategy/wyodeerScoutAdapter';
 import { buildWyomingAntelopeScoutDataset } from '../../app/api/strategy/wyoantelopeScoutAdapter';
 import { buildScoutPrompt } from '../../app/api/strategy/promptBuilder';
+import { NO_FIGURE, trophyFigureOrNull, trophyRange } from '../trophy';
 
 describe('which trophy figures we can stand behind', () => {
   it('trusts only field-sourced entries', () => {
@@ -203,5 +204,29 @@ describe('guarding the shortlist after the model answers', () => {
     expect(pick.currentOdds).toBe('11.1%');
     expect(pick.season).toBe('Sept 1 – Sept 30');
     expect(pick.whyItFits).toMatch(/17 points and drew at 50%/);
+  });
+});
+
+describe('what a card shows where there is no figure', () => {
+  // Three shapes mean the same thing now: null from the Wyoming adapters, the
+  // string "Not in data" from the shared-builder states, and empty string,
+  // which is what the live antelope call actually returned.
+  const NONE = [null, undefined, '', '  ', 'Not in data', '—', 'N/A', 'TBD'];
+
+  it('collapses a missing pair to one plain phrase', () => {
+    for (const v of NONE) expect(trophyRange(v, v)).toBe(NO_FIGURE);
+    // Not "— / —", which reads like the row failed to load.
+    expect(trophyRange(null, null)).not.toContain('/');
+  });
+
+  it('keeps the half we do have', () => {
+    expect(trophyRange('148-163"', '175"')).toBe('148-163" / 175"');
+    expect(trophyRange(null, '175"')).toBe('not sourced / 175"');
+    expect(trophyRange('148-163"', null)).toBe('148-163" / not sourced');
+  });
+
+  it('gives a tight slot the figure or nothing at all', () => {
+    expect(trophyFigureOrNull('195"')).toBe('195"');
+    for (const v of NONE) expect(trophyFigureOrNull(v)).toBeNull();
   });
 });

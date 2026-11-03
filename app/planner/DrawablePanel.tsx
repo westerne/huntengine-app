@@ -1,5 +1,6 @@
 'use client';
 import { huntTitle } from '@/lib/huntName';
+import { trophyFigureOrNull } from '@/lib/trophy';
 
 // Slide-over list of every unit the hunter can likely draw now.
 
@@ -62,7 +63,9 @@ export default function DrawablePanel({
                 <div className="text-right shrink-0">
                   <p className="text-[8px] uppercase text-zinc-600 font-black mb-0.5">Odds</p>
                   <p className="text-lg font-black text-green-400">{unit.currentOdds}</p>
-                  <p className="text-[9px] text-zinc-500 font-bold">{unit.topEnd}</p>
+                  {trophyFigureOrNull(unit.topEnd) && (
+                    <p className="text-[9px] text-zinc-500 font-bold">Top end {trophyFigureOrNull(unit.topEnd)}</p>
+                  )}
                   <p className="text-[8px] text-zinc-600 font-black uppercase mt-1 group-hover:text-amber-500 transition-colors">Build Plan →</p>
                 </div>
               </div>
