@@ -1,6 +1,6 @@
 # HuntQuarters Roadmap
 
-_Last updated: November 2, 2026_
+_Last updated: November 3, 2026_
 
 ## Where this fits
 
@@ -22,30 +22,34 @@ Every phase below is aimed at that date.
 
 ## Where it stands today
 
-_Checked November 2, 2026 against the code on `main`._
+_Checked November 3, 2026 against the code on `main`._
 
 **Works now**
 
 - **All 17 target states are live** (`lib/huntdata/registry.ts`), Alaska included. The batch table below is finished.
-- **SCOUT** picks units and **BRIEF** writes a full unit plan. Both use `gpt-4o` and are fed real draw data.
+- **The server picks, the model explains.** Every state now hands SCOUT a server-chosen shortlist instead of letting the model choose from the whole roster. Sixteen go through the shared builders; Wyoming keeps its hand-tuned branch and is ranked in place by `lib/huntdata/legacyRank.ts`, because the shared format has no room for its special draw, area patterns or guide rules.
+- **Generated numbers are checked, not just forbidden.** The hunt plan and the unit brief are both scrubbed after generation (`lib/planGuard.ts`): a tag count, season date, trophy score or percentage the model was not given is replaced with an honest marker. SCOUT answers "no data" when a state and species has nothing behind it, and the planner no longer offers the pairs that don't (`lib/scoutData.ts`).
+- **Two-question onboarding** (`/calendar/setup`): where your points are, and how soon you want to hunt. Points imply interest, so a balance is a complete answer. Weapon is asked later, on the results, where it changes the list.
 - **Accounts and database:** Supabase email + password sign-in, with six migrations (`supabase/migrations/0001`–`0006`) covering saved hunts, applications and tasks, hunt plans, hunt reports and the calendar.
 - **Payments:** Stripe annual membership with promotion codes, webhook and billing portal (`app/api/stripe/`).
 - **My Season** (`/season`): saved hunts by status, application checklists, point-building tasks, draw results.
-- **My Hunt Calendar** (`/calendar`): 5-year plan, points ledger, draw outlooks, guided setup, spreadsheet import.
-- **Compare** (`/compare`): 2–4 hunts side by side with one recommendation.
+- **My Hunt Calendar** (`/calendar`): opens on three years and stretches to cover anything planned further out; points ledger, draw outlooks, guided setup, spreadsheet import.
+- **Compare** (`/compare`): 2–4 hunts side by side with one recommendation, or one hunt on its own as a detail view, linked from every calendar item.
 - **My History** (`/history`): finished hunts, post-hunt reports, and every application and draw result by year.
 - **Hunt plans:** nine grounded sections, per-section edits, versioning, printable packet.
 - **E-scouting map**: unit boundaries, BLM land status, roads and trailheads from OpenStreetMap, and percent-public-land for each unit.
-- **Tests:** `npm test` runs 210 tests across 8 files. All passing.
+- **Tests:** `npm test` runs 267 tests across 12 files. All passing.
 - The beta code gate and per-IP rate limit still guard the strategy API (`app/api/strategy/route.ts`).
 
 **Missing**
 - Per-member usage limits. OpenAI spend is still unbounded per account.
-- Email reminders for deadlines and draw results.
+- Email reminders for deadlines and draw results. No mail provider is wired up at all, so this is infrastructure, not a feature toggle.
+- Draw-result dates. The concept doesn't exist in the data; `applications.json` covers 8 states and holds two 2027 deadlines between them.
 - A landing page on huntquarters.com, and links in from huntaddicts.com.
 - Multi-state planning. SCOUT still handles one state at a time.
 - 2027 draw data. Every state's numbers are 2025 or 2026 and refresh as agencies publish.
 - One name. The beta gate says HuntQuarters, the planner header says HuntEngine.
+- "I already have a tag" still ends at BRIEF rather than the hunt page, because the two tag-in-hand generators have not been merged.
 
 ## Target: 17 states
 
@@ -102,7 +106,12 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [x] **Adapters** that read WY, ID, CO, MT and UT into the shared format without changing their existing prompts.
 - [x] **Shared SCOUT and BRIEF builders** (`lib/huntdata/generic.ts`). A new state only has to produce its hunts and it gets SCOUT and BRIEF automatically.
 - [ ] **Import scripts** that turn each agency's published files (PDF, CSV, KML) into that format. Next year's data then becomes a re-run, not a rewrite. Draw builders exist for CO, ID, MT, AZ, KS, ND, NE, NM and NV (`scripts/`, `scripts/draw/`) and harvest builders for ten states (`scripts/harvest/`). Still hand-built: UT and the Batch C/D states (OR, WA, CA, SD, OK, AK).
-- [ ] Move WY, ID, CO, MT and UT onto the new format. Fix their gaps along the way:
+- [ ] Move WY, ID, CO, MT and UT onto the new format. SCOUT is done: Montana, Colorado, Idaho and Utah
+      now go through the shared builders, each measured against its hand-built dataset first (all four
+      returned the same hunts or more). Wyoming stays on its branch — the shared format has no room for
+      its regular-versus-special pools, area patterns, hybrid upgrade notes or guide rules — but is
+      ranked server-side in place by `lib/huntdata/legacyRank.ts`. BRIEF still uses the hand-built
+      lookups for all five. Remaining gaps:
   - [x] Harvest success rates for all five (`scripts/harvest/`, `lib/huntdata/harvest/`): WY 2025, CO 2025, ID 2025, MT 2025 (elk and antelope 2024), UT 2024. Shown in SCOUT and BRIEF.
   - [ ] Utah: confirm which DWR hunts match "Plateau" antelope and "Uintas East Moose" (no harvest rate until then)
   - [ ] Colorado preference-point data (points needed to draw, not just success %)
@@ -112,7 +121,8 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
 - [ ] **One map boundary source per state**, set up in config instead of code.
 - [x] **Tests** (`npm test`): every live state's data passes validation, spot checks match source numbers, and the shared builders work.
 - [x] **SCOUT unit guard:** any unit the AI makes up is dropped before the hunter sees it.
-- [ ] Colorado bighorn sheep and mountain goat hunts (none loaded today).
+- [ ] Colorado bighorn sheep and mountain goat hunts (none loaded today). Not offered in the planner
+      until they are, along with Utah goat, South Dakota sheep, and Wyoming moose, sheep and goat.
 - [ ] Break up the planner and prompt builder so new states don't make them bigger. The planner is split: `app/planner/page.tsx` is 16KB and each screen has its own file. `app/api/strategy/promptBuilder.ts` is still 84KB.
 
 ## Phase 2: Membership launch + Batch A (December – early January)
@@ -175,7 +185,9 @@ Each state today is a hand-written TypeScript file with its own shape. That won'
     so these narrow the shortlist rather than inventing anything. Two pairs had none at all and are no longer offered:
     SD bighorn sheep, and WY moose, sheep and goat (three, two and two description-only units).
 - [ ] **Deadline calendar** for all 17 states, with email reminders.
-- [ ] **Points tracker:** members enter their points once for every state, and every plan uses them.
+- [x] **Points tracker:** balances live in `hunter_points` alone. The setup wizard used to write them
+      only into `profiles.planning`, so a hunter entered them, saw them vanish from the form next visit,
+      and left a stale copy behind. Every plan reads the one table.
 - [ ] **Multi-state planning:** "where should I apply this year?" across all states at once. The planner handles one state at a time today.
 
 ## Phase 4: After the draw (June – October 2027)
