@@ -19,6 +19,7 @@ import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { getAccessSummary } from '@/lib/access';
 import { hasDrawSignal, noDataAnswer, pointsForState } from '@/lib/scoutData';
 import { groundBrief } from '@/lib/planGuard';
+import { rankLegacy } from '@/lib/huntdata/legacyRank';
 import { getPublicLandPct, getUnitCentroid } from '@/lib/landstats';
 import { IDAHO_GMU_UNITS } from './idahoUnits';
 import { idahoHuntsForUnit, IDAHO_DRAW_YEAR } from './idahoDraw';
@@ -379,6 +380,17 @@ export async function POST(req: Request) {
       // Shared-builder states: the server picks the hunts; the model explains them.
       const scoutDataset = usesSharedBuilders
         ? buildShortlist(enriched as Array<Record<string, unknown>>, { goal: goalFrom(formData.sacrificeTrophy) })
+        // Wyoming keeps its hand-tuned branch, which the shared format has no
+        // room for, but it gets the same server-side choosing. Handing the
+        // model 148 elk products to pick from returned 2, then 0, then 3 on
+        // identical requests.
+        : isWyoming
+        ? rankLegacy(enriched as Array<Record<string, unknown>>, {
+            isResident,
+            includeSpecialDraw: formData.includeSpecialDraw !== false,
+            hunterPoints: Number(hunterPoints) || 0,
+            goal: goalFrom(formData.sacrificeTrophy),
+          })
         : enriched;
 
       // No hunts for this state and species (CO sheep/goat and UT goat are
