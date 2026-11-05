@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { STATES, speciesFor } from '../planner/constants';
 import AskBox from './AskBox';
 import Matches, { type Narrowed } from './Matches';
+import { AskButton } from '../components/Advisor';
 import AddToPlan from './AddToPlan';
 import { ButtonLink, Card, Caveat } from '../ui';
 import { Loader } from '../ui/client';
@@ -94,6 +95,7 @@ function HuntRow({ h, showOdds, r }: { h: Hunt; showOdds: boolean; r: Reality })
         >
           Odds as points build
         </Link>
+        <AskButton variant="ghost" question={`Should I apply for ${r.state} ${r.species.toLowerCase()} hunt ${h.huntCode ?? h.unit} this year?`}>Ask</AskButton>
         <AddToPlan
           target={{
             state: r.state,

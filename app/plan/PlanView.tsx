@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ChevronRight, ChevronDown, CalendarPlus, Sparkles, Mountain } from 'lucide-react';
 import { Button, ButtonLink, Card, Caveat, EmptyState, Eyebrow, PointsTimeline, StatRow, Tier } from '../ui';
+import { AskButton } from '../components/Advisor';
 import { STAGE } from '@/lib/myHunts';
 import { huntTitle } from '@/lib/huntName';
 import { KIND_LABEL, PLAN_KINDS, type PlanKind } from '@/lib/calendar';
@@ -230,12 +231,12 @@ export default function PlanView({ thisYear, years, hunts, points, homeKnown, lo
         <>
           {/* This season leads: it's what there is to decide now. */}
           <Card>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
               <div>
                 <Eyebrow>This season</Eyebrow>
-                <h2 className="hq-h2" style={{ marginTop: 2 }}>{thisYear}</h2>
+                <h2 className="hq-h2" style={{ marginTop: 2 }}>{thisYear} <span className="hq-small" style={{ fontWeight: 400 }}>· {thisSeason.length} hunt{thisSeason.length === 1 ? '' : 's'}</span></h2>
               </div>
-              <span className="hq-small">{thisSeason.length} hunt{thisSeason.length === 1 ? '' : 's'}</span>
+              <AskButton question={`Help me decide what to apply for in ${thisYear}.`}>Help me decide</AskButton>
             </div>
             {thisSeason.length + building.length === 0 ? (
               <div className="hq-open" style={{ marginTop: 12 }}><span>Nothing planned for {thisYear} yet.</span><Button size="sm" variant="secondary" onClick={() => setAdding(true)}>Add a hunt</Button></div>

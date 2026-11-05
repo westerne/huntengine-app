@@ -32,6 +32,17 @@ export function askAdvisor(question?: string) {
   window.dispatchEvent(new CustomEvent(EVENT, { detail: { question } }));
 }
 
+// A context entry point (§3): opens the sheet already asking about this thing.
+export function AskButton({ question, children, variant = 'secondary', size = 'sm' }: {
+  question: string; children: ReactNode; variant?: 'secondary' | 'ghost'; size?: 'sm' | 'md';
+}) {
+  return (
+    <button type="button" className={`hq-btn hq-btn--${variant}${size === 'sm' ? ' hq-btn--sm' : ''}`} onClick={() => askAdvisor(question)}>
+      <MessageCircle size={size === 'sm' ? 14 : 16} aria-hidden="true" /> {children}
+    </button>
+  );
+}
+
 // Numbers and dates read in the data style, the same as on the screens.
 const DATA = /((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2}(?:,\s*\d{4})?|\$?\d+(?:,\d{3})*(?:\.\d+)?%?)/g;
 function withData(text: string): ReactNode[] {

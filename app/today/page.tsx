@@ -7,6 +7,7 @@ import { supabaseServer } from '@/lib/supabase/server';
 import { buildToday, daysBetween, upcomingOpenDeadlines, whenText, type TodayItem, type TodayTask } from '@/lib/today';
 import { sortOpenTasks } from '@/lib/applications';
 import Todo, { type TodoTask } from './Todo';
+import { AskButton } from '../components/Advisor';
 import { deadlineFor, shortDate } from '@/lib/huntdata/apply';
 import { speciesKeyOf } from '@/lib/species';
 import { BigNumber, ButtonLink, Card, Caveat, EmptyState, Eyebrow, StatRow, Tier } from '../ui';
@@ -76,6 +77,9 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
   ).slice(0, 4);
 
   const nextHunt = plan.hunts.filter((h) => ['drew', 'prepping'].includes(h.stage) && h.huntStart && h.huntStart >= today).sort((a, b) => (a.huntStart! < b.huntStart! ? -1 : 1))[0];
+  // A tag in hand, even before its season dates are filled in.
+  const tag = nextHunt ?? plan.hunts.find((h) => ['drew', 'prepping'].includes(h.stage) && (h.year ?? 0) >= plan.thisYear);
+  const whatNow = tag && `I drew my ${tag.year ?? ''} ${tag.state} ${tag.species.toLowerCase()} tag${tag.huntCode ? ` (hunt ${tag.huntCode})` : ''}. What should I do before opening day?`.replace(/\s+/g, ' ');
   // Not posted yet: last year's date for each planned application, labeled, so they can plan around it.
   const expected = plan.hunts
     .filter((h) => h.year === plan.thisYear && h.agencyDeadline && h.agencyDeadline.kind !== 'published' && ['considering', 'planned', 'points'].includes(h.stage))
@@ -128,6 +132,15 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
             <Eyebrow>Next hunt</Eyebrow>
             <p className="hq-h2" style={{ marginTop: 4 }}>{nextHunt.state} {nextHunt.species.toLowerCase()} · {whenText(Math.round((Date.parse(nextHunt.huntStart!) - Date.parse(today)) / 86400000))}</p>
             <p className="hq-small" style={{ marginTop: 4 }}>Opens {shortDate(nextHunt.huntStart!)}</p>
+            {whatNow && <div style={{ marginTop: 12 }}><AskButton question={whatNow}>What now?</AskButton></div>}
+          </Card>
+        )}
+        {tag && whatNow && !(nextHunt && !t.lead?.key.startsWith('h:')) && (
+          <Card variant="flat">
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+              <p className="hq-h3">You drew {tag.state} {tag.species.toLowerCase()}{tag.huntCode ? ` ${tag.huntCode}` : ''}.</p>
+              <AskButton question={whatNow}>What now?</AskButton>
+            </div>
           </Card>
         )}
 

@@ -11,6 +11,7 @@ import ApplicationPanel, { type OfficialInfo } from './ApplicationPanel';
 import PreparationPanel, { type PlanRow } from './PreparationPanel';
 import ReportPanel, { type Photo } from './ReportPanel';
 import { Button, ButtonLink, Card, Eyebrow, Tier } from '../../ui';
+import { AskButton } from '../../components/Advisor';
 import type { HuntReport } from '@/lib/reports';
 import type { HarvestReportingInfo } from '@/lib/huntdata/harvestReporting';
 import type { PlanInputs } from '@/lib/plans';
@@ -111,6 +112,11 @@ export default function HuntWorkspace({
         <h1 id="hunt-title" className="hq-h1" style={{ marginTop: 6 }}>{hunt.state} {hunt.species.toLowerCase()} · {huntTitle(hunt.unit, hunt.hunt_code)}</h1>
         {hunt.label && <p className="hq-body" style={{ marginTop: 4, color: 'var(--ink-soft)' }}>{labelText(hunt.label)}</p>}
         <p className="hq-h3" style={{ marginTop: 14 }}>Next: {action.label}</p>
+        <div style={{ marginTop: 10 }}>
+          <AskButton question={['tag_secured', 'preparing'].includes(hunt.status)
+            ? `I drew my ${hunt.season_year} ${hunt.state} ${hunt.species.toLowerCase()} tag${hunt.hunt_code ? ` (hunt ${hunt.hunt_code})` : ''}. What should I do before opening day?`
+            : `What should I do next for my ${hunt.season_year} ${hunt.state} ${hunt.species.toLowerCase()} hunt${hunt.hunt_code ? ` ${hunt.hunt_code}` : ''}?`}>Ask about this hunt</AskButton>
+        </div>
         {['tag_secured', 'preparing', 'completed'].includes(hunt.status) && (
           <div style={{ marginTop: 14 }}><ButtonLink href={`/season/${hunt.id}/print`} variant="secondary" size="sm"><Printer size={15} aria-hidden="true" /> Print hunt packet</ButtonLink></div>
         )}

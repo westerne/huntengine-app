@@ -11,6 +11,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { compareKey, MAX_COMPARE } from '@/lib/compare';
+import { AskButton } from '../components/Advisor';
 import AddToPlan from './AddToPlan';
 import { Button, ButtonLink, Card, Caveat } from '../ui';
 
@@ -150,6 +151,7 @@ function MatchCard({
         >
           Odds as points build
         </Link>
+        <AskButton variant="ghost" question={`Should I apply for ${n.state} ${n.species.toLowerCase()} hunt ${m.huntCode ?? m.unit} this year?`}>Ask</AskButton>
         <AddToPlan
           target={{
             state: n.state,

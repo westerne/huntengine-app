@@ -6,12 +6,12 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Minus, MessageCircle, Plus, Scale } from 'lucide-react';
+import { Minus, Plus, Scale } from 'lucide-react';
 import { BigNumber, ButtonLink, Card, Caveat, Eyebrow, StatRow } from '../../ui';
 import { huntTitle, labelText } from '@/lib/huntName';
 import { chanceShort, chanceText, ladderRows, MAX_LADDER_POINTS, type Ladder, type LadderRow } from '@/lib/huntdata/ladder';
 import AddToPlan from '../../find/AddToPlan';
-import { askAdvisor } from '../../components/Advisor';
+import { AskButton } from '../../components/Advisor';
 
 type HuntInfo = {
   key: string; state: string; stateName: string; species: string; unit: string; huntCode: string;
@@ -155,9 +155,7 @@ export default function HuntView({ hunt, residency, ladder, usesPoints, startPoi
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
         {hunt.openToYou && <AddToPlan target={{ state: hunt.state, species: hunt.species, unit: hunt.unit, huntCode: hunt.huntCode, label: hunt.label, year: half?.year ?? seasonYear }} />}
         <ButtonLink href={`/compare?h=${encodeURIComponent(hunt.key)}`} variant="secondary"><Scale size={16} aria-hidden="true" /> Compare</ButtonLink>
-        <button type="button" className="hq-btn hq-btn--secondary" onClick={() => askAdvisor(`Tell me about ${hunt.state} ${sp} hunt ${hunt.huntCode}. Should I apply this year or keep building points?`)}>
-          <MessageCircle size={16} aria-hidden="true" /> Ask about this hunt
-        </button>
+        <AskButton size="md" question={`Should I apply for ${hunt.state} ${sp} hunt ${hunt.huntCode} this year or keep building points?`}>Ask about this hunt</AskButton>
       </div>
 
       {ladder.pointTable.length > 0 && (
