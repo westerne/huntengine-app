@@ -2,52 +2,58 @@
 
 // "Your search" details shown (collapsed) under the SCOUT results.
 
+import type { CSSProperties } from 'react';
+import { Check, X } from 'lucide-react';
 import type { PlannerFlags, Profile } from './types';
 import { TROPHY_CONFIG } from './constants';
 
 function Item({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
-    <div>
-      <p className="text-[8px] uppercase text-zinc-600 font-black tracking-widest mb-1">{label}</p>
-      <p className={`text-xs font-black uppercase ${accent ? 'text-amber-400' : 'text-zinc-200'}`}>{value}</p>
+    <div style={{ minWidth: 0 }}>
+      <p className="hq-label">{label}</p>
+      <p className={accent ? 'hq-data' : undefined} style={{ fontSize: 14, fontWeight: 700, color: accent ? 'var(--data)' : 'var(--ink)', overflowWrap: 'anywhere' }}>{value}</p>
     </div>
   );
 }
 
-const Flag = ({ on, children, tone }: { on: boolean; children: string; tone: 'amber' | 'red' | 'blue' | 'zinc' }) => {
-  const cls = {
-    amber: 'bg-amber-900/20 border-amber-800/40 text-amber-400',
-    red: 'bg-red-900/20 border-red-800/40 text-red-400',
-    blue: 'bg-blue-900/20 border-blue-800/40 text-blue-400',
-    zinc: 'bg-zinc-800 border-zinc-700 text-zinc-400',
-  }[on ? tone : 'zinc'];
-  return <span className={`px-2 py-1 rounded-full text-[8px] font-black uppercase tracking-widest border ${cls}`}>{children}</span>;
-};
+// A plain, non-interactive tag for a search setting.
+const tagStyle = (on: boolean): CSSProperties => ({
+  display: 'inline-flex', alignItems: 'center', gap: 4, padding: '3px 10px', borderRadius: 999,
+  fontSize: 12, fontWeight: 600, border: '1px solid var(--border)',
+  background: 'var(--surface-sunk)', color: on ? 'var(--ink)' : 'var(--ink-muted)',
+});
+
+const Flag = ({ on, children, icon }: { on: boolean; children: string; icon?: 'yes' | 'no' }) => (
+  <span style={tagStyle(on)}>
+    {icon === 'yes' && <Check size={12} aria-hidden="true" />}
+    {icon === 'no' && <X size={12} aria-hidden="true" />}
+    {children}
+  </span>
+);
 
 export default function SearchSummary({ profile, flags }: { profile: Profile; flags: PlannerFlags }) {
   return (
-    <div className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6">
-      <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-4">Your Search Parameters</p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-        <Item label="State / Species" value={`${profile.states[0]} / ${profile.species}`} />
+    <div className="hq-stack" style={{ gap: 14 }}>
+      <div className="hq-fields">
+        <Item label="State / species" value={`${profile.states[0]} / ${profile.species}`} />
         <Item label="Residency" value={profile.residency} />
-        <Item label="Points" value={flags.noPointSystem ? 'Random Draw' : `${profile.points[flags.selState] || 0} pts`} accent />
-        <Item label="Weapon / Season" value={`${profile.weapons.join(', ') || 'Any weapon'} / ${profile.seasons.join(', ') || 'Any season'}`} />
-        <Item label="Trophy Floor" value={TROPHY_CONFIG[profile.species] ? `${profile.trophyQuality}"` : 'Any'} accent />
-        <Item label="Style / Fitness" value={`${profile.huntStyles.join(', ')} / ${profile.fitness}`} />
+        <Item label="Points" value={flags.noPointSystem ? 'Random draw' : `${profile.points[flags.selState] || 0} pts`} accent />
+        <Item label="Weapon / season" value={`${profile.weapons.join(', ') || 'Any weapon'} / ${profile.seasons.join(', ') || 'Any season'}`} />
+        <Item label="Trophy floor" value={TROPHY_CONFIG[profile.species] ? `${profile.trophyQuality}"` : 'Any'} accent />
+        <Item label="Style / fitness" value={`${profile.huntStyles.join(', ')} / ${profile.fitness}`} />
       </div>
 
-      <div className="flex flex-wrap gap-2 mt-4">
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
         {flags.showSpecialDrawOption && (
-          <Flag on={profile.includeSpecialDraw} tone="amber">{profile.includeSpecialDraw ? '✓ Special Draw Included' : '✕ Special Draw Excluded'}</Flag>
+          <Flag on={profile.includeSpecialDraw} icon={profile.includeSpecialDraw ? 'yes' : 'no'}>{profile.includeSpecialDraw ? 'Special draw included' : 'Special draw excluded'}</Flag>
         )}
         {flags.showGrizzlyOption && (
-          <Flag on={!profile.grizzlyComfort} tone="red">{profile.grizzlyComfort ? '✓ Grizzly Country OK' : '✕ No Grizzly Units'}</Flag>
+          <Flag on={!profile.grizzlyComfort} icon={profile.grizzlyComfort ? 'yes' : 'no'}>{profile.grizzlyComfort ? 'Grizzly country OK' : 'No grizzly units'}</Flag>
         )}
         {profile.knownAreas && (
-          <Flag on tone="blue">{`Familiar: ${profile.knownAreas.slice(0, 30)}${profile.knownAreas.length > 30 ? '...' : ''}`}</Flag>
+          <Flag on>{`Familiar: ${profile.knownAreas.slice(0, 30)}${profile.knownAreas.length > 30 ? '…' : ''}`}</Flag>
         )}
-        <Flag on={false} tone="zinc">{`Timeline: ${profile.drawTimeline}`}</Flag>
+        <Flag on={false}>{`Timeline: ${profile.drawTimeline}`}</Flag>
       </div>
     </div>
   );

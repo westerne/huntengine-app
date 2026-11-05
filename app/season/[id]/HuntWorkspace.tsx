@@ -15,7 +15,7 @@ import type { HuntReport } from '@/lib/reports';
 import type { HarvestReportingInfo } from '@/lib/huntdata/harvestReporting';
 import type { PlanInputs } from '@/lib/plans';
 import type { Application, Task } from '@/lib/applications';
-import { huntTitle } from '@/lib/huntName';
+import { huntTitle, labelText } from '@/lib/huntName';
 import { STAGE, stageOfSaved } from '@/lib/myHunts';
 import {
   canMove, nextAction, RESULT_LABEL, RESULTS, STATUS_LABEL, STATUSES,
@@ -108,8 +108,8 @@ export default function HuntWorkspace({
           <Eyebrow>{hunt.season_year} season</Eyebrow>
           <Tier tier={STAGE[stage].tier}>{STAGE[stage].label}{hunt.application_result === 'alternate' ? ' · Alternate' : ''}</Tier>
         </div>
-        <h1 id="hunt-title" className="hq-h1" style={{ marginTop: 6 }}>{hunt.state} {hunt.species.toLowerCase()} · {huntTitle(hunt.unit, hunt.hunt_code && hunt.hunt_code.toLowerCase() !== hunt.unit.toLowerCase() ? hunt.hunt_code : null)}</h1>
-        {hunt.label && <p className="hq-body" style={{ marginTop: 4, color: 'var(--ink-soft)' }}>{/^[a-z]+(-[a-z]+)+$/.test(hunt.label) ? hunt.label.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()) : hunt.label}</p>}
+        <h1 id="hunt-title" className="hq-h1" style={{ marginTop: 6 }}>{hunt.state} {hunt.species.toLowerCase()} · {huntTitle(hunt.unit, hunt.hunt_code)}</h1>
+        {hunt.label && <p className="hq-body" style={{ marginTop: 4, color: 'var(--ink-soft)' }}>{labelText(hunt.label)}</p>}
         <p className="hq-h3" style={{ marginTop: 14 }}>Next: {action.label}</p>
         {['tag_secured', 'preparing', 'completed'].includes(hunt.status) && (
           <div style={{ marginTop: 14 }}><ButtonLink href={`/season/${hunt.id}/print`} variant="secondary" size="sm"><Printer size={15} aria-hidden="true" /> Print hunt packet</ButtonLink></div>

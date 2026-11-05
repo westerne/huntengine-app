@@ -3,16 +3,21 @@
 // Compare view: the recommendation and its tradeoff first, then the full
 // side-by-side table. Hunts are added by state → species → hunt.
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Scale } from 'lucide-react';
 import { compareKey, MAX_COMPARE, type CompareColumn } from '@/lib/compare';
-import { huntTitle } from '@/lib/huntName';
+import { huntTitle, labelText } from '@/lib/huntName';
 import { STATES, speciesFor } from '../planner/constants';
+import { Button, Card, Caveat, EmptyState, Eyebrow, Tier } from '../ui';
 
 export type YourNotes = { planned: string[]; reports: string[] };
 
-const inputCls = 'bg-black border border-zinc-800 p-2 rounded-lg text-zinc-200 text-sm outline-none focus:border-amber-500';
+// Table cells. Row labels stick to the left so they stay readable while the
+// hunt columns scroll sideways on a phone.
+const cell: CSSProperties = { textAlign: 'left', verticalAlign: 'top', padding: '12px 14px', borderTop: '1px solid var(--divider)', fontSize: 14 };
+const rowHead: CSSProperties = { ...cell, position: 'sticky', left: 0, zIndex: 1, background: 'var(--surface)', width: 140, minWidth: 120, fontSize: 13, fontWeight: 600, color: 'var(--ink-soft)' };
 
 // The window is however many years the calendar covers, so the labels say the
 // year rather than a hard-coded "5 years" the figures stopped matching when the
@@ -59,26 +64,35 @@ function AddHunt({ keys }: { keys: string[] }) {
   }, [state, species]);
   const shown = options.filter((o) => !q || `${o.code} ${o.unit} ${o.label ?? ''}`.toLowerCase().includes(q.toLowerCase())).slice(0, 60);
   const add = (o: { code: string; speciesKey: string }) => router.push(`/compare?h=${[...keys, compareKey(state, o.speciesKey, o.code)].map(encodeURIComponent).join(',')}`);
-  if (keys.length >= MAX_COMPARE) return <p className="text-zinc-500 text-xs">Up to {MAX_COMPARE} hunts — remove one to add another.</p>;
+  if (keys.length >= MAX_COMPARE) return <p className="hq-small">Up to {MAX_COMPARE} hunts. Remove one to add another.</p>;
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-3">
-      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Add a hunt to compare</p>
-      <div className="flex flex-wrap gap-2">
-        <select aria-label="State" className={inputCls} value={state} onChange={(e) => { setState(e.target.value); setSpecies(speciesFor(e.target.value)[0]); }}>{STATES.map((s) => <option key={s}>{s}</option>)}</select>
-        <select aria-label="Species" className={inputCls} value={species} onChange={(e) => setSpecies(e.target.value)}>{speciesFor(state).map((s) => <option key={s}>{s}</option>)}</select>
-        <input aria-label="Search hunts" placeholder="Unit, hunt code or name" className={`${inputCls} flex-1 min-w-[10rem]`} value={q} onChange={(e) => setQ(e.target.value)} />
+    <Card aria-labelledby="add-h">
+      <h2 id="add-h" className="hq-h3" style={{ marginBottom: 12 }}>Add a hunt to compare</h2>
+      <div className="hq-fields">
+        <label className="hq-field"><span className="hq-label">State</span>
+          <select className="hq-input" value={state} onChange={(e) => { setState(e.target.value); setSpecies(speciesFor(e.target.value)[0]); }}>{STATES.map((s) => <option key={s}>{s}</option>)}</select></label>
+        <label className="hq-field"><span className="hq-label">Species</span>
+          <select className="hq-input" value={species} onChange={(e) => setSpecies(e.target.value)}>{speciesFor(state).map((s) => <option key={s}>{s}</option>)}</select></label>
+        <label className="hq-field hq-span"><span className="hq-label">Search hunts</span>
+          <input className="hq-input" placeholder="Unit, hunt code or name" value={q} onChange={(e) => setQ(e.target.value)} /></label>
       </div>
-      <ul className="max-h-56 overflow-y-auto divide-y divide-zinc-800 border border-zinc-800 rounded-lg">
-        {shown.length === 0 && <li className="p-2 text-zinc-500 text-sm">No hunts match.</li>}
-        {shown.map((o) => (
-          <li key={o.code}>
-            <button type="button" onClick={() => add(o)} className="w-full text-left p-2 text-sm hover:bg-zinc-800">
-              <span className="text-zinc-200 font-bold">{huntTitle(o.unit, o.code)}</span>{o.label ? <span className="text-zinc-500"> — {o.label}</span> : null}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="hq-inset" style={{ marginTop: 12, padding: '0 12px', maxHeight: 240, overflowY: 'auto' }}>
+        <ul className="hq-list">
+          {shown.length === 0 && <li className="hq-small" style={{ padding: '12px 2px' }}>No hunts match.</li>}
+          {shown.map((o) => (
+            <li key={o.code}>
+              <button type="button" onClick={() => add(o)} className="hq-row" style={{ padding: '10px 2px' }}>
+                <span className="hq-row__main">
+                  <span className="hq-row__title">{huntTitle(o.unit, o.code)}</span>
+                  {o.label && <span className="hq-row__sub">{labelText(o.label)}</span>}
+                </span>
+                <span className="hq-link hq-small" aria-hidden="true">Add</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Card>
   );
 }
 
@@ -113,77 +127,93 @@ export default function CompareView({ cols, pick, notes, missing, years, homeSta
     setAdded((a) => ({ ...a, [c.key]: res.ok ? `Added${year ? ` for ${year}` : otc ? ' as an OTC option' : ' to your bucket list'}` : 'Could not add — try again' }));
   };
 
+  const isPick = (c: CompareColumn) => pick?.key === c.key && cols.length > 1;
+  const tint = (c: CompareColumn) => (isPick(c) ? 'var(--surface-sunk)' : undefined);
+
   return (
-    <main className="max-w-6xl mx-auto px-4 py-10 space-y-8">
+    <main style={{ maxWidth: 1000, margin: '0 auto', padding: '24px 16px 40px', display: 'flex', flexDirection: 'column', gap: 24 }}>
       <div>
-        <h1 className="text-3xl font-black italic uppercase">{cols.length === 1 ? 'This hunt' : 'Compare hunts'}</h1>
-        <p className="text-zinc-500 text-sm mt-1">{cols.length === 1 ? 'Everything we have on it' : 'Side by side'}, at your points{homeState ? ` (home state ${homeState})` : ' — set your home state in My Profile for resident odds'}. Numbers are last year&apos;s published results, not a forecast.</p>
+        <Eyebrow>Find</Eyebrow>
+        <h1 className="hq-h1" style={{ marginTop: 4 }}>{cols.length === 1 ? 'This hunt' : 'Compare hunts'}</h1>
+        <p className="hq-body" style={{ marginTop: 6 }}>
+          {cols.length === 1 ? 'Everything we have on it' : 'Side by side'}, at your points{homeState ? ` (home state ${homeState})` : <> — set your home state in <Link href="/profile" className="hq-link">Me</Link> for resident odds</>}.
+        </p>
       </div>
 
-      {missing.length > 0 && <p className="text-amber-300 text-sm">Couldn&apos;t find {missing.join(', ')} in our data.</p>}
+      <Caveat>Numbers are last year&apos;s published results, not a forecast. Confirm with the agency before you apply.</Caveat>
+
+      {missing.length > 0 && <Caveat tone="warn">Couldn&apos;t find {missing.join(', ')} in our data.</Caveat>}
 
       {pick && cols.length > 1 && (
-        <section aria-labelledby="pick-h" className="bg-zinc-900 border border-amber-900/60 rounded-2xl p-6 space-y-2">
-          <h2 id="pick-h" className="text-[11px] uppercase text-amber-500 font-black tracking-widest">Our pick</h2>
-          <p className="text-white font-bold">{pick.why}</p>
-          {pick.tradeoff && <p className="text-zinc-400 text-sm">Tradeoff: {pick.tradeoff}</p>}
-          {(() => {
-            // Public land arrives after the table: flag a much more public alternative.
-            const pct = (k: string) => { const m = (land[k] ?? '').match(/About (\d+)%/); return m ? Number(m[1]) : null; };
-            const mine = pct(pick.key);
-            const alt = cols.filter((c) => c.key !== pick.key && c.openToYou).map((c) => ({ c, p: pct(c.key) }))
-              .filter((x) => x.p != null && mine != null && x.p >= mine + 25).sort((a, b) => b.p! - a.p!)[0];
-            return alt ? <p className="text-zinc-400 text-sm">Public land: {alt.c.state} {alt.c.huntCode} is about {alt.p}% public vs about {mine}% for our pick — worth it if you hunt without private access.</p> : null;
-          })()}
-          <p className="text-zinc-600 text-xs">
-            Weighs your chance of drawing {years.length ? `by ${years[years.length - 1]}` : 'in the years ahead'} against
-            hunter success. Trophy quality and cost aren&apos;t in our data yet.
-          </p>
-        </section>
+        <Card aria-labelledby="pick-h" className="hq-fade-up">
+          <Eyebrow>Our pick</Eyebrow>
+          <h2 id="pick-h" className="hq-h3" style={{ marginTop: 6 }}>{pick.why}</h2>
+          <div className="hq-stack" style={{ gap: 8, marginTop: 10 }}>
+            {pick.tradeoff && <p className="hq-body">Tradeoff: {pick.tradeoff}</p>}
+            {(() => {
+              // Public land arrives after the table: flag a much more public alternative.
+              const pct = (k: string) => { const m = (land[k] ?? '').match(/About (\d+)%/); return m ? Number(m[1]) : null; };
+              const mine = pct(pick.key);
+              const alt = cols.filter((c) => c.key !== pick.key && c.openToYou).map((c) => ({ c, p: pct(c.key) }))
+                .filter((x) => x.p != null && mine != null && x.p >= mine + 25).sort((a, b) => b.p! - a.p!)[0];
+              return alt ? <p className="hq-body">Public land: {alt.c.state} {alt.c.huntCode} is about {alt.p}% public vs about {mine}% for our pick. Worth it if you hunt without private access.</p> : null;
+            })()}
+            <p className="hq-small">
+              Weighs your chance of drawing {years.length ? `by ${years[years.length - 1]}` : 'in the years ahead'} against
+              hunter success. Trophy quality and cost aren&apos;t in our data yet.
+            </p>
+          </div>
+        </Card>
       )}
 
       {cols.length === 0 ? (
-        <p className="text-zinc-400">Pick hunts to compare below, or use &quot;Compare&quot; from your calendar or Find a Hunt.</p>
+        <Card variant="flat">
+          <EmptyState icon={<Scale size={22} />} title="Nothing to compare yet"
+            text={<>Pick hunts below, or use &quot;Compare&quot; from your plan or Find.</>} />
+        </Card>
       ) : (
-        <div className="overflow-x-auto border border-zinc-800 rounded-xl">
-          <table className="w-full text-sm min-w-[36rem]">
+        // Scrolls sideways inside its own box at phone width, never the page.
+        <div className="hq-card" role="region" aria-label="Hunt comparison" tabIndex={0} style={{ padding: 0, overflowX: 'auto', maxWidth: '100%' }}>
+          <table style={{ width: '100%', minWidth: 140 + cols.length * 190, borderCollapse: 'collapse' }}>
             <thead>
-              <tr className="bg-zinc-900 align-top">
-                <th className="text-left p-3 w-36 text-[10px] uppercase tracking-widest text-zinc-500">Hunt</th>
+              <tr>
+                <th scope="col" style={{ ...rowHead, borderTop: 0 }}><span className="hq-sr">Hunt</span></th>
                 {cols.map((c) => (
-                  <th key={c.key} className={`text-left p-3 ${pick?.key === c.key && cols.length > 1 ? 'bg-amber-950/40' : ''}`}>
-                    <p className="text-white font-black uppercase italic">{c.state} {c.species}</p>
-                    <p className="text-zinc-300 text-xs font-bold">{huntTitle(c.unit, c.huntCode)}</p>
-                    {c.label && <p className="text-zinc-500 text-xs font-normal">{c.label}</p>}
-                    {!c.openToYou && <p className="text-red-400 text-xs">Not open to you</p>}
-                    {pick?.key === c.key && cols.length > 1 && <p className="text-amber-500 text-[10px] font-black uppercase tracking-widest mt-1">Our pick</p>}
+                  <th key={c.key} scope="col" style={{ ...cell, borderTop: 0, fontWeight: 400, background: tint(c) }}>
+                    {isPick(c) && <p className="hq-eyebrow" style={{ marginBottom: 4 }}>Our pick</p>}
+                    <p className="hq-h3">{c.state} {c.species.toLowerCase()}</p>
+                    <p className="hq-small" style={{ fontWeight: 600, color: 'var(--ink-soft)' }}>{huntTitle(c.unit, c.huntCode)}</p>
+                    {c.label && <p className="hq-small">{labelText(c.label)}</p>}
+                    {!c.openToYou && <p style={{ marginTop: 6 }}><Tier tier="stop" /></p>}
                   </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {rowsFor(years).map((r) => (
-                <tr key={r.label} className="border-t border-zinc-800 align-top">
-                  <th className="text-left p-3 text-[10px] uppercase tracking-widest text-zinc-500 font-black">{r.label}</th>
-                  {cols.map((c) => <td key={c.key} className="p-3 text-zinc-300">{r.label === 'Public land' ? (land[c.key] ?? 'Checking…') : r.get(c)}</td>)}
+                <tr key={r.label}>
+                  <th scope="row" style={rowHead}>{r.label}</th>
+                  {cols.map((c) => <td key={c.key} style={{ ...cell, color: 'var(--ink)', background: tint(c) }}>{r.label === 'Public land' ? (land[c.key] ?? 'Checking…') : r.get(c)}</td>)}
                 </tr>
               ))}
-              <tr className="border-t border-zinc-800 align-top">
-                <th className="text-left p-3 text-[10px] uppercase tracking-widest text-zinc-500 font-black">Your notes</th>
+              <tr>
+                <th scope="row" style={rowHead}>Your notes</th>
                 {cols.map((c) => {
                   const n = notes[c.key];
                   const lines = [...(n?.planned ?? []), ...(n?.reports ?? [])];
-                  return <td key={c.key} className="p-3 text-zinc-400 text-xs">{lines.length ? lines.map((l, i) => <p key={i}>{l}</p>) : '—'}</td>;
+                  return <td key={c.key} className="hq-small" style={{ ...cell, fontSize: 13, background: tint(c) }}>{lines.length ? lines.map((l, i) => <p key={i}>{l}</p>) : '—'}</td>;
                 })}
               </tr>
-              <tr className="border-t border-zinc-800">
-                <th />
+              <tr>
+                <th scope="row" style={rowHead}><span className="hq-sr">Actions</span></th>
                 {cols.map((c) => (
-                  <td key={c.key} className="p-3 space-y-2">
-                    {added[c.key]
-                      ? <p className="text-green-400 text-xs">{added[c.key]} · <Link href="/plan" className="underline">plan</Link></p>
-                      : c.openToYou && <button type="button" onClick={() => addToCalendar(c)} className="bg-amber-600 text-white px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-amber-500">Add to calendar</button>}
-                    <Link href={without(c.key)} className="block text-zinc-500 text-[10px] font-black uppercase tracking-widest hover:text-white">Remove</Link>
+                  <td key={c.key} style={{ ...cell, background: tint(c) }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 10 }}>
+                      {added[c.key]
+                        ? <p className={added[c.key].startsWith('Added') ? 'hq-ok' : 'hq-err'} role="status">{added[c.key]} · <Link href="/plan" className="hq-link">See plan</Link></p>
+                        : c.openToYou && <Button size="sm" onClick={() => addToCalendar(c)}>Add to plan</Button>}
+                      <Link href={without(c.key)} className="hq-link hq-small">Remove</Link>
+                    </div>
                   </td>
                 ))}
               </tr>

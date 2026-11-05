@@ -1,10 +1,15 @@
 'use client';
+import { ArrowRight, X } from 'lucide-react';
 import { huntTitle } from '@/lib/huntName';
 import { trophyFigureOrNull } from '@/lib/trophy';
+import { Button, Card, Eyebrow, Tier } from '../ui';
 
 // Slide-over list of every unit the hunter can likely draw now.
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+const poolWord = (poolType: unknown) =>
+  poolType === 'OTC' ? 'OTC / general' : poolType === 'Special' ? 'Special pool' : 'Regular pool';
 
 export default function DrawablePanel({
   units, stateCode, onClose, onPick,
@@ -15,67 +20,67 @@ export default function DrawablePanel({
   onPick: (unit: any) => void;
 }) {
   return (
-    <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-start justify-end" role="dialog" aria-modal="true" aria-label="Units you can draw now">
-      <div className="h-full w-full max-w-xl bg-zinc-950 border-l border-zinc-800 flex flex-col shadow-2xl animate-in slide-in-from-right duration-300">
-        <div className="flex items-center justify-between px-8 py-6 border-b border-zinc-800 shrink-0">
-          <div>
-            <p className="text-[9px] uppercase text-zinc-500 font-black tracking-widest mb-1">All Drawable Units</p>
-            <h3 className="text-xl font-black italic uppercase text-green-400">{units.length} Units You Can Draw Now</h3>
+    <div
+      className="hq"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Units you can draw now"
+      style={{
+        position: 'fixed', inset: 0, zIndex: 50, display: 'flex', justifyContent: 'flex-end',
+        background: 'var(--scrim)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+      }}
+    >
+      <div
+        className="hq-fade-up"
+        style={{
+          height: '100%', width: '100%', maxWidth: 560, display: 'flex', flexDirection: 'column',
+          background: 'var(--canvas)', borderLeft: '1px solid var(--border)', boxShadow: 'var(--shadow-md)',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12, padding: '20px 16px 14px', borderBottom: '1px solid var(--divider)', flex: 'none' }}>
+          <div style={{ minWidth: 0 }}>
+            <Eyebrow>All drawable units</Eyebrow>
+            <h2 className="hq-h2" style={{ marginTop: 4 }}>{units.length} units you can draw now</h2>
           </div>
-          <button type="button" aria-label="Close" onClick={onClose} className="text-zinc-500 hover:text-white transition-colors text-2xl font-black leading-none">×</button>
+          <Button type="button" variant="ghost" size="sm" aria-label="Close" onClick={onClose}><X size={18} aria-hidden="true" /></Button>
         </div>
 
-        {/* Pool type legend */}
-        <div className="px-8 py-3 border-b border-zinc-800 flex gap-4 shrink-0">
-          <span className="flex items-center gap-1.5 text-[9px] font-black uppercase text-zinc-500"><span className="w-2 h-2 rounded-full bg-green-500 inline-block" />Regular Pool</span>
-          <span className="flex items-center gap-1.5 text-[9px] font-black uppercase text-zinc-500"><span className="w-2 h-2 rounded-full bg-amber-500 inline-block" />Special Pool</span>
-          <span className="flex items-center gap-1.5 text-[9px] font-black uppercase text-zinc-500"><span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />OTC / General</span>
+        <div style={{ flex: 1, overflowY: 'auto', padding: 16 }}>
+          <Card variant="flat" style={{ padding: '4px 16px' }}>
+            <ul className="hq-list">
+              {units.map((unit: any, i: number) => {
+                const top = trophyFigureOrNull(unit.topEnd);
+                return (
+                  <li key={`${unit.unit}-${unit.huntCode ?? i}`}>
+                    <button type="button" className="hq-row" onClick={() => onPick(unit)} style={{ alignItems: 'flex-start' }}>
+                      <span className="hq-badge">{unit.state || stateCode}</span>
+                      <span className="hq-row__main">
+                        <span className="hq-row__title">{huntTitle(unit.unit, unit.huntCode)}</span>
+                        <span className="hq-row__sub">{[poolWord(unit.poolType), unit.terrain].filter(Boolean).join(' · ')}</span>
+                        {(unit.requiresGuide || unit.grizzlyPresence) && (
+                          <span style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
+                            {unit.requiresGuide && <Tier tier="fair">Guide required</Tier>}
+                            {unit.grizzlyPresence && <Tier tier="fair">Grizzly country</Tier>}
+                          </span>
+                        )}
+                      </span>
+                      <span style={{ flex: 'none', textAlign: 'right', display: 'flex', flexDirection: 'column', gap: 2, maxWidth: 110 }}>
+                        <span className="hq-small">Odds</span>
+                        <span className="hq-data" style={{ fontWeight: 700 }}>{unit.currentOdds}</span>
+                        {top && <span className="hq-small">Top end {top}</span>}
+                      </span>
+                      <ArrowRight size={16} className="hq-row__chev" aria-hidden="true" style={{ marginTop: 4 }} />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </Card>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-6 py-4 space-y-3">
-          {units.map((unit: any, i: number) => (
-            <button
-              key={`${unit.unit}-${unit.huntCode ?? i}`}
-              type="button"
-              onClick={() => onPick(unit)}
-              className="w-full text-left bg-zinc-900 border border-zinc-800 rounded-xl p-4 hover:border-amber-700 hover:bg-zinc-800/60 transition-all group"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className={`w-2 h-2 rounded-full shrink-0 ${unit.poolType === 'OTC' ? 'bg-blue-500' : unit.poolType === 'Special' ? 'bg-amber-500' : 'bg-green-500'}`} />
-                    <span className="text-amber-500 font-black text-[9px] uppercase tracking-widest">{unit.state || stateCode}</span>
-                    <span className="text-[9px] text-zinc-600 font-black uppercase">{unit.poolType}</span>
-                  </div>
-                  <p className="text-lg font-black italic uppercase text-white leading-tight truncate">
-                    {huntTitle(unit.unit, unit.huntCode)}
-                  </p>
-                  <p className="text-[10px] text-zinc-500 font-bold mt-0.5 truncate">{unit.terrain}</p>
-                  <div className="flex items-center gap-3 mt-2">
-                    {unit.requiresGuide && (
-                      <span className="text-[8px] font-black uppercase text-orange-400 border border-orange-800/40 bg-orange-900/20 px-2 py-0.5 rounded-full">Guide Req.</span>
-                    )}
-                    {unit.grizzlyPresence && (
-                      <span className="text-[8px] font-black uppercase text-yellow-500 border border-yellow-800/40 bg-yellow-900/20 px-2 py-0.5 rounded-full">🐻 Grizzly</span>
-                    )}
-                  </div>
-                </div>
-                <div className="text-right shrink-0">
-                  <p className="text-[8px] uppercase text-zinc-600 font-black mb-0.5">Odds</p>
-                  <p className="text-lg font-black text-green-400">{unit.currentOdds}</p>
-                  {trophyFigureOrNull(unit.topEnd) && (
-                    <p className="text-[9px] text-zinc-500 font-bold">Top end {trophyFigureOrNull(unit.topEnd)}</p>
-                  )}
-                  <p className="text-[8px] text-zinc-600 font-black uppercase mt-1 group-hover:text-amber-500 transition-colors">Build Plan →</p>
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
-
-        <div className="px-8 py-4 border-t border-zinc-800 shrink-0">
-          <p className="text-[9px] text-zinc-600 font-bold uppercase text-center">Tap any unit to build a full tactical plan</p>
-        </div>
+        <p className="hq-small" style={{ padding: '12px 16px', borderTop: '1px solid var(--divider)', textAlign: 'center', flex: 'none' }}>
+          Tap any unit to build a full plan for it.
+        </p>
       </div>
     </div>
   );

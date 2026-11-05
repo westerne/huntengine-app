@@ -6,14 +6,16 @@
 
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { Check } from 'lucide-react';
 import type { FlowStep } from './types';
+import { Button, Card } from '../ui';
 
 // Leaflet touches `window`, so load the map client-side only.
 const UnitMap = dynamic(() => import('../UnitMap'), {
   ssr: false,
   loading: () => (
-    <div className="h-[440px] w-full flex items-center justify-center bg-zinc-950">
-      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Loading unit boundary…</p>
+    <div style={{ height: 440, width: '100%', display: 'grid', placeItems: 'center', background: 'var(--surface-sunk)' }}>
+      <p className="hq-small">Loading unit boundary…</p>
     </div>
   ),
 });
@@ -21,7 +23,12 @@ const UnitMap = dynamic(() => import('../UnitMap'), {
 export const BRIEF_TABS = ['unit-brief', 'hunt-plan', 'gear-list'] as const;
 type BriefTab = (typeof BRIEF_TABS)[number];
 
+const TAB_LABEL: Record<BriefTab, string> = { 'unit-brief': 'Unit brief', 'hunt-plan': 'Hunt plan', 'gear-list': 'Gear list' };
+const TAB_HEADING: Record<BriefTab, string> = { 'unit-brief': 'Unit visualization', 'hunt-plan': 'Hunt plan', 'gear-list': 'Gear list' };
+
 const asList = (v: any): any[] => (Array.isArray(v) ? v : typeof v === 'object' && v !== null ? Object.values(v) : []);
+
+const prose = { fontFamily: 'inherit', margin: 0 } as const;
 
 export default function BriefView({
   tab, onTab, unitBrief, huntPlan, gearList, map, save,
@@ -35,61 +42,78 @@ export default function BriefView({
   save?: { saved?: { id?: string; busy?: boolean; error?: string }; onSave: () => void; label: string; savedText: string };
 }) {
   return (
-    <div className="max-w-4xl mx-auto space-y-10 animate-in fade-in duration-1000 text-left">
-      <div className="flex justify-center gap-4 mb-4" role="tablist">
-        {BRIEF_TABS.map((t) => (
-          <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => onTab(t)} className={`px-6 py-2 rounded-full font-black uppercase text-[10px] tracking-widest border transition-all ${tab === t ? 'bg-amber-600 border-amber-600 text-white' : 'bg-zinc-900 border-zinc-800 text-zinc-500'}`}>
-            {t.replace('-', ' ')}
-          </button>
-        ))}
-      </div>
-      {save && (
-        <div className="flex justify-center">
-          {save.saved?.id ? (
-            <Link href={`/season/${save.saved.id}`} className="text-green-400 text-[11px] font-black uppercase tracking-widest">✓ {save.savedText}</Link>
-          ) : (
-            <button type="button" disabled={save.saved?.busy} onClick={save.onSave} className="bg-amber-600 text-white px-6 py-3 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px] disabled:opacity-50">
-              {save.saved?.busy ? 'Saving…' : save.label}
+    <div className="hq-stack hq-stack--lg hq-fade-up">
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }} role="tablist">
+        {BRIEF_TABS.map((t) => {
+          const on = tab === t;
+          return (
+            <button
+              key={t}
+              type="button"
+              role="tab"
+              aria-selected={on}
+              onClick={() => onTab(t)}
+              className="hq-chip"
+              style={on ? { background: 'var(--brand)', borderColor: 'var(--brand)', color: 'var(--on-brand)' } : undefined}
+            >
+              {TAB_LABEL[t]}
             </button>
+          );
+        })}
+      </div>
+
+      {save && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12 }}>
+          {save.saved?.id ? (
+            <span className="hq-ok" style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+              <Check size={16} aria-hidden="true" />
+              <Link href={`/season/${save.saved.id}`} className="hq-link">{save.savedText}</Link>
+            </span>
+          ) : (
+            <Button type="button" disabled={save.saved?.busy} onClick={save.onSave}>
+              {save.saved?.busy ? 'Saving…' : save.label}
+            </Button>
           )}
-          {save.saved?.error && <p role="alert" className="text-red-400 text-xs ml-3">{save.saved.error}</p>}
+          {save.saved?.error && <p role="alert" className="hq-err">{save.saved.error}</p>}
         </div>
       )}
-      <h2 className="text-4xl font-black italic uppercase border-l-8 border-amber-600 pl-8 leading-none">
-        {tab === 'unit-brief' ? 'Unit Visualization' : tab.replace('-', ' ')}
-      </h2>
-      <div className="bg-zinc-900/80 p-6 md:p-12 rounded-3xl border border-zinc-800 shadow-inner">
+
+      <h2 className="hq-h2">{TAB_HEADING[tab]}</h2>
+
+      <Card>
         {tab === 'unit-brief' && (
-          <div className="space-y-8">
+          <div className="hq-stack hq-stack--lg">
             {/* Real unit boundary on satellite imagery. */}
-            <div className="rounded-2xl overflow-hidden border border-zinc-800">
+            <div style={{ borderRadius: 'var(--r-md)', overflow: 'hidden', border: '1px solid var(--border)' }}>
               <UnitMap unit={map.unit} state={map.state} species={map.species} />
             </div>
             {typeof unitBrief === 'object' && unitBrief !== null ? (
-              Object.entries(unitBrief).map(([key, value]) => (
-                <div key={key} className="border-b border-zinc-800 pb-6 last:border-0">
-                  <h3 className="font-black uppercase text-amber-500 text-xs tracking-[0.2em] mb-3">{key}</h3>
-                  <div className="text-zinc-300 text-sm leading-loose whitespace-pre-wrap font-sans">
-                    {typeof value === 'string' ? value : JSON.stringify(value, null, 2)}
-                  </div>
-                </div>
-              ))
+              <div>
+                {Object.entries(unitBrief).map(([key, value], i) => (
+                  <section key={key} style={{ padding: '16px 0', borderTop: i > 0 ? '1px solid var(--divider)' : undefined }}>
+                    <h3 className="hq-h3" style={{ marginBottom: 6 }}>{key}</h3>
+                    <div className="hq-body hq-pre">
+                      {typeof value === 'string' ? value : JSON.stringify(value, null, 2)}
+                    </div>
+                  </section>
+                ))}
+              </div>
             ) : (
-              <pre className="whitespace-pre-wrap font-sans text-sm text-zinc-300 leading-loose">{unitBrief || 'No data available.'}</pre>
+              <pre className="hq-body hq-pre" style={prose}>{unitBrief || 'No data available.'}</pre>
             )}
           </div>
         )}
 
         {tab === 'hunt-plan' && (() => {
           const days = asList(huntPlan);
-          if (days.length === 0) return <pre className="whitespace-pre-wrap font-sans text-sm text-zinc-300 leading-loose">{String(huntPlan || 'No plan generated.')}</pre>;
+          if (days.length === 0) return <pre className="hq-body hq-pre" style={prose}>{String(huntPlan || 'No plan generated.')}</pre>;
           return (
-            <div className="space-y-8">
+            <div className="hq-stack hq-stack--lg">
               {days.map((day: any, i: number) => (
-                <div key={day.title || i} className="border-l-4 border-amber-600 pl-6">
-                  <h3 className="font-black uppercase text-amber-500 text-xs tracking-widest mb-3">{day.title || 'Day ' + (i + 1)}</h3>
-                  <p className="text-zinc-300 text-sm leading-relaxed">{day.plan || day.description || day.content || ''}</p>
-                </div>
+                <section key={day.title || i} className="hq-quote hq-quote--brand">
+                  <h3 className="hq-h3" style={{ marginBottom: 4 }}>{day.title || 'Day ' + (i + 1)}</h3>
+                  <p className="hq-body">{day.plan || day.description || day.content || ''}</p>
+                </section>
               ))}
             </div>
           );
@@ -97,29 +121,26 @@ export default function BriefView({
 
         {tab === 'gear-list' && (() => {
           const categories = asList(gearList);
-          if (categories.length === 0) return <pre className="whitespace-pre-wrap font-sans text-sm text-zinc-300 leading-loose">{String(gearList || 'No gear list generated.')}</pre>;
+          if (categories.length === 0) return <pre className="hq-body hq-pre" style={prose}>{String(gearList || 'No gear list generated.')}</pre>;
           return (
-            <div className="space-y-10">
+            <div className="hq-stack hq-stack--lg">
               {categories.map((cat: any, i: number) => (
-                <div key={cat.category || i}>
-                  <h3 className="font-black uppercase text-amber-500 text-xs tracking-widest mb-4 border-b border-zinc-800 pb-2">{cat.category || 'Category ' + (i + 1)}</h3>
-                  <div className="space-y-4">
+                <section key={cat.category || i}>
+                  <h3 className="hq-h3" style={{ paddingBottom: 6, borderBottom: '1px solid var(--divider)' }}>{cat.category || 'Category ' + (i + 1)}</h3>
+                  <ul className="hq-list">
                     {(cat.items || []).map((item: any, j: number) => (
-                      <div key={j} className="flex gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 shrink-0" />
-                        <div>
-                          <p className="font-black text-zinc-100 text-sm">{item.item}</p>
-                          {item.reason && <p className="text-zinc-500 text-xs mt-1 leading-relaxed">{item.reason}</p>}
-                        </div>
-                      </div>
+                      <li key={j} style={{ padding: '10px 0' }}>
+                        <p style={{ fontWeight: 700, color: 'var(--ink)' }}>{item.item}</p>
+                        {item.reason && <p className="hq-small" style={{ marginTop: 2 }}>{item.reason}</p>}
+                      </li>
                     ))}
-                  </div>
-                </div>
+                  </ul>
+                </section>
               ))}
             </div>
           );
         })()}
-      </div>
+      </Card>
     </div>
   );
 }

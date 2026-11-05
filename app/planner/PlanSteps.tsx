@@ -4,120 +4,128 @@
 
 import type { StepProps } from './types';
 import { FITNESS_LEVELS, SCOUTING_OPTIONS, STATES, STYLE_OPTIONS, WEAPON_OPTIONS, speciesFor, withState } from './constants';
-import { ChoiceList, FieldLabel, PointsInput, ProgressBar, ResidencyPicker, StepNav, TogglePill } from './ui';
+import { ChipRow, ChoiceList, FieldLabel, PointsInput, ProgressBar, ResidencyPicker, StepHeader, StepNav, TogglePill } from './ui';
+import { Card } from '../ui';
+
+const twoUp = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, alignItems: 'start' } as const;
 
 export default function PlanSteps(props: StepProps & { onSubmit: () => void }) {
   const { profile, updateProfile, goTo, togglePreference, progress, flags, onSubmit } = props;
   const step = progress.current;
 
   if (step === 'plan-1') return (
-    <div className="max-w-2xl mx-auto text-left animate-in fade-in slide-in-from-bottom-4">
+    <section className="hq-stack hq-fade-up">
       <ProgressBar {...progress} />
-      <h2 className="text-3xl font-black uppercase italic mb-8 text-amber-500">The Tag</h2>
-      <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-8">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <FieldLabel>State</FieldLabel>
-            <select aria-label="State" className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none" value={profile.states[0]} onChange={(e) => updateProfile(withState(profile, e.target.value))}>
-              {STATES.map((st) => <option key={st} value={st}>{st}</option>)}
-            </select>
+      <StepHeader title="Your tag" />
+      <Card>
+        <div className="hq-stack hq-stack--lg">
+          <div className="hq-fields">
+            <label className="hq-field">
+              <span className="hq-label">State</span>
+              <select aria-label="State" className="hq-input" value={profile.states[0]} onChange={(e) => updateProfile(withState(profile, e.target.value))}>
+                {STATES.map((st) => <option key={st} value={st}>{st}</option>)}
+              </select>
+            </label>
+            <label className="hq-field">
+              <span className="hq-label">Species</span>
+              <select aria-label="Species" className="hq-input" value={profile.species} onChange={(e) => updateProfile({ species: e.target.value })}>
+                {speciesFor(profile.states[0]).map((sp) => <option key={sp} value={sp}>{sp}</option>)}
+              </select>
+            </label>
+            <label className="hq-field hq-span">
+              <span className="hq-label">Unit name or number</span>
+              <input type="text" aria-label="Unit name or number" placeholder="e.g. 102 or Book Cliffs" className="hq-input" style={{ fontSize: 17, fontWeight: 700 }} value={profile.unit} onChange={(e) => updateProfile({ unit: e.target.value })} />
+            </label>
           </div>
-          <div>
-            <FieldLabel>Species</FieldLabel>
-            <select aria-label="Species" className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none" value={profile.species} onChange={(e) => updateProfile({ species: e.target.value })}>
-              {speciesFor(profile.states[0]).map((sp) => <option key={sp} value={sp}>{sp}</option>)}
-            </select>
-          </div>
+          <StepNav onNext={() => goTo('plan-2')} />
         </div>
-        <div>
-          <FieldLabel>Unit Name or Number</FieldLabel>
-          <input type="text" aria-label="Unit name or number" placeholder="e.g. 102 or Book Cliffs" className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-zinc-100 font-black text-xl outline-none focus:border-amber-500" value={profile.unit} onChange={(e) => updateProfile({ unit: e.target.value })} />
-        </div>
-        <StepNav onNext={() => goTo('plan-2')} />
-      </div>
-    </div>
+      </Card>
+    </section>
   );
 
   if (step === 'plan-2') return (
-    <div className="max-w-2xl mx-auto text-left animate-in fade-in slide-in-from-bottom-4">
+    <section className="hq-stack hq-fade-up">
       <ProgressBar {...progress} />
-      <h2 className="text-3xl font-black uppercase italic mb-8 text-amber-500">Hunter Profile</h2>
-      <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-8">
-        <div>
-          <FieldLabel>Residency</FieldLabel>
-          <ResidencyPicker value={profile.residency} onPick={(r) => updateProfile({ residency: r })} />
-        </div>
-        <div className="bg-black p-6 rounded-2xl border border-zinc-800">
-          <div className="flex justify-between items-center">
-            <div><h4 className="font-black uppercase text-sm">Total Points</h4><p className="text-[10px] text-zinc-500 font-bold uppercase">Points held when you drew</p></div>
+      <StepHeader title="Hunter profile" />
+      <Card>
+        <div className="hq-stack hq-stack--lg">
+          <div>
+            <FieldLabel>Residency</FieldLabel>
+            <ResidencyPicker value={profile.residency} onPick={(r) => updateProfile({ residency: r })} />
+          </div>
+          <div className="hq-inset" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+            <div style={{ minWidth: 0 }}>
+              <p className="hq-h3">Total points</p>
+              <p className="hq-small">Points you held when you drew</p>
+            </div>
             {flags.noPointSystem ? (
-              <div className="bg-amber-900/20 border border-amber-900/40 px-4 py-2 rounded-xl text-center">
-                <p className="text-[9px] text-amber-500 font-black uppercase tracking-widest leading-none">Random Draw</p>
-              </div>
+              <span className="hq-small" style={{ fontWeight: 700, color: 'var(--ink-soft)' }}>Random draw</span>
             ) : (
               <PointsInput
-                className="bg-zinc-900 border border-zinc-700 w-24 p-3 text-center rounded-xl text-amber-500 font-black text-2xl outline-none"
+                style={{ width: 96 }}
                 value={profile.points[flags.selState] || 0}
                 onChange={(n) => updateProfile({ points: { ...profile.points, [flags.selState]: n } })}
               />
             )}
           </div>
+          <StepNav onBack={() => goTo('plan-1')} onNext={() => goTo('plan-3')} />
         </div>
-        <StepNav onBack={() => goTo('plan-1')} onNext={() => goTo('plan-3')} />
-      </div>
-    </div>
+      </Card>
+    </section>
   );
 
   if (step === 'plan-3') return (
-    <div className="max-w-4xl mx-auto text-left animate-in fade-in slide-in-from-bottom-4">
+    <section className="hq-stack hq-fade-up">
       <ProgressBar {...progress} />
-      <h2 className="text-3xl font-black uppercase italic mb-8 text-amber-500 text-center">Style & Weapon</h2>
-      <div className="grid md:grid-cols-2 gap-8 mb-8">
-        <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-8">
-          <div>
-            <FieldLabel>Weapon</FieldLabel>
-            <div className="flex flex-wrap gap-2">{WEAPON_OPTIONS.map((w) => <TogglePill key={w} label={w} active={profile.weapons.includes(w)} onClick={() => togglePreference('weapons', w)} />)}</div>
+      <StepHeader title="Style and weapon" />
+      <div style={twoUp}>
+        <Card>
+          <div className="hq-stack hq-stack--lg">
+            <div>
+              <FieldLabel>Weapon</FieldLabel>
+              <ChipRow>{WEAPON_OPTIONS.map((w) => <TogglePill key={w} label={w} active={profile.weapons.includes(w)} onClick={() => togglePreference('weapons', w)} />)}</ChipRow>
+            </div>
+            <div>
+              <FieldLabel>Fitness</FieldLabel>
+              <ChipRow>{FITNESS_LEVELS.map((f) => <TogglePill key={f} label={f} active={profile.fitness === f} onClick={() => updateProfile({ fitness: f })} />)}</ChipRow>
+            </div>
           </div>
-          <div>
-            <FieldLabel>Fitness</FieldLabel>
-            <div className="flex flex-wrap gap-2">{FITNESS_LEVELS.map((f) => <TogglePill key={f} label={f} active={profile.fitness === f} onClick={() => updateProfile({ fitness: f })} />)}</div>
-          </div>
-        </div>
-        <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-8">
-          <div>
-            <FieldLabel>Style</FieldLabel>
-            <ChoiceList options={STYLE_OPTIONS.map((o) => ({ value: o, label: o }))} isActive={(o) => profile.huntStyles.includes(o)} onPick={(o) => togglePreference('huntStyles', o)} />
-          </div>
-        </div>
+        </Card>
+        <Card>
+          <FieldLabel>Style</FieldLabel>
+          <ChoiceList options={STYLE_OPTIONS.map((o) => ({ value: o, label: o }))} isActive={(o) => profile.huntStyles.includes(o)} onPick={(o) => togglePreference('huntStyles', o)} />
+        </Card>
       </div>
-      <StepNav className="flex gap-4 max-w-md mx-auto" onBack={() => goTo('plan-2')} onNext={() => goTo('plan-4')} />
-    </div>
+      <StepNav onBack={() => goTo('plan-2')} onNext={() => goTo('plan-4')} />
+    </section>
   );
 
   if (step === 'plan-4') return (
-    <div className="max-w-2xl mx-auto text-left animate-in fade-in slide-in-from-bottom-4">
+    <section className="hq-stack hq-fade-up">
       <ProgressBar {...progress} />
-      <h2 className="text-3xl font-black uppercase italic mb-8 text-amber-500 text-center">Logistics & Context</h2>
-      <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 space-y-8">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <FieldLabel>Days to Hunt</FieldLabel>
-            <input type="number" min={1} aria-label="Days to hunt" className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-zinc-300 font-bold outline-none" value={profile.daysToHunt} onChange={(e) => updateProfile({ daysToHunt: e.target.value })} />
+      <StepHeader title="Logistics and context" />
+      <Card>
+        <div className="hq-stack hq-stack--lg">
+          <div className="hq-fields">
+            <label className="hq-field">
+              <span className="hq-label">Days to hunt</span>
+              <input type="number" min={1} aria-label="Days to hunt" className="hq-input" value={profile.daysToHunt} onChange={(e) => updateProfile({ daysToHunt: e.target.value })} />
+            </label>
+            <label className="hq-field">
+              <span className="hq-label">Scouting</span>
+              <select aria-label="Scouting availability" className="hq-input" value={profile.scoutingAvailability} onChange={(e) => updateProfile({ scoutingAvailability: e.target.value })}>
+                {SCOUTING_OPTIONS.map((v) => <option key={v} value={v}>{v}</option>)}
+              </select>
+            </label>
+            <label className="hq-field hq-span">
+              <span className="hq-label">Additional info</span>
+              <textarea rows={5} aria-label="Additional info" className="hq-input" placeholder="I've looked at the north ridge, I usually access from the south…" value={profile.notes} onChange={(e) => updateProfile({ notes: e.target.value })} />
+            </label>
           </div>
-          <div>
-            <FieldLabel>Scouting</FieldLabel>
-            <select aria-label="Scouting availability" className="w-full bg-black border border-zinc-800 p-4 rounded-xl font-bold text-zinc-300 outline-none" value={profile.scoutingAvailability} onChange={(e) => updateProfile({ scoutingAvailability: e.target.value })}>
-              {SCOUTING_OPTIONS.map((v) => <option key={v} value={v}>{v}</option>)}
-            </select>
-          </div>
+          <StepNav onBack={() => goTo('plan-3')} onNext={onSubmit} nextLabel="Generate plan" primary />
         </div>
-        <div>
-          <FieldLabel>Additional Info</FieldLabel>
-          <textarea rows={5} aria-label="Additional info" className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-zinc-300 font-bold outline-none focus:border-amber-500" placeholder="I've looked at the north ridge, I usually access from the south..." value={profile.notes} onChange={(e) => updateProfile({ notes: e.target.value })} />
-        </div>
-        <StepNav onBack={() => goTo('plan-3')} onNext={onSubmit} nextLabel="Generate Plan" primary />
-      </div>
-    </div>
+      </Card>
+    </section>
   );
 
   return null;

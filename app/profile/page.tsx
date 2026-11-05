@@ -6,6 +6,7 @@ import { supabaseServer } from '@/lib/supabase/server';
 
 // Per-request: depends on the signed-in user.
 export const dynamic = 'force-dynamic';
+export const metadata = { title: 'Me | HuntQuarters' };
 
 export default async function ProfilePage() {
   if (!accountsEnabled()) redirect('/');
@@ -18,7 +19,7 @@ export default async function ProfilePage() {
     supabase.from('hunter_points').select('state, species, points, as_of_year, verified_on').order('state'),
   ]);
   return (
-    <div className="min-h-screen bg-black text-zinc-100">
+    <div className="hq" style={{ minHeight: '100vh' }}>
       <ProfileForm email={viewer.email} profile={profile ?? {}} points={points ?? []} />
     </div>
   );

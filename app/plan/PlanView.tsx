@@ -21,11 +21,8 @@ async function send(url: string, method: string, body?: unknown) {
   return j;
 }
 
-// Utah names hunts after their units ("Monroe"), so don't say it twice.
-const titleOf = (h: PlanHunt) => {
-  const code = h.huntCode && h.unit && h.huntCode.toLowerCase() === h.unit.toLowerCase() ? null : h.huntCode;
-  return `${h.species}${h.unit || code ? ` · ${huntTitle(h.unit ?? code!, h.unit ? code : null)}` : ''}`;
-};
+const titleOf = (h: PlanHunt) =>
+  `${h.species}${h.unit || h.huntCode ? ` · ${huntTitle(h.unit ?? h.huntCode!, h.unit ? h.huntCode : null)}` : ''}`;
 const subOf = (h: PlanHunt) => {
   if (h.short) return [h.short.text, h.due].filter(Boolean).join(' · ');
   if (h.due) return h.due;

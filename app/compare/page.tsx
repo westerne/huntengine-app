@@ -11,6 +11,7 @@ import type { SpeciesKey } from '@/lib/huntdata/schema';
 import CompareView, { type YourNotes } from './CompareView';
 
 export const dynamic = 'force-dynamic';
+export const metadata = { title: 'Compare | HuntQuarters' };
 
 // Compare 2–4 hunts: /compare?h=OR~ELK~210A2,WY~ELK~125-1
 // The recommendation leads; the full table is below it.
@@ -73,7 +74,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
   cols.sort((a, b) => asked(a.key) - asked(b.key));
 
   return (
-    <div className="min-h-screen bg-black text-zinc-100">
+    <div className="hq" style={{ minHeight: '100vh' }}>
       <CompareView cols={cols} pick={pickBest(cols)} notes={notes} missing={missing} years={years} homeState={home} />
     </div>
   );

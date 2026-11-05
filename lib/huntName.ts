@@ -20,8 +20,14 @@ export function huntCodeText(code: string | null | undefined): string {
 }
 
 export function huntTitle(unit: string, code: string | null | undefined): string {
-  const c = huntCodeText(code);
+  // Utah names hunts after their units ("Monroe"), so don't say it twice.
+  const c = code && code.toLowerCase() === String(unit).toLowerCase() ? '' : huntCodeText(code);
   return `${unitText(unit)}${c ? ` · ${c}` : ''}`;
+}
+
+// Stored labels are sometimes slugs ("general-season"); show them as words.
+export function labelText(label: string): string {
+  return /^[a-z]+(-[a-z]+)+$/.test(label) ? label.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()) : label;
 }
 
 // The same, inside model-written prose ("put GEN-127-any first").

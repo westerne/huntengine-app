@@ -4,6 +4,7 @@ import { accountsEnabled } from '@/lib/supabase/config';
 import ImportSheet from './ImportSheet';
 
 export const dynamic = 'force-dynamic';
+export const metadata = { title: 'Import | HuntQuarters' };
 
 export default async function ImportPage() {
   if (!accountsEnabled()) redirect('/');
@@ -11,7 +12,7 @@ export default async function ImportPage() {
   if (!viewer.userId) redirect('/login');
   if (!viewer.member) redirect('/join');
   return (
-    <div className="min-h-screen bg-black text-zinc-100">
+    <div className="hq" style={{ minHeight: '100vh' }}>
       <ImportSheet />
     </div>
   );

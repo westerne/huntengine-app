@@ -12,6 +12,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { compareKey, MAX_COMPARE } from '@/lib/compare';
 import AddToPlan from './AddToPlan';
+import { Button, ButtonLink, Card, Caveat } from '../ui';
 
 export type Match = {
   unit: string;
@@ -48,15 +49,25 @@ export type Narrowed = {
 
 const pctText = (n: number) => (n >= 10 ? `${Math.round(n)}%` : `${n.toFixed(1)}%`);
 
+
+// A condition tag, not a toggle: it shows, it isn't tapped, so it carries no
+// gold. Green and the tick go together; a miss is struck through and says so.
 function Chip({ kind, children }: { kind: 'yes' | 'no' | 'maybe'; children: React.ReactNode }) {
-  const cls = kind === 'yes'
-    ? 'border-amber-700/60 text-amber-500'
-    : kind === 'no'
-    ? 'border-zinc-800 text-zinc-600 line-through'
-    : 'border-zinc-800 text-zinc-600';
+  const color = kind === 'yes' ? 'var(--good)' : kind === 'no' ? 'var(--ink-muted)' : 'var(--ink-soft)';
   return (
-    <span className={`inline-flex items-center gap-1 border ${cls} rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider`}>
-      {kind === 'yes' ? '✓' : kind === 'no' ? '✕' : '?'} {children}
+    <span
+      style={{
+        display: 'inline-flex', alignItems: 'center', gap: 5, padding: '3px 10px', borderRadius: 'var(--r-pill)',
+        border: `1px solid ${kind === 'yes' ? 'var(--good)' : 'var(--divider)'}`,
+        background: kind === 'maybe' ? 'var(--surface-sunk)' : 'transparent',
+        color, fontSize: 13, fontWeight: 600, lineHeight: 1.4,
+        textDecoration: kind === 'no' ? 'line-through' : undefined,
+      }}
+    >
+      <span aria-hidden="true">{kind === 'yes' ? '✓' : kind === 'no' ? '✕' : '?'}</span>
+      {kind === 'yes' && <span className="hq-sr">Fits:</span>}
+      {kind === 'no' && <span className="hq-sr">Doesn&apos;t fit:</span>}
+      {children}
     </span>
   );
 }
@@ -82,9 +93,9 @@ function MatchCard({
   const kind = m.antlerless ? 'Cow or doe tag' : null;
 
   return (
-    <li className={`bg-zinc-900 border rounded-xl px-4 py-4 space-y-2 ${picked ? 'border-amber-700' : 'border-zinc-800'}`}>
-      <div className="flex items-start justify-between gap-4">
-        <span className="min-w-0 flex items-start gap-3">
+    <Card as="li" style={{ padding: 16, borderColor: picked ? 'var(--brand)' : undefined, display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
+        <span style={{ minWidth: 0, display: 'flex', alignItems: 'flex-start', gap: 12 }}>
           <input
             type="checkbox"
             checked={picked}
@@ -92,52 +103,52 @@ function MatchCard({
             // Ticking a fifth would silently drop one on the compare screen.
             disabled={!picked && full}
             aria-label={`Compare ${m.unit}${m.huntCode ? ` ${m.huntCode}` : ''}`}
-            className="mt-1 accent-amber-600 shrink-0 disabled:opacity-30"
+            style={{ marginTop: 3, width: 18, height: 18, flex: 'none', accentColor: 'var(--brand)', opacity: !picked && full ? 0.35 : 1 }}
           />
-          <span className="min-w-0">
-          <span className="block text-white font-black uppercase italic text-sm">
-            {lead && <span className="text-amber-600 not-italic">Best fit · </span>}
-            {m.unit}{m.huntCode && m.huntCode !== m.unit ? ` · ${m.huntCode}` : ''}
-            {kind && <span className="text-zinc-500 not-italic font-bold"> — {kind}</span>}
-          </span>
-          {m.label && <span className="block text-zinc-500 text-xs mt-0.5">{m.label}</span>}
-            {facts && <span className="block text-zinc-400 text-xs mt-1">{facts}</span>}
+          <span style={{ minWidth: 0, overflowWrap: 'anywhere' }}>
+            {lead && <span className="hq-eyebrow" style={{ display: 'block', marginBottom: 2 }}>Best fit</span>}
+            <span className="hq-h3" style={{ display: 'block' }}>
+              {m.unit}{m.huntCode && m.huntCode !== m.unit ? ` · ${m.huntCode}` : ''}
+              {kind && <span style={{ color: 'var(--ink-muted)', fontWeight: 600 }}> — {kind}</span>}
+            </span>
+            {m.label && <span className="hq-small" style={{ display: 'block', marginTop: 2 }}>{m.label}</span>}
+            {facts && <span className="hq-small" style={{ display: 'block', marginTop: 4, color: 'var(--ink-soft)' }}>{facts}</span>}
           </span>
         </span>
-        <span className="text-right shrink-0">
+        <span style={{ textAlign: 'right', flex: 'none', display: 'flex', flexDirection: 'column', gap: 2 }}>
           {m.odds != null
-            ? <span className="block text-amber-500 font-black text-sm">{pctText(m.odds)}</span>
+            ? <span className="hq-data" style={{ fontWeight: 700, fontSize: 16 }}>{pctText(m.odds)}</span>
             // Colorado and Utah publish a rate per hunt and nothing by point
             // level. That figure is the hunt's, not his, and says so.
             : m.publishedRate != null && (
               <>
-                <span className="block text-zinc-300 font-black text-sm">{pctText(m.publishedRate)}</span>
-                <span className="block text-zinc-500 text-[10px] uppercase tracking-widest">drew overall</span>
+                <span className="hq-data" style={{ fontWeight: 700, fontSize: 16, color: 'var(--ink-soft)' }}>{pctText(m.publishedRate)}</span>
+                <span className="hq-small">drew overall</span>
               </>
             )}
           {m.pointsNeeded != null && (
-            <span className="block text-zinc-500 text-[10px] uppercase tracking-widest">
+            <span className="hq-small">
               {m.pointsNeeded} pt{m.pointsNeeded === 1 ? '' : 's'} drew
             </span>
           )}
           {m.hunterSuccess && (
-            <span className="block text-zinc-400 text-[10px] uppercase tracking-widest">{m.hunterSuccess} filled</span>
+            <span className="hq-small">{m.hunterSuccess} filled</span>
           )}
         </span>
       </div>
       {(m.matched.length > 0 || m.missed.length > 0 || m.unknown.length > 0) && (
-        <div className="flex flex-wrap gap-1.5 pt-1">
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {m.matched.map((k) => <Chip key={k} kind="yes">{labels[k] ?? k}</Chip>)}
           {m.missed.map((k) => <Chip key={k} kind="no">{labels[k] ?? k}</Chip>)}
           {m.unknown.map((k) => <Chip key={k} kind="maybe">{labels[k] ?? k} unknown</Chip>)}
         </div>
       )}
-      <div className="flex flex-wrap items-center gap-4 pt-1">
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 16 }}>
         <Link
           href={`/compare?h=${encodeURIComponent(compareKey(n.state, n.speciesKey, m.huntCode ?? m.unit))}`}
-          className="text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-white"
+          className="hq-link hq-small"
         >
-          All the data →
+          All the data
         </Link>
         <AddToPlan
           target={{
@@ -152,7 +163,7 @@ function MatchCard({
           note={m.matched.length ? `Matched: ${m.matched.map((k) => labels[k] ?? k).join(', ')}.` : undefined}
         />
       </div>
-    </li>
+    </Card>
   );
 }
 
@@ -171,59 +182,57 @@ export default function Matches({ n, onChange }: { n: Narrowed; onChange: () => 
   const compareHref = `/compare?h=${toCompare.map((c) => encodeURIComponent(compareKey(n.state, n.speciesKey, c))).join(',')}`;
 
   return (
-    <section aria-labelledby="matches-h" className="space-y-5">
-      <div className="border border-zinc-800 rounded-2xl p-5 space-y-3">
-        <h2 id="matches-h" className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
-          What we took from that
-        </h2>
-        {n.readback && <p className="text-zinc-100 leading-relaxed">{n.readback}</p>}
-        {n.wants.length > 0 ? (
-          <div className="flex flex-wrap gap-1.5">
-            {n.wants.map((k) => <Chip key={k} kind="yes">{n.wantLabels[k] ?? k}</Chip>)}
+    <section aria-labelledby="matches-h" className="hq-stack hq-stack--lg hq-fade-up">
+      <Card>
+        <div className="hq-stack" style={{ gap: 12 }}>
+          <h2 id="matches-h" className="hq-h3">What we took from that</h2>
+          {n.readback && <p className="hq-body" style={{ color: 'var(--ink)' }}>{n.readback}</p>}
+          {n.wants.length > 0 ? (
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+              {n.wants.map((k) => <Chip key={k} kind="yes">{n.wantLabels[k] ?? k}</Chip>)}
+            </div>
+          ) : (
+            <p className="hq-small" style={{ color: 'var(--ink-soft)' }}>
+              Nothing in that mapped onto something the draw data can sort on, so these are still ranked on
+              your odds. Try naming a weapon, a month, antlers or meat, or how many other hunters you can stand.
+            </p>
+          )}
+          <div>
+            <Button type="button" variant="secondary" size="sm" onClick={onChange}>Say it differently</Button>
           </div>
-        ) : (
-          <p className="text-zinc-500 text-sm">
-            Nothing in that mapped onto something the draw data can sort on, so these are still ranked on
-            your odds. Try naming a weapon, a month, antlers or meat, or how many other hunters you can stand.
-          </p>
-        )}
-        <button
-          type="button"
-          onClick={onChange}
-          className="text-[10px] font-black uppercase tracking-widest text-amber-600 hover:text-amber-500"
-        >
-          Say it differently
-        </button>
-      </div>
+        </div>
+      </Card>
 
       {n.relaxed.length > 0 && (
-        <p role="status" className="text-amber-500/90 text-sm border border-amber-900/50 rounded-xl px-4 py-3">
-          Nothing with {relaxedText} is within reach in {n.state} at your points. These are the closest hunts —
-          each one breaks that condition, and the chip says so.
-        </p>
+        <div role="status">
+          <Caveat tone="warn">
+            Nothing with {relaxedText} is within reach in {n.state} at your points. These are the closest hunts —
+            each one breaks that condition, and the chip says so.
+          </Caveat>
+        </div>
       )}
 
       {n.picks.length > 0 ? (
-        <div className="space-y-2">
-          <h3 className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
+        <div className="hq-stack" style={{ gap: 10 }}>
+          <h3 className="hq-h3">
             Best fits ({n.picks.length} of {n.considered} you could draw)
           </h3>
           {/* The headline above counts bull and buck tags. If "meat matters"
               widened the pool, the two numbers differ and we say why. */}
           {n.pool.antlerless > 0 && (
-            <p className="text-zinc-500 text-xs">
+            <p className="hq-small">
               {n.pool.antlered} antlered and {n.pool.antlerless} antlerless, since you said meat matters.
             </p>
           )}
           {/* A list of one looks like missing data unless we say why it's one. */}
           {n.excluded > 0 && (
-            <p className="text-zinc-500 text-xs">
+            <p className="hq-small">
               {n.excluded} of them {n.excluded === 1 ? "doesn't" : "don't"} fit{' '}
               {n.wants.filter((k) => ['archery', 'rifle', 'muzzleloader', 'antleredOnly'].includes(k))
                 .map((k) => n.wantLabels[k] ?? k).join(' and ') || 'what you asked for'}, so they&apos;re set aside.
             </p>
           )}
-          <ul className="space-y-2">
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
             {n.picks.map((m, i) => (
               <MatchCard
                 key={`${m.unit}|${m.huntCode}`}
@@ -239,38 +248,35 @@ export default function Matches({ n, onChange }: { n: Narrowed; onChange: () => 
           </ul>
         </div>
       ) : (
-        <p className="text-zinc-400 text-sm">
+        <p className="hq-body">
           Nothing is within reach in {n.state} for {n.species.toLowerCase()} at your points, so there is nothing
           to narrow. The timeline above is the honest answer.
         </p>
       )}
 
       {n.cannot.length > 0 && (
-        <div className="border border-zinc-800 rounded-2xl p-5 space-y-2">
-          <h3 className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
-            You asked about things the draw data can&apos;t answer
-          </h3>
-          <ul className="text-zinc-400 text-sm space-y-1">
-            {n.cannot.map((c) => <li key={c.key}>— {c.text}</li>)}
-          </ul>
-          <p className="text-zinc-600 text-xs">
-            Draw results are tags, applicants and success rates. Ground like that comes once you&apos;ve picked a
-            unit: open one below and the hunt plan covers access, terrain and where to start.
-          </p>
-        </div>
+        <Card variant="flat">
+          <div className="hq-stack" style={{ gap: 10 }}>
+            <h3 className="hq-h3">You asked about things the draw data can&apos;t answer</h3>
+            <ul style={{ margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
+              {n.cannot.map((c) => <li key={c.key} className="hq-body" style={{ fontSize: 14 }}>{c.text}</li>)}
+            </ul>
+            <p className="hq-small">
+              Draw results are tags, applicants and success rates. Ground like that comes once you&apos;ve picked a
+              unit: open one below and the hunt plan covers access, terrain and where to start.
+            </p>
+          </div>
+        </Card>
       )}
 
       {n.picks.length > 1 && (
-        <div className="flex flex-wrap items-center gap-3 pt-2">
-          <Link
-            href={compareHref}
-            className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500"
-          >
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12 }}>
+          <ButtonLink href={compareHref}>
             {picked.length >= 2
               ? `Compare these ${picked.length}`
               : `Compare the top ${toCompare.length}`}
-          </Link>
-          <span className="text-zinc-600 text-xs">
+          </ButtonLink>
+          <span className="hq-small" style={{ flex: '1 1 220px' }}>
             {picked.length >= 2
               ? `Side by side: odds, how reliable they are, when you'd likely draw, and what hunters filled.`
               : picked.length === 1

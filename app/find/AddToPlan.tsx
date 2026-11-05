@@ -11,6 +11,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { Button } from '../ui';
 
 export type PlanTarget = {
   state: string;            // state code
@@ -54,24 +55,19 @@ export default function AddToPlan({ target, note }: { target: PlanTarget; note?:
 
   if (state === 'done') {
     return (
-      <span className="text-[10px] font-black uppercase tracking-widest text-green-500">
+      <span className="hq-ok" style={{ fontSize: 13 }}>
         On your calendar{target.year ? ` for ${target.year}` : ''} ·{' '}
-        <Link href="/plan" className="text-amber-600 hover:text-amber-500">Open it</Link>
+        <Link href="/plan" className="hq-link">Open it</Link>
       </span>
     );
   }
 
   return (
-    <span className="inline-flex items-center gap-2">
-      <button
-        type="button"
-        onClick={add}
-        disabled={state === 'saving'}
-        className="text-[10px] font-black uppercase tracking-widest text-amber-600 hover:text-amber-500 disabled:opacity-50"
-      >
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+      <Button type="button" variant="secondary" size="sm" onClick={add} disabled={state === 'saving'}>
         {state === 'saving' ? 'Adding…' : `+ Add to ${target.year ? target.year : 'my calendar'}`}
-      </button>
-      {state === 'error' && <span role="alert" className="text-red-400 text-[10px]">{message}</span>}
+      </Button>
+      {state === 'error' && <span role="alert" className="hq-err">{message}</span>}
     </span>
   );
 }

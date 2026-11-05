@@ -14,8 +14,8 @@ import { STATES, speciesFor } from '../planner/constants';
 import AskBox from './AskBox';
 import Matches, { type Narrowed } from './Matches';
 import AddToPlan from './AddToPlan';
-
-const inputCls = 'bg-black border border-zinc-800 p-3 rounded-xl text-zinc-200 outline-none focus:border-amber-500';
+import { ButtonLink, Card, Caveat } from '../ui';
+import { Loader } from '../ui/client';
 
 type Hunt = {
   unit: string;
@@ -55,44 +55,44 @@ const pctText = (n: number) => (n >= 10 ? `${Math.round(n)}%` : `${n.toFixed(1)}
 
 function HuntRow({ h, showOdds, r }: { h: Hunt; showOdds: boolean; r: Reality }) {
   return (
-    <li className="bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 space-y-2">
-      <div className="flex items-start justify-between gap-4">
-      <span className="min-w-0">
-        <span className="block text-white font-black uppercase italic text-sm">
-          {h.unit}{h.huntCode && h.huntCode !== h.unit ? ` · ${h.huntCode}` : ''}
-        </span>
-        {h.label && <span className="block text-zinc-500 text-xs mt-0.5">{h.label}</span>}
-      </span>
-      <span className="text-right shrink-0">
-        {showOdds && h.odds != null && (
-          <span className="block text-amber-500 font-black text-sm">{pctText(h.odds)}</span>
-        )}
-        {/* An overall rate is the hunt's, not his. Shown in a different colour
-            and spelled out, so it can't be mistaken for his own chance. */}
-        {!showOdds && h.publishedRate != null && (
-          <>
-            <span className="block text-zinc-300 font-black text-sm">{pctText(h.publishedRate)}</span>
-            <span className="block text-zinc-500 text-[10px] uppercase tracking-widest">drew overall</span>
-          </>
-        )}
-        {h.pointsNeeded != null && (
-          <span className="block text-zinc-500 text-[10px] uppercase tracking-widest">
-            {h.pointsNeeded} pt{h.pointsNeeded === 1 ? '' : 's'} drew
+    <li style={{ padding: '12px 0', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
+        <span style={{ minWidth: 0, overflowWrap: 'anywhere' }}>
+          <span className="hq-h3" style={{ display: 'block' }}>
+            {h.unit}{h.huntCode && h.huntCode !== h.unit ? ` · ${h.huntCode}` : ''}
           </span>
-        )}
-        {h.hunterSuccess != null && (
-          <span className="block text-zinc-400 text-[10px] uppercase tracking-widest">{h.hunterSuccess}% success</span>
-        )}
-      </span>
+          {h.label && <span className="hq-small" style={{ display: 'block', marginTop: 2 }}>{h.label}</span>}
+        </span>
+        <span style={{ textAlign: 'right', flex: 'none', display: 'flex', flexDirection: 'column', gap: 2 }}>
+          {showOdds && h.odds != null && (
+            <span className="hq-data" style={{ fontWeight: 700, fontSize: 16 }}>{pctText(h.odds)}</span>
+          )}
+          {/* An overall rate is the hunt's, not his. Shown in a different colour
+              and spelled out, so it can't be mistaken for his own chance. */}
+          {!showOdds && h.publishedRate != null && (
+            <>
+              <span className="hq-data" style={{ fontWeight: 700, fontSize: 16, color: 'var(--ink-soft)' }}>{pctText(h.publishedRate)}</span>
+              <span className="hq-small">drew overall</span>
+            </>
+          )}
+          {h.pointsNeeded != null && (
+            <span className="hq-small">
+              {h.pointsNeeded} pt{h.pointsNeeded === 1 ? '' : 's'} drew
+            </span>
+          )}
+          {h.hunterSuccess != null && (
+            <span className="hq-small">{h.hunterSuccess}% success</span>
+          )}
+        </span>
       </div>
       {/* Same two moves as a matched card, so skipping the question doesn't
           leave a hunter with nothing to do about what he's looking at. */}
-      <div className="flex flex-wrap items-center gap-4">
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 16 }}>
         <Link
           href={`/compare?h=${encodeURIComponent(`${r.state}~${r.speciesKey}~${h.huntCode ?? h.unit}`)}`}
-          className="text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-white"
+          className="hq-link hq-small"
         >
-          All the data →
+          All the data
         </Link>
         <AddToPlan
           target={{
@@ -166,87 +166,87 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
   const showOdds = reality?.basis === 'your-points';
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-10 space-y-8">
+    <main style={{ maxWidth: 760, margin: '0 auto', padding: '24px 16px 40px', display: 'flex', flexDirection: 'column', gap: 24 }}>
       <div>
-        <h1 className="text-3xl font-black italic uppercase">Find a hunt</h1>
-        <p className="text-zinc-400 text-sm mt-2">
+        <h1 className="hq-h1">Find a hunt</h1>
+        <p className="hq-body" style={{ marginTop: 6 }}>
           Pick a state and species. We&apos;ll tell you what your points buy there before asking anything else.
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-3">
-        <label className="flex flex-col gap-1">
-          <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">State</span>
-          <select aria-label="State" className={inputCls} value={state} onChange={(e) => onState(e.target.value)}>
+      <div className="hq-fields">
+        <label className="hq-field">
+          <span className="hq-label">State</span>
+          <select aria-label="State" className="hq-input" value={state} onChange={(e) => onState(e.target.value)}>
             {STATES.map((s) => <option key={s}>{s}</option>)}
           </select>
         </label>
-        <label className="flex flex-col gap-1">
-          <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Species</span>
-          <select aria-label="Species" className={inputCls} value={species} onChange={(e) => setSpecies(e.target.value)}>
+        <label className="hq-field">
+          <span className="hq-label">Species</span>
+          <select aria-label="Species" className="hq-input" value={species} onChange={(e) => setSpecies(e.target.value)}>
             {speciesFor(state).map((s) => <option key={s}>{s}</option>)}
           </select>
         </label>
       </div>
 
-      {busy && <p className="text-zinc-500 text-sm">Reading the draw data…</p>}
-      {error && <p role="alert" className="text-red-400 text-sm">{error}</p>}
+      {busy && <Loader lines={['Reading the draw data', 'Checking your points', 'Lining up the odds']} />}
+      {error && <Caveat tone="stop">{error}</Caveat>}
 
       {reality && answered && (
-        <section aria-labelledby="reality-h" className="space-y-5">
-          <h2 id="reality-h" className="sr-only">What your points buy</h2>
+        <section aria-labelledby="reality-h" className="hq-stack hq-stack--lg hq-fade-up">
+          <h2 id="reality-h" className="hq-sr">What your points buy</h2>
 
-          <div className="border border-zinc-800 rounded-2xl p-5 space-y-3">
-            <p className="text-zinc-100 leading-relaxed">{reality.headline}</p>
-            <p className="text-zinc-600 text-xs">{reality.caveat}</p>
-            <p className="text-zinc-600 text-xs">
-              {reality.residency === 'resident' ? 'Resident' : 'Non-resident'} odds, from your profile.{' '}
-              <Link href="/profile" className="text-amber-600 hover:text-amber-500">Change your points or home state</Link>
-            </p>
-          </div>
+          <Card>
+            <div className="hq-stack" style={{ gap: 12 }}>
+              <p className="hq-body" style={{ color: 'var(--ink)', fontSize: 17 }}>{reality.headline}</p>
+              <Caveat>{reality.caveat}</Caveat>
+              <p className="hq-small">
+                {reality.residency === 'resident' ? 'Resident' : 'Non-resident'} odds, from your profile.{' '}
+                <Link href="/profile" className="hq-link">Change your points or home state</Link>
+              </p>
+            </div>
+          </Card>
 
           {/* Nothing to narrow unless something is reachable, so the question
               only appears once it would change an answer. */}
           {reality.reachable.length > 0 && !narrowed && (
             <AskBox onAsk={ask} busy={matching} />
           )}
-          {askError && <p role="alert" className="text-red-400 text-sm">{askError}</p>}
+          {askError && <Caveat tone="stop">{askError}</Caveat>}
 
           {narrowed ? (
             <Matches n={narrowed} onChange={() => setNarrowed(null)} />
           ) : reality.reachable.length > 0 && (
-            <div className="space-y-2">
+            <Card aria-labelledby="reach-h">
               {/* "Within reach" is a claim about him. Where all we have is the
                   hunt's own rate, the heading says what the order means. */}
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
+              <h3 id="reach-h" className="hq-h3">
                 {reality.priced
                   ? `Within reach (${reality.counts.reachable})`
                   : `Easiest to draw first (${Math.min(8, reality.reachable.length)} of ${reality.counts.reachable})`}
               </h3>
-              <ul className="space-y-2">
+              <ul className="hq-list" style={{ marginTop: 4 }}>
                 {reality.reachable.slice(0, 8).map((h) => (
                   <HuntRow key={`${h.unit}|${h.huntCode}`} h={h} showOdds={!!showOdds} r={reality} />
                 ))}
               </ul>
-            </div>
+            </Card>
           )}
 
           {reality.soon.length > 0 && (
-            <div className="space-y-2">
+            <Card aria-labelledby="soon-h">
               {/* Not "worth building toward": in a lottery state the soonest
                   hunt is often the worst bet — Nevada's nearest is 0.4% at the
                   points it takes, and one four years further out is 17%. The
                   list is a timeline, and each row says what it's really worth. */}
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
-                If you keep applying
-              </h3>
-              <ul className="space-y-2">
+              <h3 id="soon-h" className="hq-h3">If you keep applying</h3>
+              <ul className="hq-list" style={{ marginTop: 4 }}>
                 {reality.soon.filter((h) => !h.farOff).slice(0, 4).map((h) => (
-                  <li key={`${h.unit}|${h.huntCode}`} className="bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3">
-                    <span className="block text-white font-black uppercase italic text-sm">
+                  <li key={`${h.unit}|${h.huntCode}`} style={{ padding: '12px 0', display: 'flex', flexDirection: 'column', gap: 4 }}>
+                    <span className="hq-h3" style={{ overflowWrap: 'anywhere' }}>
                       {h.unit}{h.huntCode && h.huntCode !== h.unit ? ` · ${h.huntCode}` : ''}
                     </span>
-                    <span className="block text-zinc-400 text-xs mt-1">
+                    <span className="hq-small" style={{ color: 'var(--ink-soft)' }}>
                       Took {h.pointsNeeded} points — you&apos;d have that in {h.year}
                       {h.hunterSuccess != null ? `, and ${h.hunterSuccess}% of hunters filled` : ''}.
                     </span>
@@ -254,7 +254,7 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
                         point order. Elsewhere it's a ticket, and saying so is
                         the difference between a plan and five wasted years. */}
                     {!h.cutoffIsADate && (
-                      <span className="block text-zinc-500 text-xs mt-1">
+                      <span className="hq-small">
                         {h.oddsAtThatLevel != null
                           ? `Still a lottery at that level — ${pctText(h.oddsAtThatLevel)} of applicants holding ${h.pointsNeeded} points drew.`
                           : 'Still a lottery at that level — the points get you into the draw, not the tag.'}
@@ -262,7 +262,7 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
                     )}
                     {/* A hunt years out is only a plan once it has a year
                         against it, which is what the calendar is for. */}
-                    <span className="block mt-2">
+                    <span style={{ display: 'block', marginTop: 6 }}>
                       <AddToPlan
                         target={{
                           state: reality.state,
@@ -278,49 +278,49 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
                   </li>
                 ))}
               </ul>
-            </div>
+            </Card>
           )}
 
           {/* Folded into the match list once he's said whether meat matters. */}
           {!narrowed && reality.antlerless.length > 0 && (
-            <div className="space-y-2">
+            <div className="hq-stack" style={{ gap: 8 }}>
               <button
                 type="button"
                 onClick={() => setShowCow((v) => !v)}
-                className="text-[10px] font-black uppercase tracking-widest text-amber-600 hover:text-amber-500"
+                aria-expanded={showCow}
+                className="hq-link"
+                style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer', alignSelf: 'flex-start', fontSize: 15 }}
               >
                 {showCow ? 'Hide' : 'Show'} antlerless tags ({reality.counts.antlerless})
               </button>
               {showCow && (
-                <ul className="space-y-2">
-                  {reality.antlerless.slice(0, 8).map((h) => (
-                    <HuntRow key={`${h.unit}|${h.huntCode}`} h={h} showOdds={!!showOdds} r={reality} />
-                  ))}
-                </ul>
+                <Card className="hq-fade-up">
+                  <ul className="hq-list">
+                    {reality.antlerless.slice(0, 8).map((h) => (
+                      <HuntRow key={`${h.unit}|${h.huntCode}`} h={h} showOdds={!!showOdds} r={reality} />
+                    ))}
+                  </ul>
+                </Card>
               )}
             </div>
           )}
 
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {/* Was the four-screen questionnaire, which asked again for what
                 this page already knows. The reachable hunts go straight to the
                 side-by-side instead. */}
             {!narrowed && reality.reachable.length > 1 && (
-              <Link
+              <ButtonLink
                 href={`/compare?h=${reality.reachable.slice(0, 3)
                   .map((h) => encodeURIComponent(`${reality.state}~${reality.speciesKey}~${h.huntCode ?? h.unit}`))
                   .join(',')}`}
-                className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500"
               >
                 Compare the top {Math.min(3, reality.reachable.length)}
-              </Link>
+              </ButtonLink>
             )}
-            <Link
-              href="/plan"
-              className="border border-zinc-700 text-zinc-200 px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-zinc-800"
-            >
+            <ButtonLink href="/plan" variant="secondary">
               Plan another year instead
-            </Link>
+            </ButtonLink>
           </div>
         </section>
       )}

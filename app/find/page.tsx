@@ -7,6 +7,7 @@ import { speciesFor } from '../planner/constants';
 import FindView from './FindView';
 
 export const dynamic = 'force-dynamic';
+export const metadata = { title: 'Find | HuntQuarters' };
 
 // Find a Hunt: what your points buy, before any questions. Opens on a state
 // the hunter already holds points in, so the first thing they see is about
@@ -26,7 +27,7 @@ export default async function FindPage() {
   const species = top && speciesFor(state).includes(top.species) ? top.species : speciesFor(state)[0];
 
   return (
-    <div className="min-h-screen bg-black text-zinc-100">
+    <div className="hq" style={{ minHeight: '100vh' }}>
       <FindView initialState={state} initialSpecies={species} />
     </div>
   );

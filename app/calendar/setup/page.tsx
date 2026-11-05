@@ -9,6 +9,7 @@ import type { SetupAnswers } from '@/lib/suggest';
 import SetupWizard from './SetupWizard';
 
 export const dynamic = 'force-dynamic';
+export const metadata = { title: 'Set up your plan | HuntQuarters' };
 
 // Guided setup for My Hunt Calendar — the main way in for hunters without a
 // spreadsheet. Prefilled from earlier answers and the profile.
@@ -35,7 +36,7 @@ export default async function SetupPage() {
     bucket: prior?.bucket ?? [],
   };
   return (
-    <div className="min-h-screen bg-black text-zinc-100">
+    <div className="hq" style={{ minHeight: '100vh' }}>
       <SetupWizard initial={initial} years={calendarYears(currentSeasonYear())} />
     </div>
   );

@@ -7,7 +7,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { ArrowLeft, OctagonAlert, RotateCcw, X } from 'lucide-react';
+import { Button, ButtonLink, Card, Eyebrow } from '../ui';
+import { Loader } from '../ui/client';
 import type { FlowStep, HuntPlannerState, Profile } from './types';
 import { INITIAL_STATE } from './types';
 import { PLAN_STEPS, SCOUT_STEPS, STATES, plannerFlags, speciesFor } from './constants';
@@ -213,22 +215,34 @@ export default function App() {
   });
 
   return (
-    <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-amber-500/30">
+    <div className="hq" style={{ minHeight: '100vh' }}>
       {accounts
         ? me && !isMember && !betaReady && <AccountGate signedIn={me.accounts && me.signedIn} />
         : !betaReady && <BetaGate error={state.error} onEnter={enterBeta} />}
 
       {state.loading && (
-        <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-6 text-center" role="status" aria-live="polite">
-          <div className="w-12 h-12 border-4 border-amber-600/20 border-t-amber-600 rounded-full animate-spin mb-4" />
-          <p className="text-amber-500 font-black uppercase tracking-[0.2em] animate-pulse text-xs">{state.loadingMessage}</p>
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 50, display: 'grid', placeItems: 'center', padding: 24,
+          background: 'var(--scrim)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
+        }}>
+          <Loader lines={[state.loadingMessage.replace(/\.+$/, '') || 'Working']} />
         </div>
       )}
 
       {state.error && !state.loading && (
-        <div role="alert" className="fixed top-4 left-1/2 -translate-x-1/2 z-[60] max-w-md w-[calc(100%-2rem)] bg-red-950/90 border border-red-700 text-red-100 px-4 py-3 rounded-xl shadow-2xl backdrop-blur flex items-start gap-3">
-          <p className="flex-1 text-[11px] font-bold uppercase tracking-wide leading-snug">{state.error}</p>
-          <button type="button" aria-label="Dismiss error" onClick={() => setState((s) => ({ ...s, error: null }))} className="text-red-300 hover:text-white font-black leading-none text-lg">×</button>
+        <div
+          role="alert"
+          className="hq-caveat hq-caveat--stop"
+          style={{
+            position: 'fixed', top: 16, left: '50%', transform: 'translateX(-50%)', zIndex: 60,
+            width: 'calc(100% - 32px)', maxWidth: 448, boxShadow: 'var(--shadow-md)', alignItems: 'center',
+          }}
+        >
+          <OctagonAlert size={16} aria-hidden="true" />
+          <p style={{ flex: 1, minWidth: 0 }}>{state.error}</p>
+          <Button type="button" variant="ghost" size="sm" aria-label="Dismiss error" onClick={() => setState((s) => ({ ...s, error: null }))}>
+            <X size={16} aria-hidden="true" />
+          </Button>
         </div>
       )}
 
@@ -241,35 +255,37 @@ export default function App() {
         />
       )}
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
+      <main style={{ maxWidth: 760, margin: '0 auto', padding: '24px 16px 40px', display: 'flex', flexDirection: 'column', gap: 24 }}>
         {state.step !== 'entry' && (
-          <div className="flex items-center justify-center space-x-4 mb-8 text-[10px] uppercase tracking-widest font-black">
-            <button type="button" className="text-zinc-600 hover:text-amber-500 transition-colors" onClick={startOver}>START OVER</button>
-            <span className="text-zinc-800">|</span>
-            {(isBriefTab(state.step) || state.step === 'recommendations') && (
-              <button type="button" className="text-zinc-500 hover:text-white" onClick={goBack}>BACK</button>
-            )}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, margin: '-8px -12px 0' }}>
+            {(isBriefTab(state.step) || state.step === 'recommendations') ? (
+              <Button type="button" variant="ghost" size="sm" onClick={goBack}><ArrowLeft size={16} aria-hidden="true" /> Back</Button>
+            ) : <span />}
+            <Button type="button" variant="ghost" size="sm" onClick={startOver}><RotateCcw size={14} aria-hidden="true" /> Start over</Button>
           </div>
         )}
 
         {state.step === 'entry' && (
-          <div className="min-h-[70vh] flex flex-col items-center justify-center text-center">
-            <h1 className="text-6xl font-black mb-16 tracking-tighter uppercase italic text-amber-500">HuntQuarters</h1>
-            <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl text-left">
-              <div className="bg-zinc-900 border border-zinc-800 p-10 rounded-3xl hover:border-amber-900/50 transition-all">
-                <h2 className="text-2xl font-black mb-2 italic text-zinc-300 uppercase tracking-tighter">Find a Hunt</h2>
-                <p className="text-zinc-500 mb-8 text-sm">Build your next seasons from your points, then compare the hunts worth applying for.</p>
+          <>
+            <div>
+              <Eyebrow>Find</Eyebrow>
+              <h1 className="hq-h1" style={{ marginTop: 4 }}>Where do you want to start?</h1>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+              <Card className="hq-fade-up" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <h2 className="hq-h2">Find a hunt</h2>
+                <p className="hq-body" style={{ flex: 1 }}>Build your next seasons from your points, then compare the hunts worth applying for.</p>
                 {/* Planning first: the unit picker runs inside it, not before
                     it. Reached as a tool from My Season via ?start=find. */}
-                <Link href="/calendar/setup" className="block w-full text-center border-2 border-zinc-700 text-white py-4 font-black rounded-xl hover:bg-zinc-800 uppercase tracking-widest text-xs">Start Planning</Link>
-              </div>
-              <div className="bg-zinc-900 border border-zinc-800 p-10 rounded-3xl hover:border-amber-900/50 transition-all">
-                <h2 className="text-2xl font-black mb-2 italic text-amber-500 uppercase tracking-tighter">I Already Have a Tag</h2>
-                <p className="text-zinc-500 mb-8 text-sm">Drew it or bought it — get a unit brief, hunt plan and gear list.</p>
-                <button type="button" onClick={() => setState((s) => ({ ...s, step: 'plan-1', entryMode: 'has-tag' }))} className="w-full bg-zinc-100 text-black py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-xs transition-colors">Start Scouting</button>
-              </div>
+                <div style={{ marginTop: 8 }}><ButtonLink href="/calendar/setup" variant="secondary" block>Start planning</ButtonLink></div>
+              </Card>
+              <Card className="hq-fade-up" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <h2 className="hq-h2">I already have a tag</h2>
+                <p className="hq-body" style={{ flex: 1 }}>Drew it or bought it? Get a unit brief, hunt plan and gear list.</p>
+                <Button type="button" block style={{ marginTop: 8 }} onClick={() => setState((s) => ({ ...s, step: 'plan-1', entryMode: 'has-tag' }))}>Start scouting</Button>
+              </Card>
             </div>
-          </div>
+          </>
         )}
 
         {(SCOUT_STEPS as readonly string[]).includes(state.step) && (
@@ -281,7 +297,7 @@ export default function App() {
         )}
 
         {state.step === 'recommendations' && (
-          <div className="animate-in fade-in duration-500">
+          <div className="hq-fade-up">
             <ScoutResults
               recommendations={state.recommendations}
               drawReality={state.drawReality}
@@ -323,7 +339,7 @@ export default function App() {
               : undefined}
           />
         )}
-      </div>
+      </main>
     </div>
   );
 }

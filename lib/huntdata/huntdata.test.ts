@@ -690,6 +690,7 @@ describe('hunt names on screen', () => {
     expect(huntTitle('GMU 127', 'GEN-127-any')).toBe('GMU 127 · General season · any weapon');
     expect(huntTitle('GMU 105', '1000')).toBe('GMU 105 · Hunt 1000');
     expect(huntTitle('27', null)).toBe('Unit 27');
+    expect(huntTitle('Monroe', 'MONROE')).toBe('Monroe');
     expect(humanizeCodes('Put GEN-127-archery first.')).toBe('Put the GMU 127 general season (archery) first.');
     expect(huntTitle('13A', 'GEN-13A')).toBe('Unit 13A · General season (harvest ticket)');
     expect(humanizeCodes('Try GEN-13A.')).toBe('Try the Unit 13A general season.');

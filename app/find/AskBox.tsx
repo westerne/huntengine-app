@@ -9,6 +9,8 @@
 // figure on the cards below come from the draw data.
 
 import { useState } from 'react';
+import { Button, Card } from '../ui';
+import { Loader } from '../ui/client';
 
 const EXAMPLES = [
   'Two weeks off in September, I shoot a bow, and I want to hear bulls.',
@@ -33,48 +35,49 @@ export default function AskBox({
   };
 
   return (
-    <section aria-labelledby="ask-h" className="border border-zinc-800 rounded-2xl p-5 space-y-3">
-      <h2 id="ask-h" className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
-        What are you looking for?
-      </h2>
-      <p className="text-zinc-400 text-sm">
-        Weapon, when you can get away, how far from a road, antlers or meat — say it however you&apos;d say it
-        to a buddy. We&apos;ll match it against what the state actually published, and tell you which parts
-        the draw data can&apos;t answer.
-      </p>
-      <textarea
-        aria-label="What you are looking for"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        onKeyDown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) submit(); }}
-        rows={3}
-        maxLength={600}
-        placeholder={EXAMPLES[0]}
-        className="w-full bg-black border border-zinc-800 p-3 rounded-xl text-zinc-200 text-sm outline-none focus:border-amber-500 resize-y"
-      />
-      <div className="flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          onClick={submit}
-          disabled={busy || disabled || text.trim().length < 3}
-          className="bg-amber-600 text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-amber-500 disabled:opacity-40 disabled:hover:bg-amber-600"
-        >
-          {busy ? 'Matching…' : 'Match these hunts'}
-        </button>
-        <span className="text-zinc-600 text-xs">Or skip it — everything within reach is listed below.</span>
+    <Card aria-labelledby="ask-h">
+      <div className="hq-stack" style={{ gap: 12 }}>
+        <div>
+          <h2 id="ask-h" className="hq-h3">What are you looking for?</h2>
+          <p className="hq-small" style={{ marginTop: 4 }}>
+            Weapon, when you can get away, how far from a road, antlers or meat — say it however you&apos;d say it
+            to a buddy. We&apos;ll match it against what the state actually published, and tell you which parts
+            the draw data can&apos;t answer.
+          </p>
+        </div>
+        <textarea
+          aria-label="What you are looking for"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) submit(); }}
+          rows={3}
+          maxLength={600}
+          placeholder={EXAMPLES[0]}
+          className="hq-input"
+          style={{ width: '100%' }}
+        />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }} role="group" aria-label="Examples">
+          {EXAMPLES.map((e) => (
+            <button
+              key={e}
+              type="button"
+              className="hq-chip"
+              title={e}
+              onClick={() => setText(e)}
+              style={{ maxWidth: 'min(100%, 320px)', fontSize: 13 }}
+            >
+              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{e}</span>
+            </button>
+          ))}
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12 }}>
+          <Button type="button" onClick={submit} disabled={busy || disabled || text.trim().length < 3}>
+            {busy ? 'Matching…' : 'Match these hunts'}
+          </Button>
+          <span className="hq-small">Or skip it — everything within reach is listed below.</span>
+        </div>
+        {busy && <Loader lines={['Reading what you said', 'Matching it against the draw results']} />}
       </div>
-      <div className="flex flex-wrap gap-2 pt-1">
-        {EXAMPLES.map((e) => (
-          <button
-            key={e}
-            type="button"
-            onClick={() => setText(e)}
-            className="text-left text-[11px] text-zinc-500 hover:text-amber-500 border border-zinc-800 rounded-lg px-3 py-1.5 max-w-xs truncate"
-          >
-            {e}
-          </button>
-        ))}
-      </div>
-    </section>
+    </Card>
   );
 }
