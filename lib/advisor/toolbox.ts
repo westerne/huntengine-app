@@ -4,6 +4,7 @@
 // and nothing is written until they tap one.
 
 import { cleanPlanItem, type PlanItemInput } from '../planItems';
+import { cleanFactText } from './facts';
 import { shortDate } from '../huntdata/apply';
 import { toStateCode } from '../huntdata/registry';
 import type { ToolSpec } from './model';
@@ -15,7 +16,8 @@ import { mySituation, myReports, type PlanSnapshot, type ReportRow } from './sit
 
 export type Action =
   | { kind: 'add_to_plan'; label: string; item: PlanItemInput }
-  | { kind: 'reminder'; label: string; task: { title: string; due_on: string | null; state: string | null; species: string | null } };
+  | { kind: 'reminder'; label: string; task: { title: string; due_on: string | null; state: string | null; species: string | null } }
+  | { kind: 'remember'; label: string; fact: string };
 
 export type Toolbox = {
   specs: ToolSpec[];
@@ -40,6 +42,7 @@ export const TOOL_SPECS: ToolSpec[] = [
   { name: 'harvest_reporting', description: "A state's official harvest reporting rule for a species.", parameters: obj(stateSpecies, ['state', 'species']) },
   { name: 'my_reports', description: "Lessons from the hunter's own finished hunt reports (what worked, what didn't, what they'd change).", parameters: obj({ state: S, species: S }, []) },
   { name: 'propose_add_to_plan', description: 'Offer to add a hunt to the hunter\'s plan. Shows a button; nothing is saved unless they tap it.', parameters: obj({ ...stateSpecies, kind: { type: 'string', enum: ['target', 'bucket', 'otc'] }, year: { type: 'integer' }, huntCode: S, unit: S }, ['state', 'species', 'kind']) },
+  { name: 'propose_remember', description: 'Offer to remember a lasting fact about the hunter (time off, budget, weapon, limits, goals) for future conversations. Shows a button; nothing is saved unless they tap it. Keep it short and in their words.', parameters: obj({ fact: S }, ['fact']) },
   { name: 'propose_reminder', description: 'Offer to set a reminder. Shows a button; nothing is saved unless they tap it. dueOn must be a date from a lookup this turn (YYYY-MM-DD), or omitted.', parameters: obj({ title: S, dueOn: S, state: S, species: S }, ['title']) },
 ];
 
@@ -55,6 +58,7 @@ const STATUS: Record<string, string> = {
   my_reports: 'Reading your reports',
   propose_add_to_plan: 'Getting a plan entry ready',
   propose_reminder: 'Getting a reminder ready',
+  propose_remember: 'Noting that',
 };
 
 const str = (v: unknown) => (typeof v === 'string' && v.trim() ? v.trim() : null);
@@ -116,6 +120,11 @@ export function makeToolbox(sit: Situation, deps: { plan: PlanSnapshot | null; r
           const i = c.item;
           const what = `${i.state} ${i.species.toLowerCase()}${i.hunt_code ? ` ${i.hunt_code}` : i.unit ? ` unit ${i.unit}` : ''}`;
           return { status, result: proposed, action: { kind: 'add_to_plan', label: `Add ${what}${i.target_year ? ` for ${i.target_year}` : ''} to my plan`, item: i } };
+        }
+        case 'propose_remember': {
+          const fact = cleanFactText(a.fact);
+          if (!fact) return { status, result: fail('Nothing to remember.') };
+          return { status, result: proposed, action: { kind: 'remember', label: `Remember: “${fact}”`, fact } };
         }
         case 'propose_reminder': {
           const title = str(a.title)?.slice(0, 120);

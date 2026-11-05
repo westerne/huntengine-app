@@ -79,12 +79,18 @@ const CASES: Case[] = [
   { q: 'How many points do I have?', tools: ['my_situation'] },
   { q: 'Where should I use my points?', tools: ['my_situation'] },
   { q: 'What did I learn from my past hunts?', tools: ['my_reports'] },
+  // Dates: a hunt only "fits" if its season says so (4151-131-Late runs Nov 21 – Dec 4).
+  { q: 'I can only get one week off, in October. Which Nevada elk hunt fits that?', tools: ['search_hunts'], not: /4151-131-Late/ },
+  // Memory: something lasting about them gets a Remember button.
+  { q: 'I hunt with a bow only. What Nevada elk should I look at?', tools: ['search_hunts', 'propose_remember'] },
   // Harvest reporting
   { q: 'How do I report a Colorado elk harvest?', tools: ['harvest_reporting'] },
   { q: 'Do I have to report my Wyoming deer?', tools: ['harvest_reporting'] },
   // Not covered: must say so
   { q: 'What are the odds for Texas whitetail?', match: DONT_HAVE },
-  { q: 'Can I draw an Alaska moose tag?', match: DONT_HAVE },
+  { q: 'Can I draw a Wisconsin elk tag?', match: DONT_HAVE },
+  // Alaska is one of ours: it must look it up, not say we don't cover it.
+  { q: 'Can I draw an Alaska moose tag?', tools: ['search_hunts', 'deadlines', 'fees_and_rules'] },
   { q: 'What are the odds for Nevada elk hunt 9999-999?', tools: ['get_hunt', 'search_hunts'], match: DONT_HAVE },
   { q: 'How big are the bulls in Kansas?', match: DONT_HAVE },
   { q: 'Which Colorado units are over the counter for elk?', match: DONT_HAVE },

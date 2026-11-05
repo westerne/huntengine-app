@@ -25,12 +25,25 @@ const MAX_ACTIONS = 3;
 const MAX_STEPS = 8;
 const HISTORY_TURNS = 10;
 
-const COVERED = Object.values(STATE_INFO).map((s) => titleCaseState(s.name)).join(', ');
+const COVERED_NAMES = Object.values(STATE_INFO).map((s) => titleCaseState(s.name));
+const COVERED = COVERED_NAMES.join(', ');
 
-export function systemPrompt(o: { today: string; seasonYear: number; home: string | null }): string {
+// "We don't cover Alaska" when we do: the model's memory of what a western
+// hunt app covers beats the list in its prompt, so it's checked in code.
+export function deniedCoverage(text: string): string | null {
+  for (const m of text.matchAll(/\b(?:don['’]?t|do not|doesn['’]?t) (?:yet )?cover ([A-Z][a-z]+(?: [A-Z][a-z]+)?)/g)) {
+    const name = COVERED_NAMES.find((n) => m[1].startsWith(n));
+    if (name) return name;
+  }
+  return null;
+}
+
+export function systemPrompt(o: { today: string; seasonYear: number; home: string | null; facts?: string[] }): string {
   return `You are the HuntQuarters advisor: a hunter talking to a hunter about draws, points, deadlines, costs and planning.
 
 Today is ${o.today}. The season being planned is ${o.seasonYear}. The hunter's home state is ${o.home ?? 'not set'}.
+${o.facts?.length ? `\nWhat the hunter asked you to remember about them (use it; don't ask again):\n${o.facts.map((f) => `- ${f}`).join('\n')}\n` : ''}
+When they tell you something lasting about themselves that would change your advice (time off, budget, weapon, physical limits, goals), call propose_remember with a short fact in their words, unless it's already remembered above. They see a "Remember" button and decide.
 
 We cover only these states: ${COVERED}. For any other state, say we don't cover it yet and point them to that state's wildlife agency. Don't answer from memory.
 We don't have these yet, so say "we don't have that yet" plainly: trophy or antler size, lists of over-the-counter units, land access beyond public land, tactics and gear.
@@ -45,8 +58,9 @@ Rules you never break:
 7. Don't list sources in your answer; the app shows them.
 8. If the question isn't about hunting plans, say briefly that you only help with hunt planning.
 
-Always look things up before answering about a hunt, state or species we cover, even if you expect nothing comes back. For questions about their own points or plan, call my_situation first; never ask which state or species when my_situation can tell you. Don't guess hunt codes: use search_hunts to find them. To weigh two or more hunts, use compare_hunts.
+Always look things up before answering about a hunt, state or species we cover, even if you expect nothing comes back. For questions about their own points or plan, or a vague one like "what should I do next?", call my_situation first and answer from it; never ask which state or species when my_situation can tell you. Don't guess hunt codes: use search_hunts to find them. To weigh two or more hunts, use compare_hunts.
 Answer point questions by the state's own system (howTheDrawWorks). In a lottery, any chance above zero is a long shot, never "can't draw" (say "every antlered hunt is a long shot; the best is about 0.7% a year", not "you can't draw one"), and in Nevada applying is how points build: an application that doesn't draw earns a point, so applying never burns points unless you draw.
+Never say a hunt fits the hunter's dates unless its season from a lookup shows it; if no season dates came back, say we don't have them.
 For "when will I draw", use likelyBy (the first year they're more likely than not to have drawn). If it's empty, say it isn't likely within the years shown and give chanceBy5 with throughYear. Never name a year as when they'll draw just because they apply that year.`;
 }
 
@@ -59,6 +73,8 @@ export function tidy(text: string, hasActions: boolean): string {
     .replace(/^#+\s*/gm, '')
     // A tool or button name written out instead of called.
     .replace(/^\s*(?:functions\.\w+|set reminder|add reminder|add to (?:my )?plan)\s*$/gim, '');
+  // "I've set up / added / saved…" claims a write that hasn't happened; the button says it.
+  if (hasActions) t = dropSentences(t, [], (s) => /^I(?:'ve| have)? (?:set up|added|saved|set)\b/i.test(s.trim()));
   if (!hasActions) t = dropSentences(t, [{ text: '__button__', kind: 'number' }], (s) => /\b(tap|click|use|press)\b[^.]*\bbuttons?\b/i.test(s));
   return t.trim();
 }
@@ -79,7 +95,7 @@ export async function runAdvisor(o: {
   tools: Toolbox;
   question: string;
   history?: Turn[];
-  context: { today: string; seasonYear: number; home: string | null };
+  context: { today: string; seasonYear: number; home: string | null; facts?: string[] };
   onStatus?: (text: string) => void;
 }): Promise<AdvisorAnswer> {
   const history = (o.history ?? []).slice(-HISTORY_TURNS);
@@ -94,6 +110,8 @@ export async function runAdvisor(o: {
     ...history.map((t) => t.content), o.question,
     // What the system prompt told it is fair to repeat.
     `today ${o.context.today} season ${o.context.seasonYear}`,
+    // What they asked us to remember is theirs to have said.
+    ...(o.context.facts ?? []),
   ];
   const sources = new Map<string, Source>();
   const actions: Action[] = [];
@@ -134,6 +152,13 @@ export async function runAdvisor(o: {
   }
 
   let text = await converse();
+  const denied = deniedCoverage(text);
+  if (denied) {
+    usage.retried = true;
+    messages.push({ role: 'assistant', content: text });
+    messages.push({ role: 'user', content: `[Check] We do cover ${denied}. Look it up with the tools and answer again. Don't mention this check.` });
+    text = await converse();
+  }
   let bad = unsupportedClaims(text, evidence);
   if (bad.length) {
     usage.retried = true;

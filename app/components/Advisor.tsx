@@ -12,13 +12,14 @@ import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } fr
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowUp, ChevronDown, ExternalLink, MessageCircle, RotateCcw, X } from 'lucide-react';
+import { ArrowLeft, ArrowUp, ChevronDown, ExternalLink, History, MessageCircle, RotateCcw, Trash2, X } from 'lucide-react';
 import { Button, Mark } from '../ui';
 
 type Source = { label: string; url?: string | null };
 type Action =
   | { kind: 'add_to_plan'; label: string; item: Record<string, unknown> }
-  | { kind: 'reminder'; label: string; task: Record<string, unknown> };
+  | { kind: 'reminder'; label: string; task: Record<string, unknown> }
+  | { kind: 'remember'; label: string; fact: string };
 type Msg =
   | { role: 'user'; text: string }
   | { role: 'assistant'; text: string; sources: Source[]; actions: Action[] }
@@ -101,7 +102,9 @@ function ActionButton({ a }: { a: Action }) {
   const [err, setErr] = useState('');
   const run = async () => {
     setState('busy');
-    const [url, body] = a.kind === 'add_to_plan' ? ['/api/plan-items', a.item] : ['/api/tasks', { ...a.task, kind: 'custom' }];
+    const [url, body] = a.kind === 'add_to_plan' ? ['/api/plan-items', a.item]
+      : a.kind === 'remember' ? ['/api/advisor/facts', { text: a.fact }]
+      : ['/api/tasks', { ...a.task, kind: 'custom' }];
     try {
       const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       const j = await res.json().catch(() => ({}));
@@ -114,12 +117,10 @@ function ActionButton({ a }: { a: Action }) {
     }
   };
   if (state === 'done') {
-    return (
-      <p className="hq-small" role="status">
-        {a.kind === 'add_to_plan' ? 'Added to your plan. ' : 'Reminder set. '}
-        <Link href={a.kind === 'add_to_plan' ? '/plan' : '/today#todo'} className="hq-link">{a.kind === 'add_to_plan' ? 'Open your plan' : 'See it on Today'}</Link>
-      </p>
-    );
+    const [said, href, link] = a.kind === 'add_to_plan' ? ['Added to your plan. ', '/plan', 'Open your plan']
+      : a.kind === 'remember' ? ['Saved. ', '/profile#advisor', 'See what the advisor knows']
+      : ['Reminder set. ', '/today#todo', 'See it on Today'];
+    return <p className="hq-small" role="status">{said}<Link href={href} className="hq-link">{link}</Link></p>;
   }
   return (
     <div>
@@ -136,6 +137,13 @@ export default function Advisor() {
   const [msgs, setMsgs] = useState<Msg[]>(() => {
     try { const s = typeof window !== 'undefined' ? sessionStorage.getItem(STORE) : null; return s ? JSON.parse(s) : []; } catch { return []; }
   });
+  // Which saved conversation this is (step 5); null starts a new one.
+  const [threadId, setThreadId] = useState<string | null>(() => {
+    try { return typeof window !== 'undefined' ? sessionStorage.getItem(`${STORE}-thread`) : null; } catch { return null; }
+  });
+  const threadRef = useRef(threadId);
+  const [view, setView] = useState<'chat' | 'history'>('chat');
+  const [threads, setThreads] = useState<Array<{ id: string; title: string; updated_at: string }> | null>(null);
   const [draft, setDraft] = useState('');
   const [status, setStatus] = useState<string | null>(null);
   const [suggestions, setSuggestions] = useState<string[] | null>(null);
@@ -150,6 +158,10 @@ export default function Advisor() {
     msgsRef.current = msgs;
     try { sessionStorage.setItem(STORE, JSON.stringify(msgs.slice(-30))); } catch { /* private mode */ }
   }, [msgs]);
+  useEffect(() => {
+    threadRef.current = threadId;
+    try { if (threadId) sessionStorage.setItem(`${STORE}-thread`, threadId); else sessionStorage.removeItem(`${STORE}-thread`); } catch { /* private mode */ }
+  }, [threadId]);
   useEffect(() => { end.current?.scrollIntoView({ block: 'end' }); }, [msgs, status]);
 
   const ask = useCallback(async (question: string) => {
@@ -168,7 +180,7 @@ export default function Advisor() {
     try {
       const res = await fetch('/api/advisor', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: q, history }), signal: ctl.signal,
+        body: JSON.stringify({ question: q, history, threadId: threadRef.current }), signal: ctl.signal,
       });
       if (!res.ok || !res.body) {
         const j = await res.json().catch(() => ({}));
@@ -189,7 +201,8 @@ export default function Advisor() {
           buf = buf.slice(i + 1);
           if (!line) continue;
           const ev = JSON.parse(line);
-          if (ev.type === 'status') setStatus(ev.text);
+          if (ev.type === 'thread') { threadRef.current = ev.id; setThreadId(ev.id); }
+          else if (ev.type === 'status') setStatus(ev.text);
           else if (ev.type === 'answer') { answered = true; setMsgs((m) => [...m, { role: 'assistant', text: ev.text, sources: ev.sources ?? [], actions: ev.actions ?? [] }]); }
           else if (ev.type === 'error') { answered = true; fail(ev.error); }
         }
@@ -207,6 +220,7 @@ export default function Advisor() {
   useEffect(() => {
     const onAsk = (e: Event) => {
       setOpen(true);
+      setView('chat');
       const q = (e as CustomEvent<{ question?: string }>).detail?.question;
       if (q) void ask(q);
     };
@@ -229,7 +243,31 @@ export default function Advisor() {
   }, [open, suggestions]);
 
   const close = () => { setOpen(false); opener.current?.focus(); };
-  const startOver = () => { abort.current?.abort(); abort.current = null; setStatus(null); setMsgs([]); input.current?.focus(); };
+  const startOver = () => { abort.current?.abort(); abort.current = null; setStatus(null); setMsgs([]); setThreadId(null); setView('chat'); input.current?.focus(); };
+
+  // Past conversations: saved per member, opened or deleted from here.
+  const showHistory = async () => {
+    setView('history');
+    setThreads(null);
+    const j = await fetch('/api/advisor/threads').then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    setThreads(j?.threads ?? []);
+  };
+  const openThread = async (id: string) => {
+    const j = await fetch(`/api/advisor/threads/${id}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    if (!j) return;
+    abort.current?.abort(); abort.current = null; setStatus(null);
+    setMsgs((j.messages as Array<{ role: 'user' | 'assistant'; content: string; sources: Source[]; actions: Action[] }>).map((m): Msg =>
+      m.role === 'user' ? { role: 'user', text: m.content } : { role: 'assistant', text: m.content, sources: m.sources ?? [], actions: m.actions ?? [] }));
+    setThreadId(id);
+    setView('chat');
+  };
+  const deleteThread = async (id: string) => {
+    if (!window.confirm('Delete this conversation?')) return;
+    const r = await fetch(`/api/advisor/threads/${id}`, { method: 'DELETE' }).catch(() => null);
+    if (!r?.ok) return;
+    setThreads((t) => (t ?? []).filter((x) => x.id !== id));
+    if (threadRef.current === id) { setMsgs([]); setThreadId(null); }
+  };
   const submit = () => { if (!busy) void ask(draft); };
 
   return (
@@ -241,13 +279,39 @@ export default function Advisor() {
       {open && createPortal(
         <div className="hq"><div id="hq-ask" className="hq-ask" role="dialog" aria-label="Ask the advisor">
           <div className="hq-ask__head">
-            <p className="hq-h3">Ask</p>
+            {view === 'history'
+              ? <button type="button" className="hq-btn hq-btn--ghost hq-btn--sm" onClick={() => setView('chat')}><ArrowLeft size={14} aria-hidden="true" /> Back</button>
+              : <p className="hq-h3">Ask</p>}
             <div style={{ display: 'flex', gap: 4 }}>
-              {msgs.length > 0 && <button type="button" className="hq-btn hq-btn--ghost hq-btn--sm" onClick={startOver}><RotateCcw size={14} aria-hidden="true" /> New</button>}
+              {view === 'chat' && <button type="button" className="hq-btn hq-btn--ghost hq-btn--sm" onClick={showHistory}><History size={14} aria-hidden="true" /> History</button>}
+              {(msgs.length > 0 || view === 'history') && <button type="button" className="hq-btn hq-btn--ghost hq-btn--sm" onClick={startOver}><RotateCcw size={14} aria-hidden="true" /> New</button>}
               <button type="button" className="hq-btn hq-btn--ghost hq-btn--sm" onClick={close} aria-label="Close"><X size={18} aria-hidden="true" /></button>
             </div>
           </div>
 
+          {view === 'history' ? (
+            <div className="hq-ask__body">
+              <p className="hq-h3">Your conversations</p>
+              {threads === null ? <p className="hq-small">Loading…</p>
+                : !threads.length ? <p className="hq-small">Nothing saved yet. Conversations are kept here once you ask something.</p>
+                : (
+                  <ul className="hq-list">
+                    {threads.map((t) => (
+                      <li key={t.id} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                        <button type="button" className="hq-row" onClick={() => openThread(t.id)}>
+                          <span className="hq-row__main">
+                            <span className="hq-row__title">{t.title}</span>
+                            <span className="hq-row__sub">{new Date(t.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}{t.id === threadId ? ' · open now' : ''}</span>
+                          </span>
+                        </button>
+                        <button type="button" className="hq-btn hq-btn--ghost hq-btn--sm" aria-label={`Delete ${t.title}`} onClick={() => deleteThread(t.id)}><Trash2 size={14} aria-hidden="true" /></button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              <p className="hq-small">Only you can see these. <Link href="/profile#advisor" className="hq-link">What the advisor knows about you</Link></p>
+            </div>
+          ) : (
           <div className="hq-ask__body" aria-live="polite">
             {!msgs.length && (
               <div className="hq-ask__empty">
@@ -275,8 +339,9 @@ export default function Advisor() {
             {busy && <p className="hq-ask__status" role="status"><span className="hq-ask__dots" aria-hidden="true"><i /><i /><i /></span>{status}…</p>}
             <div ref={end} />
           </div>
+          )}
 
-          <form className="hq-ask__foot" onSubmit={(e) => { e.preventDefault(); submit(); }}>
+          {view === 'chat' && <form className="hq-ask__foot" onSubmit={(e) => { e.preventDefault(); submit(); }}>
             <div className="hq-ask__inputrow">
               <label htmlFor="hq-ask-input" className="hq-sr">Your question</label>
               <textarea
@@ -290,7 +355,7 @@ export default function Advisor() {
               </button>
             </div>
             <p className="hq-small">Check with the state before you apply or pay.</p>
-          </form>
+          </form>}
         </div></div>,
         document.body,
       )}

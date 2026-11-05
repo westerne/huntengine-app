@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { factsOf } from '@/lib/advisor/facts';
 import { requireMember } from '@/lib/apiAuth';
 import { supabaseServer } from '@/lib/supabase/server';
 import { cleanSetupAnswers, suggestCalendar } from '@/lib/suggest';
@@ -22,7 +23,11 @@ export async function POST(req: Request) {
   // one this wizard prefills itself from. They used to be written only into
   // profiles.planning, so a hunter's entries came back blank on their next
   // visit while a stale copy sat in the profile feeding nothing.
-  const { points: _points, ...planning } = answers; // eslint-disable-line @typescript-eslint/no-unused-vars
+  const { points: _points, ...answersOnly } = answers; // eslint-disable-line @typescript-eslint/no-unused-vars
+  // Facts the advisor saved live in the same column; redoing setup mustn't erase them.
+  const { data: prior } = await supabase.from('profiles').select('planning').eq('user_id', auth.viewer.userId).maybeSingle();
+  const facts = factsOf(prior?.planning);
+  const planning = facts.length ? { ...answersOnly, facts } : answersOnly;
   const profilePatch: Record<string, unknown> = { user_id: auth.viewer.userId, planning };
   // Only a covered state is saved as home; "another state" means non-resident everywhere.
   if (answers.homeState && stateCodeOf(answers.homeState)) profilePatch.home_state = answers.homeState;

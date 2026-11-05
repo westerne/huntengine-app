@@ -7,13 +7,19 @@ import { runAdvisor, type Turn } from '@/lib/advisor/run';
 import { makeToolbox } from '@/lib/advisor/toolbox';
 import { situationFromPlan, type ReportRow } from '@/lib/advisor/situation';
 import { suggestQuestions } from '@/lib/advisor/suggest';
+import { factsOf, threadTitle } from '@/lib/advisor/facts';
 import { loadPlan } from '@/app/plan/load';
 
 export const maxDuration = 60;
 
-// POST /api/advisor  { question, history?: [{ role, content }] }
+// POST /api/advisor  { question, threadId?, history?: [{ role, content }] }
+//
+// With a threadId the history comes from the saved conversation; without one
+// a new conversation is started (named after the question). The client's own
+// history is only used if saving isn't available.
 //
 // One advisor turn. Streams newline-delimited JSON:
+//   { type: 'thread', id }                            the conversation it's saved in
 //   { type: 'status', text }                          while lookups run
 //   { type: 'answer', text, sources, actions }        once, after the answer check
 //   { type: 'error', error }
@@ -54,7 +60,7 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   const question = typeof body?.question === 'string' ? body.question.trim().slice(0, MAX_QUESTION) : '';
   if (question.length < 2) return NextResponse.json({ error: 'Ask a question.' }, { status: 400 });
-  const history = cleanHistory(body?.history);
+  let history = cleanHistory(body?.history);
 
   const supabase = await supabaseServer();
 
@@ -70,7 +76,29 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "That's a lot of questions for one day. The advisor will be back tomorrow." }, { status: 429 });
   }
 
-  const plan = await loadPlan(supabase, userId).catch(() => null);
+  // The saved conversation, or a new one. If saving isn't possible the turn
+  // still runs; it just isn't kept.
+  let threadId: string | null = typeof body?.threadId === 'string' ? body.threadId : null;
+  if (threadId) {
+    // Gone (deleted in another tab) means start a new one.
+    const { data: t } = await supabase.from('advisor_threads').select('id').eq('id', threadId).maybeSingle();
+    if (!t) threadId = null;
+  }
+  if (threadId) {
+    const { data, error } = await supabase.from('advisor_messages').select('role, content').eq('thread_id', threadId).order('id', { ascending: false }).limit(10);
+    if (error) threadId = null;
+    else history = (data ?? []).reverse().map((m) => ({ role: m.role as Turn['role'], content: String(m.content).slice(0, MAX_TURN) }));
+  }
+  if (!threadId) {
+    const { data } = await supabase.from('advisor_threads').insert({ user_id: userId, title: threadTitle(question) }).select('id').single();
+    threadId = data?.id ?? null;
+  }
+
+  const [plan, { data: prof }] = await Promise.all([
+    loadPlan(supabase, userId).catch(() => null),
+    supabase.from('profiles').select('planning').eq('user_id', userId).maybeSingle(),
+  ]);
+  const facts = factsOf(prof?.planning).map((f) => f.text);
   const sit = situationFromPlan(plan ?? { thisYear: new Date().getFullYear(), years: [], home: null, hunts: [], points: [] });
   const today = TODAY();
   const tools = makeToolbox(sit, {
@@ -91,13 +119,22 @@ export async function POST(req: Request) {
   const stream = new ReadableStream({
     async start(controller) {
       const send = (o: unknown) => controller.enqueue(enc.encode(`${JSON.stringify(o)}\n`));
+      if (threadId) send({ type: 'thread', id: threadId });
       try {
         const answer = await runAdvisor({
           model, tools, question, history,
-          context: { today, seasonYear: sit.seasonYear, home: sit.home },
+          context: { today, seasonYear: sit.seasonYear, home: sit.home, facts },
           onStatus: (text) => send({ type: 'status', text }),
         });
         send({ type: 'answer', text: answer.text, sources: answer.sources, actions: answer.actions });
+        if (threadId) {
+          const { error: mErr } = await supabase.from('advisor_messages').insert([
+            { thread_id: threadId, user_id: userId, role: 'user', content: question },
+            { thread_id: threadId, user_id: userId, role: 'assistant', content: answer.text.slice(0, 4000), sources: answer.sources, actions: answer.actions },
+          ]);
+          if (mErr) console.warn('advisor messages not saved:', mErr.message);
+          else await supabase.from('advisor_threads').update({ updated_at: new Date().toISOString() }).eq('id', threadId);
+        }
         const u = answer.usage;
         const { error } = await supabase.from('advisor_usage').insert({
           user_id: userId, model: model.name,

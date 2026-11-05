@@ -36,6 +36,9 @@ export type ReachableHunt = {
   publishedRate: number | null;   // the hunt's overall rate, which is not theirs
   hunterSuccess: number | null;
   pointsNeeded: number | null;
+  // Season dates, where the agency publishes them with the draw (NV, OK, part
+  // of WA), so "does it fit my week off" is answered from the calendar.
+  season?: { open: string; close: string } | null;
 };
 
 export type FutureHunt = ReachableHunt & {
@@ -96,6 +99,7 @@ const look = (e: Entry): ReachableHunt & { antlerless: boolean; oddsAtPointsNeed
   hunterSuccess: pct(e.hunterSuccess),
   pointsNeeded: num(e.fewestPointsToDraw),
   oddsAtPointsNeeded: num(e.drawSuccessAtPointsNeeded),
+  season: (e.season as { open: string; close: string } | null | undefined) ?? null,
 });
 
 // What the state's data lets us say about this hunter specifically.

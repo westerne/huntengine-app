@@ -5,6 +5,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import AdvisorKnows from './AdvisorKnows';
 import { useState } from 'react';
 import { Plus } from 'lucide-react';
 import { ALL_SPECIES, FITNESS_LEVELS, SPECIES, STATES, STYLE_OPTIONS, EXPERIENCE_OPTIONS } from '../planner/constants';
@@ -143,6 +144,8 @@ export default function ProfileForm({ email, profile, points: initialPoints }: {
         {status && status.kind === 'info' && <p role="status" className="hq-ok">{status.text}</p>}
       </div>
       {status && status.kind === 'error' && <Caveat tone="stop">{status.text}</Caveat>}
+
+      <AdvisorKnows />
 
       <Card variant="flat" aria-labelledby="look-h">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>

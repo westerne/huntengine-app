@@ -87,7 +87,7 @@ Known gap (2026-11-05): the number check can't catch a claim with no number in i
 2. `/api/advisor` loop with the answer check; the test set runs against it. **Done 2026-11-05** — 40/40 on the last run. Migration 0008 (usage) for you to run.
 3. The sheet UI (header "Ask", suggested questions, answers with "Based on" and action buttons). **Done 2026-11-05** — `app/components/Advisor.tsx`; other screens open it with `askAdvisor("question")`. Suggestions come from `GET /api/advisor` (no model call). The conversation lasts for the browser tab until step 5 saves it.
 4. Context entry points (hunt page, Find rows, Plan, Today). **Done 2026-11-05** — `AskButton` in `app/components/Advisor.tsx`: "Ask about this hunt" on /hunt/[key] and /season/[id], "Ask" on Find rows and matches, "Help me decide" on Plan's season card, "What now?" on Today when a tag is drawn.
-5. Memory (`remember`, Me → What the advisor knows). Migration 0009 for threads/messages — you run it.
+5. Memory (`remember`, Me → What the advisor knows). Migration 0009 for threads/messages — you run it. **Done 2026-11-05** — conversations saved per member (History in the sheet; delete one or all), `propose_remember` offers a Remember button, facts edited on Me and fed into every turn (and count as things the hunter said for the answer check). Redoing guided setup keeps the facts.
 6. Owner transcript review → turn on for members.
 
 ## 10. Owner decisions (2026-11-05)

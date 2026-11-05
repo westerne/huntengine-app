@@ -185,3 +185,47 @@ describe('suggested questions', () => {
     expect(q).toHaveLength(4);
   });
 });
+
+describe('memory', () => {
+  it('keeps facts short, unique and capped', async () => {
+    const { addFact, cleanFactText, editFact, factsOf, removeFact, threadTitle, MAX_FACTS } = await import('../advisor/facts');
+    expect(cleanFactText('  One   week off, in October ')).toBe('One week off, in October');
+    expect(cleanFactText('x')).toBeNull();
+    let f = addFact([], 'Budget about $1,500 a year', 'a', '2026-11-05');
+    f = addFact(f, 'budget about $1,500 a year', 'b', '2026-11-05');
+    expect(f).toHaveLength(1);
+    f = editFact(f, 'a', 'Budget about $2,000 a year');
+    expect(f[0].text).toMatch(/2,000/);
+    expect(removeFact(f, 'a')).toEqual([]);
+    expect(factsOf({ facts: Array.from({ length: 40 }, (_, i) => ({ id: String(i), text: `fact ${i}`, savedOn: '' })) })).toHaveLength(MAX_FACTS);
+    expect(factsOf(null)).toEqual([]);
+    expect(threadTitle('Should I apply for my Nevada elk hunt this year or keep building points for a better one later?')).toMatch(/…$/);
+  });
+
+  it('offers to remember instead of saving, and uses saved facts as things the hunter said', async () => {
+    const { model, seen } = scripted([
+      { toolCalls: [call('propose_remember', { fact: 'One week off, in October' })] },
+      { text: 'Tap the button below and I will keep that in mind. With $1,500 a year you have room for a few states.' },
+    ]);
+    const a = await runAdvisor({ model, tools, question: 'I only get a week off in October', context: { ...context, facts: ['Budget about $1,500 a year'] } });
+    expect(a.actions[0]).toMatchObject({ kind: 'remember', fact: 'One week off, in October' });
+    expect(a.usage.retried).toBe(false);                       // $1,500 came from a saved fact
+    expect((seen[0][0] as { content: string }).content).toMatch(/Budget about \$1,500 a year/);
+  });
+});
+
+describe('tidy, with a button', () => {
+  it('drops a claim that something was already saved', () => {
+    expect(tidy("I've set up the option to add it. Tap the button below to add it.", true)).toBe('Tap the button below to add it.');
+  });
+});
+
+describe('coverage check', () => {
+  it('catches "we don\u2019t cover" for a state we do cover, and only then', async () => {
+    const { deniedCoverage } = await import('../advisor/run');
+    expect(deniedCoverage("We don't cover Alaska yet.")).toBe('Alaska');
+    expect(deniedCoverage('We do not cover New Mexico.')).toBe('New Mexico');
+    expect(deniedCoverage("We don't cover Wisconsin yet.")).toBeNull();
+    expect(deniedCoverage('We cover Alaska.')).toBeNull();
+  });
+});

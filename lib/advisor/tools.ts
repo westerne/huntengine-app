@@ -262,7 +262,7 @@ export function compareHunts(args: { hunts: Array<{ state: string; species: stri
 // The same read Find gives: hunts within reach at the hunter's points, and what
 // comes within reach if they keep applying. Antlered and antlerless are kept
 // apart, because mixing them makes a state look easier than it is.
-type Picked = Pick<ReachableHunt, 'unit' | 'huntCode' | 'label' | 'odds' | 'publishedRate' | 'hunterSuccess' | 'pointsNeeded'>;
+type Picked = Pick<ReachableHunt, 'unit' | 'huntCode' | 'label' | 'odds' | 'publishedRate' | 'hunterSuccess' | 'pointsNeeded' | 'season'>;
 export type SearchData = {
   howTheDrawWorks: string | null;
   state: string; species: string; residency: Residency; yourPoints: number; weapon: Weapon;
@@ -276,7 +276,7 @@ export type SearchData = {
 const WEAPONS: Weapon[] = ['rifle', 'archery', 'muzzleloader'];
 const pick = (h: ReachableHunt): Picked => ({
   unit: h.unit, huntCode: h.huntCode, label: h.label, odds: h.odds, publishedRate: h.publishedRate,
-  hunterSuccess: h.hunterSuccess, pointsNeeded: h.pointsNeeded,
+  hunterSuccess: h.hunterSuccess, pointsNeeded: h.pointsNeeded, season: h.season ?? null,
 });
 export function searchHunts(args: { state: string; species: string; weapon?: string | null }, sit: Situation): ToolResult<SearchData> {
   const r = resolve(args.state, args.species);
