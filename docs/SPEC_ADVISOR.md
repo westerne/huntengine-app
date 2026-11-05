@@ -49,43 +49,45 @@ Each tool is a thin wrapper over a function the screens already use — one sour
 |---|---|---|
 | `my_situation` | home state, points by state/species, plan by year, hunts in progress, upcoming deadlines | `loadPlan`, `buildToday` |
 | `search_hunts` | hunts in a state/species reachable at given points, with odds | `drawReality`, `/api/huntdata/narrow` matcher |
-| `get_hunt` | one hunt: odds at your points, cutoff, success, public land, season, links | `findHunt`, `compareColumn`, landstats |
-| `odds_outlook` | year-by-year chance and points if you keep applying | `drawOutlook`, `projectPoints` |
+| `get_hunt` | one hunt: odds at your points, cutoff, year-by-year outlook if you keep applying, success, season | `findHunt`, `compareColumn` (outlook via `drawOutlook`, `projectPoints`) |
 | `compare_hunts` | 2–4 hunts side by side + the pick and its tradeoff | `compareColumn`, `pickBest` |
-| `deadlines` | deadline per state/species with status (posted / expected / last year) and source | `deadlineFor`, `officialInfoFor` |
+| `deadlines` | deadline per state/species with status (posted / expected / last year) and source; always adds a reminder button (dated only for this season's date) | `deadlineFor`, `applyFile` |
 | `fees_and_rules` | fees, prerequisites (hunter ed, licenses), application link, with sources | `feesFor`, `prerequisitesFor` |
 | `yearly_cost` | total of posted point/application/license fees for a set of states/species and residency; per-line breakdown with sources; lists states with no fee data | `feesFor` |
 | `harvest_reporting` | official reporting rule for a state/species | `harvestReportingFor` |
-| `my_reports` | your past reports' lessons for a state/species | `hunt_reports` |
-| **Asks first:** `add_to_plan`, `set_reminder`, `remember` | writes after you tap Yes | existing plan-items / tasks APIs; `remember` → profile memory (§7) |
+| `my_reports` | your finished reports' lessons (worked / didn't / change next) — never sightings or access notes | `hunt_reports` |
+| **Asks first:** `propose_add_to_plan`, `propose_reminder`, `remember` (step 5) | a button under the answer; writes only after you tap it | existing plan-items / tasks APIs; `remember` → profile memory (§7) |
 
 Not in v1 (the data isn't ready — SPEC_KNOWLEDGE P1/P2): OTC/leftover catalog, trophy potential, land access beyond public-land %, tactics/gear library. When asked, it says so plainly.
 
 ## 6. How it runs
-- **Server route** `POST /api/advisor` (members only, rate-limited like the other AI routes). Streams the answer.
+- **Server route** `POST /api/advisor` (members only). Streams newline-delimited JSON: a `status` line per lookup ("Checking deadlines"), then one `answer` (text, sources, actions) **after** the answer check — nothing unchecked is ever on screen.
 - **Model:** the provider the app already uses (OpenAI, GPT-4o class), behind one small adapter (`lib/advisor/model.ts`) so the model can be swapped in one file. Tool calling, low temperature.
 - **Loop:** model → tool calls (run on the server with the member's own Supabase session, so RLS applies) → model → answer. Max ~6 tool calls per turn.
-- **Answer check before it's shown:** every number/date in the final text must appear in a tool result from this turn; if not, the turn is retried once with that flagged, then the number is removed rather than shown. The "Based on" line is built from the tools actually called, not written by the model.
-- **Usage, not a cap:** no question limit for members. Each turn's model cost is recorded per member so pricing (e.g. credits beyond a monthly amount) can be decided from real numbers. Only a high abuse guard (200 turns/day) stops runaway cost. Short history (last ~10 turns plus a running summary) keeps turns cheap.
+- **Answer check before it's shown:** every number/date in the final text must appear in a tool result from this turn, in what the hunter said, or in an earlier checked answer; if not, the turn is retried once with that flagged, then the sentence carrying it is removed rather than shown. The "Based on" line is built from the tools actually called, not written by the model. A tidy step unwraps markdown and drops any "tap the button" with no button behind it.
+- **Limits it can't talk around:** the covered-state list is in the prompt; a reminder date must come from a lookup and not be past; at most 3 buttons per answer.
+- **Usage, not a cap:** no question limit for members. Each turn's tokens and estimated cost go to `advisor_usage` (migration 0008 — members can read and add their rows, never edit or delete them) so pricing (e.g. credits beyond a monthly amount) can be decided from real numbers. Only a high abuse guard (200 turns per 24 hours) stops runaway cost. The client sends the last ~10 turns as history until threads are saved (§7).
 
 ## 7. Memory
-- Conversations saved per member (`advisor_threads`, `advisor_messages`; owner-only RLS; delete anytime).
+- Conversations saved per member (`advisor_threads`, `advisor_messages`; owner-only RLS; delete anytime) — migration 0009.
 - **Facts it learns** ("one week off, in October", "budget about $1,500/yr", "bad knee") are only saved via `remember` after you say Yes, and appear on **Me → What the advisor knows**, where you can edit or delete them. Stored on `profiles.planning.facts`.
 
 ## 8. How we'll know it's good (before members see it)
-A fixed test set of ~40 real questions across the 17 states with known right answers (from our data), run on every change:
+A fixed test set of 40 real questions (`lib/__tests__/advisor.eval.test.ts`; run with `ADVISOR_EVAL=1 npx vitest run lib/__tests__/advisor.eval.test.ts`, about $0.40 a run; transcripts land in `advisor-eval-results.md`), run on every change to the prompt or tools:
 - No invented numbers (the answer check catches 100%).
 - Recommendation matches what our data supports in ≥90%.
 - Says "we don't have that" when the tool returns nothing, every time.
 - Never names a spot.
 The owner reviews 10 transcripts before launch.
 
+Known gap (2026-11-05): the number check can't catch a claim with no number in it. In testing it still sometimes says "might give you a good chance" or "offers good opportunities" without a lookup behind it. The prompt forbids this; the owner review is the backstop.
+
 ## 9. Build order
 1. Tools as plain functions + tests (no AI yet).
-2. `/api/advisor` loop with the answer check; the test set runs against it.
+2. `/api/advisor` loop with the answer check; the test set runs against it. **Done 2026-11-05** — 40/40 on the last run. Migration 0008 (usage) for you to run.
 3. The sheet UI (header "Ask", suggested questions, answers with "Based on" and action buttons).
 4. Context entry points (hunt page, Find rows, Plan, Today).
-5. Memory (`remember`, Me → What the advisor knows). Migration 0008 for threads/messages — you run it.
+5. Memory (`remember`, Me → What the advisor knows). Migration 0009 for threads/messages — you run it.
 6. Owner transcript review → turn on for members.
 
 ## 10. Owner decisions (2026-11-05)

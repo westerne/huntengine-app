@@ -13,7 +13,10 @@ import { findHunt, projectPoints, usesPoints } from '../calendar';
 import { compareColumn, pickBest, type CompareColumn } from '../compare';
 import { canonicalSpecies, speciesKeyOf } from '../species';
 import { titleCaseState } from '../scoutData';
-import type { Residency } from '../huntdata/schema';
+import { buildGenericScoutDataset } from '../huntdata/generic';
+import { drawReality, type DrawReality, type ReachableHunt } from '../huntdata/reality';
+import { cutoffIsADate } from '../huntdata/drawSystem';
+import type { Residency, Weapon } from '../huntdata/schema';
 
 export type Source = { label: string; url?: string | null };
 export type ToolResult<T> = { ok: true; data: T; sources: Source[] } | { ok: false; reason: string };
@@ -250,4 +253,55 @@ export function compareHunts(args: { hunts: Array<{ state: string; species: stri
   }
   if (!out.length) return fail(`We couldn't find any of those hunts: ${notFound.join(', ')}.`);
   return { ok: true, data: { hunts: out, pick: pickBest(cols), notFound }, sources: [...sources.values()] };
+}
+
+// ── search: what's within reach ────────────────────────────────────────────
+// The same read Find gives: hunts within reach at the hunter's points, and what
+// comes within reach if they keep applying. Antlered and antlerless are kept
+// apart, because mixing them makes a state look easier than it is.
+type Picked = Pick<ReachableHunt, 'unit' | 'huntCode' | 'label' | 'odds' | 'publishedRate' | 'hunterSuccess' | 'pointsNeeded'>;
+export type SearchData = {
+  state: string; species: string; residency: Residency; yourPoints: number; weapon: Weapon;
+  basis: DrawReality['basis']; oddsAreYours: boolean; oddsNote: string; dataYear: number | null;
+  headline: string; caveat: string;
+  reachable: Picked[]; antlerless: Picked[];
+  soon: Array<Picked & { year: number; yearsAway: number; oddsAtThatLevel: number | null; cutoffIsADate: boolean }>;
+  moreReachable: number;
+};
+const WEAPONS: Weapon[] = ['rifle', 'archery', 'muzzleloader'];
+const pick = (h: ReachableHunt): Picked => ({
+  unit: h.unit, huntCode: h.huntCode, label: h.label, odds: h.odds, publishedRate: h.publishedRate,
+  hunterSuccess: h.hunterSuccess, pointsNeeded: h.pointsNeeded,
+});
+export function searchHunts(args: { state: string; species: string; weapon?: string | null }, sit: Situation): ToolResult<SearchData> {
+  const r = resolve(args.state, args.species);
+  if (!r.ok) return r;
+  const mod = getStateModule(r.state);
+  if (!mod || !mod.species.includes(r.key as never)) return fail(`We don't have ${r.name} ${r.species.toLowerCase()} draw data.`);
+  const residency = residencyIn(sit, r.state);
+  const weapon: Weapon = WEAPONS.find((w) => w === String(args.weapon ?? '').toLowerCase()) ?? 'any';
+  const points = pointsFor(sit, r.state, r.key) ?? 0;
+  const hunts = buildGenericScoutDataset(mod, r.key as never, residency, weapon, points);
+  const re = drawReality(hunts, { points, state: r.name, species: r.species, thisYear: sit.seasonYear, cutoffIsADate: cutoffIsADate(r.state) });
+  const sources: Source[] = [huntSource(r.state, re.dataYear)];
+  if (points) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${points})` });
+  return {
+    ok: true,
+    data: {
+      state: r.state, species: r.species, residency, yourPoints: points, weapon,
+      basis: re.basis, oddsAreYours: re.basis === 'your-points', dataYear: re.dataYear,
+      oddsNote: re.basis === 'your-points' ? 'odds are at the hunter\'s own points'
+        : re.basis === 'points-to-draw' ? 'only the fewest points that drew is published: within reach means their points clear it, not a sure draw'
+        : re.basis === 'published-rate' ? `publishedRate is each hunt's overall draw rate, NOT this hunter's odds; ${r.name} doesn't publish odds by points. Say so.`
+        : 'no odds published',
+      headline: re.headline, caveat: re.caveat,
+      reachable: re.reachable.slice(0, 8).map(pick),
+      antlerless: re.antlerless.slice(0, 3).map(pick),
+      soon: re.soon.filter((h) => !h.farOff).slice(0, 5).map((h) => ({
+        ...pick(h), year: h.year, yearsAway: h.yearsAway, oddsAtThatLevel: h.oddsAtThatLevel, cutoffIsADate: h.cutoffIsADate,
+      })),
+      moreReachable: Math.max(0, re.reachable.length - 8),
+    },
+    sources,
+  };
 }

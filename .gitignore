@@ -47,3 +47,6 @@ next-env.d.ts
 
 # Claude Code local tooling
 .claude/
+
+# advisor test set transcripts (lib/__tests__/advisor.eval.test.ts)
+advisor-eval-results.md
