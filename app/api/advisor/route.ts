@@ -6,6 +6,7 @@ import { costOf, openAIModel } from '@/lib/advisor/model';
 import { runAdvisor, type Turn } from '@/lib/advisor/run';
 import { makeToolbox } from '@/lib/advisor/toolbox';
 import { situationFromPlan, type ReportRow } from '@/lib/advisor/situation';
+import { suggestQuestions } from '@/lib/advisor/suggest';
 import { loadPlan } from '@/app/plan/load';
 
 export const maxDuration = 60;
@@ -30,6 +31,16 @@ function cleanHistory(raw: unknown): Turn[] {
     .filter((t): t is Turn => !!t && (t.role === 'user' || t.role === 'assistant') && typeof t.content === 'string')
     .slice(-10)
     .map((t) => ({ role: t.role, content: t.content.slice(0, MAX_TURN) }));
+}
+
+// GET /api/advisor → { suggestions }: questions to offer on an empty sheet,
+// picked from the hunter's own plan. No model call.
+export async function GET() {
+  const auth = await requireMember();
+  if ('error' in auth) return auth.error;
+  const supabase = await supabaseServer();
+  const plan = await loadPlan(supabase, auth.viewer.userId!).catch(() => null);
+  return NextResponse.json({ suggestions: suggestQuestions(plan && !plan.loadError ? plan : null) });
 }
 
 export async function POST(req: Request) {

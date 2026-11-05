@@ -3,6 +3,7 @@ import { dropSentences, runAdvisor, tidy, MAX_TOOL_CALLS } from '../advisor/run'
 import { makeToolbox } from '../advisor/toolbox';
 import { myReports, type ReportRow } from '../advisor/situation';
 import { searchHunts, type Situation } from '../advisor/tools';
+import { suggestQuestions } from '../advisor/suggest';
 import type { AdvisorModel, ChatMessage, ModelTurn } from '../advisor/model';
 
 const sit: Situation = {
@@ -161,5 +162,26 @@ describe('search_hunts and my_reports', () => {
     expect(r.ok && r.data).toHaveLength(1);
     if (r.ok) expect(Object.keys(r.data[0])).not.toContain('sightings');
     expect(myReports(rows, { state: 'CO' }).ok).toBe(false);
+  });
+});
+
+describe('suggested questions', () => {
+  const base = { thisYear: 2027, years: [2027, 2028, 2029], home: 'WY' };
+  const h = (o: Record<string, unknown>) => ({ year: 2027, stage: 'planned', otc: false, huntCode: null, state: 'NV', species: 'Elk', ...o }) as never;
+  const pts = (o: Record<string, unknown>) => ({ usesPoints: true, live: true, byYear: null, cutoff: null, drawYear: null, ...o }) as never;
+
+  it('gives everyday questions when there is no plan', () => {
+    expect(suggestQuestions(null)).toHaveLength(4);
+  });
+  it('leads with a drawn tag, then the hunt they are aiming at, then idle points', () => {
+    const q = suggestQuestions({
+      ...base,
+      hunts: [h({ state: 'WY', species: 'Deer', stage: 'drew' }), h({ huntCode: '4161-131', year: 2029 })],
+      points: [pts({ state: 'NV', species: 'Elk', current: 6 }), pts({ state: 'UT', species: 'Deer', current: 12 })],
+    });
+    expect(q[0]).toBe('What should I do before opening day for my WY deer hunt?');
+    expect(q[1]).toBe('Should I apply for NV elk 4161-131 or keep building points?');
+    expect(q[2]).toBe('Where should I use my 12 UT deer points?');
+    expect(q).toHaveLength(4);
   });
 });
