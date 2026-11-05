@@ -33,6 +33,13 @@ Every row in every file has an official source URL and a quote. Totals: 73 draw 
 3. **Fee conflicts** (CA, KS, NV, OK above): accept the file's choice, or should conflicting fees show as "check with the agency" until confirmed?
 4. **Last year's dates:** OK to show them in the app as "Last year: Apr 7 — 2027 date not posted yet" so hunters can plan? (Recommended.)
 
+## Sign-off
+**Approved by the owner, 2026-11-04** ("looks good"), with these readings of the decisions:
+1. Kansas: keep the data; re-check it by hand on ksoutdoors.gov before it goes live.
+2. Nebraska: use the calculated dates, shown as *expected*.
+3. Fee conflicts: keep the file's pick; the conflict stays in the record's notes.
+4. Last year's dates: show them labeled "last year" until the 2027 date is posted.
+
 ## What happens after sign-off
 - Wire `apply/*.json` into the app (deadlines on Plan/Today, fees and prerequisites on hunt pages and in the advisor), replacing the old 8-state `applications.json`.
 - Re-run this research as states post 2027 dates (Dec–Feb); each refresh comes back to you as a sheet like this one.
