@@ -52,7 +52,7 @@ const TABS = [
   { href: '/today', label: 'Today', icon: Sun, match: ['/today'] },
   { href: '/plan', label: 'Plan', icon: CalendarRange, match: ['/plan', '/calendar', '/season', '/history'] },
   { href: '/add', label: 'Add', icon: Plus, match: ['/add'], raised: true },
-  { href: '/planner', label: 'Find', icon: Search, match: ['/planner', '/compare'] },
+  { href: '/find', label: 'Find', icon: Search, match: ['/find', '/planner', '/compare'] },
   { href: '/profile', label: 'Me', icon: User, match: ['/profile'] },
 ];
 
@@ -61,7 +61,7 @@ export function TabBar() {
   return (
     <nav className="hq-tabbar" aria-label="Main">
       {TABS.map(({ href, label, icon: Icon, match, raised }) => {
-        const on = match.some((m) => path.startsWith(m));
+        const on = match.some((m) => path === m || path.startsWith(`${m}/`));
         return (
           <Link key={href} href={href} className={`hq-tab${raised ? ' hq-tab--raised' : ''}`} aria-current={on ? 'page' : undefined}>
             {raised ? <span className="hq-tab__fab"><Icon size={24} aria-hidden="true" /></span> : <Icon size={22} aria-hidden="true" />}

@@ -155,7 +155,7 @@ export default function HuntWorkspace({
                 ))}
               </div>
               {hunt.application_result === 'unsuccessful' && (
-                <p className="hq-body" style={{ marginTop: 10 }}>This hunt stays in your past seasons. <Link href="/planner" className="hq-link">Find another hunt</Link></p>
+                <p className="hq-body" style={{ marginTop: 10 }}>This hunt stays in your past seasons. <Link href="/find" className="hq-link">Find another hunt</Link></p>
               )}
             </div>
           )}

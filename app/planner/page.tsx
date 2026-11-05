@@ -57,6 +57,9 @@ export default function App() {
 
     fetch('/api/me').then((r) => r.json()).then((m: Me) => {
       setMe(m);
+      // Members find hunts on /find; here this flow is only the "I already
+      // have a tag" path. Visitors still get the sign-in / membership gate.
+      if (m.accounts && m.member && start !== 'find' && start !== 'tag') { window.location.replace('/find'); return; }
       // Members: fill the questionnaire from their saved profile and points,
       // then let an explicit deep-link choice win — it arrives first but the
       // prefill resolves later and would otherwise overwrite it.
@@ -196,7 +199,7 @@ export default function App() {
   const briefFor = (rec: any) =>
     handlePlanSubmit({ ...profile, unit: rec.unit, huntCode: rec.huntCode, selectedState: rec.state || profile.states[0], planRec: rec });
 
-  const startOver = () => setState((s) => ({
+  const startOver = () => isMember ? window.location.assign('/find') : setState((s) => ({
     ...s, step: 'entry', entryMode: null, unitBrief: null, recommendations: [], drawableUnits: [],
     drawReality: null, actionPlan: null, strategyPath: null, showDrawablePanel: false, error: null,
   }));

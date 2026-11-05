@@ -324,6 +324,17 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
           </div>
         </section>
       )}
+
+      {/* The other way in: a tag already in hand needs a brief, not odds. */}
+      <Card variant="flat">
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ minWidth: 0, flex: '1 1 220px' }}>
+            <p className="hq-h3">Already have a tag?</p>
+            <p className="hq-small" style={{ marginTop: 2 }}>Drew it or bought it — get a unit brief, hunt plan and gear list.</p>
+          </div>
+          <ButtonLink href={`/planner?start=tag&state=${state}&species=${encodeURIComponent(species)}`} variant="secondary">Start with my tag</ButtonLink>
+        </div>
+      </Card>
     </main>
   );
 }

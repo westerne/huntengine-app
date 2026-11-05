@@ -117,7 +117,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
           <Card>
             <EmptyState icon={<Compass size={24} />} title="A quiet stretch"
               text="Nothing due and no tags in hand. Plan your next seasons or find a hunt — deadlines will show up here as states post them."
-              action={<div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center' }}><ButtonLink href="/plan">Open your plan</ButtonLink><ButtonLink href="/planner" variant="secondary">Find a hunt</ButtonLink></div>} />
+              action={<div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center' }}><ButtonLink href="/plan">Open your plan</ButtonLink><ButtonLink href="/find" variant="secondary">Find a hunt</ButtonLink></div>} />
           </Card>
         )}
 
