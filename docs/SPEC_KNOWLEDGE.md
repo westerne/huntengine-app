@@ -55,11 +55,11 @@ Status key: ✅ have · ⚠️ partial · ❌ missing.
 
 | # | Dataset | Status today | Gap | Source | Priority |
 |---|---|---|---|---|---|
-| D1 | **Tactics library** | ❌ (plans are AI-written from general knowledge) | By species × season × terrain × weapon: glassing, calling, rut timing, pressure, weather | **HuntAddicts articles (owned)**, reviewed by the owner | **P1** |
-| D2 | **Gear library** | ❌ | Curated lists by hunt type, linked to Altitude Outdoors and MTN HNTR and clearly labeled as our brands | Owner-curated | P2 |
-| D3 | Action-plan templates | ⚠️ One plan per hunt | Timeline from apply-by → training → scouting weekends → logistics → hunt week → after | Owner + HuntAddicts | P2 |
-| D4 | **Education** | ❌ | Plain explainers for every term (preference vs. bonus vs. squared points, OTC, leftover, NR caps…); a 2-minute primer per state built from A1–A6; a starter path for newer hunters | Our verified rules (A) + HuntAddicts | **P1** |
-| D5 | Meat care, safety, regs reminders | ⚠️ In hunt plans | Curated checklists | HuntAddicts, agencies | P3 |
+| D1 | **Tactics library** | ❌ (plans are AI-written from general knowledge) | By species × season × terrain × weapon: glassing, calling, rut timing, pressure, weather | Our own write-ups from agency and public educational sources, cited; owner reviews | **P1** |
+| D2 | **Gear library** | ❌ | Curated lists by hunt type (deferred by the owner) | Owner-curated | Later |
+| D3 | Action-plan templates | ⚠️ One plan per hunt | Timeline from apply-by → training → scouting weekends → logistics → hunt week → after | Our own templates, owner reviews | P2 |
+| D4 | **Education** | ❌ | Plain explainers for every term (preference vs. bonus vs. squared points, OTC, leftover, NR caps…); a 2-minute primer per state built from A1–A6; a starter path for newer hunters | Our verified rules (A) + our own write-ups; owner reviews | **P1** |
+| D5 | Meat care, safety, regs reminders | ⚠️ In hunt plans | Curated checklists | Agencies, our own write-ups | P3 |
 
 ## E. How the advisor uses it
 The advisor answers from **tools**, not memory. Each tool reads the datasets above:
@@ -79,16 +79,16 @@ Every answer leads with a recommendation, then the tradeoff, then the next step;
 | **Jun – Aug** | **Leftover and second-draw lists** (A6) |
 | **Ongoing** | Library additions (D), deep dives on request (B10) |
 
-Each refresh runs as an agent research pass (official sources only, quotes kept, spot-checked), then owner review for anything new.
+Each refresh runs as an agent research pass (official sources only, quotes kept, spot-checked); **the owner signs off before it goes live.**
 
 ## G. Priority summary
 - **P0, before January:** deadlines, fees, license prerequisites and application links for all 17 states (A3–A5). This is what "apply in new states" depends on, and the season opens in January.
-- **P1:** OTC/leftover catalog (A6); season dates (B5); land ownership and access (B7–B8); hunter goals and constraints (C2–C3); tactics library and education (D1, D4); yearly refreshes of odds and success.
-- **P2:** trophy indicators (B6); terrain/wilderness (B9); unit deep dive (B10, by April); gear library and action-plan templates (D2–D3); points-rule details (A1–A2).
+- **P1:** OTC/leftover catalog (A6); season dates (B5); land ownership and access (B7–B8); hunter goals and constraints (C2–C3); tactics library and education (D1, D4, our own content); yearly refreshes of odds and success.
+- **P2:** trophy indicators (B6, plus the B&C / P&Y license); terrain/wilderness (B9); unit deep dive (B10, by April); action-plan templates (D3); points-rule details (A1–A2). Gear (D2) later.
 - **P3:** remaining boundaries and blocked rules; gear owned; safety checklists.
 
-## Open questions for the owner
-1. Can we use **HuntAddicts articles** as the tactics and education library, and who reviews them for accuracy?
-2. Is it worth pursuing a **Boone & Crockett / Pope & Young data license** for trophy potential, or start with state-published indicators only?
-3. Gear: **which brands and products**, and how should recommendations be disclosed?
-4. Who signs off on each year's data refresh: you, or a hunter you trust per region?
+## Owner decisions (2026-11-04)
+1. **HuntAddicts articles will not be used.** The tactics and education library (D1, D4) is our own: drafted from agency and other public educational sources with citations, and reviewed by the owner before it goes live.
+2. **Trophy potential: pursue a Boone & Crockett / Pope & Young data license** (probably). Until it's in place, show only state-published indicators (B6).
+3. **Gear (D2) is deferred.**
+4. **The owner signs off on every data refresh** before it goes live.
