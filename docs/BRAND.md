@@ -1,7 +1,7 @@
 # Brand & design system
 
 Source: the HuntEngine.ai brand board (palette names, mark usage, two-tone wordmark, "Built for the hunt ahead").
-Living reference: **/design** (every component, both themes). Tokens: `app/styles/hq.css`. Components: `app/ui/index.tsx` (server-safe) and `app/ui/client.tsx` (interactive). Mark: `public/brand/elk-mark.png` (cut from the board; swap in an SVG when we have one).
+Living reference: **/design** (every component, both themes). Tokens: `app/styles/hq.css`. Components: `app/ui/index.tsx` (server-safe) and `app/ui/client.tsx` (interactive). Mark: the brand SVG (`app/ui/markPaths.ts`, also `public/brand/elk-mark.svg`), drawn in `--mark`.
 
 ## Palette
 

@@ -133,8 +133,9 @@
   padding: 20px;
 }
 .hq-card--flat { box-shadow: none; }
-.hq-card--brand { background: var(--brand); color: var(--on-brand); border-color: transparent; }
-.hq-card--brand .hq-eyebrow, .hq-card--brand .hq-small { color: color-mix(in srgb, var(--on-brand) 75%, transparent); }
+/* The board's dark panel: Engine Slate with the mark in Field Gold, in both themes. */
+.hq-card--brand { background: #2B3F4F; color: #F4F6F7; border-color: transparent; --mark: #E2A53C; --mark-soft: #8DA2B0; --ink: #F4F6F7; }
+.hq-card--brand .hq-eyebrow, .hq-card--brand .hq-small { color: #C9D3DA; }
 .hq-sunk { background: var(--surface-sunk); border-radius: var(--r-md); padding: 14px; }
 .hq-divider { height: 1px; background: var(--divider); border: 0; margin: 16px 0; }
 
@@ -292,7 +293,7 @@
 }
 
 /* ── Brand mark & wordmark (per the brand board) ─────────────────────── */
-.hq-mark { display: inline-block; flex: none; background: var(--mark); -webkit-mask: url(/brand/elk-mark.png) center / contain no-repeat; mask: url(/brand/elk-mark.png) center / contain no-repeat; }
+.hq-mark { display: inline-block; flex: none; color: var(--mark); }
 .hq-wordmark { font-family: var(--font-display), var(--font-inter), sans-serif; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; line-height: 1; color: var(--mark-soft); }
 .hq-wordmark b { font-weight: 700; color: var(--mark-accent); }
 .hq-display { font-family: var(--font-display), var(--font-inter), sans-serif; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }

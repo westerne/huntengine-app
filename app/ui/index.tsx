@@ -4,14 +4,19 @@
 import type { ReactNode, ButtonHTMLAttributes, CSSProperties } from 'react';
 import Link from 'next/link';
 import { AlertTriangle, Info, OctagonAlert } from 'lucide-react';
+import { MARK_PATHS, MARK_VIEWBOX } from './markPaths';
 
 const cx = (...c: Array<string | false | null | undefined>) => c.filter(Boolean).join(' ');
 
 // ── Brand ───────────────────────────────────────────────────────────────────
-// The mark: the elk with its network of points (brand board). A mask, so it
-// takes --mark: Engine Slate on light, Field Gold on dark.
+// The mark: the elk with its network of points, from the brand SVG. Drawn in
+// --mark: Engine Slate on light, Field Gold on dark.
 export function Mark({ size = 32 }: { size?: number }) {
-  return <span className="hq-mark" aria-hidden="true" style={{ width: Math.round(size * 0.83), height: size }} />;
+  return (
+    <svg className="hq-mark" viewBox={MARK_VIEWBOX} width={Math.round(size * 0.8265)} height={size} aria-hidden="true">
+      {MARK_PATHS.map((d, i) => <path key={i} d={d} fill="currentColor" />)}
+    </svg>
+  );
 }
 
 // Two-tone wordmark as on the board: first word in gold, the rest in Alpine Mist.
