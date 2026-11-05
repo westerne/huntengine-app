@@ -57,7 +57,7 @@ describe('draw outlook', () => {
 describe('calendar flags', () => {
   it('flags open years, doubled-up draws and targets set too early', () => {
     const ys = [2027, 2028];
-    const early = { kind: 'draw' as const, basis: 'points' as const, dataYear: 2026, minPoints: 10, firstYearAtMin: null, perYear: [{ year: 2027, points: 4, pct: 0, cumulative: 0 }], text: '' };
+    const early = { kind: 'draw' as const, basis: 'points' as const, dataYear: 2026, minPoints: 10, pointsBar: true, firstYearAtMin: null, perYear: [{ year: 2027, points: 4, pct: 0, cumulative: 0 }], text: '' };
     const flags = yearFlags([
       { kind: 'target', state: 'CO', species: 'Elk', target_year: 2027, unit: '61', hunt_code: 'E-E-061-O1-R', outlook: early },
       { kind: 'target', state: 'CO', species: 'Elk', target_year: 2027, unit: '62', hunt_code: null },

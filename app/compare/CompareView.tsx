@@ -40,7 +40,7 @@ const rowsFor = (years: number[]): Array<{ label: string; get: (c: CompareColumn
   },
   {
     label: last ? `Chance by ${last}` : 'Chance in the years ahead',
-    get: (c) => (c.chanceBy5 == null ? '—' : c.chanceBy5 >= 99 ? 'Very likely' : `About ${Math.round(c.chanceBy5)}%`),
+    get: (c) => (c.chanceBy5 == null ? '—' : c.chanceBy5 >= 99 ? 'Very likely' : c.chanceBy5 > 0 && c.chanceBy5 < 1 ? 'Under 1%' : `About ${Math.round(c.chanceBy5)}%`),
   },
   { label: 'Hunter success', get: (c) => c.hunterSuccess },
   { label: 'Public land', get: (c) => c.publicLand ?? 'Not available' },

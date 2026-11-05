@@ -25,6 +25,9 @@ const pct = (v: unknown) => {
 // Beyond this a point-a-year plan stops being a plan and starts being a wish.
 export const FAR_OFF_YEARS = 10;
 
+// The smallest yearly chance worth calling "within reach".
+export const MIN_REACH = 1;
+
 export type ReachableHunt = {
   unit: string;
   huntCode: string | null;
@@ -72,6 +75,8 @@ export type DrawReality = {
   best: ReachableHunt | null;
   bestAntlerless: ReachableHunt | null;
   soon: FutureHunt[];             // within reach if they keep applying
+  lottery: boolean;
+  longShots: ReachableHunt[];
   dataYear: number | null;
   headline: string;
   caveat: string;
@@ -101,7 +106,7 @@ function basisOf(hunts: ReachableHunt[]): DrawReality['basis'] {
   return 'none';
 }
 
-const pctText = (n: number) => (n >= 10 ? `${Math.round(n)}%` : `${n.toFixed(1)}%`);
+const pctText = (n: number) => (n >= 10 ? `${Math.round(n)}%` : n > 0 && n < 0.1 ? 'under 0.1%' : `${n.toFixed(1)}%`);
 const ptsText = (n: number) => (n === 1 ? '1 point' : `${n} points`);
 
 function headlineFor(r: Omit<DrawReality, 'headline' | 'caveat'>, hunts: ReachableHunt[], species: string, state: string): string {
@@ -143,6 +148,14 @@ function headlineFor(r: Omit<DrawReality, 'headline' | 'caveat'>, hunts: Reachab
     const slim = r.best.odds < 10;
     return `With ${held}, ${r.reachable.length} ${sp} ${r.reachable.length === 1 ? 'hunt is' : 'hunts are'} within reach in ${state}, but ${slim ? 'only just' : 'none of them are a safe bet'} — the best is about ${pctText(r.best.odds)}.`;
   }
+  // A pure lottery has no points level that "brings a hunt within reach":
+  // every application is a ticket. Name the best ticket instead.
+  if (r.lottery) {
+    const ls = r.longShots[0];
+    return ls?.odds != null
+      ? `${state} draws by lottery: every application has a chance${r.points > 0 ? ', and more points mean more chances' : ''}. With ${held} you can still draw any antlered ${sp} hunt, but each is a long shot: the best is about ${pctText(ls.odds)} a year.${cow}`
+      : `${state} draws by lottery, and with ${held} no antlered ${sp} hunt drew anyone at your level's odds last year.${cow}`;
+  }
   const next = r.soon[0];
   if (next) {
     if (next.farOff) {
@@ -171,6 +184,9 @@ export function drawReality(
     // True only in a preference state, where reaching the cutoff is the tag.
     // Elsewhere the cutoff is a door into a lottery and is said that way.
     cutoffIsADate?: boolean;
+    // Squared-bonus or random: no points level brings a hunt "within reach",
+    // so there's no list of hunts to build toward.
+    lottery?: boolean;
   },
 ): DrawReality {
   const points = Math.max(0, Math.floor(opts.points) || 0);
@@ -192,8 +208,10 @@ export function drawReality(
   // points-to-draw figure it means their points clear the bar. With only a
   // published rate we show it anyway and say plainly that the figure is the
   // hunt's, not theirs — the alternative was an empty page for Colorado.
+  // Under 1% a year is a lottery ticket, not "within reach": Nevada's modeled
+  // odds give nearly every hunt some chance, down to 0.04%.
   const within = basis === 'your-points'
-    ? (h: typeof looked[number]) => (h.odds ?? 0) > 0
+    ? (h: typeof looked[number]) => (h.odds ?? 0) >= MIN_REACH
     : basis === 'points-to-draw'
     ? (h: typeof looked[number]) => h.pointsNeeded != null && h.pointsNeeded <= points
     : basis === 'published-rate'
@@ -212,7 +230,7 @@ export function drawReality(
   const reachable = got.filter((h) => !h.antlerless).sort(byOdds);
   const antlerless = got.filter((h) => h.antlerless).sort(byOdds);
 
-  const soon: FutureHunt[] = looked
+  const soon: FutureHunt[] = opts.lottery ? [] : looked
     .filter((h) => !h.antlerless)
     .filter((h): h is typeof looked[number] & { pointsNeeded: number } => h.pointsNeeded != null && h.pointsNeeded > points)
     .map((h) => {
@@ -242,6 +260,10 @@ export function drawReality(
     best: reachable[0] ?? null,
     bestAntlerless: antlerless[0] ?? null,
     soon,
+    lottery: !!opts.lottery,
+    // The best antlered chances under the "within reach" line: in a lottery
+    // these are still drawable, just long shots.
+    longShots: looked.filter((h) => !h.antlerless && (h.odds ?? 0) > 0 && (h.odds ?? 0) < MIN_REACH).sort(byOdds).slice(0, 5),
     dataYear: years.length ? Math.max(...years) : null,
   };
 

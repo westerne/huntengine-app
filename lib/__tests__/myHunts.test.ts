@@ -44,7 +44,7 @@ describe('one record per hunt', () => {
 
 describe('one-line odds', () => {
   const draw = (perYear: Array<{ year: number; points: number | null; pct: number | null; cumulative: number | null }>, minPoints: number | null = null, firstYearAtMin: number | null = null) =>
-    ({ kind: 'draw' as const, basis: 'points' as const, dataYear: 2026, minPoints, firstYearAtMin, perYear, text: '' });
+    ({ kind: 'draw' as const, basis: 'points' as const, dataYear: 2026, minPoints, pointsBar: true, firstYearAtMin, perYear, text: '' });
   it('says when you would likely draw, and whether that is in time', () => {
     const o = draw([{ year: 2027, points: 6, pct: 30, cumulative: 30 }, { year: 2028, points: 7, pct: 40, cumulative: 58 }]);
     expect(shortOutlook(o, 2028)).toEqual({ text: 'Likely by 2028', tier: 'good' });
@@ -52,5 +52,12 @@ describe('one-line odds', () => {
     expect(shortOutlook(draw([{ year: 2027, points: 3, pct: null, cumulative: null }], 5, 2029), 2029)).toEqual({ text: 'Clears 5-pt cutoff 2029', tier: 'good' });
     expect(shortOutlook({ kind: 'otc', text: '' }, 2027)?.text).toBe('Over the counter');
     expect(shortOutlook({ kind: 'closed', text: 'Residents only — not open to you.' }, 2027)).toEqual({ text: 'Residents only', tier: 'stop' });
+  });
+});
+
+describe('tiny chances', () => {
+  it("never shows a real chance as 0%", () => {
+    const o = { kind: 'draw' as const, basis: 'points' as const, dataYear: 2025, minPoints: 11, pointsBar: false, firstYearAtMin: null, perYear: [{ year: 2032, points: 11, pct: 0.1, cumulative: 0.4 }], text: '' };
+    expect(shortOutlook(o, 2032)?.text).toBe('Under 1% by 2032');
   });
 });

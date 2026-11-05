@@ -41,6 +41,7 @@ type Case = {
   tools?: string[];        // at least one of these must be called
   match?: RegExp;          // the answer must say this
   noTools?: boolean;       // must answer without lookups (off-topic)
+  not?: RegExp;            // the answer must NOT say this
 };
 const DONT_HAVE = /don.?t have|do not have|don.?t cover|couldn.?t find|not in our data|isn.?t one of|not one of|check with|contact|agency|we cover/i;
 const DECLINES_SPOT = /can.?t|won.?t|don.?t|not able|unit[- ]level|unit level/i;
@@ -66,7 +67,8 @@ const CASES: Case[] = [
   { q: 'Compare Nevada elk 4161-131 and 4151-111-Early for me.', tools: ['compare_hunts', 'get_hunt'] },
   { q: 'With 12 Utah deer points, what can I draw?', tools: ['search_hunts'] },
   { q: 'I have 3 Colorado elk points. Any good options?', tools: ['search_hunts'] },
-  { q: 'Any archery elk in Nevada I could draw?', tools: ['search_hunts'] },
+  // Nevada is a lottery: a 0.7% chance is a long shot, not "can't draw".
+  { q: 'Any archery elk in Nevada I could draw?', tools: ['search_hunts'], not: /can.?t draw|cannot draw|won.?t draw/i },
   { q: 'When will I probably draw 4161-131?', tools: ['get_hunt'] },
   { q: 'What Wyoming antelope can I draw as a resident?', tools: ['search_hunts'] },
   { q: 'What hunt can I actually draw this year?', tools: ['my_situation', 'search_hunts'] },
@@ -128,6 +130,7 @@ describe.skipIf(!RUN)('advisor test set (real model)', () => {
       const problems = universal(a);
       if (c.tools && !c.tools.some((t) => called.includes(t))) problems.push(`expected ${c.tools.join(' or ')}, called ${called.join(', ') || 'nothing'}`);
       if (c.match && !c.match.test(a.text)) problems.push(`answer doesn't match ${c.match}`);
+      if (c.not?.test(a.text)) problems.push(`answer says ${c.not}`);
       if (c.noTools && called.length) problems.push(`looked things up for an off-topic question: ${called.join(', ')}`);
       results.push({ c, a, called, problems });
     }

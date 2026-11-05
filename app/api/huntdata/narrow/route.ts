@@ -4,7 +4,7 @@ import { requireMember } from '@/lib/apiAuth';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 import { asWeapon, loadDrawContext } from '@/lib/huntdata/drawContext';
 import { drawReality } from '@/lib/huntdata/reality';
-import { cutoffIsADate } from '@/lib/huntdata/drawSystem';
+import { cutoffIsADate, pointsBarMatters } from '@/lib/huntdata/drawSystem';
 import { currentSeasonYear } from '@/lib/hunts';
 import {
   BLIND_SPOTS, WANTS, WANT_KEYS, BLIND_SPOT_KEYS,
@@ -125,6 +125,7 @@ export async function POST(req: Request) {
     species: ctx.species,
     thisYear: currentSeasonYear(),
     cutoffIsADate: cutoffIsADate(ctx.mod.code),
+    lottery: !pointsBarMatters(ctx.mod.code),
   });
   const widened = wants.includes('anyAnimal');
   const codes = new Set(

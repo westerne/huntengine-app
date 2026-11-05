@@ -36,7 +36,9 @@ describe('clearing the points bar is not the same as drawing', () => {
     // Nevada is squared-bonus, so the cutoff is a door, not a date — reading it
     // as one put "likely to draw by 2027" above an 11% chance.
     const c = col('NV', 'Elk', '4151-104-Late', 'nonresident', 6);
-    expect(c.clearsBarIn).toBe(2027);
+    // A pure lottery has no bar to clear at all: the chance is modeled from
+    // (points² + 1) draw numbers each year instead (weightedDraw.ts).
+    expect(c.clearsBarIn).toBeNull();
     expect(c.likelyBy).toBeNull();
     expect(c.chanceBy5!).toBeLessThan(50);
   });

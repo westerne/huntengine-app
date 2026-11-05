@@ -15,6 +15,16 @@
 import { STATE_INFO } from './registry';
 import type { StateCode } from './schema';
 
+// Is the fewest-points-that-drew figure a bar worth building toward at all?
+// Not in a pure lottery — squared bonus (NV, MT, WA) or random (ID, NM): there
+// it's only who happened to win. Preference, hybrid and bonus states (UT and
+// AZ hold back tags for the top point holders) keep it as a milestone, even
+// where reaching it only gets you into the lottery.
+export function pointsBarMatters(state: StateCode | string): boolean {
+  const info = STATE_INFO[state as StateCode];
+  return !info || !['bonus-squared', 'random'].includes(info.drawSystem);
+}
+
 export function cutoffIsADate(state: StateCode | string): boolean {
   const info = STATE_INFO[state as StateCode];
   // Unverified draw rules are treated as a lottery rather than trusted.

@@ -1,4 +1,5 @@
 import type { DrawStat, Hunt, Residency, SpeciesKey, StateModule, Weapon } from './schema';
+import { DRAW_WEIGHT, weightedOdds } from './weightedDraw';
 
 // Default SCOUT and BRIEF data for any state module that doesn't have its own
 // hand-tuned builder in app/api/strategy. A new state only has to produce
@@ -37,7 +38,16 @@ export function pointLineAt(h: Hunt, residency: Residency, points: number) {
   return line && line.applicants > 0 ? line : null;
 }
 
+// In a weighted lottery (Nevada) the chance is modeled from the whole point
+// table, not read off last year's winners at exactly this level — see
+// weightedDraw.ts. Small chances keep two decimals so 0.04% doesn't read as 0.
 export function successAtPoints(h: Hunt, residency: Residency, points: number): number | null {
+  const weight = DRAW_WEIGHT[h.state];
+  const lines = h.pointLines?.[residency];
+  if (weight && lines?.length) {
+    const p = weightedOdds(lines, points, weight);
+    return p == null ? null : p >= 1 ? Math.round(p * 10) / 10 : Math.round(p * 100) / 100;
+  }
   const line = pointLineAt(h, residency, points);
   // Some agencies count second-choice draws at a level, so drawn can exceed applied.
   return line ? Math.min(100, Math.round((1000 * line.drawn) / line.applicants) / 10) : null;

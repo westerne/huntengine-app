@@ -122,7 +122,8 @@ export function shortOutlook(o: Outlook | null, year: number | null): { text: st
   const last = o.perYear[o.perYear.length - 1];
   if (likely != null) return { text: `Likely by ${likely}`, tier: year != null && likely <= year ? 'good' : 'fair' };
   if (o.firstYearAtMin != null) return { text: `Clears ${o.minPoints}-pt cutoff ${o.firstYearAtMin}`, tier: year != null && o.firstYearAtMin <= year ? 'good' : 'fair' };
-  if (last?.cumulative != null) return { text: `~${Math.round(last.cumulative)}% by ${last.year}`, tier: 'long' };
-  if (o.minPoints != null) return { text: `Needs ${o.minPoints} pts`, tier: 'long' };
+  // A real but tiny chance (a Nevada lottery ticket) must not round to "0%".
+  if (last?.cumulative != null) return { text: last.cumulative < 1 ? `Under 1% by ${last.year}` : `~${Math.round(last.cumulative)}% by ${last.year}`, tier: 'long' };
+  if (o.minPoints != null) return { text: o.pointsBar ? `Needs ${o.minPoints} pts` : `Drew at ${o.minPoints}+ pts last time`, tier: 'long' };
   return null;
 }

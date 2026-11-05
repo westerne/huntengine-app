@@ -15,7 +15,7 @@ import { canonicalSpecies, speciesKeyOf } from '../species';
 import { titleCaseState } from '../scoutData';
 import { buildGenericScoutDataset } from '../huntdata/generic';
 import { drawReality, type DrawReality, type ReachableHunt } from '../huntdata/reality';
-import { cutoffIsADate } from '../huntdata/drawSystem';
+import { cutoffIsADate, pointsBarMatters } from '../huntdata/drawSystem';
 import type { Residency, Weapon } from '../huntdata/schema';
 
 export type Source = { label: string; url?: string | null };
@@ -204,7 +204,10 @@ export function harvestReporting(args: { state: string; species: string }): Tool
 }
 
 // ── one hunt, and several side by side ─────────────────────────────────────
-export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null };
+export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; howTheDrawWorks: string | null };
+// The state's draw rules in plain words, so "burn points or keep building" is
+// answered for the state's actual system, not a preference draw by default.
+const drawRules = (state: string) => STATE_INFO[state as keyof typeof STATE_INFO]?.drawSystemNote ?? null;
 function column(state: string, key: string, species: string, huntCode: string | null, unit: string | null, sit: Situation) {
   const mod = getStateModule(state);
   if (!mod) return null;
@@ -233,7 +236,7 @@ export function getHunt(args: { state: string; species: string; huntCode?: strin
   if (!c) return fail(`We couldn't find ${r.name} ${r.species.toLowerCase()} ${args.huntCode ?? `unit ${args.unit}`} in the draw data${args.unit && !args.huntCode ? ' (that unit may have several hunts — name the hunt code)' : ''}.`);
   const sources = [huntSource(r.state, c.drawYear)];
   if (c.pts != null) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${c.pts})` });
-  return { ok: true, data: { ...strip(c.col), yourPoints: c.pts }, sources };
+  return { ok: true, data: { ...strip(c.col), yourPoints: c.pts, howTheDrawWorks: drawRules(r.state) }, sources };
 }
 
 export function compareHunts(args: { hunts: Array<{ state: string; species: string; huntCode: string }> }, sit: Situation): ToolResult<{ hunts: HuntData[]; pick: ReturnType<typeof pickBest>; notFound: string[] }> {
@@ -246,7 +249,7 @@ export function compareHunts(args: { hunts: Array<{ state: string; species: stri
     const c = r.ok ? column(r.state, r.key, r.species, h.huntCode, null, sit) : null;
     if (!r.ok || !c) { notFound.push(`${h.state} ${h.huntCode}`); continue; }
     cols.push(c.col);
-    out.push({ ...strip(c.col), yourPoints: c.pts });
+    out.push({ ...strip(c.col), yourPoints: c.pts, howTheDrawWorks: drawRules(r.state) });
     const s = huntSource(r.state, c.drawYear);
     sources.set(s.label, s);
     if (c.pts != null) sources.set(`pts:${r.state}${r.key}`, { label: `your ${r.state} ${r.species.toLowerCase()} points (${c.pts})` });
@@ -261,10 +264,12 @@ export function compareHunts(args: { hunts: Array<{ state: string; species: stri
 // apart, because mixing them makes a state look easier than it is.
 type Picked = Pick<ReachableHunt, 'unit' | 'huntCode' | 'label' | 'odds' | 'publishedRate' | 'hunterSuccess' | 'pointsNeeded'>;
 export type SearchData = {
+  howTheDrawWorks: string | null;
   state: string; species: string; residency: Residency; yourPoints: number; weapon: Weapon;
   basis: DrawReality['basis']; oddsAreYours: boolean; oddsNote: string; dataYear: number | null;
   headline: string; caveat: string;
   reachable: Picked[]; antlerless: Picked[];
+  longShots: Picked[];   // lottery states: drawable, under 1% a year
   soon: Array<Picked & { year: number; yearsAway: number; oddsAtThatLevel: number | null; cutoffIsADate: boolean }>;
   moreReachable: number;
 };
@@ -282,13 +287,13 @@ export function searchHunts(args: { state: string; species: string; weapon?: str
   const weapon: Weapon = WEAPONS.find((w) => w === String(args.weapon ?? '').toLowerCase()) ?? 'any';
   const points = pointsFor(sit, r.state, r.key) ?? 0;
   const hunts = buildGenericScoutDataset(mod, r.key as never, residency, weapon, points);
-  const re = drawReality(hunts, { points, state: r.name, species: r.species, thisYear: sit.seasonYear, cutoffIsADate: cutoffIsADate(r.state) });
+  const re = drawReality(hunts, { points, state: r.name, species: r.species, thisYear: sit.seasonYear, cutoffIsADate: cutoffIsADate(r.state), lottery: !pointsBarMatters(r.state) });
   const sources: Source[] = [huntSource(r.state, re.dataYear)];
   if (points) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${points})` });
   return {
     ok: true,
     data: {
-      state: r.state, species: r.species, residency, yourPoints: points, weapon,
+      state: r.state, species: r.species, residency, yourPoints: points, weapon, howTheDrawWorks: drawRules(r.state),
       basis: re.basis, oddsAreYours: re.basis === 'your-points', dataYear: re.dataYear,
       oddsNote: re.basis === 'your-points' ? 'odds are at the hunter\'s own points'
         : re.basis === 'points-to-draw' ? 'only the fewest points that drew is published: within reach means their points clear it, not a sure draw'
@@ -297,6 +302,7 @@ export function searchHunts(args: { state: string; species: string; weapon?: str
       headline: re.headline, caveat: re.caveat,
       reachable: re.reachable.slice(0, 8).map(pick),
       antlerless: re.antlerless.slice(0, 3).map(pick),
+      longShots: re.longShots.map(pick),
       soon: re.soon.filter((h) => !h.farOff).slice(0, 5).map((h) => ({
         ...pick(h), year: h.year, yearsAway: h.yearsAway, oddsAtThatLevel: h.oddsAtThatLevel, cutoffIsADate: h.cutoffIsADate,
       })),

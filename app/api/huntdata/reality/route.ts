@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { requireMember } from '@/lib/apiAuth';
 import { asWeapon, loadDrawContext } from '@/lib/huntdata/drawContext';
 import { drawReality } from '@/lib/huntdata/reality';
-import { cutoffIsADate } from '@/lib/huntdata/drawSystem';
+import { cutoffIsADate, pointsBarMatters } from '@/lib/huntdata/drawSystem';
 import { currentSeasonYear } from '@/lib/hunts';
 
 // GET /api/huntdata/reality?state=NV&species=Elk[&weapon=rifle]
@@ -29,6 +29,7 @@ export async function GET(req: Request) {
     species: ctx.species,
     thisYear: currentSeasonYear(),
     cutoffIsADate: cutoffIsADate(ctx.mod.code),
+    lottery: !pointsBarMatters(ctx.mod.code),
   });
 
   // Colorado deer is 781 hunts, 546 of them antlered, and the page shows eight.

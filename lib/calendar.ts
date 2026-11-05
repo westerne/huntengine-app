@@ -4,6 +4,8 @@
 
 import type { Hunt, Residency, StateModule } from './huntdata/schema';
 import { successAtPoints, successText } from './huntdata/generic';
+import { pointsBarMatters } from './huntdata/drawSystem';
+import { chancesAt } from './huntdata/weightedDraw';
 import { speciesKeyOf } from './species';
 
 export const CALENDAR_YEARS = 3;
@@ -102,12 +104,16 @@ export type Outlook =
       basis: 'points' | 'overall';
       dataYear: number | null;
       minPoints: number | null;
+      // In a pure lottery the fewest points that drew is only who happened to
+      // win, so there's no "year you'd clear it" (firstYearAtMin stays null).
+      pointsBar: boolean;
       firstYearAtMin: number | null;
       perYear: Array<{ year: number; points: number | null; pct: number | null; cumulative: number | null }>;
       text: string;
     };
 
-const pct1 = (x: number) => Math.round(x * 10) / 10;
+// Small chances keep two decimals, so a 0.04% lottery ticket doesn't become 0.
+const pct1 = (x: number) => (x > 0 && x < 1 ? Math.round(x * 100) / 100 : Math.round(x * 10) / 10);
 
 export function drawOutlook(
   hunt: Hunt | null,
@@ -140,13 +146,21 @@ export function drawOutlook(
   // non-resident pools) — that's still an honest outlook.
   if (perYear.every((r) => r.pct == null) && minPoints == null) return { kind: 'none', text: 'No published draw odds for this hunt.' };
 
-  const firstYearAtMin = minPoints != null && pointsByYear
+  const isBar = pointsBarMatters(hunt.state);
+  const firstYearAtMin = isBar && minPoints != null && pointsByYear
     ? years.find((y) => (pointsByYear[y] ?? -1) >= minPoints) ?? null
     : null;
   const last = perYear[perYear.length - 1];
   const yr = hunt.drawYear ?? 'last year';
   const parts: string[] = [];
-  if (minPoints != null && minPoints > 0) {
+  const nowPts = pointsByYear?.[years[0]];
+  const chances = nowPts != null ? chancesAt(hunt.state, nowPts) : null;
+  if (chances != null) {
+    // A weighted lottery: say how it works instead of quoting a cutoff.
+    parts.push(`Every application is a chance: you get your points squared plus one draw numbers, so ${nowPts} ${nowPts === 1 ? 'point is' : 'points are'} ${chances} chances.`);
+  } else if (!isBar && minPoints != null && minPoints > 0) {
+    parts.push(`In ${yr} the fewest points that drew was ${minPoints}, but it's a lottery: that's not a requirement or a promise.`);
+  } else if (minPoints != null && minPoints > 0) {
     const pts = minPoints === 1 ? '1 point' : `${minPoints} points`;
     parts.push(!pointsByYear
       ? `In ${yr} tags went to applicants with as few as ${pts}.`
@@ -157,10 +171,10 @@ export function drawOutlook(
   if (last.cumulative != null) {
     parts.push(last.cumulative >= 99
       ? `Very likely to draw by ${last.year} if odds stay like ${yr}'s.`
-      : `About a ${Math.round(last.cumulative)}% chance of drawing at least once by ${last.year}, if odds stay like ${yr}'s.`);
+      : `${last.cumulative > 0 && last.cumulative < 1 ? 'Under a 1%' : `About a ${Math.round(last.cumulative)}%`} chance of drawing at least once by ${last.year}, if odds stay like ${yr}'s.`);
   }
   if (hunt.harvest) parts.push(`Hunter success ${successText(hunt.harvest, hunt.tags)} (${hunt.harvest.year}).`);
-  return { kind: 'draw', basis, dataYear: hunt.drawYear, minPoints, firstYearAtMin, perYear, text: parts.join(' ') };
+  return { kind: 'draw', basis, dataYear: hunt.drawYear, minPoints, pointsBar: isBar, firstYearAtMin, perYear, text: parts.join(' ') };
 }
 
 export type YearFlag = { year: number; level: 'info' | 'warn'; text: string };
@@ -188,7 +202,7 @@ export function yearFlags(
     }
     for (const i of inYear) {
       const o = i.outlook;
-      if (o?.kind === 'draw' && o.minPoints != null && o.minPoints > 0 && (o.firstYearAtMin == null || o.firstYearAtMin > y)) {
+      if (o?.kind === 'draw' && o.pointsBar && o.minPoints != null && o.minPoints > 0 && (o.firstYearAtMin == null || o.firstYearAtMin > y)) {
         flags.push({ year: y, level: 'warn', text: `${i.state} ${i.hunt_code ? `hunt ${i.hunt_code}` : i.unit ?? i.species}: last draw took ${o.minPoints} points; you'd have ${o.perYear.find((r) => r.year === y)?.points ?? '?'} in ${y}.` });
       }
       if (o?.kind === 'closed') flags.push({ year: y, level: 'warn', text: `${i.state} ${i.hunt_code ?? i.unit ?? ''}: ${o.text}` });

@@ -5,6 +5,7 @@
 import type { Hunt, Residency } from './huntdata/schema';
 import { successText } from './huntdata/generic';
 import { cutoffIsADate } from './huntdata/drawSystem';
+import { DRAW_WEIGHT } from './huntdata/weightedDraw';
 import { drawOutlook, type Outlook } from './calendar';
 import { SPECIES_NAME } from './species';
 
@@ -48,10 +49,17 @@ export function parseCompareKey(k: string): { state: string; speciesKey: string;
   return state && speciesKey && code ? { state: state.toUpperCase(), speciesKey: speciesKey.toUpperCase(), code } : null;
 }
 
+// A chance as words. A real but tiny chance (a Nevada lottery ticket) must
+// never round to "0%", which reads as "can't draw".
+export function roughPct(n: number): string {
+  return n > 0 && n < 1 ? 'under 1%' : `about ${Math.round(n)}%`;
+}
+
 // How much to trust the odds number, in plain words, per state's data.
 function reliabilityFor(hunt: Hunt, o: Outlook): string {
   if (hunt.otc) return 'No draw — buy the tag.';
   if (o.kind !== 'draw') return 'No published odds.';
+  if (o.basis === 'points' && DRAW_WEIGHT[hunt.state]) return 'Good: worked out from the agency’s point table, since each applicant gets points squared plus one chances.';
   if (o.basis === 'points') return 'Good: from the agency’s results at each point level.';
   if (o.perYear.every((r) => r.pct == null)) return 'Partial: only the fewest points that drew is published.';
   switch (hunt.state) {
@@ -86,7 +94,7 @@ export function compareColumn(
   let oddsNow: string;
   if (!openToYou) oddsNow = o.text;
   else if (o.kind === 'otc') oddsNow = 'Over the counter';
-  else if (first?.pct != null) oddsNow = `${first.pct}%${first.points != null ? ` at ${first.points === 1 ? '1 point' : `${first.points} points`}` : ''} (${hunt.drawYear ?? 'last'} draw)`;
+  else if (first?.pct != null) oddsNow = `${first.pct > 0 && first.pct < 0.1 ? 'Under 0.1' : first.pct}%${first.points != null ? ` at ${first.points === 1 ? '1 point' : `${first.points} points`}` : ''} (${hunt.drawYear ?? 'last'} draw)`;
   else if (o.kind === 'draw' && o.minPoints != null) oddsNow = `Took ${o.minPoints} points in ${hunt.drawYear ?? 'the last draw'}${first?.points != null ? `; you have ${first.points}` : ''}`;
   else oddsNow = 'Not published';
 
@@ -139,7 +147,7 @@ export function pickBest(cols: CompareColumn[]): { key: string; why: string; tra
   const drawText = (c: CompareColumn) =>
     c.outlook.kind === 'otc' ? 'no draw needed'
       : c.likelyBy != null ? `likely to draw by ${c.likelyBy}`
-      : c.chanceBy5 != null ? `about a ${Math.round(c.chanceBy5)}% chance to draw ${by(c)}`
+      : c.chanceBy5 != null ? `${c.chanceBy5 > 0 && c.chanceBy5 < 1 ? 'under a 1%' : `about a ${Math.round(c.chanceBy5)}%`} chance to draw ${by(c)}`
       : c.clearsBarIn != null ? `you'd clear the points bar in ${c.clearsBarIn}, then it's a lottery`
       : 'no published odds to go on';
   const why = `${name(best)}: ${drawText(best)}, hunter success ${best.hunterSuccessPct != null ? `${best.hunterSuccessPct}%` : 'not published (we assumed average)'}.`;
@@ -156,7 +164,7 @@ export function pickBest(cols: CompareColumn[]): { key: string; why: string; tra
     const worseChance = better.chanceBy5 != null && best.chanceBy5 != null && better.chanceBy5 < best.chanceBy5 - 1;
     const worseWait = better.likelyBy != null && best.likelyBy != null && better.likelyBy > best.likelyBy;
     const cost = worseChance
-      ? `your chance of drawing it ${by(better)} is lower — about ${Math.round(better.chanceBy5!)}% against ${Math.round(best.chanceBy5!)}%`
+      ? `your chance of drawing it ${by(better)} is lower — ${roughPct(better.chanceBy5!)} against ${roughPct(best.chanceBy5!)}`
       : worseWait
       ? `you'd likely wait until ${better.likelyBy}`
       : `it's ${drawText(better)}`;
