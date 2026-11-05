@@ -8,10 +8,11 @@ import { buildMyHunts, shortOutlook, type MyHunt, type SavedHuntRow } from '@/li
 import { getStateModule } from '@/lib/huntdata/registry';
 import { speciesKeyOf } from '@/lib/species';
 import { readProfile } from '../calendar/readProfile';
-import { deadlineFor, deadlineText } from '@/lib/huntdata/apply';
+import { deadlineFor, deadlineText, type Deadline } from '@/lib/huntdata/apply';
 
 export type PlanHunt = MyHunt & {
   due: string | null;          // "Due Apr 7" / "Expected Jun 12" / "Last year Apr 7"
+  agencyDeadline: Deadline | null;
   outlook: Outlook | null;
   short: { text: string; tier: 'good' | 'fair' | 'long' | 'stop' } | null;
   huntLabel: string | null;
@@ -29,7 +30,7 @@ type Client = Awaited<ReturnType<typeof supabaseServer>>;
 export async function loadPlan(supabase: Client, userId: string) {
   const [{ data: itemRows, error: e1 }, { data: savedRows, error: e2 }, { data: pointRows }, { data: profile }] = await Promise.all([
     supabase.from('plan_items').select('*').order('target_year', { nullsFirst: false }).order('position').order('created_at'),
-    supabase.from('saved_hunts').select('id, season_year, state, species, unit, hunt_code, label, status, application_result, applications(decision, deadline_on, submitted_at), hunt_reports(completed_at, harvested)').order('season_year', { ascending: false }),
+    supabase.from('saved_hunts').select('id, season_year, state, species, unit, hunt_code, label, status, application_result, hunt_start, hunt_end, applications(decision, deadline_on, submitted_at), hunt_reports(completed_at, harvested)').order('season_year', { ascending: false }),
     supabase.from('hunter_points').select('state, species, points, as_of_year'),
     readProfile(supabase, userId),
   ]);
@@ -82,9 +83,12 @@ export async function loadPlan(supabase: Client, userId: string) {
     withOutlook.push({
       ...h, outlook, short: shortOutlook(outlook, h.year), huntLabel: hunt?.label ?? null,
       // The application deadline matters until they've applied (OTC tags have none).
-      due: !h.otc && h.year != null && h.year >= thisYear && ['considering', 'planned', 'points'].includes(h.stage)
-        ? deadlineText(deadlineFor(h.state, speciesKeyOf(h.species, h.state), residencyFor(h.state), h.year))
-        : null,
+      ...(() => {
+        const d = !h.otc && h.year != null && h.year >= thisYear && ['considering', 'planned', 'points'].includes(h.stage)
+          ? deadlineFor(h.state, speciesKeyOf(h.species, h.state), residencyFor(h.state), h.year)
+          : null;
+        return { due: deadlineText(d), agencyDeadline: d };
+      })(),
       compareKey: hunt ? `${hunt.state}~${hunt.species}~${hunt.huntCode}` : null,
     });
   }

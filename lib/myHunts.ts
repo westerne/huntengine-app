@@ -32,6 +32,8 @@ export type SavedHuntRow = {
   label: string | null;
   status: string;
   application_result: string | null;
+  hunt_start?: string | null;
+  hunt_end?: string | null;
   applications?: { decision: string | null; deadline_on: string | null; submitted_at: string | null } | Array<{ decision: string | null; deadline_on: string | null; submitted_at: string | null }> | null;
   hunt_reports?: { completed_at: string | null; harvested: boolean | null } | Array<{ completed_at: string | null; harvested: boolean | null }> | null;
 };
@@ -49,7 +51,9 @@ export type MyHunt = {
   stage: Stage;
   otc: boolean;
   bucket: boolean;
-  deadline: string | null;     // YYYY-MM-DD, when known
+  deadline: string | null;     // YYYY-MM-DD the hunter (or agency) set on their application
+  huntStart: string | null;
+  huntEnd: string | null;
   harvested: boolean | null;
   notes: string | null;
 };
@@ -86,7 +90,8 @@ export function buildMyHunts(saved: SavedHuntRow[], items: PlanItem[]): MyHunt[]
       key: `s:${h.id}`, savedId: h.id, planItemId: linked?.id ?? null,
       state: h.state, species: h.species, unit: h.unit, huntCode: h.hunt_code, label: h.label,
       year: h.season_year, stage: stageOfSaved(h), otc: linked?.kind === 'otc', bucket: false,
-      deadline: app?.deadline_on ?? null, harvested: rep?.harvested ?? null, notes: linked?.notes ?? null,
+      deadline: app?.deadline_on ?? null, huntStart: h.hunt_start ?? null, huntEnd: h.hunt_end ?? null,
+      harvested: rep?.harvested ?? null, notes: linked?.notes ?? null,
     };
   });
   for (const i of items) {
@@ -95,7 +100,7 @@ export function buildMyHunts(saved: SavedHuntRow[], items: PlanItem[]): MyHunt[]
       key: `p:${i.id}`, savedId: null, planItemId: i.id,
       state: i.state, species: i.species, unit: i.unit, huntCode: i.hunt_code, label: i.label,
       year: i.target_year, stage: i.kind === 'bucket' && !i.target_year ? 'idea' : 'planned',
-      otc: i.kind === 'otc', bucket: i.kind === 'bucket', deadline: null, harvested: null, notes: i.notes,
+      otc: i.kind === 'otc', bucket: i.kind === 'bucket', deadline: null, huntStart: null, huntEnd: null, harvested: null, notes: i.notes,
     });
   }
   return out;
