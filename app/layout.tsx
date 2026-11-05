@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Roboto_Mono } from "next/font/google";
 import Script from "next/script";
 import AppNav from "./components/AppNav";
+import ThemeScript from "./ui/ThemeScript";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,6 +14,10 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// Design system fonts (app/styles/hq.css): Inter for words, Roboto Mono for numbers.
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const robotoMono = Roboto_Mono({ variable: "--font-hqmono", subsets: ["latin"], weight: ["400", "500", "600"] });
 
 // HuntQuarters GA4 property. Loads on the production deploy only, so local and
 // preview testing don't count as visits; NEXT_PUBLIC_GA_ID overrides it.
@@ -31,9 +36,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head><ThemeScript /></head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${robotoMono.variable} antialiased`}
       >
         <AppNav />
         {children}

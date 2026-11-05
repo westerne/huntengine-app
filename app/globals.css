@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/hq.css";
 
 :root {
   --background: #ffffff;
@@ -10,6 +11,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Design-system roles as Tailwind colors (bg-canvas, text-ink, …) for screens moving onto hq.css. */
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-sunk: var(--surface-sunk);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-brand: var(--brand);
+  --color-action: var(--action);
+  --color-data: var(--data);
 }
 
 @media (prefers-color-scheme: dark) {

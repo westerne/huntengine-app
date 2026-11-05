@@ -24,7 +24,10 @@ export default function NavLinks({ member, signedIn }: { member: boolean; signed
     </Link>
   );
 
+  // Screens on the new design system bring their own header and tab bar.
+  if (path.startsWith('/design')) return null;
   return (
+    <header className="border-b border-zinc-900 bg-black/90 backdrop-blur sticky top-0 z-40 print:hidden">
     <nav className="max-w-6xl mx-auto px-4 h-14 flex items-center gap-1 sm:gap-2" aria-label="Main">
       <Link href={member ? '/calendar' : '/'} className="text-amber-500 font-black uppercase tracking-[0.2em] text-xs sm:text-sm mr-2 sm:mr-4 whitespace-nowrap shrink-0">HuntQuarters</Link>
       {member && (
@@ -46,5 +49,6 @@ export default function NavLinks({ member, signedIn }: { member: boolean; signed
         )}
       </div>
     </nav>
+    </header>
   );
 }
