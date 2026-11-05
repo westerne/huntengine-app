@@ -97,7 +97,7 @@ export default function HuntWorkspace({
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-10 space-y-8">
-      <Link href="/season" className="text-zinc-500 text-[11px] font-black uppercase tracking-widest hover:text-white">← My Season</Link>
+      <Link href="/plan" className="text-zinc-500 text-[11px] font-black uppercase tracking-widest hover:text-white">← Your plan</Link>
 
       {/* Overview */}
       <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6" aria-labelledby="hunt-title">

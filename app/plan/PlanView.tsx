@@ -87,7 +87,7 @@ function Row({ h, years, thisYear, onError }: { h: PlanHunt; years: number[]; th
   );
 }
 
-function AddHunt({ years, onDone }: { years: number[]; onDone: () => void }) {
+export function AddHunt({ years, onDone, onCancel, bare }: { years: number[]; onDone: () => void; onCancel?: () => void; bare?: boolean }) {
   const [f, setF] = useState({ kind: 'target' as PlanKind, state: 'CO', species: 'Elk', unit: '', hunt_code: '', target_year: String(years[0]), notes: '' });
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -99,8 +99,8 @@ function AddHunt({ years, onDone }: { years: number[]; onDone: () => void }) {
     finally { setBusy(false); }
   };
   return (
-    <Card className="hq-fade-up">
-      <p className="hq-h3" style={{ marginBottom: 12 }}>Add a hunt to your plan</p>
+    <Card className="hq-fade-up" style={bare ? { padding: 0, border: 0, background: 'none', boxShadow: 'none' } : undefined}>
+      {!bare && <p className="hq-h3" style={{ marginBottom: 12 }}>Add a hunt to your plan</p>}
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }} role="group" aria-label="Type">
         {PLAN_KINDS.map((k) => <button key={k} type="button" className="hq-chip" aria-pressed={f.kind === k} onClick={() => set('kind', k)}>{KIND_LABEL[k]}</button>)}
       </div>
@@ -118,7 +118,7 @@ function AddHunt({ years, onDone }: { years: number[]; onDone: () => void }) {
       {error && <div style={{ marginTop: 12 }}><Caveat tone="stop">{error}</Caveat></div>}
       <div style={{ display: 'flex', gap: 10, marginTop: 14 }}>
         <Button disabled={busy} onClick={submit}>Add to plan</Button>
-        <Button variant="ghost" onClick={onDone}>Cancel</Button>
+        <Button variant="ghost" onClick={onCancel ?? onDone}>Cancel</Button>
       </div>
       <p className="hq-small" style={{ marginTop: 10 }}>A hunt code gives exact odds. With only a unit, odds show when that unit has one hunt.</p>
     </Card>
