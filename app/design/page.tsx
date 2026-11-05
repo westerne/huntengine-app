@@ -3,7 +3,7 @@ import {
   BigNumber, Button, ButtonLink, Card, Caveat, Confidence, EmptyState, Eyebrow, Lockup, Mark,
   PointsTimeline, StatRow, Tier,
 } from '../ui';
-import { Loader, TabBar, ThemeToggle } from '../ui/client';
+import { Loader } from '../ui/client';
 import ChipDemo from './ChipDemo';
 
 export const metadata = { title: 'Design system | HuntQuarters' };
@@ -35,11 +35,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 export default function DesignPage() {
   return (
-    <div className="hq" style={{ minHeight: '100vh', paddingBottom: 'calc(var(--tabbar-h) + 40px)' }}>
-      <header className="hq-header">
-        <Lockup size={28} />
-        <ThemeToggle />
-      </header>
+    <div className="hq" style={{ minHeight: '100vh', paddingBottom: 40 }}>
 
       <main style={{ maxWidth: 'var(--col)', margin: '0 auto', padding: '28px 16px', display: 'flex', flexDirection: 'column', gap: 36 }}>
         <div className="hq-fade-up">
@@ -158,7 +154,6 @@ export default function DesignPage() {
         </Section>
       </main>
 
-      <TabBar />
     </div>
   );
 }

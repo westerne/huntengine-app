@@ -5,7 +5,7 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { CalendarRange, Search, Plus, Archive, User, Monitor, Sun, Moon } from 'lucide-react';
+import { CalendarRange, Search, Plus, User, Monitor, Sun, Moon } from 'lucide-react';
 
 // ── Theme: auto (device) / light / dark, remembered per browser ─────────────
 type Theme = 'auto' | 'light' | 'dark';
@@ -49,10 +49,10 @@ export function Chip({ pressed, onClick, children }: { pressed: boolean; onClick
 
 // ── Bottom tab bar: follows the hunter's year ───────────────────────────────
 const TABS = [
-  { href: '/calendar', label: 'Plan', icon: CalendarRange, match: ['/calendar', '/season'] },
-  { href: '/planner', label: 'Find', icon: Search, match: ['/planner', '/compare'] },
+  { href: '/today', label: 'Today', icon: Sun, match: ['/today'] },
+  { href: '/plan', label: 'Plan', icon: CalendarRange, match: ['/plan', '/calendar', '/season', '/history'] },
   { href: '/add', label: 'Add', icon: Plus, match: ['/add'], raised: true },
-  { href: '/history', label: 'Hunts', icon: Archive, match: ['/history'] },
+  { href: '/planner', label: 'Find', icon: Search, match: ['/planner', '/compare'] },
   { href: '/profile', label: 'Me', icon: User, match: ['/profile'] },
 ];
 

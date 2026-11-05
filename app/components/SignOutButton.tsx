@@ -7,7 +7,7 @@ export default function SignOutButton() {
     <button
       type="button"
       onClick={async () => { await supabaseBrowser().auth.signOut(); window.location.href = '/login'; }}
-      className="px-3 py-2 text-[11px] font-black uppercase tracking-widest text-zinc-500 hover:text-white"
+      className="hq-btn hq-btn--ghost hq-btn--sm"
     >
       Sign out
     </button>

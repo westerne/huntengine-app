@@ -114,17 +114,16 @@ export function PointsTimeline({ years, points, cutoff, drawYear }: {
   years: number[]; points: Record<number, number>; cutoff?: number | null; drawYear?: number | null;
 }) {
   const max = Math.max(1, cutoff ?? 0, ...years.map((y) => points[y] ?? 0));
-  const H = 96;
+  const H = 80;
+  const TOP = 40;
   const h = (n: number) => Math.max(6, Math.round((n / max) * H));
   return (
     <figure aria-label={`Projected points ${years.map((y) => `${y}: ${points[y]}`).join(', ')}${cutoff != null ? `; last draw took ${cutoff}` : ''}`}>
-      <div className="hq-points__wrap" style={{ height: H + 22 }}>
-        {cutoff != null && (
-          <div className="hq-points__cut" style={{ bottom: 22 + h(cutoff) }}>
-            <span className="hq-points__cutlabel">Last draw: {cutoff} pts</span>
-          </div>
-        )}
-        <div className="hq-points" style={{ '--n': years.length, height: H + 22 } as CSSProperties}>
+      {cutoff != null && <p className="hq-points__legend"><span aria-hidden="true" />Last draw took {cutoff} pts</p>}
+      {/* Headroom above the tallest bar for its number and the Draw tag. */}
+      <div className="hq-points__wrap" style={{ height: H + TOP }}>
+        {cutoff != null && <div className="hq-points__cut" style={{ bottom: h(cutoff) }} />}
+        <div className="hq-points" style={{ '--n': years.length, height: H + TOP } as CSSProperties}>
           {years.map((y) => {
             const n = points[y] ?? 0;
             return (
@@ -137,7 +136,7 @@ export function PointsTimeline({ years, points, cutoff, drawYear }: {
           })}
         </div>
       </div>
-      <div className="hq-points" style={{ '--n': years.length } as CSSProperties}>
+      <div className="hq-points" style={{ '--n': years.length, marginTop: 6 } as CSSProperties}>
         {years.map((y) => <span key={y} className="hq-points__y" style={{ textAlign: 'center' }}>{y}</span>)}
       </div>
     </figure>
