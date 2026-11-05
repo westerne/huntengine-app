@@ -6,14 +6,17 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ArrowLeft, Printer } from 'lucide-react';
 import ApplicationPanel, { type OfficialInfo } from './ApplicationPanel';
 import PreparationPanel, { type PlanRow } from './PreparationPanel';
 import ReportPanel, { type Photo } from './ReportPanel';
+import { Button, ButtonLink, Card, Eyebrow, Tier } from '../../ui';
 import type { HuntReport } from '@/lib/reports';
 import type { HarvestReportingInfo } from '@/lib/huntdata/harvestReporting';
 import type { PlanInputs } from '@/lib/plans';
 import type { Application, Task } from '@/lib/applications';
 import { huntTitle } from '@/lib/huntName';
+import { STAGE, stageOfSaved } from '@/lib/myHunts';
 import {
   canMove, nextAction, RESULT_LABEL, RESULTS, STATUS_LABEL, STATUSES,
   type ApplicationResult, type HuntStatus, type SavedHunt,
@@ -54,6 +57,7 @@ export default function HuntWorkspace({
   const [error, setError] = useState<string | null>(null);
   const rec = hunt.recommendation as Rec;
   const action = nextAction(hunt);
+  const stage = stageOfSaved({ ...hunt, hunt_reports: report ? { completed_at: report.completed_at, harvested: report.harvested } : null, applications: application });
 
   const patch = async (body: { status?: HuntStatus; application_result?: ApplicationResult | null }) => {
     setBusy(true); setError(null);
@@ -94,72 +98,70 @@ export default function HuntWorkspace({
     else setError('Could not delete the note.');
   };
 
-
   return (
-    <main className="max-w-3xl mx-auto px-4 py-10 space-y-8">
-      <Link href="/plan" className="text-zinc-500 text-[11px] font-black uppercase tracking-widest hover:text-white">← Your plan</Link>
+    <main className="hq-stack hq-stack--lg" style={{ maxWidth: 760, margin: '0 auto', padding: '20px 16px 40px' }}>
+      <Link href="/plan" className="hq-link hq-small" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, alignSelf: 'flex-start' }}><ArrowLeft size={14} aria-hidden="true" /> Your plan</Link>
 
       {/* Overview */}
-      <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6" aria-labelledby="hunt-title">
-        <p className="text-[10px] uppercase text-amber-500 font-black tracking-widest mb-2">{hunt.season_year} season · {STATUS_LABEL[hunt.status]}{hunt.application_result ? ` · ${RESULT_LABEL[hunt.application_result]}` : ''}</p>
-        <h1 id="hunt-title" className="text-2xl font-black italic uppercase">{hunt.state} {hunt.species} · {huntTitle(hunt.unit, hunt.hunt_code)}</h1>
-        {hunt.label && <p className="text-zinc-400 text-sm mt-1">{hunt.label}</p>}
-        <p className="mt-4 text-amber-400 text-sm font-bold">Next: {action.label}</p>
+      <Card className="hq-fade-up" aria-labelledby="hunt-title">
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'flex-start' }}>
+          <Eyebrow>{hunt.season_year} season</Eyebrow>
+          <Tier tier={STAGE[stage].tier}>{STAGE[stage].label}{hunt.application_result === 'alternate' ? ' · Alternate' : ''}</Tier>
+        </div>
+        <h1 id="hunt-title" className="hq-h1" style={{ marginTop: 6 }}>{hunt.state} {hunt.species.toLowerCase()} · {huntTitle(hunt.unit, hunt.hunt_code && hunt.hunt_code.toLowerCase() !== hunt.unit.toLowerCase() ? hunt.hunt_code : null)}</h1>
+        {hunt.label && <p className="hq-body" style={{ marginTop: 4, color: 'var(--ink-soft)' }}>{/^[a-z]+(-[a-z]+)+$/.test(hunt.label) ? hunt.label.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()) : hunt.label}</p>}
+        <p className="hq-h3" style={{ marginTop: 14 }}>Next: {action.label}</p>
         {['tag_secured', 'preparing', 'completed'].includes(hunt.status) && (
-          <Link href={`/season/${hunt.id}/print`} className="inline-block mt-4 text-zinc-400 text-[11px] font-black uppercase tracking-widest hover:text-white">Print hunt packet →</Link>
+          <div style={{ marginTop: 14 }}><ButtonLink href={`/season/${hunt.id}/print`} variant="secondary" size="sm"><Printer size={15} aria-hidden="true" /> Print hunt packet</ButtonLink></div>
         )}
-      </section>
+      </Card>
 
       {/* The hunter's own lessons from past hunts — shown while deciding and preparing */}
       {pastLessons.length > 0 && !['completed', 'archived'].includes(hunt.status) && (
-        <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-3" aria-labelledby="lessons-h">
-          <h2 id="lessons-h" className="text-[11px] uppercase text-zinc-400 font-black tracking-widest">From your past {hunt.state} {hunt.species.toLowerCase()} hunts</h2>
-          <ul className="space-y-3">
+        <Card variant="flat" aria-labelledby="lessons-h">
+          <h2 id="lessons-h" className="hq-h3">From your past {hunt.state} {hunt.species.toLowerCase()} hunts</h2>
+          <ul className="hq-stack" style={{ listStyle: 'none', margin: '12px 0 0', padding: 0, gap: 14 }}>
             {pastLessons.slice(0, 3).map((l) => (
-              <li key={l.hunt_id} className="border-l-2 border-amber-700 pl-3 text-sm">
-                <Link href={`/season/${l.hunt_id}`} className="text-white font-bold hover:text-amber-400">
+              <li key={l.hunt_id} className="hq-quote hq-quote--brand">
+                <Link href={`/season/${l.hunt_id}`} className="hq-link" style={{ fontWeight: 700 }}>
                   {l.saved_hunts.season_year} · {/^[0-9][0-9A-Z]{0,4}$/i.test(l.saved_hunts.unit) ? `Unit ${l.saved_hunts.unit}` : l.saved_hunts.unit} · {l.harvested ? 'Harvested' : 'No harvest'}{l.days_hunted != null ? ` · ${l.days_hunted} days` : ''}
                 </Link>
-                {l.change_next && <p className="text-zinc-300 mt-1"><span className="text-amber-500 font-bold">Change next time:</span> {l.change_next}</p>}
-                {l.worked && <p className="text-zinc-400 mt-1"><span className="font-bold">Worked:</span> {l.worked}</p>}
-                {l.access_issues && <p className="text-zinc-400 mt-1"><span className="font-bold">Access:</span> {l.access_issues}</p>}
+                {l.change_next && <p className="hq-body" style={{ marginTop: 4 }}><strong>Change next time:</strong> {l.change_next}</p>}
+                {l.worked && <p className="hq-small" style={{ marginTop: 4 }}><strong>Worked:</strong> {l.worked}</p>}
+                {l.access_issues && <p className="hq-small" style={{ marginTop: 4 }}><strong>Access:</strong> {l.access_issues}</p>}
               </li>
             ))}
           </ul>
-          <p className="text-zinc-600 text-xs">Your hunt plan uses these notes too.</p>
-        </section>
+          <p className="hq-small" style={{ marginTop: 12 }}>Your hunt plan uses these notes too.</p>
+        </Card>
       )}
 
       {/* Status */}
-      <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-4" aria-labelledby="status-h">
-        <h2 id="status-h" className="text-[11px] uppercase text-zinc-400 font-black tracking-widest">Status</h2>
-        <div className="flex flex-wrap gap-2">
-          {/* "Applied" comes only from "I submitted my application" below. */}
-          {STATUSES.filter((s) => s !== hunt.status && s !== 'applied' && canMove(hunt.status, s)).map((s) => (
-            <button key={s} type="button" disabled={busy} onClick={() => patch({ status: s })}
-              className="px-4 py-2 rounded-full border border-zinc-700 text-[11px] font-black uppercase tracking-widest text-zinc-300 hover:border-amber-600 hover:text-white disabled:opacity-50">
-              Mark {STATUS_LABEL[s]}
-            </button>
-          ))}
-        </div>
-        {hunt.status === 'applied' && (
-          <div>
-            <p className="text-[10px] uppercase text-zinc-500 font-black tracking-widest mb-2">Draw result (you record this — the app doesn&apos;t check with the state)</p>
-            <div className="flex flex-wrap gap-2">
-              {RESULTS.map((r) => (
-                <button key={r} type="button" disabled={busy} aria-pressed={hunt.application_result === r} onClick={() => patch({ application_result: r })}
-                  className={`px-4 py-2 rounded-full border text-[11px] font-black uppercase tracking-widest disabled:opacity-50 ${hunt.application_result === r ? 'bg-amber-700 border-amber-600 text-white' : 'border-zinc-700 text-zinc-300 hover:border-amber-600'}`}>
-                  {RESULT_LABEL[r]}
-                </button>
-              ))}
-            </div>
-            {hunt.application_result === 'unsuccessful' && (
-              <p className="text-zinc-400 text-sm mt-3">This hunt stays in your history. <Link href="/find" className="text-amber-500 underline">Find another hunt</Link></p>
-            )}
+      <Card aria-labelledby="status-h">
+        <div className="hq-stack">
+          <h2 id="status-h" className="hq-h3">Status</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {/* "Applied" comes only from "I submitted my application" below. */}
+            {STATUSES.filter((s) => s !== hunt.status && s !== 'applied' && canMove(hunt.status, s)).map((s) => (
+              <Button key={s} size="sm" variant={s === 'archived' ? 'ghost' : 'secondary'} disabled={busy} onClick={() => patch({ status: s })}>Mark {STATUS_LABEL[s].toLowerCase()}</Button>
+            ))}
           </div>
-        )}
-        {error && <p role="alert" className="text-red-400 text-sm">{error}</p>}
-      </section>
+          {hunt.status === 'applied' && (
+            <div>
+              <p className="hq-label" style={{ marginBottom: 8 }}>Draw result <span style={{ fontWeight: 400, color: 'var(--ink-muted)' }}>— you record this; the app doesn&apos;t check with the state</span></p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                {RESULTS.map((r) => (
+                  <button key={r} type="button" className="hq-chip" disabled={busy} aria-pressed={hunt.application_result === r} onClick={() => patch({ application_result: r })}>{RESULT_LABEL[r]}</button>
+                ))}
+              </div>
+              {hunt.application_result === 'unsuccessful' && (
+                <p className="hq-body" style={{ marginTop: 10 }}>This hunt stays in your past seasons. <Link href="/planner" className="hq-link">Find another hunt</Link></p>
+              )}
+            </div>
+          )}
+          {error && <p role="alert" className="hq-err">{error}</p>}
+        </div>
+      </Card>
 
       {/* Application (before the hunt is drawn or settled) */}
       {['considering', 'planned', 'applied'].includes(hunt.status) && (
@@ -194,36 +196,41 @@ export default function HuntWorkspace({
 
       {/* Saved recommendation (a snapshot from when it was saved) */}
       {rec && (
-        <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-3" aria-labelledby="rec-h">
-          <h2 id="rec-h" className="text-[11px] uppercase text-zinc-400 font-black tracking-widest">Why we recommended it <span className="text-zinc-600 normal-case font-bold tracking-normal">· saved {new Date(hunt.created_at).toLocaleDateString()}</span></h2>
-          {rec.currentOdds && <p className="text-green-400 font-bold">{rec.currentOdds}</p>}
-          {rec.season && <p className="text-zinc-400 text-sm">{rec.season}</p>}
-          {rec.whyItFits && <p className="text-zinc-300 text-sm leading-relaxed">{rec.whyItFits}</p>}
-          {rec.tradeoffs && <p className="text-zinc-500 text-xs italic border-l-2 border-zinc-700 pl-3">{rec.tradeoffs}</p>}
-          <p className="text-zinc-600 text-xs">Odds are from the last published draw, not a forecast.</p>
-        </section>
+        <Card variant="flat" aria-labelledby="rec-h">
+          <div className="hq-stack" style={{ gap: 10 }}>
+            <h2 id="rec-h" className="hq-h3">Why we recommended it <span className="hq-small" style={{ fontWeight: 400 }}>· saved {new Date(hunt.created_at).toLocaleDateString()}</span></h2>
+            {rec.currentOdds && <p className="hq-body" style={{ fontWeight: 700, color: 'var(--data)' }}>{rec.currentOdds}</p>}
+            {rec.season && <p className="hq-small">{rec.season}</p>}
+            {rec.whyItFits && <p className="hq-body">{rec.whyItFits}</p>}
+            {rec.tradeoffs && <p className="hq-small hq-quote">{rec.tradeoffs}</p>}
+            <p className="hq-small">Odds are from the last published draw, not a forecast.</p>
+          </div>
+        </Card>
       )}
 
       {/* Notes */}
-      <section className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-4" aria-labelledby="notes-h">
-        <h2 id="notes-h" className="text-[11px] uppercase text-zinc-400 font-black tracking-widest">Notes</h2>
-        {notes.length === 0 && <p className="text-zinc-500 text-sm">No notes yet. Notes are private to you.</p>}
-        <ul className="space-y-3">
-          {notes.map((n) => (
-            <li key={n.id} className="border-l-2 border-zinc-700 pl-3">
-              <p className="text-zinc-200 text-sm whitespace-pre-wrap">{n.body}</p>
-              <p className="text-zinc-600 text-[11px] mt-1">
-                {new Date(n.created_at).toLocaleString()}
-                <button type="button" onClick={() => deleteNote(n.id)} className="ml-3 text-zinc-600 hover:text-red-400 underline">Delete</button>
-              </p>
-            </li>
-          ))}
-        </ul>
-        <label htmlFor="note" className="sr-only">Add a note</label>
-        <textarea id="note" rows={3} value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Add a note…"
-          className="w-full bg-black border border-zinc-800 p-3 rounded-xl text-zinc-200 text-sm outline-none focus:border-amber-500" />
-        <button type="button" onClick={addNote} disabled={busy || !draft.trim()} className="bg-zinc-100 text-black px-6 py-3 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-[11px] disabled:opacity-50">Save note</button>
-      </section>
+      <Card aria-labelledby="notes-h">
+        <div className="hq-stack">
+          <h2 id="notes-h" className="hq-h3">Notes</h2>
+          {notes.length === 0 && <p className="hq-small">No notes yet. Notes are private to you.</p>}
+          {notes.length > 0 && (
+            <ul className="hq-stack" style={{ listStyle: 'none', margin: 0, padding: 0, gap: 12 }}>
+              {notes.map((n) => (
+                <li key={n.id} className="hq-quote">
+                  <p className="hq-body hq-pre">{n.body}</p>
+                  <p className="hq-small" style={{ marginTop: 4 }}>
+                    {new Date(n.created_at).toLocaleString()}
+                    <button type="button" onClick={() => deleteNote(n.id)} style={{ marginLeft: 12, background: 'none', border: 0, padding: 0, color: 'var(--ink-muted)', textDecoration: 'underline', cursor: 'pointer', font: 'inherit' }}>Delete</button>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          )}
+          <label className="hq-field"><span className="hq-sr">Add a note</span>
+            <textarea className="hq-input" rows={3} value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Add a note…" /></label>
+          <div><Button onClick={addNote} disabled={busy || !draft.trim()}>Save note</Button></div>
+        </div>
+      </Card>
     </main>
   );
 }

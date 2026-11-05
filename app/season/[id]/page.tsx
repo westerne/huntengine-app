@@ -13,6 +13,8 @@ import { harvestReportingFor } from '@/lib/huntdata/harvestReporting';
 import { prefillWeapon } from '@/lib/plans';
 import { STATE_INFO, toStateCode } from '@/lib/huntdata/registry';
 
+export const metadata = { title: 'Hunt | HuntQuarters' };
+
 // One saved hunt. Row-level security returns nothing for another member's
 // hunt, so it 404s exactly like a hunt that doesn't exist.
 export default async function HuntPage({ params }: { params: Promise<{ id: string }> }) {
@@ -58,7 +60,7 @@ export default async function HuntPage({ params }: { params: Promise<{ id: strin
   };
 
   return (
-    <div className="min-h-screen bg-black text-zinc-100">
+    <div className="hq" style={{ minHeight: '100vh' }}>
       <HuntWorkspace
         hunt={hunt as SavedHunt}
         notes={notes ?? []}

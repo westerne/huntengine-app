@@ -38,10 +38,11 @@ export function Lockup({ size = 28, tagline = false }: { size?: number; tagline?
 export const Eyebrow = ({ children }: { children: ReactNode }) => <p className="hq-eyebrow">{children}</p>;
 
 // ── Surfaces ────────────────────────────────────────────────────────────────
-export function Card({ children, variant, className, style, as: Tag = 'section' }: {
+export function Card({ children, variant, className, style, as: Tag = 'section', ...aria }: {
   children: ReactNode; variant?: 'flat' | 'brand'; className?: string; style?: CSSProperties; as?: 'section' | 'div' | 'article' | 'li';
+  'aria-labelledby'?: string; 'aria-label'?: string; id?: string;
 }) {
-  return <Tag className={cx('hq-card', variant && `hq-card--${variant}`, className)} style={style}>{children}</Tag>;
+  return <Tag className={cx('hq-card', variant && `hq-card--${variant}`, className)} style={style} {...aria}>{children}</Tag>;
 }
 
 // ── Buttons ─────────────────────────────────────────────────────────────────

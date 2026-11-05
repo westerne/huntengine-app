@@ -1,19 +1,15 @@
 'use client';
 
 // Checklist / reminder list with real checkboxes. Ticking saves immediately;
-// on failure the box flips back and the error is shown.
+// on failure only that box flips back and the error is shown.
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { X } from 'lucide-react';
 import { dueLabel, dueStatus, progress, type Task } from '@/lib/applications';
+import { shortDate } from '@/lib/huntdata/apply';
 
-const DUE_CLS: Record<string, string> = {
-  overdue: 'text-red-400',
-  today: 'text-amber-400',
-  soon: 'text-amber-300',
-  later: 'text-zinc-500',
-  none: 'text-zinc-600',
-};
+const TONE: Record<string, string> = { overdue: 'var(--stop)', today: 'var(--fair)', soon: 'var(--fair)' };
 
 export default function TaskList({
   initial, showHuntLinks = false, showProgress = false, emptyText, onChange,
@@ -31,11 +27,13 @@ export default function TaskList({
 
   const toggle = async (t: Task) => {
     const done = !t.done_at;
-    const optimistic = tasks.map((x) => x.id === t.id ? { ...x, done_at: done ? new Date().toISOString() : null } : x);
-    update(optimistic);
+    const flip = (xs: Task[], at: string | null) => xs.map((x) => (x.id === t.id ? { ...x, done_at: at } : x));
+    const next = flip(tasks, done ? new Date().toISOString() : null);
+    update(next);
     setError(null);
     const res = await fetch(`/api/tasks/${t.id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ done }) });
-    if (!res.ok) { update(tasks); setError('Couldn’t save that — try again.'); }
+    // Flip only this box back — other boxes may have changed meanwhile.
+    if (!res.ok && res.status !== 404) { setTasks((xs) => { const back = flip(xs, t.done_at); onChange?.(back); return back; }); setError('Couldn’t save that — try again.'); }
   };
 
   const remove = async (t: Task) => {
@@ -44,42 +42,35 @@ export default function TaskList({
     else setError('Couldn’t remove that task.');
   };
 
-  if (!tasks.length) return emptyText ? <p className="text-zinc-500 text-sm">{emptyText}</p> : null;
+  if (!tasks.length) return emptyText ? <p className="hq-small">{emptyText}</p> : null;
   const p = progress(tasks);
 
   return (
-    <div className="space-y-2">
-      {showProgress && <p className="text-[11px] text-zinc-400 font-bold">{p.done} of {p.total} done</p>}
-      <ul className="space-y-2">
+    <div>
+      {showProgress && <p className="hq-small" style={{ marginBottom: 4 }}>{p.done} of {p.total} done</p>}
+      <ul className="hq-list">
         {tasks.map((t) => {
-          const status = t.done_at ? 'none' : dueStatus(t.due_on);
+          const st = t.done_at ? 'none' : dueStatus(t.due_on);
           return (
-            <li key={t.id} className="flex items-start gap-3 bg-black/40 border border-zinc-800 rounded-lg px-3 py-2">
-              <input
-                type="checkbox"
-                id={`t-${t.id}`}
-                checked={!!t.done_at}
-                onChange={() => toggle(t)}
-                className="mt-1 h-4 w-4 accent-amber-600 shrink-0"
-              />
-              <label htmlFor={`t-${t.id}`} className="flex-1 min-w-0 cursor-pointer">
-                <span className={`block text-sm ${t.done_at ? 'line-through text-zinc-600' : 'text-zinc-200'}`}>{t.title}</span>
-                <span className={`text-[11px] font-bold ${DUE_CLS[status]}`}>
-                  {t.done_at ? 'Done' : t.due_on ? `${dueLabel(t.due_on)} · ${t.due_on}` : 'No date'}
+            <li key={t.id} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '10px 0' }}>
+              <input type="checkbox" id={`t-${t.id}`} checked={!!t.done_at} onChange={() => toggle(t)}
+                style={{ marginTop: 3, width: 18, height: 18, accentColor: 'var(--action)', flexShrink: 0 }} />
+              <label htmlFor={`t-${t.id}`} style={{ flex: 1, minWidth: 0, cursor: 'pointer' }}>
+                <span className="hq-row__title" style={t.done_at ? { textDecoration: 'line-through', color: 'var(--ink-muted)' } : undefined}>{t.title}</span>
+                <span className="hq-row__sub" style={{ display: 'block', color: TONE[st] }}>
+                  {t.done_at ? 'Done' : t.due_on ? `${dueLabel(t.due_on)} · ${shortDate(t.due_on)}` : 'No date'}
                   {t.kind === 'point' && ' · Point-building'}
                 </span>
               </label>
-              {showHuntLinks && t.hunt_id && (
-                <Link href={`/season/${t.hunt_id}`} className="text-amber-500 text-[10px] font-black uppercase tracking-widest shrink-0 mt-1">Hunt →</Link>
-              )}
+              {showHuntLinks && t.hunt_id && <Link href={`/season/${t.hunt_id}`} className="hq-link hq-small" style={{ flexShrink: 0, marginTop: 2 }}>Hunt</Link>}
               {(t.kind === 'custom' || t.kind === 'point') && (
-                <button type="button" onClick={() => remove(t)} aria-label={`Remove ${t.title}`} className="text-zinc-600 hover:text-red-400 text-xs shrink-0 mt-1">✕</button>
+                <button type="button" onClick={() => remove(t)} aria-label={`Remove ${t.title}`} style={{ background: 'none', border: 0, color: 'var(--ink-muted)', cursor: 'pointer', flexShrink: 0, marginTop: 2 }}><X size={16} /></button>
               )}
             </li>
           );
         })}
       </ul>
-      {error && <p role="alert" className="text-red-400 text-sm">{error}</p>}
+      {error && <p role="alert" className="hq-err">{error}</p>}
     </div>
   );
 }
