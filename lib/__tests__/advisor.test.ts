@@ -53,7 +53,7 @@ describe('advisor tools', () => {
   it('counts the application fee when points are free, and leaves optional fees out of the total', () => {
     const co = yearlyCost({ items: [{ state: 'CO', species: 'Elk', mode: 'points' }] }, sit);
     if (co.ok) expect(co.data.lines.some((l) => l.kind === 'application fee' && l.amount > 0)).toBe(true);
-    const wy = yearlyCost({ items: [{ state: 'WY', species: 'Elk', mode: 'points' }] }, sit);
+    const wy = yearlyCost({ items: [{ state: 'WY', species: 'Elk', mode: 'apply' }] }, sit);
     if (wy.ok) {
       expect(wy.data.lines.some((l) => /special management/i.test(l.label))).toBe(false);
       expect(wy.data.mayAlsoApply.some((l) => /special management/i.test(l.label))).toBe(true);
@@ -106,5 +106,24 @@ describe('answer check', () => {
   });
   it('lets the hunter’s own numbers through, and ignores small counts', () => {
     expect(unsupportedClaims('With your $1,500 budget, in 2 years…', [...evidence, 'my budget is $1,500'])).toEqual([]);
+  });
+});
+
+describe('yearly cost of points, by how each state sells them', () => {
+  const wyHome: Situation = { ...sit, home: 'WY' };
+  const utHome: Situation = { ...sit, home: 'UT' };
+  it("doesn't price an application as a point where residents can't buy one", () => {
+    const r = yearlyCost({ items: [{ state: 'WY', species: 'Elk', mode: 'points' }] }, wyHome);
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    expect(r.data.total).toBe(0);
+    expect(r.data.lines).toEqual([]);
+    expect(r.data.noPoints[0]).toMatch(/Wyoming sells elk points only to non-residents/);
+  });
+  it('charges a non-resident Wyoming point as the point fee alone', () => {
+    const r = yearlyCost({ items: [{ state: 'WY', species: 'Elk', mode: 'points' }] }, utHome);
+    if (!r.ok) throw new Error(r.reason);
+    expect(r.data.lines.map((l) => l.kind)).toEqual(['point fee']);
+    expect(r.data.total).toBe(r.data.lines[0].amount);
   });
 });

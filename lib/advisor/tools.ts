@@ -112,6 +112,7 @@ export type YearlyCostData = {
   lines: CostLine[];
   ifDrawn: Array<{ state: string; species: string; min: number; max: number }>;
   mayAlsoApply: CostLine[];   // optional or situational fees, not in the total
+  noPoints: string[];         // "Wyoming sells elk points only to non-residents" — nothing to buy
   missing: string[];          // "WY antelope: no point or application fee on file"
   notes: string[];            // choices we made, said plainly
 };
@@ -128,6 +129,7 @@ export function yearlyCost(
   const ifDrawn: YearlyCostData['ifDrawn'] = [];
   const missing: string[] = [];
   const mayAlsoApply: CostLine[] = [];
+  const noPoints: string[] = [];
   const notes: string[] = [];
   const sources = new Map<string, Source>();
   const licensed = new Set<string>();
@@ -145,6 +147,43 @@ export function yearlyCost(
       sources.set(f.source, { label: `${r.name} posted fees (checked ${file.checkedOn})`, url: f.source });
     };
 
+    // The fee most hunters pay: not a landowner, youth or add-on option.
+    const usual = (f: FeeLine) => !/landowner|youth|junior|senior|disab|outfitter|guide|extra/i.test(f.label);
+    const point = fees.filter((f) => f.item === 'point fee' && usual(f)).sort((a, b) => a.amount! - b.amount!)[0];
+    const app = fees.filter((f) => f.item === 'application fee' && usual(f)).sort((a, b) => a.amount! - b.amount!)[0];
+    const sp = r.species.toLowerCase();
+
+    if (it.mode === 'points') {
+      // How the state sells a point on its own, for this species and residency.
+      const windows = (file.pointOnly ?? []).filter((w) => w.species.includes(r.key));
+      const mine = windows.filter((w) => w.residency === res || w.residency === 'both');
+      if (!point && !mine.length) {
+        // No point fee and no point-only rule: there's no point to buy. Never
+        // price the application as though it were one (it called Wyoming's
+        // resident application fee and conservation stamp "elk points").
+        const others = windows.length ? (res === 'resident' ? 'non-residents' : 'residents') : null;
+        noPoints.push(!usesPoints(getStateModule(r.state), r.species)
+          ? `${r.name} doesn't use points for ${sp}: every application has the same chance, so there's nothing to buy.`
+          : others
+          ? `${r.name} sells ${sp} points only to ${others}, so there's no point to buy as a ${res === 'resident' ? 'resident' : 'non-resident'}.`
+          : `${r.name} ${sp}: we have no way on file to buy just a point as a ${res === 'resident' ? 'resident' : 'non-resident'}. Check with the agency.`);
+        for (const w of windows) sources.set(w.source, { label: `${r.name} point-only rules`, url: w.source });
+        continue;
+      }
+      // Wyoming non-resident: "There is no application fee to purchase a
+      // preference point only" — the point fee is the whole cost.
+      if (point && mine.some((w) => /no application fee/i.test(w.quote))) {
+        add(point, r.species);
+        notes.push(`${r.name}: buying just one ${sp} point is the point fee alone, with no application fee or license.`);
+        continue;
+      }
+      if (point && !(point.amount! > 0)) {
+        notes.push(`${r.name}'s ${sp} point is free, but you earn it by applying, so this counts the application.`);
+      } else if (!point) {
+        notes.push(`${r.name} has no separate ${sp} point fee on file: you earn the point by applying, so this counts the application. Check the exact cost with the agency.`);
+      }
+    }
+
     if (!licensed.has(r.state)) {
       licensed.add(r.state);
       const lic = fees.filter((f) => f.item === 'qualifying license');
@@ -156,11 +195,7 @@ export function yearlyCost(
       }
     }
 
-    // The fee most hunters pay: not a landowner, youth or add-on option.
-    const usual = (f: FeeLine) => !/landowner|youth|junior|senior|disab|outfitter|guide|extra/i.test(f.label);
-    const point = fees.filter((f) => f.item === 'point fee' && usual(f)).sort((a, b) => a.amount! - b.amount!)[0];
-    const app = fees.filter((f) => f.item === 'application fee' && usual(f)).sort((a, b) => a.amount! - b.amount!)[0];
-    // A free point (Colorado deer/elk) still means paying to apply.
+    // A free point (Colorado deer/elk), or none on file, means paying to apply.
     const main = it.mode === 'points' ? (point && point.amount! > 0 ? point : app ?? point) : app ?? point;
     if (main) add(main, r.species);
     else missing.push(`${r.name} ${r.species.toLowerCase()}: no point or application fee on file`);
@@ -186,7 +221,7 @@ export function yearlyCost(
     data: {
       total: round(lines.reduce((s, l) => s + l.amount, 0)),
       byState: [...byStateMap].map(([state, subtotal]) => ({ state, subtotal: round(subtotal) })),
-      lines, ifDrawn, mayAlsoApply, missing, notes,
+      lines, ifDrawn, mayAlsoApply, noPoints, missing, notes,
     },
     sources: [...sources.values()],
   };
