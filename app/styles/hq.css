@@ -1,86 +1,88 @@
 /* ─────────────────────────────────────────────────────────────────────────
-   HuntQuarters design system — "Timber & Blaze"   (docs/BRAND.md)
+   Design system   (docs/BRAND.md — from the HuntEngine.ai brand board)
+   Engine Slate #2B3F4F · Alpine Mist #8DA2B0 · Cloud Base #F4F6F7 ·
+   Field Gold #E2A53C · Antler Bronze #C18C47
 
    One color, one job:
-     timber  (--brand)   is HuntQuarters: the mark, the header, selected states
-     blaze   (--action)  is only ever "tap this": primary buttons and links
-     --data              is only ever "a number": odds, points, success rates
-     odds tiers          good / fair / long / stop — always paired with a word
+     Engine Slate (--brand)  the brand: header, selected states
+     Field Gold  (--action)  only ever "tap this": buttons, link underlines
+                             (the logo mark is the one exception: gold on dark)
+     --data                  only ever "a number": odds, points, success rates
+     odds tiers              good / fair (bronze) / long (mist) / stop — always with a word
 
-   Every text/background pair below measures AA (4.5:1) or better in both
-   themes; checked 2026-11-04.
+   Every text/background pair measures AA (4.5:1) or better in both themes
+   (checked 2026-11-04). Slate text on Field Gold is 7:1.
    ───────────────────────────────────────────────────────────────────────── */
 
 :root,
 :root.theme-light {
-  --canvas: #F5F1E8;          /* warm paper */
+  --canvas: #F4F6F7;          /* Cloud Base */
   --surface: #FFFFFF;
-  --surface-sunk: #ECE6D8;
-  --ink: #18211C;
-  --ink-soft: #3B463F;
-  --ink-muted: #5F6A63;
-  --brand: #1E3A2B;           /* timber */
-  --brand-tint: #E2EAE3;
-  --on-brand: #F5F1E8;
-  --action: #C2410C;          /* blaze */
-  --action-hover: #A3360A;
-  --on-action: #FFFFFF;
-  --data: #1E3A2B;
-  --good: #2F6B45;
-  --fair: #7F5C0A;
-  --long: #4E5D6C;
+  --surface-sunk: #E7ECEF;
+  --ink: #1B2731;
+  --ink-soft: #3A4A57;
+  --ink-muted: #55687A;
+  --brand: #2B3F4F;           /* Engine Slate */
+  --brand-tint: #E1E8ED;
+  --on-brand: #F4F6F7;
+  --mark: #2B3F4F;            /* the mark is Engine Slate on light */
+  --mark-accent: #E2A53C;     /* "HUNT" in the wordmark */
+  --mark-soft: #8DA2B0;       /* the rest of the wordmark, Alpine Mist */
+  --action: #E2A53C;          /* Field Gold */
+  --action-hover: #D2952C;
+  --on-action: #1B2731;
+  --action-text: #86571A;     /* Field Gold, deep enough to read as text */
+  --data: #2B3F4F;
+  --good: #2E6B4E;
+  --fair: #86571A;            /* Antler Bronze, deepened */
+  --long: #4F6474;            /* Alpine Mist, deepened */
   --stop: #B42318;
-  --border: rgba(24, 33, 28, 0.14);
-  --border-strong: rgba(24, 33, 28, 0.26);
-  --divider: rgba(24, 33, 28, 0.08);
-  --scrim: rgba(245, 241, 232, 0.86);
-  --shadow-sm: 0 1px 2px rgba(24, 33, 28, 0.06), 0 2px 6px rgba(24, 33, 28, 0.06);
-  --shadow-md: 0 2px 6px rgba(24, 33, 28, 0.06), 0 8px 20px rgba(24, 33, 28, 0.10);
-  --shadow-glow: 0 0 0 3px rgba(194, 65, 12, 0.22);
+  --border: rgba(27, 39, 49, 0.14);
+  --border-strong: rgba(27, 39, 49, 0.26);
+  --divider: rgba(27, 39, 49, 0.08);
+  --scrim: rgba(244, 246, 247, 0.86);
+  --shadow-sm: 0 1px 2px rgba(27, 39, 49, 0.06), 0 2px 6px rgba(27, 39, 49, 0.06);
+  --shadow-md: 0 2px 6px rgba(27, 39, 49, 0.06), 0 8px 20px rgba(27, 39, 49, 0.10);
+  --shadow-glow: 0 0 0 3px rgba(226, 165, 60, 0.35);
   color-scheme: light;
 }
 
 :root.theme-dark {
-  --canvas: #0E1511;
-  --surface: #16201A;
-  --surface-sunk: #0A100C;
-  --ink: #ECE6D6;
-  --ink-soft: #C8C2B2;
-  --ink-muted: #97A097;
-  --brand: #7FB08F;
-  --brand-tint: #1D2C23;
-  --on-brand: #0E1511;
-  --action: #F97316;
-  --action-hover: #FB8A3C;
-  --on-action: #1A1208;
-  --data: #F2EBDA;
-  --good: #86C49A;
-  --fair: #E0B84E;
-  --long: #9FB0C2;
+  --canvas: #16222C;          /* Engine Slate, deepened */
+  --surface: #213242;
+  --surface-sunk: #111B23;
+  --ink: #F4F6F7;
+  --ink-soft: #CBD5DC;
+  --ink-muted: #8DA2B0;       /* Alpine Mist */
+  --brand: #B9C8D2;
+  --brand-tint: #26384A;
+  --on-brand: #16222C;
+  --mark: #E2A53C;            /* the mark is Field Gold on dark */
+  --mark-accent: #E2A53C;
+  --mark-soft: #8DA2B0;
+  --action: #E2A53C;
+  --action-hover: #ECB656;
+  --on-action: #1B2731;
+  --action-text: #E2A53C;
+  --data: #F4F6F7;
+  --good: #7CC4A0;
+  --fair: #D4A06A;            /* Antler Bronze, lifted */
+  --long: #A9BBC7;
   --stop: #F28B82;
-  --border: rgba(236, 230, 214, 0.14);
-  --border-strong: rgba(236, 230, 214, 0.26);
-  --divider: rgba(236, 230, 214, 0.08);
-  --scrim: rgba(14, 21, 17, 0.86);
+  --border: rgba(244, 246, 247, 0.12);
+  --border-strong: rgba(244, 246, 247, 0.24);
+  --divider: rgba(244, 246, 247, 0.07);
+  --scrim: rgba(22, 34, 44, 0.86);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.35);
-  --shadow-glow: 0 0 0 3px rgba(249, 115, 22, 0.28);
+  --shadow-glow: 0 0 0 3px rgba(226, 165, 60, 0.4);
   color-scheme: dark;
 }
 
 /* "Auto": follow the device unless the hunter picked a theme. */
 @media (prefers-color-scheme: dark) {
   :root:not(.theme-light) {
-    --canvas: #0E1511; --surface: #16201A; --surface-sunk: #0A100C;
-    --ink: #ECE6D6; --ink-soft: #C8C2B2; --ink-muted: #97A097;
-    --brand: #7FB08F; --brand-tint: #1D2C23; --on-brand: #0E1511;
-    --action: #F97316; --action-hover: #FB8A3C; --on-action: #1A1208;
-    --data: #F2EBDA; --good: #86C49A; --fair: #E0B84E; --long: #9FB0C2; --stop: #F28B82;
-    --border: rgba(236, 230, 214, 0.14); --border-strong: rgba(236, 230, 214, 0.26);
-    --divider: rgba(236, 230, 214, 0.08); --scrim: rgba(14, 21, 17, 0.86);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.35);
-    --shadow-glow: 0 0 0 3px rgba(249, 115, 22, 0.28);
+    --canvas: #16222C;          /* Engine Slate, deepened */ --surface: #213242; --surface-sunk: #111B23; --ink: #F4F6F7; --ink-soft: #CBD5DC; --ink-muted: #8DA2B0;       /* Alpine Mist */ --brand: #B9C8D2; --brand-tint: #26384A; --on-brand: #16222C; --mark: #E2A53C;            /* the mark is Field Gold on dark */ --mark-accent: #E2A53C; --mark-soft: #8DA2B0; --action: #E2A53C; --action-hover: #ECB656; --on-action: #1B2731; --action-text: #E2A53C; --data: #F4F6F7; --good: #7CC4A0; --fair: #D4A06A;            /* Antler Bronze, lifted */ --long: #A9BBC7; --stop: #F28B82; --border: rgba(244, 246, 247, 0.12); --border-strong: rgba(244, 246, 247, 0.24); --divider: rgba(244, 246, 247, 0.07); --scrim: rgba(22, 34, 44, 0.86); --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3); --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.35); --shadow-glow: 0 0 0 3px rgba(226, 165, 60, 0.4);
     color-scheme: dark;
   }
 }
@@ -119,7 +121,7 @@
 .hq-body { color: var(--ink-soft); }
 .hq-small { font-size: 13px; color: var(--ink-muted); }
 .hq-data { font-family: var(--font-hqmono), ui-monospace, monospace; font-variant-numeric: tabular-nums; color: var(--data); }
-.hq-link { color: var(--action); font-weight: 600; text-decoration: none; }
+.hq-link { color: var(--action-text); font-weight: 700; text-decoration: underline; text-decoration-color: var(--action); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .hq-link:hover { text-decoration: underline; }
 
 /* ── Surfaces ─────────────────────────────────────────────────────────── */
@@ -273,8 +275,8 @@
 
 /* ── Loader ───────────────────────────────────────────────────────────── */
 .hq-loader { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 40px 20px; text-align: center; }
-.hq-loader__ridge path { stroke: var(--brand); stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 300; stroke-dashoffset: 300; animation: hq-draw 2.4s var(--ease) infinite; }
-.hq-loader__sun { fill: var(--action); animation: hq-rise 2.4s var(--ease) infinite; }
+.hq-loader__net line { stroke: var(--brand); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 40; stroke-dashoffset: 40; animation: hq-link 2.4s var(--ease) infinite; }
+.hq-loader__net circle { fill: var(--brand); transform-box: fill-box; transform-origin: center; animation: hq-node 2.4s var(--ease) infinite; }
 .hq-loader__line { min-height: 1.5em; color: var(--ink-soft); font-weight: 600; animation: hq-fade .5s var(--ease) both; }
 
 /* ── Motion ───────────────────────────────────────────────────────────── */
@@ -282,9 +284,15 @@
 @keyframes hq-fadeup { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @keyframes hq-pop { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
 @keyframes hq-fade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes hq-draw { 0% { stroke-dashoffset: 300; } 60%, 100% { stroke-dashoffset: 0; } }
-@keyframes hq-rise { 0% { transform: translateY(10px); opacity: 0; } 50%, 100% { transform: none; opacity: 1; } }
+@keyframes hq-link { 0% { stroke-dashoffset: 40; } 45%, 100% { stroke-dashoffset: 0; } }
+@keyframes hq-node { 0% { transform: scale(.4); opacity: .3; } 30%, 100% { transform: scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
   .hq *, .hq *::before, .hq *::after { animation: none !important; transition: none !important; }
-  .hq-loader__ridge path { stroke-dashoffset: 0; }
+  .hq-loader__net line { stroke-dashoffset: 0; }
 }
+
+/* ── Brand mark & wordmark (per the brand board) ─────────────────────── */
+.hq-mark { display: inline-block; flex: none; background: var(--mark); -webkit-mask: url(/brand/elk-mark.png) center / contain no-repeat; mask: url(/brand/elk-mark.png) center / contain no-repeat; }
+.hq-wordmark { font-family: var(--font-display), var(--font-inter), sans-serif; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; line-height: 1; color: var(--mark-soft); }
+.hq-wordmark b { font-weight: 700; color: var(--mark-accent); }
+.hq-display { font-family: var(--font-display), var(--font-inter), sans-serif; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }

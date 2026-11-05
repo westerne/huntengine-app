@@ -8,18 +8,18 @@ import ChipDemo from './ChipDemo';
 
 export const metadata = { title: 'Design system | HuntQuarters' };
 
-// Living reference for the "Timber & Blaze" system (docs/BRAND.md). Every
+// Living reference for the design system (docs/BRAND.md). Every
 // component here is the one the app's screens use.
 
 const SWATCHES: Array<{ name: string; v: string; job: string }> = [
-  { name: 'Timber', v: '--brand', job: 'HuntQuarters itself: the mark, selected states' },
-  { name: 'Blaze', v: '--action', job: 'Only ever "tap this"' },
+  { name: 'Engine Slate', v: '--brand', job: 'The brand: header, selected states' },
+  { name: 'Field Gold', v: '--action', job: 'Only ever "tap this" (and the mark on dark)' },
   { name: 'Data', v: '--data', job: 'Only ever a number' },
   { name: 'Good', v: '--good', job: 'Likely draw — always with the word' },
-  { name: 'Fair', v: '--fair', job: 'Fair chance / caution' },
-  { name: 'Long', v: '--long', job: 'Long shot / neutral info' },
+  { name: 'Antler Bronze', v: '--fair', job: 'Fair chance / caution' },
+  { name: 'Alpine Mist', v: '--long', job: 'Long shot / quiet text' },
   { name: 'Stop', v: '--stop', job: 'Closed to you, errors' },
-  { name: 'Canvas', v: '--canvas', job: 'Page background' },
+  { name: 'Cloud Base', v: '--canvas', job: 'Page background' },
   { name: 'Surface', v: '--surface', job: 'Cards' },
   { name: 'Ink', v: '--ink', job: 'Text' },
 ];
@@ -44,8 +44,8 @@ export default function DesignPage() {
       <main style={{ maxWidth: 'var(--col)', margin: '0 auto', padding: '28px 16px', display: 'flex', flexDirection: 'column', gap: 36 }}>
         <div className="hq-fade-up">
           <Eyebrow>Design system</Eyebrow>
-          <h1 className="hq-h1" style={{ marginTop: 6 }}>Timber &amp; Blaze</h1>
-          <p className="hq-body" style={{ marginTop: 8 }}>One color, one job. Blaze means tap this. Data means a number. Timber is HuntQuarters. Odds colors always come with a word.</p>
+          <h1 className="hq-display" style={{ marginTop: 6, fontSize: 26, lineHeight: 1.15 }}>Built for the hunt ahead</h1>
+          <p className="hq-body" style={{ marginTop: 8 }}>One color, one job. Field Gold means tap this. Data means a number. Engine Slate is the brand. Odds colors always come with a word.</p>
         </div>
 
         {/* A real hunt, the new way — Oregon elk 210A2 at 6 points */}
@@ -121,7 +121,7 @@ export default function DesignPage() {
             <p className="hq-body">Body · 16 / 1.5 — plain, helpful, short.</p>
             <p className="hq-small">Small · 13 — secondary detail.</p>
             <p><span className="hq-data" style={{ fontSize: 18 }}>2027 · 6 pts · 88%</span> <span className="hq-small">— numbers in mono</span></p>
-            <a className="hq-link" href="#top">A link is blaze</a>
+            <a className="hq-link" href="#top">A link is Field Gold</a>
           </div>
         </Section>
 
@@ -151,7 +151,7 @@ export default function DesignPage() {
             <Mark size={56} />
             <div>
               <Eyebrow>The mark</Eyebrow>
-              <p style={{ fontWeight: 700 }}>A ridgeline under a rising blaze sun — first light on opening morning.</p>
+              <p style={{ fontWeight: 700 }}>The elk and its network of points — the hunt, read through data. Engine Slate on light, Field Gold on dark.</p>
             </div>
           </Card>
           <Lockup size={36} tagline />

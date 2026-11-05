@@ -73,7 +73,9 @@ export function TabBar() {
   );
 }
 
-// ── Loader: a ridgeline draws in under a rising sun, with status lines ──────
+// ── Loader: the mark's network of points links up, with status lines ──────
+const NODES: Array<[number, number]> = [[14, 40], [34, 18], [56, 30], [80, 12], [100, 34], [66, 48], [40, 46]];
+const LINKS: Array<[number, number]> = [[0, 1], [1, 2], [2, 3], [3, 4], [2, 5], [5, 4], [1, 6], [6, 5], [0, 6]];
 export function Loader({ lines = ['Reading the draw results', 'Checking your points', 'Lining up the odds'] }: { lines?: string[] }) {
   const [i, setI] = useState(0);
   useEffect(() => {
@@ -82,9 +84,11 @@ export function Loader({ lines = ['Reading the draw results', 'Checking your poi
   }, [lines.length]);
   return (
     <div className="hq-loader" role="status" aria-live="polite">
-      <svg width="120" height="56" viewBox="0 0 120 56" aria-hidden="true">
-        <circle className="hq-loader__sun" cx="80" cy="20" r="9" />
-        <g className="hq-loader__ridge"><path d="M4 50 L30 22 L46 38 L64 14 L90 40 L104 30 L116 50" /></g>
+      <svg width="120" height="60" viewBox="0 0 114 60" aria-hidden="true" className="hq-loader__net">
+        {LINKS.map(([a, b], k) => (
+          <line key={k} x1={NODES[a][0]} y1={NODES[a][1]} x2={NODES[b][0]} y2={NODES[b][1]} style={{ animationDelay: `${k * 0.12}s` }} />
+        ))}
+        {NODES.map(([x, y], k) => <circle key={k} cx={x} cy={y} r="4.5" style={{ animationDelay: `${k * 0.15}s` }} />)}
       </svg>
       <p key={i} className="hq-loader__line">{lines[i]}…</p>
     </div>

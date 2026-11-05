@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Roboto_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Montserrat, Roboto_Mono } from "next/font/google";
 import Script from "next/script";
 import AppNav from "./components/AppNav";
 import ThemeScript from "./ui/ThemeScript";
@@ -18,6 +18,8 @@ const geistMono = Geist_Mono({
 // Design system fonts (app/styles/hq.css): Inter for words, Roboto Mono for numbers.
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const robotoMono = Roboto_Mono({ variable: "--font-hqmono", subsets: ["latin"], weight: ["400", "500", "600"] });
+// Wide geometric caps for the wordmark and display lines, as on the brand board.
+const montserrat = Montserrat({ variable: "--font-display", subsets: ["latin"], weight: ["500", "600", "700"] });
 
 // HuntQuarters GA4 property. Loads on the production deploy only, so local and
 // preview testing don't count as visits; NEXT_PUBLIC_GA_ID overrides it.
@@ -39,7 +41,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head><ThemeScript /></head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${robotoMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${robotoMono.variable} ${montserrat.variable} antialiased`}
       >
         <AppNav />
         {children}

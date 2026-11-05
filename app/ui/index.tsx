@@ -1,4 +1,4 @@
-// HuntQuarters UI kit — "Timber & Blaze" (app/styles/hq.css, docs/BRAND.md).
+// UI kit — brand-board design system (app/styles/hq.css, docs/BRAND.md).
 // Server-safe building blocks; interactive pieces live in their own client files.
 
 import type { ReactNode, ButtonHTMLAttributes, CSSProperties } from 'react';
@@ -8,26 +8,22 @@ import { AlertTriangle, Info, OctagonAlert } from 'lucide-react';
 const cx = (...c: Array<string | false | null | undefined>) => c.filter(Boolean).join(' ');
 
 // ── Brand ───────────────────────────────────────────────────────────────────
-// The mark: a ridgeline under a rising blaze sun, on timber.
+// The mark: the elk with its network of points (brand board). A mask, so it
+// takes --mark: Engine Slate on light, Field Gold on dark.
 export function Mark({ size = 32 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
-      <rect width="32" height="32" rx="8" fill="var(--brand)" />
-      <circle cx="21" cy="12" r="4" fill="var(--action)" />
-      <path d="M4 25 L11 15 L15 20 L19 13 L28 25 Z" fill="var(--on-brand)" />
-    </svg>
-  );
+  return <span className="hq-mark" aria-hidden="true" style={{ width: Math.round(size * 0.83), height: size }} />;
 }
+
+// Two-tone wordmark as on the board: first word in gold, the rest in Alpine Mist.
+export const BRAND = { lead: 'Hunt', rest: 'Quarters' };
 
 export function Lockup({ size = 28, tagline = false }: { size?: number; tagline?: boolean }) {
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
-      <Mark size={size} />
-      <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-        <span style={{ fontSize: size * 0.68, fontWeight: 500, letterSpacing: '-.02em', color: 'var(--ink)' }}>
-          Hunt<b style={{ fontWeight: 800 }}>Quarters</b>
-        </span>
-        {tagline && <span className="hq-eyebrow" style={{ fontSize: 9, marginTop: 4 }}>Plan every season</span>}
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }} aria-label={`${BRAND.lead}${BRAND.rest}`}>
+      <Mark size={size * 1.3} />
+      <span style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+        <span className="hq-wordmark" style={{ fontSize: size * 0.62 }}><b>{BRAND.lead}</b>{BRAND.rest}</span>
+        {tagline && <span className="hq-eyebrow" style={{ fontSize: 9 }}>Built for the hunt ahead</span>}
       </span>
     </span>
   );
