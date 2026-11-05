@@ -54,6 +54,7 @@ Each tool is a thin wrapper over a function the screens already use — one sour
 | `compare_hunts` | 2–4 hunts side by side + the pick and its tradeoff | `compareColumn`, `pickBest` |
 | `deadlines` | deadline per state/species with status (posted / expected / last year) and source | `deadlineFor`, `officialInfoFor` |
 | `fees_and_rules` | fees, prerequisites (hunter ed, licenses), application link, with sources | `feesFor`, `prerequisitesFor` |
+| `yearly_cost` | total of posted point/application/license fees for a set of states/species and residency; per-line breakdown with sources; lists states with no fee data | `feesFor` |
 | `harvest_reporting` | official reporting rule for a state/species | `harvestReportingFor` |
 | `my_reports` | your past reports' lessons for a state/species | `hunt_reports` |
 | **Asks first:** `add_to_plan`, `set_reminder`, `remember` | writes after you tap Yes | existing plan-items / tasks APIs; `remember` → profile memory (§7) |
@@ -65,7 +66,7 @@ Not in v1 (the data isn't ready — SPEC_KNOWLEDGE P1/P2): OTC/leftover catalog,
 - **Model:** the provider the app already uses (OpenAI, GPT-4o class), behind one small adapter (`lib/advisor/model.ts`) so the model can be swapped in one file. Tool calling, low temperature.
 - **Loop:** model → tool calls (run on the server with the member's own Supabase session, so RLS applies) → model → answer. Max ~6 tool calls per turn.
 - **Answer check before it's shown:** every number/date in the final text must appear in a tool result from this turn; if not, the turn is retried once with that flagged, then the number is removed rather than shown. The "Based on" line is built from the tools actually called, not written by the model.
-- **Cost guard:** per-member daily cap; short history (last ~10 turns plus a running summary).
+- **Usage, not a cap:** no question limit for members. Each turn's model cost is recorded per member so pricing (e.g. credits beyond a monthly amount) can be decided from real numbers. Only a high abuse guard (200 turns/day) stops runaway cost. Short history (last ~10 turns plus a running summary) keeps turns cheap.
 
 ## 7. Memory
 - Conversations saved per member (`advisor_threads`, `advisor_messages`; owner-only RLS; delete anytime).
@@ -87,7 +88,7 @@ The owner reviews 10 transcripts before launch.
 5. Memory (`remember`, Me → What the advisor knows). Migration 0008 for threads/messages — you run it.
 6. Owner transcript review → turn on for members.
 
-## 10. Open questions for the owner
-1. **Daily cap:** 30 questions/day per member to start?
-2. **Show the "Based on" line always, or behind a tap?** Recommend: always (it's the trust).
-3. **Budget questions:** should it use fees we have to total a yearly cost ("about $1,240/yr for these 4 states")? Recommend yes, labeled "from posted fees, check before you pay".
+## 10. Owner decisions (2026-11-05)
+1. **No question limit.** Track usage per member; maybe sell credits past a monthly amount later. A 200/day abuse guard only.
+2. **"Based on": undecided.** Ship as a one-line "Based on 3 sources" that expands on tap; flip to always-open if testers want it.
+3. **Yearly cost: yes.** A `yearly_cost` tool totals posted fees for the states/species in question ("about $X/yr for these 4 states"), labeled "from posted fees — check before you pay"; lists any state whose fees we don't have instead of guessing.
