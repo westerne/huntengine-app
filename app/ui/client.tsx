@@ -52,7 +52,7 @@ const TABS = [
   { href: '/today', label: 'Today', icon: Sun, match: ['/today'] },
   { href: '/plan', label: 'Plan', icon: CalendarRange, match: ['/plan', '/calendar', '/season', '/history'] },
   { href: '/add', label: 'Add', icon: Plus, match: ['/add'], raised: true },
-  { href: '/find', label: 'Find', icon: Search, match: ['/find', '/planner', '/compare'] },
+  { href: '/find', label: 'Find', icon: Search, match: ['/find', '/planner', '/compare', '/hunt'] },
   { href: '/profile', label: 'Me', icon: User, match: ['/profile'] },
 ];
 

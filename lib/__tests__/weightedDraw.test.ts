@@ -73,3 +73,21 @@ describe('Find in a lottery state', () => {
     }
   });
 });
+
+describe('odds ladder', () => {
+  it('climbs as points build in Nevada, and adds up a chance of drawing by each year', async () => {
+    const { ladderFor, ladderRows, chanceText } = await import('../huntdata/ladder');
+    const l = ladderFor(elk('4161-111'), 'nonresident');
+    expect(l.basis).toBe('modeled');
+    expect(l.chances![6]).toBe(37);
+    const rows = ladderRows(l, 6, 2027, 12);
+    expect(rows[0]).toMatchObject({ year: 2027, points: 6, chances: 37 });
+    for (let i = 1; i < rows.length; i++) {
+      expect(rows[i].chance).toBeGreaterThanOrEqual(rows[i - 1].chance);
+      expect(rows[i].cumulative).toBeGreaterThan(rows[i - 1].cumulative);
+    }
+    expect(chanceText(0.04)).toBe('under 0.1%');
+    expect(chanceText(0.7)).toBe('0.7%');
+    expect(chanceText(0)).toBe('0%');
+  });
+});

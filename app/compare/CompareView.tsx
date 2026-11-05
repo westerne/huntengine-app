@@ -182,7 +182,7 @@ export default function CompareView({ cols, pick, notes, missing, years, homeSta
                   <th key={c.key} scope="col" style={{ ...cell, borderTop: 0, fontWeight: 400, background: tint(c) }}>
                     {isPick(c) && <p className="hq-eyebrow" style={{ marginBottom: 4 }}>Our pick</p>}
                     <p className="hq-h3">{c.state} {c.species.toLowerCase()}</p>
-                    <p className="hq-small" style={{ fontWeight: 600, color: 'var(--ink-soft)' }}>{huntTitle(c.unit, c.huntCode)}</p>
+                    <p className="hq-small" style={{ fontWeight: 600 }}><Link href={`/hunt/${encodeURIComponent(c.key)}`} className="hq-link">{huntTitle(c.unit, c.huntCode)}</Link></p>
                     {c.label && <p className="hq-small">{labelText(c.label)}</p>}
                     {!c.openToYou && <p style={{ marginTop: 6 }}><Tier tier="stop" /></p>}
                   </th>

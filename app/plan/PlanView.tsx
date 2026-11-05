@@ -74,7 +74,7 @@ function Row({ h, years, thisYear, onError }: { h: PlanHunt; years: number[]; th
             {h.year === thisYear && (h.unit || h.huntCode) && (
               <Button size="sm" disabled={busy} onClick={() => act(() => send(`/api/plan-items/${h.planItemId}/to-season`, 'POST'))}>Start application</Button>
             )}
-            {h.compareKey && <ButtonLink href={`/compare?h=${encodeURIComponent(h.compareKey)}`} variant="secondary" size="sm">Compare</ButtonLink>}
+            {h.compareKey && <ButtonLink href={`/hunt/${encodeURIComponent(h.compareKey)}`} variant="secondary" size="sm">See odds</ButtonLink>}
             <Button size="sm" variant="ghost" disabled={busy}
               onClick={() => window.confirm('Remove this from your plan?') && act(() => send(`/api/plan-items/${h.planItemId}`, 'DELETE'))}>Remove</Button>
           </div>

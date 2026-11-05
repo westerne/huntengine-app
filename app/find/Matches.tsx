@@ -145,10 +145,10 @@ function MatchCard({
       )}
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 16 }}>
         <Link
-          href={`/compare?h=${encodeURIComponent(compareKey(n.state, n.speciesKey, m.huntCode ?? m.unit))}`}
+          href={`/hunt/${encodeURIComponent(compareKey(n.state, n.speciesKey, m.huntCode ?? m.unit))}`}
           className="hq-link hq-small"
         >
-          All the data
+          Odds as points build
         </Link>
         <AddToPlan
           target={{

@@ -89,10 +89,10 @@ function HuntRow({ h, showOdds, r }: { h: Hunt; showOdds: boolean; r: Reality })
           leave a hunter with nothing to do about what he's looking at. */}
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 16 }}>
         <Link
-          href={`/compare?h=${encodeURIComponent(`${r.state}~${r.speciesKey}~${h.huntCode ?? h.unit}`)}`}
+          href={`/hunt/${encodeURIComponent(`${r.state}~${r.speciesKey}~${h.huntCode ?? h.unit}`)}`}
           className="hq-link hq-small"
         >
-          All the data
+          Odds as points build
         </Link>
         <AddToPlan
           target={{
