@@ -93,7 +93,7 @@ export function buildToday(hunts: TodayHunt[], tasks: TodayTask[], today: string
     if (days > 120) continue;
     items.push({
       key: `t:${t.id}`, kind: 'task', title: t.title, sub: days < 0 ? `Overdue · was due ${whenText(days)}` : `Due ${whenText(days)}`,
-      date: t.due_on, days, href: t.hunt_id ? `/season/${t.hunt_id}` : '/season', tone: days < 0 ? 'stop' : days <= 7 ? 'stop' : days <= 30 ? 'fair' : 'long',
+      date: t.due_on, days, href: t.hunt_id ? `/season/${t.hunt_id}` : '/today#todo', tone: days < 0 ? 'stop' : days <= 7 ? 'stop' : days <= 30 ? 'fair' : 'long',
     });
   }
 

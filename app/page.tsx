@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export default async function Home() {
   if (accountsEnabled()) {
     const viewer = await getViewer();
-    if (viewer.member) redirect('/season');
+    if (viewer.member) redirect('/today');
   }
   return <Planner />;
 }

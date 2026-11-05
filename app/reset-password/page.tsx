@@ -15,7 +15,7 @@ export default function ResetPasswordPage() {
     const { error } = await supabaseBrowser().auth.updateUser({ password });
     if (error) return setMessage({ kind: 'error', text: 'That reset link has expired. Request a new one from the sign-in page.' });
     setMessage({ kind: 'info', text: 'Password updated. Taking you to your season…' });
-    setTimeout(() => { window.location.href = '/season'; }, 1200);
+    setTimeout(() => { window.location.href = '/today'; }, 1200);
   };
 
   return (

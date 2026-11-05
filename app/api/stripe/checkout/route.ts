@@ -26,7 +26,7 @@ export async function POST(req: Request) {
       : { customer_email: auth.viewer.email ?? undefined }),
     subscription_data: { metadata: { user_id: auth.viewer.userId! } },
     metadata: { user_id: auth.viewer.userId! },
-    success_url: `${base}/season?welcome=1`,
+    success_url: `${base}/today?welcome=1`,
     cancel_url: `${base}/join?canceled=1`,
   });
   return NextResponse.json({ url: session.url });

@@ -12,7 +12,7 @@ export default async function JoinPage({ searchParams }: { searchParams: Promise
   if (!accountsEnabled()) redirect('/');
   const viewer = await getViewer();
   if (!viewer.userId) redirect('/login');
-  if (viewer.member) redirect('/season');
+  if (viewer.member) redirect('/today');
   const { canceled } = await searchParams;
 
   return (

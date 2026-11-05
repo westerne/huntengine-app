@@ -31,7 +31,7 @@ export default function LoginPage() {
       if (mode === 'signin') {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) return setMessage({ kind: 'error', text: 'Email or password is incorrect.' });
-        window.location.href = '/season';
+        window.location.href = '/today';
       } else {
         const { data, error } = await supabase.auth.signUp({
           email, password,

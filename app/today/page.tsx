@@ -4,7 +4,9 @@ import { ArrowRight, CalendarCheck, Compass, Sparkles } from 'lucide-react';
 import { getViewer } from '@/lib/membership';
 import { accountsEnabled } from '@/lib/supabase/config';
 import { supabaseServer } from '@/lib/supabase/server';
-import { buildToday, upcomingOpenDeadlines, whenText, type TodayItem, type TodayTask } from '@/lib/today';
+import { buildToday, daysBetween, upcomingOpenDeadlines, whenText, type TodayItem, type TodayTask } from '@/lib/today';
+import { sortOpenTasks } from '@/lib/applications';
+import Todo, { type TodoTask } from './Todo';
 import { deadlineFor, shortDate } from '@/lib/huntdata/apply';
 import { speciesKeyOf } from '@/lib/species';
 import { BigNumber, ButtonLink, Card, Caveat, EmptyState, Eyebrow, StatRow, Tier } from '../ui';
@@ -40,21 +42,29 @@ function List({ title, items }: { title: string; items: TodayItem[] }) {
   );
 }
 
-export default async function TodayPage() {
+export default async function TodayPage({ searchParams }: { searchParams: Promise<{ welcome?: string }> }) {
   if (!accountsEnabled()) redirect('/');
   const viewer = await getViewer();
   if (!viewer.userId) redirect('/login');
   if (!viewer.member) redirect('/join');
 
+  const { welcome } = await searchParams;
   const supabase = await supabaseServer();
   const [plan, { data: taskRows }] = await Promise.all([
     loadPlan(supabase, viewer.userId),
-    supabase.from('tasks').select('id, title, due_on, kind, hunt_id, done_at, saved_hunts(status)').is('done_at', null),
+    supabase.from('tasks').select('id, title, due_on, kind, hunt_id, done_at, position, saved_hunts(status, state, species)').is('done_at', null),
   ]);
   const today = TODAY();
-  const tasks = ((taskRows ?? []) as Array<TodayTask & { saved_hunts?: { status?: string } | null }>)
-    .filter((t) => t.saved_hunts?.status !== 'archived');
-  const t = buildToday(plan.hunts, tasks, today);
+  type Row = TodayTask & { position: number; saved_hunts?: { status?: string; state?: string; species?: string } | null };
+  const tasks = sortOpenTasks(((taskRows ?? []) as Row[]).filter((t) => t.saved_hunts?.status !== 'archived'));
+  // The whole list lives in To-do; only what's overdue or due this week also
+  // competes for the headline.
+  const urgent = tasks.filter((x) => x.due_on && daysBetween(today, x.due_on) <= 7);
+  const t = buildToday(plan.hunts, urgent, today);
+  const todo: TodoTask[] = tasks.map((x) => ({
+    id: x.id, title: x.title, due_on: x.due_on, kind: x.kind, hunt_id: x.hunt_id, done_at: null,
+    hunt: x.saved_hunts?.state ? `${x.saved_hunts.state} ${x.saved_hunts.species?.toLowerCase() ?? ''}`.trim() : null,
+  }));
 
   // Posted deadlines in states where they hold points but planned nothing this season.
   const planned = new Set(plan.hunts.filter((h) => h.year === plan.thisYear).map((h) => `${h.state}|${speciesKeyOf(h.species, h.state)}`));
@@ -70,7 +80,7 @@ export default async function TodayPage() {
   const expected = plan.hunts
     .filter((h) => h.year === plan.thisYear && h.agencyDeadline && h.agencyDeadline.kind !== 'published' && ['considering', 'planned', 'points'].includes(h.stage))
     .sort((a, b) => (a.agencyDeadline!.date.slice(5) < b.agencyDeadline!.date.slice(5) ? -1 : 1));
-  const nothing = !t.lead && !t.thisWeek.length && !t.comingUp.length && !t.waiting.length && !open.length && !expected.length;
+  const nothing = !t.lead && !t.thisWeek.length && !t.comingUp.length && !t.waiting.length && !open.length && !expected.length && !todo.length;
   const ptsShown = plan.points.filter((p) => p.usesPoints && p.live && p.current != null).slice(0, 3);
   const dateLine = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Denver', weekday: 'long', month: 'long', day: 'numeric' }).format(new Date());
 
@@ -81,6 +91,7 @@ export default async function TodayPage() {
           <Eyebrow>{dateLine}</Eyebrow>
           <h1 className="hq-h1" style={{ marginTop: 4 }}>Today</h1>
         </div>
+        {welcome && <Caveat tone="info">Welcome to HuntQuarters. Your membership is active — start with <Link href="/calendar/setup" className="hq-link">a few questions</Link> and we&apos;ll lay out your next seasons.</Caveat>}
         {plan.loadError && <Caveat tone="stop">Some of your plan couldn&apos;t be loaded just now. Nothing is lost — try again in a minute.</Caveat>}
 
         {t.lead ? (
@@ -119,6 +130,8 @@ export default async function TodayPage() {
             <p className="hq-small" style={{ marginTop: 4 }}>Opens {shortDate(nextHunt.huntStart!)}</p>
           </Card>
         )}
+
+        <Todo initial={todo} />
 
         <List title="Coming up" items={t.comingUp} />
         <List title="Waiting on" items={t.waiting} />

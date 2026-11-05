@@ -7,7 +7,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ChevronRight, ChevronDown, CalendarPlus, Sparkles, Mountain } from 'lucide-react';
-import { Button, ButtonLink, Card, Caveat, EmptyState, Eyebrow, PointsTimeline, Tier } from '../ui';
+import { Button, ButtonLink, Card, Caveat, EmptyState, Eyebrow, PointsTimeline, StatRow, Tier } from '../ui';
 import { STAGE } from '@/lib/myHunts';
 import { huntTitle } from '@/lib/huntName';
 import { KIND_LABEL, PLAN_KINDS, type PlanKind } from '@/lib/calendar';
@@ -194,6 +194,16 @@ export default function PlanView({ thisYear, years, hunts, points, homeKnown, lo
   const building = points.filter((r) => r.usesPoints && r.live && !planned.has(`${r.state}|${r.species}`));
   const rowProps = { years, thisYear, onError: setError };
   const empty = hunts.length === 0 && points.length === 0;
+  // Your record, from what you've logged (the app doesn't check with the states).
+  const count = (f: (h: PlanHunt) => boolean) => hunts.filter(f).length;
+  const drew = count((h) => !h.otc && ['drew', 'prepping', 'hunted', 'reported'].includes(h.stage));
+  const decided = drew + count((h) => h.stage === 'didnt');
+  const huntedN = count((h) => h.stage === 'hunted' || h.stage === 'reported');
+  const totals = decided + huntedN > 0 ? [
+    { k: 'Draws', v: decided ? `${drew} of ${decided}` : '—', n: 'results you recorded' },
+    { k: 'Hunts', v: huntedN, n: `${count((h) => h.stage === 'reported')} reported` },
+    { k: 'Harvests', v: count((h) => h.harvested === true), n: huntedN ? `of ${huntedN} hunts` : undefined },
+  ] : null;
 
   return (
     <main style={{ maxWidth: 760, margin: '0 auto', padding: '24px 16px 40px', display: 'flex', flexDirection: 'column', gap: 28 }}>
@@ -274,8 +284,9 @@ export default function PlanView({ thisYear, years, hunts, points, homeKnown, lo
           <PointsCard rows={points} years={years} />
 
           {pastYears.length > 0 && (
-            <section style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <section id="past" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <h2 className="hq-h2">Past seasons</h2>
+              {totals && <StatRow items={totals} />}
               {pastYears.map((y) => (
                 <Card key={y} variant="flat" style={{ padding: '14px 18px' }}>
                   <p className="hq-eyebrow" style={{ marginBottom: 4 }}>{y}</p>
