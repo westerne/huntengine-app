@@ -26,6 +26,7 @@ export default async function HuntPage({ params }: { params: Promise<{ id: strin
   const supabase = await supabaseServer();
   const { data: hunt } = await supabase.from('saved_hunts').select('*').eq('id', id).maybeSingle();
   if (!hunt) notFound();
+  if (hunt.source === 'plan') redirect('/plan');   // not started yet: it lives on Plan
   const [{ data: notes }, { data: application }, { data: tasks }, { data: plans }, { data: profile }, { data: report }, { data: pastRows }] = await Promise.all([
     supabase.from('hunt_notes').select('id, body, created_at').eq('hunt_id', id).order('created_at'),
     supabase.from('applications').select('*').eq('hunt_id', id).maybeSingle(),

@@ -316,7 +316,7 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
               </Link>
             )}
             <Link
-              href="/calendar"
+              href="/plan"
               className="border border-zinc-700 text-zinc-200 px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:bg-zinc-800"
             >
               Plan another year instead

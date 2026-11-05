@@ -56,7 +56,7 @@ export default function AddToPlan({ target, note }: { target: PlanTarget; note?:
     return (
       <span className="text-[10px] font-black uppercase tracking-widest text-green-500">
         On your calendar{target.year ? ` for ${target.year}` : ''} ·{' '}
-        <Link href="/calendar" className="text-amber-600 hover:text-amber-500">Open it</Link>
+        <Link href="/plan" className="text-amber-600 hover:text-amber-500">Open it</Link>
       </span>
     );
   }

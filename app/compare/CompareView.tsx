@@ -181,7 +181,7 @@ export default function CompareView({ cols, pick, notes, missing, years, homeSta
                 {cols.map((c) => (
                   <td key={c.key} className="p-3 space-y-2">
                     {added[c.key]
-                      ? <p className="text-green-400 text-xs">{added[c.key]} · <Link href="/calendar" className="underline">calendar</Link></p>
+                      ? <p className="text-green-400 text-xs">{added[c.key]} · <Link href="/plan" className="underline">plan</Link></p>
                       : c.openToYou && <button type="button" onClick={() => addToCalendar(c)} className="bg-amber-600 text-white px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-amber-500">Add to calendar</button>}
                     <Link href={without(c.key)} className="block text-zinc-500 text-[10px] font-black uppercase tracking-widest hover:text-white">Remove</Link>
                   </td>

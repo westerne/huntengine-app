@@ -32,7 +32,7 @@ export default async function HistoryPage() {
 
   const supabase = await supabaseServer();
   const { data, error } = await supabase.from('saved_hunts')
-    .select('*, applications(decision, submitted_at), hunt_reports(*)')
+    .select('*, applications(decision, submitted_at), hunt_reports(*)').neq('source', 'plan')
     .order('season_year', { ascending: false }).order('updated_at', { ascending: false });
   const rows = (data ?? []) as Row[];
 

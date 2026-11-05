@@ -29,6 +29,21 @@ export function cleanPlanItem(b: Record<string, unknown>): { item: PlanItemInput
   };
 }
 
+// Plan entries are saved_hunts rows with source 'plan' (migration 0007).
+export function planRow(i: PlanItemInput, userId: string) {
+  return {
+    user_id: userId, season_year: i.target_year, state: i.state, species: i.species, unit: i.unit, hunt_code: i.hunt_code,
+    label: i.label, notes: i.notes, kind: i.kind, status: 'planned', source: 'plan',
+  };
+}
+export function planPatchRow(p: Partial<PlanItemInput>) {
+  const { target_year, ...rest } = p;
+  return target_year === undefined ? rest : { ...rest, season_year: target_year };
+}
+// The same hunt twice in one year is one record (the saved_hunts unique indexes).
+export const sameHuntKey = (r: { season_year: number | null; state: string; species: string; unit: string | null; hunt_code: string | null }) =>
+  r.season_year == null ? null : [r.season_year, r.state, r.species, r.hunt_code ? `c:${r.hunt_code}` : `u:${r.unit ?? ''}`].join('|');
+
 // Partial edits (move a year, change kind, notes).
 export function cleanPlanPatch(b: Record<string, unknown>): { patch: Partial<PlanItemInput> } | { error: string } {
   const patch: Partial<PlanItemInput> = {};

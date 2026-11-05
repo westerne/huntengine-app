@@ -2,7 +2,7 @@ import { supabaseServer } from '@/lib/supabase/server';
 import { currentSeasonYear } from '@/lib/hunts';
 import {
   calendarYears, drawOutlook, findHunt, projectPoints, usesPoints, yearsCovering,
-  type Outlook, type PlanItem, type PointBalance,
+  type Outlook, type PointBalance,
 } from '@/lib/calendar';
 import { buildMyHunts, shortOutlook, type MyHunt, type SavedHuntRow } from '@/lib/myHunts';
 import { getStateModule } from '@/lib/huntdata/registry';
@@ -28,18 +28,17 @@ type Client = Awaited<ReturnType<typeof supabaseServer>>;
 // Everything the Plan (and Today) screens show, from the hunter's own records
 // plus the state draw data. Outlooks are "if odds stay like last year's".
 export async function loadPlan(supabase: Client, userId: string) {
-  const [{ data: itemRows, error: e1 }, { data: savedRows, error: e2 }, { data: pointRows }, { data: profile }] = await Promise.all([
-    supabase.from('plan_items').select('*').order('target_year', { nullsFirst: false }).order('position').order('created_at'),
-    supabase.from('saved_hunts').select('id, season_year, state, species, unit, hunt_code, label, status, application_result, hunt_start, hunt_end, applications(decision, deadline_on, submitted_at), hunt_reports(completed_at, harvested)').order('season_year', { ascending: false }),
+  const [{ data: savedRows, error: e2 }, { data: pointRows }, { data: profile }] = await Promise.all([
+    supabase.from('saved_hunts').select('id, season_year, state, species, unit, hunt_code, label, status, application_result, source, kind, notes, hunt_start, hunt_end, applications(decision, deadline_on, submitted_at), hunt_reports(completed_at, harvested)')
+      .order('season_year', { ascending: false, nullsFirst: false }).order('position').order('created_at'),
     supabase.from('hunter_points').select('state, species, points, as_of_year'),
     readProfile(supabase, userId),
   ]);
-  const items = (itemRows ?? []) as PlanItem[];
   const balances = (pointRows ?? []) as PointBalance[];
   const home = profile?.home_state ?? null;
   const homeKnown = !!home || (profile?.planning as { homeState?: string } | null)?.homeState === 'XX';
   const thisYear = currentSeasonYear();
-  const hunts = buildMyHunts((savedRows ?? []) as SavedHuntRow[], items);
+  const hunts = buildMyHunts((savedRows ?? []) as SavedHuntRow[]);
   const years = yearsCovering(calendarYears(thisYear), hunts.map((h) => (h.year != null && h.year >= thisYear ? h.year : null)));
   const residencyFor = (state: string) => (home && home === state ? 'resident' : 'nonresident') as 'resident' | 'nonresident';
   const pairKey = (state: string, species: string) => `${state}|${speciesKeyOf(species, state) ?? species}`;
@@ -49,7 +48,7 @@ export async function loadPlan(supabase: Client, userId: string) {
   for (const b of balances) pairs.set(pairKey(b.state, b.species), { state: b.state, species: b.species, current: Number(b.points) });
   for (const h of hunts) {
     const k = pairKey(h.state, h.species);
-    if (!pairs.has(k) && h.year != null && h.year >= thisYear && usesPoints(getStateModule(h.state), h.species)) pairs.set(k, { state: h.state, species: h.species, current: null });
+    if (!pairs.has(k) && h.stage !== 'passed' && h.year != null && h.year >= thisYear && usesPoints(getStateModule(h.state), h.species)) pairs.set(k, { state: h.state, species: h.species, current: null });
   }
   const projections = new Map<string, Record<number, number>>();
   const drawTargets = (k: string) => hunts.filter((h) => !h.otc && h.year != null && h.year >= thisYear
@@ -93,5 +92,5 @@ export async function loadPlan(supabase: Client, userId: string) {
     });
   }
 
-  return { thisYear, years, hunts: withOutlook, points, home, homeKnown, loadError: !!(e1 || e2) };
+  return { thisYear, years, hunts: withOutlook, points, home, homeKnown, loadError: !!e2 };
 }

@@ -1,8 +1,8 @@
 // "My hunt": one record per hunt moving through stages (docs/SPEC_ARCHITECTURE.md §2).
-// Until the tables are merged, this builds that view from calendar items
-// (plan_items) and saved hunts. Pure — tested without a database.
+// Since migration 0007 every hunt is one saved_hunts row, from "someday"
+// through the report. Pure — tested without a database.
 
-import type { Outlook, PlanItem } from './calendar';
+import type { Outlook, PlanKind } from './calendar';
 import type { TierKind } from '@/app/ui';
 
 export const STAGES = ['idea', 'considering', 'planned', 'points', 'applied', 'didnt', 'drew', 'prepping', 'hunted', 'reported', 'passed'] as const;
@@ -24,14 +24,17 @@ export const STAGE: Record<Stage, { label: string; tier: TierKind }> = {
 
 export type SavedHuntRow = {
   id: string;
-  season_year: number;
+  season_year: number | null;   // null = someday
   state: string;
   species: string;
-  unit: string;
+  unit: string | null;
   hunt_code: string | null;
   label: string | null;
   status: string;
   application_result: string | null;
+  source?: string | null;        // 'plan' = on the plan, application not started
+  kind?: PlanKind | null;
+  notes?: string | null;
   hunt_start?: string | null;
   hunt_end?: string | null;
   applications?: { decision: string | null; deadline_on: string | null; submitted_at: string | null } | Array<{ decision: string | null; deadline_on: string | null; submitted_at: string | null }> | null;
@@ -39,9 +42,9 @@ export type SavedHuntRow = {
 };
 
 export type MyHunt = {
-  key: string;                 // "s:<saved id>" or "p:<plan item id>"
-  savedId: string | null;
-  planItemId: string | null;
+  key: string;                 // "s:<id>"
+  savedId: string | null;      // set once the application is started (opens its own page)
+  planItemId: string | null;   // set while it's only on the plan (edited in place)
   state: string;
   species: string;
   unit: string | null;
@@ -81,29 +84,21 @@ export function stageOfSaved(h: SavedHuntRow): Stage {
   }
 }
 
-export function buildMyHunts(saved: SavedHuntRow[], items: PlanItem[]): MyHunt[] {
-  const out: MyHunt[] = saved.map((h) => {
+export function buildMyHunts(saved: SavedHuntRow[]): MyHunt[] {
+  return saved.map((h) => {
     const app = one(h.applications);
     const rep = one(h.hunt_reports);
-    const linked = items.find((i) => i.saved_hunt_id === h.id);
+    const planOnly = h.source === 'plan';
     return {
-      key: `s:${h.id}`, savedId: h.id, planItemId: linked?.id ?? null,
+      key: `s:${h.id}`, savedId: planOnly ? null : h.id, planItemId: planOnly ? h.id : null,
       state: h.state, species: h.species, unit: h.unit, huntCode: h.hunt_code, label: h.label,
-      year: h.season_year, stage: stageOfSaved(h), otc: linked?.kind === 'otc', bucket: false,
+      year: h.season_year,
+      stage: planOnly ? (h.kind === 'bucket' && h.season_year == null ? 'idea' : 'planned') : stageOfSaved(h),
+      otc: h.kind === 'otc', bucket: h.kind === 'bucket',
       deadline: app?.deadline_on ?? null, huntStart: h.hunt_start ?? null, huntEnd: h.hunt_end ?? null,
-      harvested: rep?.harvested ?? null, notes: linked?.notes ?? null,
+      harvested: rep?.harvested ?? null, notes: h.notes ?? null,
     };
   });
-  for (const i of items) {
-    if (i.saved_hunt_id && saved.some((h) => h.id === i.saved_hunt_id)) continue;   // shown via its saved hunt
-    out.push({
-      key: `p:${i.id}`, savedId: null, planItemId: i.id,
-      state: i.state, species: i.species, unit: i.unit, huntCode: i.hunt_code, label: i.label,
-      year: i.target_year, stage: i.kind === 'bucket' && !i.target_year ? 'idea' : 'planned',
-      otc: i.kind === 'otc', bucket: i.kind === 'bucket', deadline: null, huntStart: null, huntEnd: null, harvested: null, notes: i.notes,
-    });
-  }
-  return out;
 }
 
 // Where each hunt shows up on the Plan timeline.

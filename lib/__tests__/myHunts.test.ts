@@ -1,14 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { buildMyHunts, planSections, shortOutlook, stageOfSaved, type SavedHuntRow } from '../myHunts';
-import type { PlanItem } from '../calendar';
 
 const saved = (o: Partial<SavedHuntRow>): SavedHuntRow => ({
   id: 'h1', season_year: 2027, state: 'OR', species: 'Elk', unit: '10', hunt_code: '210A2', label: null,
   status: 'planned', application_result: null, applications: null, hunt_reports: null, ...o,
 });
-const item = (o: Partial<PlanItem>): PlanItem => ({
-  id: 'p1', kind: 'target', state: 'WY', species: 'Elk', unit: '125', hunt_code: '125-1', label: null,
-  target_year: 2029, notes: null, saved_hunt_id: null, position: 0, ...o,
+// A hunt that is only on the plan so far.
+const item = (o: Partial<SavedHuntRow>): SavedHuntRow => saved({
+  id: 'p1', source: 'plan', kind: 'target', state: 'WY', species: 'Elk', unit: '125', hunt_code: '125-1', season_year: 2029, ...o,
 });
 
 describe('stages', () => {
@@ -25,19 +24,20 @@ describe('stages', () => {
 });
 
 describe('one record per hunt', () => {
-  it('shows a calendar item that became a saved hunt once, as the saved hunt', () => {
-    const hunts = buildMyHunts([saved({ id: 'h1' })], [item({ id: 'p1', saved_hunt_id: 'h1', notes: 'w/ dad' }), item({ id: 'p2' })]);
-    expect(hunts.map((h) => h.key)).toEqual(['s:h1', 'p:p2']);
-    expect(hunts[0]).toMatchObject({ planItemId: 'p1', notes: 'w/ dad', stage: 'planned' });
+  it('edits plan-only hunts in place and opens started ones on their own page', () => {
+    const hunts = buildMyHunts([saved({ id: 'h1', kind: 'otc', notes: 'w/ dad' }), item({ id: 'p2', unit: null })]);
+    expect(hunts[0]).toMatchObject({ savedId: 'h1', planItemId: null, notes: 'w/ dad', otc: true, stage: 'planned' });
+    expect(hunts[1]).toMatchObject({ savedId: null, planItemId: 'p2', unit: null, stage: 'planned' });
   });
   it('puts bucket-list hunts in Someday and past years in history', () => {
-    const hunts = buildMyHunts(
-      [saved({ id: 'old', season_year: 2025, status: 'applied', application_result: 'unsuccessful' })],
-      [item({ id: 'b', kind: 'bucket', target_year: null }), item({ id: 'n', target_year: 2027 })],
-    );
+    const hunts = buildMyHunts([
+      saved({ id: 'old', season_year: 2025, status: 'applied', application_result: 'unsuccessful' }),
+      item({ id: 'b', kind: 'bucket', season_year: null }), item({ id: 'n', season_year: 2027 }),
+    ]);
     const s = planSections(hunts, 2027);
-    expect(s.someday.map((h) => h.key)).toEqual(['p:b']);
-    expect(s.thisSeason.map((h) => h.key)).toEqual(['p:n']);
+    expect(s.someday.map((h) => h.key)).toEqual(['s:b']);
+    expect(s.someday[0].stage).toBe('idea');
+    expect(s.thisSeason.map((h) => h.key)).toEqual(['s:n']);
     expect(s.past.map((h) => h.key)).toEqual(['s:old']);
   });
 });

@@ -28,7 +28,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
   const [{ data: profile }, { data: points }, { data: items }, { data: reports }] = await Promise.all([
     supabase.from('profiles').select('home_state').eq('user_id', viewer.userId).maybeSingle(),
     supabase.from('hunter_points').select('state, species, points'),
-    supabase.from('plan_items').select('state, species, unit, hunt_code, notes, target_year, kind'),
+    supabase.from('saved_hunts').select('state, species, unit, hunt_code, notes, season_year, kind').neq('status', 'archived'),
     supabase.from('hunt_reports').select('harvested, days_hunted, change_next, worked, completed_at, saved_hunts!inner(season_year, state, species, unit, hunt_code)').not('completed_at', 'is', null),
   ]);
   const home = profile?.home_state ?? null;
@@ -60,7 +60,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
       return s && s.state === mod.code && speciesKeyOf(s.species, s.state) === hunt.species && norm(s.unit) === norm(hunt.unit);
     });
     notes[c.key] = {
-      planned: mine.map((i) => `${i.kind === 'otc' ? 'OTC option' : i.kind === 'bucket' ? 'Bucket list' : 'Draw target'}${i.target_year ? ` for ${i.target_year}` : ''}${i.notes ? ` — ${i.notes}` : ''}`),
+      planned: mine.map((i) => `${i.kind === 'otc' ? 'OTC option' : i.kind === 'bucket' ? 'Bucket list' : 'Draw target'}${i.season_year ? ` for ${i.season_year}` : ''}${i.notes ? ` — ${i.notes}` : ''}`),
       reports: past.map((r) => {
         const s = (Array.isArray(r.saved_hunts) ? r.saved_hunts[0] : r.saved_hunts) as { season_year: number };
         return `${s.season_year}: ${r.harvested ? 'harvested' : 'no harvest'}${r.days_hunted != null ? `, ${r.days_hunted} days` : ''}${r.change_next ? ` — next time: ${r.change_next}` : ''}`;

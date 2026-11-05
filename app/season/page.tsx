@@ -61,7 +61,7 @@ export default async function SeasonPage({ searchParams }: { searchParams: Promi
 
   const supabase = await supabaseServer();
   const [{ data }, { data: taskRows }] = await Promise.all([
-    supabase.from('saved_hunts').select('*, hunt_reports(completed_at)').neq('status', 'archived').order('updated_at', { ascending: false }),
+    supabase.from('saved_hunts').select('*, hunt_reports(completed_at)').neq('status', 'archived').neq('source', 'plan').order('updated_at', { ascending: false }),
     supabase.from('tasks').select('*, saved_hunts(status)').is('done_at', null),
   ]);
   const hunts = (data ?? []) as SavedHunt[];

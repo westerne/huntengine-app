@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server';
 import { requireMember } from '@/lib/apiAuth';
 import { supabaseServer } from '@/lib/supabase/server';
-import { cleanPlanPatch } from '@/lib/planItems';
+import { cleanPlanPatch, planPatchRow } from '@/lib/planItems';
 
 // PATCH  /api/plan-items/:id → move to another year, change type, notes
-// DELETE /api/plan-items/:id → remove from the calendar (a linked My Season hunt stays)
+// DELETE /api/plan-items/:id → take it off the plan
+// Only hunts still on the plan (source 'plan'); once the application is
+// started the hunt's own page manages it, and deleting it here would take
+// its application, tasks and notes with it.
 type Ctx = { params: Promise<{ id: string }> };
 
 export async function PATCH(req: Request, { params }: Ctx) {
@@ -16,7 +19,8 @@ export async function PATCH(req: Request, { params }: Ctx) {
   const c = cleanPlanPatch(body);
   if ('error' in c) return NextResponse.json({ error: c.error }, { status: 400 });
   const supabase = await supabaseServer();
-  const { data } = await supabase.from('plan_items').update(c.patch).eq('id', id).select('*').maybeSingle();
+  const { data, error } = await supabase.from('saved_hunts').update(planPatchRow(c.patch)).eq('id', id).eq('source', 'plan').select('*').maybeSingle();
+  if (error?.code === '23505') return NextResponse.json({ error: 'That hunt is already on your plan for that year.' }, { status: 409 });
   if (!data) return NextResponse.json({ error: 'Not found.' }, { status: 404 });
   return NextResponse.json({ item: data });
 }
@@ -26,7 +30,7 @@ export async function DELETE(_req: Request, { params }: Ctx) {
   if ('error' in auth) return auth.error;
   const { id } = await params;
   const supabase = await supabaseServer();
-  const { data } = await supabase.from('plan_items').delete().eq('id', id).select('id').maybeSingle();
+  const { data } = await supabase.from('saved_hunts').delete().eq('id', id).eq('source', 'plan').select('id').maybeSingle();
   if (!data) return NextResponse.json({ error: 'Not found.' }, { status: 404 });
   return NextResponse.json({ ok: true });
 }

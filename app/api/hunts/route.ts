@@ -14,6 +14,7 @@ export async function GET() {
   const { data, error } = await supabase
     .from('saved_hunts')
     .select('*')
+    .neq('source', 'plan')
     .order('updated_at', { ascending: false });
   if (error) return NextResponse.json({ error: 'Could not load your hunts.' }, { status: 500 });
   return NextResponse.json({ hunts: data });
@@ -57,6 +58,13 @@ export async function POST(req: Request) {
         .eq('season_year', row.season_year).eq('state', state).eq('species', species);
       q = row.hunt_code ? q.eq('hunt_code', row.hunt_code) : q.is('hunt_code', null).eq('unit', unit);
       const { data: existing } = await q.maybeSingle();
+      // It was only on the plan: saving it from Find starts it, same record.
+      if (existing?.source === 'plan') {
+        const { data: started } = await supabase.from('saved_hunts')
+          .update({ unit, status, source: row.source, application_result: row.application_result, search_inputs: row.search_inputs, recommendation: row.recommendation, label: existing.label ?? row.label })
+          .eq('id', existing.id).select('*').single();
+        return NextResponse.json({ hunt: started ?? existing }, { status: 200 });
+      }
       return NextResponse.json({ hunt: existing, alreadySaved: true }, { status: 200 });
     }
     return NextResponse.json({ error: 'Could not save this hunt.' }, { status: 500 });

@@ -82,7 +82,7 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
       const res = await fetch('/api/calendar/import', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ points: review.points, items }) });
       const j = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(j.error || 'Could not save.');
-      router.push('/calendar');
+      router.push('/plan');
       router.refresh();
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not save.');
@@ -153,7 +153,7 @@ export default function SetupWizard({ initial, years }: { initial: SetupAnswers;
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-10 space-y-8">
-      <Link href="/calendar" className="text-zinc-500 text-[11px] font-black uppercase tracking-widest hover:text-white">← My Hunt Calendar</Link>
+      <Link href="/plan" className="text-zinc-500 text-[11px] font-black uppercase tracking-widest hover:text-white">← Your plan</Link>
       <div>
         <p className="text-[10px] font-black uppercase tracking-widest text-amber-500">Step {step + 1} of {STEPS.length} · {STEPS[step]}</p>
         <h1 className="text-3xl font-black italic uppercase mt-1">Start planning</h1>

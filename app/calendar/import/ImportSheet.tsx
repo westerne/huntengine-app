@@ -38,7 +38,7 @@ export default function ImportSheet() {
       const res = await fetch('/api/calendar/import', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ points: result.points, items: result.items }) });
       const j = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(j.error || 'The import failed — try again.');
-      router.push('/calendar');
+      router.push('/plan');
       router.refresh();
     } catch (e) {
       setError(e instanceof Error ? e.message : 'The import failed — try again.');
@@ -48,7 +48,7 @@ export default function ImportSheet() {
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">
-      <Link href="/calendar" className="text-zinc-500 text-[11px] font-black uppercase tracking-widest hover:text-white">← My Hunt Calendar</Link>
+      <Link href="/plan" className="text-zinc-500 text-[11px] font-black uppercase tracking-widest hover:text-white">← Your plan</Link>
       <div>
         <h1 className="text-3xl font-black italic uppercase">Import your spreadsheet</h1>
         <p className="text-zinc-400 text-sm mt-2">Copy the rows from Google Sheets or Excel (including the header row) and paste them here, or upload a CSV. Useful columns: state, species, points, unit or hunt code, the year you plan to hunt, and a type column (target, bucket list, OTC).</p>
