@@ -1,0 +1,421 @@
+{
+  "state": "NE",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://outdoornebraska.gov/permits/hunting-permits/big-game-permits/",
+  "howToUrl": "https://outdoornebraska.gov/permits/hunting-permits/big-game-permits/",
+  "draws": [
+    {
+      "name": "General draw, Period 1 — resident: draw-unit deer (Platte, Frenchman), firearm/muzzleloader antelope draw units, general bull and antlerless elk",
+      "species": [
+        "DEER",
+        "ANTELOPE",
+        "ELK"
+      ],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-01",
+      "deadline": "2026-06-12T23:59",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-06-19",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=254",
+      "quote": "166 NAC 3 §001.02A1 — Period 1: Beginning the first Monday in June at 10 a.m. CDT through the Friday closest to June 15. … Internet applications must be received by 11:59 p.m. CDT. … Results of the draw will be available on or before the Friday closest to June 22.",
+      "basis": "computed_from_rule"
+    },
+    {
+      "name": "General draw, Period 1 — nonresident: draw-unit deer (Sandhills, Upper Platte, Plains, Calamus West, Pine Ridge, Frenchman, Platte, Republican Mule, Buffalo, Loup West, statewide Archery and Muzzleloader) and Archery Antelope",
+      "species": [
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-01",
+      "deadline": "2026-06-12T23:59",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-06-19",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=254",
+      "quote": "166 NAC 3 §001.02A1 — Nonresidents may apply for a Preference Point or one deer permit in the following draw units: Sandhills Any Deer, Upper Platte Any Deer, … Archery Deer and Muzzleloader Deer. … Nonresidents may apply for a Preference Point or one antelope permit in the following draw unit: Antelope Archery.",
+      "basis": "computed_from_rule"
+    },
+    {
+      "name": "Limited landowner elk and antelope draw, Period 1 (eligible resident and nonresident landowners)",
+      "species": [
+        "ELK",
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-18",
+      "deadline": "2026-05-29T17:00",
+      "timezone": null,
+      "resultsBy": "2026-06-19",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=254",
+      "quote": "166 NAC 3 §001.02B1 — Period 1: Beginning the Monday closest to May 21 at 10 a.m. CDT through the Friday closest to June 1. … by 5 p.m. local time at the close of the application period.",
+      "basis": "computed_from_rule"
+    },
+    {
+      "name": "Bighorn sheep regular lottery (residents only; once in a lifetime)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-20",
+      "deadline": "2026-08-07",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=254",
+      "quote": "166 NAC 14 §001.01A — Regular Lottery Permit Applications shall be accepted from Nebraska Residents only, from the third Monday in April beginning at 1 p.m. CST through the first Friday in August (receipt date at Game and Parks Commission office in Lincoln)",
+      "basis": "computed_from_rule"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Preference point (deer draw units, antelope) or resident elk bonus point — bought in place of a permit during Period 1",
+      "species": [
+        "DEER",
+        "ANTELOPE",
+        "ELK"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-01",
+      "deadline": "2026-06-12T23:59",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=254",
+      "quote": "166 NAC 3 §001.02A3 — Preference point applicants may apply and pay for a preference point during the time period and as described in Chapter 1, 001.02A1.",
+      "basis": "computed_from_rule"
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Deer draw-unit application fee",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "amount": 8.0,
+      "year": 2027,
+      "refundable": false,
+      "notes": "2027 schedule. NGPC pages (search index) showed $7 for 2026.",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Deer Nonrefundable Application Fee (for Draw Units) $8.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident deer permit",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 41.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": "Statewide buck-only and other special permits cost more.",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Resident $41.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Resident deer preference point",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 17.5,
+      "year": 2027,
+      "refundable": null,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Resident Deer Preference Point $17.50"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident deer permit",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 391.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Nonresident $391.00 Nonresident Deer Preference Point $59.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident deer preference point",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 59.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Nonresident Deer Preference Point $59.00"
+    },
+    {
+      "item": "application fee",
+      "label": "Antelope application fee",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "amount": 7.0,
+      "year": 2027,
+      "refundable": false,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Antelope Nonrefundable Application Fee $7.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident antelope permit",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 41.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Antelope: Resident $41.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Resident antelope preference point",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 17.5,
+      "year": 2027,
+      "refundable": null,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Resident Antelope Preference Point $17.50"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident antelope permit",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 369.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": "Nonresidents draw archery antelope only (or landowner permits).",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Nonresident $369.00 Nonresident Antelope Preference Point $59.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident antelope preference point",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 59.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Nonresident Antelope Preference Point $59.00"
+    },
+    {
+      "item": "application fee",
+      "label": "Elk application fee",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "amount": 11.0,
+      "year": 2027,
+      "refundable": false,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Elk Nonrefundable Application Fee $11.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk permit",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 198.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": "Resident landowner elk $43.",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Resident $198.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Resident elk bonus/preference point",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 17.5,
+      "year": 2027,
+      "refundable": null,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Resident Elk Preference/Bonus Point $17.50"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident (landowner) elk permit",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 594.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": "Nonresidents can get elk only as eligible landowners; schedule lists both 'Nonresident' and 'Nonresident Landowner' at $594.",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Nonresident $594.00 … Nonresident Landowner $594.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident elk preference point (landowner)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 59.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": null,
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Nonresident Elk Preference/Bonus Point $59.00"
+    },
+    {
+      "item": "application fee",
+      "label": "Bighorn sheep lottery application fee (no separate permit fee)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 36.0,
+      "year": 2027,
+      "refundable": false,
+      "notes": "Statute §37-451: 'No permit fee shall be charged in addition to the nonrefundable application fee.'",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Bighorn Sheep Nonrefundable Application Fee $36.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Habitat Stamp (residents 16+, all nonresidents)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "both",
+      "amount": 25.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": "Required to hunt game animals (Neb. Rev. Stat. §37-426).",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Habitat Stamp $25.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident hunting permit",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 18.0,
+      "year": 2027,
+      "refundable": null,
+      "notes": "NGPC rules seen do not say a hunting permit must be bought before applying for big game; listed for completeness.",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Hunting Permit: Resident $18.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident hunting permit",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 132.5,
+      "year": 2027,
+      "refundable": null,
+      "notes": "As above — not confirmed as required to apply for big game.",
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=99",
+      "quote": "163 NAC 5 §001.01 — Nonresident $132.50"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Firearm hunter education for anyone 12 through 29 hunting with a firearm (apprentice exemption available).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://nebraskalegislature.gov/laws/statutes.php?statute=37-413",
+      "quote": "It shall be unlawful for any person twenty-nine years of age or younger to hunt with a firearm or air gun any species of game"
+    },
+    {
+      "text": "Habitat Stamp required to hunt game animals (residents 16+, all nonresidents).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://nebraskalegislature.gov/laws/statutes.php?statute=37-426",
+      "quote": "no nonresident of Nebraska regardless of age shall hunt, harvest, or possess any game bird, upland game bird, game animal, or fur-bearing animal unless … such person has an unexpired habitat stamp"
+    },
+    {
+      "text": "General elk draw is residents only; nonresidents can get elk only as eligible landowners.",
+      "residency": "resident",
+      "species": [
+        "ELK"
+      ],
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=254",
+      "quote": "166 NAC 3 §001.02A1 — Residents may apply for a Bonus Point or one elk permit."
+    },
+    {
+      "text": "Bighorn sheep lottery is residents only, one permit per lifetime; must attend an orientation and hunt with a Commission representative.",
+      "residency": "resident",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://nebraskalegislature.gov/laws/statutes.php?statute=37-451",
+      "quote": "A person may obtain only one mountain sheep permit in his or her lifetime"
+    },
+    {
+      "text": "Antlerless elk no more than once every five years.",
+      "residency": "resident",
+      "species": [
+        "ELK"
+      ],
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=254",
+      "quote": "166 NAC 3 §001.02A1 — An applicant shall not be issued an antlerless elk permit more than once every five (5) years."
+    },
+    {
+      "text": "Drawn permits must be paid for by the Monday closest to July 9 or you lose the permit and your points.",
+      "residency": "both",
+      "species": [
+        "DEER",
+        "ANTELOPE",
+        "ELK"
+      ],
+      "source": "https://rules.nebraska.gov/rules?agencyId=34&titleId=254",
+      "quote": "166 NAC 3 §001.02A1 — Successful applicants will have until the Monday closest to July 9 to complete the purchase of their awarded permits."
+    }
+  ],
+  "notes": "Dates below are CALCULATED from the window formulas in 166 NAC 3/14 (rules.nebraska.gov), not copied from a posted NGPC schedule, because outdoornebraska.gov blocks automated access. Treat as expected dates until confirmed on the NGPC site. outdoornebraska.gov (all NGPC pages, incl. the big game permits page, news releases and permit pricing) returns HTTP 403 behind a Cloudflare bot check to curl, Node fetch and WebFetch; it was not bypassed. Dates therefore come from the regulations on rules.nebraska.gov (official rules API, 166 NAC 3 eff. 2026-01-03 and 166 NAC 14), which set each window by formula; the 2026 dates were computed from those formulas and match NGPC headlines seen only in the search-engine index ('Big game draw permit applications taken June 1-12'; results 'on or before June 19, 2026'; 'Bighorn sheep regular lottery applications begin April 20'; landowner May 18-29). NGPC has not been seen to post 2027 dates, so all draws are last_year. For reference only (computed from the same rules, NOT agency-posted): 2027 Period 1 would be June 7-11 with results by June 18; landowner May 24-28; sheep lottery Apr 19 - Aug 6. Landowner deadline is 5 p.m. local time at the district office (Alliance, Bassett or North Platte), so no single time zone. Sheep deadline is a receipt date with no time. Sheep lottery results date not found. Fees are the 163 NAC 5 schedule 'effective with the 2027 permit year beginning January 1, 2027' (year 2027); 2026 amounts were not verified (search index showed $7 deer / $7 antelope / $11 elk application fees for 2026). Also excluded: Commission 'lottery' permits (raffle-style multi-species lottery; search index says 2026 entries ran Jan 2 - July 3) and the bighorn management lottery (opens 60 days before a management season for 14 days) — no verifiable 2026 detail. applyUrl/howToUrl point to the NGPC big game permits page, which could not be opened here."
+}

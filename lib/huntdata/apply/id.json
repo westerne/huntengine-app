@@ -1,0 +1,415 @@
+{
+  "state": "ID",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://gooutdoorsidaho.com/",
+  "howToUrl": "https://idfg.idaho.gov/licenses/tag/controlled",
+  "draws": [
+    {
+      "name": "Nonresident general season deer and elk tag draw (incl. DAV draw) - first application period",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "year": 2027,
+      "status": "published",
+      "opens": "2026-12-05",
+      "deadline": "2026-12-15",
+      "timezone": "America/Boise",
+      "resultsBy": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-supplemental-proclamation-2027.pdf",
+      "quote": "December 5-15, 2026: First application period for the Nonresident and DAV Draw. Early January, 2027: Successful applicants announced"
+    },
+    {
+      "name": "Nonresident general season deer and elk tag draw - second application period",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "year": 2027,
+      "status": "published",
+      "opens": "2027-02-05",
+      "deadline": "2027-02-15",
+      "timezone": "America/Boise",
+      "resultsBy": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-supplemental-proclamation-2027.pdf",
+      "quote": "February 5-15, 2027: Second application period, Nonresident Tag Draw only. Early March 2027: Successful applicants for second application announced"
+    },
+    {
+      "name": "Controlled hunts - deer, elk, pronghorn (first application period)",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-01",
+      "deadline": "2026-06-05",
+      "timezone": "America/Boise",
+      "resultsBy": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "May 1 - June 5: First controlled hunt application period. Successful applicants will be notified and results will be posted at GoOutdoorsIdaho.com by early July."
+    },
+    {
+      "name": "Controlled hunts - deer, elk, pronghorn (second application period, leftover tags)",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-08-05",
+      "deadline": "2026-08-15T23:59",
+      "timezone": "America/Boise",
+      "resultsBy": "2026-08-25",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "there will be a second application period from August 5 through Midnight Mountain Time August 15 ... August 25: Second drawing results posted on licensing website"
+    },
+    {
+      "name": "Controlled hunts - moose, bighorn sheep, mountain goat (first drawing)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-01",
+      "deadline": "2026-04-30T23:59",
+      "timezone": "America/Boise",
+      "resultsBy": "2026-06-10",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-moose-sheep-goat-2025-26.pdf",
+      "quote": "Moose, bighorn sheep, and mountain goat: April 1-30. Successful applicants will be notified by June 10. ... beginning April 1, through midnight Mountain Time April 30"
+    },
+    {
+      "name": "Controlled hunts - moose, bighorn sheep, mountain goat (second drawing)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-15",
+      "deadline": "2026-06-25",
+      "timezone": "America/Boise",
+      "resultsBy": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-moose-sheep-goat-2025-26.pdf",
+      "quote": "Second drawing application period: June 15-25. Second drawing early July."
+    }
+  ],
+  "pointOnly": [],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Nonresident general season deer/elk draw application",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 18.0,
+      "year": 2027,
+      "refundable": false,
+      "notes": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-supplemental-proclamation-2027.pdf",
+      "quote": "The application fee for the Nonresident or DAV Tag Drawing is $18.00. An application fee will be charged for each application submitted."
+    },
+    {
+      "item": "application fee",
+      "label": "Controlled hunt application - deer, elk, pronghorn (resident)",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 6.25,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Per person, per species.",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "The fee is $6.25 for residents and $18.00 for nonresidents"
+    },
+    {
+      "item": "application fee",
+      "label": "Controlled hunt application - deer, elk, pronghorn (nonresident)",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 18.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Per person, per species.",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "The fee is $6.25 for residents and $18.00 for nonresidents"
+    },
+    {
+      "item": "application fee",
+      "label": "Controlled hunt application - moose, sheep, goat (resident)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 16.75,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-moose-sheep-goat-2025-26.pdf",
+      "quote": "These fees include a nonrefundable application fee of $16.75 for residents and $45.75 for nonresidents."
+    },
+    {
+      "item": "application fee",
+      "label": "Controlled hunt application - moose, sheep, goat (nonresident)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 45.75,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-moose-sheep-goat-2025-26.pdf",
+      "quote": "These fees include a nonrefundable application fee of $16.75 for residents and $45.75 for nonresidents."
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident hunting license (adult; includes 3-day fishing)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 185.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "2026 booklet says nonresident prices are 'as of December 1, 2024'. A 2027 license is required for the 2027 NR draw; 2027 price not verified (agency web pages were down for maintenance).",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Hunting (includes three-day fishing license each year of license) 185.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident adult hunting license",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 15.75,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Idaho 'Price Lock' holders pay a lower price; this is the price without Price Lock. Price Lock annual: $12.75.",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Hunting 12.75 34.75 15.75 43.75 (with price lock annual / 3-year; without price lock annual / 3-year)"
+    },
+    {
+      "item": "other",
+      "label": "Access-depredation fee (adult, first annual license each year)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 5.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Access-Depredation Fee for Adults $5.00"
+    },
+    {
+      "item": "other",
+      "label": "Access-depredation fee (adult, first annual license each year)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Access-Depredation Fee for Adult $10.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident deer tag",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 351.75,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Adult Tags Deer $351.75"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident elk tag",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 651.75,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Elk 651.75"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident pronghorn tag",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 342.75,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Pronghorn 342.75"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident deer tag",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 24.75,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Idaho 'Price Lock' holders pay a lower price; this is the price without Price Lock. Price Lock: $19.75.",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Deer $19.75 N/A $24.75 N/A"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk tag",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 36.75,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Idaho 'Price Lock' holders pay a lower price; this is the price without Price Lock. Price Lock: $30.75.",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Elk 30.75 36.75"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident pronghorn tag",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 36.5,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Idaho 'Price Lock' holders pay a lower price; this is the price without Price Lock. Price Lock: $31.25.",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Pronghorn $31.25 N/A $36.50 N/A"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident moose, bighorn sheep or mountain goat tag (paid with application)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 199.75,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Derived: $216.50 total minus $16.75 application fee. Tag fee is refunded if not drawn. Price Lock tag: $166.75.",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-moose-sheep-goat-2025-26.pdf",
+      "quote": "Resident controlled hunt fees for moose, bighorn sheep, or mountain goat tag, and application fee: $183.50 (Price Lock), $216.50 (No Price Lock)."
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident moose, bighorn sheep or mountain goat tag (paid with application)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 2626.75,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Total at application $2,672.50 incl. $45.75 application fee; tag fee refunded if not drawn.",
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Moose, Bighorn Sheep, Mountain Goat (tag only, does not include application fee) $2,626.75"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "You must hold a valid Idaho hunting license to apply for any controlled hunt (not a nongame license or hunting passport).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "Any person with a valid Idaho hunting license may apply for a controlled hunt, subject to the following restrictions"
+    },
+    {
+      "text": "Nonresidents must buy a 2027 Idaho hunting license (valid for big game) before applying in the nonresident deer/elk draw; 2027 licenses go on sale Dec. 1, 2026. License and application fees are not refunded.",
+      "residency": "nonresident",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-supplemental-proclamation-2027.pdf",
+      "quote": "All nonresidents are required to purchase a 2027 Idaho hunting license, valid for big game, to be eligible to apply in the draw. 2027 licenses go on sale December 1, 2026."
+    },
+    {
+      "text": "Hunter education is required to buy a hunting license if born on or after January 1, 1975, unless previously licensed in Idaho or another state.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-big-game-2026.pdf",
+      "quote": "all hunters must show proof that they have completed a hunter education course if they were born on or after January 1, 1975"
+    },
+    {
+      "text": "Applying for moose, bighorn sheep or mountain goat bars you from other first-period big game controlled hunts that year (with exceptions); only one of those species per year.",
+      "residency": "both",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-moose-sheep-goat-2025-26.pdf",
+      "quote": "A person may apply for only one species. Any person applying for any moose, bighorn sheep, or mountain goat hunt is prohibited from applying for any other big game controlled hunt in the same year."
+    },
+    {
+      "text": "Mountain goat is once in a lifetime (since 1977); bighorn sheep and moose drawn applicants wait two years; harvested antlered moose bars antlered moose in the first drawing.",
+      "residency": "both",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://idfg.idaho.gov/sites/default/files/seasons-rules-moose-sheep-goat-2025-26.pdf",
+      "quote": "Any person who has killed a mountain goat in Idaho since 1977 may not apply for a mountain goat tag."
+    }
+  ],
+  "notes": "Idaho has no preference or bonus points, so pointOnly is empty. 2027 dates are published only for the nonresident general-season deer/elk draw (2027 Nonresident Supplement, Oct 2026). No closing time is printed for Dec. 15 or Feb. 15; draw results are given only as 'Early January 2027' and 'Early March 2027'. Tag purchase deadlines: Jan. 20, 2027 (first draw) and Mar. 20, 2027 (second). Controlled-hunt dates are from the 2026 Big Game booklet (2027 booklet due April 2027) and the 2025 & 2026 Moose/Sheep/Goat booklet; recorded as 2026/last_year. Resident general deer/elk tags are over the counter (no draw). Spring bear and Super Hunt left out. All idfg.idaho.gov HTML pages returned HTTP 503 'website undergoing maintenance' on 2026-11-04, so the agency web pages (fee pages, controlled-hunt page, nonresident draw page) could not be read; everything here comes from official IDFG PDFs that were still served. Fees are from the 2026 booklets; nonresident prices are labeled 'as of December 1, 2024'. Resident prices shown without Price Lock. Online/phone purchases add a credit card fee (3% plus $4.00 online). "
+}

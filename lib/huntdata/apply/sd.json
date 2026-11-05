@@ -1,0 +1,618 @@
+{
+  "state": "SD",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://license.gooutdoorssouthdakota.com",
+  "howToUrl": "https://gfp.sd.gov/hunt-fish-license/",
+  "draws": [
+    {
+      "name": "Special Buck — first draw (East River ESD resident-only; West River WSD residents and nonresidents)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-11",
+      "deadline": "2026-04-14T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-04-15",
+      "source": "https://gfp.sd.gov/userdocs/docs/2026specialbuck-app.pdf",
+      "quote": "First 03/11/2026 04/14/2026, 08:00 AM CDT 04/15/2026 East River (ESD), West River (WSD)"
+    },
+    {
+      "name": "Special Buck — second draw (West River WSD)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-16",
+      "deadline": "2026-05-14T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-05-15",
+      "source": "https://gfp.sd.gov/userdocs/docs/2026specialbuck-app.pdf",
+      "quote": "Second 04/16/2026 05/14/2026, 08:00 AM CDT 05/15/2026 West River (WSD)"
+    },
+    {
+      "name": "Special Buck — third draw (West River WSD, if licenses remain)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-08-13",
+      "deadline": "2026-08-27T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-08-28",
+      "source": "https://gfp.sd.gov/userdocs/docs/2026specialbuck-app.pdf",
+      "quote": "Third 08/13/2026 08/27/2026, 08:00 AM CDT 08/28/2026 West River (WSD) *if available"
+    },
+    {
+      "name": "Elk — first draw (Black Hills, Prairie, Custer State Park, archery)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-05-19T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-05-27",
+      "source": "https://gfp.sd.gov/userdocs/docs/2026elk.pdf",
+      "quote": "First 04/15/2026 … 05/19/2026, 08:00 AM CDT … 05/27/2026"
+    },
+    {
+      "name": "Elk — second draw (if needed)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-28",
+      "deadline": "2026-06-11T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-06-15",
+      "source": "https://gfp.sd.gov/userdocs/docs/2026elk.pdf",
+      "quote": "Second 05/28/2026 … 06/11/2026, 08:00 AM CDT … 06/15/2026"
+    },
+    {
+      "name": "Bighorn sheep (once in a lifetime)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-05-19T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-05-27",
+      "source": "https://gfp.sd.gov/userdocs/docs/2026bhsheep.pdf",
+      "quote": "First 04/15/2026 05/19/2026, 08:00 AM CDT 05/27/2026"
+    },
+    {
+      "name": "Nonresident archery deer — public/private land draw (ADNP-ST1)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-13",
+      "deadline": "2026-06-09T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-06-12",
+      "source": "https://gfp.sd.gov/userdocs/docs/nonresident-archery-deer-app.pdf",
+      "quote": "Public/Private Land 05/13/2026 06/09/2026, 08:00 AM CDT 06/12/2026 (ADNP-ST1)"
+    },
+    {
+      "name": "Combined deer — first draw (West River, East River, Black Hills, Custer State Park, Muzzleloader, Refuge)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-27",
+      "deadline": "2026-06-23T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-07-02",
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "First 05/27/2026 06/23/2026, 08:00 AM CDT 07/02/2026"
+    },
+    {
+      "name": "Combined deer — second draw",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-08",
+      "deadline": "2026-07-22T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-07-27",
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "Second 07/08/2026 07/22/2026, 08:00 AM CDT 07/27/2026"
+    },
+    {
+      "name": "Combined deer — third draw",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-29",
+      "deadline": "2026-08-12T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-08-14",
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "Third 07/29/2026 08/12/2026, 08:00 AM CDT 08/14/2026"
+    },
+    {
+      "name": "Combined deer — fourth draw",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-08-18",
+      "deadline": "2026-09-01T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-09-04",
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "Fourth 08/18/2026 09/01/2026, 08:00 AM CDT 09/04/2026"
+    },
+    {
+      "name": "Firearms antelope (Prairie, Custer State Park, Special Antelope) — first draw",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-16",
+      "deadline": "2026-07-07T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-07-08",
+      "source": "https://gfp.sd.gov/userdocs/docs/firearmsantelope.pdf",
+      "quote": "First 06/16/2026 07/07/2026, 08:00 AM CDT 07/08/2026"
+    },
+    {
+      "name": "Firearms antelope — second draw",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-09",
+      "deadline": "2026-07-23T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-07-27",
+      "source": "https://gfp.sd.gov/userdocs/docs/firearmsantelope.pdf",
+      "quote": "Second 07/09/2026 07/23/2026, 08:00 AM CDT 07/27/2026"
+    },
+    {
+      "name": "Nonresident archery antelope — public/private land draw (ARNP-ST1)",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-16",
+      "deadline": "2026-07-07T08:00",
+      "timezone": "America/Chicago",
+      "resultsBy": "2026-07-10",
+      "source": "https://gfp.sd.gov/userdocs/docs/archeryantelope.pdf",
+      "quote": "Nonresident Public/ Private Land (ARNP-ST1) 06/16/2026 07/07/2026, 08:00 AM CDT 07/10/2026"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Preference point purchase without applying (deer and antelope seasons; Sept 15 – Dec 15)",
+      "species": [
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "published",
+      "opens": "2026-09-15",
+      "deadline": "2026-12-15",
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "Preference points for some limited issue license seasons can be purchased from September 15 – December 15, through GFP’s online licensing system in lieu of an application."
+    },
+    {
+      "name": "Preference point opt-in on the application (deer and antelope; charged only if unsuccessful)",
+      "species": [
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": null,
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "must purchase a preference point one of two ways: -opting in during the application process, or -purchasing online between September 15 and December 15."
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Elk / bighorn sheep application fee (per season applied for)",
+      "species": [
+        "ELK",
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Charged per season applied for, in each draw.",
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "Elk, mountain goat, and bighorn sheep applications have a $10 nonrefundable application fee."
+    },
+    {
+      "item": "point fee",
+      "label": "Preference point — resident (deer, antelope; elk/sheep points are automatic)",
+      "species": [
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 5.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Elk and sheep applicants get a point automatically if unsuccessful. No charge for youth 15 and under in combined deer.",
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "Preference points are $5 for residents and $20 for nonresidents."
+    },
+    {
+      "item": "point fee",
+      "label": "Preference point — nonresident (deer, antelope)",
+      "species": [
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 20.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "Preference points are $5 for residents and $20 for nonresidents."
+    },
+    {
+      "item": "qualifying license",
+      "label": "Habitat Stamp — resident (age 18+, once per license year)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Bought when applying for or buying any hunting license.",
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "A person 18 years of age or older is required to purchase a Habitat Stamp ($10 for residents and $25 for nonresidents) when applying for or purchasing any hunting, fishing, or trapping license."
+    },
+    {
+      "item": "qualifying license",
+      "label": "Habitat Stamp — nonresident (age 18+, once per license year)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 25.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "A person 18 years of age or older is required to purchase a Habitat Stamp ($10 for residents and $25 for nonresidents) when applying for or purchasing any hunting, fishing, or trapping license."
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk — one any elk (Black Hills / Prairie / archery)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 195.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/2026elk.pdf",
+      "quote": "21 - one any elk $195"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk — one antlerless elk",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 127.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/2026elk.pdf",
+      "quote": "23 - one antlerless elk $127"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident Custer State Park elk — one any elk",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 306.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "CSP antlerless elk $206. Read from the CSP fee box of the 2026 elk PDF (layout-extracted text).",
+      "source": "https://gfp.sd.gov/userdocs/docs/2026elk.pdf",
+      "quote": "21 - one any elk $306"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident bighorn sheep — ram (Black Hills BHS)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 300.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/2026bhsheep.pdf",
+      "quote": "Bighorn Sheep 52 - ram only bighorn sheep … $300"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident bighorn sheep — ram (Custer State Park CBS)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 506.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/2026bhsheep.pdf",
+      "quote": "Custer State Park 52 - ram only bighorn sheep (CBS) $506"
+    },
+    {
+      "item": "tag fee",
+      "label": "Deer — one any deer / one any buck (West River, East River, Black Hills, Refuge) — resident",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 45.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Two-tag types also exist ($36–$60 resident / $150–$425 nonresident).",
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "01 - one any deer 02 - one any buck deer … Resident $45 $45"
+    },
+    {
+      "item": "tag fee",
+      "label": "Deer — one any deer / one any buck — nonresident",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 375.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Nonresidents only in West River, Black Hills and Refuge seasons.",
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "Nonresident $375 $375 $100 $100 $425"
+    },
+    {
+      "item": "tag fee",
+      "label": "Deer — one any antlerless deer — resident",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 24.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "Resident $45 $45 $24 $24 $60"
+    },
+    {
+      "item": "tag fee",
+      "label": "Deer — one any antlerless deer — nonresident",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 100.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "Nonresident $375 $375 $100 $100 $425"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special Buck license — resident",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Private land only; landowner name and phone required on application.",
+      "source": "https://gfp.sd.gov/userdocs/docs/2026specialbuck-app.pdf",
+      "quote": "01 - any deer $200 $650"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special Buck license — nonresident (West River only)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 650.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/2026specialbuck-app.pdf",
+      "quote": "01 - any deer $200 $650"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident archery deer — any buck",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 375.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Antlerless whitetail archery $100.",
+      "source": "https://gfp.sd.gov/userdocs/docs/nonresident-archery-deer-app.pdf",
+      "quote": "02 - any buck deer $375"
+    },
+    {
+      "item": "tag fee",
+      "label": "Prairie firearms / archery antelope — one buck — resident",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 45.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Custer State Park antelope (resident) $156.",
+      "source": "https://gfp.sd.gov/userdocs/docs/firearmsantelope.pdf",
+      "quote": "42 - one buck antelope $45 $375"
+    },
+    {
+      "item": "tag fee",
+      "label": "Prairie firearms / archery antelope — one buck — nonresident",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 375.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/firearmsantelope.pdf",
+      "quote": "42 - one buck antelope $45 $375"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special Antelope (private land only) — resident",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Read from the layout-extracted fee box (resident $200 / nonresident $650); spot-check the PDF.",
+      "source": "https://gfp.sd.gov/userdocs/docs/firearmsantelope.pdf",
+      "quote": "Special Antelope (PR) 42 - one buck antelope … $200 $650"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special Antelope (private land only) — nonresident",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 650.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://gfp.sd.gov/userdocs/docs/firearmsantelope.pdf",
+      "quote": "Special Antelope (PR) 42 - one buck antelope … $200 $650"
+    },
+    {
+      "item": "other",
+      "label": "License return fee (new for 2026; return deadline Aug 1) — resident",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Nonresident return fee $30.",
+      "source": "https://gfp.sd.gov/userdocs/docs/combined-deer-app.pdf",
+      "quote": "Return Fee: $10 - Residents | $30 - Nonresidents"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Buy a Habitat Stamp (age 18+) when applying for any license.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "required to purchase a Habitat Stamp ($10 for residents and $25 for nonresidents) when applying for or purchasing any hunting, fishing, or trapping license"
+    },
+    {
+      "text": "Hunters under 16 need HuntSAFE (residents) or a hunter-safety number or prior license (nonresidents), unless in the mentored program; you can apply first and the license is held until the number is supplied.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "If successful in the draw, their license will be held until the GFP License Office is notified of the HuntSAFE card number"
+    },
+    {
+      "text": "Elk is resident-only; one elk license per person per year; drawing with points bars you from that season's first draw for nine years.",
+      "residency": "resident",
+      "species": [
+        "ELK"
+      ],
+      "source": "https://gfp.sd.gov/userdocs/docs/2026elk.pdf",
+      "quote": "Only ONE elk license is allowed per individual per year."
+    },
+    {
+      "text": "Bighorn sheep is resident-only and once in a lifetime; license holders must attend an in-person orientation.",
+      "residency": "resident",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://gfp.sd.gov/userdocs/docs/2026bhsheep.pdf",
+      "quote": "South Dakota residents who have never received a license for any South Dakota bighorn sheep season are eligible to apply."
+    },
+    {
+      "text": "Nonresidents may not apply for East River, Muzzleloader or Custer State Park deer seasons.",
+      "residency": "nonresident",
+      "species": [
+        "DEER"
+      ],
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "Nonresidents may not apply for any East River, Muzzleloader, or Custer State Park season."
+    },
+    {
+      "text": "Resident: 90 days' domicile, SD driver's license/ID, and no resident privileges claimed elsewhere.",
+      "residency": "resident",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://gfp.sd.gov/hunt-fish-license/",
+      "quote": "Have a domicile within South Dakota for at least 90 consecutive days immediately preceding the date of application"
+    }
+  ],
+  "notes": "2027 application PDFs are not posted (2027elk.pdf and 2027specialbuck-app.pdf return 404; GFP site search shows no 2027 dates), so every draw is the 2026 cycle with status last_year. All deadlines are 8:00 a.m. Central ('All applications close at 8 a.m. Central Time on date of deadline'). The Sept 15 – Dec 15 point-only window is marked published/2026 because it is the window open now (points count toward 2027 draws); GFP states it without a year. Not included: access-permit draws, leftover first-come sales, municipal and landowner-own-land licenses, and a separate elk landowner-preference window (no 2026 PDF found). Mountain goat season is closed (no draw). GFP's Key Dates feed (POST /Data/GetSeasonsKey) redirected and was not usable this time; dates come from the 2026 application PDFs. Fee boxes in the PDFs were read from pdftotext output where columns can interleave; spot-check amounts flagged in notes. All GFP pages and PDFs loaded with curl; nothing was blocked."
+}

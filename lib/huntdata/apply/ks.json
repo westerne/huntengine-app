@@ -1,0 +1,210 @@
+{
+  "state": "KS",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://license.gooutdoorskansas.gov",
+  "howToUrl": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+  "draws": [
+    {
+      "name": "Nonresident white-tailed deer permit draw (archery, muzzleloader or firearm; one unit + one adjacent unit) incl. mule deer stamp",
+      "species": ["DEER"],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-01",
+      "deadline": "2026-04-24",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+      "quote": "APPLICATION PERIOD: Applications for Non-Resident Deer Permits are open April 1 - April 24, 2026"
+    },
+    {
+      "name": "Resident firearm either-species/either-sex deer permit draw (East units 3,4,5,7,16 or West units 1,2,17,18)",
+      "species": ["DEER"],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-12",
+      "deadline": "2026-06-12",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+      "quote": "Resident Firearms Either Species/Either Sex Firearms permits are available from May 12 - June 12, 2026 (available through resident draw only)"
+    },
+    {
+      "name": "Resident firearm and muzzleloader antelope draw",
+      "species": ["ANTELOPE"],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-12",
+      "deadline": "2026-06-12",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/antelope",
+      "quote": "Applicants must apply online from May 12-June 12, 2026 or by phone 1-833-587-2164."
+    },
+    {
+      "name": "Resident elk draw — Unit 2 / Sub-unit 2A (Fort Riley)",
+      "species": ["ELK"],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-12",
+      "deadline": "2026-06-12",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/elk",
+      "quote": "2026 Resident Elk Permit Applications will be accepted from May 12-June 12, 2026"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Nonresident deer preference point only",
+      "species": ["DEER"], "residency": "nonresident", "year": 2026, "status": "last_year",
+      "opens": "2026-04-01", "deadline": "2026-04-24",
+      "source": "https://www.ksoutdoors.gov/licenses-permits-fees/hunting-furharvester-licenses-permit-fees-280",
+      "quote": "Preference Point | $25.00 | application period April 1-24, 2026"
+    },
+    {
+      "name": "Resident firearm either-species deer preference point only",
+      "species": ["DEER"], "residency": "resident", "year": 2026, "status": "last_year",
+      "opens": "2026-05-12", "deadline": "2026-06-12",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+      "quote": "Preference points can only be purchased during the application period."
+    },
+    {
+      "name": "Resident antelope preference point only",
+      "species": ["ANTELOPE"], "residency": "resident", "year": 2026, "status": "last_year",
+      "opens": "2026-05-12", "deadline": "2026-06-12",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/antelope",
+      "quote": "Preference points can only be purchased May 12-June 12, 2026."
+    },
+    {
+      "name": "Resident elk bonus point only (Fort Riley draw)",
+      "species": ["ELK"], "residency": "resident", "year": 2026, "status": "last_year",
+      "opens": "2026-05-12", "deadline": "2026-06-12",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/elk",
+      "quote": "Bonus points can only be purchased during the application period."
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee", "label": "Nonresident deer application fee (inside the permit price)",
+      "species": ["DEER"], "residency": "nonresident", "amount": 25.00, "year": 2026, "refundable": false,
+      "notes": "CONFLICT: the deer page and fee schedule say the $475 permit includes a $25 application fee; KDWP's 13 Apr 2026 news release says $477.50 including a $27.50 application fee. Agent/transaction fees are extra.",
+      "source": "https://www.ksoutdoors.gov/licenses-permits-fees/hunting-furharvester-licenses-permit-fees-280",
+      "quote": "includes $25 nonrefundable application fee (full permit fee only charged if applicant is drawn)"
+    },
+    {
+      "item": "tag fee", "label": "Nonresident white-tailed deer permit, age 16+ (includes application fee)",
+      "species": ["DEER"], "residency": "nonresident", "amount": 475.00, "year": 2026, "refundable": null,
+      "notes": "Covers one white-tailed deer of either sex plus one antlerless whitetail. News release (https://www.ksoutdoors.gov/Home/Components/News/News/26/346) gives $477.50 instead. Youth (15 and under) permit $115.",
+      "source": "https://www.ksoutdoors.gov/licenses-permits-fees/hunting-furharvester-licenses-permit-fees-280",
+      "quote": "Non-Resident White-tailed Deer Permit (age 16 and older) | $475.00 | available by draw only, application period April 1-24, 2026"
+    },
+    {
+      "item": "tag fee", "label": "Nonresident mule deer stamp (random draw; Units 1, 2, 17, 18 archery/muzzleloader only)",
+      "species": ["DEER"], "residency": "nonresident", "amount": 150.00, "year": 2026, "refundable": null,
+      "notes": "In addition to the white-tailed deer permit. Preference points do not count toward the stamp draw.",
+      "source": "https://www.ksoutdoors.gov/licenses-permits-fees/hunting-furharvester-licenses-permit-fees-280",
+      "quote": "Non-Resident Mule Deer Stamp | $150.00 | available by draw only, application period April 1-24, 2026"
+    },
+    {
+      "item": "point fee", "label": "Nonresident deer preference point",
+      "species": ["DEER"], "residency": "nonresident", "amount": 25.00, "year": 2026, "refundable": null,
+      "notes": "Plus processing/agent fees.",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+      "quote": "$25.00 Preference Point"
+    },
+    {
+      "item": "tag fee", "label": "Resident firearm either-species/either-sex deer permit (draw) — general resident",
+      "species": ["DEER"], "residency": "resident", "amount": 50.00, "year": 2026, "refundable": null,
+      "notes": "Landowner/tenant $30; youth $20; nonresident tenant $95.",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+      "quote": "$50.00 General Resident"
+    },
+    {
+      "item": "point fee", "label": "Resident deer preference point (firearm either-species permit)",
+      "species": ["DEER"], "residency": "resident", "amount": 10.00, "year": 2026, "refundable": null,
+      "notes": null,
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+      "quote": "may purchase a $10.00 preference point that will count toward a firearm either species, either sex deer permit"
+    },
+    {
+      "item": "tag fee", "label": "Resident firearm/muzzleloader antelope permit (draw) — general resident",
+      "species": ["ANTELOPE"], "residency": "resident", "amount": 60.00, "year": 2026, "refundable": null,
+      "notes": "KDWP's antelope page labels these 'Application Fees'; the fee schedule lists them as permit fees. Landowner/tenant $35; youth $20; nonresident tenant $95.",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/antelope",
+      "quote": "General Resident Application: $60.00"
+    },
+    {
+      "item": "point fee", "label": "Resident antelope preference point",
+      "species": ["ANTELOPE"], "residency": "resident", "amount": 10.00, "year": 2026, "refundable": null,
+      "notes": "You cannot buy an antelope permit and a preference point in the same year.",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/antelope",
+      "quote": "Preference Point only: $10.00"
+    },
+    {
+      "item": "application fee", "label": "Resident elk application fee (also the bonus point fee)",
+      "species": ["ELK"], "residency": "resident", "amount": 12.50, "year": 2026, "refundable": null,
+      "notes": "CONFLICT: the elk page says $12.50; the fee schedule lists the elk preference point at $10.00.",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/elk",
+      "quote": "Fee to apply for an elk permit or purchase a bonus point is $12.50."
+    },
+    {
+      "item": "tag fee", "label": "Resident any-elk permit (Fort Riley draw) — general resident",
+      "species": ["ELK"], "residency": "resident", "amount": 300.00, "year": 2026, "refundable": null,
+      "notes": "Collected from successful applicants only. Landowner/tenant $150; youth $125; nonresident tenant $300.",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/elk",
+      "quote": "Elk - Firearms (Any Elk) General Resident: $300.00"
+    },
+    {
+      "item": "tag fee", "label": "Resident antlerless elk permit — general resident",
+      "species": ["ELK"], "residency": "resident", "amount": 150.00, "year": 2026, "refundable": null,
+      "notes": "Landowner/tenant $75; youth $50; nonresident tenant $150.",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/elk",
+      "quote": "Elk (Antlerless) General resident: $150.00"
+    },
+    {
+      "item": "qualifying license", "label": "Nonresident 1-year hunting license (age 16+) — must hold when applying",
+      "species": ["ALL"], "residency": "nonresident", "amount": 125.00, "year": 2026, "refundable": false,
+      "notes": "Youth 15 and under: $40. Nonrefundable.",
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+      "quote": "You will also need to possess a valid non-resident hunting license at the time of application, $125.00 (16 and over), $40.00 (15 and younger)"
+    },
+    {
+      "item": "qualifying license", "label": "Resident 1-year hunting license (ages 16-64)",
+      "species": ["ALL"], "residency": "resident", "amount": 25.00, "year": 2026, "refundable": null,
+      "notes": "Needed to hunt (residents 16-74 unless exempt); KDWP does not say it must be bought before applying.",
+      "source": "https://www.ksoutdoors.gov/licenses-permits-fees/hunting-furharvester-licenses-permit-fees-280",
+      "quote": "1 Year Hunting License | $25.00 | 365-day license, eligible for Auto Renew"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Nonresidents must already hold a Kansas nonresident hunting license when they apply for a deer permit.",
+      "residency": "nonresident", "species": ["DEER"],
+      "source": "https://www.ksoutdoors.gov/Home/Components/News/News/26/346",
+      "quote": "possess a valid nonresident hunting license at the time of application"
+    },
+    {
+      "text": "Hunter education certification for everyone born on or after July 1, 1957.",
+      "residency": "both", "species": ["ALL"],
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/deer",
+      "quote": "All hunters (resident and nonresident) born on or after July 1, 1957 must be hunter‑education certified to hunt in Kansas."
+    },
+    {
+      "text": "Elk permits are for Kansas residents (and qualifying nonresident tenants) only.",
+      "residency": "resident", "species": ["ELK"],
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/elk",
+      "quote": "Only Kansas residents and qualifying nonresident tenants are eligible to obtain elk permits in Kansas."
+    },
+    {
+      "text": "Firearm and muzzleloader antelope permits are resident-only draws; nonresidents can only buy archery antelope over the counter.",
+      "residency": "resident", "species": ["ANTELOPE"],
+      "source": "https://www.ksoutdoors.gov/outdoor-activities/hunting-in-kansas/what-to-hunt/big-game/antelope",
+      "quote": "All firearm and muzzleloader antelope permits are issued through a lottery (draw) and are only available to Kansas residents."
+    }
+  ],
+  "notes": "2027 dates are not posted; all KDWP pages show the 2026 windows (nonresident deer April 1-24; resident deer/antelope/elk May 12-June 12). KDWP publishes no deadline time/time zone and no results date (news release: 'Applicants will be notified of draw results after the application period via email'). Fee conflicts: nonresident deer permit $475 incl. $25 app fee (deer page + fee schedule) vs $477.50 incl. $27.50 (13 Apr 2026 news release); elk app/bonus point $12.50 (elk page) vs $10 (fee schedule). Fees exclude agent/transaction fees. Access: ksoutdoors.gov returns 403 'Access Denied' to curl (and the old ksoutdoors.gov/Hunting/... fee page returned 403 to Node too), but current www.ksoutdoors.gov pages and the news release were served to a plain Node fetch with a browser User-Agent — no challenge was bypassed. KDWP regulation PDFs (K.A.R.) were not needed and not fetched."
+}

@@ -1,0 +1,455 @@
+{
+  "state": "CA",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://www.licenses.wildlife.ca.gov/InternetSales/",
+  "howToUrl": "https://wildlife.ca.gov/Licensing/Hunting/Big-Game",
+  "draws": [
+    {
+      "name": "Big Game Drawing - premium deer (First-Deer Tag Drawing Application)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-06-02T23:59",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-15",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "The 2026 Big Game Drawing application period opens on April 15, 2026 and closes at midnight on June 2. 2026. / Applicants may look up their drawing results on or around June 15, 2026"
+    },
+    {
+      "name": "Big Game Drawing - elk",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-06-02T23:59",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-15",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "The 2026 Big Game Drawing application period opens on April 15, 2026 and closes at midnight on June 2. 2026. / Applicants may look up their drawing results on or around June 15, 2026"
+    },
+    {
+      "name": "Big Game Drawing - pronghorn",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-06-02T23:59",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-15",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "The 2026 Big Game Drawing application period opens on April 15, 2026 and closes at midnight on June 2. 2026. / Applicants may look up their drawing results on or around June 15, 2026"
+    },
+    {
+      "name": "Big Game Drawing - bighorn sheep",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-06-02T23:59",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-15",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "The 2026 Big Game Drawing application period opens on April 15, 2026 and closes at midnight on June 2. 2026. / Applicants may look up their drawing results on or around June 15, 2026"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Preference point only - deer (hunt code PD as first choice on the First-Deer Tag Drawing Application)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-06-02T23:59",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "The preference point code may be used as the first choice to obtain a preference point without competing in the first choice round of the drawing."
+    },
+    {
+      "name": "Preference point only - elk (hunt code 499)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-06-02T23:59",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "499 Preference Point Only - Elk ... Enter this hunt code to earn a point only, applications must be submitted before midnight on June 2, 2026."
+    },
+    {
+      "name": "Preference point only - pronghorn (hunt code 799)",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-06-02T23:59",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "799 Preference Point Only - Pronghorn ... Enter this hunt code to earn a point only, applications must be submitted before midnight on June 2, 2026."
+    },
+    {
+      "name": "Preference point only - bighorn sheep (hunt code 599)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-06-02T23:59",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "599 Preference Point Only - Bighorn Sheep ... Enter this hunt code to earn a point only, applications must be submitted before midnight on June 2, 2026"
+    }
+  ],
+  "fees": [
+    {
+      "item": "qualifying license",
+      "label": "Resident hunting license (2026-27 license year)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 64.54,
+      "year": 2026,
+      "refundable": null,
+      "notes": "License year runs July 1 to June 30. Drawing applicants need the license for the matching license year.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Resident Hunting License $64.54"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident hunting license (2026-27 license year)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 225.46,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Annual license. The $64.54 2-Day Nonresident license does not cover big game.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Nonresident Hunting License $225.46"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Junior hunting license",
+      "species": [
+        "ALL"
+      ],
+      "residency": "both",
+      "amount": 17.02,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Required for apprentice hunts (under 16).",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Junior Hunting License $17.02"
+    },
+    {
+      "item": "application fee",
+      "label": "Resident 1st deer tag/application",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 42.38,
+      "year": 2026,
+      "refundable": null,
+      "notes": "One item serves as the deer tag and the drawing application, including point-only (PD). There is no separate deer point fee.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Resident 1st Deer Tag/Application $42.38"
+    },
+    {
+      "item": "application fee",
+      "label": "Nonresident 1st deer tag/application",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 377.35,
+      "year": 2026,
+      "refundable": true,
+      "notes": "One item serves as the tag and the application. If no tag is issued, the difference between the nonresident and resident fee may be refunded (CCR T14-708.2(b)).",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Nonresident 1st Deer Tag/Application $377.35"
+    },
+    {
+      "item": "application fee",
+      "label": "Resident 2nd deer tag/application",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 52.92,
+      "year": 2026,
+      "refundable": null,
+      "notes": "In the drawing, the Second-Deer Tag Drawing Application can be used only by junior hunters for apprentice hunts.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Resident 2nd Deer Tag/Application $52.92"
+    },
+    {
+      "item": "application fee",
+      "label": "Nonresident 2nd deer tag/application",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 377.35,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Nonresident 2nd Deer Tag/Application $377.35"
+    },
+    {
+      "item": "application fee",
+      "label": "Elk tag drawing application",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "amount": 8.38,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Also what a point-only (499) application costs. The fee table says $8.38, but the Digest's elk/pronghorn/sheep page says '$8.13 nonrefundable processing fee'. The table value is used; the discrepancy is unresolved.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Elk Tag Drawing Application $8.38"
+    },
+    {
+      "item": "application fee",
+      "label": "Pronghorn tag drawing application",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "amount": 8.38,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Also what a point-only (799) application costs. See the elk note on $8.13 vs $8.38.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Pronghorn Antelope Tag Drawing Application $8.38"
+    },
+    {
+      "item": "application fee",
+      "label": "Bighorn sheep tag drawing application",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "both",
+      "amount": 8.38,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Also what a point-only (599) application costs. See the elk note on $8.13 vs $8.38.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Bighorn Sheep Tag Drawing Application $8.38"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk tag",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 610.2,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Paid only if drawn. Due by 5:00 p.m. July 15, 2026.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Elk Tag Fee: Resident - $610.20"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident elk tag",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 1871.8,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Paid only if drawn. Due by 5:00 p.m. July 15, 2026.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Nonresident - $1,871.80"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident pronghorn tag",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 205.77,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Paid only if drawn. Due by 5:00 p.m. July 15, 2026.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Pronghorn Tag Fee: Resident -$205.77"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident pronghorn tag",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 628.85,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Paid only if drawn. Due by 5:00 p.m. July 15, 2026.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Nonresident - $628.85"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident bighorn sheep tag",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 558.5,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Paid only if drawn. Due to the License and Revenue Branch by 5:00 p.m. July 15, 2026.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Bighorn Sheep Tag Fee: Resident - $558.50"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident bighorn sheep tag",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 2072.75,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Paid only if drawn. Due to the License and Revenue Branch by 5:00 p.m. July 15, 2026.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Nonresident - $2,072.75"
+    },
+    {
+      "item": "other",
+      "label": "Processing fee on pre-season elk/pronghorn/sheep tag returns",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "BIGHORNSHEEP"
+      ],
+      "residency": "both",
+      "amount": 39.4,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Taken out of the refund when a drawn tag is returned before the season.",
+      "source": "https://wildlife.ca.gov/Licensing/Hunting/Big-Game",
+      "quote": "minus the 2026 nonrefundable processing fee of $39.40"
+    },
+    {
+      "item": "other",
+      "label": "Deer tag non-reporting fee",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "amount": 21.6,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged if a deer tag harvest report isn't filed by January 31.",
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Deer Tag Non-Reporting Fee $21.60"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Buy the current-year California hunting license, then a drawing application for each species",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "You will need to purchase a California hunting license and the appropriate Big Game Drawing Tag Application"
+    },
+    {
+      "text": "Your CDFW license profile must show proof of hunter education (or a qualifying prior hunting license) before you can buy a license or apply",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "You must have proof of hunter education on file to purchase hunting items online."
+    },
+    {
+      "text": "Elk and pronghorn: you must be at least 12 by July 1 and hold a valid 2026-27 California hunting license. Only one nonresident can draw an elk tag, and one a pronghorn tag, each year",
+      "residency": "both",
+      "species": [
+        "ELK",
+        "ANTELOPE"
+      ],
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Only one nonresident may be drawn for an elk or pronghorn tag annually."
+    },
+    {
+      "text": "Elk and pronghorn: only residents can apply as a party (of two). Nonresidents must apply alone",
+      "residency": "nonresident",
+      "species": [
+        "ELK",
+        "ANTELOPE"
+      ],
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Nonresidents cannot apply as a party for elk or pronghorn tags."
+    },
+    {
+      "text": "Bighorn sheep: you must be at least 16 by July 1, hold a valid 2026-27 hunting license and never have drawn a California bighorn tag (once in a lifetime). No party applications. Nonresidents get no more than 10% of tags",
+      "residency": "both",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "must not have drawn a California bighorn sheep tag in any prior year. Not more than 10 percent of the bighorn sheep tags shall be awarded to non-residents each year."
+    },
+    {
+      "text": "Bighorn sheep: hunters who draw must complete a mandatory hunter orientation",
+      "residency": "both",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "Mandatory Bighorn Sheep Hunter Orientation"
+    },
+    {
+      "text": "Premium deer: apply with the First-Deer Tag Drawing Application, not a First-Deer Tag. Deer parties can have up to six people",
+      "residency": "both",
+      "species": [
+        "DEER"
+      ],
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "You must use your First-Deer Tag Drawing Application to apply for a premium deer hunt tag."
+    },
+    {
+      "text": "One application per species. Duplicate applications are rejected",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200602&inline",
+      "quote": "By law, you may only submit one application for each species."
+    }
+  ],
+  "notes": "All dates and fees come from the 2026 Big Game Hunting Digest (updated 4/17/2026), which was CDFW's newest on 2026-11-04. The Hunting-Digest page lists no 2027 Digest yet, so every draw is status last_year. CDFW's Big Game page says applications are available 'each year on April 15 through June 2' with a midnight June 2 deadline. 2027 will probably follow that pattern, but it isn't published, so it isn't recorded as 2027. A 2027 license fee schedule wasn't found on wildlife.ca.gov. California has no moose or mountain goat hunts. Elk/pronghorn/sheep drawing application fee: the fee table says $8.38, but the elk/pronghorn/sheep page says '$8.13 nonrefundable processing fee'. The table value is used. Deer has no separate point fee because the deer tag/application fee is paid up front. Successful elk/pronghorn/sheep applicants are notified by mail by July 2, 2026, and their tag fee is due by 5:00 p.m. July 15, 2026. Leftover premium deer tags go on sale July 2 at 8:00 a.m. Nothing was blocked."
+}

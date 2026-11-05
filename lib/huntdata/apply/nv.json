@@ -1,0 +1,403 @@
+{
+  "state": "NV",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://www.ndowlicensing.com/",
+  "howToUrl": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+  "draws": [
+    {
+      "name": "Restricted nonresident guided mule deer draw",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-02-09",
+      "deadline": "2026-03-09T23:00",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-03-20",
+      "source": "https://www.ndow.org/wp-content/uploads/2026/01/CR-26-01-2026-2027-Application-Deadlines-Draw-Result-Dates-NBWC-Approved-January-2026.pdf",
+      "quote": "The Department will accept applications received for the Restricted Non-Resident Guided Mule Deer Hunt draw ... before 11:00pm Pacific Time on Monday, March 9, 2026. ... results will be released on or before Friday, March 20, 2026."
+    },
+    {
+      "name": "Big game main draw — mule deer, elk, pronghorn, bighorn sheep, mountain goat, moose (and bear)",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "BIGHORNSHEEP",
+        "MTNGOAT",
+        "MOOSE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-23",
+      "deadline": "2026-05-13T23:00",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-05-29",
+      "source": "https://www.ndow.org/wp-content/uploads/2026/01/CR-26-01-2026-2027-Application-Deadlines-Draw-Result-Dates-NBWC-Approved-January-2026.pdf",
+      "quote": "The Department will accept applications received for the Big Game Main Draw through the internet at www.ndowlicensing.com submitted before 11:00pm Pacific Time on Wednesday, May 13, 2026. ... The main draw results will be posted on or before Friday, May 29, 2026."
+    },
+    {
+      "name": "Big game second draw — leftover and returned tags",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "BIGHORNSHEEP",
+        "MTNGOAT",
+        "MOOSE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-08",
+      "deadline": "2026-06-15T23:00",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-26",
+      "source": "https://www.ndow.org/wp-content/uploads/2026/01/CR-26-01-2026-2027-Application-Deadlines-Draw-Result-Dates-NBWC-Approved-January-2026.pdf",
+      "quote": "NDOW 2026 calendar: Second Draw ... Application Period Deadline June 15 ... Results Release Date June 26. (CR 26-01: 'before 11:00pm Pacific Time on Monday, June 16, 2026' ... 'on or before Friday, June 26, 2026')"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Bonus point only — any big game species, during a standard big game application period",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "BIGHORNSHEEP",
+        "MTNGOAT",
+        "MOOSE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-23",
+      "deadline": "2026-05-13T23:00",
+      "source": "https://www.ndow.org/wp-content/uploads/2026/01/CR-26-01-2026-2027-Application-Deadlines-Draw-Result-Dates-NBWC-Approved-January-2026.pdf",
+      "quote": "Bonus points for big game can be purchased during any standard big game application period. ... Only one bonus point can be obtained per season and active license for each species or category of a species"
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Application fee — elk (includes $5 elk damage fee)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "amount": 15.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Plus the $3 game application fee and $1 processing fee listed below.",
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "For Elk (includes $5 elk damage fee) (NRS 502.250) $15.00"
+    },
+    {
+      "item": "application fee",
+      "label": "Application fee — all other big game species",
+      "species": [
+        "DEER",
+        "ANTELOPE",
+        "BIGHORNSHEEP",
+        "MTNGOAT",
+        "MOOSE"
+      ],
+      "residency": "both",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Plus the $3 game application fee and $1 processing fee.",
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "For All Other Big Game Species or Bonus Point Only (NRS 502.250, NAC 502.331) $10.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Bonus point only",
+      "species": [
+        "ALL"
+      ],
+      "residency": "both",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Same $10 line as the non-elk application fee; requires an active hunting or combination license. The page does not say whether the $3 game application fee and $1 processing fee also apply to point-only purchases.",
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "For All Other Big Game Species or Bonus Point Only (NRS 502.250, NAC 502.331) $10.00"
+    },
+    {
+      "item": "other",
+      "label": "Game application fee (predator/habitat)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "both",
+      "amount": 3.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Applicants choose whether it funds predator removal or habitat work.",
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Game Application Fee (NRS 502.253) $3.00"
+    },
+    {
+      "item": "other",
+      "label": "Processing fee",
+      "species": [
+        "ALL"
+      ],
+      "residency": "both",
+      "amount": 1.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Processing Fee (NRS 502.118) $1.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident annual adult hunting license (18+)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 38.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Resident combination hunt/fish $75; youth (12–17) combination $15; senior (65+) specialty combination $15. Valid 365 days from purchase.",
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Annual Adult Hunting License (ages 18 & older) $38.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident annual adult combination hunting and fishing license (18+)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 155.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Nevada law lists no hunting-only annual license for adult nonresidents. Nonresident youth (12–17) combination is $15.",
+      "source": "https://www.leg.state.nv.us/NRS/NRS-502.html",
+      "quote": "A nonresident annual combination hunting and fishing license..... 155"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident mule deer tag",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 30.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Resident Tag Costs Mule Deer Tag $30.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident mule deer tag",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 240.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Restricted nonresident guided deer tag is $300.",
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Nonresident Tag Costs Mule Deer Tag $240.00 Restricted Nonresident Guided Deer Tag $300.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk tag",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 120.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Elk Tag $120.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident elk tag (antlered)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 1200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "NRS 502.250 sets nonresident antlerless elk at $500; the NDOW web page lists only one nonresident elk price ($1,200).",
+      "source": "https://www.leg.state.nv.us/NRS/NRS-502.html",
+      "quote": "Nonresident antlered elk tag..... 1,200 Nonresident antlerless elk tag..... 500"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident pronghorn tag",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 60.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Antelope Tag $60.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident pronghorn tag",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 300.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Antelope Tag $300.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident bighorn sheep tag",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 120.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Bighorn Sheep Tag $120.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident bighorn sheep tag",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 1200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Bighorn Sheep Tag $1,200.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident mountain goat tag",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 120.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Rocky Mountain Goat Tag $120.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident mountain goat tag",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 1200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Rocky Mountain Goat Tag $1,200.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident moose tag",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "resident",
+      "amount": 120.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Moose Tag $120.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident moose tag",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "nonresident",
+      "amount": 1200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Moose Tag $1,200.00"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Hold an active Nevada hunting or combination license (or buy one while applying) to earn a bonus point. If you choose to buy the license only if drawn, you get no bonus point when unsuccessful.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.ndow.org/wp-content/uploads/2026/03/2026-Big-Game-Application-FAQ.pdf",
+      "quote": "An active hunting or combination license is required in order to obtain a bonus point."
+    },
+    {
+      "text": "A hunting license is required before a big game tag can be issued; big game also needs a tag.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.ndow.org/apply-buy/apply-buy-hunting/",
+      "quote": "Big game hunting requires a tag in addition to a hunting license."
+    },
+    {
+      "text": "A valid hunter education certificate must be attached to your account to buy a hunting license.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.ndow.org/wp-content/uploads/2026/03/2026-Big-Game-Application-FAQ.pdf",
+      "quote": "A valid hunter education certificate attached to a customer's account is needed to purchase a hunting license."
+    },
+    {
+      "text": "Apply online only at ndowlicensing.com; mailed applications are not accepted. A Social Security number is required.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.ndow.org/wp-content/uploads/2026/01/CR-26-01-2026-2027-Application-Deadlines-Draw-Result-Dates-NBWC-Approved-January-2026.pdf",
+      "quote": "must be submitted through the internet at www.ndowlicensing.com. Applications submitted by mail for these species will not be accepted."
+    },
+    {
+      "text": "Pay for awarded tags within 7 days of the draw, or the tag can go to an alternate.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.ndow.org/wp-content/uploads/2026/01/CR-26-01-2026-2027-Application-Deadlines-Draw-Result-Dates-NBWC-Approved-January-2026.pdf",
+      "quote": "Successfully awarded tag and permit applicants will have seven (7) days after the draw finalizations to complete the payment of the tag or permit."
+    }
+  ],
+  "notes": "Nevada has not posted 2027 big-game draw dates (checked 2026-11-04). Commission Regulation CR 26-01 covers the 2026 big-game draws and only the 2027 spring turkey draw, so all big-game dates above are from 2026, marked last_year. A 2027 regulation (CR 27-01) would normally be adopted in January. The opening dates (Feb. 9, March 23, June 8) come from the 2026 calendar on the NDOW Apply & Buy page; deadlines, times and results dates come from CR 26-01. Conflict: the web calendar lists the second-draw deadline as June 15, while CR 26-01 says 'Monday, June 16, 2026'. June 16, 2026 was a Tuesday and June 15 was the Monday, so June 15 is recorded, with the 11 p.m. PT time from the regulation. Treat the second-draw deadline as uncertain. Fees come from the NDOW web page and NRS 502.240/502.250 (set by statute; no year printed, recorded as 2026). Bonus points are squared in the draw, and you lose them if you skip two consecutive years in a category. About 90% of tags go to residents and 10% to nonresidents. Bear tags are in the main draw but outside this file's scope."
+}

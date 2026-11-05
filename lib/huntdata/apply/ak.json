@@ -1,0 +1,400 @@
+{
+  "state": "AK",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://www.adfg.alaska.gov/store/",
+  "howToUrl": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.drawsupplements",
+  "draws": [
+    {
+      "name": "Drawing permit hunts 2027-2028 (moose, caribou, elk, Dall sheep, mountain goat, bison, muskox)",
+      "species": [
+        "MOOSE",
+        "CARIBOU",
+        "ELK",
+        "DALLSHEEP",
+        "MTNGOAT",
+        "BISON",
+        "MUSKOX"
+      ],
+      "residency": "both",
+      "year": 2027,
+      "status": "published",
+      "opens": "2026-11-01",
+      "deadline": "2026-12-15T17:00",
+      "timezone": "America/Anchorage",
+      "resultsBy": "2027-02-19",
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "The online application period begins November 1 and ends December 15, 2026 at 5 p.m. (AKST). Drawing results will be announced on the third Friday of February."
+    },
+    {
+      "name": "Youth drawing hunts (Y-series moose and caribou, ages 10-17)",
+      "species": [
+        "MOOSE",
+        "CARIBOU"
+      ],
+      "residency": "both",
+      "year": 2027,
+      "status": "published",
+      "opens": "2026-11-01",
+      "deadline": "2026-12-15T17:00",
+      "timezone": "America/Anchorage",
+      "resultsBy": "2027-02-19",
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "The online application period begins November 1 and ends December 15, 2026 at 5 p.m. (AKST). Drawing results will be announced on the third Friday of February."
+    },
+    {
+      "name": "Tier I / Tier II subsistence permits (residents only), RY2027",
+      "species": [
+        "MOOSE",
+        "CARIBOU",
+        "MUSKOX",
+        "BISON"
+      ],
+      "residency": "resident",
+      "year": 2027,
+      "status": "published",
+      "opens": "2026-11-01",
+      "deadline": "2026-12-15T17:00",
+      "timezone": "America/Anchorage",
+      "resultsBy": null,
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.tier",
+      "quote": "Online applications are accepted online November 1 - December 15, 5pm (AKST). Paper applications must be postmarked by November 30"
+    }
+  ],
+  "pointOnly": [],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Drawing application, per hunt entry (caribou, elk, moose, mountain goat, Dall sheep)",
+      "species": [
+        "CARIBOU",
+        "ELK",
+        "MOOSE",
+        "MTNGOAT",
+        "DALLSHEEP"
+      ],
+      "residency": "both",
+      "amount": 5.0,
+      "year": 2027,
+      "refundable": false,
+      "notes": "Charged each time you apply for a hunt number; up to 6 applications per species. In addition to the hunting license.",
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "For black bear, brown bear, caribou, elk, moose, mountain goat, and Dall sheep hunts, the fee is $5."
+    },
+    {
+      "item": "application fee",
+      "label": "Drawing application, per hunt entry (bison, muskox)",
+      "species": [
+        "BISON",
+        "MUSKOX"
+      ],
+      "residency": "both",
+      "amount": 10.0,
+      "year": 2027,
+      "refundable": false,
+      "notes": null,
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "For bison and muskox hunts, the fee is $10."
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident annual hunting license",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 45.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Must hold or have applied for an Alaska big game hunting license before applying (residents 17 and under exempt). Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Resident Annual Hunting | $45.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident annual sport fishing and hunting license",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 60.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Must hold or have applied for an Alaska big game hunting license before applying (residents 17 and under exempt). Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Resident Annual Sport Fishing and Hunting License | $60.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident annual hunting license",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 160.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Must hold or have applied for an Alaska big game hunting license before applying (residents 17 and under exempt). Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Annual Hunting | $160.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident annual hunting and sport fishing license",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 260.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Must hold or have applied for an Alaska big game hunting license before applying (residents 17 and under exempt). Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Annual Hunting and Sport Fishing License | $260.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident alien annual hunting license",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 630.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "For non-U.S. citizens. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Alien Annual Hunting | $630.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident bison locking tag",
+      "species": [
+        "BISON"
+      ],
+      "residency": "nonresident",
+      "amount": 900.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Per animal, bought before hunting. Nonresident alien price $1,300.00. Qualified nonresident military price differs. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Bison | $900.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident caribou locking tag",
+      "species": [
+        "CARIBOU"
+      ],
+      "residency": "nonresident",
+      "amount": 650.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Per animal, bought before hunting. Nonresident alien price $850.00. Qualified nonresident military price differs. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Caribou | $650.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident deer locking tag",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 300.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Per animal, bought before hunting. Nonresident alien price $400.00. Qualified nonresident military price differs. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Deer | $300.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident elk locking tag",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 600.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Per animal, bought before hunting. Nonresident alien price $800.00. Qualified nonresident military price differs. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Elk | $600.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident goat locking tag",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 600.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Per animal, bought before hunting. Nonresident alien price $800.00. Qualified nonresident military price differs. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Goat | $600.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident moose locking tag",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "nonresident",
+      "amount": 800.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Per animal, bought before hunting. Nonresident alien price $1,000.00. Qualified nonresident military price differs. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Moose | $800.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident sheep locking tag",
+      "species": [
+        "DALLSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 850.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Per animal, bought before hunting. Nonresident alien price $1,100.00. Qualified nonresident military price differs. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Sheep | $850.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident muskox locking tag (bull or cow)",
+      "species": [
+        "MUSKOX"
+      ],
+      "residency": "nonresident",
+      "amount": 2200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Bull and cow both $2,200 (cow: permit required). Nonresident alien $3,000. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Nonresident Muskox - Bull | -- | | $2,200.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident muskox bull tag",
+      "species": [
+        "MUSKOX"
+      ],
+      "residency": "resident",
+      "amount": 500.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Resident muskox cow tag is $25. Residents need no tag for the other in-scope species on this price list. Price page shows no effective year; recorded as the schedule posted on 2026-11-04.",
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.prices",
+      "quote": "Resident Muskox - Bull | | $500.00 | Resident Muskox - Cow | | $25.00"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "You must hold, or have applied for, an Alaska big game hunting license before applying for a drawing hunt (Alaska residents 17 and under exempt).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "You must obtain or have applied for an Alaska big game hunting license prior to applying (except Alaska residents 17 years of age and younger)."
+    },
+    {
+      "text": "Nonresident U.S. citizens hunting Dall sheep, mountain goat or brown/grizzly bear must be accompanied in the field by an Alaska-licensed guide or an Alaska-resident relative 19+ within the second degree of kindred.",
+      "residency": "nonresident",
+      "species": [
+        "DALLSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "personally accompanied in the field by an Alaska-licensed guide OR an Alaska resident relative 19 years of age or older within the second-degree of kindred"
+    },
+    {
+      "text": "Nonresident aliens (non-U.S. citizens) must be accompanied by an Alaska-licensed guide for all big game.",
+      "residency": "nonresident",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "required to be personally accompanied in the field by an Alaska-licensed guide when hunting any big game species"
+    },
+    {
+      "text": "Guided nonresident hunts need a signed guide-client contract before or at the time of application; the guide enters a Unique Verification Code.",
+      "residency": "nonresident",
+      "species": [
+        "DALLSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "must have a signed guide-client contract before or at the time of application"
+    },
+    {
+      "text": "Nonresidents who need a guide must complete an affidavit showing they will be accompanied by a person qualified under AS 16.05.407.",
+      "residency": "nonresident",
+      "species": [
+        "DALLSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.guiding",
+      "quote": "You must complete an affidavit showing that you will be accompanied by a person who is qualified to guide under Alaska Statute 16.05.407."
+    },
+    {
+      "text": "Hunters must be at least 10 by the hunt start; up to 6 applications per species; you cannot draw the exact same hunt two years in a row; one drawing permit per species per regulatory year.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "All hunters must be 10 years of age or older by the starting date of the hunt to obtain a permit."
+    },
+    {
+      "text": "Basic Hunter Education is required for anyone 18+ born after Jan. 1, 1986 hunting in Units 7, 13, 14, 15 and 20, for youth drawing hunts, and for some specific hunts.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "If you were born after January 1, 1986 and are 18 years old or older, you must have successfully completed a Basic Hunter Education course"
+    },
+    {
+      "text": "Nonresident moose hunters must complete the Nonresident Moose Hunter Orientation course before hunting and carry proof.",
+      "residency": "nonresident",
+      "species": [
+        "MOOSE"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "Nonresident moose hunters are required to succesfully complete a Nonresident Moose Hunter Orientation course prior to hunting"
+    },
+    {
+      "text": "Delta bison (Unit 20D) winners must complete an in-person or online orientation and test before hunting.",
+      "residency": "both",
+      "species": [
+        "BISON"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "Hunters must either attend an orientation in person at ADF&G in Delta Junction or complete an online orientation and test"
+    },
+    {
+      "text": "Failing to report any Drawing, Registration, Targeted or Tier permit makes you ineligible for all permits the next regulatory year.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.adfg.alaska.gov/static/applications/web/nocache/license/huntlicense/pdfs/2027-2028-draw-supplement.pdf3BFB1645DB9A3CB33708AE9235433E9910F96D86BB6DD0A02297417F7BB8B4BD/2027-2028-draw-supplement.pdf",
+      "quote": "you will be ineligible to receive any permits for the next regulatory year, including all Drawing hunts"
+    },
+    {
+      "text": "Tier I and Tier II subsistence permits are for Alaska residents only.",
+      "residency": "resident",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.tier",
+      "quote": "Tier I & II subsistence permits are available to Alaska residents only."
+    }
+  ],
+  "notes": "Alaska uses a pure random draw with no preference/bonus points, so pointOnly is empty. Draw dates are from the posted 2027-2028 Drawing Permit Hunt Supplement. The opening time on Nov 1 is not stated in the supplement or the ADF&G pages fetched, so opens is date-only. resultsBy 2027-02-19 is computed from the supplement's rule 'third Friday of February'. ADF&G's Tier I/II page instead says results are expected 'Friday, February 20', which is not a Friday in 2027 (likely leftover 2026 text), so Tier resultsBy is null; confirm the draw results date in January. There are NO deer (and no bighorn) drawing hunts in the 2027-2028 supplement; Sitka black-tailed deer are general-season/registration. Deer appears only in the nonresident tag fee. Registration permit windows vary hunt by hunt and were not captured. The Tier I/II species list is indicative; the Subsistence Supplement lists the exact hunts. The License, Stamp and Tag Prices page shows no effective year; fees marked year 2026 = schedule posted on 2026-11-04. Qualified nonresident military tag prices not recorded. Residents need no locking tag for in-scope species except muskox (brown bear tag in some areas is out of scope). Anyone needing an alternative to online application must contact ADF&G by 5 p.m. AKST Nov 20. Application and license fees are non-refundable. ADF&G pages reject curl's default user agent; a browser user-agent string worked and no challenge was encountered."
+}

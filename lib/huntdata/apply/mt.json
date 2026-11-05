@@ -1,0 +1,664 @@
+{
+  "state": "MT",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://ols.fwp.mt.gov/",
+  "howToUrl": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates",
+  "draws": [
+    {
+      "name": "Nonresident general combination licenses (Big Game, Elk, Deer; incl. Come Home to Hunt, landowner-sponsored deer)",
+      "species": [
+        "ELK",
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-04-01T23:45",
+      "timezone": "America/Denver",
+      "resultsBy": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "Applications open online on March 1, 2026, at 5:00 a.m. MST. The deadline to submit your combination application is April 1, 2026, at 11:45 p.m. MST"
+    },
+    {
+      "name": "Elk permits (special drawing)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-04-01T23:45",
+      "timezone": "America/Denver",
+      "resultsBy": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates",
+      "quote": "Applications open online on March 1, 2026, at 5 am MST. The deadline to submit your application is April 1, 2026, at 11:45 pm MST. Drawing Date: Mid-April"
+    },
+    {
+      "name": "Deer permits (special drawing)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-04-01T23:45",
+      "timezone": "America/Denver",
+      "resultsBy": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates",
+      "quote": "Applications open online on March 1, 2026, at 5 am MST. The deadline to submit your application is April 1, 2026, at 11:45 pm MST. Drawing Date: Mid-April"
+    },
+    {
+      "name": "Moose, bighorn sheep and mountain goat licenses (special drawing; includes unlimited sheep)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-05-01T23:45",
+      "timezone": "America/Denver",
+      "resultsBy": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates",
+      "quote": "Applications open online on March 1, 2026, at 5 am MST. The deadline to submit your application is May 1, 2026, at 11:45 pm MST. Drawing Dates: Special - Mid-May"
+    },
+    {
+      "name": "Antelope licenses (special drawing; incl. Antelope B and 900 archery)",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-06-01T23:45",
+      "timezone": "America/Denver",
+      "resultsBy": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates",
+      "quote": "Applications open online on March 1, 2026, at 5 am MST. The deadline to submit your application is June 1, 2026, at 11:45 pm MST. Drawing Dates: Special - Early August"
+    },
+    {
+      "name": "Deer B licenses (antlerless drawing)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-06-01T23:45",
+      "timezone": "America/Denver",
+      "resultsBy": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates",
+      "quote": "Deer B - Drawing (resident and nonresident) ... The deadline to submit your application is June 1, 2026, at 11:45 pm MST. Drawing Date: Mid-June"
+    },
+    {
+      "name": "Elk B licenses (antlerless drawing)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-06-01T23:45",
+      "timezone": "America/Denver",
+      "resultsBy": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/application-drawing-dates",
+      "quote": "Elk B - Drawing (resident and nonresident) ... The deadline to submit your application is June 1, 2026, at 11:45 pm MST. Drawing Date: Mid-June"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Bonus point only (any drawing you did not apply for that year)",
+      "species": [
+        "ELK",
+        "DEER",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-01",
+      "deadline": "2026-09-30",
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "You may purchase one bonus point per license type per year, either at the time of application or between July 1 and Sept. 30 of the current year if you did not apply for that license type."
+    },
+    {
+      "name": "Nonresident combination preference point only",
+      "species": [
+        "ELK",
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-01",
+      "deadline": "2026-12-31",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/bonus-points",
+      "quote": "Those who do not apply for a combination license may purchase one preference point for $100 over the counter from July 1 through December 31."
+    }
+  ],
+  "fees": [
+    {
+      "item": "qualifying license",
+      "label": "Conservation license (resident, 18-61)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 8.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Youth 12-17 and seniors 62+: $4.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/base-requirements",
+      "quote": "Conservation License is a prerequisite for all resident and nonresident licenses ... Resident Cost: $8"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Conservation license (nonresident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/base-requirements",
+      "quote": "Conservation License is a prerequisite for all resident and nonresident licenses ... Nonresident Cost: $10"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Base hunting license fee (resident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/base-requirements",
+      "quote": "Base hunting license fee ... will be assessed at the time the hunter purchases or applies for his/her first hunting license ... Resident Cost: $10"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Base hunting license fee (nonresident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 50.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/base-requirements",
+      "quote": "Base hunting license fee ... will be assessed at the time the hunter purchases or applies for his/her first hunting license ... Nonresident Cost: $50"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident general elk license (18-61)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 20.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Required before applying for a resident elk permit. Youth and 62+: $10.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/resident-licenses/fees",
+      "quote": "General Elk 18-61 $20"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident general deer license (18-61)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 16.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Required before applying for a resident deer permit. Youth and 62+: $8.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/resident-licenses/fees",
+      "quote": "General Deer 18-61 $16"
+    },
+    {
+      "item": "application fee",
+      "label": "Application fee - most drawings (resident and nonresident)",
+      "species": [
+        "ELK",
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "amount": 5.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "all applications require a nonrefundable $5 application fee. The exception is moose, sheep, goat and bison"
+    },
+    {
+      "item": "application fee",
+      "label": "Moose, sheep, goat application fee (resident)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-msgb-final-for-web.pdf",
+      "quote": "There is a $10 resident/$50 nonresident nonrefundable application fee required with the application."
+    },
+    {
+      "item": "application fee",
+      "label": "Moose, sheep, goat application fee (nonresident)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 50.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-msgb-final-for-web.pdf",
+      "quote": "There is a $10 resident/$50 nonresident nonrefundable application fee required with the application."
+    },
+    {
+      "item": "point fee",
+      "label": "Bonus point at time of application (resident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 2.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "the $20 (nonresident) or $2 (resident) bonus point fee for each license/ permit will be added to the total."
+    },
+    {
+      "item": "point fee",
+      "label": "Bonus point at time of application (nonresident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 20.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "the $20 (nonresident) or $2 (resident) bonus point fee for each license/ permit will be added to the total."
+    },
+    {
+      "item": "point fee",
+      "label": "Bonus point only, July 1 - Sept. 30 (resident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 15.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "The fee to purchase a bonus point without applying is $15 per species for residents"
+    },
+    {
+      "item": "point fee",
+      "label": "Bonus point only, July 1 - Sept. 30 (nonresident; deer, elk, antelope)",
+      "species": [
+        "ELK",
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 25.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "the nonresident fees are $25 per species with the exception of moose, sheep, and goat, which are $75 per species."
+    },
+    {
+      "item": "point fee",
+      "label": "Bonus point only, July 1 - Sept. 30 (nonresident; moose, sheep, goat)",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 75.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "the nonresident fees are $25 per species with the exception of moose, sheep, and goat, which are $75 per species."
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident combination preference point",
+      "species": [
+        "ELK",
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 100.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Outfitter clients may buy a second (outfitter-only) point for another $100; max 3 points.",
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "If you elect to purchase a preference point, select \"YES\" on the preference point question. The additional $100 fee will be added to your total."
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident General Big Game (deer + elk) Combination",
+      "species": [
+        "ELK",
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 1312.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Includes season fishing and upland bird licenses; conservation, base hunting and AIS pass bought separately. Refund options (80%/50%) exist; see source.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "General Big Game (Deer & Elk) Combination $1312"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident General Elk Combination",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 1112.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "General Elk Combination - $1112"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident General Deer Combination",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 760.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "General Deer Combination - $760"
+    },
+    {
+      "item": "tag fee",
+      "label": "Elk permit - drawing (resident and nonresident cost to apply)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "amount": 9.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Must be used with a general elk license (resident) or combination/elk license (nonresident).",
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "Elk Permit - Drawing only $9.00 ... April 1 ... Elk permits are nonrefundable."
+    },
+    {
+      "item": "tag fee",
+      "label": "Deer permit - drawing (resident and nonresident cost to apply)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "amount": 5.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "Deer Permit - Drawing only $5.00 April 1 Application fee only."
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident antelope (drawing)",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 14.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "2026 regs list $19.00 total to apply (license + application fee).",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/resident-licenses/fees",
+      "quote": "Antelope $14 Special Drawing"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident antelope (drawing)",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "2026 regs list $205.00 total to apply.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "Antelope $200 Drawing"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident Elk B (antlerless)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 20.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/resident-licenses/fees",
+      "quote": "Elk B $20 Drawing and Over-the-Counter"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident Elk B (antlerless)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 270.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "Elk B $270 Drawing and Over-the-Counter"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident Deer B (antlerless)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/resident-licenses/fees",
+      "quote": "Deer B $10 Drawing and Over-the-Counter"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident Deer B (antlerless)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 75.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "Deer B $75 Drawing and Over-the-Counter"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident moose",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "resident",
+      "amount": 125.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Moose, sheep, goat license fees are due only if drawn.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/resident-licenses/fees",
+      "quote": "Moose $125 Special Drawing"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident bighorn sheep",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 125.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Due only if drawn.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/resident-licenses/fees",
+      "quote": "Sheep $125 Special Drawing"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident mountain goat",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 125.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Due only if drawn.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/resident-licenses/fees",
+      "quote": "Goat $125 Special Drawing"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident moose",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "nonresident",
+      "amount": 1250.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Due only if drawn.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "Moose $1250 Drawing"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident bighorn sheep",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 1250.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Due only if drawn.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "Sheep $1250 Drawing"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident mountain goat",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 1250.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Due only if drawn.",
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/nonresident-licenses/fees",
+      "quote": "Goat $1250 Drawing"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Buy a conservation license and pay the base hunting license fee (charged when you first buy or apply each license year).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/base-requirements",
+      "quote": "Montana's Conservation License is a prerequisite for all resident and nonresident licenses."
+    },
+    {
+      "text": "Residents must hold the current-year general elk (or general deer) license to apply for an elk (or deer) permit.",
+      "residency": "resident",
+      "species": [
+        "ELK",
+        "DEER"
+      ],
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "Residents must have current year General Elk License to apply. A permit must be used in conjunction with a General Elk License."
+    },
+    {
+      "text": "Nonresidents must also apply for a deer or elk (combination) license when applying for a deer or elk permit.",
+      "residency": "nonresident",
+      "species": [
+        "ELK",
+        "DEER"
+      ],
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-dea-regulations-final-with-low-resolution-maps-for-web.pdf",
+      "quote": "Nonresidents must also apply for an Elk License when applying for an Elk Permit."
+    },
+    {
+      "text": "Anyone born after January 1, 1985 must show hunter education to buy or apply for a hunting license (Apprentice Hunter program is an alternative for hunting).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://fwp.mt.gov/buyandapply/hunting-licenses/base-requirements",
+      "quote": "To purchase or apply for a Montana hunting license, any person born after January 1, 1985, must provide proof of having successfully completed a hunter education course"
+    },
+    {
+      "text": "Moose, bighorn sheep and mountain goat carry a seven-year waiting period after drawing (does not apply to SuperTags).",
+      "residency": "both",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://fwp.mt.gov/binaries/content/assets/fwp/hunt/regulations/2026/2026-msgb-final-for-web.pdf",
+      "quote": "Moose, bighorn sheep, and mountain goat seven year waiting period does not apply to SuperTags."
+    }
+  ],
+  "notes": "No 2027 application dates are posted yet (checked 2026-11-04); FWP's dates page still shows 2026, so all draws are 2026/last_year. The Commission set hunting regulations for both 2026 and 2027, so 2027 is likely similar, but dates are not confirmed. FWP gives drawing results only as 'Mid-April', 'Mid-May', 'Mid-June', 'Early August', so resultsBy is null. Time zone label differs: the web page says '11:45 pm MST' while the 2026 MSGB booklet says '11:45 p.m. (MDT) on May 1'; recorded as 23:45 America/Denver (local Montana time). Fees are the 2026 schedule (fee pages and 2026 regulations). The 2026 fee summary PDF (license-fees-for-2026_web.pdf) has a scrambled text layer, so it was used only as a cross-check. Not captured: AIS prevention pass amount for hunters (page text unclear: $2 resident / $7.50 nonresident appear in tables but column alignment was unclear), bow and arrow license, nonresident deer/elk permit 'license' component beyond the published $5/$9 cost to apply. Bison and the SuperTag lottery are out of scope."
+}

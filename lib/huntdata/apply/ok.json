@@ -1,0 +1,354 @@
+{
+  "state": "OK",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://license.gooutdoorsoklahoma.com",
+  "howToUrl": "https://www.wildlifedepartment.com/hunting/controlledhunts/step-by-step",
+  "draws": [
+    {
+      "name": "Controlled hunts drawing — elk, pronghorn, deer (incl. youth and motor-vehicle/non-ambulatory deer)",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-01",
+      "deadline": "2026-05-20",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts",
+      "quote": "Application Period: April 1–May 20, 2026"
+    },
+    {
+      "name": "Landowner antelope drawing (owners/operators of 160+ acres in Cimarron or Texas County)",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": null,
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-09",
+      "deadline": "2026-03-30",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/landowner-antelope",
+      "quote": "2026 Landowner Antelope Application Period: March 9 – March 30 Results will be released in early April"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Preference Point Only (PPO), chosen per category inside the controlled-hunt application",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-01",
+      "deadline": "2026-05-20",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/need-to-know",
+      "quote": "This option will only be available during the online Controlled Hunt application period."
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Controlled hunts application fee (once per person per year, all categories)",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Paid once per person per year regardless of categories entered. Covers up to 14 hunt choices across four categories.",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/cost",
+      "quote": "must pay an application fee ($10 for residents; $50 for nonresidents) to enter the Controlled Hunts drawing"
+    },
+    {
+      "item": "application fee",
+      "label": "Controlled hunts application fee — nonresident",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 50.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "CONFLICT: the Cost page says $50 for nonresidents, but the hub, Need-to-Know and Step-by-Step pages say a flat '$10 application fee' with no residency split. Confirm with ODWC before showing.",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/cost",
+      "quote": "must pay an application fee ($10 for residents; $50 for nonresidents) to enter the Controlled Hunts drawing"
+    },
+    {
+      "item": "point fee",
+      "label": "Extra preference point (one per category per year) — resident",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Optional add-on that adds one more point on top of the point earned for not being drawn. Separate from Preference Point Only, which is covered by the standard application fee.",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/need-to-know",
+      "quote": "one additional preference point in all hunt categories at a cost of $10 for residents and $50 for nonresidents"
+    },
+    {
+      "item": "point fee",
+      "label": "Extra preference point (one per category per year) — nonresident",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 50.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/need-to-know",
+      "quote": "one additional preference point in all hunt categories at a cost of $10 for residents and $50 for nonresidents"
+    },
+    {
+      "item": "other",
+      "label": "PointGuard insurance — resident",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Optional; protects points if you draw but cannot attend.",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts",
+      "quote": "PointGuard insurance is available for an additional $10 for residents or $50 for nonresidents."
+    },
+    {
+      "item": "other",
+      "label": "PointGuard insurance — nonresident",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 50.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts",
+      "quote": "PointGuard insurance is available for an additional $10 for residents or $50 for nonresidents."
+    },
+    {
+      "item": "other",
+      "label": "Extra hunt choice beyond the standard limit",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "both",
+      "amount": 3.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Per extra choice.",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts",
+      "quote": "Applicants may also add extra hunt choices beyond the standard limit for $3 each."
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk license (charged only if drawn)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 51.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Resident annual/fiscal-year license holders; lifetime and youth (under 18) license holders pay no license fee per the Cost table.",
+      "source": "https://www.wildlifedepartment.com/licensing/regs/license-fees",
+      "quote": "Elk Residents age 18 or older (required for each elk hunted) | $51"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident antelope license (charged only if drawn)",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 51.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.wildlifedepartment.com/licensing/regs/license-fees",
+      "quote": "Antelope Residents age 18 or older (required for each antelope hunted) | $51"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident bonus deer license for a controlled deer hunt (charged only if drawn)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 36.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "From the Cost page table 'Bonus Deer License' column, resident annual/fiscal-year row.",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/cost",
+      "quote": "Resident Annual/Fiscal-Year -- $36 $20 $51 $51"
+    },
+    {
+      "item": "other",
+      "label": "Nonresident controlled-hunt permit fee (charged only if drawn)",
+      "species": [
+        "ELK",
+        "ANTELOPE",
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 50.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged in addition to the nonresident species license.",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/cost",
+      "quote": "NON-RESIDENT ( including youth ) $50 $501 $20 $506 $506"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident elk license",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 506.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.wildlifedepartment.com/licensing/regs/license-fees",
+      "quote": "Nonresident Elk Nonresidents age 18 or older (required for each elk hunted) | $506"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident antelope license",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 506.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.wildlifedepartment.com/licensing/regs/license-fees",
+      "quote": "Nonresident Antelope Nonresidents age 18 or older (required for each antelope hunted) | $506"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident deer license (controlled hunt)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 501.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Nonresidents do not need to buy the deer license before applying; it is charged if drawn.",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/cost",
+      "quote": "NON-RESIDENT ( including youth ) $50 $501 $20 $506 $506"
+    },
+    {
+      "item": "other",
+      "label": "Federal user fee — Wichita Mountains NWR elk hunt",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "amount": 50.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Federal areas charge their own fees (deer hunts on federal areas mostly $20; McAlester AAP $40).",
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/cost",
+      "quote": "Wichita Mts. NWR $50 $20 --"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident annual hunting license (age 18+)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 36.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Other qualifying licenses: annual combination ($53), 3-year combination, lifetime. Residents under 16 are exempt.",
+      "source": "https://www.wildlifedepartment.com/licensing/regs/license-fees",
+      "quote": "Annual Hunting Residents age 18 or older | $36 | 365 Days"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident annual hunting license (age 18+)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 209.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Nonresident youth annual super hunting license is $151. Need-to-Know lists the nonresident 5-day license as qualifying to apply, but the fee page says the 5-day license is not valid for big game.",
+      "source": "https://www.wildlifedepartment.com/licensing/regs/license-fees",
+      "quote": "Nonresident Annual Hunting Nonresidents age 18 or older | $209 | 365 Days"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Hold a valid Oklahoma hunting license for the current calendar year before you apply (residents under 16 exempt). The license is nonrefundable if you do not draw.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/step-by-step",
+      "quote": "All applicants (residents and non-residents) must possess or purchase a valid Oklahoma hunting license for the current calendar year of the drawing."
+    },
+    {
+      "text": "Apprentice-license holders may apply for elk and pronghorn, but must be hunter-education certified before the hunt.",
+      "residency": "both",
+      "species": [
+        "ELK",
+        "ANTELOPE"
+      ],
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/need-to-know",
+      "quote": "they must be hunter education-certified prior to participating in those controlled hunts"
+    },
+    {
+      "text": "Elk and pronghorn controlled hunts are once in a lifetime; once drawn you can never apply in that category again.",
+      "residency": "both",
+      "species": [
+        "ELK",
+        "ANTELOPE"
+      ],
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/need-to-know",
+      "quote": "Since elk and antelope hunts are once-in-a-lifetime hunts, successful applicants are never again eligible to apply for those categories."
+    },
+    {
+      "text": "Apply online only; you need a credit/debit card. Drawn applicants are charged permit and federal fees automatically.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://www.wildlifedepartment.com/hunting/controlledhunts/post-application",
+      "quote": "successful applicants will be automatically charged for any required permit or federal fees required for the hunt they've been awarded"
+    }
+  ],
+  "notes": "2027 dates are not posted; all controlled-hunt pages still show 'April 1–May 20, 2026'. No deadline time or time zone is published. Results: ODWC says 'Email notifications will start going out after June 10' (2026), so resultsBy is left null. Landowner antelope: results 'early April' (no exact date); residency is not stated (owner/operator rule), so 'both' is a placeholder — confirm. Application-fee conflict: the Cost page says $10 resident / $50 nonresident; the hub, Need-to-Know and Step-by-Step pages say a flat $10. Fee pages are undated; amounts recorded as the 2026 posted schedule. All ODWC pages loaded normally with curl; nothing was blocked. Landowner antelope drawing: ODWC does not state residency eligibility, so residency is left null (unknown) rather than guessed."
+}

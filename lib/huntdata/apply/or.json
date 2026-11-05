@@ -1,0 +1,298 @@
+{
+  "state": "OR",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://odfw.huntfishoregon.com/login",
+  "howToUrl": "https://myodfw.com/articles/controlled-hunt-navigation",
+  "draws": [
+    {
+      "name": "Controlled hunt draw: buck deer (100 series), antlerless deer (600), elk (200), pronghorn (400)",
+      "species": ["DEER", "ELK", "ANTELOPE"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": "2026-05-15T23:59",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-12",
+      "source": "https://myodfw.com/articles/controlled-hunt-navigation",
+      "quote": "Complete your tag application and apply by May 15 11:59 p.m. PT ... Controlled hunt draw results are announced by June 12 each year."
+    },
+    {
+      "name": "Controlled hunt draw: bighorn sheep (500 series) and Rocky Mountain goat (900 series), no preference points",
+      "species": ["BIGHORNSHEEP", "MTNGOAT"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": "2026-05-15T23:59",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-12",
+      "source": "https://myodfw.com/articles/controlled-hunt-navigation",
+      "quote": "500 – Bighorn sheep (no preference points awarded for sheep hunts) ... 900 – Rocky Mountain goat (no preference points awarded for goat hunts)"
+    },
+    {
+      "name": "Premium hunts: deer (L series), elk (M series), pronghorn (N series), random draw",
+      "species": ["DEER", "ELK", "ANTELOPE"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": "2026-05-15T23:59",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-12",
+      "source": "https://myodfw.com/articles/controlled-hunt-navigation",
+      "quote": "No preference point advantage. All applicants have an equal chance to draw a tag. ... Open to nonresident hunters. ... The application cost is per series and the deadline is May 15."
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Point Saver (bought with the spring application period)",
+      "species": ["DEER", "ELK", "ANTELOPE"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2025-12-01",
+      "deadline": "2026-05-15",
+      "source": "https://myodfw.com/articles/how-check-and-earn-preference-points",
+      "quote": "Points can be purchased Dec. 1-May 15 and from July 1-Nov. 30 online or at a license sales agent. You must have an adult hunting license."
+    },
+    {
+      "name": "Point Saver (summer/fall window, after the draw)",
+      "species": ["DEER", "ELK", "ANTELOPE"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-01",
+      "deadline": "2026-11-30",
+      "source": "https://myodfw.com/articles/how-check-and-earn-preference-points",
+      "quote": "Points can be purchased Dec. 1-May 15 and from July 1-Nov. 30 online or at a license sales agent."
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Controlled hunt application (per hunt series; also the cost of a Point Saver, which is an option on the same application)",
+      "species": ["DEER", "ELK", "ANTELOPE", "BIGHORNSHEEP", "MTNGOAT"],
+      "residency": "both",
+      "amount": 10.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Includes the $2 agent fee. Schedule shows $10 for 2026 and 2027; rises to $11 effective 2028. Some older ODFW pages (Premium hunts, youth page) still say $8 per series.",
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "CONTROLLED HUNT APPLICATION $8.00 $10.00 $11.00 $12.00 (Current / Effective 2026 / 2028 / 2030; Costs include Agent fee)"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident annual hunting license",
+      "species": ["ALL"],
+      "residency": "resident",
+      "amount": 39.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Effective 2026 column; next change effective 2028. Licenses are valid Jan. 1 to Dec. 31.",
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "RESIDENT HUNTER $34.50 $39.00 $42.00 $45.00"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident annual hunting license",
+      "species": ["ALL"],
+      "residency": "nonresident",
+      "amount": 193.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Effective 2026 column; next change effective 2028.",
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "NONRESIDENT HUNTER $172.00 $193.00 $208.00 $225.00"
+    },
+    {
+      "item": "other",
+      "label": "Resident Sports Pac (combination license with tag vouchers)",
+      "species": ["ALL"],
+      "residency": "resident",
+      "amount": 253.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Drawn tags are $0 for Sports Pac holders per ODFW's controlled hunt page.",
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "SPORTS PAC $196.50 $253.00 $283.00 $311.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident deer tag",
+      "species": ["DEER"],
+      "residency": "resident",
+      "amount": 33.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "RESIDENT DEER $28.50 $33.00 $36.00 $39.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident deer tag",
+      "species": ["DEER"],
+      "residency": "nonresident",
+      "amount": 500.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "NONRESIDENT DEER $443.50 $500.00 $540.00 $585.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk tag",
+      "species": ["ELK"],
+      "residency": "resident",
+      "amount": 56.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "RESIDENT ELK $49.50 $56.00 $60.00 $65.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident elk tag",
+      "species": ["ELK"],
+      "residency": "nonresident",
+      "amount": 660.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "NONRESIDENT ELK $588.00 $660.00 $715.00 $775.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident pronghorn tag",
+      "species": ["ANTELOPE"],
+      "residency": "resident",
+      "amount": 58.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "RESIDENT ANTELOPE $51.50 $58.00 $63.00 $68.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident pronghorn tag",
+      "species": ["ANTELOPE"],
+      "residency": "nonresident",
+      "amount": 443.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "NONRESIDENT ANTELOPE $395.50 $443.00 $478.00 $516.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident bighorn sheep tag",
+      "species": ["BIGHORNSHEEP"],
+      "residency": "resident",
+      "amount": 159.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "RESIDENT MOUNTAIN SHEEP $142.00 $159.00 $172.00 $186.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident bighorn sheep tag",
+      "species": ["BIGHORNSHEEP"],
+      "residency": "nonresident",
+      "amount": 1695.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "NONRESIDENT MOUNTAIN SHEEP $1,513.50 $1,695.00 $1,831.00 $1,977.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident mountain goat tag",
+      "species": ["MTNGOAT"],
+      "residency": "resident",
+      "amount": 159.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "RESIDENT MOUNTAIN GOAT $142.00 $159.00 $172.00 $186.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident mountain goat tag",
+      "species": ["MTNGOAT"],
+      "residency": "nonresident",
+      "amount": 1695.00,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "NONRESIDENT MOUNTAIN GOAT $1,513.50 $1,695.00 $1,831.00 $1,977.00"
+    },
+    {
+      "item": "other",
+      "label": "Mandatory reporting penalty (unreported deer/elk tags)",
+      "species": ["DEER", "ELK"],
+      "residency": "both",
+      "amount": 25.00,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Paid with the purchase of a hunting license two years later.",
+      "source": "https://www.dfw.state.or.us/agency/budget/docs/Rec_License_Fee_Schedule.PDF",
+      "quote": "MANDATORY REPORTING PENALTY FEE $25.00 $25.00 $25.00 $25.00"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "You must buy an annual hunting license before (or at the same time as) applying for a controlled hunt.",
+      "residency": "both",
+      "species": ["ALL"],
+      "source": "https://myodfw.com/articles/controlled-hunt-navigation",
+      "quote": "To apply, you must first purchase an annual hunting license. You may purchase the hunting license at the same time you apply for a controlled hunt."
+    },
+    {
+      "text": "Point Savers require an adult hunting license; you cannot both apply for hunts and take a Point Saver in the same series.",
+      "residency": "both",
+      "species": ["DEER", "ELK", "ANTELOPE"],
+      "source": "https://myodfw.com/articles/how-check-and-earn-preference-points",
+      "quote": "You must have an adult hunting license. You CANNOT apply for other hunt choices within the same series if using the Point Saver."
+    },
+    {
+      "text": "Hunters under 18 must complete hunter safety education before hunting in Oregon.",
+      "residency": "both",
+      "species": ["ALL"],
+      "source": "https://myodfw.com/workshops-and-events/hunter-safety-education",
+      "quote": "Oregon requires all hunters under the age of 18 to complete a hunter safety education course before hunting in the state."
+    },
+    {
+      "text": "One application per hunt series per year, with up to five hunt choices.",
+      "residency": "both",
+      "species": ["ALL"],
+      "source": "https://myodfw.com/articles/controlled-hunt-navigation",
+      "quote": "Hunters can apply once in each hunt series each year. ... You can choose up to five hunts per series"
+    },
+    {
+      "text": "Nonresidents are capped at 5% of controlled deer and elk tags and 3% of controlled pronghorn tags per hunt (one tag allowed when a hunt has fewer than 35 tags).",
+      "residency": "nonresident",
+      "species": ["DEER", "ELK", "ANTELOPE"],
+      "source": "https://myodfw.com/sites/default/files/2025-09/Exhibit%20D_Attachment%204_Draft%20Oregon%20Administrative%20Rules.pdf",
+      "quote": "The number of controlled deer, controlled elk, and controlled spring bear tags issued to nonresident applicants shall not exceed five percent of the tags authorized for each hunt."
+    },
+    {
+      "text": "Bighorn ram and mountain goat tags are once in a lifetime.",
+      "residency": "both",
+      "species": ["BIGHORNSHEEP", "MTNGOAT"],
+      "source": "https://myodfw.com/sites/default/files/2025-09/Exhibit%20D_Attachment%204_Draft%20Oregon%20Administrative%20Rules.pdf",
+      "quote": "a person may obtain and possess only one bighorn sheep ram tag in a lifetime"
+    }
+  ],
+  "notes": "No 2027 dates are posted yet: the 2027 Oregon Big Game Regulations (proposed to the Commission in Sept. 2026) were not found on ODFW's site as of 2026-11-04, so all windows are recorded as 2026 / last_year. ODFW describes May 15 (11:59 p.m. PT) and results by June 12 as recurring 'each year' dates, but no 2027-specific posting was found. The application OPENING date is not stated on ODFW's pages, so opens is null; Point Savers are sold Dec. 1-May 15, which suggests the application period overlaps, but this is not confirmed. Applications can be edited online through May 25. Fees come from ODFW's Recreational Fee Schedule (HB 2342, 2025), 'Effective 2026' column, agent fee included; the same amounts apply until the 2028 increase. The nonresident-cap and once-in-a-lifetime rules are quoted from the 2026 draft OAR packet, not the final codified OAR. Spring bear (700 series) is out of scope. Oregon has no moose hunting."
+}

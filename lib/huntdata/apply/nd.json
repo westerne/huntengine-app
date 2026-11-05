@@ -1,0 +1,212 @@
+{
+  "state": "ND",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://gf.nd.gov/buy-apply",
+  "howToUrl": "https://gf.nd.gov/hunting/lotteries",
+  "draws": [
+    {
+      "name": "Elk and moose lottery (once in a lifetime)",
+      "species": ["ELK", "MOOSE"],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-04",
+      "deadline": "2026-03-25",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://gf.nd.gov/news/9083",
+      "quote": "Elk, moose and bighorn sheep applications are available online at the North Dakota Game and Fish Department's website, gf.nd.gov. The application deadline is March 25."
+    },
+    {
+      "name": "Bighorn sheep lottery (apply with elk/moose; drawing held after Sept 1 surveys; max 1 nonresident license)",
+      "species": ["BIGHORNSHEEP"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-04",
+      "deadline": "2026-03-25",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://gf.nd.gov/hunting/bighorn-sheep",
+      "quote": "Applications for the annual bighorn sheep lottery are due at the same time as elk and moose (usually late March), however the lottery itself is not run until September 1"
+    },
+    {
+      "name": "Nonresident any-deer archery lottery",
+      "species": ["DEER"],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-15",
+      "deadline": "2026-05-15",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://gf.nd.gov/hunting/deer",
+      "quote": "Nonresident Any Deer Archery online lottery applications are available between April 15 and May 15 each year."
+    },
+    {
+      "name": "Deer gun, youth and muzzleloader lottery (first lottery; nonresidents draw from a separate ~1% pool)",
+      "species": ["DEER"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-05-08",
+      "deadline": "2026-06-03",
+      "timezone": null,
+      "resultsBy": "2026-06-24",
+      "source": "https://gf.nd.gov/news/9228",
+      "quote": "Applicants for regular deer gun, gratis, youth and muzzleloader can apply online through the Game and Fish Department's website at gf.nd.gov. The deadline for applying is midnight June 3."
+    },
+    {
+      "name": "Pronghorn lottery",
+      "species": ["ANTELOPE"],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-23",
+      "deadline": "2026-08-05",
+      "timezone": null,
+      "resultsBy": null,
+      "source": "https://gf.nd.gov/news/9513",
+      "quote": "Only North Dakota residents are eligible to apply for a pronghorn license. … Hunters can apply online . The application deadline is Aug. 5."
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Resident bonus point purchase instead of a license (deer gun, muzzleloader, pronghorn) — checked on the lottery application",
+      "species": ["DEER", "ANTELOPE"],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": null,
+      "source": "https://gf.nd.gov/licensing/lotteries/faq",
+      "quote": "As per state law resident hunters, who do not want to receive a hunting license issued by lottery, may purchase one bonus point for a fee that is the same as the respective license."
+    }
+  ],
+  "fees": [
+    {
+      "item": "tag fee", "label": "Resident deer gun license (1st lottery), age 16+",
+      "species": ["DEER"], "residency": "resident", "amount": 35.00, "year": 2026, "refundable": null,
+      "notes": "Ages 15 and under $10. Deer bow (16+) is also $35. Fee table is undated; recorded as the current posted schedule.",
+      "source": "https://gf.nd.gov/licensing/resident",
+      "quote": "Deer Gun (1st lottery) | $35 | $2 | $20 | n/a"
+    },
+    {
+      "item": "point fee", "label": "Resident bonus point purchase (same as license fee; e.g. deer gun or pronghorn 16+)",
+      "species": ["DEER", "ANTELOPE"], "residency": "resident", "amount": 35.00, "year": 2026, "refundable": null,
+      "notes": "Amount = the respective license fee per state law (FAQ); $35 is the posted 16+ deer gun and pronghorn license fee.",
+      "source": "https://gf.nd.gov/licensing/lotteries/faq",
+      "quote": "may purchase one bonus point for a fee that is the same as the respective license"
+    },
+    {
+      "item": "tag fee", "label": "Resident pronghorn license, age 16+",
+      "species": ["ANTELOPE"], "residency": "resident", "amount": 35.00, "year": 2026, "refundable": null,
+      "notes": "Ages 15 and under $10.",
+      "source": "https://gf.nd.gov/licensing/resident",
+      "quote": "Pronghorn (age 16 or older) | $35 | $2 | $20 | n/a"
+    },
+    {
+      "item": "tag fee", "label": "Resident elk license, age 16+",
+      "species": ["ELK"], "residency": "resident", "amount": 35.00, "year": 2026, "refundable": null,
+      "notes": "Moose and bighorn sheep (resident, 16+) are also $35; ages 15 and under $10.",
+      "source": "https://gf.nd.gov/licensing/resident",
+      "quote": "Elk (age 16 or older) | $35 | $2 | $20 | $5"
+    },
+    {
+      "item": "tag fee", "label": "Resident moose license, age 16+",
+      "species": ["MOOSE"], "residency": "resident", "amount": 35.00, "year": 2026, "refundable": null,
+      "notes": null,
+      "source": "https://gf.nd.gov/licensing/resident",
+      "quote": "Moose (age 16 or older) | $35 | $2 | $20 | $5"
+    },
+    {
+      "item": "tag fee", "label": "Resident bighorn sheep license, age 16+",
+      "species": ["BIGHORNSHEEP"], "residency": "resident", "amount": 35.00, "year": 2026, "refundable": null,
+      "notes": null,
+      "source": "https://gf.nd.gov/licensing/resident",
+      "quote": "Bighorn Sheep (age 16 or older) | $35 | $2 | $20 | $5"
+    },
+    {
+      "item": "application fee", "label": "Resident elk / moose / bighorn sheep nonrefundable application fee",
+      "species": ["ELK", "MOOSE", "BIGHORNSHEEP"], "residency": "resident", "amount": 5.00, "year": 2026, "refundable": false,
+      "notes": "Sheep application fee is not refunded even if no sheep season is held (news 9083).",
+      "source": "https://gf.nd.gov/licensing/resident",
+      "quote": "Nonrefundable Application Fee … Elk (age 16 or older) | $35 | $2 | $20 | $5"
+    },
+    {
+      "item": "tag fee", "label": "Nonresident deer gun license (1st lottery), includes $5 nonrefundable application fee",
+      "species": ["DEER"], "residency": "nonresident", "amount": 355.00, "year": 2026, "refundable": null,
+      "notes": "After the second lottery a nonresident deer gun license is $55 if available. White-tailed deer bow (nonresident) is $350.",
+      "source": "https://gf.nd.gov/licensing/nonresident",
+      "quote": "Deer Gun (1st Lottery) - Includes a $5 nonrefundable application fee. After second lottery is held, a nonresident deer gun license is $55, if available. | $355"
+    },
+    {
+      "item": "application fee", "label": "Nonresident bighorn sheep nonrefundable application fee",
+      "species": ["BIGHORNSHEEP"], "residency": "nonresident", "amount": 100.00, "year": 2026, "refundable": false,
+      "notes": "Listed price $600 = $100 application fee + $500 license if drawn.",
+      "source": "https://gf.nd.gov/licensing/nonresident",
+      "quote": "Bighorn Sheep - Includes $100 nonrefundable application fee. Successful applicants must pay an additional $500 for the license. | $600"
+    },
+    {
+      "item": "tag fee", "label": "Nonresident bighorn sheep license (if drawn)",
+      "species": ["BIGHORNSHEEP"], "residency": "nonresident", "amount": 500.00, "year": 2026, "refundable": null,
+      "notes": null,
+      "source": "https://gf.nd.gov/licensing/nonresident",
+      "quote": "Successful applicants must pay an additional $500 for the license."
+    },
+    {
+      "item": "qualifying license", "label": "General Game and Habitat License (one per year; required for all hunting licenses)",
+      "species": ["ALL"], "residency": "both", "amount": 20.00, "year": 2026, "refundable": null,
+      "notes": "Residents may buy a $62 combination license instead.",
+      "source": "https://gf.nd.gov/licensing/resident",
+      "quote": "General Game and Habitat License: Required for all hunting licenses except furbearer. Need only purchase one per year per licensee."
+    },
+    {
+      "item": "qualifying license", "label": "Fishing, Hunting, Furbearer Certificate — resident",
+      "species": ["ALL"], "residency": "resident", "amount": 2.00, "year": 2026, "refundable": null,
+      "notes": null,
+      "source": "https://gf.nd.gov/licensing/resident",
+      "quote": "Fishing, Hunting, Furbearer Certificate: Required to hunt or fish in North Dakota. Need only purchase one per year per licensee."
+    },
+    {
+      "item": "qualifying license", "label": "Fishing, Hunting, Furbearer Certificate — nonresident (age 16+)",
+      "species": ["ALL"], "residency": "nonresident", "amount": 5.00, "year": 2026, "refundable": null,
+      "notes": "Nonresidents 15 and under: $2.",
+      "source": "https://gf.nd.gov/licensing/nonresident",
+      "quote": "Deer Gun (1st Lottery) … | $355 | $5 | $20"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Hunter education certificate (or apprentice license) if born after 1961.",
+      "residency": "both", "species": ["ALL"],
+      "source": "https://gf.nd.gov/hunting/lotteries",
+      "quote": "If you were born after 1961, to hunt in North Dakota you must have a: hunter education certificate or apprentice hunting license"
+    },
+    {
+      "text": "Moose, elk and pronghorn lotteries are for North Dakota residents only.",
+      "residency": "resident", "species": ["ELK", "MOOSE", "ANTELOPE"],
+      "source": "https://gf.nd.gov/hunting/lotteries",
+      "quote": "Moose, elk, pronghorn, spring turkey, and the first fall turkey lottery are all open only to North Dakota residents ."
+    },
+    {
+      "text": "Elk, moose and bighorn sheep lottery licenses are once in a lifetime; once drawn you cannot apply for that species again.",
+      "residency": "both", "species": ["ELK", "MOOSE", "BIGHORNSHEEP"],
+      "source": "https://gf.nd.gov/news/9083",
+      "quote": "Elk, moose and bighorn sheep lottery licenses are issued as once-in-a-lifetime licenses in North Dakota."
+    },
+    {
+      "text": "Each license also needs the Fishing, Hunting, Furbearer Certificate and the General Game and Habitat License (bought once per year).",
+      "residency": "both", "species": ["ALL"],
+      "source": "https://gf.nd.gov/licensing/nonresident",
+      "quote": "General Game and Habitat License: Required for all hunting licenses except furbearer, nongame, spring light goose and early Canada goose."
+    },
+    {
+      "text": "Pronghorn applicants must be at least 12 by Dec. 31.",
+      "residency": "resident", "species": ["ANTELOPE"],
+      "source": "https://gf.nd.gov/news/9513",
+      "quote": "Applicants must be at least 12 on or before Dec. 31."
+    }
+  ],
+  "notes": "2027 dates are not posted (species pages still show 2026 deadlines; the 'Approximate Lottery Annual Schedule' gives only month ranges: moose/elk/sheep early March–late March, results mid-April; deer early May–early June, results late June; pronghorn mid-July–early August, results mid-August). 'opens' dates are the dates of the NDGF news releases announcing applications were online (Mar 4, May 8, Jul 23, 2026), not formally posted opening dates. Deadline time: NDGF says 'Applications must be in by midnight on the day of the deadline' but names no time zone, so time and timezone are left out. resultsBy 2026-06-24 for deer = date of the 'Deer Lottery Held, Licenses Remain' release; other result dates were not posted. Bighorn sheep: nonresidents may apply but by law no more than one license goes to a nonresident; sheep drawing waits for Sept 1 surveys. Resident deer gun has no separate application fee in the table. Fee tables are undated; recorded as the current posted schedule with year 2026. Point-only purchase window = the lottery application itself (no separate dates). All gf.nd.gov pages loaded with curl; nothing was blocked."
+}

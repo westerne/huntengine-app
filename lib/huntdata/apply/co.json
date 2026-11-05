@@ -1,0 +1,88 @@
+{
+  "state": "CO",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://www.cpwshop.com/licensing.page",
+  "howToUrl": "https://cpw.state.co.us/hunting/big-game/primary-draw",
+  "draws": [
+    {
+      "name": "Primary limited license draw — deer, elk, pronghorn, moose (and bear)",
+      "species": ["DEER", "ELK", "ANTELOPE", "MOOSE"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-04-07T20:00",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-05-29",
+      "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure",
+      "quote": "Applications accepted .... March 1–April 7; Application & correction deadline.... April 7 (8 p.m. MT); Draw results posted online.... May 26–29"
+    },
+    {
+      "name": "Primary limited license draw — bighorn sheep and mountain goat",
+      "species": ["BIGHORNSHEEP", "MTNGOAT"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-04-07T20:00",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-04-23",
+      "source": "https://cpw.widen.net/s/n87kwmkzbt/colorado-sheep-and-goat-brochure",
+      "quote": "March 1 Applications accepted starting on this date for the primary limited license draw. April 7 Final day to submit applications ... 8 p.m. MT ... Draw Results: Posted to Your CPW Account April 23"
+    },
+    {
+      "name": "Secondary draw — remaining deer, elk, pronghorn (and bear) licenses; no preference points",
+      "species": ["DEER", "ELK", "ANTELOPE"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-18",
+      "deadline": "2026-06-30T20:00",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-07-07",
+      "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure",
+      "quote": "Secondary Draw: deer, elk, pronghorn & bear ... Applications accepted .... June 18–30; Application & correction deadline.... June 30 (8 p.m. MT); Draw results posted online.... July 7"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Preference point only — enter the species' P-999-99-P code as first choice on the primary draw application",
+      "species": ["DEER", "ELK", "ANTELOPE", "MOOSE", "BIGHORNSHEEP", "MTNGOAT"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-01",
+      "deadline": "2026-04-07T20:00",
+      "source": "https://cpw.state.co.us/hunting/big-game/primary-draw",
+      "quote": "Hunters earn one preference point per species ... by entering the preference point code (P-999-99-P) as the first choice on the primary draw big game application."
+    }
+  ],
+  "fees": [
+    { "item": "application fee", "label": "Resident application processing fee (per species, per draw)", "species": ["ALL"], "residency": "resident", "amount": 8.93, "year": 2026, "refundable": false, "notes": null, "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Application Processing Per species, per draw & nonrefundable Resident $8.93" },
+    { "item": "application fee", "label": "Nonresident application processing fee (per species, per draw)", "species": ["ALL"], "residency": "nonresident", "amount": 11.49, "year": 2026, "refundable": false, "notes": null, "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Application Processing Per species, per draw & nonrefundable ... Nonresident $11.49" },
+    { "item": "point fee", "label": "Resident preference/weighted point fee (moose, Rocky Mountain bighorn, mountain goat; age 18+)", "species": ["MOOSE", "BIGHORNSHEEP", "MTNGOAT"], "residency": "resident", "amount": 50.00, "year": 2026, "refundable": null, "notes": "Charged when results post if you apply for a point only or miss your first choice; you can opt out. Waived for youth and resident lifetime license holders. Deer, elk and pronghorn points have no fee.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Preference & Weighted Point Fee Moose, Rocky Mountain bighorn sheep and mountain goat only ... Resident (age 18 or older) $50" },
+    { "item": "point fee", "label": "Nonresident preference/weighted point fee (moose, Rocky Mountain bighorn, mountain goat; age 18+)", "species": ["MOOSE", "BIGHORNSHEEP", "MTNGOAT"], "residency": "nonresident", "amount": 100.00, "year": 2026, "refundable": null, "notes": "Deer, elk and pronghorn points have no fee.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Nonresident (age 18 or older) $100" },
+    { "item": "point fee", "label": "Deer, elk, pronghorn preference points", "species": ["DEER", "ELK", "ANTELOPE"], "residency": "both", "amount": 0, "year": 2026, "refundable": null, "notes": "No point fee; the application fee and qualifying license still apply.", "source": "https://cpw.state.co.us/hunting/big-game/primary-draw", "quote": "Deer, elk, pronghorn and bear do not have preference point fees." },
+    { "item": "qualifying license", "label": "Resident annual small game (qualifying license)", "species": ["ALL"], "residency": "resident", "amount": 38.49, "year": 2026, "refundable": false, "notes": "Youth $2.53. Other resident options: spring turkey $38.49, small game/fishing combo $64.02, senior small game/fishing combo $38.03.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Annual small game (youth: $2.53) $38.49; Small game/fishing combo $64.02" },
+    { "item": "qualifying license", "label": "Nonresident annual small game (qualifying license)", "species": ["ALL"], "residency": "nonresident", "amount": 104.86, "year": 2026, "refundable": false, "notes": "Youth $2.53. Nonresident spring turkey ($194.21) also qualifies.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Nonresident ... Annual small game (youth: $2.53) $104.86" },
+    { "item": "other", "label": "Habitat Stamp (ages 18–64, once per year)", "species": ["ALL"], "residency": "both", "amount": 12.76, "year": 2026, "refundable": false, "notes": "Added automatically with the qualifying license. Lifetime stamp $384.16.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "2026 Habitat Stamp $12.76 Required & nonrefundable" },
+    { "item": "tag fee", "label": "Resident adult deer", "species": ["DEER"], "residency": "resident", "amount": 51.25, "year": 2026, "refundable": null, "notes": "Resident youth $20.30.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Deer Fee Resident adult $51.25 Resident youth $20.30" },
+    { "item": "tag fee", "label": "Nonresident adult deer/fishing combo", "species": ["DEER"], "residency": "nonresident", "amount": 506.92, "year": 2026, "refundable": null, "notes": "Nonresident youth $130.07.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Nonresident adult/fishing combo* $506.92 Nonresident youth/fishing combo* $130.07" },
+    { "item": "tag fee", "label": "Resident adult elk", "species": ["ELK"], "residency": "resident", "amount": 70.40, "year": 2026, "refundable": null, "notes": "Resident youth $20.30.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Elk Fee Resident adult $70.40 Resident youth $20.30" },
+    { "item": "tag fee", "label": "Nonresident elk/fishing combo (bull, either-sex or cow)", "species": ["ELK"], "residency": "nonresident", "amount": 845.16, "year": 2026, "refundable": null, "notes": "Same price for bull, either-sex and cow. Nonresident youth $130.07.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Nonresident bull/fishing combo* $845.16 Nonresident either-sex/fishing combo* $845.16 Nonresident cow/fishing combo* $845.16" },
+    { "item": "tag fee", "label": "Resident adult pronghorn", "species": ["ANTELOPE"], "residency": "resident", "amount": 51.25, "year": 2026, "refundable": null, "notes": "Resident youth $20.30.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Pronghorn Fee Resident adult $51.25 Resident youth $20.30" },
+    { "item": "tag fee", "label": "Nonresident adult pronghorn/fishing combo", "species": ["ANTELOPE"], "residency": "nonresident", "amount": 506.92, "year": 2026, "refundable": null, "notes": "Nonresident youth $130.07.", "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Pronghorn ... Nonresident adult/fishing combo* $506.92" },
+    { "item": "tag fee", "label": "Resident moose", "species": ["MOOSE"], "residency": "resident", "amount": 385.66, "year": 2026, "refundable": null, "notes": null, "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Moose Fee Resident $385.66" },
+    { "item": "tag fee", "label": "Nonresident moose/fishing combo", "species": ["MOOSE"], "residency": "nonresident", "amount": 2823.53, "year": 2026, "refundable": null, "notes": null, "source": "https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure", "quote": "Nonresident/fishing combo* $2,823.53" },
+    { "item": "tag fee", "label": "Resident bighorn sheep (Rocky Mountain or desert) or mountain goat", "species": ["BIGHORNSHEEP", "MTNGOAT"], "residency": "resident", "amount": 385.66, "year": 2026, "refundable": null, "notes": null, "source": "https://cpw.widen.net/s/n87kwmkzbt/colorado-sheep-and-goat-brochure", "quote": "Rocky Mountain bighorn sheep $385.66 Desert bighorn sheep $385.66 Mountain goat $385.66" },
+    { "item": "tag fee", "label": "Nonresident bighorn sheep (Rocky Mountain or desert) or mountain goat/fishing combo", "species": ["BIGHORNSHEEP", "MTNGOAT"], "residency": "nonresident", "amount": 2823.53, "year": 2026, "refundable": null, "notes": null, "source": "https://cpw.widen.net/s/n87kwmkzbt/colorado-sheep-and-goat-brochure", "quote": "Rocky Mountain bighorn sheep/fishing combo* $2,823.53 Desert bighorn sheep/fishing combo* $2,823.53 Mountain goat/fishing combo* $2,823.53" }
+  ],
+  "prerequisites": [
+    { "text": "Buy a current-year qualifying license (e.g., annual small game or spring turkey) before applying, including for a point only. It can be in the same cart but must be added first.", "residency": "both", "species": ["ALL"], "source": "https://cpw.state.co.us/hunting/big-game/qualifying-license", "quote": "A current-year qualifying license is required for all hunters (including youth hunters) to apply for the big game primary and secondary draws, including applicants who are applying for a preference point as a first-choice." },
+    { "text": "Hunter education card required if born on or after Jan. 1, 1949.", "residency": "both", "species": ["ALL"], "source": "https://cpw.state.co.us/hunting/big-game/primary-draw", "quote": "individuals born on or after January 1, 1949, must complete an approved hunter education course before applying for or purchasing a Colorado hunting license." },
+    { "text": "Habitat Stamp required for ages 18–64.", "residency": "both", "species": ["ALL"], "source": "https://cpw.state.co.us/hunting/big-game/primary-draw", "quote": "have purchased a qualifying license and a habitat (required for ages 18 to 64 only) before they can apply." },
+    { "text": "Social Security or Taxpayer ID number required for age 12+, plus valid ID.", "residency": "both", "species": ["ALL"], "source": "https://cpw.state.co.us/hunting/big-game/primary-draw", "quote": "A Social Security number or Individual Taxpayer Identification Number is required for hunters age 12 and older, per federal law." },
+    { "text": "Must be at least 12 to hunt big game. A card must be on file; drawn licenses are charged automatically.", "residency": "both", "species": ["ALL"], "source": "https://cpw.state.co.us/hunting/big-game/primary-draw", "quote": "Hunters who wish to participate in the primary draw must be at least 12 years old to hunt big game." }
+  ],
+  "notes": "CPW has not posted 2027 draw dates (checked 2026-11-04; the brochure usually comes out in February), so all dates are the 2026 cycle, marked last_year. The 'Application Deadlines' widget on the primary-draw page showed 'No Results'. A CPW regulation-change document says the regular-draw deadline is 8 p.m. MT on the first Tuesday in April. That would be April 6, 2027, but CPW has not announced it, so it is not recorded above. 2026 payment deadlines were 11:59 p.m. MT on June 12 (primary), July 21 (secondary) and May 7 (sheep/goat). Bear and bison are in the same draw but outside this file's scope. Desert bighorn sheep do not earn preference points. The CPW qualifying-license web page lists different, unlabeled amounts ($35.76, $183.94, etc.) that look like an older schedule; the fees above come from the 2026 brochures. CPW adjusts fees with CPI each year, so 2027 amounts will change."
+}

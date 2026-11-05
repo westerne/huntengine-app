@@ -1,0 +1,671 @@
+{
+  "state": "WY",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://wgfapps.wyo.gov/elsapplication/ELSWelcome.aspx",
+  "howToUrl": "https://wgfd.wyo.gov/licenses-applications/application-process",
+  "draws": [
+    {
+      "name": "Nonresident elk (full price, special, youth, reduced-price cow/calf) - initial drawing",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-01-02",
+      "deadline": "2026-02-02T23:59",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-05-21",
+      "source": "https://wgfd.wyo.gov/media/31721/download?inline=",
+      "quote": "Elk and Fishing  Jan. 2 - Feb. 2  May 8  May 21 ... online applications must be completed and submitted by midnight mountain time (MT) on the deadline date"
+    },
+    {
+      "name": "Resident elk (full price and reduced-price cow/calf) - initial drawing",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-01-02",
+      "deadline": "2026-06-01T23:59",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-06-18",
+      "source": "https://wgfd.wyo.gov/media/31721/download?inline=",
+      "quote": "Elk  Jan 2 - June 1  June 1  June 18 ... online applications must be completed and submitted by midnight mountain time (MT) on the deadline date"
+    },
+    {
+      "name": "Resident and nonresident deer (full price, special, doe/fawn) - initial drawing",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-01-02",
+      "deadline": "2026-06-01T23:59",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-06-18",
+      "source": "https://wgfd.wyo.gov/media/31721/download?inline=",
+      "quote": "Deer  Jan. 2 - June 1  June 1  June 18 (nonresident table)"
+    },
+    {
+      "name": "Resident and nonresident antelope (full price, special, doe/fawn) - initial drawing",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-01-02",
+      "deadline": "2026-06-01T23:59",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-06-18",
+      "source": "https://wgfd.wyo.gov/media/31721/download?inline=",
+      "quote": "Antelope  Jan. 2 - June 1  June 1  June 18 (nonresident table)"
+    },
+    {
+      "name": "Resident and nonresident moose, bighorn sheep and mountain goat - limited quota drawing",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-01-02",
+      "deadline": "2026-04-30T23:59",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-05-21",
+      "source": "https://wgfd.wyo.gov/media/31721/download?inline=",
+      "quote": "Moose** License  Jan. 2 - Apr. 30  April 30  May 21"
+    },
+    {
+      "name": "Leftover drawing - elk, deer, antelope (full and reduced price)",
+      "species": [
+        "ELK",
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-22",
+      "deadline": "2026-06-26",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-07-08",
+      "source": "https://wgfd.wyo.gov/media/31721/download?inline=",
+      "quote": "Application period for leftover elk, deer and antelope drawing - June 22 - June 26, 2026. Tentative results of leftover drawing available - July 8, 2026."
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Preference point only - nonresident elk, deer, antelope",
+      "species": [
+        "ELK",
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-01",
+      "deadline": "2026-11-02T23:59",
+      "source": "https://wgfd.wyo.gov/media/31721/download?inline=",
+      "quote": "Preference Point Only  July 1 - Nov. 2  N/A ... There is no application fee to purchase a preference point only."
+    },
+    {
+      "name": "Preference point only - resident and nonresident moose and full-price bighorn sheep",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-07-01",
+      "deadline": "2026-11-02T23:59",
+      "source": "https://wgfd.wyo.gov/licenses-applications/application-dates-deadlines",
+      "quote": "Moose ... Preference Pt Application Period: Jul 1 - Nov 2; Bighorn Sheep ... Jul 1 - Nov 2; Mountain Goat ... N/A"
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Resident big game application fee",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 5.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT APPLICATION FEE $5.00 ... A nonrefundable application fee of $5 for big game and wild bison"
+    },
+    {
+      "item": "application fee",
+      "label": "Nonresident big game application fee",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 15.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT APPLICATION FEE $15.00 ... A nonrefundable application fee of $15 for big game and wild bison"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident elk preference point",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 52.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "No application fee on point-only purchases; points are not refundable.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "Nonresident Elk Pref Point $52.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident deer preference point",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 41.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "Nonresident Deer Preference Points $41.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident antelope preference point",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 31.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "Nonresident Antelope Preference Points $31.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident youth elk/deer/antelope preference point",
+      "species": [
+        "ELK",
+        "DEER",
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "Nonresident Youth Elk Pref Point $10.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident moose preference point",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "nonresident",
+      "amount": 150.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "Nonresident Moose Preference Points $150.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Nonresident bighorn sheep preference point",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 150.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "Nonresident Bighorn Sheep Pref Pnt $150.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Resident moose preference point",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "resident",
+      "amount": 7.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "Resident Moose Preference Points $7.00"
+    },
+    {
+      "item": "point fee",
+      "label": "Resident bighorn sheep preference point",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 7.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "Resident Bighorn Sheep Preference Points $7.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident elk (includes fishing privilege)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 692.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT ELK & FISHING PRIV $692.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident special elk (includes fishing privilege)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 1950.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT ELK SPECIAL & FISHING PRIV $1,950.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident cow/calf elk",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 288.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT COW/CALF ELK $288.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident elk",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 57.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT ELK $57.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident cow/calf elk",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 43.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT COW/CALF ELK $43.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident deer",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 374.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT DEER $374.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident special deer",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 1200.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT DEER SPECIAL $1,200.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident doe/fawn deer",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 34.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT DOE/FAWN DEER $34.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident deer",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 42.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT DEER $42.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident doe/fawn deer",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 22.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT DOE/FAWN DEER $22.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident antelope",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 326.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT ANTELOPE $326.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident special antelope",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 1200.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT ANTELOPE SPECIAL $1,200.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident doe/fawn antelope",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 34.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT DOE/FAWN ANTELOPE $34.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident antelope",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 37.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT ANTELOPE $37.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident doe/fawn antelope",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 22.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT DOE/FAWN ANTELOPE $22.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident moose",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "nonresident",
+      "amount": 2752.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT MOOSE $2,752.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident moose",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "resident",
+      "amount": 152.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT MOOSE $152.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident bighorn sheep",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 3002.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT BIGHORN SHEEP $3,002.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident bighorn sheep",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 152.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT BIGHORN SHEEP $152.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident ewe/lamb bighorn sheep",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 240.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT EWE/LAMB BIGHORN SHEEP $240.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident ewe/lamb bighorn sheep",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 36.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT EWE/LAMB BIGHORN SHEEP $36.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Nonresident mountain goat",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 2752.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "NONRESIDENT MOUNTAIN GOAT $2,752.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Resident mountain goat",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 152.0,
+      "year": 2026,
+      "refundable": true,
+      "notes": "Fee list page is undated; amounts match the 2026 application handbook 'amount to remit' (license + application fee). The full license fee is charged at application and credited back if unsuccessful.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "RESIDENT MOUNTAIN GOAT $152.00"
+    },
+    {
+      "item": "other",
+      "label": "Conservation stamp",
+      "species": [
+        "ALL"
+      ],
+      "residency": "both",
+      "amount": 21.5,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Listed on the fee list. Who must buy it and when was not confirmed from an official page in this pass, so it is not listed as a prerequisite to apply.",
+      "source": "https://wgfd.wyo.gov/licenses-applications/license-fee-list",
+      "quote": "CONSERVATION STAMP $21.50"
+    },
+    {
+      "item": "other",
+      "label": "Elk Special Management Permit (certain hunt areas)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "amount": 15.5,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Needed to hunt those areas, not to apply.",
+      "source": "https://wgfd.wyo.gov/media/31721/download?inline=",
+      "quote": "A $15.50 Elk Special Management Permit shall be required of any person who hunts elk in Elk Hunt Areas 70, 71, 75, 77, 78, and 80-98."
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "No separate hunting license is required to apply. You need a WGFD online account (username and password); the full license fee plus the application fee is charged when you apply, and the license fee is credited back if you do not draw.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://wgfd.wyo.gov/licenses-applications/application-process",
+      "quote": "All customers must have a username and password to make a purchase or apply for a license ... we will immediately charge your credit card for the full amount of the license plus the application fee"
+    },
+    {
+      "text": "Hunter education is required to hunt with a firearm if born on or after January 1, 1966 (some exemptions). It is not required to apply.",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://wgfd.wyo.gov/education-camps/hunter-education",
+      "quote": "Hunter Education is required to hunt with a firearm in Wyoming if you were born on or after January 1, 1966."
+    },
+    {
+      "text": "Youth must be at least 11 when applying and 12 by Dec. 31 to earn or buy preference points.",
+      "residency": "both",
+      "species": [
+        "ELK",
+        "DEER",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://wgfd.wyo.gov/hunting-trapping/preference-points",
+      "quote": "Youths can apply for preference points when they are 11 years old when submitting a preference point-only application and must be at least 12 by Dec. 31 of that year."
+    },
+    {
+      "text": "Full-price bighorn sheep and Type 1 moose are once in a lifetime; ewe/lamb sheep and Type 4 moose carry a 5-year wait.",
+      "residency": "both",
+      "species": [
+        "MOOSE",
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://wgfd.wyo.gov/hunting-trapping/preference-points",
+      "quote": "A full price bighorn sheep license is a once-in-a-life time license. A successful applicant of an ewe lamb bighorn sheep must wait five years before applying again."
+    }
+  ],
+  "notes": "No 2027 application dates are posted yet (checked 2026-11-04): no 2027 application handbook is out and the agency dates page prints no year; its dates match the 2026 handbook, so all draws are recorded as 2026/last_year. Times: the 2026 handbook says applications open at 8:00 a.m. on the open date and must be submitted 'by midnight mountain time on the deadline date' - recorded here as 23:59 MT on that date. Results dates are listed by WGFD as tentative. Nonresident elk could modify/withdraw through May 8 (2026). The 2026 point-only window was July 1 - Nov. 2 per the 2026 handbook and dates page (a 2025 release gave Oct. 31 for 2025). The fee list page has no year printed; amounts are consistent with the 2026 handbook totals, so they are labeled 2026. A credit-card processing fee is added to every transaction (amount not stated). Mountain goat has no preference points. Wild bison, landowner licenses and the Super Tag raffle were left out (out of scope). Conservation stamp requirement details not verified."
+}

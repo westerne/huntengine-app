@@ -1,0 +1,515 @@
+{
+  "state": "WA",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://fishhunt.dfw.wa.gov",
+  "howToUrl": "https://wdfw.wa.gov/hunting/special-hunts",
+  "draws": [
+    {
+      "name": "Special hunt permit drawing: deer, elk, mountain goat, moose, bighorn sheep (one application per category)",
+      "species": [
+        "DEER",
+        "ELK",
+        "MTNGOAT",
+        "MOOSE",
+        "BIGHORNSHEEP"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-20",
+      "deadline": "2026-05-27",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": "2026-06-30",
+      "source": "https://wdfw.wa.gov/newsroom/news-release/2026-washington-big-game-hunting-regulations-now-available-special-hunt-submissions-begin-april-20",
+      "quote": "Beginning April 20, hunters may submit special hunt permit applications for 2026 deer, elk, mountain goat, moose, bighorn sheep, and fall turkey seasons. The submission period is open through May 27."
+    },
+    {
+      "name": "Multi-season deer or elk tag drawing (2027 general seasons)",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "both",
+      "year": 2027,
+      "status": "published",
+      "opens": "2026-12-01",
+      "deadline": "2027-03-31",
+      "timezone": "America/Los_Angeles",
+      "resultsBy": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "2027 Multi-Season Tags ... Applications on Sale: December 1, 2026 - March 31, 2027 ... In April, drawing results will be posted in your online customer account"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Special hunt Point Saver (submit the application for a point only)",
+      "species": [
+        "DEER",
+        "ELK",
+        "MTNGOAT",
+        "MOOSE",
+        "BIGHORNSHEEP"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-04-20",
+      "deadline": "2026-05-27",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "If you want to continue to build points, but want to ensure you do not get selected for a permit, use the \"Point Saver\" option when submitting your application(s)."
+    },
+    {
+      "name": "Multi-season deer/elk point-only application (2027)",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "both",
+      "year": 2027,
+      "status": "published",
+      "opens": "2026-12-01",
+      "deadline": "2027-03-31",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "If you wish to have a point for your application and not be automatically entered into the drawing, you must submit your application for a point online ... prior to the March 31st, 2027 deadline."
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Special hunt permit application (per category)",
+      "species": [
+        "DEER",
+        "ELK",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 9.61,
+      "year": 2026,
+      "refundable": null,
+      "notes": "One application per category; the Point Saver uses the same application. Quality categories cost more (see below).",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Permit Application (price per application) $9.61 $152.30"
+    },
+    {
+      "item": "application fee",
+      "label": "Special hunt permit application (per category)",
+      "species": [
+        "DEER",
+        "ELK",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 152.3,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Permit Application (price per application) $9.61 $152.30"
+    },
+    {
+      "item": "application fee",
+      "label": "Special hunt permit application - Quality categories (Quality Elk, Quality Deer, Any Antlered Bull Moose, Any Ram, Goat)",
+      "species": [
+        "DEER",
+        "ELK",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 18.72,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Footnote 4: Special Hunt Applications that are in the categories Quality Elk, Quality Deer, Any Antlered Bull Moose, Any Ram and Goat.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Permit Application - Quality4 (price per application) $18.72 $152.30"
+    },
+    {
+      "item": "application fee",
+      "label": "Special hunt permit application - Quality categories (Quality Elk, Quality Deer, Any Antlered Bull Moose, Any Ram, Goat)",
+      "species": [
+        "DEER",
+        "ELK",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 152.3,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Permit Application - Quality4 (price per application) $18.72 $152.30"
+    },
+    {
+      "item": "application fee",
+      "label": "Multi-season deer or elk tag application",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 9.61,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Multi-Season Deer or Elk Tag Application (price per application) $9.61 $152.30"
+    },
+    {
+      "item": "application fee",
+      "label": "Multi-season deer or elk tag application",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 152.3,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Multi-Season Deer or Elk Tag Application (price per application) $9.61 $152.30"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Deer license (includes tag)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 61.7,
+      "year": 2026,
+      "refundable": null,
+      "notes": "2026 license year (April 1, 2026 - March 31, 2027), 2026 pamphlet p. 8. Big game licenses include the corresponding tag.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Deer License $61.70 $599.07"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Deer license (includes tag)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 599.07,
+      "year": 2026,
+      "refundable": null,
+      "notes": "2026 license year (April 1, 2026 - March 31, 2027), 2026 pamphlet p. 8. Big game licenses include the corresponding tag.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Deer License $61.70 $599.07"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Elk license (includes tag)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 69.29,
+      "year": 2026,
+      "refundable": null,
+      "notes": "2026 license year (April 1, 2026 - March 31, 2027), 2026 pamphlet p. 8. Big game licenses include the corresponding tag.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Elk License $69.29 $685.60"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Elk license (includes tag)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 685.6,
+      "year": 2026,
+      "refundable": null,
+      "notes": "2026 license year (April 1, 2026 - March 31, 2027), 2026 pamphlet p. 8. Big game licenses include the corresponding tag.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Elk License $69.29 $685.60"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Deer + Elk license (includes tags)",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 116.85,
+      "year": 2026,
+      "refundable": null,
+      "notes": "2026 license year (April 1, 2026 - March 31, 2027), 2026 pamphlet p. 8. Big game licenses include the corresponding tag.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Deer + Elk License $116.85 $1,020.06"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Deer + Elk license (includes tags)",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 1020.06,
+      "year": 2026,
+      "refundable": null,
+      "notes": "2026 license year (April 1, 2026 - March 31, 2027), 2026 pamphlet p. 8. Big game licenses include the corresponding tag.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Deer + Elk License $116.85 $1,020.06"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special hunt moose license and tag (bought only if drawn)",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "resident",
+      "amount": 457.4,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Footnote 5: only available by special permit through a random drawing. No refunds for goat, moose or sheep licenses.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Moose License and Tag5 $457.40 $2,279.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special hunt moose license and tag (bought only if drawn)",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "nonresident",
+      "amount": 2279.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "No refunds for goat, moose or sheep licenses.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Moose License and Tag5 $457.40 $2,279.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special hunt goat license and tag (bought only if drawn)",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 457.4,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Goat License and Tag5 $457.40 $2,279.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special hunt goat license and tag (bought only if drawn)",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 2279.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Goat License and Tag5 $457.40 $2,279.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special hunt sheep license and tag (bought only if drawn)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 457.4,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Sheep License and Tag5 $457.40 $2,279.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Special hunt sheep license and tag (bought only if drawn)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 2279.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Special Hunt Sheep License and Tag5 $457.40 $2,279.00"
+    },
+    {
+      "item": "tag fee",
+      "label": "Multi-season deer tag (if drawn; on top of a deer license)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "both",
+      "amount": 191.77,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Same price for residents and nonresidents.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Multi-Season Deer Tag5 $191.77 $191.77"
+    },
+    {
+      "item": "tag fee",
+      "label": "Multi-season elk tag (if drawn; on top of an elk license)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "both",
+      "amount": 250.97,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Same price for residents and nonresidents.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Multi-Season Elk Tag5 $250.97 $250.97"
+    },
+    {
+      "item": "tag fee",
+      "label": "Second deer tag (needed for Second Deer permit hunts)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 68.48,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Second Deer Tag5 $68.48 $356.90"
+    },
+    {
+      "item": "tag fee",
+      "label": "Second deer tag (needed for Second Deer permit hunts)",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 356.9,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Second Deer Tag5 $68.48 $356.90"
+    },
+    {
+      "item": "tag fee",
+      "label": "Second elk tag",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 47.58,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Second Elk Tag5 $47.58 $487.80"
+    },
+    {
+      "item": "tag fee",
+      "label": "Second elk tag",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 487.8,
+      "year": 2026,
+      "refundable": null,
+      "notes": null,
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Second Elk Tag5 $47.58 $487.80"
+    },
+    {
+      "item": "other",
+      "label": "Non-reporting hunter activity administrative penalty",
+      "species": [
+        "ALL"
+      ],
+      "residency": "both",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Must be paid before buying a license the following year.",
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Non-Reporting Hunter Activity Admin Penalty $10.00 $10.00"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "Anyone born after January 1, 1972 must show proof of hunter education before buying a first Washington hunting license (a one-time deferral is available).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Prior to purchasing their first Washington state hunting license, all individuals born after January 1, 1972 must show proof that they have completed a hunter education class."
+    },
+    {
+      "text": "Deer and elk: buy the hunting license and pick the transport tag (weapon and area) that matches the hunt before you can buy a special permit application.",
+      "residency": "both",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "You must select your transport tag, including hunt method and location, before you can purchase a special permit application."
+    },
+    {
+      "text": "Goat, moose and sheep: no license needed to apply; if drawn, pay for the license and tag by July 31 or the permit goes to an alternate.",
+      "residency": "both",
+      "species": [
+        "MTNGOAT",
+        "MOOSE",
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "Hunting licenses for mountain goat, moose, or bighorn sheep do not have to be purchased unless you are selected for a special hunt permit."
+    },
+    {
+      "text": "Buy a separate application for each permit category (e.g., Quality Elk, Bull Elk, Antlerless Elk, Goat, Antlered Bull Moose, Sheep Any Ram). Up to 4 hunt choices per application, 2 for Quality deer and elk.",
+      "residency": "both",
+      "species": [
+        "DEER",
+        "ELK",
+        "MTNGOAT",
+        "MOOSE",
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "You can apply for a maximum of four hunt choices per application, except in the quality deer and elk categories."
+    },
+    {
+      "text": "Goat, Antlered Bull Moose and Sheep Any Ram: once you report a harvest (or fail to report), you can never apply in that category again.",
+      "residency": "both",
+      "species": [
+        "MTNGOAT",
+        "MOOSE",
+        "BIGHORNSHEEP"
+      ],
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "If a hunter reports taking a mountain goat on one of these hunts, or fails to report their hunting activity, no further special hunt applications for \"Goat\" can be purchased."
+    },
+    {
+      "text": "Multi-season deer/elk: no license needed to apply; if drawn, buy the multi-season tag (plus a deer or elk license) by midnight July 31, 2027.",
+      "residency": "both",
+      "species": [
+        "DEER",
+        "ELK"
+      ],
+      "source": "https://wdfw.wa.gov/sites/default/files/publications/02706/wdfw02706.pdf",
+      "quote": "You DO NOT need to purchase a deer or elk license and tag before purchasing a multi-season application."
+    }
+  ],
+  "notes": "2027 special hunt permit dates (deer, elk, goat, moose, sheep) are not posted yet; WDFW publishes them in the 2027 pamphlet, usually in April. The 2026 window is recorded as last_year: the pamphlet said 'April 20 through midnight on May 20, 2026', then WDFW extended submission to May 27 (news release updated May 14, 2026). The extended deadline's time of day was not restated, so it is date-only. Applications were already on sale before April 20 ('applications are for sale now' on April 13), but the sale start date is not stated. resultsBy 2026-06-30 reflects the pamphlet's 'available by the end of June'. The 2027 multi-season deer/elk drawing dates ARE published in the 2026 pamphlet (p. 14); no time of day is given for the March 31 deadline, and results come only 'In April'. Fees are the 2026 license-year schedule (April 1, 2026 - March 31, 2027), pamphlet p. 8; online and phone card purchases add a 2.9% fee. No separate nonresident quota was found in the pamphlet, and no WDFW quote rules one out. Washington has no pronghorn season, so ANTELOPE is not included."
+}

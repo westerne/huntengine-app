@@ -1,0 +1,107 @@
+{
+  "state": "AZ",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://draw.azgfd.com/",
+  "howToUrl": "https://www.azgfd.com/hunting/hunt-draw-and-licenses/big-game-draw/",
+  "draws": [
+    {
+      "name": "Spring 2027 draw — spring bison (also spring turkey, javelina, raptor capture)",
+      "species": ["BISON"],
+      "residency": "both",
+      "year": 2027,
+      "status": "published",
+      "opens": null,
+      "deadline": "2026-10-06T23:59",
+      "timezone": "America/Phoenix",
+      "resultsBy": null,
+      "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf",
+      "quote": "The deadline to submit applications is 11:59 p.m. (Arizona time) on Tuesday, Oct. 6, 2026."
+    },
+    {
+      "name": "Pronghorn and elk draw (2026 hunts)",
+      "species": ["ELK", "ANTELOPE"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": "2026-02-03T23:59",
+      "timezone": "America/Phoenix",
+      "resultsBy": null,
+      "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/12/20163130/2026-Pronghorn-and-Elk-Regulations_251223.pdf",
+      "quote": "The deadline to submit applications is 11:59 p.m. (Arizona time) on Tuesday, Feb. 3, 2026."
+    },
+    {
+      "name": "Fall draw — deer, bighorn sheep, fall bison (also fall turkey, fall javelina, sandhill crane) (2026 hunts)",
+      "species": ["DEER", "BIGHORNSHEEP", "BISON"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": "2026-06-02T23:59",
+      "timezone": "America/Phoenix",
+      "resultsBy": null,
+      "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/05/20151617/2026-27-Arizona-Hunting-Regulations.pdf",
+      "quote": "Hunt permit application deadline is Tuesday, June 2, 2026, at 11:59 p.m. Arizona time."
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Bonus point only — pronghorn and elk (use the bonus point hunt number in the Feb. draw)",
+      "species": ["ELK", "ANTELOPE"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": "2026-02-03T23:59",
+      "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/12/20163130/2026-Pronghorn-and-Elk-Regulations_251223.pdf",
+      "quote": "A bonus point hunt number is established within each applicable Commission Order. You may obtain only one bonus point per genus per drawing."
+    },
+    {
+      "name": "Bonus point only — deer, bighorn sheep, bison (use the bonus point hunt number in the June draw)",
+      "species": ["DEER", "BIGHORNSHEEP", "BISON"],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": null,
+      "deadline": "2026-06-02T23:59",
+      "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/05/20151617/2026-27-Arizona-Hunting-Regulations.pdf",
+      "quote": "To apply for a bonus point only, you must have a license valid through deadline day of that draw. A bonus point costs you only the license fee (if needed) and the application fee per applicant."
+    },
+    {
+      "name": "Bonus point only — spring bison (spring 2027 draw)",
+      "species": ["BISON"],
+      "residency": "both",
+      "year": 2027,
+      "status": "published",
+      "opens": null,
+      "deadline": "2026-10-06T23:59",
+      "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf",
+      "quote": "In the event you do not wish to participate in a big game drawing for species offered in this draw, but still wish to accumulate bonus points for these genera, you may \"obtain a bonus point.\""
+    }
+  ],
+  "fees": [
+    { "item": "application fee", "label": "Resident application fee (included in the permit-tag price; charged alone if not drawn)", "species": ["ALL"], "residency": "resident", "amount": 13.00, "year": 2027, "refundable": false, "notes": "Permit-tag prices below already include this fee.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "prices shown include a $13 application fee per applicant for residents and a $15 application fee per applicant for non-residents." },
+    { "item": "application fee", "label": "Nonresident application fee (included in the permit-tag price; charged alone if not drawn)", "species": ["ALL"], "residency": "nonresident", "amount": 15.00, "year": 2027, "refundable": false, "notes": "Permit-tag prices below already include this fee.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "prices shown include a $13 application fee per applicant for residents and a $15 application fee per applicant for non-residents." },
+    { "item": "point fee", "label": "Resident bonus point", "species": ["ALL"], "residency": "resident", "amount": 13.00, "year": 2027, "refundable": false, "notes": "Plus a hunting license if you do not already hold one.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Bonus Point $13 $15 $13 $15" },
+    { "item": "point fee", "label": "Nonresident bonus point", "species": ["ALL"], "residency": "nonresident", "amount": 15.00, "year": 2027, "refundable": false, "notes": "Plus a hunting license if you do not already hold one.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Bonus Point $13 $15 $13 $15" },
+    { "item": "qualifying license", "label": "Resident general hunting license", "species": ["ALL"], "residency": "resident", "amount": 37.00, "year": 2027, "refundable": false, "notes": "Valid 365 days from purchase. Resident combination hunt and fish is $57. Short-term combo licenses are not valid for applying.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "General Hunting ... $37 Not available. See Combination." },
+    { "item": "qualifying license", "label": "Nonresident combination hunt and fish license", "species": ["ALL"], "residency": "nonresident", "amount": 160.00, "year": 2027, "refundable": false, "notes": "Nonresidents cannot buy a general hunting license; the combination license is the option. Valid 365 days from purchase.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Combination Hunt and Fish ... $57 $160" },
+    { "item": "qualifying license", "label": "Youth combination hunt and fish license (ages 10–17)", "species": ["ALL"], "residency": "both", "amount": 5.00, "year": 2027, "refundable": false, "notes": null, "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Youth Combination Hunt and Fish (ages 10–17) ... $5 $5" },
+    { "item": "tag fee", "label": "Resident elk hunt permit-tag (includes $13 application fee)", "species": ["ELK"], "residency": "resident", "amount": 148.00, "year": 2027, "refundable": null, "notes": null, "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Elk Hunt Permit-tag $148 $665" },
+    { "item": "tag fee", "label": "Nonresident elk hunt permit-tag (includes $15 application fee)", "species": ["ELK"], "residency": "nonresident", "amount": 665.00, "year": 2027, "refundable": null, "notes": null, "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Elk Hunt Permit-tag $148 $665" },
+    { "item": "tag fee", "label": "Resident deer hunt permit-tag (includes $13 application fee)", "species": ["DEER"], "residency": "resident", "amount": 58.00, "year": 2027, "refundable": null, "notes": null, "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Deer Hunt Permit-tag $58 $315" },
+    { "item": "tag fee", "label": "Nonresident deer hunt permit-tag (includes $15 application fee)", "species": ["DEER"], "residency": "nonresident", "amount": 315.00, "year": 2027, "refundable": null, "notes": null, "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Deer Hunt Permit-tag $58 $315" },
+    { "item": "tag fee", "label": "Resident pronghorn hunt permit-tag (includes $13 application fee)", "species": ["ANTELOPE"], "residency": "resident", "amount": 103.00, "year": 2027, "refundable": null, "notes": "Youth price is the same.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Pronghorn Hunt Permit-tag $103 $565 $103 $565" },
+    { "item": "tag fee", "label": "Nonresident pronghorn hunt permit-tag (includes $15 application fee)", "species": ["ANTELOPE"], "residency": "nonresident", "amount": 565.00, "year": 2027, "refundable": null, "notes": null, "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Pronghorn Hunt Permit-tag $103 $565 $103 $565" },
+    { "item": "tag fee", "label": "Resident bighorn sheep hunt permit-tag (includes $13 application fee)", "species": ["BIGHORNSHEEP"], "residency": "resident", "amount": 313.00, "year": 2027, "refundable": null, "notes": null, "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Bighorn Sheep & Pioneer One-Horned Bighorn Sheep Hunt Permit-tag $313 $1,815" },
+    { "item": "tag fee", "label": "Nonresident bighorn sheep hunt permit-tag (includes $15 application fee)", "species": ["BIGHORNSHEEP"], "residency": "nonresident", "amount": 1815.00, "year": 2027, "refundable": null, "notes": null, "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Bighorn Sheep & Pioneer One-Horned Bighorn Sheep Hunt Permit-tag $313 $1,815" },
+    { "item": "tag fee", "label": "Resident bison bull/any hunt permit-tag (includes $13 application fee)", "species": ["BISON"], "residency": "resident", "amount": 1113.00, "year": 2027, "refundable": null, "notes": "Cow/yearling $663; yearling only $363.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Bison – Bull/Any Hunt Permit-tag $1,113 $5,415" },
+    { "item": "tag fee", "label": "Nonresident bison bull/any hunt permit-tag (includes $15 application fee)", "species": ["BISON"], "residency": "nonresident", "amount": 5415.00, "year": 2027, "refundable": null, "notes": "Cow/yearling $3,265; yearling only $1,765.", "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/09/08084903/2027-Spring-Regulations.pdf", "quote": "Bison – Bull/Any Hunt Permit-tag $1,113 $5,415" }
+  ],
+  "prerequisites": [
+    { "text": "Hold a valid Arizona hunting license (resident general hunting or combination; nonresident combination) on the day you apply and through the deadline, or buy one with the application. This applies to point-only applications too.", "residency": "both", "species": ["ALL"], "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/05/20151617/2026-27-Arizona-Hunting-Regulations.pdf", "quote": "An applicant must have possession of a valid license at the time of entry and the deadline of the application period per R12-4-104." },
+    { "text": "Apply online with an AZGFD portal account; results are posted only in the portal. Keep the card on file current, or the application is not drawn.", "residency": "both", "species": ["ALL"], "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/05/20151617/2026-27-Arizona-Hunting-Regulations.pdf", "quote": "AZGFD portal accounts now are the sole source for finding out draw results and viewing bonus points." },
+    { "text": "Hunter education is required only for youth under 14 to hunt big game. No one under 10 may hunt big game, and point-only applicants must be 10 by the deadline.", "residency": "both", "species": ["ALL"], "source": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/05/20151617/2026-27-Arizona-Hunting-Regulations.pdf", "quote": "Hunter Education is only required for youth under the age of 14 to hunt big game in Arizona." }
+  ],
+  "notes": "Arizona has three big-game draws: pronghorn/elk (deadline in February), fall deer/bighorn sheep/bison (June), and spring (October; for big game in scope, only spring bison). The spring 2027 draw has closed (Oct. 6, 2026) and its results are posted; draw.azgfd.com says to check back in January for the 2027 elk/pronghorn draw. The 2027 pronghorn/elk and fall 2027 deer/sheep booklets are not published yet, so those rows show 2026 dates, marked last_year. Exact opening dates are not given: the booklets say only 'early to mid-January', 'early to mid-May' and 'early to mid-September'. Exact draw-results dates are not printed either. The booklets give only 'tags mailed out by' dates: April 1, 2026 (elk/pronghorn), July 24, 2026 (fall) and Nov. 25, 2026 (spring 2027). Bonus-point-only applications are made in the same draw, using the bonus point hunt number. Fees come from the 2027 spring booklet and match the 2026–27 booklet that says it is valid for 2026 hunts. Permit-tag prices include the application fee. AZ has no moose or mountain goat hunts. Youth-only hunt prices in the PDF table come out as '$637'/'$657' (elk) and '$387'/'$407' (deer), most likely $63/$65 and $38/$40 followed by footnote 7. Because that reading is uncertain, they are not recorded. azgfd.com returns a Cloudflare challenge to automated requests, so the agency's S3-hosted PDFs were used; the howToUrl page could not be fetched."
+}

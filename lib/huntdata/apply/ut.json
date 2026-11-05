@@ -1,0 +1,637 @@
+{
+  "state": "UT",
+  "checkedOn": "2026-11-04",
+  "applyUrl": "https://utahdraws.com/",
+  "howToUrl": "https://wildlife.utah.gov/licenses/permits",
+  "draws": [
+    {
+      "name": "2027 sportsman permits (one statewide permit per species; residents only)",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "year": 2027,
+      "status": "published",
+      "opens": "2026-10-20T08:00",
+      "deadline": "2026-11-10T23:00",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-11-19",
+      "source": "https://wildlife.utah.gov/news/2026/10/13/apply-for-sportsman-hunting-permits-starting-october-20",
+      "quote": "Utahns can begin submitting applications for the 2027 sportsman permits on Tuesday, Oct. 20 at 8 a.m. MDT ... you must submit your application by Tuesday, Nov. 10 at 11 p.m. MST ... Application results will be available on Thursday, Nov. 19."
+    },
+    {
+      "name": "Big game drawing - general-season buck deer, limited-entry and once-in-a-lifetime (deer, elk, pronghorn, moose, bighorn sheep, mountain goat), plus bonus/preference points",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-19T08:00",
+      "deadline": "2026-04-23T23:00",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-05-31",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "BIG GAME APPLICATION BEGINS MARCH 19, 8 A.M. MDT ... BIG GAME APPLICATION ENDS APRIL 23, 11 P.M. MDT ... DRAWING RESULTS AVAILABLE MAY 31"
+    },
+    {
+      "name": "Antlerless drawing - antlerless deer, elk and moose, doe pronghorn, ewe bighorn sheep",
+      "species": [
+        "DEER",
+        "ELK",
+        "MOOSE",
+        "ANTELOPE",
+        "BIGHORNSHEEP"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-09T08:00",
+      "deadline": "2026-06-23T23:00",
+      "timezone": "America/Denver",
+      "resultsBy": "2026-07-08",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "ANTLERLESS APPLICATION BEGINS JUNE 9, 8 A.M. MDT ... ANTLERLESS APPLICATION ENDS JUNE 23, 11 P.M. MDT ... DRAWING RESULTS AVAILABLE JULY 8"
+    }
+  ],
+  "pointOnly": [
+    {
+      "name": "Bonus point (limited-entry / once-in-a-lifetime) or general buck deer preference point - main window",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-03-19T08:00",
+      "deadline": "2026-04-23T23:00",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Even if you're not going to hunt in 2026, you can still receive a bonus point by applying for one ... The 2026 bonus point application period is March 19-April 23, or you may apply during the June 9-23 antlerless application period."
+    },
+    {
+      "name": "Bonus / preference point - second chance during antlerless period",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "both",
+      "year": 2026,
+      "status": "last_year",
+      "opens": "2026-06-09T08:00",
+      "deadline": "2026-06-23T23:00",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "If you missed the April 23 big game application deadline, you can still apply for big game bonus or preference points during the June 9-23 antlerless application period."
+    }
+  ],
+  "fees": [
+    {
+      "item": "application fee",
+      "label": "Application fee per species (resident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Plus 2.2% card transaction fee.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Application fees (per species): Resident: $10 - Nonresident: $21"
+    },
+    {
+      "item": "application fee",
+      "label": "Application fee per species (nonresident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 21.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Plus 2.2% card transaction fee.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Application fees (per species): Resident: $10 - Nonresident: $21"
+    },
+    {
+      "item": "point fee",
+      "label": "Bonus or preference point only (resident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "The point fee is the application fee.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "To apply for a bonus point, select the appropriate bonus point code on your application and pay the application fee, which is $10 for residents and $21 for nonresidents."
+    },
+    {
+      "item": "point fee",
+      "label": "Bonus or preference point only (nonresident)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 21.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "To apply for a bonus point, select the appropriate bonus point code on your application and pay the application fee, which is $10 for residents and $21 for nonresidents."
+    },
+    {
+      "item": "application fee",
+      "label": "Sportsman permit application per species (resident only)",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 10.0,
+      "year": 2027,
+      "refundable": false,
+      "notes": null,
+      "source": "https://wildlife.utah.gov/news/2026/10/13/apply-for-sportsman-hunting-permits-starting-october-20",
+      "quote": "There's a non-refundable $10 application fee to apply for each species."
+    },
+    {
+      "item": "qualifying license",
+      "label": "Resident 365-day hunting license (18-64)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "resident",
+      "amount": 40.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Youth 14-17 $16; 13 and under $11; 65+ $31. Combination license $44.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "365-day hunting license ... 18-64 $40 $144"
+    },
+    {
+      "item": "qualifying license",
+      "label": "Nonresident 365-day hunting license (18-64)",
+      "species": [
+        "ALL"
+      ],
+      "residency": "nonresident",
+      "amount": 144.0,
+      "year": 2026,
+      "refundable": false,
+      "notes": "Youth 17 and under $44. Nonresident combination license $190.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "365-day hunting license ... 18-64 $40 $144"
+    },
+    {
+      "item": "tag fee",
+      "label": "General-season buck deer permit",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 46.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "General deer $46 $599"
+    },
+    {
+      "item": "tag fee",
+      "label": "General-season buck deer permit",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 599.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "General deer $46 $599"
+    },
+    {
+      "item": "tag fee",
+      "label": "Limited-entry buck deer permit",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 94.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate). Premium limited-entry: $185 resident / $1,398 nonresident.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Limited-entry $94 $1,070"
+    },
+    {
+      "item": "tag fee",
+      "label": "Limited-entry buck deer permit",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 1070.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Limited-entry $94 $1,070"
+    },
+    {
+      "item": "tag fee",
+      "label": "Limited-entry bull elk permit",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 314.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate). Multiseason limited-entry: $564 / $2,655.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Limited-entry $314 $1,950"
+    },
+    {
+      "item": "tag fee",
+      "label": "Limited-entry bull elk permit",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 1950.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Limited-entry $314 $1,950"
+    },
+    {
+      "item": "tag fee",
+      "label": "General any bull or spike bull elk permit (over the counter)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 56.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Sold over the counter in July, not drawn.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "General any bull or spike bull $56 $849"
+    },
+    {
+      "item": "tag fee",
+      "label": "General any bull or spike bull elk permit (over the counter)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 849.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Sold over the counter in July, not drawn.",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "General any bull or spike bull $56 $849"
+    },
+    {
+      "item": "tag fee",
+      "label": "Limited-entry buck pronghorn permit",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 63.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Limited-entry $63 $571"
+    },
+    {
+      "item": "tag fee",
+      "label": "Limited-entry buck pronghorn permit",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 571.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Limited-entry $63 $571"
+    },
+    {
+      "item": "tag fee",
+      "label": "Bull moose permit (once in a lifetime)",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "resident",
+      "amount": 454.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Bull moose $454 $3,488"
+    },
+    {
+      "item": "tag fee",
+      "label": "Bull moose permit (once in a lifetime)",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "nonresident",
+      "amount": 3488.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Bull moose $454 $3,488"
+    },
+    {
+      "item": "tag fee",
+      "label": "Bighorn sheep permit (desert or Rocky Mountain; once in a lifetime)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 564.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Rocky Mountain bighorn $564 $3,988"
+    },
+    {
+      "item": "tag fee",
+      "label": "Bighorn sheep permit (desert or Rocky Mountain; once in a lifetime)",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 3988.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Rocky Mountain bighorn $564 $3,988"
+    },
+    {
+      "item": "tag fee",
+      "label": "Mountain goat permit (once in a lifetime)",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "resident",
+      "amount": 454.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Mountain goat $454 $3,488"
+    },
+    {
+      "item": "tag fee",
+      "label": "Mountain goat permit (once in a lifetime)",
+      "species": [
+        "MTNGOAT"
+      ],
+      "residency": "nonresident",
+      "amount": 3488.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Mountain goat $454 $3,488"
+    },
+    {
+      "item": "tag fee",
+      "label": "Antlerless deer permit",
+      "species": [
+        "DEER"
+      ],
+      "residency": "resident",
+      "amount": 35.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Antlerless deer $35 $236"
+    },
+    {
+      "item": "tag fee",
+      "label": "Antlerless deer permit",
+      "species": [
+        "DEER"
+      ],
+      "residency": "nonresident",
+      "amount": 236.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Antlerless deer $35 $236"
+    },
+    {
+      "item": "tag fee",
+      "label": "Antlerless elk permit (general season)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "resident",
+      "amount": 56.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Antlerless elk (general season) $56 $649"
+    },
+    {
+      "item": "tag fee",
+      "label": "Antlerless elk permit (general season)",
+      "species": [
+        "ELK"
+      ],
+      "residency": "nonresident",
+      "amount": 649.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Antlerless elk (general season) $56 $649"
+    },
+    {
+      "item": "tag fee",
+      "label": "Antlerless moose permit",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "resident",
+      "amount": 249.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Antlerless moose $249 $2,200"
+    },
+    {
+      "item": "tag fee",
+      "label": "Antlerless moose permit",
+      "species": [
+        "MOOSE"
+      ],
+      "residency": "nonresident",
+      "amount": 2200.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Antlerless moose $249 $2,200"
+    },
+    {
+      "item": "tag fee",
+      "label": "Doe pronghorn permit",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "resident",
+      "amount": 35.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Doe pronghorn $35 $236"
+    },
+    {
+      "item": "tag fee",
+      "label": "Doe pronghorn permit",
+      "species": [
+        "ANTELOPE"
+      ],
+      "residency": "nonresident",
+      "amount": 236.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Doe pronghorn $35 $236"
+    },
+    {
+      "item": "tag fee",
+      "label": "Ewe bighorn sheep permit",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "resident",
+      "amount": 110.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Ewe bighorn sheep $110 $2,100"
+    },
+    {
+      "item": "tag fee",
+      "label": "Ewe bighorn sheep permit",
+      "species": [
+        "BIGHORNSHEEP"
+      ],
+      "residency": "nonresident",
+      "amount": 2100.0,
+      "year": 2026,
+      "refundable": null,
+      "notes": "Charged only if you draw (application fee is separate).",
+      "source": "https://wildlife.utah.gov/guidebooks/antlerless_guidebook.pdf",
+      "quote": "Ewe bighorn sheep $110 $2,100"
+    }
+  ],
+  "prerequisites": [
+    {
+      "text": "You must have a valid Utah hunting or combination license to apply for a permit, bonus point or preference point (you can buy it while applying).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "You must have a valid hunting or combination license to apply. If needed, you can buy a license at the same time you submit your application."
+    },
+    {
+      "text": "If born after Dec. 31, 1965, you must show proof of hunter education before you can apply for or get a hunting license or big game permit (Trial Hunting Program is the only exception).",
+      "residency": "both",
+      "species": [
+        "ALL"
+      ],
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "If you were born after Dec. 31, 1965, you must provide proof that you've passed a hunter education course approved by the division before you can apply for or obtain a hunting license or a big game permit."
+    },
+    {
+      "text": "Waiting periods: limited-entry buck deer and bull elk 5 years, buck pronghorn 2 years. Bull moose, bison, bighorn sheep and mountain goat are once in a lifetime.",
+      "residency": "both",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "The waiting period for limited-entry buck deer is five years. The bull elk waiting period is five years. The waiting period for buck pronghorn is two years."
+    },
+    {
+      "text": "Residents may apply for one limited-entry and one once-in-a-lifetime species (permit or bonus point) per year; nonresidents may apply for all limited-entry and once-in-a-lifetime species. Only one limited-entry or once-in-a-lifetime permit can be drawn per year.",
+      "residency": "both",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf",
+      "quote": "Please remember that you may draw only one limited-entry or once-in-a-lifetime permit each year."
+    },
+    {
+      "text": "Sportsman permits are for Utah residents only; applicants for big game must turn 12 by Dec. 31, 2027 and hold a valid Utah hunting or combination license.",
+      "residency": "resident",
+      "species": [
+        "DEER",
+        "ELK",
+        "ANTELOPE",
+        "MOOSE",
+        "BIGHORNSHEEP",
+        "MTNGOAT"
+      ],
+      "source": "https://wildlife.utah.gov/news/2026/10/13/apply-for-sportsman-hunting-permits-starting-october-20",
+      "quote": "only Utah residents may apply for sportsman permits ... A valid Utah hunting or combination license is also required to apply"
+    }
+  ],
+  "notes": "The 2027 main big game and antlerless draw dates are not posted yet (checked 2026-11-04); the 2027 Big Game Application Guidebook is not out (the guidebooks page lists 2026 as current). Main and antlerless draws are recorded with 2026 dates as last_year. Only the 2027 resident sportsman-permit draw has published 2027 dates (Oct. 20 - Nov. 10, 2026). Utah has no separate point-only window: points are bought by applying during the main (Mar-Apr) or antlerless (June) application periods. Fees are the 2026 schedule from the 2026 guidebooks; nonresident fee increases took effect July 1, 2025 (licenses) and Sept. 1, 2025 (permits/application fees). A 2.2% card transaction fee applies. The agency fee web page (wildlife.utah.gov/licenses/fees) was not fetched; guidebook tables were used. Bison, CWMU and Dedicated Hunter details left out except where noted. "
+}
