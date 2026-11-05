@@ -216,7 +216,11 @@ const huntSource = (state: string, year: number | null): Source => ({
   label: `${stateName(state)} draw results${year ? ` ${year}` : ''}`,
   url: STATE_INFO[state as keyof typeof STATE_INFO]?.agency?.url ?? null,
 });
-const strip = ({ publicLand: _p, trophy: _t, cost: _c, ...rest }: CompareColumn) => rest;
+const strip = (c: CompareColumn): Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> => {
+  const rest: Partial<CompareColumn> = { ...c };
+  delete rest.publicLand; delete rest.trophy; delete rest.cost;
+  return rest as Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'>;
+};
 
 export function getHunt(args: { state: string; species: string; huntCode?: string | null; unit?: string | null }, sit: Situation): ToolResult<HuntData> {
   const r = resolve(args.state, args.species);
