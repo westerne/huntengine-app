@@ -27,7 +27,8 @@ const titleOf = (h: PlanHunt) => {
   return `${h.species}${h.unit || code ? ` · ${huntTitle(h.unit ?? code!, h.unit ? code : null)}` : ''}`;
 };
 const subOf = (h: PlanHunt) => {
-  if (h.short) return h.short.text;
+  if (h.short) return [h.short.text, h.due].filter(Boolean).join(' · ');
+  if (h.due) return h.due;
   if (h.stage === 'reported' || h.stage === 'hunted') return h.harvested ? 'Harvested' : h.harvested === false ? 'No harvest' : STAGE[h.stage].label;
   return h.label ?? h.huntLabel ?? (h.bucket ? 'Bucket list' : h.otc ? 'OTC option' : '');
 };

@@ -31,7 +31,7 @@ export default async function HuntPage({ params }: { params: Promise<{ id: strin
     supabase.from('applications').select('*').eq('hunt_id', id).maybeSingle(),
     supabase.from('tasks').select('*').eq('hunt_id', id).order('position'),
     supabase.from('hunt_plans').select('*').eq('hunt_id', id).order('version'),
-    supabase.from('profiles').select('fitness, access_notes, weapons, hunt_styles').eq('user_id', viewer.userId).maybeSingle(),
+    supabase.from('profiles').select('fitness, access_notes, weapons, hunt_styles, home_state').eq('user_id', viewer.userId).maybeSingle(),
     supabase.from('hunt_reports').select('*').eq('hunt_id', id).maybeSingle(),
     // The hunter's finished reports for the same state and species — their own lessons.
     supabase.from('hunt_reports')
@@ -63,7 +63,7 @@ export default async function HuntPage({ params }: { params: Promise<{ id: strin
         notes={notes ?? []}
         application={(application as Application | null) ?? null}
         tasks={(tasks ?? []) as Task[]}
-        official={officialInfoFor(hunt.state, hunt.species, hunt.season_year)}
+        official={officialInfoFor(hunt.state, hunt.species, hunt.season_year, profile?.home_state ? (profile.home_state === hunt.state ? 'resident' : 'nonresident') : null)}
         plans={(plans ?? []) as PlanRow[]}
         prepDefaults={prepDefaults}
         report={(report as HuntReport | null) ?? null}

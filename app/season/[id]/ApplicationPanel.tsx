@@ -15,10 +15,16 @@ import type { SavedHunt } from '@/lib/hunts';
 export type OfficialInfo = {
   applyUrl: string | null;
   datesPageUrl: string | null;
-  prerequisites: { text: string; source: string } | null;
-  // Agency-published deadline that matches this hunt, when we have one.
+  prerequisites: Array<{ text: string; source: string }>;
+  // Agency-published deadline for this hunt's own season, when posted.
   deadline: { date: string; time: string | null; timezone: string | null; group: string; source: string } | null;
+  // Otherwise: last year's date, or one calculated from the rules — reference only.
+  reference: { kind: 'expected' | 'last_year'; date: string; time: string | null; timezone: string | null; group: string; year: number; source: string } | null;
+  fees: Array<{ label: string; item: string; amount: number | null; year: number | null; residency: string | null; source: string }>;
+  checkedOn: string | null;
 };
+
+const money = (n: number | null) => (n == null ? '—' : `$${n.toLocaleString('en-US', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 })}`);
 
 const inputCls = 'w-full bg-black border border-zinc-800 p-3 rounded-xl text-zinc-100 text-sm outline-none focus:border-amber-500';
 const label = 'block text-[10px] font-black uppercase text-zinc-500 tracking-widest mb-2';
@@ -101,15 +107,40 @@ export default function ApplicationPanel({
       </div>
 
       {/* Official links + prerequisites */}
-      {(official.applyUrl || official.datesPageUrl || official.prerequisites) && (
+      {(official.applyUrl || official.datesPageUrl || official.prerequisites.length > 0) && (
         <div className="space-y-2 text-sm">
           {official.applyUrl && (
             <p><a href={official.applyUrl} target="_blank" rel="noopener noreferrer" className="text-amber-500 underline font-bold">Open the official {hunt.state} application site ↗</a>
               <span className="text-zinc-600 text-xs"> — opening it doesn&apos;t mark anything as applied.</span></p>
           )}
           {official.datesPageUrl && <p><a href={official.datesPageUrl} target="_blank" rel="noopener noreferrer" className="text-zinc-300 underline">Official draw dates ↗</a></p>}
-          {official.prerequisites && <p className="text-zinc-400 text-xs">{official.prerequisites.text} <a href={official.prerequisites.source} target="_blank" rel="noopener noreferrer" className="underline">Source</a></p>}
+          {official.prerequisites.length > 0 && (
+            <div>
+              <p className="text-[10px] uppercase text-zinc-500 font-black tracking-widest mb-1">Before you apply</p>
+              <ul className="list-disc pl-5 space-y-1">
+                {official.prerequisites.map((p, i) => (
+                  <li key={i} className="text-zinc-300 text-xs">{p.text} <a href={p.source} target="_blank" rel="noopener noreferrer" className="text-zinc-500 underline">Source</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
+      )}
+
+      {/* Fees as the agency posts them */}
+      {official.fees.length > 0 && (
+        <details className="text-sm">
+          <summary className="cursor-pointer text-zinc-300 font-bold">Fees ({official.fees.length})</summary>
+          <ul className="mt-2 space-y-1">
+            {official.fees.map((f, i) => (
+              <li key={i} className="flex justify-between gap-3 text-xs text-zinc-400 border-b border-zinc-800 pb-1">
+                <span>{f.label}{f.residency && f.residency !== 'both' ? ` · ${f.residency === 'resident' ? 'resident' : 'non-resident'}` : ''}</span>
+                <span className="whitespace-nowrap"><span className="text-zinc-200 font-bold">{money(f.amount)}</span>{f.year ? ` (${f.year})` : ''} <a href={f.source} target="_blank" rel="noopener noreferrer" className="underline">Source</a></span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-zinc-600 text-xs mt-2">As posted by the agency{official.checkedOn ? `, checked ${official.checkedOn}` : ''}. Confirm before you pay.</p>
+        </details>
       )}
 
       {decision === 'apply' && (
@@ -135,6 +166,13 @@ export default function ApplicationPanel({
                 <a href={official.deadline.source} target="_blank" rel="noopener noreferrer" className="text-zinc-500 underline text-xs">Source</a>
               </p>
             )
+          ) : official.reference ? (
+            <p className="text-xs text-zinc-400">
+              {official.reference.kind === 'expected'
+                ? <>Expected around <strong>{official.reference.date}</strong>{official.reference.time ? ` ${official.reference.time}` : ''} ({official.reference.group}) — calculated from {hunt.state}&apos;s rules, not yet posted. </>
+                : <>{hunt.state} hasn&apos;t posted its {hunt.season_year} deadline yet. Last year ({official.reference.year}): <strong>{official.reference.date}</strong>{official.reference.time ? ` ${official.reference.time}` : ''} ({official.reference.group}). </>}
+              Enter the date when the state posts it. <a href={official.reference.source} target="_blank" rel="noopener noreferrer" className="text-zinc-500 underline">Source</a>
+            </p>
           ) : (
             <p className="text-xs text-zinc-500">{hunt.state} hasn&apos;t published its {hunt.season_year} deadline in our records yet. Enter it when the state posts it.</p>
           )}

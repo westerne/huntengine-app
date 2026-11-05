@@ -8,8 +8,10 @@ import { buildMyHunts, shortOutlook, type MyHunt, type SavedHuntRow } from '@/li
 import { getStateModule } from '@/lib/huntdata/registry';
 import { speciesKeyOf } from '@/lib/species';
 import { readProfile } from '../calendar/readProfile';
+import { deadlineFor, deadlineText } from '@/lib/huntdata/apply';
 
 export type PlanHunt = MyHunt & {
+  due: string | null;          // "Due Apr 7" / "Expected Jun 12" / "Last year Apr 7"
   outlook: Outlook | null;
   short: { text: string; tier: 'good' | 'fair' | 'long' | 'stop' } | null;
   huntLabel: string | null;
@@ -79,6 +81,10 @@ export async function loadPlan(supabase: Client, userId: string) {
     }
     withOutlook.push({
       ...h, outlook, short: shortOutlook(outlook, h.year), huntLabel: hunt?.label ?? null,
+      // The application deadline matters until they've applied (OTC tags have none).
+      due: !h.otc && h.year != null && h.year >= thisYear && ['considering', 'planned', 'points'].includes(h.stage)
+        ? deadlineText(deadlineFor(h.state, speciesKeyOf(h.species, h.state), residencyFor(h.state), h.year))
+        : null,
       compareKey: hunt ? `${hunt.state}~${hunt.species}~${hunt.huntCode}` : null,
     });
   }
