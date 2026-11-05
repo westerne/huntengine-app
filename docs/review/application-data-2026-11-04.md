@@ -2,7 +2,7 @@
 
 Researched 2026-11-04 · files: `lib/huntdata/apply/<st>.json` (format: `lib/huntdata/apply/FORMAT.md`) · **not used by the app until you sign off.**
 
-Every row in every file has an official source URL and a quote. Totals: 73 draw windows (**8 already show 2027 dates**, 65 are last year's and labeled that way), 345 fee lines, 90 prerequisites.
+Every row in every file has an official source URL and a quote. Totals: 73 draw windows (**8 already show 2027 dates**, 65 are last year's and labeled that way), 345 fee lines, 93 prerequisites.
 
 ## By state
 
