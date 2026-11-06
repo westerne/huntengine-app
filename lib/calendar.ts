@@ -86,6 +86,15 @@ export function findHunt(mod: StateModule | null, species: string, huntCode: str
   if (huntCode) {
     const hit = hunts.find((h) => h.huntCode.toLowerCase() === huntCode.trim().toLowerCase());
     if (hit) return hit;
+    // How hunters write Colorado codes: "D-M-035-O3-R", "DM35O3R", or with the
+    // season letter left out, "DM0353R". One match only; two is ambiguous.
+    const loose = (c: string) => c.toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/^([A-Z]{2})0*(\d{1,3})(?=[A-Z]?\d[A-Z]$)/, (_, a, u) => a + u);
+    const noSeasonLetter = (c: string) => c.replace(/^([A-Z]{2}\d{1,3})[A-Z](\d[A-Z])$/, '$1$2');
+    const want = loose(huntCode);
+    const near = hunts.filter((h) => loose(h.huntCode) === want);
+    if (near.length === 1) return near[0];
+    const bare = hunts.filter((h) => noSeasonLetter(loose(h.huntCode)) === noSeasonLetter(want));
+    if (bare.length === 1) return bare[0];
   }
   if (unit) {
     const norm = (u: string) => u.trim().toLowerCase().replace(/^(unit|gmu)\s+/, '').replace(/^0+(?=\d)/, '');

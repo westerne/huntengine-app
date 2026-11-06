@@ -42,7 +42,14 @@ type Case = {
   match?: RegExp;          // the answer must say this
   noTools?: boolean;       // must answer without lookups (off-topic)
   not?: RegExp;            // the answer must NOT say this
+  history?: Array<{ role: 'user' | 'assistant'; content: string }>; // earlier turns, for follow-ups
 };
+// The owner's Colorado deer conversation (2026-11-06), for its follow-ups.
+const CO_DEER = [
+  { role: 'user' as const, content: "I'm looking at Colorado for deer, i want a november hunt - something i can hunt every 2-3 years" },
+  { role: 'assistant' as const, content: 'Consider the buck deer hunt in Unit 591, late rifle season. With 2 points, you have a 75% chance to draw this year, and hunter success was 75.3% last year.' },
+];
+const ASKS_BACK = /could you (please )?(provide|specify|clarify)|which state|what state|which species|more details/i;
 const DONT_HAVE = /don.?t have|do not have|don.?t cover|couldn.?t find|not in our data|isn.?t one of|not one of|check with|contact|agency|we cover/i;
 const DECLINES_SPOT = /can.?t|won.?t|don.?t|not able|unit[- ]level|unit level/i;
 
@@ -100,6 +107,12 @@ const CASES: Case[] = [
   { q: 'Which trailhead should I use in unit 161?', match: DECLINES_SPOT },
   // Off-topic
   { q: 'Write me a poem about the ocean.', noTools: true },
+  // Follow-ups and what they asked for (owner transcript, Colorado deer)
+  { q: "I'm looking at Colorado for deer, i want a november hunt - something i can hunt every 2-3 years", tools: ['search_hunts'], match: /nov/i, not: /might not fit/i },
+  { q: 'what about 35', history: CO_DEER, tools: ['get_hunt', 'search_hunts'], match: /35/, not: ASKS_BACK },
+  { q: 'colorado deer in unit 35 2nd or 3rd season', history: CO_DEER, tools: ['get_hunt', 'search_hunts'], match: /35/, not: /don.?t have the draw data/i },
+  { q: 'DM0353R', history: CO_DEER, tools: ['get_hunt'], match: /35/, not: /couldn.?t find/i },
+  { q: 'Unit 035', history: CO_DEER, tools: ['get_hunt', 'search_hunts'], match: /35/, not: ASKS_BACK },
   // Actions: ask first
   { q: 'Add Nevada elk 4151-111-Early for 2028 to my plan.', tools: ['propose_add_to_plan'], match: /tap|button/i },
   { q: 'Remind me about the Nevada elk deadline.', tools: ['deadlines', 'propose_reminder'], match: /tap|button/i },
@@ -132,7 +145,7 @@ describe.skipIf(!RUN)('advisor test set (real model)', () => {
     for (const c of CASES) {
       const called: string[] = [];
       const tools: Toolbox = { specs: base.specs, call: (n, args, ev) => { called.push(n); return base.call(n, args, ev); } };
-      const a = await runAdvisor({ model, tools, question: c.q, context: { today: '2026-11-05', seasonYear: 2027, home: 'WY' } });
+      const a = await runAdvisor({ model, tools, question: c.q, history: c.history, context: { today: '2026-11-05', seasonYear: 2027, home: 'WY' } });
       const problems = universal(a);
       if (c.tools && !c.tools.some((t) => called.includes(t))) problems.push(`expected ${c.tools.join(' or ')}, called ${called.join(', ') || 'nothing'}`);
       if (c.match && !c.match.test(a.text)) problems.push(`answer doesn't match ${c.match}`);

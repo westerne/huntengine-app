@@ -13,10 +13,11 @@ import { findHunt, projectPoints, usesPoints } from '../calendar';
 import { compareColumn, pickBest, type CompareColumn } from '../compare';
 import { canonicalSpecies, speciesKeyOf } from '../species';
 import { titleCaseState } from '../scoutData';
-import { buildGenericScoutDataset } from '../huntdata/generic';
+import { buildGenericScoutDataset, successAtPoints } from '../huntdata/generic';
 import { drawReality, type DrawReality, type ReachableHunt } from '../huntdata/reality';
-import { cutoffIsADate, pointsBarMatters } from '../huntdata/drawSystem';
-import type { Residency, Weapon } from '../huntdata/schema';
+import { cutoffIsADate, cutoffIsMilestone, pointsBarMatters } from '../huntdata/drawSystem';
+import type { Hunt, Residency, Weapon } from '../huntdata/schema';
+import { isAntlerless, isPrivateOnly } from '../huntdata/shortlist';
 import { DEFAULT_PREFS, rankHunts, type HuntPrefs, type RankedHunt } from '../huntdata/fit';
 import { pointsSoldTo } from '../huntdata/apply';
 
@@ -242,7 +243,7 @@ export function harvestReporting(args: { state: string; species: string }): Tool
 }
 
 // ── one hunt, and several side by side ─────────────────────────────────────
-export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; howTheDrawWorks: string | null; applyOrBuild?: string };
+export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; pointsNote?: string; howTheDrawWorks: string | null; applyOrBuild?: string };
 // The state's draw rules in plain words, so "burn points or keep building" is
 // answered for the state's actual system, not a preference draw by default.
 const drawRules = (state: string) => STATE_INFO[state as keyof typeof STATE_INFO]?.drawSystemNote ?? null;
@@ -259,9 +260,16 @@ function column(state: string, key: string, species: string, huntCode: string | 
   if (!hunt) return null;
   const res = residencyIn(sit, state);
   const pts = pointsFor(sit, state, key);
-  const byYear = usesPoints(mod, species) && pts != null ? projectPoints(pts, sit.years) : null;
-  return { col: compareColumn(hunt, res, sit.years, byYear), pts, drawYear: hunt.drawYear };
+  // No points on file is 0 points, not "unknown": falling back to the overall
+  // rate told a hunter with no Colorado deer points "29.6% a year" for a hunt
+  // that took 2 points, where their real chance is 0% until they have 2.
+  const uses = usesPoints(mod, species) && pointsSoldTo(state, key, res) !== false;
+  const assumed = uses && pts == null;
+  const byYear = uses ? projectPoints(pts ?? 0, sit.years) : null;
+  return { col: compareColumn(hunt, res, sit.years, byYear), pts: assumed ? 0 : pts, assumed, drawYear: hunt.drawYear };
 }
+const assumedNote = (c: { assumed: boolean }, state: string, species: string) =>
+  c.assumed ? { pointsNote: `We don't have their ${state} ${species.toLowerCase()} points, so this is at 0 points. Say so, and that adding their points on Me gives their real odds.` } : {};
 const huntSource = (state: string, year: number | null): Source => ({
   label: `${stateName(state)} draw results${year ? ` ${year}` : ''}`,
   url: STATE_INFO[state as keyof typeof STATE_INFO]?.agency?.url ?? null,
@@ -272,15 +280,76 @@ const strip = (c: CompareColumn): Omit<CompareColumn, 'publicLand' | 'trophy' | 
   return rest as Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'>;
 };
 
-export function getHunt(args: { state: string; species: string; huntCode?: string | null; unit?: string | null }, sit: Situation): ToolResult<HuntData> {
+// Points it took to draw last year for this residency, where that's a real
+// bar (preference draws; CO from CPW's drawn-out level). Null in lotteries.
+export function pointsToDraw(h: Hunt, residency: Residency): number | null {
+  const o = h.drawnOut?.[residency];
+  if (o) return o.kind === 'points' ? o.points ?? null : o.kind === 'choice' || o.kind === 'leftover' ? 0 : null;
+  if (!cutoffIsMilestone(h.state)) return null;
+  return (residency === 'resident' ? h.draw.resident : h.draw.nonresident)?.minPoints ?? null;
+}
+
+export type UnitHunt = {
+  huntCode: string; label: string | null; weapon: string | null;
+  season: { open: string; close: string } | null; seasonMonths: string[] | null;
+  pointsToDraw: number | null; chanceThisYear: number | null; hunterSuccess: number | string; privateLandOnly?: true;
+};
+const unitHunt = (h: Hunt, residency: Residency, points: number): UnitHunt => ({
+  huntCode: h.huntCode, label: h.label ?? null, weapon: h.weapon ?? null,
+  season: h.season ?? null, seasonMonths: seasonMonths(h.season),
+  pointsToDraw: pointsToDraw(h, residency),
+  // Where this residency earns no points (Wyoming residents), the hunt's rate is their chance.
+  chanceThisYear: successAtPoints(h, residency, points) ?? (pointsSoldTo(h.state, h.species, residency) === false ? (residency === 'resident' ? h.draw.resident : h.draw.nonresident)?.successPct ?? null : null),
+  hunterSuccess: h.harvest && !(h.harvest.hunters != null && h.harvest.hunters < 10) ? h.harvest.successPct : 'not published, or too few hunters to judge',
+  ...(isPrivateOnly(h) ? { privateLandOnly: true as const } : {}),
+});
+const normUnit = (u: string) => u.trim().toLowerCase().replace(/^(unit|gmu)\s+/, '').replace(/^0+(?=\d)/, '');
+
+// "What about unit 35?" A unit has several hunts (seasons, weapons, sexes), so
+// asking by unit lists them instead of failing.
+export type UnitHuntsData = {
+  state: string; species: string; unit: string; residency: Residency; yourPoints: number | null;
+  hunts: UnitHunt[]; antlerlessLeftOut: number; privateLandOnlyLeftOut: number; howTheDrawWorks: string | null;
+};
+export function unitHunts(args: { state: string; species: string; unit: string }, sit: Situation): ToolResult<UnitHuntsData> {
+  const r = resolve(args.state, args.species);
+  if (!r.ok) return r;
+  const mod = getStateModule(r.state);
+  if (!mod) return fail(`We don't have ${r.name} draw data.`);
+  const all = mod.hunts(r.key as never).filter((h) => normUnit(h.unit) === normUnit(args.unit));
+  if (!all.length) return fail(`We couldn't find ${r.name} ${r.species.toLowerCase()} unit ${args.unit} in the draw data.`);
+  const residency = residencyIn(sit, r.state);
+  const pts = pointsFor(sit, r.state, r.key);
+  // Private-land-only hunts need the landowner's permission first: counted, not listed.
+  const open = all.filter((h) => !isPrivateOnly(h));
+  const antlered = open.filter((h) => !isAntlerless(h));
+  const sources: Source[] = [huntSource(r.state, all[0].drawYear)];
+  if (pts != null) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${pts})` });
+  return {
+    ok: true,
+    data: {
+      state: r.state, species: r.species, unit: args.unit, residency, yourPoints: pts,
+      hunts: (antlered.length ? antlered : open).slice(0, 15).map((h) => unitHunt(h, residency, pts ?? 0)),
+      antlerlessLeftOut: antlered.length ? open.length - antlered.length : 0,
+      privateLandOnlyLeftOut: all.length - open.length,
+      howTheDrawWorks: drawRules(r.state),
+    },
+    sources,
+  };
+}
+
+export function getHunt(args: { state: string; species: string; huntCode?: string | null; unit?: string | null }, sit: Situation): ToolResult<HuntData | UnitHuntsData> {
   const r = resolve(args.state, args.species);
   if (!r.ok) return r;
   if (!args.huntCode && !args.unit) return fail('Name a hunt code or unit.');
+  if (!args.huntCode && args.unit && !column(r.state, r.key, r.species, null, args.unit, sit)) {
+    return unitHunts({ state: args.state, species: args.species, unit: args.unit }, sit);
+  }
   const c = column(r.state, r.key, r.species, args.huntCode ?? null, args.unit ?? null, sit);
   if (!c) return fail(`We couldn't find ${r.name} ${r.species.toLowerCase()} ${args.huntCode ?? `unit ${args.unit}`} in the draw data${args.unit && !args.huntCode ? ' (that unit may have several hunts — name the hunt code)' : ''}.`);
   const sources = [huntSource(r.state, c.drawYear)];
   if (c.pts != null) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${c.pts})` });
-  return { ok: true, data: { ...strip(c.col), yourPoints: c.pts, howTheDrawWorks: drawRules(r.state), ...(APPLYING_EARNS_POINT[r.state] ? { applyOrBuild: APPLYING_EARNS_POINT[r.state] } : {}) }, sources };
+  return { ok: true, data: { ...strip(c.col), yourPoints: c.pts, ...assumedNote(c, r.state, r.species), howTheDrawWorks: drawRules(r.state), ...(APPLYING_EARNS_POINT[r.state] ? { applyOrBuild: APPLYING_EARNS_POINT[r.state] } : {}) }, sources };
 }
 
 export function compareHunts(args: { hunts: Array<{ state: string; species: string; huntCode: string }> }, sit: Situation): ToolResult<{ hunts: HuntData[]; pick: ReturnType<typeof pickBest>; notFound: string[] }> {
@@ -293,7 +362,7 @@ export function compareHunts(args: { hunts: Array<{ state: string; species: stri
     const c = r.ok ? column(r.state, r.key, r.species, h.huntCode, null, sit) : null;
     if (!r.ok || !c) { notFound.push(`${h.state} ${h.huntCode}`); continue; }
     cols.push(c.col);
-    out.push({ ...strip(c.col), yourPoints: c.pts, howTheDrawWorks: drawRules(r.state) });
+    out.push({ ...strip(c.col), yourPoints: c.pts, ...assumedNote(c, r.state, r.species), howTheDrawWorks: drawRules(r.state) });
     const s = huntSource(r.state, c.drawYear);
     sources.set(s.label, s);
     if (c.pts != null) sources.set(`pts:${r.state}${r.key}`, { label: `your ${r.state} ${r.species.toLowerCase()} points (${c.pts})` });
@@ -348,7 +417,51 @@ const pick = (h: ReachableHunt): Picked => ({
   unit: h.unit, huntCode: h.huntCode, label: h.label, odds: h.odds, publishedRate: h.publishedRate,
   hunterSuccess: h.hunterSuccess, pointsNeeded: h.pointsNeeded, season: h.season ?? null, seasonMonths: seasonMonths(h.season),
 });
-export function searchHunts(args: { state: string; species: string; weapon?: string | null }, sit: Situation): ToolResult<SearchData> {
+// "A November hunt I can draw every 2-3 years": filters, not prompts. Drawing
+// every N years means drawing at N-1 points (a draw resets them to 0).
+export type FilteredHunt = UnitHunt & { unit: string; fit: number | null };
+export type Filtered = { month: string | null; maxPointsToDraw: number | null; matches: FilteredHunt[]; matched: number; noSeasonDates: number; noPointsFigure: number; howToAnswer: string };
+function filterHunts(
+  hunts: Hunt[], args: { month?: string | null; maxPointsToDraw?: number | null },
+  residency: Residency, points: number, weapon: Weapon, ranked: RankedHunt[],
+): Filtered {
+  const month = args.month ? MONTH_NAMES.find((m) => args.month!.toLowerCase().startsWith(m.toLowerCase())) ?? null : null;
+  const maxPts = typeof args.maxPointsToDraw === 'number' ? args.maxPointsToDraw : null;
+  let noSeasonDates = 0;
+  let noPointsFigure = 0;
+  const fit = new Map(ranked.map((h) => [h.huntCode, h.fit]));
+  const hits = hunts.filter((h) => {
+    if (h.otc || isAntlerless(h) || isPrivateOnly(h)) return false;
+    if (weapon !== 'any' && h.weapon && h.weapon !== weapon) return false;
+    if (h.openTo && h.openTo !== residency) return false;
+    if (month) {
+      const ms = seasonMonths(h.season);
+      if (!ms) { noSeasonDates++; return false; }
+      if (!ms.includes(month)) return false;
+    }
+    if (maxPts != null) {
+      const need = pointsToDraw(h, residency);
+      if (need == null) { noPointsFigure++; return false; }
+      if (need > maxPts) return false;
+    }
+    return true;
+  });
+  const matches = hits
+    .map((h) => ({ ...unitHunt(h, residency, points), unit: h.unit, fit: fit.get(h.huntCode) ?? null }))
+    .sort((a, b) => (b.fit ?? -1) - (a.fit ?? -1) || (Number(b.hunterSuccess) || 0) - (Number(a.hunterSuccess) || 0));
+  return {
+    month, maxPointsToDraw: maxPts, matches: matches.slice(0, 10), matched: matches.length, noSeasonDates, noPointsFigure,
+    // Said in the data: the prompt rule alone still got one hunt back.
+    howToAnswer: matches.length > 1
+      ? `${matches.length} hunts match. Name the top two or three (unit, season dates, points it took to draw, their chance this year), lead with the best, and say how many matched.`
+      : matches.length ? 'One hunt matches. Say it is the only one.' : 'Nothing matches. Say so, and which filter to loosen.',
+  };
+}
+
+export function searchHunts(
+  args: { state: string; species: string; weapon?: string | null; month?: string | null; maxPointsToDraw?: number | null },
+  sit: Situation,
+): ToolResult<SearchData & { filtered?: Filtered }> {
   const r = resolve(args.state, args.species);
   if (!r.ok) return r;
   const mod = getStateModule(r.state);
@@ -356,6 +469,7 @@ export function searchHunts(args: { state: string; species: string; weapon?: str
   const residency = residencyIn(sit, r.state);
   const weapon: Weapon = WEAPONS.find((w) => w === String(args.weapon ?? '').toLowerCase()) ?? 'any';
   const points = pointsFor(sit, r.state, r.key) ?? 0;
+  let ranked: RankedHunt[] = [];
   const hunts = buildGenericScoutDataset(mod, r.key as never, residency, weapon, points);
   const re = drawReality(hunts, { points, state: r.name, species: r.species, thisYear: sit.seasonYear, cutoffIsADate: cutoffIsADate(r.state), lottery: !pointsBarMatters(r.state) });
   const sources: Source[] = [huntSource(r.state, re.dataYear)];
@@ -370,6 +484,8 @@ export function searchHunts(args: { state: string; species: string; weapon?: str
         : re.basis === 'published-rate' ? `publishedRate is each hunt's overall draw rate, NOT this hunter's odds; ${r.name} doesn't publish odds by points. Say so.`
         : 'no odds published',
       headline: re.headline, caveat: re.caveat,
+      // The prompt rule alone still produced "you can't draw any antlered hunts" in Nevada.
+      ...(pointsBarMatters(r.state) ? {} : { lotteryNote: `${r.name} is a lottery: every application has a chance, so never say they can't draw a hunt. Say it's a long shot and give its chance a year.` }),
       reachable: re.reachable.slice(0, 8).map(pick),
       antlerless: re.antlerless.slice(0, 3).map(pick),
       longShots: re.longShots.map(pick),
@@ -381,6 +497,7 @@ export function searchHunts(args: { state: string; species: string; weapon?: str
         const prefs = { ...(sit.prefs ?? DEFAULT_PREFS), ...(weapon !== 'any' ? { weapon } : {}) };
         const earns = usesPoints(mod, r.species) && pointsSoldTo(r.state, r.key, residency) !== false;
         const k = rankHunts(mod.hunts(r.key as never), { residency, points: earns ? points : 0, usesPoints: earns, seasonYear: sit.seasonYear, prefs, stateName: r.name, species: r.species });
+        ranked = [...k.drawNow, ...k.building, ...k.longShots, ...k.unpriced];
         const w = prefs.weights;
         const said = (n: 0 | 1 | 2) => (n === 2 ? 'matters most' : n === 1 ? 'nice' : 'doesn\u2019t matter');
         return {
@@ -390,6 +507,9 @@ export function searchHunts(args: { state: string; species: string; weapon?: str
           leftOut: { antlerless: k.hidden.antlerless, otherWeapon: k.hidden.weapon },
         };
       })(),
+      ...(args.month || typeof args.maxPointsToDraw === 'number'
+        ? { filtered: filterHunts(mod.hunts(r.key as never), args, residency, points, weapon, ranked) }
+        : {}),
     },
     sources,
   };

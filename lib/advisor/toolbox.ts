@@ -33,8 +33,8 @@ const obj = (properties: Record<string, unknown>, required: string[]) => ({ type
 
 export const TOOL_SPECS: ToolSpec[] = [
   { name: 'my_situation', description: "The hunter's home state, points by state and species (with projections), and every hunt on their plan with its stage, deadline and outlook. Call this first for any question about their own plan or points.", parameters: obj({}, []) },
-  { name: 'search_hunts', description: 'Hunts in one state and species within reach at the hunter\'s points, plus ones that come within reach if they keep applying. Odds are theirs only when oddsAreYours is true.', parameters: obj({ ...stateSpecies, weapon: { type: 'string', enum: ['any', 'rifle', 'archery', 'muzzleloader'] } }, ['state', 'species']) },
-  { name: 'get_hunt', description: 'One hunt by hunt code (or unit): odds at the hunter\'s points, cutoff, year-by-year outlook if they keep applying, hunter success, season.', parameters: obj({ ...stateSpecies, huntCode: S, unit: S }, ['state', 'species']) },
+  { name: 'search_hunts', description: 'Hunts in one state and species within reach at the hunter\'s points, plus ones that come within reach if they keep applying. Odds are theirs only when oddsAreYours is true. For a month ("a November hunt") pass month, e.g. "Nov": seasons that run in that month. For how often they want to hunt pass maxPointsToDraw: hunts that drew at or below that many points last year ("every 2-3 years" = 2, since drawing resets points to 0). Matches come back in filtered; recommend from them and say how many matched.', parameters: obj({ ...stateSpecies, weapon: { type: 'string', enum: ['any', 'rifle', 'archery', 'muzzleloader'] }, month: S, maxPointsToDraw: { type: 'integer' } }, ['state', 'species']) },
+  { name: 'get_hunt', description: 'One hunt by hunt code: odds at the hunter\'s points, cutoff, year-by-year outlook if they keep applying, hunter success, season. With a unit and no code, lists every hunt in that unit (seasons, weapons, points to draw, chance this year).', parameters: obj({ ...stateSpecies, huntCode: S, unit: S }, ['state', 'species']) },
   { name: 'compare_hunts', description: '2 to 4 hunts side by side, with the pick and why.', parameters: obj({ hunts: { type: 'array', maxItems: 4, items: obj({ ...stateSpecies, huntCode: S }, ['state', 'species', 'huntCode']) } }, ['hunts']) },
   { name: 'deadlines', description: 'The application deadline for a state and species, with its status: posted, expected, or last year\'s date.', parameters: obj({ ...stateSpecies, seasonYear: { type: 'integer' } }, ['state', 'species']) },
   { name: 'fees_and_rules', description: 'Posted fees and what the hunter needs before applying (licenses, hunter ed), with the application link.', parameters: obj(stateSpecies, ['state', 'species']) },
@@ -76,7 +76,7 @@ export function makeToolbox(sit: Situation, deps: { plan: PlanSnapshot | null; r
         case 'my_situation':
           return { status, result: deps.plan ? mySituation(deps.plan) : fail("Couldn't load your plan just now.") };
         case 'search_hunts':
-          return { status, result: searchHunts({ state, species, weapon: str(a.weapon) }, sit) };
+          return { status, result: searchHunts({ state, species, weapon: str(a.weapon), month: str(a.month), maxPointsToDraw: typeof a.maxPointsToDraw === 'number' ? a.maxPointsToDraw : null }, sit) };
         case 'get_hunt':
           return { status, result: getHunt({ state, species, huntCode: str(a.huntCode), unit: str(a.unit) }, sit) };
         case 'compare_hunts': {
