@@ -32,6 +32,8 @@ export const DRAW_WEIGHT: Record<string, (points: number) => number> = {
 export const HOW_IT_DRAWS: Record<string, string> = {
   NV: 'each applicant gets points squared plus one chances, and the lowest number wins',
   UT: 'half the permits go to the applicants with the most points, and everyone else gets points plus one chances in the random draw',
+  // Not a weighted lottery, but its odds are worked out the same way (preferenceDraw.ts).
+  CO: 'licenses go in point order, so above the level where they ran out you draw, at that level some do, and below it you don’t, except on hunts with a hybrid draw, where a few licenses go at random to applicants with 5 or more points',
 };
 
 // "so 6 points are 37 chances": how a hunter's points turn into draw entries.

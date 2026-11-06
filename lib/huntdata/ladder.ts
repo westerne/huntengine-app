@@ -25,13 +25,14 @@ export function ladderFor(hunt: Hunt, residency: Residency): Ladder {
   const overall = stat?.successPct ?? null;
   const lines = hunt.pointLines?.[residency] ?? [];
   const levels = Array.from({ length: MAX_LADDER_POINTS + 1 }, (_, p) => p);
-  const modeled = !!DRAW_WEIGHT[hunt.state] && lines.length > 0;
+  const weighted = !!DRAW_WEIGHT[hunt.state] && lines.length > 0;
+  const modeled = weighted || (!!hunt.drawnOut?.[residency] && lines.length > 0);
   if (lines.length) {
     return {
       basis: modeled ? 'modeled' : 'by-points',
       byPoints: levels.map((p) => successAtPoints(hunt, residency, p) ?? 0),
       overall,
-      chances: modeled ? levels.map((p) => chancesAt(hunt.state, p)!) : null,
+      chances: weighted ? levels.map((p) => chancesAt(hunt.state, p)!) : null,
       pointTable: lines,
     };
   }

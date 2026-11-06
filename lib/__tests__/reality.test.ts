@@ -95,10 +95,11 @@ describe('against the real draw data', () => {
     expect(r.headline).toMatch(/Nevada/);
   });
 
-  it('Colorado admits it cannot price the hunter, but still shows the hunts', () => {
+  it('Colorado moose admits it cannot price the hunter, but still shows the hunts', () => {
+    // Moose is a weighted draw past 3 points; CPW publishes only each hunt's overall rate for it.
     const mod = getStateModule('CO')!;
-    const hunts = buildGenericScoutDataset(mod, 'ELK' as never, 'nonresident', 'rifle', 3);
-    const r = drawReality(hunts, { points: 3, state: 'Colorado', species: 'Elk', thisYear: 2027 });
+    const hunts = buildGenericScoutDataset(mod, 'MOOSE' as never, 'resident', 'any', 3);
+    const r = drawReality(hunts, { points: 3, state: 'Colorado', species: 'Moose', thisYear: 2027 });
     expect(r.basis).toBe('published-rate');
     expect(r.priced).toBe(false);
     expect(r.headline).toMatch(/not by point level/);
@@ -118,7 +119,8 @@ describe('against the real draw data', () => {
     const r = drawReality(hunts, { points: 3, state: 'Colorado', species: 'Deer', thisYear: 2027 });
     expect(r.considered).toBeGreaterThan(600);
     expect(r.reachable.length).toBeGreaterThan(100);
-    expect(r.headline).toMatch(/drew more than half the people who applied/);
+    // Priced at the hunter's own points from CPW's drawn-out levels.
+    expect(r.basis).toBe('your-points');
   });
 
   it('never leads with a private-land tag just because it drew at 100%', () => {

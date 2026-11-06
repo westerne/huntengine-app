@@ -57,7 +57,10 @@ describe('suggestion guards', () => {
     const r = suggestCalendar({ ...base, homeState: 'XX', interests: [{ state: 'CO', species: 'Deer' }, { state: 'OR', species: 'Deer' }, { state: 'OR', species: 'Elk' }], points: [{ state: 'OR', species: 'Elk', points: 6 }, { state: 'OR', species: 'Deer', points: 2 }] }, ys);
     expect(r.suggestions.some((s) => isPrivateOnly({ huntCode: s.hunt_code, label: s.label }))).toBe(false);
     const deerNow = r.suggestions.filter((s) => s.species === 'Deer' && s.kind === 'target' && s.target_year === 2027);
-    expect(deerNow.filter((s) => s.recommended)).toHaveLength(Math.min(1, deerNow.length));
+    // At most one; none when it's traded off against a hunt worth building for (and a note says so).
+    const ticked = deerNow.filter((s) => s.recommended);
+    expect(ticked.length).toBeLessThanOrEqual(1);
+    if (deerNow.length && !ticked.length) expect(r.notes.some((n) => /deer: draw hunt .* or keep building/.test(n))).toBe(true);
   });
 });
 

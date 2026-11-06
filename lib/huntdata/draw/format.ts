@@ -4,6 +4,7 @@
 // Hunt (schema.ts); SCOUT and BRIEF use the shared builders in generic.ts.
 
 import type { DrawStat, PointLine, SpeciesKey, StateCode, Weapon } from '../schema';
+import type { DrawnOut } from '../preferenceDraw';
 
 export type DrawRow = {
   huntCode: string;          // agency hunt number, e.g. AZ "3001"
@@ -21,6 +22,8 @@ export type DrawRow = {
     nonresident: DrawStat | null;
   };
   pointLines?: Partial<Record<'resident' | 'nonresident', PointLine[]>>;
+  drawnOut?: Partial<Record<'resident' | 'nonresident', DrawnOut>>; // preference draws (CO)
+  hybridTags?: number;
 };
 
 export type DrawFile = {

@@ -1,3 +1,5 @@
+import type { DrawnOut } from './preferenceDraw';
+
 // Shared hunt-data format for every state HuntQuarters covers.
 //
 // Each state's agency publishes draw results in its own shape (WGFD demand
@@ -77,6 +79,10 @@ export type Hunt = {
     nonresident: DrawStat | null;
   };
   pointLines?: Partial<Record<Residency, PointLine[]>>;
+  // Preference draws (CO): where each pool's licenses ran out, and licenses
+  // given through the hybrid random draw. See preferenceDraw.ts.
+  drawnOut?: Partial<Record<Residency, DrawnOut>>;
+  hybridTags?: number;
   harvest?: Harvest | null;
 };
 

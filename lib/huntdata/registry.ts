@@ -1,9 +1,9 @@
 import type { StateCode, StateInfo, StateModule } from './schema';
 import { wyomingModule } from './states/wyoming';
 import { idahoModule } from './states/idaho';
-import { coloradoModule } from './states/colorado';
 import { montanaModule } from './states/montana';
 import utDraw from './draw/ut.json';
+import coDraw from './draw/co.json';
 import { drawFileModule } from './states/fromDrawFile';
 import type { DrawFile } from './draw/format';
 import azDraw from './draw/az.json';
@@ -41,7 +41,7 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
     code: 'CO', name: 'COLORADO', status: 'live', batch: 'live',
     agency: { name: 'Colorado Parks and Wildlife', url: 'https://cpw.state.co.us' },
     drawSystem: 'preference', rulesVerified: true,
-    drawSystemNote: 'Preference-point draw: first-choice applicants with the most points draw first. Some archery and rifle elk licenses are over the counter.',
+    drawSystemNote: 'Preference-point draw: first-choice applicants with the most points draw first, so a hunt’s licenses run out at one point level each year. On the hardest hunts a hybrid draw gives up to 20% of licenses at random to applicants below that level; in 2026 every hybrid winner held at least 5 points. Moose, bighorn sheep and mountain goat use a weighted random draw once you hold 3 points. Some archery and rifle elk licenses are over the counter.',
   },
   MT: {
     code: 'MT', name: 'MONTANA', status: 'live', batch: 'live',
@@ -197,6 +197,7 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   ND: ndDraw as DrawFile,
   KS: ksDraw as DrawFile,
   NV: nvDraw as DrawFile,
+  CO: coDraw as DrawFile,
   UT: utDraw as DrawFile,
   OK: okDraw as DrawFile,
   CA: caDraw as DrawFile,
@@ -209,7 +210,6 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
 const MODULES: Partial<Record<StateCode, StateModule>> = {
   WY: wyomingModule(STATE_INFO.WY),
   ID: idahoModule(STATE_INFO.ID),
-  CO: coloradoModule(STATE_INFO.CO),
   MT: montanaModule(STATE_INFO.MT),
 
   ...Object.fromEntries(

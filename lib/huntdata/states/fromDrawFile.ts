@@ -42,6 +42,8 @@ export function drawFileModule(info: StateInfo, file: DrawFile): StateModule {
         openTo: row.openTo,
         season: row.season,
         pointLines: row.pointLines,
+        drawnOut: row.drawnOut,
+        hybridTags: row.hybridTags,
         harvest: harvestForHunt(info.code, sp, row.huntCode, row.unit, row.weapon ?? weaponFromLabel(`${row.label ?? ''} ${row.huntCode}`)),
       }));
       cache.set(sp, hunts);

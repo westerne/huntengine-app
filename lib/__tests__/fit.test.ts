@@ -51,12 +51,20 @@ describe('ranking by fit, then draw', () => {
 });
 
 describe('where odds by points aren’t published', () => {
-  it('ranks Colorado by fit alone, never dating a draw off an overall rate', () => {
+  it('ranks Colorado moose by fit alone, never dating a draw off an overall rate', () => {
+    // Moose is a weighted draw past 3 points; CPW's recap gives only overall rates for it.
     const co = getStateModule('CO')!;
-    const r = rankHunts(co.hunts('ELK' as never), { residency: 'nonresident', points: 3, usesPoints: true, seasonYear: 2027, prefs: DEFAULT_PREFS, stateName: 'Colorado', species: 'Elk' });
+    const r = rankHunts(co.hunts('MOOSE' as never), { residency: 'resident', points: 3, usesPoints: true, seasonYear: 2027, prefs: DEFAULT_PREFS, stateName: 'Colorado', species: 'Moose' });
     expect(r.drawNow.length + r.building.length + r.longShots.length).toBe(0);
     expect(r.unpriced.length).toBeGreaterThan(0);
     expect(r.unpriced.every((h) => !h.draw.yours)).toBe(true);
+  });
+  it('groups Colorado elk by when you’d draw, from CPW’s drawn-out levels', () => {
+    const co = getStateModule('CO')!;
+    const r = rankHunts(co.hunts('ELK' as never), { residency: 'nonresident', points: 3, usesPoints: true, seasonYear: 2027, prefs: DEFAULT_PREFS, stateName: 'Colorado', species: 'Elk' });
+    expect(r.unpriced).toHaveLength(0);
+    expect(r.drawNow.length + r.building.length).toBeGreaterThan(0);
+    expect([...r.drawNow, ...r.building].every((h) => h.draw.yours)).toBe(true);
   });
   it('treats the overall rate as your chance where your residency has no points (Wyoming residents)', () => {
     const wy = getStateModule('WY')!;

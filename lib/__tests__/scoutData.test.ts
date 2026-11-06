@@ -106,11 +106,11 @@ describe('states SCOUT still hand-builds', () => {
 describe('Colorado on the shared builders', () => {
   const mod = () => getStateModule('CO')!;
 
-  it('can be shortlisted: every hunt has a draw figure', () => {
+  it('can be shortlisted: every hunt someone applied for has a draw figure', () => {
     for (const species of ['DEER', 'ELK', 'ANTELOPE', 'MOOSE']) {
       const hunts = buildGenericScoutDataset(mod(), species as never, 'nonresident', 'any', 3);
       expect(hunts.length).toBeGreaterThan(0);
-      expect(hunts.every((h) => h.drawSuccess != null)).toBe(true);
+      expect(hunts.filter((h) => Number(h.applicants) > 0).every((h) => h.drawSuccess != null)).toBe(true);
       expect(buildShortlist(hunts as never, { size: 8 })).toHaveLength(8);
     }
   });

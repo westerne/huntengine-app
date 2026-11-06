@@ -74,6 +74,9 @@ export default function HuntView({ hunt, residency, ladder, usesPoints, startPoi
   const first = rows[0];
   const last = rows[rows.length - 1];
   const half = rows.find((r) => r.cumulative >= 50);
+  // In a preference draw the answer is a year: the point level that always drew.
+  const sureAt = ladder.byPoints.findIndex((c) => c >= 100);
+  const sureYear = usesPoints && sureAt > pts ? seasonYear + (sureAt - pts) : null;
   const sp = hunt.species.toLowerCase();
   const res = residency === 'resident' ? 'Resident' : 'Non-resident';
   const flat = ladder.basis === 'overall' || !usesPoints;
@@ -105,7 +108,9 @@ export default function HuntView({ hunt, residency, ladder, usesPoints, startPoi
                   ? `${hunt.stateName} publishes how this hunt drew overall, not by point level, so this is the hunt's rate, not your own chance${usesPoints ? ' at your points' : ''}.`
                   : half
                     ? `If you apply every year, you're more likely than not to have drawn by ${half.year}.`
-                    : `If you apply every year, there's about a ${chanceText(last.cumulative)} chance you've drawn it by ${last.year}.`}
+                    : sureYear
+                      ? `If you apply every year, you'd hold ${sureAt} points in ${sureYear}: enough to draw it if the draw looks like ${hunt.drawYear ?? 'last year'}'s.${last.cumulative > 0 ? ` Before then, about ${chanceText(last.cumulative)} by ${last.year}.` : ''}`
+                      : `If you apply every year, there's about a ${chanceText(last.cumulative)} chance you've drawn it by ${last.year}.`}
               </p>
             </div>
             <BigNumber value={chanceShort(first.chance)} sub={flat ? `drew overall (${hunt.drawYear ?? 'last'} draw)` : `in ${first.year} at ${first.points} pts`} />
@@ -169,7 +174,7 @@ export default function HuntView({ hunt, residency, ladder, usesPoints, startPoi
                 {ladder.pointTable.map((l) => <tr key={l.points}><td className="hq-data">{l.points}</td><td className="hq-data">{l.applicants}</td><td className="hq-data">{l.drawn}</td></tr>)}
               </tbody>
             </table>
-            {ladder.basis === 'modeled' && <p className="hq-small" style={{ marginTop: 8 }}>A level where nobody drew still had a chance; it&apos;s a lottery, and the chart above shows what those points were worth.</p>}
+            {ladder.chances && <p className="hq-small" style={{ marginTop: 8 }}>A level where nobody drew still had a chance; it&apos;s a lottery, and the chart above shows what those points were worth.</p>}
           </details>
         </Card>
       )}

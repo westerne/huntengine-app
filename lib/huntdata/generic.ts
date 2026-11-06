@@ -1,5 +1,6 @@
 import type { DrawStat, Hunt, Residency, SpeciesKey, StateModule, Weapon } from './schema';
 import { DRAW_WEIGHT, weightedOdds } from './weightedDraw';
+import { preferenceOdds } from './preferenceDraw';
 
 // Default SCOUT and BRIEF data for any state module that doesn't have its own
 // hand-tuned builder in app/api/strategy. A new state only has to produce
@@ -42,6 +43,10 @@ export function pointLineAt(h: Hunt, residency: Residency, points: number) {
 // table, not read off last year's winners at exactly this level — see
 // weightedDraw.ts. Small chances keep two decimals so 0.04% doesn't read as 0.
 export function successAtPoints(h: Hunt, residency: Residency, points: number): number | null {
+  if (h.drawnOut?.[residency]) {
+    const p = preferenceOdds(h, residency, points);
+    return p == null ? null : p >= 1 ? Math.round(p * 10) / 10 : Math.round(p * 100) / 100;
+  }
   const weight = DRAW_WEIGHT[h.state];
   const lines = h.pointLines?.[residency];
   if (weight && lines?.length) {
