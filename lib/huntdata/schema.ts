@@ -42,6 +42,7 @@ export type PointLine = {
   points: number;
   applicants: number;
   drawn: number;
+  bonus?: number;    // of those drawn, permits reserved for the most points (UT); the rest were random
 };
 
 export type Harvest = {

@@ -13,6 +13,7 @@
 // the registry.
 
 import { STATE_INFO } from './registry';
+import { DRAW_WEIGHT } from './weightedDraw';
 import type { StateCode } from './schema';
 
 // Is the fewest-points-that-drew figure a bar worth building toward at all?
@@ -23,6 +24,14 @@ import type { StateCode } from './schema';
 export function pointsBarMatters(state: StateCode | string): boolean {
   const info = STATE_INFO[state as StateCode];
   return !info || !['bonus-squared', 'random'].includes(info.drawSystem);
+}
+
+// Should the fewest points that drew be shown as a goal to build toward? Not
+// where the draw is modeled (NV, UT): the odds at every point level are worked
+// out, and Utah's fewest-that-drew is a random-draw winner, not the cutoff for
+// the permits reserved for the most points.
+export function cutoffIsMilestone(state: StateCode | string): boolean {
+  return pointsBarMatters(state) && !DRAW_WEIGHT[state];
 }
 
 export function cutoffIsADate(state: StateCode | string): boolean {

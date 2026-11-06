@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { ALL_STATES, LIVE_STATES, STATE_INFO, getStateModule, toStateCode } from './registry';
 import { validateHunts } from './validate';
 import { filterToKnownUnits, normalizeUnit } from './unitGuard';
-import { buildGenericDrawSummary, buildGenericScoutDataset } from './generic';
+import { buildGenericDrawSummary, buildGenericScoutDataset, successAtPoints } from './generic';
 import { parsePct } from './util';
 import type { Hunt, StateModule } from './schema';
 
@@ -60,10 +60,17 @@ describe('spot checks against source data', () => {
     expect(elk.find((h) => h.huntCode.endsWith('A'))?.weapon).toBe('archery');
   });
 
-  it('UT hand-entered data is marked estimated', () => {
-    const ut = getStateModule('UT')!.hunts('DEER');
-    expect(ut.length).toBeGreaterThan(0);
-    expect(ut.every((h) => h.dataQuality === 'estimated' && h.drawYear === null)).toBe(true);
+  it('UT comes from DWR 2025 draw results, with the top-points permits split out', () => {
+    const elk = getStateModule('UT')!.hunts('ELK');
+    expect(elk.every((h) => h.dataQuality === 'official' && h.drawYear === 2025)).toBe(true);
+    // EB3024 Beaver, East early rifle: residents 1715 applied for 9 permits, 5 to the most points.
+    const beaver = elk.find((h) => h.huntCode === 'EB3024')!;
+    expect(beaver.draw.resident).toMatchObject({ tags: 9, applicants: 1715 });
+    expect(beaver.pointLines!.resident!.find((l) => l.points === 29)).toEqual({ points: 29, applicants: 5, drawn: 4, bonus: 4 });
+    // 30 points is above everyone the top-points permits reached; 29 gets 4 of 5 of them, plus the lottery.
+    expect(successAtPoints(beaver, 'resident', 30)).toBe(100);
+    expect(successAtPoints(beaver, 'resident', 29)).toBeCloseTo(80.2, 1);
+    expect(successAtPoints(beaver, 'resident', 0)).toBeLessThan(0.1);
   });
 });
 
@@ -219,17 +226,13 @@ describe('harvest (Montana, Utah)', () => {
     expect(harvestRowsForUnit('MT', 'ELK', '100')[0]).toMatchObject({ hunters: 1536, harvest: 84, successPct: 5 });
   });
 
-  it('UT units all get 2024 harvest, and Henry Mtns premium matches DWR', async () => {
-    const { harvestRowsForUnit } = await import('./harvest');
+  it('UT joins 2024 harvest to draw hunts by DWR hunt number', () => {
     const ut = getStateModule('UT')!;
-    // No confirmed DWR hunt for these app units yet; left unmatched on purpose.
-    const unmapped = ['Uintas East Moose', 'Plateau'];
-    for (const s of ut.species) for (const h of ut.hunts(s)) {
-      if (unmapped.includes(h.unit)) expect(h.harvest, h.unit).toBeNull();
-      else expect(h.harvest, `${s} ${h.unit}`).toBeTruthy();
-    }
-    const henry = harvestRowsForUnit('UT', 'DEER', 'Henry Mountains').find((r) => r.huntCode === 'DB1003');
-    expect(henry).toMatchObject({ hunters: 27, harvest: 26, successPct: 96.2 });
+    const henry = ut.hunts('DEER').find((h) => h.huntCode === 'DB1003')!;
+    expect(henry.harvest).toMatchObject({ hunters: 27, harvest: 26, successPct: 96.2, scope: 'hunt' });
+    // DWR's harvest report leaves out CWMU (private-land) hunts.
+    const public_ = ut.hunts('ELK').filter((h) => !/CWMU/.test(h.label ?? ''));
+    expect(public_.filter((h) => h.harvest).length / public_.length).toBeGreaterThan(0.9);
   });
 });
 

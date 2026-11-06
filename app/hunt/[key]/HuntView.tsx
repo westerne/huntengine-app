@@ -10,6 +10,7 @@ import { Minus, Plus, Scale } from 'lucide-react';
 import { BigNumber, ButtonLink, Card, Caveat, Eyebrow, StatRow } from '../../ui';
 import { huntTitle, labelText } from '@/lib/huntName';
 import { chanceShort, chanceText, ladderRows, MAX_LADDER_POINTS, type Ladder, type LadderRow } from '@/lib/huntdata/ladder';
+import { HOW_IT_DRAWS } from '@/lib/huntdata/weightedDraw';
 import AddToPlan from '../../find/AddToPlan';
 import { AskButton } from '../../components/Advisor';
 
@@ -128,7 +129,7 @@ export default function HuntView({ hunt, residency, ladder, usesPoints, startPoi
 
           <div className="hq-stack" style={{ gap: 6, marginTop: 14 }}>
             <p className="hq-small">If the draw looks like {hunt.drawYear ?? 'last year'}&apos;s: the same tags and the same field of applicants.{!flat ? ' Everyone else builds points too, so real odds likely climb a little slower than this.' : ''}</p>
-            {ladder.basis === 'modeled' && <p className="hq-small">Worked out from {hunt.stateName}&apos;s point table: each applicant gets points squared plus one chances, and the lowest number wins.</p>}
+            {ladder.basis === 'modeled' && <p className="hq-small">Worked out from {hunt.stateName}&apos;s point table: {HOW_IT_DRAWS[hunt.state] ?? 'more points, more chances'}.</p>}
             {ladder.basis === 'by-points' && <p className="hq-small">From the agency&apos;s results at each point level. Levels with few applicants jump around.</p>}
           </div>
 

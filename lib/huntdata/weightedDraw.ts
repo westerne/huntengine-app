@@ -14,12 +14,34 @@
 // Checked against Nevada's 2025 results across every hunt: expected draws by
 // point level land within a few percent of the actual (828 vs 835 at 6 points,
 // 155 vs 144 at 10). Only states checked that way are listed here.
+//
+// Utah adds a step before the lottery: half of each hunt's permits go to the
+// applicants with the most bonus points (PointLine.bonus says how many went at
+// each level). Everyone those don't reach goes into the random draw with
+// points + 1 chances.
 
 import type { PointLine } from './schema';
 
 export const DRAW_WEIGHT: Record<string, (points: number) => number> = {
   NV: (p) => p * p + 1,
+  UT: (p) => p + 1,
 };
+
+// How each modeled draw works, in a phrase that finishes "…from the point
+// table: ___".
+export const HOW_IT_DRAWS: Record<string, string> = {
+  NV: 'each applicant gets points squared plus one chances, and the lowest number wins',
+  UT: 'half the permits go to the applicants with the most points, and everyone else gets points plus one chances in the random draw',
+};
+
+// "so 6 points are 37 chances": how a hunter's points turn into draw entries.
+export function chancesSentence(state: string, points: number): string | null {
+  const n = chancesAt(state, points);
+  if (n == null) return null;
+  const pts = `${points} ${points === 1 ? 'point is' : 'points are'} ${n} ${n === 1 ? 'chance' : 'chances'}`;
+  if (state === 'UT') return `Half the permits go to the most points; in the random draw for the rest you get one entry plus one per point, so ${pts}.`;
+  return `Every application is a chance: you get your points squared plus one draw numbers, so ${pts}.`;
+}
 
 export function chancesAt(state: string, points: number): number | null {
   const w = DRAW_WEIGHT[state];
@@ -31,6 +53,30 @@ export function chancesAt(state: string, points: number): number | null {
 // the ones that actually went to this pool's applicants, so second-choice and
 // leftover tags elsewhere don't inflate it.
 export function weightedOdds(lines: PointLine[], points: number, weight: (p: number) => number): number | null {
+  const p = Math.max(0, Math.floor(points));
+  if (!lines.some((l) => l.applicants > 0)) return null;
+  const top = topPointsShare(lines, p);
+  // Whoever the top-points permits don't reach goes into the random draw.
+  const rest = lines.map((l) => ({ ...l, applicants: l.applicants - Math.min(l.bonus ?? 0, l.applicants), drawn: Math.max(0, l.drawn - (l.bonus ?? 0)) }));
+  const random = lotteryOdds(rest, p, weight) ?? 0;
+  return 100 * (top + (1 - top) * (random / 100));
+}
+
+// Share (0–1) of a hunter at `points` who'd get one of the permits reserved for
+// the most points: everyone above the level where they ran out, part of that level.
+export function topPointsShare(lines: PointLine[], points: number): number {
+  let left = lines.reduce((s, l) => s + (l.bonus ?? 0), 0);
+  if (left <= 0) return 0;
+  for (const l of [...lines].sort((a, b) => b.points - a.points)) {
+    if (points > l.points) return left > 0 ? 1 : 0;
+    if (points === l.points) return l.applicants ? Math.min(1, left / l.applicants) : left > 0 ? 1 : 0;
+    left -= l.applicants;
+    if (left <= 0) return 0;
+  }
+  return left > 0 ? 1 : 0;
+}
+
+function lotteryOdds(lines: PointLine[], points: number, weight: (p: number) => number): number | null {
   const pool = lines.filter((l) => l.applicants > 0).map((l) => ({ n: l.applicants, w: weight(l.points) }));
   const applicants = pool.reduce((s, l) => s + l.n, 0);
   const tags = lines.reduce((s, l) => s + Math.min(l.drawn, l.applicants), 0);
@@ -45,5 +91,5 @@ export function weightedOdds(lines: PointLine[], points: number, weight: (p: num
     const mid = (lo + hi) / 2;
     if (expected(mid) < tags) lo = mid; else hi = mid;
   }
-  return 100 * (1 - Math.exp(-weight(Math.max(0, Math.floor(points))) * hi));
+  return 100 * (1 - Math.exp(-weight(points) * hi));
 }

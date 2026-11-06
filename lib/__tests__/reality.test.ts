@@ -136,14 +136,13 @@ describe('against the real draw data', () => {
     expect(r.caveat).toMatch(/private-land tags you'd need permission for/);
   });
 
-  it('Utah deer is thin, and says the best rate rather than "0 drew more than half"', () => {
+  it('Utah deer is priced at the hunter’s own points from the bonus-draw model', () => {
     const mod = getStateModule('UT')!;
     const hunts = buildGenericScoutDataset(mod, 'DEER' as never, 'nonresident', 'any', 12);
     const r = drawReality(hunts, { points: 12, state: 'Utah', species: 'Deer', thisYear: 2027 });
-    expect(r.priced).toBe(false);
+    expect(r.priced).toBe(true);
     expect(r.reachable.length).toBeGreaterThan(0);
-    expect(r.headline).toMatch(/None of the \d+ hunts drew even half/);
-    expect(r.headline).toMatch(/the best was/);
+    expect(r.reachable.every((h) => h.odds != null)).toBe(true);
   });
 
   it('Nevada at six points is cow tags, and says so instead of claiming 100%', () => {

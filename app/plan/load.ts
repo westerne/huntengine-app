@@ -9,7 +9,7 @@ import { getStateModule } from '@/lib/huntdata/registry';
 import { speciesKeyOf } from '@/lib/species';
 import { readProfile } from '../calendar/readProfile';
 import { deadlineFor, deadlineText, type Deadline } from '@/lib/huntdata/apply';
-import { pointsBarMatters } from '@/lib/huntdata/drawSystem';
+import { cutoffIsMilestone } from '@/lib/huntdata/drawSystem';
 
 export type PlanHunt = MyHunt & {
   due: string | null;          // "Due Apr 7" / "Expected Jun 12" / "Last year Apr 7"
@@ -66,8 +66,8 @@ export async function loadPlan(supabase: Client, userId: string) {
     const first = [...targets].sort((a, b) => (a.year ?? 0) - (b.year ?? 0))[0];
     const hunt = first ? findHunt(mod, first.species, first.huntCode, first.unit) : null;
     const res = residencyFor(p.state);
-    // No cutoff line in a pure lottery: there it's only who happened to win.
-    const cutoff = hunt && pointsBarMatters(p.state) ? (res === 'resident' ? hunt.draw.resident : hunt.draw.nonresident)?.minPoints ?? null : null;
+    // No cutoff line in a lottery or a modeled draw: there it's only who happened to win.
+    const cutoff = hunt && cutoffIsMilestone(p.state) ? (res === 'resident' ? hunt.draw.resident : hunt.draw.nonresident)?.minPoints ?? null : null;
     return { state: p.state, species: p.species, current: p.current, usesPoints: uses, live: !!mod, byYear, cutoff, drawYear: first?.year ?? null };
   }).sort((a, b) => a.state.localeCompare(b.state) || a.species.localeCompare(b.species));
 

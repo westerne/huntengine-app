@@ -91,3 +91,47 @@ describe('odds ladder', () => {
     expect(chanceText(0)).toBe('0%');
   });
 });
+
+describe('Utah bonus draw', () => {
+  const ut = getStateModule('UT')!;
+
+  it('reproduces who actually drew in 2025, point level by point level', () => {
+    // Same check as Nevada's: top-points permits first, then points + 1 chances
+    // in the random draw, summed over every Utah hunt and pool.
+    const band = new Map<number, { expected: number; actual: number }>();
+    for (const sp of ut.species) {
+      for (const h of ut.hunts(sp)) {
+        for (const r of ['resident', 'nonresident'] as const) {
+          const lines = h.pointLines?.[r];
+          if (!lines?.length || !lines.some((l) => l.drawn)) continue;
+          for (const l of lines) {
+            const b = band.get(Math.min(l.points, 15)) ?? { expected: 0, actual: 0 };
+            b.expected += (l.applicants * weightedOdds(lines, l.points, DRAW_WEIGHT.UT)!) / 100;
+            b.actual += Math.min(l.drawn, l.applicants);
+            band.set(Math.min(l.points, 15), b);
+          }
+        }
+      }
+    }
+    for (const [pts, b] of band) {
+      if (b.actual < 100) continue;
+      expect(Math.abs(b.expected - b.actual) / b.actual, `at ${pts} points`).toBeLessThan(0.1);
+    }
+  });
+
+  it('gives the top point holders the reserved permits and everyone else a weighted chance', () => {
+    const h = findHunt(ut, 'Elk', 'EB3013', null)!; // North Slope, Three Corners archery
+    const at = (p: number) => successAtPoints(h, 'nonresident', p)!;
+    expect(at(0)).toBeGreaterThan(0);
+    expect(at(10)).toBeGreaterThan(at(0));
+    expect(at(10)).toBeLessThan(10);
+  });
+
+  it("doesn't turn a random-draw winner's points into a goal", () => {
+    const o = drawOutlook(findHunt(ut, 'Elk', 'EB3013', null)!, 'nonresident', ys, projectPoints(10, ys));
+    expect(o.kind).toBe('draw');
+    if (o.kind !== 'draw') return;
+    expect(o.firstYearAtMin).toBeNull();
+    expect(o.text).toMatch(/10 points are 11 chances/);
+  });
+});

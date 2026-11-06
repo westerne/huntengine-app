@@ -295,7 +295,7 @@ export default function PlanView({ thisYear, years, hunts, points, homeKnown, lo
           )}
         </>
       )}
-      <p className="hq-small">Odds come from each state&apos;s last published results, not a forecast. Nevada&apos;s are worked out from its point table, since every applicant gets points squared plus one chances. Confirm rules and points with the agency before you apply.</p>
+      <p className="hq-small">Odds come from each state&apos;s last published results, not a forecast. Nevada&apos;s and Utah&apos;s are worked out from their point tables, since points buy extra chances there. Confirm rules and points with the agency before you apply.</p>
     </main>
   );
 }

@@ -4,8 +4,8 @@
 
 import type { Hunt, Residency, StateModule } from './huntdata/schema';
 import { successAtPoints, successText } from './huntdata/generic';
-import { pointsBarMatters } from './huntdata/drawSystem';
-import { chancesAt } from './huntdata/weightedDraw';
+import { cutoffIsMilestone } from './huntdata/drawSystem';
+import { chancesSentence } from './huntdata/weightedDraw';
 import { speciesKeyOf } from './species';
 
 export const CALENDAR_YEARS = 3;
@@ -146,7 +146,7 @@ export function drawOutlook(
   // non-resident pools) — that's still an honest outlook.
   if (perYear.every((r) => r.pct == null) && minPoints == null) return { kind: 'none', text: 'No published draw odds for this hunt.' };
 
-  const isBar = pointsBarMatters(hunt.state);
+  const isBar = cutoffIsMilestone(hunt.state);
   const firstYearAtMin = isBar && minPoints != null && pointsByYear
     ? years.find((y) => (pointsByYear[y] ?? -1) >= minPoints) ?? null
     : null;
@@ -154,10 +154,10 @@ export function drawOutlook(
   const yr = hunt.drawYear ?? 'last year';
   const parts: string[] = [];
   const nowPts = pointsByYear?.[years[0]];
-  const chances = nowPts != null ? chancesAt(hunt.state, nowPts) : null;
+  const chances = nowPts != null ? chancesSentence(hunt.state, nowPts) : null;
   if (chances != null) {
     // A weighted lottery: say how it works instead of quoting a cutoff.
-    parts.push(`Every application is a chance: you get your points squared plus one draw numbers, so ${nowPts} ${nowPts === 1 ? 'point is' : 'points are'} ${chances} chances.`);
+    parts.push(chances);
   } else if (!isBar && minPoints != null && minPoints > 0) {
     parts.push(`In ${yr} the fewest points that drew was ${minPoints}, but it's a lottery: that's not a requirement or a promise.`);
   } else if (minPoints != null && minPoints > 0) {

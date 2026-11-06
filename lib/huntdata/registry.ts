@@ -3,7 +3,7 @@ import { wyomingModule } from './states/wyoming';
 import { idahoModule } from './states/idaho';
 import { coloradoModule } from './states/colorado';
 import { montanaModule } from './states/montana';
-import { utahModule } from './states/utah';
+import utDraw from './draw/ut.json';
 import { drawFileModule } from './states/fromDrawFile';
 import type { DrawFile } from './draw/format';
 import azDraw from './draw/az.json';
@@ -197,6 +197,7 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   ND: ndDraw as DrawFile,
   KS: ksDraw as DrawFile,
   NV: nvDraw as DrawFile,
+  UT: utDraw as DrawFile,
   OK: okDraw as DrawFile,
   CA: caDraw as DrawFile,
   WA: waDraw as DrawFile,
@@ -210,7 +211,7 @@ const MODULES: Partial<Record<StateCode, StateModule>> = {
   ID: idahoModule(STATE_INFO.ID),
   CO: coloradoModule(STATE_INFO.CO),
   MT: montanaModule(STATE_INFO.MT),
-  UT: utahModule(STATE_INFO.UT),
+
   ...Object.fromEntries(
     (Object.entries(DRAW_FILES) as Array<[StateCode, DrawFile]>).map(([c, f]) => [c, drawFileModule(STATE_INFO[c], f)]),
   ),
