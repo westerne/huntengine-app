@@ -191,6 +191,8 @@ export function drawReality(
     // Squared-bonus or random: no points level brings a hunt "within reach",
     // so there's no list of hunts to build toward.
     lottery?: boolean;
+    // Points it takes to be in the draw at all (Colorado moose, sheep, goat: 3).
+    entryPoints?: number;
   },
 ): DrawReality {
   const points = Math.max(0, Math.floor(opts.points) || 0);
@@ -273,7 +275,9 @@ export function drawReality(
 
   return {
     ...base,
-    headline: headlineFor(base, looked, opts.species, opts.state),
+    headline: opts.entryPoints && points < opts.entryPoints && !base.reachable.length
+      ? `You need ${ptsText(opts.entryPoints)} to be in ${opts.state}'s ${opts.species.toLowerCase()} draw. With ${points === 1 ? '1 point' : `${points} points`} you'd have them in ${opts.thisYear + opts.entryPoints - points} if you apply or buy a point every year, and from there it's a random draw where each point adds a chance.`
+      : headlineFor(base, looked, opts.species, opts.state),
     caveat: [
       base.dataYear
         ? `Based on the ${base.dataYear} draw. Point creep and demand move these every year, so treat a date as what last year's result implies, not a promise.`

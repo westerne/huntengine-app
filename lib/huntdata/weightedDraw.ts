@@ -20,7 +20,8 @@
 // each level). Everyone those don't reach goes into the random draw with
 // points + 1 chances.
 
-import type { PointLine } from './schema';
+import type { Hunt, PointLine } from './schema';
+import { isWeightedPreference, weightedChances } from './preferenceDraw';
 
 export const DRAW_WEIGHT: Record<string, (points: number) => number> = {
   NV: (p) => p * p + 1,
@@ -36,8 +37,22 @@ export const HOW_IT_DRAWS: Record<string, string> = {
   CO: 'licenses go in point order, so above the level where they ran out you draw, at that level some do, and below it you don’t, except on hunts with a hybrid draw, where a few licenses go at random to applicants with 5 or more points',
 };
 
+// Colorado moose, sheep and goat aren't drawn like the rest of Colorado.
+const CO_WEIGHTED = 'once you hold 3 preference points you’re in a random draw, and each year after that adds a weighted point and another chance, so points here are preference plus weighted points';
+
+// HOW_IT_DRAWS for one hunt.
+export function howItDraws(hunt: { state: string; drawnOut?: Hunt['drawnOut'] }): string | null {
+  return isWeightedPreference(hunt) ? CO_WEIGHTED : HOW_IT_DRAWS[hunt.state] ?? null;
+}
+
 // "so 6 points are 37 chances": how a hunter's points turn into draw entries.
-export function chancesSentence(state: string, points: number): string | null {
+export function chancesSentence(state: string, points: number, hunt?: Pick<Hunt, 'drawnOut'>): string | null {
+  if (hunt && isWeightedPreference(hunt)) {
+    const n = weightedChances(points);
+    return n
+      ? `From 3 points it's a random draw where each point past 3 adds a chance, so ${points} points are ${n} ${n === 1 ? 'chance' : 'chances'}.`
+      : `You need 3 points to be in the draw; you hold ${points}.`;
+  }
   const n = chancesAt(state, points);
   if (n == null) return null;
   const pts = `${points} ${points === 1 ? 'point is' : 'points are'} ${n} ${n === 1 ? 'chance' : 'chances'}`;

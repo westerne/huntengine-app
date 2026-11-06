@@ -11,6 +11,8 @@ import {
   cohortOf, isBlindSpot, isWantKey, rankByWants, seasonText,
   type BlindSpot, type WantKey,
 } from '@/lib/huntdata/wants';
+import { entryPointsFor } from '@/lib/huntdata/preferenceDraw';
+import { speciesKeyOf } from '@/lib/species';
 import { isAntlerless, oddsOf } from '@/lib/huntdata/shortlist';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -125,7 +127,8 @@ export async function POST(req: Request) {
     species: ctx.species,
     thisYear: currentSeasonYear(),
     cutoffIsADate: cutoffIsADate(ctx.mod.code),
-    lottery: !pointsBarMatters(ctx.mod.code),
+    lottery: !pointsBarMatters(ctx.mod.code) || entryPointsFor(ctx.mod.code, speciesKeyOf(ctx.species, ctx.mod.code)) != null,
+    entryPoints: entryPointsFor(ctx.mod.code, speciesKeyOf(ctx.species, ctx.mod.code)),
   });
   const widened = wants.includes('anyAnimal');
   const codes = new Set(

@@ -51,13 +51,18 @@ describe('ranking by fit, then draw', () => {
 });
 
 describe('where odds by points aren’t published', () => {
-  it('ranks Colorado moose by fit alone, never dating a draw off an overall rate', () => {
-    // Moose is a weighted draw past 3 points; CPW's recap gives only overall rates for it.
-    const co = getStateModule('CO')!;
-    const r = rankHunts(co.hunts('MOOSE' as never), { residency: 'resident', points: 3, usesPoints: true, seasonYear: 2027, prefs: DEFAULT_PREFS, stateName: 'Colorado', species: 'Moose' });
+  it('ranks California elk by fit alone, never dating a draw off an overall rate', () => {
+    // CDFW publishes only overall rates, not odds by point level.
+    const ca = getStateModule('CA')!;
+    const r = rankHunts(ca.hunts('ELK' as never), { residency: 'resident', points: 3, usesPoints: true, seasonYear: 2027, prefs: DEFAULT_PREFS, stateName: 'California', species: 'Elk' });
     expect(r.drawNow.length + r.building.length + r.longShots.length).toBe(0);
     expect(r.unpriced.length).toBeGreaterThan(0);
     expect(r.unpriced.every((h) => !h.draw.yours)).toBe(true);
+  });
+  it('prices Colorado moose at your points, from the weighted draw', () => {
+    const co = getStateModule('CO')!;
+    const r = rankHunts(co.hunts('MOOSE' as never), { residency: 'resident', points: 8, usesPoints: true, seasonYear: 2027, prefs: DEFAULT_PREFS, stateName: 'Colorado', species: 'Moose' });
+    expect(r.drawNow.length + r.building.length + r.longShots.length).toBeGreaterThan(0);
   });
   it('groups Colorado elk by when you’d draw, from CPW’s drawn-out levels', () => {
     const co = getStateModule('CO')!;

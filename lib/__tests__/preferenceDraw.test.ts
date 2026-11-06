@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { getStateModule } from '../huntdata/registry';
 import { successAtPoints } from '../huntdata/generic';
-import { preferenceOdds } from '../huntdata/preferenceDraw';
+import { preferenceOdds, weightedPreferenceOdds } from '../huntdata/preferenceDraw';
+import { chancesSentence, howItDraws } from '../huntdata/weightedDraw';
+import { drawReality } from '../huntdata/reality';
+import { buildGenericScoutDataset } from '../huntdata/generic';
 import { ladderFor } from '../huntdata/ladder';
 
 const co = getStateModule('CO')!;
@@ -53,5 +56,75 @@ describe('Colorado preference draw', () => {
     expect(l.basis).toBe('modeled');
     expect(l.chances).toBeNull();
     expect(l.byPoints[21]).toBe(100);
+  });
+});
+
+describe('Colorado moose, sheep and goat weighted draw', () => {
+  const moose = (code: string) => co.hunts('MOOSE').find((h) => h.huntCode === code)!;
+
+  it('reproduces who drew in 2026 by point band, and nobody under 3 points', () => {
+    const bands = { under3: [0, 0], low: [0, 0], high: [0, 0] } as Record<string, [number, number]>;
+    for (const sp of ['MOOSE', 'BIGHORNSHEEP', 'MTNGOAT'] as const) {
+      for (const h of co.hunts(sp)) {
+        for (const r of ['resident', 'nonresident'] as const) {
+          if (h.drawnOut?.[r]?.kind !== 'weighted') continue;
+          const lines = h.pointLines?.[r] ?? [];
+          for (const l of lines) {
+            const b = bands[l.points < 3 ? 'under3' : l.points < 10 ? 'low' : 'high'];
+            b[0] += (l.applicants * (weightedPreferenceOdds(lines, l.points) ?? 0)) / 100;
+            b[1] += l.drawn;
+          }
+        }
+      }
+    }
+    expect(bands.under3).toEqual([0, 0]);
+    for (const k of ['low', 'high']) {
+      const [exp, act] = bands[k];
+      expect(act).toBeGreaterThan(200);
+      expect(Math.abs(exp - act) / act).toBeLessThan(0.1);
+    }
+  });
+
+  it('gives each point past 3 another chance: weighted points + 1', () => {
+    const lines = [
+      { points: 2, applicants: 50, drawn: 0 },
+      { points: 3, applicants: 100, drawn: 2 },
+      { points: 8, applicants: 100, drawn: 6 },
+    ];
+    // 2 + 6 tags = t·100·1 + t·100·6, so t = 8/700.
+    expect(weightedPreferenceOdds(lines, 3)).toBeCloseTo(800 / 700, 5);
+    expect(weightedPreferenceOdds(lines, 8)).toBeCloseTo(4800 / 700, 5);
+    expect(weightedPreferenceOdds(lines, 2)).toBe(0);
+  });
+
+  it('prices a real hunt at the hunter’s points, rising with each point', () => {
+    const h = moose('MM053O1X');
+    const at = (p: number) => successAtPoints(h, 'resident', p)!;
+    expect(at(2)).toBe(0);
+    expect(at(3)).toBeGreaterThan(0);
+    expect(at(8)).toBeCloseTo(at(3) * 6, 1);
+    const l = ladderFor(h, 'resident');
+    expect(l.basis).toBe('modeled');
+    expect(l.chances?.slice(0, 6)).toEqual([0, 0, 0, 1, 2, 3]);
+  });
+
+  it('explains the draw as the weighted draw, not the preference draw', () => {
+    const h = moose('MM053O1X');
+    expect(howItDraws(h)).toMatch(/3 preference points/);
+    expect(howItDraws(elk(co.hunts('ELK')[0].huntCode))).toMatch(/in point order/);
+    expect(chancesSentence('CO', 8, h)).toMatch(/8 points are 6 chances/);
+    expect(chancesSentence('CO', 1, h)).toMatch(/need 3 points/);
+    expect(chancesSentence('CO', 8, elk(co.hunts('ELK')[0].huntCode))).toBeNull();
+  });
+
+  it('tells a hunter under 3 points when they’ll be in the draw', () => {
+    const hunts = buildGenericScoutDataset(co, 'MOOSE' as never, 'resident', 'any', 1);
+    const r = drawReality(hunts, { points: 1, state: 'Colorado', species: 'Moose', thisYear: 2027, lottery: true, entryPoints: 3 });
+    expect(r.headline).toMatch(/You need 3 points to be in Colorado's moose draw/);
+    expect(r.headline).toMatch(/in 2029/);
+  });
+
+  it('leaves out the 2025 fire-return licenses nobody can apply for', () => {
+    expect(co.hunts('MOOSE').some((h) => h.huntCode[5] === 'G')).toBe(false);
   });
 });

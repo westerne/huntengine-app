@@ -9,6 +9,7 @@
 import type { Hunt, PointLine, Residency } from './schema';
 import { successAtPoints } from './generic';
 import { DRAW_WEIGHT, chancesAt } from './weightedDraw';
+import { isWeightedPreference, weightedChances } from './preferenceDraw';
 
 export const MAX_LADDER_POINTS = 40;
 
@@ -32,7 +33,7 @@ export function ladderFor(hunt: Hunt, residency: Residency): Ladder {
       basis: modeled ? 'modeled' : 'by-points',
       byPoints: levels.map((p) => successAtPoints(hunt, residency, p) ?? 0),
       overall,
-      chances: weighted ? levels.map((p) => chancesAt(hunt.state, p)!) : null,
+      chances: weighted ? levels.map((p) => chancesAt(hunt.state, p)!) : isWeightedPreference(hunt) ? levels.map(weightedChances) : null,
       pointTable: lines,
     };
   }

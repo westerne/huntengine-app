@@ -95,17 +95,16 @@ describe('against the real draw data', () => {
     expect(r.headline).toMatch(/Nevada/);
   });
 
-  it('Colorado moose admits it cannot price the hunter, but still shows the hunts', () => {
-    // Moose is a weighted draw past 3 points; CPW publishes only each hunt's overall rate for it.
-    const mod = getStateModule('CO')!;
-    const hunts = buildGenericScoutDataset(mod, 'MOOSE' as never, 'resident', 'any', 3);
-    const r = drawReality(hunts, { points: 3, state: 'Colorado', species: 'Moose', thisYear: 2027 });
+  it('California elk admits it cannot price the hunter, but still shows the hunts', () => {
+    // CDFW publishes only each hunt's overall rate, not odds by point level.
+    const mod = getStateModule('CA')!;
+    const hunts = buildGenericScoutDataset(mod, 'ELK' as never, 'resident', 'any', 3);
+    const r = drawReality(hunts, { points: 3, state: 'California', species: 'Elk', thisYear: 2027 });
     expect(r.basis).toBe('published-rate');
     expect(r.priced).toBe(false);
     expect(r.headline).toMatch(/not by point level/);
     expect(r.headline).toMatch(/can't put a number on your own chance/);
-    // Refusing to price him is not a reason to show him nothing: CPW publishes
-    // a rate for every hunt, and an empty page made the state look unsupported.
+    // Refusing to price him is not a reason to show him nothing.
     expect(r.reachable.length).toBeGreaterThan(0);
     expect(r.best!.odds).toBeNull();
     expect(r.best!.publishedRate).not.toBeNull();

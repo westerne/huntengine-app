@@ -13,7 +13,7 @@
 // the way an even draw would spread them, so it's modeled as an even chance
 // for everyone at 5+ points below the level.
 
-import type { Hunt, Residency } from './schema';
+import type { Hunt, PointLine, Residency } from './schema';
 
 export type DrawnOut = {
   // points: licenses ran out at `points`; choice: every first-choice applicant
@@ -37,6 +37,7 @@ export function preferenceOdds(h: Hunt, residency: Residency, points: number): n
   if (!o) return null;
   if (o.kind === 'choice' || o.kind === 'leftover') return 100;
   if (o.kind === 'none') return 0;
+  if (o.kind === 'weighted') return weightedPreferenceOdds(h.pointLines?.[residency] ?? [], points, o.minPoints ?? WEIGHTED_FROM);
   if (o.kind !== 'points' || o.points == null) return null;
   const p = Math.max(0, Math.floor(points));
   if (p > o.points) return 100;
@@ -52,4 +53,46 @@ function hybridOdds(h: Hunt, residency: Residency, level: number): number {
   const applicants = eligible.reduce((s, l) => s + l.applicants, 0);
   const drawn = eligible.reduce((s, l) => s + l.drawn, 0);
   return applicants ? Math.min(100, (100 * drawn) / applicants) : 0;
+}
+
+// Moose, bighorn sheep and mountain goat: points stop at 3 preference points,
+// and every year after that adds a weighted point. When licenses run out among
+// the 3-point applicants, CPW gives each of them a random number, divides it by
+// weighted points + 1, and the lowest numbers draw (2026 brochure, p. 9). So a
+// hunter's chance is t × (weighted + 1) for the one cutoff t that hands out the
+// licenses that went. Points here are the total: 3 preference + weighted
+// (5 weighted points = 8). Checked against 2026: expected and actual draws by
+// level agree across the 271 hunts whose tables add up (see the test).
+export const WEIGHTED_FROM = 3;
+export const WEIGHTED_SPECIES = ['MOOSE', 'BIGHORNSHEEP', 'MTNGOAT'];
+
+export const isWeightedPreference = (h: Pick<Hunt, 'drawnOut'>) =>
+  Object.values(h.drawnOut ?? {}).some((o) => o?.kind === 'weighted');
+
+// What drawReality needs to know about a state and species' draw.
+export function entryPointsFor(state: string, speciesKey: string | null): number | undefined {
+  return state === 'CO' && speciesKey && WEIGHTED_SPECIES.includes(speciesKey) ? WEIGHTED_FROM : undefined;
+}
+
+// Draw entries at a point total: none under 3, then weighted points + 1.
+export const weightedChances = (points: number) => (points >= WEIGHTED_FROM ? Math.floor(points) - WEIGHTED_FROM + 1 : 0);
+
+export function weightedPreferenceOdds(lines: PointLine[], points: number, from = WEIGHTED_FROM): number | null {
+  const p = Math.max(0, Math.floor(points));
+  const pool = lines.filter((l) => l.points >= from && l.applicants > 0);
+  if (!pool.length) return null;
+  if (p < from) return 0;
+  const applicants = pool.reduce((s, l) => s + l.applicants, 0);
+  const tags = pool.reduce((s, l) => s + Math.min(l.drawn, l.applicants), 0);
+  if (tags <= 0) return 0;
+  if (tags >= applicants) return 100;
+  const share = (t: number, pts: number) => Math.min(1, t * (pts - from + 1));
+  const expected = (t: number) => pool.reduce((s, l) => s + l.applicants * share(t, l.points), 0);
+  let lo = 0;
+  let hi = 1;
+  for (let i = 0; i < 60; i++) {
+    const mid = (lo + hi) / 2;
+    if (expected(mid) < tags) lo = mid; else hi = mid;
+  }
+  return 100 * share(hi, p);
 }

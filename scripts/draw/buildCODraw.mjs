@@ -8,6 +8,9 @@
 // the hybrid-draw allocation, and first-choice applicants and successful
 // applicants by preference point for adult residents and non-residents.
 //
+// Moose, sheep and goat print weighted points beside preference points; their
+// levels are stored as the total.
+//
 // Colorado's draw: first-choice applicants are drawn in preference-point order,
 // so above the drawn-out level everyone drew and below it nobody did — except
 // through the hybrid draw, which on the hardest hunt codes sets aside up to 20%
@@ -93,7 +96,7 @@ function outcome(m) {
 const ROW_OR_TAIL = /^(-|\d+) (-|\d+) (-|\d+) (-|\d+) (-|\d+) (-|\d+)(?: 1 0)?$/;
 const n = (t) => (t === '-' ? 0 : +t);
 
-function parseBlock(lines) {
+function parseBlock(lines, weighted) {
   if (/P99999P/.test(lines[1])) return { skip: true }; // CPW's placeholder code
   const head = lines[1].match(/^(\d+) ([A-Z]{2}[A-Z0-9]{3}[A-Z]\d[A-Z]) ([A-Z])$/);
   if (!head) return { error: `bad header "${lines[1]}"` };
@@ -120,9 +123,23 @@ function parseBlock(lines) {
   // each printed twice: over the pre-draw rows, then over the post-draw rows.
   // Levels always run from the top level down to 0, so a chunk whose labels
   // got swallowed by a page break ("… - - 1 0") is whatever is left over.
-  // Moose, sheep and goat print a weighted-points table instead; no pointLines for them.
-  const from = Math.max(0, lines.indexOf('Choice Preference Points'));
-  const pointTable = lines.includes('Choice Preference Points');
+  // Moose, sheep and goat print each level as preference then weighted points
+  // ("3 24") under the rows instead of over them. Counted as one total (27 =
+  // 3 preference + 24 weighted), the labels run down by one like the others.
+  // At a page break the choice marker and a lone "0 0" label land on one line,
+  // sometimes ahead of a row ("1 0 0 - - - - - -"); the 0 level is then the
+  // chunk left over, as below.
+  if (weighted) {
+    lines = lines.flatMap((l) => {
+      const tail = l.match(/^1 0 0(?: (.+))?$/);
+      if (tail) return tail[1] ? [tail[1]] : [];
+      const m = l.match(/^([0-3]) (\d+)$/);
+      return [m ? String(+m[1] + +m[2]) : l];
+    });
+  }
+  const header = weighted ? 'Pre-Draw Applicants' : 'Choice Preference Points';
+  const from = Math.max(0, lines.indexOf(header));
+  const pointTable = lines.includes(header);
   const runs = [];
   let cur = [];
   const rows = [];
@@ -301,8 +318,11 @@ for (const [sp, statsUrl] of Object.entries(STATS)) {
   const rows = [];
   let bad = 0;
   for (let k = 0; k < starts.length; k++) {
-    const b = parseBlock(recap.lines.slice(starts[k], starts[k + 1] ?? recap.lines.length));
+    const b = parseBlock(recap.lines.slice(starts[k], starts[k + 1] ?? recap.lines.length), WEIGHTED.has(sp));
     if (b.skip) continue;
+    // "G" seasons are 2025 licenses given back to the hunters who drew them
+    // and couldn't hunt because of the fires; nobody else can apply.
+    if (b.code?.[5] === 'G') continue;
     if (b.error) { report.push(`${sp} ${b.code ?? '?'}: ${b.error}`); continue; }
     if (!b.pointLines) bad++;
     const row = {
@@ -315,12 +335,10 @@ for (const [sp, statsUrl] of Object.entries(STATS)) {
         return se ? { season: { open: se.open, close: se.close } } : {};
       })(),
       draw: { resident: stat(b.res, b.apps?.res ?? null), nonresident: stat(b.nr, b.apps?.nr ?? null) },
-      // Moose, sheep and goat are a weighted random draw past 3 points, which
-      // the drawn-out level doesn't describe: overall rates only for now.
-      ...(WEIGHTED.has(sp) ? {} : { drawnOut: {
+      drawnOut: {
         resident: { ...b.res.out, ...(b.res.final ? { drawnAtLevel: b.res.final.drawn, appliedAtLevel: b.res.final.of } : {}) },
         nonresident: { ...b.nr.out, ...(b.nr.final ? { drawnAtLevel: b.nr.final.drawn, appliedAtLevel: b.nr.final.of } : {}) },
-      } }),
+      },
       ...(b.hybrid ? { hybridTags: b.hybrid } : {}),
       ...(b.pointLines ? { pointLines: { resident: b.pointLines.res, nonresident: b.pointLines.nr } } : {}),
     };
@@ -338,7 +356,7 @@ out.notes = [
   `CPW ${out.year} primary big-game draw, from the per-species Post Draw Recap PDFs: ${sources.join(' ; ')}.`,
   `Colorado draws first-choice applicants in preference-point order. drawnOut per residency (adult) is CPW's "Drawn Out At": kind "points" = licenses ran out at that point level (drawnAtLevel of appliedAtLevel drew there); "choice" = every first-choice applicant drew and licenses went to later choices; "leftover" = licenses were left after the draw; "none" = none drawn in that pool; "noApps" = no applicants; "na" = not applicable.`,
   `hybridTags = licenses CPW issued through the hybrid draw (up to 20% of the quota on hunt codes where it applies), a random draw among applicants below the drawn-out level.`,
-  `Moose, bighorn sheep and mountain goat are drawn by weighted random draw once an applicant holds 3 preference points; they carry no drawnOut or pointLines, only overall rates.`,
+  `Moose, bighorn sheep and mountain goat are drawn by weighted random draw once an applicant holds 3 preference points: drawnOut kind "weighted" (minPoints 3), and their pointLines are by total points (3 preference + weighted points, so 3 preference and 5 weighted = 8). "G" season codes (2025 licenses returned after the fires, guaranteed to the original holders) are left out.`,
   `DrawStat: tags = adult licenses drawn by that residency; applicants = adult first-choice applicants; successPct = tags ÷ applicants (computed here; includes licenses drawn through hybrid); minPoints = the drawn-out level (0 when every first-choice applicant drew). pointLines: adult first-choice applicants and successful applicants per preference-point level, checked against CPW's Total Choice 1 lines. Youth and landowner (LPP) pools are not included.`,
 ].join(' ');
 

@@ -5,7 +5,7 @@
 import type { Hunt, Residency } from './huntdata/schema';
 import { successText } from './huntdata/generic';
 import { cutoffIsADate } from './huntdata/drawSystem';
-import { HOW_IT_DRAWS } from './huntdata/weightedDraw';
+import { howItDraws } from './huntdata/weightedDraw';
 import { drawOutlook, type Outlook } from './calendar';
 import { SPECIES_NAME } from './species';
 
@@ -59,7 +59,8 @@ export function roughPct(n: number): string {
 function reliabilityFor(hunt: Hunt, o: Outlook): string {
   if (hunt.otc) return 'No draw — buy the tag.';
   if (o.kind !== 'draw') return 'No published odds.';
-  if (o.basis === 'points' && HOW_IT_DRAWS[hunt.state]) return `Good: worked out from the agency’s point table, since ${HOW_IT_DRAWS[hunt.state]}.`;
+  const how = howItDraws(hunt);
+  if (o.basis === 'points' && how) return `Good: worked out from the agency’s point table, since ${how}.`;
   if (o.basis === 'points') return 'Good: from the agency’s results at each point level.';
   if (o.perYear.every((r) => r.pct == null)) return 'Partial: only the fewest points that drew is published.';
   switch (hunt.state) {

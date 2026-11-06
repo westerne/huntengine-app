@@ -163,7 +163,7 @@ export function drawOutlook(
   const yr = hunt.drawYear ?? 'last year';
   const parts: string[] = [];
   const nowPts = pointsByYear?.[years[0]];
-  const chances = nowPts != null ? chancesSentence(hunt.state, nowPts) : null;
+  const chances = nowPts != null ? chancesSentence(hunt.state, nowPts, hunt) : null;
   if (chances != null) {
     // A weighted lottery: say how it works instead of quoting a cutoff.
     parts.push(chances);

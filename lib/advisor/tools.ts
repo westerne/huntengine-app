@@ -20,6 +20,7 @@ import type { Hunt, Residency, Weapon } from '../huntdata/schema';
 import { isAntlerless, isPrivateOnly } from '../huntdata/shortlist';
 import { DEFAULT_PREFS, rankHunts, type HuntPrefs, type RankedHunt } from '../huntdata/fit';
 import { pointsSoldTo } from '../huntdata/apply';
+import { WEIGHTED_SPECIES, entryPointsFor } from '../huntdata/preferenceDraw';
 
 export type Source = { label: string; url?: string | null };
 export type ToolResult<T> = { ok: true; data: T; sources: Source[] } | { ok: false; reason: string };
@@ -471,7 +472,7 @@ export function searchHunts(
   const points = pointsFor(sit, r.state, r.key) ?? 0;
   let ranked: RankedHunt[] = [];
   const hunts = buildGenericScoutDataset(mod, r.key as never, residency, weapon, points);
-  const re = drawReality(hunts, { points, state: r.name, species: r.species, thisYear: sit.seasonYear, cutoffIsADate: cutoffIsADate(r.state), lottery: !pointsBarMatters(r.state) });
+  const re = drawReality(hunts, { points, state: r.name, species: r.species, thisYear: sit.seasonYear, cutoffIsADate: cutoffIsADate(r.state), lottery: !pointsBarMatters(r.state) || entryPointsFor(r.state, r.key) != null, entryPoints: entryPointsFor(r.state, r.key) });
   const sources: Source[] = [huntSource(r.state, re.dataYear)];
   if (points) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${points})` });
   return {
@@ -485,6 +486,7 @@ export function searchHunts(
         : 'no odds published',
       headline: re.headline, caveat: re.caveat,
       // The prompt rule alone still produced "you can't draw any antlered hunts" in Nevada.
+      ...(r.state === 'CO' && WEIGHTED_SPECIES.includes(r.key) ? { weightedNote: `Colorado ${r.species.toLowerCase()} is not drawn by points level. Under 3 points nobody draws. From 3 points it's a random draw where each point past 3 adds a chance, so never say they can't draw at 3 or more; say it's a long shot and give its chance a year. Their points here are preference plus weighted points.` } : {}),
       ...(pointsBarMatters(r.state) ? {} : { lotteryNote: `${r.name} is a lottery: every application has a chance, so never say they can't draw a hunt. Say it's a long shot and give its chance a year.` }),
       reachable: re.reachable.slice(0, 8).map(pick),
       antlerless: re.antlerless.slice(0, 3).map(pick),

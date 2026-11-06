@@ -41,7 +41,7 @@ export const STATE_INFO: Record<StateCode, StateInfo> = {
     code: 'CO', name: 'COLORADO', status: 'live', batch: 'live',
     agency: { name: 'Colorado Parks and Wildlife', url: 'https://cpw.state.co.us' },
     drawSystem: 'preference', rulesVerified: true,
-    drawSystemNote: 'Preference-point draw: first-choice applicants with the most points draw first, so a hunt’s licenses run out at one point level each year. On the hardest hunts a hybrid draw gives up to 20% of licenses at random to applicants below that level; in 2026 every hybrid winner held at least 5 points. Moose, bighorn sheep and mountain goat use a weighted random draw once you hold 3 points. Some archery and rifle elk licenses are over the counter.',
+    drawSystemNote: 'Preference-point draw: first-choice applicants with the most points draw first, so a hunt’s licenses run out at one point level each year. On the hardest hunts a hybrid draw gives up to 20% of licenses at random to applicants below that level; in 2026 every hybrid winner held at least 5 points. Moose, bighorn sheep and mountain goat use a weighted random draw once you hold 3 points: each year after that adds a weighted point and another chance. Some archery and rifle elk licenses are over the counter.',
   },
   MT: {
     code: 'MT', name: 'MONTANA', status: 'live', batch: 'live',

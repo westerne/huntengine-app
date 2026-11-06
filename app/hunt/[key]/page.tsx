@@ -8,6 +8,7 @@ import { parseCompareKey } from '@/lib/compare';
 import { getStateModule, STATE_INFO, toStateCode } from '@/lib/huntdata/registry';
 import { successText } from '@/lib/huntdata/generic';
 import { ladderFor } from '@/lib/huntdata/ladder';
+import { howItDraws } from '@/lib/huntdata/weightedDraw';
 import { SPECIES_NAME, speciesKeyOf } from '@/lib/species';
 import { titleCaseState } from '@/lib/scoutData';
 import type { SpeciesKey } from '@/lib/huntdata/schema';
@@ -53,7 +54,7 @@ export default async function HuntPage({ params }: { params: Promise<{ key: stri
           tags: stat?.tags ?? hunt.tags ?? null, applicants: stat?.applicants ?? hunt.applicants ?? null,
           hunterSuccess: hunt.harvest ? `${successText(hunt.harvest, hunt.tags)} (${hunt.harvest.year})` : null,
           drawYear: hunt.drawYear, openToYou: !hunt.openTo || hunt.openTo === residency,
-          drawRules: info.drawSystemNote, agencyUrl: info.agency?.url ?? null, agencyName: info.agency?.name ?? null,
+          drawRules: info.drawSystemNote, howItDraws: howItDraws(hunt), agencyUrl: info.agency?.url ?? null, agencyName: info.agency?.name ?? null,
         }}
         residency={residency}
         ladder={ladderFor(hunt, residency)}
