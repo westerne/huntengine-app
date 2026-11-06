@@ -98,3 +98,12 @@ Button: *Add NV elk 4151-111-Early for 2028 to my plan* (nothing is saved until 
 
 ## Decision
 ☐ Turn the advisor on for members  ☐ Not yet — fix my notes first
+
+## Owner notes (2026-11-06)
+- #3 budget: keep it as is: leading with the cheapest states is fine; the question won't come up much.
+- #5 Colorado: a 100% draw isn't "tight". Fixed: tradeoffs must fit the numbers, and each ranked hunt now carries its hunter success or "not published", which stopped "high hunter success" being invented.
+- #9 GPS: keep declining. Specific spots aren't part of the program.
+- OPENAI_API_KEY confirmed set in Vercel Production.
+
+Also fixed after the review: "what should I do next?" recommends one step instead of a list; a wrongly denied state ("we don't cover Alaska moose") is retried with the exact lookup to run.
+Known wobble (wording, not numbers): an answer can still use a loose phrase like "low competition" or "guarantees a tag" now and then.

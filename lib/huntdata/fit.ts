@@ -56,6 +56,7 @@ export type RankedHunt = {
   fit: number;                         // 0–100, against the other hunts here
   reasons: string[];                   // why, in plain words, best first
   unknown: string[];                   // what we couldn't score
+  hunterSuccess: number | null;        // null: not published, or too few hunters to judge
   general: boolean;
   draw: {
     now: number;                       // chance this year, 0–100
@@ -165,7 +166,7 @@ export function rankHunts(
     const rows = ladderRows(ladder, opts.usesPoints ? opts.points : 0, opts.seasonYear, prefs.horizon);
     const likely = rows.find((r) => r.cumulative >= 50)?.year ?? null;
     return {
-      huntCode: h.huntCode, unit: h.unit, label: h.label ?? null, weapon: h.weapon ?? null, season: h.season ?? null,
+      huntCode: h.huntCode, unit: h.unit, label: h.label ?? null, weapon: h.weapon ?? null, season: h.season ?? null, hunterSuccess: success(h),
       fit, general: general(h),
       reasons: [...parts].sort((a, b) => b.w * b.score - a.w * a.score).map((p) => p.reason).filter(Boolean),
       unknown: unknown.filter(Boolean),

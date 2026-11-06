@@ -325,7 +325,7 @@ export type SearchData = {
     leftOut: { antlerless: number; otherWeapon: number };
   };
 };
-type FitPick = { huntCode: string; unit: string; label: string | null; fit: number; why: string[]; chanceThisYear: number; likelyBy: number | null; chanceByHorizon: number; oddsAreYours: boolean; season: { open: string; close: string } | null; seasonMonths: string[] | null };
+type FitPick = { huntCode: string; unit: string; label: string | null; fit: number; why: string[]; chanceThisYear: number; likelyBy: number | null; chanceByHorizon: number; oddsAreYours: boolean; season: { open: string; close: string } | null; seasonMonths: string[] | null; hunterSuccess: number | 'not published, or too few hunters to judge' };
 // "Which hunt fits a week in October?" The model read Oct 22 – Nov 5 as not
 // October; the months a season touches are worked out here instead.
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -339,6 +339,8 @@ export function seasonMonths(season: { open: string; close: string } | null | un
 }
 const fitPick = (h: RankedHunt): FitPick => ({
   huntCode: h.huntCode, unit: h.unit, label: h.label, fit: h.fit, why: h.reasons, season: h.season, seasonMonths: seasonMonths(h.season),
+  // Said outright: left out, the model filled the gap with "high hunter success".
+  hunterSuccess: h.hunterSuccess ?? 'not published, or too few hunters to judge',
   chanceThisYear: h.draw.now, likelyBy: h.draw.likelyBy, chanceByHorizon: h.draw.byHorizon, oddsAreYours: h.draw.yours,
 });
 const WEAPONS: Weapon[] = ['rifle', 'archery', 'muzzleloader'];
