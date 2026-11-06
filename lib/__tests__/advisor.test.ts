@@ -107,6 +107,28 @@ describe('answer check', () => {
   it('lets the hunter’s own numbers through, and ignores small counts', () => {
     expect(unsupportedClaims('With your $1,500 budget, in 2 years…', [...evidence, 'my budget is $1,500'])).toEqual([]);
   });
+
+  // The real slip: "63% hunter success" for 4156-072, where only 3 of 7 hunters
+  // reported; 63 was another hunt's figure in the same search result.
+  const search = [JSON.stringify({
+    headline: 'Every antlered hunt is a long shot: the best is about 0.36% a year.',
+    picks: [
+      { huntCode: '4156-072', unit: '072', label: 'Antlered elk — Muzzleloader, Units 072 - 074', odds: 0.36, hunterSuccess: '3 of 7 hunters (too few to judge)' },
+      { huntCode: '4161-131', unit: '131', label: 'Antlered elk — Archery, Unit 131', odds: 0.7, hunterSuccess: '63%' },
+    ],
+  })];
+  it('catches a percentage that belongs to a different hunt', () => {
+    const bad = unsupportedClaims('The best is a muzzleloader hunt in Units 072 - 074, about 0.36% a year. Tradeoff: high hunter success at 63%.', search);
+    expect(bad).toEqual([{ text: '63%', kind: 'number', hunt: '4156-072' }]);
+    // By hunt code too.
+    expect(unsupportedClaims('Hunt 4156-072 has 63% hunter success.', search).map((b) => b.text)).toEqual(['63%']);
+  });
+  it('passes a hunt’s own figures, and general ones said about it', () => {
+    expect(unsupportedClaims('Hunt 4161-131 has 63% hunter success and about 0.7% a year.', search)).toEqual([]);
+    expect(unsupportedClaims('Units 072 - 074 are a long shot: the best is about 0.36% a year.', search)).toEqual([]);
+    // A new paragraph or a different hunt resets which hunt a sentence is about.
+    expect(unsupportedClaims('Units 072 - 074: about 0.36%.\nUnit 131 has 63% hunter success.', search)).toEqual([]);
+  });
 });
 
 describe('yearly cost of points, by how each state sells them', () => {

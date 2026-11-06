@@ -166,7 +166,10 @@ export async function runAdvisor(o: {
     messages.push({ role: 'assistant', content: text });
     messages.push({
       role: 'user',
-      content: `[Check] These figures aren't in any lookup this turn or in what I said: ${bad.map((b) => b.text).join(', ')}. Rewrite your answer without them, or look them up first. Don't mention this check.`,
+      content: `[Check] ${[
+        bad.some((b) => !b.hunt) ? `These figures aren't in any lookup this turn or in what I said: ${bad.filter((b) => !b.hunt).map((b) => b.text).join(', ')}.` : '',
+        ...bad.filter((b) => b.hunt).map((b) => `${b.text} isn't a figure for hunt ${b.hunt}; it belongs to a different hunt or nowhere.`),
+      ].filter(Boolean).join(' ')} Rewrite your answer without them, or look them up first. Don't mention this check.`,
     });
     text = await converse();
     bad = unsupportedClaims(text, evidence);

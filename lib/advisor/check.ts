@@ -35,7 +35,80 @@ function evidenceSet(texts: string[]): { nums: Set<string>; dates: Set<string> }
   return { nums, dates };
 }
 
-export type Unsupported = { text: string; kind: 'number' | 'date' };
+export type Unsupported = { text: string; kind: 'number' | 'date'; hunt?: string };
+
+// A hunt in the lookups: its own figures, and how an answer might name it.
+type HuntEvidence = { code: string; unit: string; nums: Set<string> };
+
+// Splits each lookup into the hunts it describes (any object with a huntCode)
+// and everything else. A percentage said about a hunt has to be that hunt's:
+// "63% hunter success" for 4156-072 passed when it was only some other hunt's
+// figure in the same search result.
+function splitEvidence(evidence: string[]): { general: string[]; hunts: HuntEvidence[] } {
+  const general: string[] = [];
+  const hunts = new Map<string, { unit: string; texts: string[] }>();
+  const strip = (v: unknown): unknown => {
+    if (Array.isArray(v)) return v.map(strip);
+    if (v && typeof v === 'object') {
+      const o = v as Record<string, unknown>;
+      if (typeof o.huntCode === 'string' && o.huntCode) {
+        const h = hunts.get(o.huntCode) ?? { unit: String(o.unit ?? ''), texts: [] };
+        h.texts.push(JSON.stringify(o));
+        hunts.set(o.huntCode, h);
+        return null;
+      }
+      return Object.fromEntries(Object.entries(o).map(([k, x]) => [k, strip(x)]));
+    }
+    return v;
+  };
+  for (const t of evidence) {
+    let parsed: unknown;
+    try { parsed = JSON.parse(t); } catch { general.push(t); continue; }
+    general.push(JSON.stringify(strip(parsed)));
+  }
+  return {
+    general,
+    hunts: [...hunts].map(([code, h]) => ({ code, unit: h.unit, nums: evidenceSet(h.texts).nums })),
+  };
+}
+
+const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// Hunts a sentence names: by code if it gives one, else by unit ("Units 072 - 074",
+// "Beaver, East"). Bare short numbers aren't units; they'd match everything.
+function huntsNamed(sentence: string, hunts: HuntEvidence[]): HuntEvidence[] {
+  const byCode = hunts.filter((h) => new RegExp(`(^|[^A-Za-z0-9-])${escape(h.code)}($|[^A-Za-z0-9-])`, 'i').test(sentence));
+  if (byCode.length) return byCode;
+  return hunts.filter((h) => {
+    const u = h.unit.trim();
+    if (!u) return false;
+    if (/^\d+$/.test(u)) return new RegExp(`\\bunits?\\s+0*${Number(u)}\\b`, 'i').test(sentence);
+    return u.length >= 4 && new RegExp(`\\b${escape(u)}\\b`, 'i').test(sentence);
+  });
+}
+
+const known = (n: string, nums: Set<string>) =>
+  nums.has(n) || (!n.includes('.') && [...nums].some((e) => Math.round(Number(e)) === Number(n)));
+
+// Percentages in sentences about a named hunt (or the sentences after one, until
+// another hunt or a new paragraph) that aren't that hunt's or a general figure.
+function misattributed(answer: string, general: Set<string>, hunts: HuntEvidence[]): Unsupported[] {
+  const out: Unsupported[] = [];
+  for (const para of answer.split(/\n+/)) {
+    let about: HuntEvidence[] = [];
+    for (const sentence of para.split(/(?<=[.!?])\s+/)) {
+      const named = huntsNamed(sentence, hunts);
+      if (named.length) about = named;
+      if (!about.length) continue;
+      for (const m of sentence.matchAll(/\d[\d,]*(?:\.\d+)?(?=\s?%)/g)) {
+        const n = num(m[0]);
+        if (!n || TRIVIAL.has(n) || known(n, general) || about.some((h) => known(n, h.nums))) continue;
+        out.push({ text: `${m[0]}%`, kind: 'number', hunt: about.map((h) => h.code).join(', ') });
+      }
+    }
+  }
+  return out;
+}
 
 export function unsupportedClaims(answer: string, evidence: string[]): Unsupported[] {
   const { nums, dates } = evidenceSet(evidence);
@@ -61,6 +134,12 @@ export function unsupportedClaims(answer: string, evidence: string[]): Unsupport
     if ([...nums].some((e) => Math.round(Number(e)) === Number(n) && !n.includes('.'))) continue;
     seen.add(n);
     out.push({ text: m[0], kind: 'number' });
+  }
+  const { general, hunts } = splitEvidence(evidence);
+  if (hunts.length) {
+    for (const b of misattributed(answer, evidenceSet(general).nums, hunts)) {
+      if (!out.some((o) => o.text === b.text)) out.push(b);
+    }
   }
   return out;
 }
