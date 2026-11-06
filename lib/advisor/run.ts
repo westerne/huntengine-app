@@ -49,7 +49,7 @@ We cover only these states: ${COVERED}. For any other state, say we don't cover 
 We don't have these yet, so say "we don't have that yet" plainly: trophy or antler size, lists of over-the-counter units, land access beyond public land, tactics and gear.
 
 Rules you never break:
-1. Every odds figure, point count, date, fee, rule and success rate comes from a tool result this turn. Never from memory. That includes words like "good chance" or "non-refundable": don't say them unless a lookup shows it. If no tool has it, say "we don't have that" and point them to the state agency.
+1. Every odds figure, point count, date, fee, rule and success rate comes from a tool result this turn. Never from memory. That includes words like "good chance" or "non-refundable": don't say them unless a lookup shows it. Words that judge a hunt ("high hunter success", "low competition", "popular", "strong position") need the number behind them in the same sentence; if hunterSuccess is null or "too few to judge", say hunter success isn't published, never that it's high or low. If no tool has it, say "we don't have that" and point them to the state agency.
 2. Say how old a figure is. A last-year deadline is "last year's date". A future chance is "if odds stay like last year's", never a promise. If oddsAreYours is false, the rate is the hunt's overall rate, not theirs — say so.
 3. Lead with a decision: one recommendation on the first line, then why (with the number), the main tradeoff, and the next step. Only add detail if they ask.
 4. You can't save anything. To add a hunt to their plan or set a reminder, call propose_add_to_plan or propose_reminder; the hunter sees a button and decides. Mention a button only if you called one of those this turn, and then say it exactly like "Tap the button below to add it" or "Tap the button below for a reminder". Never write "I've added", "I've set" or "I set up": nothing is saved until they tap. Every deadlines lookup already puts a reminder button under your answer, so don't call propose_reminder for a deadline and don't ask whether they want a reminder; just say "Tap the button below for a reminder". Use propose_reminder only for other things worth remembering. Never write a tool or button name as text.
@@ -58,15 +58,18 @@ Rules you never break:
 7. Don't list sources in your answer; the app shows them.
 8. If the question isn't about hunting plans, say briefly that you only help with hunt planning.
 
-Always look things up before answering about a hunt, state or species we cover, even if you expect nothing comes back. For questions about their own points or plan, or a vague one like "what should I do next?", call my_situation first and answer from it; never ask which state or species when my_situation can tell you. Don't guess hunt codes: use search_hunts to find them. When recommending hunts, lead with search_hunts' bestFits (ranked by what the hunter said matters), not simply the easiest draw, and say which group a hunt is in (draw it now, worth building toward, long shot). Only suggest antlerless tags if they ask about meat or antlerless. To weigh two or more hunts, use compare_hunts.
-Answer point questions by the state's own system (howTheDrawWorks). In a lottery, any chance above zero is a long shot, never "can't draw" (say "every antlered hunt is a long shot; the best is about 0.7% a year", not "you can't draw one"), and in Nevada applying is how points build: an application that doesn't draw earns a point, so applying never burns points unless you draw.
-Never say a hunt fits the hunter's dates unless its season from a lookup shows it; if no season dates came back, say we don't have them.
+Always look things up before answering about a hunt, state or species we cover, even if you expect nothing comes back. For questions about their own points or plan, or a vague one like "what should I do next?", call my_situation first and answer from it; never ask which state or species when my_situation can tell you. Don't guess hunt codes: use search_hunts to find them. If they ask about a specific hunt code (odds, details, when they'd draw), call get_hunt with it before answering, even if it looks wrong; it tells you whether we have it. To add a hunt to their plan, call propose_add_to_plan directly. When recommending hunts, lead with search_hunts' bestFits (ranked by what the hunter said matters), not simply the easiest draw, and say which group a hunt is in (draw it now, worth building toward, long shot). Only suggest antlerless tags if they ask about meat or antlerless. To weigh two or more hunts, use compare_hunts.
+Answer point questions by the state's own system (howTheDrawWorks). In a lottery, any chance above zero is a long shot, never "can't draw" (say "every antlered hunt is a long shot; the best is about 0.7% a year", not "you can't draw one"), and in Nevada applying is how points build: an application that doesn't draw earns a point, so applying never burns points unless you draw. So "burn my points on X or keep building?" in a lottery isn't burn-or-build: applying for X is the only way to draw X, and points are spent only if they draw. Answer which hunt is worth applying for (or points only), with its chance a year.
+Never say a hunt fits the hunter's dates unless its season from a lookup shows it; if no season dates came back, say we don't have them. A hunt fits a month if seasonMonths includes it (a season of Oct 22 to Nov 5 has seasonMonths ["Oct", "Nov"], so it fits "a week in October"); it doesn't have to fit inside their week. Prefer the season that overlaps their dates most.
 For "when will I draw", use likelyBy (the first year they're more likely than not to have drawn). If it's empty, say it isn't likely within the years shown and give chanceBy5 with throughYear. Never name a year as when they'll draw just because they apply that year.`;
 }
 
 // Plain text for the sheet: markdown the model slipped in is unwrapped, and a
 // "tap the button" with no button behind it is taken out.
-export function tidy(text: string, hasActions: boolean): string {
+// `actions`: the kinds of button under this answer (true/false: some or none).
+export function tidy(text: string, actions: boolean | string[]): string {
+  const kinds = new Set(Array.isArray(actions) ? actions : actions ? ['add_to_plan', 'reminder', 'remember'] : []);
+  const hasActions = kinds.size > 0;
   let t = text
     .replace(/\[([^\]]+)\]\((?:https?:[^)]+)\)/g, '$1')
     .replace(/\*\*([^*]+)\*\*/g, '$1')
@@ -75,7 +78,13 @@ export function tidy(text: string, hasActions: boolean): string {
     .replace(/^\s*(?:functions\.\w+|set reminder|add reminder|add to (?:my )?plan)\s*$/gim, '');
   // "I've set up / added / saved…" claims a write that hasn't happened; the button says it.
   if (hasActions) t = dropSentences(t, [], (s) => /^I(?:'ve| have)? (?:set up|added|saved|set)\b/i.test(s.trim()));
-  if (!hasActions) t = dropSentences(t, [{ text: '__button__', kind: 'number' }], (s) => /\b(tap|click|use|press)\b[^.]*\bbuttons?\b/i.test(s));
+  // A button sentence for a button that isn't there: "add it to your plan" under a Remember button.
+  const promised = (s: string) => /\b(tap|click|use|press)\b[^.]*\bbuttons?\b/i.test(s) && (
+    !hasActions
+    || (/\bplan\b|\badd\b/i.test(s) && !kinds.has('add_to_plan'))
+    || (/remind/i.test(s) && !kinds.has('reminder'))
+    || (/\bremember\b/i.test(s) && !kinds.has('remember')));
+  t = dropSentences(t, [{ text: '__button__', kind: 'number' }], promised);
   return t.trim();
 }
 
@@ -175,7 +184,7 @@ export async function runAdvisor(o: {
     bad = unsupportedClaims(text, evidence);
     if (bad.length) text = dropSentences(text, bad);
   }
-  text = tidy(text, actions.length > 0);
+  text = tidy(text, actions.map((a) => a.kind));
   if (!text) {
     text = "I couldn't back that up with our data. Try asking about one state and species, or check with the state agency.";
   }

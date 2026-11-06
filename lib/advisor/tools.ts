@@ -242,10 +242,16 @@ export function harvestReporting(args: { state: string; species: string }): Tool
 }
 
 // ── one hunt, and several side by side ─────────────────────────────────────
-export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; howTheDrawWorks: string | null };
+export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; howTheDrawWorks: string | null; applyOrBuild?: string };
 // The state's draw rules in plain words, so "burn points or keep building" is
 // answered for the state's actual system, not a preference draw by default.
 const drawRules = (state: string) => STATE_INFO[state as keyof typeof STATE_INFO]?.drawSystemNote ?? null;
+// "Burn my points on it or keep building?" is a false choice in a lottery where
+// an application that doesn't draw earns the point. Said as data, because the
+// prompt rule alone didn't stop "try now or keep building".
+const APPLYING_EARNS_POINT: Record<string, string> = {
+  NV: 'In Nevada, applying for this hunt and not drawing earns a bonus point, the same as buying one. Points are only used up if you draw it. So applying is not "burning" points: it builds points and gives this year’s chance at once. The real choice is which hunt to put in, not whether to apply.',
+};
 function column(state: string, key: string, species: string, huntCode: string | null, unit: string | null, sit: Situation) {
   const mod = getStateModule(state);
   if (!mod) return null;
@@ -274,7 +280,7 @@ export function getHunt(args: { state: string; species: string; huntCode?: strin
   if (!c) return fail(`We couldn't find ${r.name} ${r.species.toLowerCase()} ${args.huntCode ?? `unit ${args.unit}`} in the draw data${args.unit && !args.huntCode ? ' (that unit may have several hunts — name the hunt code)' : ''}.`);
   const sources = [huntSource(r.state, c.drawYear)];
   if (c.pts != null) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${c.pts})` });
-  return { ok: true, data: { ...strip(c.col), yourPoints: c.pts, howTheDrawWorks: drawRules(r.state) }, sources };
+  return { ok: true, data: { ...strip(c.col), yourPoints: c.pts, howTheDrawWorks: drawRules(r.state), ...(APPLYING_EARNS_POINT[r.state] ? { applyOrBuild: APPLYING_EARNS_POINT[r.state] } : {}) }, sources };
 }
 
 export function compareHunts(args: { hunts: Array<{ state: string; species: string; huntCode: string }> }, sit: Situation): ToolResult<{ hunts: HuntData[]; pick: ReturnType<typeof pickBest>; notFound: string[] }> {
@@ -300,7 +306,7 @@ export function compareHunts(args: { hunts: Array<{ state: string; species: stri
 // The same read Find gives: hunts within reach at the hunter's points, and what
 // comes within reach if they keep applying. Antlered and antlerless are kept
 // apart, because mixing them makes a state look easier than it is.
-type Picked = Pick<ReachableHunt, 'unit' | 'huntCode' | 'label' | 'odds' | 'publishedRate' | 'hunterSuccess' | 'pointsNeeded' | 'season'>;
+type Picked = Pick<ReachableHunt, 'unit' | 'huntCode' | 'label' | 'odds' | 'publishedRate' | 'hunterSuccess' | 'pointsNeeded' | 'season'> & { seasonMonths: string[] | null };
 export type SearchData = {
   howTheDrawWorks: string | null;
   state: string; species: string; residency: Residency; yourPoints: number; weapon: Weapon;
@@ -319,15 +325,26 @@ export type SearchData = {
     leftOut: { antlerless: number; otherWeapon: number };
   };
 };
-type FitPick = { huntCode: string; unit: string; label: string | null; fit: number; why: string[]; chanceThisYear: number; likelyBy: number | null; chanceByHorizon: number; oddsAreYours: boolean };
+type FitPick = { huntCode: string; unit: string; label: string | null; fit: number; why: string[]; chanceThisYear: number; likelyBy: number | null; chanceByHorizon: number; oddsAreYours: boolean; season: { open: string; close: string } | null; seasonMonths: string[] | null };
+// "Which hunt fits a week in October?" The model read Oct 22 – Nov 5 as not
+// October; the months a season touches are worked out here instead.
+const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+export function seasonMonths(season: { open: string; close: string } | null | undefined): string[] | null {
+  if (!season) return null;
+  const a = new Date(`${season.open}T00:00:00Z`), b = new Date(`${season.close}T00:00:00Z`);
+  if (Number.isNaN(+a) || Number.isNaN(+b) || b < a) return null;
+  const out: string[] = [];
+  for (let d = new Date(Date.UTC(a.getUTCFullYear(), a.getUTCMonth(), 1)); d <= b && out.length < 12; d.setUTCMonth(d.getUTCMonth() + 1)) out.push(MONTH_NAMES[d.getUTCMonth()]);
+  return out;
+}
 const fitPick = (h: RankedHunt): FitPick => ({
-  huntCode: h.huntCode, unit: h.unit, label: h.label, fit: h.fit, why: h.reasons,
+  huntCode: h.huntCode, unit: h.unit, label: h.label, fit: h.fit, why: h.reasons, season: h.season, seasonMonths: seasonMonths(h.season),
   chanceThisYear: h.draw.now, likelyBy: h.draw.likelyBy, chanceByHorizon: h.draw.byHorizon, oddsAreYours: h.draw.yours,
 });
 const WEAPONS: Weapon[] = ['rifle', 'archery', 'muzzleloader'];
 const pick = (h: ReachableHunt): Picked => ({
   unit: h.unit, huntCode: h.huntCode, label: h.label, odds: h.odds, publishedRate: h.publishedRate,
-  hunterSuccess: h.hunterSuccess, pointsNeeded: h.pointsNeeded, season: h.season ?? null,
+  hunterSuccess: h.hunterSuccess, pointsNeeded: h.pointsNeeded, season: h.season ?? null, seasonMonths: seasonMonths(h.season),
 });
 export function searchHunts(args: { state: string; species: string; weapon?: string | null }, sit: Situation): ToolResult<SearchData> {
   const r = resolve(args.state, args.species);

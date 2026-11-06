@@ -38,7 +38,7 @@ function evidenceSet(texts: string[]): { nums: Set<string>; dates: Set<string> }
 export type Unsupported = { text: string; kind: 'number' | 'date'; hunt?: string };
 
 // A hunt in the lookups: its own figures, and how an answer might name it.
-type HuntEvidence = { code: string; unit: string; nums: Set<string> };
+type HuntEvidence = { code: string; unit: string; weapon: string | null; nums: Set<string>; dates: Set<string> };
 
 // Splits each lookup into the hunts it describes (any object with a huntCode)
 // and everything else. A percentage said about a hunt has to be that hunt's:
@@ -46,14 +46,15 @@ type HuntEvidence = { code: string; unit: string; nums: Set<string> };
 // figure in the same search result.
 function splitEvidence(evidence: string[]): { general: string[]; hunts: HuntEvidence[] } {
   const general: string[] = [];
-  const hunts = new Map<string, { unit: string; texts: string[] }>();
+  const hunts = new Map<string, { unit: string; weapon: string | null; texts: string[] }>();
   const strip = (v: unknown): unknown => {
     if (Array.isArray(v)) return v.map(strip);
     if (v && typeof v === 'object') {
       const o = v as Record<string, unknown>;
       if (typeof o.huntCode === 'string' && o.huntCode) {
-        const h = hunts.get(o.huntCode) ?? { unit: String(o.unit ?? ''), texts: [] };
-        h.texts.push(JSON.stringify(o));
+        const h = hunts.get(o.huntCode) ?? { unit: String(o.unit ?? ''), weapon: weaponIn(`${o.weapon ?? ''} ${o.label ?? ''}`), texts: [] };
+        // A fit score (0–100) isn't a percentage: "hunter success was 76%" passed off a fit of 76.
+        h.texts.push(JSON.stringify(o, (k, v) => (k === 'fit' ? undefined : v)));
         hunts.set(o.huntCode, h);
         return null;
       }
@@ -68,31 +69,45 @@ function splitEvidence(evidence: string[]): { general: string[]; hunts: HuntEvid
   }
   return {
     general,
-    hunts: [...hunts].map(([code, h]) => ({ code, unit: h.unit, nums: evidenceSet(h.texts).nums })),
+    hunts: [...hunts].map(([code, h]) => ({ code, unit: h.unit, weapon: h.weapon, ...evidenceSet(h.texts) })),
   };
 }
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// The weapon a hunt or a sentence names, if any.
+function weaponIn(t: string): string | null {
+  const s = t.toLowerCase();
+  if (/archery|\bbow\b/.test(s)) return 'archery';
+  if (/muzzle/.test(s)) return 'muzzleloader';
+  if (/rifle|any legal weapon/.test(s)) return 'rifle';
+  return null;
+}
 
 // Hunts a sentence names: by code if it gives one, else by unit ("Units 072 - 074",
 // "Beaver, East"). Bare short numbers aren't units; they'd match everything.
 function huntsNamed(sentence: string, hunts: HuntEvidence[]): HuntEvidence[] {
   const byCode = hunts.filter((h) => new RegExp(`(^|[^A-Za-z0-9-])${escape(h.code)}($|[^A-Za-z0-9-])`, 'i').test(sentence));
   if (byCode.length) return byCode;
-  return hunts.filter((h) => {
+  const inUnit = hunts.filter((h) => {
     const u = h.unit.trim();
     if (!u) return false;
     if (/^\d+$/.test(u)) return new RegExp(`\\bunits?\\s+0*${Number(u)}\\b`, 'i').test(sentence);
     return u.length >= 4 && new RegExp(`\\b${escape(u)}\\b`, 'i').test(sentence);
   });
+  // "the muzzleloader hunt in Units 072 - 074" is one of the unit's hunts, not all of them.
+  const w = weaponIn(sentence);
+  const armed = w ? inUnit.filter((h) => h.weapon === w) : [];
+  return armed.length ? armed : inUnit;
 }
 
 const known = (n: string, nums: Set<string>) =>
   nums.has(n) || (!n.includes('.') && [...nums].some((e) => Math.round(Number(e)) === Number(n)));
 
-// Percentages in sentences about a named hunt (or the sentences after one, until
-// another hunt or a new paragraph) that aren't that hunt's or a general figure.
-function misattributed(answer: string, general: Set<string>, hunts: HuntEvidence[]): Unsupported[] {
+// Percentages and dates in sentences about a named hunt (or the sentences after
+// one, until another hunt or a new paragraph) that aren't that hunt's or general.
+// "Units 072 - 074 run October 22 to November 5" passed with another 072 hunt's season.
+function misattributed(answer: string, general: { nums: Set<string>; dates: Set<string> }, hunts: HuntEvidence[]): Unsupported[] {
   const out: Unsupported[] = [];
   for (const para of answer.split(/\n+/)) {
     let about: HuntEvidence[] = [];
@@ -102,8 +117,13 @@ function misattributed(answer: string, general: Set<string>, hunts: HuntEvidence
       if (!about.length) continue;
       for (const m of sentence.matchAll(/\d[\d,]*(?:\.\d+)?(?=\s?%)/g)) {
         const n = num(m[0]);
-        if (!n || TRIVIAL.has(n) || known(n, general) || about.some((h) => known(n, h.nums))) continue;
+        if (!n || TRIVIAL.has(n) || known(n, general.nums) || about.some((h) => known(n, h.nums))) continue;
         out.push({ text: `${m[0]}%`, kind: 'number', hunt: about.map((h) => h.code).join(', ') });
+      }
+      for (const m of sentence.toLowerCase().matchAll(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})\b/g)) {
+        const key = `${m[1]} ${Number(m[2])}`;
+        if (general.dates.has(key) || about.some((h) => h.dates.has(key))) continue;
+        out.push({ text: sentence.slice(m.index!, m.index! + m[0].length), kind: 'date', hunt: about.map((h) => h.code).join(', ') });
       }
     }
   }
@@ -137,7 +157,7 @@ export function unsupportedClaims(answer: string, evidence: string[]): Unsupport
   }
   const { general, hunts } = splitEvidence(evidence);
   if (hunts.length) {
-    for (const b of misattributed(answer, evidenceSet(general).nums, hunts)) {
+    for (const b of misattributed(answer, evidenceSet(general), hunts)) {
       if (!out.some((o) => o.text === b.text)) out.push(b);
     }
   }

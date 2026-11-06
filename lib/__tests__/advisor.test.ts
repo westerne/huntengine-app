@@ -123,6 +123,25 @@ describe('answer check', () => {
     // By hunt code too.
     expect(unsupportedClaims('Hunt 4156-072 has 63% hunter success.', search).map((b) => b.text)).toEqual(['63%']);
   });
+  it('doesn’t let a fit score pass as a percentage', () => {
+    const fits = [JSON.stringify({ bestFits: { drawNow: [{ huntCode: 'EM048O3R', unit: '48', fit: 76, why: ['5 applicants per tag', '2 tags'], chanceThisYear: 100 }] } })];
+    expect(unsupportedClaims('Unit 48, season 3 rifle draws at 100%. Hunter success was 76%.', fits).map((b) => b.text)).toEqual(['76%']);
+  });
+  it('catches another hunt’s season dates', () => {
+    // The real slip: 4156-072 (muzzleloader, Oct 5–21) given 4151-072-Early's Oct 22–Nov 5.
+    const seasons = [JSON.stringify({ picks: [
+      { huntCode: '4156-072', unit: '072', weapon: 'muzzleloader', label: 'Units 072 - 074', season: { open: '2025-10-05', close: '2025-10-21' } },
+      { huntCode: '4151-072-Early', unit: '072', weapon: 'rifle', season: { open: '2025-10-22', close: '2025-11-05' } },
+      { huntCode: '4161-131', unit: '131', season: { open: '2025-08-25', close: '2025-09-16' } },
+    ] })];
+    expect(unsupportedClaims('Hunt 4156-072 runs October 22 to November 5.', seasons).map((b) => b.text)).toEqual(['October 22', 'November 5']);
+    expect(unsupportedClaims('Hunt 4156-072 runs October 5 to October 21.', seasons)).toEqual([]);
+    // Both 072 hunts are named by unit alone, so either season passes…
+    expect(unsupportedClaims('Units 072 - 074 run October 22 to November 5.', seasons)).toEqual([]);
+    // …but "the muzzleloader hunt" is only one of them, and later sentences are about it too.
+    expect(unsupportedClaims('Consider the muzzleloader hunt in Units 072 - 074. The season runs from October 22 to November 5.', seasons).map((b) => b.text))
+      .toEqual(['October 22', 'November 5']);
+  });
   it('passes a hunt’s own figures, and general ones said about it', () => {
     expect(unsupportedClaims('Hunt 4161-131 has 63% hunter success and about 0.7% a year.', search)).toEqual([]);
     expect(unsupportedClaims('Units 072 - 074 are a long shot: the best is about 0.36% a year.', search)).toEqual([]);

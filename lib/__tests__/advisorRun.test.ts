@@ -119,6 +119,9 @@ describe('tidy', () => {
     expect(tidy('Apply in **Idaho**. See [the site](https://idfg.idaho.gov). Tap the button to add it.', false))
       .toBe('Apply in Idaho. See the site.');
     expect(tidy('Tap the button to add it.', true)).toBe('Tap the button to add it.');
+    // A button promised that isn't the one shown: only a Remember button came back.
+    expect(tidy('It runs in October. Tap the button below to add it to your plan.', ['remember'])).toBe('It runs in October.');
+    expect(tidy('Tap the button below to add it.', ['add_to_plan'])).toBe('Tap the button below to add it.');
   });
   it('takes out a tool name typed instead of called', () => {
     expect(tidy('Check when Colorado posts its deer deadline.\n\nfunctions.propose_reminder', true)).toBe('Check when Colorado posts its deer deadline.');
@@ -227,5 +230,14 @@ describe('coverage check', () => {
     expect(deniedCoverage('We do not cover New Mexico.')).toBe('New Mexico');
     expect(deniedCoverage("We don't cover Wisconsin yet.")).toBeNull();
     expect(deniedCoverage('We cover Alaska.')).toBeNull();
+  });
+});
+
+describe('season months', () => {
+  it('names every month a season touches, so "a week in October" matches Oct 22 – Nov 5', async () => {
+    const { seasonMonths } = await import('../advisor/tools');
+    expect(seasonMonths({ open: '2025-10-22', close: '2025-11-05' })).toEqual(['Oct', 'Nov']);
+    expect(seasonMonths({ open: '2025-12-15', close: '2026-01-10' })).toEqual(['Dec', 'Jan']);
+    expect(seasonMonths(null)).toBeNull();
   });
 });
