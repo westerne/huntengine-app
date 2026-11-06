@@ -116,6 +116,18 @@ export function feesFor(state: string, speciesKey: string | null, residency: Res
   return f ? f.fees.filter((x) => fits(x.species, speciesKey) && forRes(x.residency, residency)) : [];
 }
 
+// Does this residency earn points for this species here? true / false, or
+// null when the fee file can't say. Wyoming sells elk points only to
+// non-residents, so a resident's chance is the same every year.
+export function pointsSoldTo(state: string, speciesKey: string, residency: Residency): boolean | null {
+  const f = applyFile(state);
+  if (!f) return null;
+  if (feesFor(state, speciesKey, residency).some((x) => x.item === 'point fee' && x.amount != null)) return true;
+  const windows = (f.pointOnly ?? []).filter((w) => fits(w.species, speciesKey));
+  if (windows.some((w) => forRes(w.residency, residency))) return true;
+  return windows.length ? false : null;
+}
+
 export function prerequisitesFor(state: string, speciesKey: string | null, residency: Residency | null): Prerequisite[] {
   const f = applyFile(state);
   return f ? f.prerequisites.filter((x) => fits(x.species, speciesKey) && forRes(x.residency, residency)) : [];

@@ -1,6 +1,8 @@
 # Ranking hunts by what the hunter wants, then by whether they can draw it
 
-Status: draft for review, 2026-11-05.
+Status: v1 built 2026-11-05 (`lib/huntdata/fit.ts`, `/api/huntdata/rank`, `app/find/RankedView.tsx`). Owner went with the recommendations in §7: demand counts, antlerless hidden unless asked, general hunts ranked by fit, no trophy in v1.
+
+Built differently from the draft: where only a hunt's overall rate is published and points matter (Colorado, Utah), hunts are ranked by fit alone in one list ("Ranked by fit"), because "likely by" would compound a rate that isn't the hunter's. Where the hunter's residency earns no points (Wyoming residents for elk), the overall rate is their chance and they get the three groups.
 
 ## 1. The problem
 Find starts from what you can draw and only then sorts by what you want (`rankByWants` in `lib/huntdata/wants.ts` narrows the reachable pool). So a cow tag or a crowded general hunt leads the list because it draws, not because it's a hunt anyone would choose. A hunter should first see **the best hunts for them**, and then **what each takes to draw**.

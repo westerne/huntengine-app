@@ -15,6 +15,7 @@ import AskBox from './AskBox';
 import Matches, { type Narrowed } from './Matches';
 import { AskButton } from '../components/Advisor';
 import AddToPlan from './AddToPlan';
+import RankedView from './RankedView';
 import { ButtonLink, Card, Caveat } from '../ui';
 import { Loader } from '../ui/client';
 
@@ -172,7 +173,7 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
       <div>
         <h1 className="hq-h1">Find a hunt</h1>
         <p className="hq-body" style={{ marginTop: 6 }}>
-          Pick a state and species. We&apos;ll tell you what your points buy there before asking anything else.
+          Pick a state and species, say what matters to you, and we&apos;ll rank every hunt there by fit, then show what each takes to draw.
         </p>
       </div>
 
@@ -191,11 +192,16 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
         </label>
       </div>
 
+      <RankedView state={state} species={species} />
+
+      {/* The old way in, by draw odds alone, kept for anyone who wants it. */}
+      <details className="hq-find-more">
+        <summary>Everything you can draw, by odds</summary>
       {busy && <Loader lines={['Reading the draw data', 'Checking your points', 'Lining up the odds']} />}
       {error && <Caveat tone="stop">{error}</Caveat>}
 
       {reality && answered && (
-        <section aria-labelledby="reality-h" className="hq-stack hq-stack--lg hq-fade-up">
+        <section aria-labelledby="reality-h" className="hq-stack hq-stack--lg hq-fade-up" style={{ marginTop: 16 }}>
           <h2 id="reality-h" className="hq-sr">What your points buy</h2>
 
           <Card>
@@ -326,6 +332,7 @@ export default function FindView({ initialState, initialSpecies }: { initialStat
           </div>
         </section>
       )}
+      </details>
 
       {/* The other way in: a tag already in hand needs a brief, not odds. */}
       <Card variant="flat">

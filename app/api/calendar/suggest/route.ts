@@ -24,10 +24,11 @@ export async function POST(req: Request) {
   // profiles.planning, so a hunter's entries came back blank on their next
   // visit while a stale copy sat in the profile feeding nothing.
   const { points: _points, ...answersOnly } = answers; // eslint-disable-line @typescript-eslint/no-unused-vars
-  // Facts the advisor saved live in the same column; redoing setup mustn't erase them.
   const { data: prior } = await supabase.from('profiles').select('planning').eq('user_id', auth.viewer.userId).maybeSingle();
+  // Facts and Find preferences live in the same column; redoing setup keeps them.
   const facts = factsOf(prior?.planning);
-  const planning = facts.length ? { ...answersOnly, facts } : answersOnly;
+  const huntPrefs = (prior?.planning as { huntPrefs?: unknown } | null)?.huntPrefs;
+  const planning = { ...answersOnly, ...(facts.length ? { facts } : {}), ...(huntPrefs ? { huntPrefs } : {}) };
   const profilePatch: Record<string, unknown> = { user_id: auth.viewer.userId, planning };
   // Only a covered state is saved as home; "another state" means non-resident everywhere.
   if (answers.homeState && stateCodeOf(answers.homeState)) profilePatch.home_state = answers.homeState;

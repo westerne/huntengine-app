@@ -8,6 +8,7 @@ import { makeToolbox } from '@/lib/advisor/toolbox';
 import { situationFromPlan, type ReportRow } from '@/lib/advisor/situation';
 import { suggestQuestions } from '@/lib/advisor/suggest';
 import { factsOf, threadTitle } from '@/lib/advisor/facts';
+import { cleanPrefs } from '@/lib/huntdata/fit';
 import { loadPlan } from '@/app/plan/load';
 
 export const maxDuration = 60;
@@ -99,7 +100,11 @@ export async function POST(req: Request) {
     supabase.from('profiles').select('planning').eq('user_id', userId).maybeSingle(),
   ]);
   const facts = factsOf(prof?.planning).map((f) => f.text);
-  const sit = situationFromPlan(plan ?? { thisYear: new Date().getFullYear(), years: [], home: null, hunts: [], points: [] });
+  const savedPrefs = (prof?.planning as { huntPrefs?: unknown } | null)?.huntPrefs;
+  const sit = {
+    ...situationFromPlan(plan ?? { thisYear: new Date().getFullYear(), years: [], home: null, hunts: [], points: [] }),
+    ...(savedPrefs ? { prefs: cleanPrefs(savedPrefs) } : {}),
+  };
   const today = TODAY();
   const tools = makeToolbox(sit, {
     today,

@@ -12,7 +12,7 @@ export const metadata = { title: 'Find | HuntQuarters' };
 // Find a Hunt: what your points buy, before any questions. Opens on a state
 // the hunter already holds points in, so the first thing they see is about
 // them rather than a default.
-export default async function FindPage() {
+export default async function FindPage({ searchParams }: { searchParams: Promise<{ state?: string; species?: string }> }) {
   if (!accountsEnabled()) redirect('/');
   const viewer = await getViewer();
   if (!viewer.userId) redirect('/login');
@@ -22,9 +22,12 @@ export default async function FindPage() {
   const { data: balances } = await supabase
     .from('hunter_points').select('state, species, points').order('points', { ascending: false });
 
+  // A link can name the state and species (/find?state=NV&species=Elk).
+  const asked = await searchParams;
   const top = (balances ?? [])[0];
-  const state = (top && toStateCode(top.state)) || 'CO';
-  const species = top && speciesFor(state).includes(top.species) ? top.species : speciesFor(state)[0];
+  const state = (asked.state && toStateCode(asked.state)) || (top && toStateCode(top.state)) || 'CO';
+  const want = asked.species ?? top?.species;
+  const species = want && speciesFor(state).includes(want) ? want : speciesFor(state)[0];
 
   return (
     <div className="hq" style={{ minHeight: '100vh' }}>

@@ -17,6 +17,8 @@ import { buildGenericScoutDataset } from '../huntdata/generic';
 import { drawReality, type DrawReality, type ReachableHunt } from '../huntdata/reality';
 import { cutoffIsADate, pointsBarMatters } from '../huntdata/drawSystem';
 import type { Residency, Weapon } from '../huntdata/schema';
+import { DEFAULT_PREFS, rankHunts, type HuntPrefs, type RankedHunt } from '../huntdata/fit';
+import { pointsSoldTo } from '../huntdata/apply';
 
 export type Source = { label: string; url?: string | null };
 export type ToolResult<T> = { ok: true; data: T; sources: Source[] } | { ok: false; reason: string };
@@ -27,6 +29,7 @@ export type Situation = {
   balances: Array<{ state: string; species: string; points: number }>;
   years: number[];                                                  // plan years, this season first
   seasonYear: number;
+  prefs?: HuntPrefs;                                                // what they said matters on Find
 };
 
 const fail = (reason: string): { ok: false; reason: string } => ({ ok: false, reason });
@@ -307,7 +310,20 @@ export type SearchData = {
   longShots: Picked[];   // lottery states: drawable, under 1% a year
   soon: Array<Picked & { year: number; yearsAway: number; oddsAtThatLevel: number | null; cutoffIsADate: boolean }>;
   moreReachable: number;
+  // Ranked by the hunter's own preferences first (docs/SPEC_RANKING.md), then
+  // grouped by what each takes to draw. Lead with these, not the easiest draw.
+  bestFits: {
+    prefsUsed: string;
+    drawNow: FitPick[]; building: FitPick[]; longShots: FitPick[];
+    rankedByFitOnly: FitPick[];          // odds by points not published here
+    leftOut: { antlerless: number; otherWeapon: number };
+  };
 };
+type FitPick = { huntCode: string; unit: string; label: string | null; fit: number; why: string[]; chanceThisYear: number; likelyBy: number | null; chanceByHorizon: number; oddsAreYours: boolean };
+const fitPick = (h: RankedHunt): FitPick => ({
+  huntCode: h.huntCode, unit: h.unit, label: h.label, fit: h.fit, why: h.reasons,
+  chanceThisYear: h.draw.now, likelyBy: h.draw.likelyBy, chanceByHorizon: h.draw.byHorizon, oddsAreYours: h.draw.yours,
+});
 const WEAPONS: Weapon[] = ['rifle', 'archery', 'muzzleloader'];
 const pick = (h: ReachableHunt): Picked => ({
   unit: h.unit, huntCode: h.huntCode, label: h.label, odds: h.odds, publishedRate: h.publishedRate,
@@ -342,6 +358,19 @@ export function searchHunts(args: { state: string; species: string; weapon?: str
         ...pick(h), year: h.year, yearsAway: h.yearsAway, oddsAtThatLevel: h.oddsAtThatLevel, cutoffIsADate: h.cutoffIsADate,
       })),
       moreReachable: Math.max(0, re.reachable.length - 8),
+      bestFits: (() => {
+        const prefs = { ...(sit.prefs ?? DEFAULT_PREFS), ...(weapon !== 'any' ? { weapon } : {}) };
+        const earns = usesPoints(mod, r.species) && pointsSoldTo(r.state, r.key, residency) !== false;
+        const k = rankHunts(mod.hunts(r.key as never), { residency, points: earns ? points : 0, usesPoints: earns, seasonYear: sit.seasonYear, prefs, stateName: r.name, species: r.species });
+        const w = prefs.weights;
+        const said = (n: 0 | 1 | 2) => (n === 2 ? 'matters most' : n === 1 ? 'nice' : 'doesn\u2019t matter');
+        return {
+          prefsUsed: `${prefs.weapon === 'any' ? 'any weapon' : prefs.weapon}; hunter success ${said(w.success)}; demand ${said(w.demand)}; fewer hunters ${said(w.quiet)}${prefs.timing ? `; ${prefs.timing}` : ''}; ${prefs.horizon}-year horizon${sit.prefs ? '' : ' (defaults; they haven\u2019t set preferences on Find)'}`,
+          drawNow: k.drawNow.slice(0, 3).map(fitPick), building: k.building.slice(0, 3).map(fitPick),
+          longShots: k.longShots.slice(0, 3).map(fitPick), rankedByFitOnly: k.unpriced.slice(0, 4).map(fitPick),
+          leftOut: { antlerless: k.hidden.antlerless, otherWeapon: k.hidden.weapon },
+        };
+      })(),
     },
     sources,
   };
