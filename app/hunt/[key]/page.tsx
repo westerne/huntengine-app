@@ -9,6 +9,7 @@ import { getStateModule, STATE_INFO, toStateCode } from '@/lib/huntdata/registry
 import { successText } from '@/lib/huntdata/generic';
 import { ladderFor } from '@/lib/huntdata/ladder';
 import { howItDraws } from '@/lib/huntdata/weightedDraw';
+import { herdFor, HERD_CAVEAT } from '@/lib/huntdata/herd';
 import { SPECIES_NAME, speciesKeyOf } from '@/lib/species';
 import { titleCaseState } from '@/lib/scoutData';
 import type { SpeciesKey } from '@/lib/huntdata/schema';
@@ -43,6 +44,7 @@ export default async function HuntPage({ params }: { params: Promise<{ key: stri
   const bal = (points ?? []).find((p) => toStateCode(p.state) === mod.code && speciesKeyOf(p.species, mod.code) === hunt.species);
   const stat = residency === 'resident' ? hunt.draw.resident : hunt.draw.nonresident;
   const info = STATE_INFO[mod.code];
+  const herd = herdFor(mod.code, hunt.species, hunt.unit);
 
   return (
     <div className="hq" style={{ minHeight: '100vh' }}>
@@ -54,7 +56,8 @@ export default async function HuntPage({ params }: { params: Promise<{ key: stri
           tags: stat?.tags ?? hunt.tags ?? null, applicants: stat?.applicants ?? hunt.applicants ?? null,
           hunterSuccess: hunt.harvest ? `${successText(hunt.harvest, hunt.tags)} (${hunt.harvest.year})` : null,
           drawYear: hunt.drawYear, openToYou: !hunt.openTo || hunt.openTo === residency,
-          drawRules: info.drawSystemNote, howItDraws: howItDraws(hunt), agencyUrl: info.agency?.url ?? null, agencyName: info.agency?.name ?? null,
+          drawRules: info.drawSystemNote, howItDraws: howItDraws(hunt),
+          herd: herd ? { k: `${herd.males[0].toUpperCase()}${herd.males.slice(1)} / 100 ${herd.females}`, v: herd.malesPer100, n: `${herd.year}, CPW ${herd.herd}`, caveat: HERD_CAVEAT } : null, agencyUrl: info.agency?.url ?? null, agencyName: info.agency?.name ?? null,
         }}
         residency={residency}
         ladder={ladderFor(hunt, residency)}

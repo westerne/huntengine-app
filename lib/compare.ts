@@ -8,6 +8,7 @@ import { cutoffIsADate } from './huntdata/drawSystem';
 import { howItDraws } from './huntdata/weightedDraw';
 import { drawOutlook, type Outlook } from './calendar';
 import { SPECIES_NAME } from './species';
+import { herdFor, HERD_CAVEAT } from './huntdata/herd';
 
 export const MAX_COMPARE = 4;
 
@@ -124,7 +125,10 @@ export function compareColumn(
     hunterSuccessPct: h && !tiny ? h.successPct : null,
     season: hunt.season ? `${fmtDate(hunt.season.open)} – ${fmtDate(hunt.season.close)}` : null,
     publicLand: null,
-    trophy: 'No trophy data published',
+    trophy: (() => {
+      const herd = herdFor(hunt.state, hunt.species, hunt.unit);
+      return herd ? `Herd: ${herd.text} (CPW, ${herd.herd}). ${HERD_CAVEAT}` : 'No trophy data published';
+    })(),
     cost: 'Not researched yet — check the agency',
   };
 }

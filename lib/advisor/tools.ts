@@ -21,6 +21,7 @@ import { isAntlerless, isPrivateOnly } from '../huntdata/shortlist';
 import { DEFAULT_PREFS, rankHunts, type HuntPrefs, type RankedHunt } from '../huntdata/fit';
 import { pointsSoldTo } from '../huntdata/apply';
 import { WEIGHTED_SPECIES, entryPointsFor } from '../huntdata/preferenceDraw';
+import { herdFor, HERD_CAVEAT } from '../huntdata/herd';
 
 export type Source = { label: string; url?: string | null };
 export type ToolResult<T> = { ok: true; data: T; sources: Source[] } | { ok: false; reason: string };
@@ -244,7 +245,14 @@ export function harvestReporting(args: { state: string; species: string }): Tool
 }
 
 // ── one hunt, and several side by side ─────────────────────────────────────
-export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; pointsNote?: string; howTheDrawWorks: string | null; applyOrBuild?: string };
+export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; pointsNote?: string; howTheDrawWorks: string | null; applyOrBuild?: string; herd?: HerdData };
+// "Where are the bigger bulls?" The state's herd sex ratio is the honest answer
+// we have; antler size we don't.
+export type HerdData = { malesPer100: number; what: string; herd: string; herdSize: number; note: string };
+const herdData = (state: string, key: string, unit: string | null | undefined): { herd?: HerdData } => {
+  const h = herdFor(state, key, unit);
+  return h ? { herd: { malesPer100: h.malesPer100, what: h.text, herd: h.herd, herdSize: h.population, note: `CPW's estimate for the whole herd. ${HERD_CAVEAT}` } } : {};
+};
 // The state's draw rules in plain words, so "burn points or keep building" is
 // answered for the state's actual system, not a preference draw by default.
 const drawRules = (state: string) => STATE_INFO[state as keyof typeof STATE_INFO]?.drawSystemNote ?? null;
@@ -310,7 +318,7 @@ const normUnit = (u: string) => u.trim().toLowerCase().replace(/^(unit|gmu)\s+/,
 // asking by unit lists them instead of failing.
 export type UnitHuntsData = {
   state: string; species: string; unit: string; residency: Residency; yourPoints: number | null;
-  hunts: UnitHunt[]; antlerlessLeftOut: number; privateLandOnlyLeftOut: number; howTheDrawWorks: string | null;
+  hunts: UnitHunt[]; antlerlessLeftOut: number; privateLandOnlyLeftOut: number; howTheDrawWorks: string | null; herd?: HerdData;
 };
 export function unitHunts(args: { state: string; species: string; unit: string }, sit: Situation): ToolResult<UnitHuntsData> {
   const r = resolve(args.state, args.species);
@@ -334,6 +342,7 @@ export function unitHunts(args: { state: string; species: string; unit: string }
       antlerlessLeftOut: antlered.length ? open.length - antlered.length : 0,
       privateLandOnlyLeftOut: all.length - open.length,
       howTheDrawWorks: drawRules(r.state),
+      ...herdData(r.state, r.key, args.unit),
     },
     sources,
   };
@@ -350,7 +359,7 @@ export function getHunt(args: { state: string; species: string; huntCode?: strin
   if (!c) return fail(`We couldn't find ${r.name} ${r.species.toLowerCase()} ${args.huntCode ?? `unit ${args.unit}`} in the draw data${args.unit && !args.huntCode ? ' (that unit may have several hunts — name the hunt code)' : ''}.`);
   const sources = [huntSource(r.state, c.drawYear)];
   if (c.pts != null) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${c.pts})` });
-  return { ok: true, data: { ...strip(c.col), yourPoints: c.pts, ...assumedNote(c, r.state, r.species), howTheDrawWorks: drawRules(r.state), ...(APPLYING_EARNS_POINT[r.state] ? { applyOrBuild: APPLYING_EARNS_POINT[r.state] } : {}) }, sources };
+  return { ok: true, data: { ...strip(c.col), yourPoints: c.pts, ...assumedNote(c, r.state, r.species), howTheDrawWorks: drawRules(r.state), ...herdData(r.state, r.key, c.col.unit), ...(APPLYING_EARNS_POINT[r.state] ? { applyOrBuild: APPLYING_EARNS_POINT[r.state] } : {}) }, sources };
 }
 
 export function compareHunts(args: { hunts: Array<{ state: string; species: string; huntCode: string }> }, sit: Situation): ToolResult<{ hunts: HuntData[]; pick: ReturnType<typeof pickBest>; notFound: string[] }> {
@@ -363,7 +372,7 @@ export function compareHunts(args: { hunts: Array<{ state: string; species: stri
     const c = r.ok ? column(r.state, r.key, r.species, h.huntCode, null, sit) : null;
     if (!r.ok || !c) { notFound.push(`${h.state} ${h.huntCode}`); continue; }
     cols.push(c.col);
-    out.push({ ...strip(c.col), yourPoints: c.pts, ...assumedNote(c, r.state, r.species), howTheDrawWorks: drawRules(r.state) });
+    out.push({ ...strip(c.col), yourPoints: c.pts, ...assumedNote(c, r.state, r.species), howTheDrawWorks: drawRules(r.state), ...herdData(r.state, r.key, c.col.unit) });
     const s = huntSource(r.state, c.drawYear);
     sources.set(s.label, s);
     if (c.pts != null) sources.set(`pts:${r.state}${r.key}`, { label: `your ${r.state} ${r.species.toLowerCase()} points (${c.pts})` });
@@ -420,10 +429,10 @@ const pick = (h: ReachableHunt): Picked => ({
 });
 // "A November hunt I can draw every 2-3 years": filters, not prompts. Drawing
 // every N years means drawing at N-1 points (a draw resets them to 0).
-export type FilteredHunt = UnitHunt & { unit: string; fit: number | null };
-export type Filtered = { month: string | null; maxPointsToDraw: number | null; matches: FilteredHunt[]; matched: number; noSeasonDates: number; noPointsFigure: number; howToAnswer: string };
+export type FilteredHunt = UnitHunt & { unit: string; fit: number | null; malesPer100?: number };
+export type Filtered = { month: string | null; maxPointsToDraw: number | null; sortedBy?: string; matches: FilteredHunt[]; matched: number; noSeasonDates: number; noPointsFigure: number; howToAnswer: string };
 function filterHunts(
-  hunts: Hunt[], args: { month?: string | null; maxPointsToDraw?: number | null },
+  hunts: Hunt[], args: { month?: string | null; maxPointsToDraw?: number | null; sortBy?: string | null },
   residency: Residency, points: number, weapon: Weapon, ranked: RankedHunt[],
 ): Filtered {
   const month = args.month ? MONTH_NAMES.find((m) => args.month!.toLowerCase().startsWith(m.toLowerCase())) ?? null : null;
@@ -447,20 +456,26 @@ function filterHunts(
     }
     return true;
   });
+  const byHerd = args.sortBy === 'malesPer100';
   const matches = hits
-    .map((h) => ({ ...unitHunt(h, residency, points), unit: h.unit, fit: fit.get(h.huntCode) ?? null }))
-    .sort((a, b) => (b.fit ?? -1) - (a.fit ?? -1) || (Number(b.hunterSuccess) || 0) - (Number(a.hunterSuccess) || 0));
+    .map((h) => {
+      const herd = herdFor(h.state, h.species, h.unit);
+      return { ...unitHunt(h, residency, points), unit: h.unit, fit: fit.get(h.huntCode) ?? null, ...(herd ? { malesPer100: herd.malesPer100 } : {}) };
+    })
+    .filter((m) => !byHerd || m.malesPer100 != null)
+    .sort((a, b) => (byHerd ? (b.malesPer100 ?? -1) - (a.malesPer100 ?? -1) : 0) || (b.fit ?? -1) - (a.fit ?? -1) || (Number(b.hunterSuccess) || 0) - (Number(a.hunterSuccess) || 0));
   return {
-    month, maxPointsToDraw: maxPts, matches: matches.slice(0, 10), matched: matches.length, noSeasonDates, noPointsFigure,
+    month, maxPointsToDraw: maxPts, ...(byHerd ? { sortedBy: `males per 100 females in the herd (CPW estimate). ${HERD_CAVEAT}` } : {}),
+    matches: matches.slice(0, 10), matched: matches.length, noSeasonDates, noPointsFigure,
     // Said in the data: the prompt rule alone still got one hunt back.
     howToAnswer: matches.length > 1
-      ? `${matches.length} hunts match. Name the top two or three (unit, season dates, points it took to draw, their chance this year), lead with the best, and say how many matched.`
-      : matches.length ? 'One hunt matches. Say it is the only one.' : 'Nothing matches. Say so, and which filter to loosen.',
+      ? `${matches.length} hunts match. Name the top two or three (unit, season dates, points it took to draw, their chance this year${byHerd ? ', males per 100 females' : ''}), lead with the best, and say how many matched.${byHerd ? ' Say the ratio is for the whole herd and is not antler size, and weigh it against their chance of drawing.' : ''}`
+      : matches.length ? 'One hunt matches. Say it is the only one.' : `Nothing matches. Say so, and which filter to loosen.${byHerd ? ' Herd ratios are published for Colorado elk, deer and pronghorn only.' : ''}`,
   };
 }
 
 export function searchHunts(
-  args: { state: string; species: string; weapon?: string | null; month?: string | null; maxPointsToDraw?: number | null },
+  args: { state: string; species: string; weapon?: string | null; month?: string | null; maxPointsToDraw?: number | null; sortBy?: string | null },
   sit: Situation,
 ): ToolResult<SearchData & { filtered?: Filtered }> {
   const r = resolve(args.state, args.species);
@@ -509,7 +524,7 @@ export function searchHunts(
           leftOut: { antlerless: k.hidden.antlerless, otherWeapon: k.hidden.weapon },
         };
       })(),
-      ...(args.month || typeof args.maxPointsToDraw === 'number'
+      ...(args.month || typeof args.maxPointsToDraw === 'number' || args.sortBy === 'malesPer100'
         ? { filtered: filterHunts(mod.hunts(r.key as never), args, residency, points, weapon, ranked) }
         : {}),
     },

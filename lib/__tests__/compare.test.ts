@@ -28,6 +28,11 @@ describe('compare columns', () => {
     expect(c.cost).toMatch(/Not researched/);
     expect(col('OK', 'Antelope', '2001', 'resident', 0).season).toBe('Sep 4 – Sep 7');
   });
+  it('shows Colorado herd sex ratios in the trophy row, and says what they are not', () => {
+    const t = col('CO', 'Elk', 'EE035O1R', 'resident', 0).trophy;
+    expect(t).toMatch(/^Herd: 26 bulls per 100 cows after the 2025 season \(CPW, herd unit \(DAU\) 12\)/);
+    expect(t).toMatch(/not a measure of antler size/);
+  });
 });
 
 describe('clearing the points bar is not the same as drawing', () => {

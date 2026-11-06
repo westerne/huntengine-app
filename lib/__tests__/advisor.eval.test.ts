@@ -113,6 +113,9 @@ const CASES: Case[] = [
   { q: 'colorado deer in unit 35 2nd or 3rd season', history: CO_DEER, tools: ['get_hunt', 'search_hunts'], match: /35/, not: /don.?t have the draw data/i },
   { q: 'DM0353R', history: CO_DEER, tools: ['get_hunt'], match: /35/, not: /couldn.?t find/i },
   { q: 'Unit 035', history: CO_DEER, tools: ['get_hunt', 'search_hunts'], match: /35/, not: ASKS_BACK },
+  // Herd ratios and the moose weighted draw (Colorado, 2026-11-06)
+  { q: 'Where are the bigger bulls in Colorado for elk?', tools: ['search_hunts'], match: /per 100 cows/i, not: /\d{3} ?(inch|")|B&C|score/i },
+  { q: 'How does the Colorado moose draw work, and when could I draw one?', tools: ['search_hunts', 'get_hunt'], match: /3 (preference )?points/i, not: /most points draw first/i },
   // Actions: ask first
   { q: 'Add Nevada elk 4151-111-Early for 2028 to my plan.', tools: ['propose_add_to_plan'], match: /tap|button/i },
   { q: 'Remind me about the Nevada elk deadline.', tools: ['deadlines', 'propose_reminder'], match: /tap|button/i },

@@ -1,0 +1,2246 @@
+{
+ "state": "CO",
+ "year": 2025,
+ "source": {
+  "name": "Colorado Parks and Wildlife — 2025 Population and Sex Ratio Estimates",
+  "url": "https://cpw.state.co.us/activities/hunting/big-game/hunting-elk/elk-statistics"
+ },
+ "notes": "CPW's post-hunt herd estimates by DAU (a herd: one or more game management units), from https://cpw.widen.net/s/fmhlcbms2w/2025-elk-population-and-sex-ratio-estimates ; https://cpw.widen.net/s/vxbh5s9kqg/2025-deer-population-and-sex-ratio-estimates ; https://cpw.widen.net/s/sc2cbbdgz6/2025-pronghorn-population-and-sex-ratio-estimates. Per unit: dau, population (CPW's estimate for the whole herd, not the unit) and malesPer100 (bulls per 100 cows for elk, bucks per 100 does for deer and pronghorn). Pronghorn figures are CPW's pre-hunt estimates. Units CPW lists under two herds are left out.",
+ "species": {
+  "ELK": {
+   "year": 2025,
+   "units": {
+    "2": {
+     "dau": "01",
+     "population": 1700,
+     "malesPer100": 140
+    },
+    "3": {
+     "dau": "02",
+     "population": 17070,
+     "malesPer100": 22
+    },
+    "4": {
+     "dau": "02",
+     "population": 17070,
+     "malesPer100": 22
+    },
+    "5": {
+     "dau": "02",
+     "population": 17070,
+     "malesPer100": 22
+    },
+    "6": {
+     "dau": "03",
+     "population": 6510,
+     "malesPer100": 26
+    },
+    "7": {
+     "dau": "04",
+     "population": 5550,
+     "malesPer100": 23
+    },
+    "8": {
+     "dau": "04",
+     "population": 5550,
+     "malesPer100": 23
+    },
+    "9": {
+     "dau": "04",
+     "population": 5550,
+     "malesPer100": 23
+    },
+    "10": {
+     "dau": "21",
+     "population": 1970,
+     "malesPer100": 51
+    },
+    "11": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "12": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "13": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "14": {
+     "dau": "02",
+     "population": 17070,
+     "malesPer100": 22
+    },
+    "15": {
+     "dau": "07",
+     "population": 3650,
+     "malesPer100": 22
+    },
+    "16": {
+     "dau": "03",
+     "population": 6510,
+     "malesPer100": 26
+    },
+    "17": {
+     "dau": "03",
+     "population": 6510,
+     "malesPer100": 26
+    },
+    "18": {
+     "dau": "08",
+     "population": 3220,
+     "malesPer100": 29
+    },
+    "19": {
+     "dau": "04",
+     "population": 5550,
+     "malesPer100": 23
+    },
+    "20": {
+     "dau": "09",
+     "population": 2150,
+     "malesPer100": 41
+    },
+    "21": {
+     "dau": "10",
+     "population": 17890,
+     "malesPer100": 34
+    },
+    "22": {
+     "dau": "10",
+     "population": 17890,
+     "malesPer100": 34
+    },
+    "23": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "24": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "25": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "26": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "27": {
+     "dau": "07",
+     "population": 3650,
+     "malesPer100": 22
+    },
+    "28": {
+     "dau": "13",
+     "population": 2660,
+     "malesPer100": 26
+    },
+    "29": {
+     "dau": "38",
+     "population": 1560,
+     "malesPer100": 40
+    },
+    "30": {
+     "dau": "10",
+     "population": 17890,
+     "malesPer100": 34
+    },
+    "31": {
+     "dau": "10",
+     "population": 17890,
+     "malesPer100": 34
+    },
+    "32": {
+     "dau": "10",
+     "population": 17890,
+     "malesPer100": 34
+    },
+    "33": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "34": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "35": {
+     "dau": "12",
+     "population": 4370,
+     "malesPer100": 26
+    },
+    "36": {
+     "dau": "12",
+     "population": 4370,
+     "malesPer100": 26
+    },
+    "37": {
+     "dau": "13",
+     "population": 2660,
+     "malesPer100": 26
+    },
+    "38": {
+     "dau": "38",
+     "population": 1560,
+     "malesPer100": 40
+    },
+    "39": {
+     "dau": "39",
+     "population": 2180,
+     "malesPer100": 28
+    },
+    "40": {
+     "dau": "19",
+     "population": 7080,
+     "malesPer100": 40
+    },
+    "41": {
+     "dau": "14",
+     "population": 14840,
+     "malesPer100": 20
+    },
+    "42": {
+     "dau": "14",
+     "population": 14840,
+     "malesPer100": 20
+    },
+    "43": {
+     "dau": "15",
+     "population": 3770,
+     "malesPer100": 23
+    },
+    "44": {
+     "dau": "16",
+     "population": 11930,
+     "malesPer100": 28
+    },
+    "45": {
+     "dau": "16",
+     "population": 11930,
+     "malesPer100": 28
+    },
+    "46": {
+     "dau": "39",
+     "population": 2180,
+     "malesPer100": 28
+    },
+    "47": {
+     "dau": "16",
+     "population": 11930,
+     "malesPer100": 28
+    },
+    "48": {
+     "dau": "17",
+     "population": 3470,
+     "malesPer100": 23
+    },
+    "49": {
+     "dau": "22",
+     "population": 3500,
+     "malesPer100": 33
+    },
+    "50": {
+     "dau": "18",
+     "population": 3300,
+     "malesPer100": 29
+    },
+    "51": {
+     "dau": "51",
+     "population": 3480,
+     "malesPer100": 40
+    },
+    "52": {
+     "dau": "14",
+     "population": 14840,
+     "malesPer100": 20
+    },
+    "53": {
+     "dau": "05",
+     "population": 10230,
+     "malesPer100": 28
+    },
+    "54": {
+     "dau": "05",
+     "population": 10230,
+     "malesPer100": 28
+    },
+    "55": {
+     "dau": "43",
+     "population": 6920,
+     "malesPer100": 21
+    },
+    "56": {
+     "dau": "17",
+     "population": 3470,
+     "malesPer100": 23
+    },
+    "57": {
+     "dau": "22",
+     "population": 3500,
+     "malesPer100": 33
+    },
+    "58": {
+     "dau": "22",
+     "population": 3500,
+     "malesPer100": 33
+    },
+    "59": {
+     "dau": "23",
+     "population": 4300,
+     "malesPer100": 34
+    },
+    "60": {
+     "dau": "40",
+     "population": 1420,
+     "malesPer100": 40
+    },
+    "61": {
+     "dau": "20",
+     "population": 16680,
+     "malesPer100": 29
+    },
+    "62": {
+     "dau": "20",
+     "population": 16680,
+     "malesPer100": 29
+    },
+    "63": {
+     "dau": "05",
+     "population": 10230,
+     "malesPer100": 28
+    },
+    "66": {
+     "dau": "25",
+     "population": 6110,
+     "malesPer100": 13
+    },
+    "67": {
+     "dau": "25",
+     "population": 6110,
+     "malesPer100": 13
+    },
+    "68": {
+     "dau": "26",
+     "population": 5580,
+     "malesPer100": 21
+    },
+    "69": {
+     "dau": "28",
+     "population": 2360,
+     "malesPer100": 30
+    },
+    "70": {
+     "dau": "24",
+     "population": 30320,
+     "malesPer100": 14
+    },
+    "71": {
+     "dau": "24",
+     "population": 30320,
+     "malesPer100": 14
+    },
+    "72": {
+     "dau": "24",
+     "population": 30320,
+     "malesPer100": 14
+    },
+    "73": {
+     "dau": "24",
+     "population": 30320,
+     "malesPer100": 14
+    },
+    "74": {
+     "dau": "30",
+     "population": 6710,
+     "malesPer100": 14
+    },
+    "75": {
+     "dau": "31",
+     "population": 32320,
+     "malesPer100": 13
+    },
+    "76": {
+     "dau": "34",
+     "population": 4460,
+     "malesPer100": 27
+    },
+    "77": {
+     "dau": "31",
+     "population": 32320,
+     "malesPer100": 13
+    },
+    "78": {
+     "dau": "31",
+     "population": 32320,
+     "malesPer100": 13
+    },
+    "79": {
+     "dau": "34",
+     "population": 4460,
+     "malesPer100": 27
+    },
+    "80": {
+     "dau": "32",
+     "population": 14860,
+     "malesPer100": 20
+    },
+    "81": {
+     "dau": "32",
+     "population": 14860,
+     "malesPer100": 20
+    },
+    "82": {
+     "dau": "11",
+     "population": 6080,
+     "malesPer100": 47
+    },
+    "83": {
+     "dau": "33",
+     "population": 14470,
+     "malesPer100": 26
+    },
+    "84": {
+     "dau": "28",
+     "population": 2360,
+     "malesPer100": 30
+    },
+    "85": {
+     "dau": "33",
+     "population": 14470,
+     "malesPer100": 26
+    },
+    "86": {
+     "dau": "27",
+     "population": 3150,
+     "malesPer100": 22
+    },
+    "104": {
+     "dau": "51",
+     "population": 3480,
+     "malesPer100": 40
+    },
+    "105": {
+     "dau": "51",
+     "population": 3480,
+     "malesPer100": 40
+    },
+    "106": {
+     "dau": "51",
+     "population": 3480,
+     "malesPer100": 40
+    },
+    "110": {
+     "dau": "51",
+     "population": 3480,
+     "malesPer100": 40
+    },
+    "111": {
+     "dau": "51",
+     "population": 3480,
+     "malesPer100": 40
+    },
+    "131": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "133": {
+     "dau": "53",
+     "population": 1510,
+     "malesPer100": 32
+    },
+    "134": {
+     "dau": "53",
+     "population": 1510,
+     "malesPer100": 32
+    },
+    "135": {
+     "dau": "53",
+     "population": 1510,
+     "malesPer100": 32
+    },
+    "140": {
+     "dau": "33",
+     "population": 14470,
+     "malesPer100": 26
+    },
+    "141": {
+     "dau": "53",
+     "population": 1510,
+     "malesPer100": 32
+    },
+    "142": {
+     "dau": "53",
+     "population": 1510,
+     "malesPer100": 32
+    },
+    "161": {
+     "dau": "03",
+     "population": 6510,
+     "malesPer100": 26
+    },
+    "171": {
+     "dau": "03",
+     "population": 6510,
+     "malesPer100": 26
+    },
+    "181": {
+     "dau": "08",
+     "population": 3220,
+     "malesPer100": 29
+    },
+    "191": {
+     "dau": "04",
+     "population": 5550,
+     "malesPer100": 23
+    },
+    "201": {
+     "dau": "01",
+     "population": 1700,
+     "malesPer100": 140
+    },
+    "211": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "214": {
+     "dau": "02",
+     "population": 17070,
+     "malesPer100": 22
+    },
+    "231": {
+     "dau": "06",
+     "population": 42470,
+     "malesPer100": 19
+    },
+    "301": {
+     "dau": "02",
+     "population": 17070,
+     "malesPer100": 22
+    },
+    "371": {
+     "dau": "13",
+     "population": 2660,
+     "malesPer100": 26
+    },
+    "391": {
+     "dau": "39",
+     "population": 2180,
+     "malesPer100": 28
+    },
+    "411": {
+     "dau": "14",
+     "population": 14840,
+     "malesPer100": 20
+    },
+    "421": {
+     "dau": "14",
+     "population": 14840,
+     "malesPer100": 20
+    },
+    "431": {
+     "dau": "15",
+     "population": 3770,
+     "malesPer100": 23
+    },
+    "441": {
+     "dau": "02",
+     "population": 17070,
+     "malesPer100": 22
+    },
+    "444": {
+     "dau": "16",
+     "population": 11930,
+     "malesPer100": 28
+    },
+    "461": {
+     "dau": "39",
+     "population": 2180,
+     "malesPer100": 28
+    },
+    "471": {
+     "dau": "15",
+     "population": 3770,
+     "malesPer100": 23
+    },
+    "481": {
+     "dau": "17",
+     "population": 3470,
+     "malesPer100": 23
+    },
+    "500": {
+     "dau": "18",
+     "population": 3300,
+     "malesPer100": 29
+    },
+    "501": {
+     "dau": "18",
+     "population": 3300,
+     "malesPer100": 29
+    },
+    "511": {
+     "dau": "23",
+     "population": 4300,
+     "malesPer100": 34
+    },
+    "512": {
+     "dau": "23",
+     "population": 4300,
+     "malesPer100": 34
+    },
+    "521": {
+     "dau": "14",
+     "population": 14840,
+     "malesPer100": 20
+    },
+    "551": {
+     "dau": "43",
+     "population": 6920,
+     "malesPer100": 21
+    },
+    "561": {
+     "dau": "17",
+     "population": 3470,
+     "malesPer100": 23
+    },
+    "581": {
+     "dau": "23",
+     "population": 4300,
+     "malesPer100": 34
+    },
+    "591": {
+     "dau": "23",
+     "population": 4300,
+     "malesPer100": 34
+    },
+    "681": {
+     "dau": "26",
+     "population": 5580,
+     "malesPer100": 21
+    },
+    "682": {
+     "dau": "55",
+     "population": 150,
+     "malesPer100": 14
+    },
+    "691": {
+     "dau": "27",
+     "population": 3150,
+     "malesPer100": 22
+    },
+    "711": {
+     "dau": "24",
+     "population": 30320,
+     "malesPer100": 14
+    },
+    "741": {
+     "dau": "30",
+     "population": 6710,
+     "malesPer100": 14
+    },
+    "751": {
+     "dau": "31",
+     "population": 32320,
+     "malesPer100": 13
+    },
+    "771": {
+     "dau": "31",
+     "population": 32320,
+     "malesPer100": 13
+    },
+    "791": {
+     "dau": "55",
+     "population": 150,
+     "malesPer100": 14
+    },
+    "851": {
+     "dau": "33",
+     "population": 14470,
+     "malesPer100": 26
+    },
+    "861": {
+     "dau": "27",
+     "population": 3150,
+     "malesPer100": 22
+    }
+   }
+  },
+  "DEER": {
+   "year": 2025,
+   "units": {
+    "1": {
+     "dau": "01",
+     "population": 1270,
+     "malesPer100": 28
+    },
+    "2": {
+     "dau": "01",
+     "population": 1270,
+     "malesPer100": 28
+    },
+    "3": {
+     "dau": "02",
+     "population": 24620,
+     "malesPer100": 26
+    },
+    "4": {
+     "dau": "02",
+     "population": 24620,
+     "malesPer100": 26
+    },
+    "5": {
+     "dau": "02",
+     "population": 24620,
+     "malesPer100": 26
+    },
+    "6": {
+     "dau": "03",
+     "population": 4830,
+     "malesPer100": 25
+    },
+    "7": {
+     "dau": "04",
+     "population": 12350,
+     "malesPer100": 34
+    },
+    "8": {
+     "dau": "04",
+     "population": 12350,
+     "malesPer100": 34
+    },
+    "9": {
+     "dau": "04",
+     "population": 12350,
+     "malesPer100": 34
+    },
+    "10": {
+     "dau": "06",
+     "population": 980,
+     "malesPer100": 41
+    },
+    "11": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "12": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "13": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "14": {
+     "dau": "02",
+     "population": 24620,
+     "malesPer100": 26
+    },
+    "15": {
+     "dau": "08",
+     "population": 12790,
+     "malesPer100": 24
+    },
+    "16": {
+     "dau": "03",
+     "population": 4830,
+     "malesPer100": 25
+    },
+    "17": {
+     "dau": "03",
+     "population": 4830,
+     "malesPer100": 25
+    },
+    "18": {
+     "dau": "09",
+     "population": 10700,
+     "malesPer100": 31
+    },
+    "19": {
+     "dau": "04",
+     "population": 12350,
+     "malesPer100": 34
+    },
+    "20": {
+     "dau": "10",
+     "population": 8840,
+     "malesPer100": 42
+    },
+    "21": {
+     "dau": "11",
+     "population": 7970,
+     "malesPer100": 42
+    },
+    "22": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "23": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "24": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "25": {
+     "dau": "43",
+     "population": 7900,
+     "malesPer100": 21
+    },
+    "26": {
+     "dau": "43",
+     "population": 7900,
+     "malesPer100": 21
+    },
+    "27": {
+     "dau": "09",
+     "population": 10700,
+     "malesPer100": 31
+    },
+    "28": {
+     "dau": "09",
+     "population": 10700,
+     "malesPer100": 31
+    },
+    "29": {
+     "dau": "27",
+     "population": 6630,
+     "malesPer100": 57
+    },
+    "30": {
+     "dau": "11",
+     "population": 7970,
+     "malesPer100": 42
+    },
+    "31": {
+     "dau": "41",
+     "population": 5110,
+     "malesPer100": 40
+    },
+    "32": {
+     "dau": "41",
+     "population": 5110,
+     "malesPer100": 40
+    },
+    "33": {
+     "dau": "42",
+     "population": 5430,
+     "malesPer100": 21
+    },
+    "34": {
+     "dau": "43",
+     "population": 7900,
+     "malesPer100": 21
+    },
+    "35": {
+     "dau": "08",
+     "population": 12790,
+     "malesPer100": 24
+    },
+    "36": {
+     "dau": "08",
+     "population": 12790,
+     "malesPer100": 24
+    },
+    "37": {
+     "dau": "09",
+     "population": 10700,
+     "malesPer100": 31
+    },
+    "38": {
+     "dau": "27",
+     "population": 6630,
+     "malesPer100": 57
+    },
+    "39": {
+     "dau": "17",
+     "population": 5620,
+     "malesPer100": 26
+    },
+    "40": {
+     "dau": "18",
+     "population": 4320,
+     "malesPer100": 35
+    },
+    "41": {
+     "dau": "12",
+     "population": 19030,
+     "malesPer100": 29
+    },
+    "42": {
+     "dau": "12",
+     "population": 19030,
+     "malesPer100": 29
+    },
+    "43": {
+     "dau": "13",
+     "population": 5470,
+     "malesPer100": 24
+    },
+    "44": {
+     "dau": "14",
+     "population": 2540,
+     "malesPer100": 38
+    },
+    "45": {
+     "dau": "08",
+     "population": 12790,
+     "malesPer100": 24
+    },
+    "46": {
+     "dau": "17",
+     "population": 5620,
+     "malesPer100": 26
+    },
+    "47": {
+     "dau": "13",
+     "population": 5470,
+     "malesPer100": 24
+    },
+    "48": {
+     "dau": "15",
+     "population": 3580,
+     "malesPer100": 21
+    },
+    "49": {
+     "dau": "16",
+     "population": 11030,
+     "malesPer100": 27
+    },
+    "50": {
+     "dau": "38",
+     "population": 2660,
+     "malesPer100": 26
+    },
+    "51": {
+     "dau": "17",
+     "population": 5620,
+     "malesPer100": 26
+    },
+    "52": {
+     "dau": "51",
+     "population": 9250,
+     "malesPer100": 34
+    },
+    "53": {
+     "dau": "20",
+     "population": 8430,
+     "malesPer100": 38
+    },
+    "54": {
+     "dau": "57",
+     "population": 18730,
+     "malesPer100": 40
+    },
+    "55": {
+     "dau": "57",
+     "population": 18730,
+     "malesPer100": 40
+    },
+    "56": {
+     "dau": "15",
+     "population": 3580,
+     "malesPer100": 21
+    },
+    "57": {
+     "dau": "16",
+     "population": 11030,
+     "malesPer100": 27
+    },
+    "58": {
+     "dau": "16",
+     "population": 11030,
+     "malesPer100": 27
+    },
+    "59": {
+     "dau": "50",
+     "population": 3800,
+     "malesPer100": 30
+    },
+    "60": {
+     "dau": "23",
+     "population": 2120,
+     "malesPer100": 42
+    },
+    "61": {
+     "dau": "19",
+     "population": 13580,
+     "malesPer100": 40
+    },
+    "62": {
+     "dau": "19",
+     "population": 13580,
+     "malesPer100": 40
+    },
+    "63": {
+     "dau": "20",
+     "population": 8430,
+     "malesPer100": 38
+    },
+    "64": {
+     "dau": "40",
+     "population": 7950,
+     "malesPer100": 36
+    },
+    "65": {
+     "dau": "40",
+     "population": 7950,
+     "malesPer100": 36
+    },
+    "66": {
+     "dau": "57",
+     "population": 18730,
+     "malesPer100": 40
+    },
+    "67": {
+     "dau": "57",
+     "population": 18730,
+     "malesPer100": 40
+    },
+    "68": {
+     "dau": "26",
+     "population": 5760,
+     "malesPer100": 28
+    },
+    "69": {
+     "dau": "34",
+     "population": 13740,
+     "malesPer100": 32
+    },
+    "70": {
+     "dau": "24",
+     "population": 21760,
+     "malesPer100": 32
+    },
+    "71": {
+     "dau": "24",
+     "population": 21760,
+     "malesPer100": 32
+    },
+    "72": {
+     "dau": "29",
+     "population": 10670,
+     "malesPer100": 36
+    },
+    "73": {
+     "dau": "29",
+     "population": 10670,
+     "malesPer100": 36
+    },
+    "74": {
+     "dau": "52",
+     "population": 5330,
+     "malesPer100": 34
+    },
+    "75": {
+     "dau": "30",
+     "population": 25290,
+     "malesPer100": 31
+    },
+    "76": {
+     "dau": "36",
+     "population": 3130,
+     "malesPer100": 32
+    },
+    "77": {
+     "dau": "30",
+     "population": 25290,
+     "malesPer100": 31
+    },
+    "78": {
+     "dau": "30",
+     "population": 25290,
+     "malesPer100": 31
+    },
+    "79": {
+     "dau": "36",
+     "population": 3130,
+     "malesPer100": 32
+    },
+    "80": {
+     "dau": "35",
+     "population": 7390,
+     "malesPer100": 30
+    },
+    "81": {
+     "dau": "35",
+     "population": 7390,
+     "malesPer100": 30
+    },
+    "82": {
+     "dau": "56",
+     "population": 4040,
+     "malesPer100": 31
+    },
+    "83": {
+     "dau": "56",
+     "population": 4040,
+     "malesPer100": 31
+    },
+    "84": {
+     "dau": "34",
+     "population": 13740,
+     "malesPer100": 32
+    },
+    "85": {
+     "dau": "32",
+     "population": 8370,
+     "malesPer100": 31
+    },
+    "86": {
+     "dau": "34",
+     "population": 13740,
+     "malesPer100": 32
+    },
+    "87": {
+     "dau": "05",
+     "population": 2130,
+     "malesPer100": 38
+    },
+    "88": {
+     "dau": "05",
+     "population": 2130,
+     "malesPer100": 38
+    },
+    "89": {
+     "dau": "05",
+     "population": 2130,
+     "malesPer100": 38
+    },
+    "90": {
+     "dau": "05",
+     "population": 2130,
+     "malesPer100": 38
+    },
+    "91": {
+     "dau": "44",
+     "population": 3420,
+     "malesPer100": 34
+    },
+    "92": {
+     "dau": "44",
+     "population": 3420,
+     "malesPer100": 34
+    },
+    "93": {
+     "dau": "54",
+     "population": 3530,
+     "malesPer100": 34
+    },
+    "94": {
+     "dau": "44",
+     "population": 3420,
+     "malesPer100": 34
+    },
+    "95": {
+     "dau": "05",
+     "population": 2130,
+     "malesPer100": 38
+    },
+    "96": {
+     "dau": "44",
+     "population": 3420,
+     "malesPer100": 34
+    },
+    "97": {
+     "dau": "54",
+     "population": 3530,
+     "malesPer100": 34
+    },
+    "98": {
+     "dau": "54",
+     "population": 3530,
+     "malesPer100": 34
+    },
+    "99": {
+     "dau": "54",
+     "population": 3530,
+     "malesPer100": 34
+    },
+    "100": {
+     "dau": "54",
+     "population": 3530,
+     "malesPer100": 34
+    },
+    "101": {
+     "dau": "55",
+     "population": 1990,
+     "malesPer100": 37
+    },
+    "102": {
+     "dau": "55",
+     "population": 1990,
+     "malesPer100": 37
+    },
+    "103": {
+     "dau": "47",
+     "population": 3340,
+     "malesPer100": 30
+    },
+    "104": {
+     "dau": "49",
+     "population": 5250,
+     "malesPer100": 39
+    },
+    "105": {
+     "dau": "49",
+     "population": 5250,
+     "malesPer100": 39
+    },
+    "106": {
+     "dau": "49",
+     "population": 5250,
+     "malesPer100": 39
+    },
+    "107": {
+     "dau": "46",
+     "population": 3930,
+     "malesPer100": 37
+    },
+    "109": {
+     "dau": "47",
+     "population": 3340,
+     "malesPer100": 30
+    },
+    "110": {
+     "dau": "48",
+     "population": 3770,
+     "malesPer100": 18
+    },
+    "111": {
+     "dau": "48",
+     "population": 3770,
+     "malesPer100": 18
+    },
+    "112": {
+     "dau": "46",
+     "population": 3930,
+     "malesPer100": 37
+    },
+    "113": {
+     "dau": "46",
+     "population": 3930,
+     "malesPer100": 37
+    },
+    "114": {
+     "dau": "46",
+     "population": 3930,
+     "malesPer100": 37
+    },
+    "115": {
+     "dau": "46",
+     "population": 3930,
+     "malesPer100": 37
+    },
+    "116": {
+     "dau": "47",
+     "population": 3340,
+     "malesPer100": 30
+    },
+    "117": {
+     "dau": "47",
+     "population": 3340,
+     "malesPer100": 30
+    },
+    "118": {
+     "dau": "48",
+     "population": 3770,
+     "malesPer100": 18
+    },
+    "119": {
+     "dau": "48",
+     "population": 3770,
+     "malesPer100": 18
+    },
+    "120": {
+     "dau": "46",
+     "population": 3930,
+     "malesPer100": 37
+    },
+    "121": {
+     "dau": "46",
+     "population": 3930,
+     "malesPer100": 37
+    },
+    "122": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "123": {
+     "dau": "48",
+     "population": 3770,
+     "malesPer100": 18
+    },
+    "124": {
+     "dau": "48",
+     "population": 3770,
+     "malesPer100": 18
+    },
+    "125": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "126": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "127": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "128": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "129": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "130": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "131": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "132": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "133": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "134": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "135": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "136": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "137": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "138": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "139": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "140": {
+     "dau": "32",
+     "population": 8370,
+     "malesPer100": 31
+    },
+    "141": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "142": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "143": {
+     "dau": "33",
+     "population": 2350,
+     "malesPer100": 50
+    },
+    "144": {
+     "dau": "33",
+     "population": 2350,
+     "malesPer100": 50
+    },
+    "145": {
+     "dau": "33",
+     "population": 2350,
+     "malesPer100": 50
+    },
+    "146": {
+     "dau": "28",
+     "population": 6520,
+     "malesPer100": 23
+    },
+    "147": {
+     "dau": "45",
+     "population": 3530,
+     "malesPer100": 39
+    },
+    "161": {
+     "dau": "03",
+     "population": 4830,
+     "malesPer100": 25
+    },
+    "171": {
+     "dau": "03",
+     "population": 4830,
+     "malesPer100": 25
+    },
+    "181": {
+     "dau": "09",
+     "population": 10700,
+     "malesPer100": 31
+    },
+    "191": {
+     "dau": "04",
+     "population": 12350,
+     "malesPer100": 34
+    },
+    "201": {
+     "dau": "01",
+     "population": 1270,
+     "malesPer100": 28
+    },
+    "211": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "214": {
+     "dau": "02",
+     "population": 24620,
+     "malesPer100": 26
+    },
+    "231": {
+     "dau": "07",
+     "population": 31170,
+     "malesPer100": 33
+    },
+    "301": {
+     "dau": "02",
+     "population": 24620,
+     "malesPer100": 26
+    },
+    "371": {
+     "dau": "09",
+     "population": 10700,
+     "malesPer100": 31
+    },
+    "391": {
+     "dau": "17",
+     "population": 5620,
+     "malesPer100": 26
+    },
+    "411": {
+     "dau": "51",
+     "population": 9250,
+     "malesPer100": 34
+    },
+    "421": {
+     "dau": "12",
+     "population": 19030,
+     "malesPer100": 29
+    },
+    "431": {
+     "dau": "13",
+     "population": 5470,
+     "malesPer100": 24
+    },
+    "441": {
+     "dau": "02",
+     "population": 24620,
+     "malesPer100": 26
+    },
+    "444": {
+     "dau": "53",
+     "population": 3590,
+     "malesPer100": 25
+    },
+    "461": {
+     "dau": "17",
+     "population": 5620,
+     "malesPer100": 26
+    },
+    "471": {
+     "dau": "13",
+     "population": 5470,
+     "malesPer100": 24
+    },
+    "481": {
+     "dau": "15",
+     "population": 3580,
+     "malesPer100": 21
+    },
+    "500": {
+     "dau": "38",
+     "population": 2660,
+     "malesPer100": 26
+    },
+    "501": {
+     "dau": "38",
+     "population": 2660,
+     "malesPer100": 26
+    },
+    "511": {
+     "dau": "50",
+     "population": 3800,
+     "malesPer100": 30
+    },
+    "512": {
+     "dau": "50",
+     "population": 3800,
+     "malesPer100": 30
+    },
+    "521": {
+     "dau": "51",
+     "population": 9250,
+     "malesPer100": 34
+    },
+    "551": {
+     "dau": "57",
+     "population": 18730,
+     "malesPer100": 40
+    },
+    "561": {
+     "dau": "15",
+     "population": 3580,
+     "malesPer100": 21
+    },
+    "581": {
+     "dau": "16",
+     "population": 11030,
+     "malesPer100": 27
+    },
+    "591": {
+     "dau": "50",
+     "population": 3800,
+     "malesPer100": 30
+    },
+    "681": {
+     "dau": "26",
+     "population": 5760,
+     "malesPer100": 28
+    },
+    "682": {
+     "dau": "26",
+     "population": 5760,
+     "malesPer100": 28
+    },
+    "691": {
+     "dau": "34",
+     "population": 13740,
+     "malesPer100": 32
+    },
+    "711": {
+     "dau": "24",
+     "population": 21760,
+     "malesPer100": 32
+    },
+    "741": {
+     "dau": "52",
+     "population": 5330,
+     "malesPer100": 34
+    },
+    "751": {
+     "dau": "30",
+     "population": 25290,
+     "malesPer100": 31
+    },
+    "771": {
+     "dau": "30",
+     "population": 25290,
+     "malesPer100": 31
+    },
+    "791": {
+     "dau": "36",
+     "population": 3130,
+     "malesPer100": 32
+    },
+    "851": {
+     "dau": "32",
+     "population": 8370,
+     "malesPer100": 31
+    },
+    "861": {
+     "dau": "34",
+     "population": 13740,
+     "malesPer100": 32
+    },
+    "951": {
+     "dau": "44",
+     "population": 3420,
+     "malesPer100": 34
+    }
+   }
+  },
+  "ANTELOPE": {
+   "year": 2025,
+   "units": {
+    "1": {
+     "dau": "11",
+     "population": 1380,
+     "malesPer100": 47
+    },
+    "2": {
+     "dau": "11",
+     "population": 1380,
+     "malesPer100": 47
+    },
+    "3": {
+     "dau": "09",
+     "population": 11160,
+     "malesPer100": 48
+    },
+    "4": {
+     "dau": "09",
+     "population": 11160,
+     "malesPer100": 48
+    },
+    "5": {
+     "dau": "09",
+     "population": 11160,
+     "malesPer100": 48
+    },
+    "6": {
+     "dau": "03",
+     "population": 1770,
+     "malesPer100": 56
+    },
+    "7": {
+     "dau": "36",
+     "population": 710,
+     "malesPer100": 25
+    },
+    "8": {
+     "dau": "36",
+     "population": 710,
+     "malesPer100": 25
+    },
+    "9": {
+     "dau": "33",
+     "population": 1190,
+     "malesPer100": 32
+    },
+    "10": {
+     "dau": "21",
+     "population": 120,
+     "malesPer100": 82
+    },
+    "11": {
+     "dau": "10",
+     "population": 630,
+     "malesPer100": 52
+    },
+    "12": {
+     "dau": "34",
+     "population": 260,
+     "malesPer100": 28
+    },
+    "13": {
+     "dau": "09",
+     "population": 11160,
+     "malesPer100": 48
+    },
+    "14": {
+     "dau": "09",
+     "population": 11160,
+     "malesPer100": 48
+    },
+    "15": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "16": {
+     "dau": "03",
+     "population": 1770,
+     "malesPer100": 56
+    },
+    "17": {
+     "dau": "03",
+     "population": 1770,
+     "malesPer100": 56
+    },
+    "18": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "19": {
+     "dau": "33",
+     "population": 1190,
+     "malesPer100": 32
+    },
+    "21": {
+     "dau": "21",
+     "population": 120,
+     "malesPer100": 82
+    },
+    "23": {
+     "dau": "34",
+     "population": 260,
+     "malesPer100": 28
+    },
+    "26": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "27": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "28": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "37": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "48": {
+     "dau": "39",
+     "population": 270,
+     "malesPer100": 24
+    },
+    "49": {
+     "dau": "30",
+     "population": 1290,
+     "malesPer100": 42
+    },
+    "50": {
+     "dau": "30",
+     "population": 1290,
+     "malesPer100": 42
+    },
+    "51": {
+     "dau": "35",
+     "population": 3800,
+     "malesPer100": 32
+    },
+    "56": {
+     "dau": "39",
+     "population": 270,
+     "malesPer100": 24
+    },
+    "57": {
+     "dau": "30",
+     "population": 1290,
+     "malesPer100": 42
+    },
+    "58": {
+     "dau": "30",
+     "population": 1290,
+     "malesPer100": 42
+    },
+    "59": {
+     "dau": "31",
+     "population": 220,
+     "malesPer100": 80
+    },
+    "66": {
+     "dau": "23",
+     "population": 490,
+     "malesPer100": 25
+    },
+    "67": {
+     "dau": "23",
+     "population": 490,
+     "malesPer100": 25
+    },
+    "68": {
+     "dau": "14",
+     "population": 1950,
+     "malesPer100": 15
+    },
+    "69": {
+     "dau": "20",
+     "population": 3110,
+     "malesPer100": 34
+    },
+    "79": {
+     "dau": "14",
+     "population": 1950,
+     "malesPer100": 15
+    },
+    "80": {
+     "dau": "16",
+     "population": 1360,
+     "malesPer100": 37
+    },
+    "81": {
+     "dau": "16",
+     "population": 1360,
+     "malesPer100": 37
+    },
+    "82": {
+     "dau": "14",
+     "population": 1950,
+     "malesPer100": 15
+    },
+    "83": {
+     "dau": "16",
+     "population": 1360,
+     "malesPer100": 37
+    },
+    "84": {
+     "dau": "20",
+     "population": 3110,
+     "malesPer100": 34
+    },
+    "85": {
+     "dau": "20",
+     "population": 3110,
+     "malesPer100": 34
+    },
+    "86": {
+     "dau": "20",
+     "population": 3110,
+     "malesPer100": 34
+    },
+    "87": {
+     "dau": "01",
+     "population": 6100,
+     "malesPer100": 33
+    },
+    "88": {
+     "dau": "01",
+     "population": 6100,
+     "malesPer100": 33
+    },
+    "89": {
+     "dau": "01",
+     "population": 6100,
+     "malesPer100": 33
+    },
+    "90": {
+     "dau": "01",
+     "population": 6100,
+     "malesPer100": 33
+    },
+    "93": {
+     "dau": "04",
+     "population": 760,
+     "malesPer100": 21
+    },
+    "94": {
+     "dau": "01",
+     "population": 6100,
+     "malesPer100": 33
+    },
+    "95": {
+     "dau": "01",
+     "population": 6100,
+     "malesPer100": 33
+    },
+    "97": {
+     "dau": "04",
+     "population": 760,
+     "malesPer100": 21
+    },
+    "98": {
+     "dau": "04",
+     "population": 760,
+     "malesPer100": 21
+    },
+    "99": {
+     "dau": "02",
+     "population": 1160,
+     "malesPer100": 31
+    },
+    "100": {
+     "dau": "02",
+     "population": 1160,
+     "malesPer100": 31
+    },
+    "101": {
+     "dau": "04",
+     "population": 760,
+     "malesPer100": 21
+    },
+    "102": {
+     "dau": "04",
+     "population": 760,
+     "malesPer100": 21
+    },
+    "103": {
+     "dau": "19",
+     "population": 2670,
+     "malesPer100": 16
+    },
+    "104": {
+     "dau": "35",
+     "population": 3800,
+     "malesPer100": 32
+    },
+    "105": {
+     "dau": "35",
+     "population": 3800,
+     "malesPer100": 32
+    },
+    "106": {
+     "dau": "19",
+     "population": 2670,
+     "malesPer100": 16
+    },
+    "107": {
+     "dau": "19",
+     "population": 2670,
+     "malesPer100": 16
+    },
+    "109": {
+     "dau": "19",
+     "population": 2670,
+     "malesPer100": 16
+    },
+    "110": {
+     "dau": "08",
+     "population": 8730,
+     "malesPer100": 49
+    },
+    "111": {
+     "dau": "08",
+     "population": 8730,
+     "malesPer100": 49
+    },
+    "112": {
+     "dau": "06",
+     "population": 1950,
+     "malesPer100": 24
+    },
+    "113": {
+     "dau": "06",
+     "population": 1950,
+     "malesPer100": 24
+    },
+    "114": {
+     "dau": "06",
+     "population": 1950,
+     "malesPer100": 24
+    },
+    "115": {
+     "dau": "06",
+     "population": 1950,
+     "malesPer100": 24
+    },
+    "116": {
+     "dau": "12",
+     "population": 1970,
+     "malesPer100": 42
+    },
+    "117": {
+     "dau": "12",
+     "population": 1970,
+     "malesPer100": 42
+    },
+    "118": {
+     "dau": "08",
+     "population": 8730,
+     "malesPer100": 49
+    },
+    "119": {
+     "dau": "08",
+     "population": 8730,
+     "malesPer100": 49
+    },
+    "120": {
+     "dau": "05",
+     "population": 3600,
+     "malesPer100": 27
+    },
+    "121": {
+     "dau": "05",
+     "population": 3600,
+     "malesPer100": 27
+    },
+    "122": {
+     "dau": "12",
+     "population": 1970,
+     "malesPer100": 42
+    },
+    "123": {
+     "dau": "08",
+     "population": 8730,
+     "malesPer100": 49
+    },
+    "124": {
+     "dau": "08",
+     "population": 8730,
+     "malesPer100": 49
+    },
+    "125": {
+     "dau": "05",
+     "population": 3600,
+     "malesPer100": 27
+    },
+    "126": {
+     "dau": "05",
+     "population": 3600,
+     "malesPer100": 27
+    },
+    "127": {
+     "dau": "12",
+     "population": 1970,
+     "malesPer100": 42
+    },
+    "128": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "129": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "130": {
+     "dau": "13",
+     "population": 3040,
+     "malesPer100": 19
+    },
+    "132": {
+     "dau": "18",
+     "population": 1500,
+     "malesPer100": 40
+    },
+    "133": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "134": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "135": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "136": {
+     "dau": "13",
+     "population": 3040,
+     "malesPer100": 19
+    },
+    "137": {
+     "dau": "13",
+     "population": 3040,
+     "malesPer100": 19
+    },
+    "138": {
+     "dau": "13",
+     "population": 3040,
+     "malesPer100": 19
+    },
+    "139": {
+     "dau": "18",
+     "population": 1500,
+     "malesPer100": 40
+    },
+    "140": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "141": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "142": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "143": {
+     "dau": "13",
+     "population": 3040,
+     "malesPer100": 19
+    },
+    "144": {
+     "dau": "13",
+     "population": 3040,
+     "malesPer100": 19
+    },
+    "145": {
+     "dau": "18",
+     "population": 1500,
+     "malesPer100": 40
+    },
+    "146": {
+     "dau": "13",
+     "population": 3040,
+     "malesPer100": 19
+    },
+    "147": {
+     "dau": "07",
+     "population": 8230,
+     "malesPer100": 24
+    },
+    "161": {
+     "dau": "03",
+     "population": 1770,
+     "malesPer100": 56
+    },
+    "171": {
+     "dau": "03",
+     "population": 1770,
+     "malesPer100": 56
+    },
+    "181": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "191": {
+     "dau": "33",
+     "population": 1190,
+     "malesPer100": 32
+    },
+    "201": {
+     "dau": "11",
+     "population": 1380,
+     "malesPer100": 47
+    },
+    "211": {
+     "dau": "34",
+     "population": 260,
+     "malesPer100": 28
+    },
+    "214": {
+     "dau": "09",
+     "population": 11160,
+     "malesPer100": 48
+    },
+    "231": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "301": {
+     "dau": "09",
+     "population": 11160,
+     "malesPer100": 48
+    },
+    "371": {
+     "dau": "37",
+     "population": 690,
+     "malesPer100": 71
+    },
+    "441": {
+     "dau": "09",
+     "population": 11160,
+     "malesPer100": 48
+    },
+    "481": {
+     "dau": "39",
+     "population": 270,
+     "malesPer100": 24
+    },
+    "500": {
+     "dau": "30",
+     "population": 1290,
+     "malesPer100": 42
+    },
+    "501": {
+     "dau": "30",
+     "population": 1290,
+     "malesPer100": 42
+    },
+    "511": {
+     "dau": "30",
+     "population": 1290,
+     "malesPer100": 42
+    },
+    "551": {
+     "dau": "23",
+     "population": 490,
+     "malesPer100": 25
+    },
+    "581": {
+     "dau": "30",
+     "population": 1290,
+     "malesPer100": 42
+    },
+    "591": {
+     "dau": "31",
+     "population": 220,
+     "malesPer100": 80
+    },
+    "681": {
+     "dau": "14",
+     "population": 1950,
+     "malesPer100": 15
+    },
+    "682": {
+     "dau": "14",
+     "population": 1950,
+     "malesPer100": 15
+    },
+    "691": {
+     "dau": "20",
+     "population": 3110,
+     "malesPer100": 34
+    },
+    "791": {
+     "dau": "14",
+     "population": 1950,
+     "malesPer100": 15
+    },
+    "851": {
+     "dau": "20",
+     "population": 3110,
+     "malesPer100": 34
+    },
+    "861": {
+     "dau": "20",
+     "population": 3110,
+     "malesPer100": 34
+    },
+    "951": {
+     "dau": "01",
+     "population": 6100,
+     "malesPer100": 33
+    }
+   }
+  }
+ }
+}

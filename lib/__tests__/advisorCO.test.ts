@@ -62,3 +62,25 @@ describe('Colorado season dates from the brochures', () => {
     expect(undated.length).toBeLessThan(30);
   });
 });
+
+describe('Colorado herd sex ratios', () => {
+  const elkSit: Situation = { home: 'WY', balances: [{ state: 'CO', species: 'Elk', points: 3 }], years: [2027, 2028, 2029], seasonYear: 2027 };
+  it('ranks hunts by bulls per 100 cows when asked for bigger bulls', () => {
+    const r = searchHunts({ state: 'CO', species: 'Elk', sortBy: 'malesPer100' }, elkSit);
+    if (!r.ok) throw new Error(r.reason);
+    const f = r.data.filtered!;
+    expect(f.sortedBy).toMatch(/not a measure of antler size/);
+    const ratios = f.matches.map((m) => m.malesPer100!);
+    expect(ratios.length).toBeGreaterThan(2);
+    expect([...ratios].sort((a, b) => b - a)).toEqual(ratios);
+    expect(f.howToAnswer).toMatch(/not antler size/);
+  });
+  it('gives the herd ratio with a single hunt and with a unit', () => {
+    const one = getHunt({ state: 'CO', species: 'Elk', huntCode: 'EE035O1R' }, elkSit);
+    if (!one.ok) throw new Error(one.reason);
+    expect((one.data as { herd?: { malesPer100: number; what: string } }).herd).toMatchObject({ malesPer100: 26, what: '26 bulls per 100 cows after the 2025 season' });
+    const unit = getHunt({ state: 'CO', species: 'Deer', unit: '35' }, sit);
+    if (!unit.ok) throw new Error(unit.reason);
+    expect((unit.data as { herd?: { what: string } }).herd?.what).toBe('24 bucks per 100 does after the 2025 season');
+  });
+});

@@ -18,7 +18,9 @@ type HuntInfo = {
   label: string | null; weapon: string | null; season: { open: string; close: string } | null;
   tags: number | null; applicants: number | null; hunterSuccess: string | null;
   drawYear: number | null; openToYou: boolean;
-  drawRules: string; howItDraws: string | null; agencyUrl: string | null; agencyName: string | null;
+  drawRules: string; howItDraws: string | null;
+  herd: { k: string; v: number; n: string; caveat: string } | null;
+  agencyUrl: string | null; agencyName: string | null;
 };
 
 const YEARS = 12;
@@ -155,7 +157,9 @@ export default function HuntView({ hunt, residency, ladder, usesPoints, startPoi
         { k: 'Tags', v: hunt.tags ?? '—', n: res.toLowerCase() },
         { k: 'Applicants', v: hunt.applicants ?? '—', n: `${hunt.drawYear ?? 'last'} draw` },
         { k: 'Hunter success', v: hunt.hunterSuccess?.match(/^[\d.]+%/)?.[0] ?? '—', n: hunt.hunterSuccess?.replace(/^[\d.]+%\s*/, '') || 'not published' },
+        ...(hunt.herd ? [{ k: hunt.herd.k, v: hunt.herd.v, n: hunt.herd.n }] : []),
       ]} />
+      {hunt.herd && <p className="hq-small" style={{ marginTop: -6 }}>That ratio is CPW&apos;s estimate for the whole herd this unit belongs to. {hunt.herd.caveat}</p>}
 
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
         {hunt.openToYou && <AddToPlan target={{ state: hunt.state, species: hunt.species, unit: hunt.unit, huntCode: hunt.huntCode, label: hunt.label, year: half?.year ?? seasonYear }} />}

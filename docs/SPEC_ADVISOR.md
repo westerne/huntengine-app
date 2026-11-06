@@ -60,6 +60,8 @@ Each tool is a thin wrapper over a function the screens already use — one sour
 
 Not in v1 (the data isn't ready — SPEC_KNOWLEDGE P1/P2): OTC/leftover catalog, trophy potential, land access beyond public-land %, tactics/gear library. When asked, it says so plainly.
 
+Herd quality, Colorado only (added 2026-11-06): CPW's post-hunt bulls per 100 cows and bucks per 100 does by herd unit (`lib/huntdata/herd.ts`, built by `scripts/draw/buildCOHerd.mjs`). `get_hunt` carries it, and `search_hunts` with `sortBy: "malesPer100"` ranks by it for "bigger bulls" questions. Every place it appears says it's the whole herd's figure and not antler size. Antler size and trophy scores are still not in our data.
+
 ## 6. How it runs
 - **Server route** `POST /api/advisor` (members only). Streams newline-delimited JSON: a `status` line per lookup ("Checking deadlines"), then one `answer` (text, sources, actions) **after** the answer check — nothing unchecked is ever on screen.
 - **Model:** the provider the app already uses (OpenAI, GPT-4o class), behind one small adapter (`lib/advisor/model.ts`) so the model can be swapped in one file. Tool calling, low temperature.
