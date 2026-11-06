@@ -225,17 +225,21 @@ const stat = (pool, apps) => {
 
 
 // ---------------------------------------------------------------- season dates
-// The recap has no dates; CPW's Big Game Brochure does. Its hunt tables print a
+// The recap has no dates; CPW's brochures do (Big Game, and Sheep & Goat for
+// those two). Their hunt tables print a
 // date line ("Oct. 24–Nov. 1", sometimes split over two lines) and then the hunt
 // codes it covers; codes on the standard seasons often print no date, so those
 // take the brochure's "Season Dates" table. A code listed under two different
 // dates is left without one.
-const BROCHURE = 'https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure';
+const BROCHURES = [
+  'https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure',
+  'https://cpw.widen.net/s/n87kwmkzbt/colorado-sheep-and-goat-brochure',
+];
 const MON = { Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, June: 6, Jul: 7, July: 7, Aug: 8, Sep: 9, Sept: 9, Oct: 10, Nov: 11, Dec: 12 };
 const M = '(Jan|Feb|Mar|Apr|May|June?|July?|Aug|Sept?|Oct|Nov|Dec)';
-const RANGE = new RegExp(`${M}\\.? (\\d{1,2})-(?:${M}\\.? )?(\\d{1,2})(?:, (\\d{4}))?`, 'g');
+const RANGE = new RegExp(`${M}\\.? ?(\\d{1,2}) ?- ?(?:${M}\\.? ?)?(\\d{1,2})(?:, ?(\\d{4}))?`, 'g');
 const STARTS_WITH_DATE = new RegExp(`^${M}\\.? \\d`);
-const CODE_DASHED = /\b([DEAM])-([EMF])-(\d{3})-([A-Z]\d)-([RAMX])\b/g;
+const CODE_DASHED = /\b([DEAMSG])-([EMF])-([A-Z0-9]{3})-([A-Z]\d)-([RAMX])\b/g;
 // "Season Dates: 2026" table: [month, day, month, day] by species and season code.
 const STANDARD = {
   DEER: { O1A: [9, 2, 9, 30], O1M: [9, 12, 9, 20], O2R: [10, 24, 11, 1], O3R: [11, 7, 11, 15], O4R: [11, 18, 11, 22] },
@@ -244,50 +248,92 @@ const STANDARD = {
   MOOSE: { O1A: [9, 12, 9, 30], O1M: [9, 12, 9, 20], O1R: [10, 1, 10, 14] },
 };
 
-async function brochureSeasons(seasonYear) {
-  const file = path.join(CACHE, 'colorado-big-game-hunting-brochure.pdf');
+// A widen share page → that asset's original PDF, as text.
+async function widenText(share) {
+  const name = share.split('/').pop();
+  const file = path.join(CACHE, `${name}.pdf`);
   if (!existsSync(file) || statSync(file).size === 0) {
-    const r = await fetch(BROCHURE, { headers: UA });
-    if (!r.ok || !/pdf/i.test(r.headers.get('content-type') ?? '')) throw new Error(`brochure → ${r.status} ${r.headers.get('content-type')}`);
+    const cid = ((await text(share)).match(/\/content\/([a-z0-9]+)\/png\//i) || [])[1];
+    if (!cid) throw new Error(`no asset id for ${share}`);
+    const r = await fetch(`https://cpw.widen.net/content/${cid}/original/${name}.pdf`, { headers: UA });
+    if (!r.ok || !/pdf/i.test(r.headers.get('content-type') ?? '')) throw new Error(`${name} → ${r.status} ${r.headers.get('content-type')}`);
     writeFileSync(file, Buffer.from(await r.arrayBuffer()));
   }
   const txt = file.replace(/\.pdf$/, '.raw.txt');
   if (!existsSync(txt)) execFileSync('pdftotext', ['-raw', '-enc', 'UTF-8', file, txt], { stdio: 'ignore' });
-  const raw = readFileSync(txt, 'utf8').split(/\r?\n/).map((l) => l.replace(/[–—�]/g, '-').trim());
-  // Rejoin a range broken after its dash: "Oct. 1-" + "Jan. 31, 2027".
-  const lines = [];
-  for (const l of raw) {
-    if (lines.length && /-$/.test(lines[lines.length - 1]) && STARTS_WITH_DATE.test(l)) lines[lines.length - 1] += l;
-    else lines.push(l);
-  }
-  const iso = (y, m, d) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+  return readFileSync(txt, 'utf8');
+}
+
+async function brochureSeasons(seasonYear) {
   const found = new Map();
   const conflict = new Set();
-  let cur = null;
-  for (const l of lines) {
-    const codes = [...l.matchAll(CODE_DASHED)];
-    if (STARTS_WITH_DATE.test(l)) {
-      const ranges = [...l.matchAll(RANGE)];
-      if (ranges.length) {
-        const first = ranges[0], last = ranges[ranges.length - 1];
-        const m1 = MON[first[1]], d1 = +first[2];
-        const m2 = MON[last[3] ?? last[1]], d2 = +last[4];
-        const y2 = last[5] ? +last[5] : m2 < m1 ? seasonYear + 1 : seasonYear;
-        cur = { open: iso(seasonYear, m1, d1), close: iso(y2, m2, d2) };
-      }
-    } else if (!codes.length && !/^(Late|Early|Season|Either|Buck|Doe|Bull|Cow)\b/.test(l)) {
-      cur = null;
+  for (const share of BROCHURES) {
+    const raw = (await widenText(share)).split(/\r?\n/).map((l) => l.replace(/[–—�]/g, '-').trim());
+    // Rejoin a range broken after its dash: "Oct. 1-" + "Jan. 31, 2027".
+    const lines = [];
+    for (const l of raw) {
+      if (lines.length && /-$/.test(lines[lines.length - 1]) && STARTS_WITH_DATE.test(l)) lines[lines.length - 1] += l;
+      else lines.push(l);
     }
-    if (!cur) continue;
-    for (const c of codes) {
-      const code = c.slice(1).join('');
-      const prev = found.get(code);
-      if (prev && (prev.open !== cur.open || prev.close !== cur.close)) conflict.add(code);
-      found.set(code, cur);
-    }
+    readDates(lines, seasonYear, found, conflict);
   }
   for (const c of conflict) found.delete(c);
-  return { found, conflicts: conflict.size, url: BROCHURE };
+  return { found, conflicts: conflict.size };
+}
+
+function readDates(lines, seasonYear, found, conflict) {
+  const iso = (y, m, d) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+  // First to last range on a line: "Sept. 12-30 Sept. 12-20 Oct. 1-14" (moose
+  // season choice) is Sept. 12 to Oct. 14.
+  const span = (ranges) => {
+    const first = ranges[0], last = ranges[ranges.length - 1];
+    const m1 = MON[first[1]], d1 = +first[2];
+    const m2 = MON[last[3] ?? last[1]], d2 = +last[4];
+    // Big-game seasons open from August on; one that opens in January–March
+    // ("Jan. 1-15, 2027") is the tail of the season year, in the next year.
+    const y1 = m1 <= 3 ? seasonYear + 1 : seasonYear;
+    const y2 = last[5] ? +last[5] : m2 < m1 ? y1 + 1 : y1;
+    return { open: iso(y1, m1, d1), close: iso(y2, m2, d2) };
+  };
+  const record = (code, se) => {
+    const prev = found.get(code);
+    if (prev && (prev.open !== se.open || prev.close !== se.close)) conflict.add(code);
+    found.set(code, se);
+  };
+  // Three places a date comes from, nearest first: the code's own row ("4, 5,
+  // 14 Sept. 12-30 … Bull M-M-004-O1-X", "Plains 110 Oct. 24-Nov. 3"), a date
+  // line just above the codes, or the table's header ("Archery — Limited
+  // Nonresident Licenses — Season Dates: Sept. 2-30"), which covers every
+  // code in that table that prints no date of its own.
+  // The header's date only covers codes for its weapon (the PDF interleaves
+  // the archery and muzzleloader tables).
+  let cur = null;
+  let section = null;
+  let method = null;
+  for (const raw of lines) {
+    const l = raw.replace(/^■/, '');
+    const codes = [...l.matchAll(CODE_DASHED)];
+    const weapon = l.match(/^(Archery|Muzzleloader|Rifle) - /);
+    if (weapon) method = weapon[1][0];
+    // "Pronghorn Season Dates" starts the next species: nothing carries over.
+    if (/Season Dates/.test(l)) {
+      const r = [...l.matchAll(RANGE)];
+      section = r.length && method ? { ...span(r), method } : null;
+      cur = null;
+      continue;
+    }
+    const before = codes.length ? l.slice(0, codes[0].index) : l;
+    const ranges = [...before.matchAll(RANGE)];
+    if (ranges.length) {
+      cur = span(ranges);
+    } else if (!codes.length && !/^(Late|Early|Season|Either|Buck|Doe|Bull|Cow|Plains)\b/.test(l)) {
+      cur = null;
+    }
+    for (const c of codes) {
+      const se = cur ?? (section && c[5] === section.method ? { open: section.open, close: section.close } : null);
+      if (se) record(c.slice(1).join(''), se);
+    }
+  }
 }
 
 function seasonFor(sp, code, fromTables, seasonYear) {
@@ -360,7 +406,7 @@ out.notes = [
   `DrawStat: tags = adult licenses drawn by that residency; applicants = adult first-choice applicants; successPct = tags ÷ applicants (computed here; includes licenses drawn through hybrid); minPoints = the drawn-out level (0 when every first-choice applicant drew). pointLines: adult first-choice applicants and successful applicants per preference-point level, checked against CPW's Total Choice 1 lines. Youth and landowner (LPP) pools are not included.`,
 ].join(' ');
 
-out.notes += ` Season dates are the ${out.year} seasons from CPW's Big Game Brochure (${BROCHURE}): ${seasonStats.table} hunt codes from the hunt tables' own dates, ${seasonStats.standard} from the brochure's "Season Dates" table for standard archery, muzzleloader and rifle seasons (hunt codes the tables print without a date), ${seasonStats.none} without dates (late, private-land and other special seasons the tables don't date, and ${brochure?.conflicts ?? 0} codes listed under two different dates).`;
+out.notes += ` Season dates are the ${out.year} seasons from CPW's Big Game and Sheep & Goat brochures (${BROCHURES.join(' ; ')}): ${seasonStats.table} hunt codes from the hunt tables' own dates, ${seasonStats.standard} from the brochure's "Season Dates" table for standard archery, muzzleloader and rifle seasons (hunt codes the tables print without a date), ${seasonStats.none} without dates (late, private-land and other special seasons the tables don't date, and ${brochure?.conflicts ?? 0} codes listed under two different dates).`;
 writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 console.log(`wrote ${path.relative(ROOT, OUT)} — CO ${out.year}`);
 for (const r of report) console.log('  ' + r);

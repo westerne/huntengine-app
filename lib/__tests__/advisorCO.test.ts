@@ -37,3 +37,28 @@ describe('Colorado deer questions the advisor got wrong', () => {
     }
   });
 });
+
+describe('Colorado season dates from the brochures', () => {
+  const co = getStateModule('CO')!;
+  const season = (sp: string, code: string) => co.hunts(sp as never).find((h) => h.huntCode === code)?.season;
+  it('reads dates printed on the hunt row, with or without spaces', () => {
+    expect(season('ELK', 'EF214W2R')).toEqual({ open: '2026-11-28', close: '2026-12-02' }); // "Nov.28–Dec.2 Cow"
+    expect(season('DEER', 'DE052P6R')).toEqual({ open: '2026-08-15', close: '2026-08-25' }); // "■Aug. 15–25 Either"
+  });
+  it('puts a January-only season in the next year', () => {
+    expect(season('DEER', 'DF103L2R')).toEqual({ open: '2027-01-01', close: '2027-01-15' });
+  });
+  it('takes a table header date for its own weapon only', () => {
+    expect(season('ELK', 'EE003V1A')).toEqual({ open: '2026-09-02', close: '2026-09-30' });
+    expect(season('ANTELOPE', 'AF001O1M')).toEqual({ open: '2026-09-21', close: '2026-09-29' });
+  });
+  it('spans a moose season choice, and dates sheep and goat from their own brochure', () => {
+    expect(season('MOOSE', 'MM004O1X')).toEqual({ open: '2026-09-12', close: '2026-10-14' });
+    expect(season('BIGHORNSHEEP', 'SMS32O2A')).toEqual({ open: '2026-08-20', close: '2026-09-07' });
+    expect(season('MTNGOAT', 'GEG02O1R')).toEqual({ open: '2026-09-08', close: '2026-10-08' });
+  });
+  it('leaves only a handful of private-land and ranch hunts undated', () => {
+    const undated = ['ELK', 'DEER', 'ANTELOPE', 'MOOSE', 'BIGHORNSHEEP', 'MTNGOAT'].flatMap((sp) => co.hunts(sp as never).filter((h) => !h.season));
+    expect(undated.length).toBeLessThan(30);
+  });
+});

@@ -5,7 +5,7 @@
   "name": "Colorado Parks and Wildlife — 2026 Primary Draw Post Draw Recap reports",
   "url": "https://cpw.state.co.us/hunting/big-game/elk/statistics"
  },
- "notes": "CPW 2026 primary big-game draw, from the per-species Post Draw Recap PDFs: https://cpw.widen.net/content/tl5sj6pnkb/original/postdrawrecapreport_elk-26_05142026_1426.pdf ; https://cpw.widen.net/content/mirgybedih/original/postdrawrecapreport_deer-26_05112026_1505.pdf ; https://cpw.widen.net/content/5facqkeb5y/original/postdrawrecapreport_prong-26_05212026_1006.pdf ; https://cpw.widen.net/content/ukdotas2vv/original/postdrawrecapreport_moose-26_05062026_1222.pdf ; https://cpw.widen.net/content/jj2jizo65j/original/postdrawrecapreport_sheep-26_04222026_1349_wcoversheet.pdf ; https://cpw.widen.net/content/davzdef2ih/original/postdrawrecapreport_goat-26_04222026_1507.pdf. Colorado draws first-choice applicants in preference-point order. drawnOut per residency (adult) is CPW's \"Drawn Out At\": kind \"points\" = licenses ran out at that point level (drawnAtLevel of appliedAtLevel drew there); \"choice\" = every first-choice applicant drew and licenses went to later choices; \"leftover\" = licenses were left after the draw; \"none\" = none drawn in that pool; \"noApps\" = no applicants; \"na\" = not applicable. hybridTags = licenses CPW issued through the hybrid draw (up to 20% of the quota on hunt codes where it applies), a random draw among applicants below the drawn-out level. Moose, bighorn sheep and mountain goat are drawn by weighted random draw once an applicant holds 3 preference points: drawnOut kind \"weighted\" (minPoints 3), and their pointLines are by total points (3 preference + weighted points, so 3 preference and 5 weighted = 8). \"G\" season codes (2025 licenses returned after the fires, guaranteed to the original holders) are left out. DrawStat: tags = adult licenses drawn by that residency; applicants = adult first-choice applicants; successPct = tags ÷ applicants (computed here; includes licenses drawn through hybrid); minPoints = the drawn-out level (0 when every first-choice applicant drew). pointLines: adult first-choice applicants and successful applicants per preference-point level, checked against CPW's Total Choice 1 lines. Youth and landowner (LPP) pools are not included. Season dates are the 2026 seasons from CPW's Big Game Brochure (https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure): 1646 hunt codes from the hunt tables' own dates, 549 from the brochure's \"Season Dates\" table for standard archery, muzzleloader and rifle seasons (hunt codes the tables print without a date), 414 without dates (late, private-land and other special seasons the tables don't date, and 3 codes listed under two different dates).",
+ "notes": "CPW 2026 primary big-game draw, from the per-species Post Draw Recap PDFs: https://cpw.widen.net/content/tl5sj6pnkb/original/postdrawrecapreport_elk-26_05142026_1426.pdf ; https://cpw.widen.net/content/mirgybedih/original/postdrawrecapreport_deer-26_05112026_1505.pdf ; https://cpw.widen.net/content/5facqkeb5y/original/postdrawrecapreport_prong-26_05212026_1006.pdf ; https://cpw.widen.net/content/ukdotas2vv/original/postdrawrecapreport_moose-26_05062026_1222.pdf ; https://cpw.widen.net/content/jj2jizo65j/original/postdrawrecapreport_sheep-26_04222026_1349_wcoversheet.pdf ; https://cpw.widen.net/content/davzdef2ih/original/postdrawrecapreport_goat-26_04222026_1507.pdf. Colorado draws first-choice applicants in preference-point order. drawnOut per residency (adult) is CPW's \"Drawn Out At\": kind \"points\" = licenses ran out at that point level (drawnAtLevel of appliedAtLevel drew there); \"choice\" = every first-choice applicant drew and licenses went to later choices; \"leftover\" = licenses were left after the draw; \"none\" = none drawn in that pool; \"noApps\" = no applicants; \"na\" = not applicable. hybridTags = licenses CPW issued through the hybrid draw (up to 20% of the quota on hunt codes where it applies), a random draw among applicants below the drawn-out level. Moose, bighorn sheep and mountain goat are drawn by weighted random draw once an applicant holds 3 preference points: drawnOut kind \"weighted\" (minPoints 3), and their pointLines are by total points (3 preference + weighted points, so 3 preference and 5 weighted = 8). \"G\" season codes (2025 licenses returned after the fires, guaranteed to the original holders) are left out. DrawStat: tags = adult licenses drawn by that residency; applicants = adult first-choice applicants; successPct = tags ÷ applicants (computed here; includes licenses drawn through hybrid); minPoints = the drawn-out level (0 when every first-choice applicant drew). pointLines: adult first-choice applicants and successful applicants per preference-point level, checked against CPW's Total Choice 1 lines. Youth and landowner (LPP) pools are not included. Season dates are the 2026 seasons from CPW's Big Game and Sheep & Goat brochures (https://cpw.widen.net/s/5wvx7rggrd/colorado-big-game-hunting-brochure ; https://cpw.widen.net/s/n87kwmkzbt/colorado-sheep-and-goat-brochure): 2466 hunt codes from the hunt tables' own dates, 125 from the brochure's \"Season Dates\" table for standard archery, muzzleloader and rifle seasons (hunt codes the tables print without a date), 18 without dates (late, private-land and other special seasons the tables don't date, and 3 codes listed under two different dates).",
  "species": {
   "ELK": [
    {
@@ -1576,6 +1576,10 @@
     "huntCode": "EE003P1A",
     "unit": "3",
     "label": "Either-sex elk — Unit 3, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 30,
@@ -1753,6 +1757,10 @@
     "huntCode": "EE003V1A",
     "unit": "3",
     "label": "Either-sex elk — Unit 3, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -2751,6 +2759,10 @@
     "huntCode": "EE005W1R",
     "unit": "5",
     "label": "Either-sex elk — Unit 5, season W1 rifle",
+    "season": {
+     "open": "2026-10-25",
+     "close": "2026-11-15"
+    },
     "draw": {
      "resident": {
       "tags": 13,
@@ -3408,6 +3420,10 @@
     "huntCode": "EE006V1A",
     "unit": "6",
     "label": "Either-sex elk — Unit 6, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -4724,6 +4740,10 @@
     "huntCode": "EE011P1A",
     "unit": "11",
     "label": "Either-sex elk — Unit 11, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 76,
@@ -4921,6 +4941,10 @@
     "huntCode": "EE011V1A",
     "unit": "11",
     "label": "Either-sex elk — Unit 11, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -5791,6 +5815,10 @@
     "huntCode": "EE014V1A",
     "unit": "14",
     "label": "Either-sex elk — Unit 14, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -6321,6 +6349,10 @@
     "huntCode": "EE015V1A",
     "unit": "15",
     "label": "Either-sex elk — Unit 15, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -6885,6 +6917,10 @@
     "huntCode": "EE018V1A",
     "unit": "18",
     "label": "Either-sex elk — Unit 18, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -7514,6 +7550,10 @@
     "huntCode": "EE021P1A",
     "unit": "21",
     "label": "Either-sex elk — Unit 21, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -7662,6 +7702,10 @@
     "huntCode": "EE021V1A",
     "unit": "21",
     "label": "Either-sex elk — Unit 21, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -8014,6 +8058,10 @@
     "huntCode": "EE025V1A",
     "unit": "25",
     "label": "Either-sex elk — Unit 25, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -8756,6 +8804,10 @@
     "huntCode": "EE028P1A",
     "unit": "28",
     "label": "Either-sex elk — Unit 28, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -8916,6 +8968,10 @@
     "huntCode": "EE028V1A",
     "unit": "28",
     "label": "Either-sex elk — Unit 28, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -9629,6 +9685,10 @@
     "huntCode": "EE035V1A",
     "unit": "35",
     "label": "Either-sex elk — Unit 35, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -9756,6 +9816,10 @@
     "huntCode": "EE038V1A",
     "unit": "38",
     "label": "Either-sex elk — Unit 38, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -11762,6 +11826,10 @@
     "huntCode": "EE041P1A",
     "unit": "41",
     "label": "Either-sex elk — Unit 41, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 21,
@@ -12225,6 +12293,10 @@
     "huntCode": "EE043V1A",
     "unit": "43",
     "label": "Either-sex elk — Unit 43, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -13181,6 +13253,10 @@
     "huntCode": "EE052P1A",
     "unit": "52",
     "label": "Either-sex elk — Unit 52, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 19,
@@ -13371,6 +13447,10 @@
     "huntCode": "EE053V1A",
     "unit": "53",
     "label": "Either-sex elk — Unit 53, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -13920,6 +14000,10 @@
     "huntCode": "EE059V1A",
     "unit": "59",
     "label": "Either-sex elk — Unit 59, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -14114,6 +14198,10 @@
     "huntCode": "EE060V1A",
     "unit": "60",
     "label": "Either-sex elk — Unit 60, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -14944,6 +15032,10 @@
     "huntCode": "EE062P1A",
     "unit": "62",
     "label": "Either-sex elk — Unit 62, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -15175,6 +15267,10 @@
     "huntCode": "EE062V1A",
     "unit": "62",
     "label": "Either-sex elk — Unit 62, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -15253,6 +15349,10 @@
     "huntCode": "EE063V1A",
     "unit": "63",
     "label": "Either-sex elk — Unit 63, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -15504,6 +15604,10 @@
     "huntCode": "EE064P1A",
     "unit": "64",
     "label": "Either-sex elk — Unit 64, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -15689,6 +15793,10 @@
     "huntCode": "EE064V1A",
     "unit": "64",
     "label": "Either-sex elk — Unit 64, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -16145,6 +16253,10 @@
     "huntCode": "EE068V1A",
     "unit": "68",
     "label": "Either-sex elk — Unit 68, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -16392,6 +16504,10 @@
     "huntCode": "EE070P1A",
     "unit": "70",
     "label": "Either-sex elk — Unit 70, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 26,
@@ -16612,6 +16728,10 @@
     "huntCode": "EE071P1A",
     "unit": "71",
     "label": "Either-sex elk — Unit 71, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -16697,6 +16817,10 @@
     "huntCode": "EE074P1A",
     "unit": "74",
     "label": "Either-sex elk — Unit 74, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 21,
@@ -16756,6 +16880,10 @@
     "huntCode": "EE075P1A",
     "unit": "75",
     "label": "Either-sex elk — Unit 75, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 19,
@@ -17099,6 +17227,10 @@
     "huntCode": "EE077P1A",
     "unit": "77",
     "label": "Either-sex elk — Unit 77, private land only archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 13,
@@ -17163,6 +17295,10 @@
     "huntCode": "EE079V1A",
     "unit": "79",
     "label": "Either-sex elk — Unit 79, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -17612,6 +17748,10 @@
     "huntCode": "EE082V1A",
     "unit": "82",
     "label": "Either-sex elk — Unit 82, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -18090,6 +18230,10 @@
     "huntCode": "EE083V1A",
     "unit": "83",
     "label": "Either-sex elk — Unit 83, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -18992,6 +19136,10 @@
     "huntCode": "EE085V1A",
     "unit": "85",
     "label": "Either-sex elk — Unit 85, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -19605,6 +19753,10 @@
     "huntCode": "EE086V1A",
     "unit": "86",
     "label": "Either-sex elk — Unit 86, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -21207,6 +21359,10 @@
     "huntCode": "EE214W2R",
     "unit": "214",
     "label": "Either-sex elk — Unit 214, season W2 rifle",
+    "season": {
+     "open": "2026-11-28",
+     "close": "2026-12-02"
+    },
     "draw": {
      "resident": {
       "tags": 13,
@@ -21827,6 +21983,10 @@
     "huntCode": "EE441W1R",
     "unit": "441",
     "label": "Either-sex elk — Unit 441, season W1 rifle",
+    "season": {
+     "open": "2026-11-28",
+     "close": "2026-12-07"
+    },
     "draw": {
      "resident": {
       "tags": 12,
@@ -23008,6 +23168,10 @@
     "huntCode": "EE851W1R",
     "unit": "851",
     "label": "Either-sex elk — Unit 851, season W1 rifle",
+    "season": {
+     "open": "2026-11-23",
+     "close": "2026-12-02"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -23394,6 +23558,10 @@
     "huntCode": "EF001L1R",
     "unit": "1",
     "label": "Cow elk — Unit 1, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -23752,6 +23920,10 @@
     "huntCode": "EF001P5R",
     "unit": "1",
     "label": "Cow elk — Unit 1, private land only rifle",
+    "season": {
+     "open": "2026-08-15",
+     "close": "2027-01-15"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -24884,6 +25056,10 @@
     "huntCode": "EF003P5R",
     "unit": "3",
     "label": "Cow elk — Unit 3, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 355,
@@ -25111,8 +25287,8 @@
     "unit": "3",
     "label": "Cow elk — Unit 3, season W5 rifle",
     "season": {
-     "open": "2026-01-02",
-     "close": "2026-01-06"
+     "open": "2027-01-02",
+     "close": "2027-01-06"
     },
     "draw": {
      "resident": {
@@ -26182,8 +26358,8 @@
     "unit": "5",
     "label": "Cow elk — Unit 5, season W5 rifle",
     "season": {
-     "open": "2026-10-13",
-     "close": "2026-10-24"
+     "open": "2026-10-25",
+     "close": "2026-11-15"
     },
     "draw": {
      "resident": {
@@ -26675,6 +26851,10 @@
     "huntCode": "EF006V1A",
     "unit": "6",
     "label": "Cow elk — Unit 6, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -27561,6 +27741,10 @@
     "huntCode": "EF010L1R",
     "unit": "10",
     "label": "Cow elk — Unit 10, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -30543,6 +30727,10 @@
     "huntCode": "EF018L1R",
     "unit": "18",
     "label": "Cow elk — Unit 18, late rifle",
+    "season": {
+     "open": "2026-11-28",
+     "close": "2026-12-06"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -31013,6 +31201,10 @@
     "huntCode": "EF018V1A",
     "unit": "18",
     "label": "Cow elk — Unit 18, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -31051,6 +31243,10 @@
     "huntCode": "EF019L1R",
     "unit": "19",
     "label": "Cow elk — Unit 19, late rifle",
+    "season": {
+     "open": "2026-11-28",
+     "close": "2026-12-09"
+    },
     "draw": {
      "resident": {
       "tags": 47,
@@ -32317,6 +32513,10 @@
     "huntCode": "EF021V1A",
     "unit": "21",
     "label": "Cow elk — Unit 21, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -33435,6 +33635,10 @@
     "huntCode": "EF027L1R",
     "unit": "27",
     "label": "Cow elk — Unit 27, late rifle",
+    "season": {
+     "open": "2026-11-28",
+     "close": "2026-12-06"
+    },
     "draw": {
      "resident": {
       "tags": 9,
@@ -33674,8 +33878,8 @@
     "unit": "27",
     "label": "Cow elk — Unit 27, private land only rifle",
     "season": {
-     "open": "2026-11-18",
-     "close": "2026-11-22"
+     "open": "2026-09-01",
+     "close": "2027-01-31"
     },
     "draw": {
      "resident": {
@@ -34492,6 +34696,10 @@
     "huntCode": "EF030L1R",
     "unit": "30",
     "label": "Cow elk — Unit 30, late rifle",
+    "season": {
+     "open": "2026-12-15",
+     "close": "2027-01-15"
+    },
     "draw": {
      "resident": {
       "tags": 177,
@@ -34718,6 +34926,10 @@
     "huntCode": "EF031L1R",
     "unit": "31",
     "label": "Cow elk — Unit 31, late rifle",
+    "season": {
+     "open": "2026-12-15",
+     "close": "2027-01-15"
+    },
     "draw": {
      "resident": {
       "tags": 442,
@@ -36043,6 +36255,10 @@
     "huntCode": "EF038L1R",
     "unit": "38",
     "label": "Cow elk — Unit 38, late rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2027-01-31"
+    },
     "draw": {
      "resident": {
       "tags": 74,
@@ -36107,6 +36323,10 @@
     "huntCode": "EF038L2R",
     "unit": "38",
     "label": "Cow elk — Unit 38, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2027-01-31"
+    },
     "draw": {
      "resident": {
       "tags": 25,
@@ -36550,6 +36770,10 @@
     "huntCode": "EF038V1A",
     "unit": "38",
     "label": "Cow elk — Unit 38, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -37413,6 +37637,10 @@
     "huntCode": "EF040P5R",
     "unit": "40",
     "label": "Cow elk — Unit 40, private land only rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 127,
@@ -38809,6 +39037,10 @@
     "huntCode": "EF043V1A",
     "unit": "43",
     "label": "Cow elk — Unit 43, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -40845,6 +41077,10 @@
     "huntCode": "EF050L1R",
     "unit": "50",
     "label": "Cow elk — Unit 50, late rifle",
+    "season": {
+     "open": "2026-12-26",
+     "close": "2027-01-03"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -44520,6 +44756,10 @@
     "huntCode": "EF059V1A",
     "unit": "59",
     "label": "Cow elk — Unit 59, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -44775,8 +45015,8 @@
     "unit": "60",
     "label": "Cow elk — Unit 60, private land only rifle",
     "season": {
-     "open": "2026-11-18",
-     "close": "2026-11-22"
+     "open": "2026-08-15",
+     "close": "2026-10-31"
     },
     "draw": {
      "resident": {
@@ -45475,6 +45715,10 @@
     "huntCode": "EF061P5R",
     "unit": "61",
     "label": "Cow elk — Unit 61, private land only rifle",
+    "season": {
+     "open": "2026-12-15",
+     "close": "2027-01-15"
+    },
     "draw": {
      "resident": {
       "tags": 102,
@@ -48338,6 +48582,10 @@
     "huntCode": "EF068P5R",
     "unit": "68",
     "label": "Cow elk — Unit 68, private land only rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 25,
@@ -54635,6 +54883,10 @@
     "huntCode": "EF082V1A",
     "unit": "82",
     "label": "Cow elk — Unit 82, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -54931,8 +55183,8 @@
     "unit": "84",
     "label": "Cow elk — Unit 84, season W3 rifle",
     "season": {
-     "open": "2026-01-04",
-     "close": "2026-01-13"
+     "open": "2027-01-04",
+     "close": "2027-01-13"
     },
     "draw": {
      "resident": {
@@ -55066,8 +55318,8 @@
     "unit": "84",
     "label": "Cow elk — Unit 84, season W5 rifle",
     "season": {
-     "open": "2026-01-17",
-     "close": "2026-01-26"
+     "open": "2027-01-17",
+     "close": "2027-01-26"
     },
     "draw": {
      "resident": {
@@ -55484,10 +55736,6 @@
     "huntCode": "EF085P5R",
     "unit": "85",
     "label": "Cow elk — Unit 85, private land only rifle",
-    "season": {
-     "open": "2026-10-14",
-     "close": "2026-10-18"
-    },
     "draw": {
      "resident": {
       "tags": 171,
@@ -55667,6 +55915,10 @@
     "huntCode": "EF085V1A",
     "unit": "85",
     "label": "Cow elk — Unit 85, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -56074,6 +56326,10 @@
     "huntCode": "EF086V1A",
     "unit": "86",
     "label": "Cow elk — Unit 86, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -56415,6 +56671,10 @@
     "huntCode": "EF128L1R",
     "unit": "128",
     "label": "Cow elk — Unit 128, late rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2027-01-31"
+    },
     "draw": {
      "resident": {
       "tags": 64,
@@ -56753,8 +57013,8 @@
     "unit": "131",
     "label": "Cow elk — Unit 131, private land only rifle",
     "season": {
-     "open": "2026-11-18",
-     "close": "2026-11-22"
+     "open": "2026-11-23",
+     "close": "2027-01-31"
     },
     "draw": {
      "resident": {
@@ -57391,6 +57651,10 @@
     "huntCode": "EF191L1R",
     "unit": "191",
     "label": "Cow elk — Unit 191, late rifle",
+    "season": {
+     "open": "2026-11-28",
+     "close": "2026-12-09"
+    },
     "draw": {
      "resident": {
       "tags": 36,
@@ -58435,8 +58699,8 @@
     "unit": "214",
     "label": "Cow elk — Unit 214, season W2 rifle",
     "season": {
-     "open": "2026-12-05",
-     "close": "2026-12-09"
+     "open": "2026-11-28",
+     "close": "2026-12-02"
     },
     "draw": {
      "resident": {
@@ -58913,8 +59177,8 @@
     "unit": "301",
     "label": "Cow elk — Unit 301, season W2 rifle",
     "season": {
-     "open": "2026-01-09",
-     "close": "2026-01-13"
+     "open": "2027-01-09",
+     "close": "2027-01-13"
     },
     "draw": {
      "resident": {
@@ -58968,8 +59232,8 @@
     "unit": "301",
     "label": "Cow elk — Unit 301, season W3 rifle",
     "season": {
-     "open": "2026-01-08",
-     "close": "2026-01-17"
+     "open": "2027-01-08",
+     "close": "2027-01-17"
     },
     "draw": {
      "resident": {
@@ -59028,8 +59292,8 @@
     "unit": "301",
     "label": "Cow elk — Unit 301, season W4 rifle",
     "season": {
-     "open": "2026-01-16",
-     "close": "2026-01-20"
+     "open": "2027-01-16",
+     "close": "2027-01-20"
     },
     "draw": {
      "resident": {
@@ -59929,6 +60193,10 @@
     "huntCode": "EF421P5R",
     "unit": "421",
     "label": "Cow elk — Unit 421, private land only rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 268,
@@ -61153,6 +61421,10 @@
     "huntCode": "EF500L1R",
     "unit": "500",
     "label": "Cow elk — Unit 500, late rifle",
+    "season": {
+     "open": "2026-12-12",
+     "close": "2026-12-20"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -63402,6 +63674,10 @@
     "huntCode": "EF581P5R",
     "unit": "581",
     "label": "Cow elk — Unit 581, private land only rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2027-01-31"
+    },
     "draw": {
      "resident": {
       "tags": 262,
@@ -63638,6 +63914,10 @@
     "huntCode": "EF682V1A",
     "unit": "682",
     "label": "Cow elk — Unit 682, season V1 archery",
+    "season": {
+     "open": "2026-09-02",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -64506,6 +64786,10 @@
     "huntCode": "EF851W1R",
     "unit": "851",
     "label": "Cow elk — Unit 851, season W1 rifle",
+    "season": {
+     "open": "2026-11-23",
+     "close": "2026-12-02"
+    },
     "draw": {
      "resident": {
       "tags": 12,
@@ -67376,8 +67660,8 @@
     "unit": "20",
     "label": "Bull elk — Unit 20, late rifle",
     "season": {
-     "open": "2026-01-09",
-     "close": "2026-01-20"
+     "open": "2027-01-09",
+     "close": "2027-01-20"
     },
     "draw": {
      "resident": {
@@ -95289,6 +95573,10 @@
     "huntCode": "DE038L1R",
     "unit": "38",
     "label": "Either-sex deer — Unit 38, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2027-01-31"
+    },
     "draw": {
      "resident": {
       "tags": 100,
@@ -96574,6 +96862,10 @@
     "huntCode": "DE052P6R",
     "unit": "52",
     "label": "Either-sex deer — Unit 52, private land only rifle",
+    "season": {
+     "open": "2026-08-15",
+     "close": "2026-08-25"
+    },
     "draw": {
      "resident": {
       "tags": 62,
@@ -96634,8 +96926,8 @@
     "unit": "62",
     "label": "Either-sex deer — Unit 62, private land only rifle",
     "season": {
-     "open": "2026-11-07",
-     "close": "2026-11-15"
+     "open": "2026-08-15",
+     "close": "2026-08-25"
     },
     "draw": {
      "resident": {
@@ -96692,8 +96984,8 @@
     "unit": "64",
     "label": "Either-sex deer — Unit 64, private land only rifle",
     "season": {
-     "open": "2026-11-07",
-     "close": "2026-11-15"
+     "open": "2026-08-15",
+     "close": "2026-08-25"
     },
     "draw": {
      "resident": {
@@ -98140,6 +98432,10 @@
     "huntCode": "DE104O3M",
     "unit": "104",
     "label": "Either-sex deer — Unit 104, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -98888,6 +99184,10 @@
     "huntCode": "DE109O3M",
     "unit": "109",
     "label": "Either-sex deer — Unit 109, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -99419,6 +99719,10 @@
     "huntCode": "DE116O3M",
     "unit": "116",
     "label": "Either-sex deer — Unit 116, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -101670,6 +101974,10 @@
     "huntCode": "DE682P5R",
     "unit": "682",
     "label": "Either-sex deer — Unit 682, private land only rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -102647,6 +102955,10 @@
     "huntCode": "DF005W1R",
     "unit": "5",
     "label": "Doe deer — Unit 5, season W1 rifle",
+    "season": {
+     "open": "2026-10-25",
+     "close": "2026-11-07"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -102794,8 +103106,8 @@
     "unit": "6",
     "label": "Doe deer — Unit 6, early rifle",
     "season": {
-     "open": "2026-11-18",
-     "close": "2026-11-22"
+     "open": "2026-10-01",
+     "close": "2026-10-07"
     },
     "draw": {
      "resident": {
@@ -103434,6 +103746,10 @@
     "huntCode": "DF009P5R",
     "unit": "9",
     "label": "Doe deer — Unit 9, private land only rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 48,
@@ -106335,6 +106651,10 @@
     "huntCode": "DF038L1R",
     "unit": "38",
     "label": "Doe deer — Unit 38, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2027-01-31"
+    },
     "draw": {
      "resident": {
       "tags": 19,
@@ -106373,6 +106693,10 @@
     "huntCode": "DF038L2R",
     "unit": "38",
     "label": "Doe deer — Unit 38, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2027-01-31"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -108388,8 +108712,8 @@
     "unit": "53",
     "label": "Doe deer — Unit 53, private land only rifle",
     "season": {
-     "open": "2026-11-07",
-     "close": "2026-11-15"
+     "open": "2026-09-01",
+     "close": "2026-10-31"
     },
     "draw": {
      "resident": {
@@ -109277,6 +109601,10 @@
     "huntCode": "DF056L1R",
     "unit": "56",
     "label": "Doe deer — Unit 56, late rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 24,
@@ -109884,8 +110212,8 @@
     "unit": "63",
     "label": "Doe deer — Unit 63, private land only rifle",
     "season": {
-     "open": "2026-11-07",
-     "close": "2026-11-15"
+     "open": "2026-09-01",
+     "close": "2026-10-31"
     },
     "draw": {
      "resident": {
@@ -110274,6 +110602,10 @@
     "huntCode": "DF069L1R",
     "unit": "69",
     "label": "Doe deer — Unit 69, late rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 93,
@@ -110773,6 +111105,10 @@
     "huntCode": "DF072P2R",
     "unit": "72",
     "label": "Doe deer — Unit 72, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-01"
+    },
     "draw": {
      "resident": {
       "tags": 10,
@@ -112169,8 +112505,8 @@
     "unit": "84",
     "label": "Doe deer — Unit 84, private land only rifle",
     "season": {
-     "open": "2026-11-07",
-     "close": "2026-11-15"
+     "open": "2026-08-15",
+     "close": "2026-10-15"
     },
     "draw": {
      "resident": {
@@ -112392,6 +112728,10 @@
     "huntCode": "DF087O2M",
     "unit": "87",
     "label": "Doe deer — Unit 87, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -112936,6 +113276,10 @@
     "huntCode": "DF091O2M",
     "unit": "91",
     "label": "Doe deer — Unit 91, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 24,
@@ -112978,7 +113322,7 @@
     "unit": "91",
     "label": "Doe deer — Unit 91, private land only",
     "season": {
-     "open": "2026-01-01",
+     "open": "2027-01-01",
      "close": "2027-01-31"
     },
     "draw": {
@@ -113102,6 +113446,10 @@
     "huntCode": "DF092O2M",
     "unit": "92",
     "label": "Doe deer — Unit 92, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 9,
@@ -113141,7 +113489,7 @@
     "unit": "92",
     "label": "Doe deer — Unit 92, private land only",
     "season": {
-     "open": "2026-01-01",
+     "open": "2027-01-01",
      "close": "2027-01-31"
     },
     "draw": {
@@ -113308,6 +113656,10 @@
     "huntCode": "DF093O2M",
     "unit": "93",
     "label": "Doe deer — Unit 93, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -113465,6 +113817,10 @@
     "huntCode": "DF094O2M",
     "unit": "94",
     "label": "Doe deer — Unit 94, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -113713,6 +114069,10 @@
     "huntCode": "DF096O2M",
     "unit": "96",
     "label": "Doe deer — Unit 96, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 17,
@@ -113752,7 +114112,7 @@
     "unit": "96",
     "label": "Doe deer — Unit 96, private land only",
     "season": {
-     "open": "2026-01-01",
+     "open": "2027-01-01",
      "close": "2027-01-31"
     },
     "draw": {
@@ -113801,7 +114161,7 @@
     "unit": "96",
     "label": "Doe deer — Unit 96, private land only",
     "season": {
-     "open": "2026-01-01",
+     "open": "2027-01-01",
      "close": "2027-01-31"
     },
     "draw": {
@@ -114134,6 +114494,10 @@
     "huntCode": "DF099O2M",
     "unit": "99",
     "label": "Doe deer — Unit 99, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -114354,6 +114718,10 @@
     "huntCode": "DF101O2M",
     "unit": "101",
     "label": "Doe deer — Unit 101, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -114533,6 +114901,10 @@
     "huntCode": "DF102P1R",
     "unit": "102",
     "label": "Doe deer — Unit 102, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -114694,6 +115066,10 @@
     "huntCode": "DF103L2R",
     "unit": "103",
     "label": "Doe deer — Unit 103, late rifle",
+    "season": {
+     "open": "2027-01-01",
+     "close": "2027-01-15"
+    },
     "draw": {
      "resident": {
       "tags": 54,
@@ -114796,6 +115172,10 @@
     "huntCode": "DF103O2M",
     "unit": "103",
     "label": "Doe deer — Unit 103, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 13,
@@ -115022,6 +115402,10 @@
     "huntCode": "DF104L3R",
     "unit": "104",
     "label": "Doe deer — Unit 104, late rifle",
+    "season": {
+     "open": "2026-10-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 58,
@@ -115112,6 +115496,10 @@
     "huntCode": "DF104O2M",
     "unit": "104",
     "label": "Doe deer — Unit 104, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -115191,6 +115579,10 @@
     "huntCode": "DF104O3M",
     "unit": "104",
     "label": "Doe deer — Unit 104, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -115934,6 +116326,10 @@
     "huntCode": "DF109O2M",
     "unit": "109",
     "label": "Doe deer — Unit 109, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -116044,6 +116440,10 @@
     "huntCode": "DF109O3M",
     "unit": "109",
     "label": "Doe deer — Unit 109, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -116076,6 +116476,10 @@
     "huntCode": "DF110O1R",
     "unit": "110",
     "label": "Doe deer — Unit 110, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 56,
@@ -116293,6 +116697,10 @@
     "huntCode": "DF111O1R",
     "unit": "111",
     "label": "Doe deer — Unit 111, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 26,
@@ -116342,6 +116750,10 @@
     "huntCode": "DF112O1R",
     "unit": "112",
     "label": "Doe deer — Unit 112, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -116416,6 +116828,10 @@
     "huntCode": "DF113O1R",
     "unit": "113",
     "label": "Doe deer — Unit 113, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -116459,6 +116875,10 @@
     "huntCode": "DF114O1R",
     "unit": "114",
     "label": "Doe deer — Unit 114, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 17,
@@ -116625,6 +117045,10 @@
     "huntCode": "DF116O2M",
     "unit": "116",
     "label": "Doe deer — Unit 116, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -116729,6 +117153,10 @@
     "huntCode": "DF116O3M",
     "unit": "116",
     "label": "Doe deer — Unit 116, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -116845,6 +117273,10 @@
     "huntCode": "DF118O1R",
     "unit": "118",
     "label": "Doe deer — Unit 118, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 18,
@@ -116898,6 +117330,10 @@
     "huntCode": "DF119O1R",
     "unit": "119",
     "label": "Doe deer — Unit 119, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 17,
@@ -116941,6 +117377,10 @@
     "huntCode": "DF120O1R",
     "unit": "120",
     "label": "Doe deer — Unit 120, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 20,
@@ -117302,6 +117742,10 @@
     "huntCode": "DF124O1R",
     "unit": "124",
     "label": "Doe deer — Unit 124, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -117696,6 +118140,10 @@
     "huntCode": "DF128O1R",
     "unit": "128",
     "label": "Doe deer — Unit 128, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 24,
@@ -117906,6 +118354,10 @@
     "huntCode": "DF129L1R",
     "unit": "129",
     "label": "Doe deer — Unit 129, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-14"
+    },
     "draw": {
      "resident": {
       "tags": 9,
@@ -117980,6 +118432,10 @@
     "huntCode": "DF129O1R",
     "unit": "129",
     "label": "Doe deer — Unit 129, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 9,
@@ -118054,6 +118510,10 @@
     "huntCode": "DF133O1R",
     "unit": "133",
     "label": "Doe deer — Unit 133, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -118086,6 +118546,10 @@
     "huntCode": "DF134O1R",
     "unit": "134",
     "label": "Doe deer — Unit 134, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -118132,6 +118596,10 @@
     "huntCode": "DF135O1R",
     "unit": "135",
     "label": "Doe deer — Unit 135, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 15,
@@ -118178,6 +118646,10 @@
     "huntCode": "DF136L1R",
     "unit": "136",
     "label": "Doe deer — Unit 136, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-14"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -118625,6 +119097,10 @@
     "huntCode": "DF137P1R",
     "unit": "137",
     "label": "Doe deer — Unit 137, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -118929,6 +119405,10 @@
     "huntCode": "DF142L1R",
     "unit": "142",
     "label": "Doe deer — Unit 142, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-14"
+    },
     "draw": {
      "resident": {
       "tags": 17,
@@ -118980,6 +119460,10 @@
     "huntCode": "DF142O2M",
     "unit": "142",
     "label": "Doe deer — Unit 142, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -119012,6 +119496,10 @@
     "huntCode": "DF147L1R",
     "unit": "147",
     "label": "Doe deer — Unit 147, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-14"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -119542,6 +120030,10 @@
     "huntCode": "DF411P5R",
     "unit": "411",
     "label": "Doe deer — Unit 411, private land only rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 34,
@@ -121321,6 +121813,10 @@
     "huntCode": "DF951O2M",
     "unit": "951",
     "label": "Doe deer — Unit 951, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -123931,6 +124427,10 @@
     "huntCode": "DM005W1R",
     "unit": "5",
     "label": "Buck deer — Unit 5, season W1 rifle",
+    "season": {
+     "open": "2026-10-25",
+     "close": "2026-11-15"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -124206,6 +124706,10 @@
     "huntCode": "DM006E2R",
     "unit": "6",
     "label": "Buck deer — Unit 6, early rifle",
+    "season": {
+     "open": "2026-09-29",
+     "close": "2026-10-07"
+    },
     "draw": {
      "resident": {
       "tags": 28,
@@ -125482,6 +125986,10 @@
     "huntCode": "DM009L1R",
     "unit": "9",
     "label": "Buck deer — Unit 9, late rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 117,
@@ -128571,8 +129079,8 @@
     "unit": "17",
     "label": "Buck deer — Unit 17, season 1 rifle",
     "season": {
-     "open": "2026-10-01",
-     "close": "2026-10-07"
+     "open": "2026-10-14",
+     "close": "2026-10-18"
     },
     "draw": {
      "resident": {
@@ -129970,6 +130478,10 @@
     "huntCode": "DM020P5R",
     "unit": "20",
     "label": "Buck deer — Unit 20, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 536,
@@ -132309,6 +132821,10 @@
     "huntCode": "DM029P5R",
     "unit": "29",
     "label": "Buck deer — Unit 29, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 40,
@@ -135009,6 +135525,10 @@
     "huntCode": "DM038P5R",
     "unit": "38",
     "label": "Buck deer — Unit 38, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 61,
@@ -161816,6 +162336,10 @@
     "huntCode": "DM085W1R",
     "unit": "85",
     "label": "Buck deer — Unit 85, season W1 rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-10"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -162100,6 +162624,10 @@
     "huntCode": "DM087O2M",
     "unit": "87",
     "label": "Buck deer — Unit 87, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 18,
@@ -162701,6 +163229,10 @@
     "huntCode": "DM091O2M",
     "unit": "91",
     "label": "Buck deer — Unit 91, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 19,
@@ -162954,6 +163486,10 @@
     "huntCode": "DM092O2M",
     "unit": "92",
     "label": "Buck deer — Unit 92, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 16,
@@ -163278,6 +163814,10 @@
     "huntCode": "DM093O2M",
     "unit": "93",
     "label": "Buck deer — Unit 93, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 20,
@@ -163437,6 +163977,10 @@
     "huntCode": "DM094O2M",
     "unit": "94",
     "label": "Buck deer — Unit 94, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -163763,6 +164307,10 @@
     "huntCode": "DM096O2M",
     "unit": "96",
     "label": "Buck deer — Unit 96, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 31,
@@ -164378,6 +164926,10 @@
     "huntCode": "DM099O2M",
     "unit": "99",
     "label": "Buck deer — Unit 99, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 12,
@@ -164753,6 +165305,10 @@
     "huntCode": "DM101O2M",
     "unit": "101",
     "label": "Buck deer — Unit 101, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 21,
@@ -164983,6 +165539,10 @@
     "huntCode": "DM102P1R",
     "unit": "102",
     "label": "Buck deer — Unit 102, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 15,
@@ -165317,6 +165877,10 @@
     "huntCode": "DM103O2M",
     "unit": "103",
     "label": "Buck deer — Unit 103, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 9,
@@ -165573,6 +166137,10 @@
     "huntCode": "DM104O2M",
     "unit": "104",
     "label": "Buck deer — Unit 104, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 33,
@@ -166212,6 +166780,10 @@
     "huntCode": "DM109O2M",
     "unit": "109",
     "label": "Buck deer — Unit 109, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -166250,6 +166822,10 @@
     "huntCode": "DM110O1R",
     "unit": "110",
     "label": "Buck deer — Unit 110, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 66,
@@ -166372,6 +166948,10 @@
     "huntCode": "DM111O1R",
     "unit": "111",
     "label": "Buck deer — Unit 111, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 43,
@@ -166462,6 +167042,10 @@
     "huntCode": "DM112O1R",
     "unit": "112",
     "label": "Buck deer — Unit 112, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 16,
@@ -166516,6 +167100,10 @@
     "huntCode": "DM113O1R",
     "unit": "113",
     "label": "Buck deer — Unit 113, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 21,
@@ -166570,6 +167158,10 @@
     "huntCode": "DM114O1R",
     "unit": "114",
     "label": "Buck deer — Unit 114, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 38,
@@ -166772,6 +167364,10 @@
     "huntCode": "DM116O2M",
     "unit": "116",
     "label": "Buck deer — Unit 116, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -166915,6 +167511,10 @@
     "huntCode": "DM118O1R",
     "unit": "118",
     "label": "Buck deer — Unit 118, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 62,
@@ -166990,6 +167590,10 @@
     "huntCode": "DM119O1R",
     "unit": "119",
     "label": "Buck deer — Unit 119, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 31,
@@ -167039,6 +167643,10 @@
     "huntCode": "DM120O1R",
     "unit": "120",
     "label": "Buck deer — Unit 120, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 57,
@@ -167361,6 +167969,10 @@
     "huntCode": "DM124O1R",
     "unit": "124",
     "label": "Buck deer — Unit 124, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 26,
@@ -167760,6 +168372,10 @@
     "huntCode": "DM128O1R",
     "unit": "128",
     "label": "Buck deer — Unit 128, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 39,
@@ -167904,6 +168520,10 @@
     "huntCode": "DM129L1R",
     "unit": "129",
     "label": "Buck deer — Unit 129, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-14"
+    },
     "draw": {
      "resident": {
       "tags": 20,
@@ -167950,6 +168570,10 @@
     "huntCode": "DM129O1R",
     "unit": "129",
     "label": "Buck deer — Unit 129, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 51,
@@ -168153,6 +168777,10 @@
     "huntCode": "DM133O1R",
     "unit": "133",
     "label": "Buck deer — Unit 133, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -168218,6 +168846,10 @@
     "huntCode": "DM134O1R",
     "unit": "134",
     "label": "Buck deer — Unit 134, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 16,
@@ -168278,6 +168910,10 @@
     "huntCode": "DM135O1R",
     "unit": "135",
     "label": "Buck deer — Unit 135, season 1 rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 21,
@@ -168972,6 +169608,10 @@
     "huntCode": "DM137P1R",
     "unit": "137",
     "label": "Buck deer — Unit 137, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 22,
@@ -169657,6 +170297,10 @@
     "huntCode": "DM142L1R",
     "unit": "142",
     "label": "Buck deer — Unit 142, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-14"
+    },
     "draw": {
      "resident": {
       "tags": 16,
@@ -169838,6 +170482,10 @@
     "huntCode": "DM142O2M",
     "unit": "142",
     "label": "Buck deer — Unit 142, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -172112,6 +172760,10 @@
     "huntCode": "DM391P5R",
     "unit": "391",
     "label": "Buck deer — Unit 391, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 225,
@@ -172577,6 +173229,10 @@
     "huntCode": "DM471E1R",
     "unit": "471",
     "label": "Buck deer — Unit 471, early rifle",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-09-20"
+    },
     "draw": {
      "resident": {
       "tags": 23,
@@ -175482,6 +176138,10 @@
     "huntCode": "DM951O2M",
     "unit": "951",
     "label": "Buck deer — Unit 951, muzzleloader",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -175520,6 +176180,10 @@
     "huntCode": "DM951P5R",
     "unit": "951",
     "label": "Buck deer — Unit 951, private land only rifle",
+    "season": {
+     "open": "2026-10-24",
+     "close": "2026-11-03"
+    },
     "draw": {
      "resident": {
       "tags": 21,
@@ -175577,6 +176241,10 @@
     "huntCode": "AE006W1R",
     "unit": "6",
     "label": "Either-sex pronghorn — Unit 6, season W1 rifle",
+    "season": {
+     "open": "2026-08-15",
+     "close": "2026-08-19"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -176546,6 +177214,10 @@
     "huntCode": "AF006W1R",
     "unit": "6",
     "label": "Doe pronghorn — Unit 6, season W1 rifle",
+    "season": {
+     "open": "2026-08-15",
+     "close": "2026-08-19"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -176900,6 +177572,10 @@
     "huntCode": "AF009L1R",
     "unit": "9",
     "label": "Doe pronghorn — Unit 9, late rifle",
+    "season": {
+     "open": "2026-11-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 70,
@@ -177628,6 +178304,10 @@
     "huntCode": "AF015P5R",
     "unit": "15",
     "label": "Doe pronghorn — Unit 15, private land only rifle",
+    "season": {
+     "open": "2026-09-26",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 12,
@@ -181641,6 +182321,10 @@
     "huntCode": "AF118L1R",
     "unit": "118",
     "label": "Doe pronghorn — Unit 118, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 217,
@@ -182132,6 +182816,10 @@
     "huntCode": "AF123L1R",
     "unit": "123",
     "label": "Doe pronghorn — Unit 123, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 95,
@@ -182503,6 +183191,10 @@
     "huntCode": "AF130L1R",
     "unit": "130",
     "label": "Doe pronghorn — Unit 130, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -183205,6 +183897,10 @@
     "huntCode": "AF136L1R",
     "unit": "136",
     "label": "Doe pronghorn — Unit 136, late rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -184039,7 +184735,7 @@
     "unit": "201",
     "label": "Doe pronghorn — Unit 201, archery",
     "season": {
-     "open": "2026-08-15",
+     "open": "2026-09-01",
      "close": "2026-09-20"
     },
     "draw": {
@@ -184098,8 +184794,8 @@
     "unit": "201",
     "label": "Doe pronghorn — Unit 201, season 1 rifle",
     "season": {
-     "open": "2026-10-03",
-     "close": "2026-10-11"
+     "open": "2026-10-10",
+     "close": "2026-10-18"
     },
     "draw": {
      "resident": {
@@ -186191,6 +186887,10 @@
     "huntCode": "AM004W2R",
     "unit": "4",
     "label": "Buck pronghorn — Unit 4, season W2 rifle",
+    "season": {
+     "open": "2026-08-29",
+     "close": "2026-09-02"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -190649,6 +191349,10 @@
     "huntCode": "AM030P5R",
     "unit": "30",
     "label": "Buck pronghorn — Unit 30, private land only rifle",
+    "season": {
+     "open": "2026-09-26",
+     "close": "2026-10-18"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -195865,6 +196569,10 @@
     "huntCode": "AM087O2R",
     "unit": "87",
     "label": "Buck pronghorn — Unit 87, season 2 rifle",
+    "season": {
+     "open": "2026-10-17",
+     "close": "2026-10-25"
+    },
     "draw": {
      "resident": {
       "tags": 92,
@@ -196273,6 +196981,10 @@
     "huntCode": "AM088O2R",
     "unit": "88",
     "label": "Buck pronghorn — Unit 88, season 2 rifle",
+    "season": {
+     "open": "2026-10-17",
+     "close": "2026-10-25"
+    },
     "draw": {
      "resident": {
       "tags": 30,
@@ -202420,8 +203132,8 @@
     "unit": "201",
     "label": "Buck pronghorn — Unit 201, season 1 rifle",
     "season": {
-     "open": "2026-10-03",
-     "close": "2026-10-11"
+     "open": "2026-10-10",
+     "close": "2026-10-18"
     },
     "draw": {
      "resident": {
@@ -203222,6 +203934,10 @@
     "huntCode": "AM301W1R",
     "unit": "301",
     "label": "Buck pronghorn — Unit 301, season W1 rifle",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -204001,6 +204717,10 @@
     "huntCode": "ME001O1X",
     "unit": "1",
     "label": "Either-sex moose — Unit 1",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -204131,6 +204851,10 @@
     "huntCode": "ME005W1R",
     "unit": "5",
     "label": "Either-sex moose — Unit 5, season W1 rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-20"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -204497,6 +205221,10 @@
     "huntCode": "ME065O1X",
     "unit": "65",
     "label": "Either-sex moose — Unit 65",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -207536,6 +208264,10 @@
     "huntCode": "MF038L1R",
     "unit": "38",
     "label": "Cow moose — Unit 38, late rifle",
+    "season": {
+     "open": "2026-11-18",
+     "close": "2026-11-22"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -207831,6 +208563,10 @@
     "huntCode": "MF039S1A",
     "unit": "39",
     "label": "Cow moose — Unit 39, season S1 archery",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -208819,6 +209555,10 @@
     "huntCode": "MF049S1A",
     "unit": "49",
     "label": "Cow moose — Unit 49, season S1 archery",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -209527,6 +210267,10 @@
     "huntCode": "MF055S1A",
     "unit": "55",
     "label": "Cow moose — Unit 55, season S1 archery",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -209782,6 +210526,10 @@
     "huntCode": "MF066S1A",
     "unit": "66",
     "label": "Cow moose — Unit 66, season S1 archery",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -210647,6 +211395,10 @@
     "huntCode": "MF501S1A",
     "unit": "501",
     "label": "Cow moose — Unit 501, season S1 archery",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -210743,6 +211495,10 @@
     "huntCode": "MM004O1X",
     "unit": "4",
     "label": "Bull moose — Unit 4",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 30,
@@ -211062,6 +211818,10 @@
     "huntCode": "MM006O1X",
     "unit": "6",
     "label": "Bull moose — Unit 6",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 16,
@@ -211386,6 +212146,10 @@
     "huntCode": "MM007O1X",
     "unit": "7",
     "label": "Bull moose — Unit 7",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -211695,6 +212459,10 @@
     "huntCode": "MM007S1X",
     "unit": "7",
     "label": "Bull moose — Unit 7, season S1",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -211855,6 +212623,10 @@
     "huntCode": "MM012O1X",
     "unit": "12",
     "label": "Bull moose — Unit 12",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 10,
@@ -212154,6 +212926,10 @@
     "huntCode": "MM015O1X",
     "unit": "15",
     "label": "Bull moose — Unit 15",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -212438,6 +213214,10 @@
     "huntCode": "MM016O1X",
     "unit": "16",
     "label": "Bull moose — Unit 16",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 14,
@@ -212618,6 +213398,10 @@
     "huntCode": "MM017O1X",
     "unit": "17",
     "label": "Bull moose — Unit 17",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -212932,6 +213716,10 @@
     "huntCode": "MM018O1X",
     "unit": "18",
     "label": "Bull moose — Unit 18",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -213251,6 +214039,10 @@
     "huntCode": "MM018S1X",
     "unit": "18",
     "label": "Bull moose — Unit 18, season S1",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -213366,6 +214158,10 @@
     "huntCode": "MM019O1X",
     "unit": "19",
     "label": "Bull moose — Unit 19",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -213546,6 +214342,10 @@
     "huntCode": "MM020O1X",
     "unit": "20",
     "label": "Bull moose — Unit 20",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -213825,6 +214625,10 @@
     "huntCode": "MM025O1X",
     "unit": "25",
     "label": "Bull moose — Unit 25",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -213985,6 +214789,10 @@
     "huntCode": "MM028O1X",
     "unit": "28",
     "label": "Bull moose — Unit 28",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 12,
@@ -214289,6 +215097,10 @@
     "huntCode": "MM033O1X",
     "unit": "33",
     "label": "Bull moose — Unit 33",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -214439,6 +215251,10 @@
     "huntCode": "MM036O1X",
     "unit": "36",
     "label": "Bull moose — Unit 36",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -214604,6 +215420,10 @@
     "huntCode": "MM037O1X",
     "unit": "37",
     "label": "Bull moose — Unit 37",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 15,
@@ -214918,6 +215738,10 @@
     "huntCode": "MM038O1X",
     "unit": "38",
     "label": "Bull moose — Unit 38",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -216533,6 +217357,10 @@
     "huntCode": "MM048O1X",
     "unit": "48",
     "label": "Bull moose — Unit 48",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -216698,6 +217526,10 @@
     "huntCode": "MM049O1X",
     "unit": "49",
     "label": "Bull moose — Unit 49",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -217022,6 +217854,10 @@
     "huntCode": "MM049S1X",
     "unit": "49",
     "label": "Bull moose — Unit 49, season S1",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -217301,6 +218137,10 @@
     "huntCode": "MM050O1X",
     "unit": "50",
     "label": "Bull moose — Unit 50",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -217823,6 +218663,10 @@
     "huntCode": "MM055O1X",
     "unit": "55",
     "label": "Bull moose — Unit 55",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -218267,6 +219111,10 @@
     "huntCode": "MM056O1X",
     "unit": "56",
     "label": "Bull moose — Unit 56",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -218422,6 +219270,10 @@
     "huntCode": "MM066O1X",
     "unit": "66",
     "label": "Bull moose — Unit 66",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -218602,6 +219454,10 @@
     "huntCode": "MM066S1X",
     "unit": "66",
     "label": "Bull moose — Unit 66, season S1",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -218772,6 +219628,10 @@
     "huntCode": "MM067O1X",
     "unit": "67",
     "label": "Bull moose — Unit 67",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -219036,6 +219896,10 @@
     "huntCode": "MM068O1X",
     "unit": "68",
     "label": "Bull moose — Unit 68",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -219186,6 +220050,10 @@
     "huntCode": "MM074O1X",
     "unit": "74",
     "label": "Bull moose — Unit 74",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -219336,6 +220204,10 @@
     "huntCode": "MM076O1X",
     "unit": "76",
     "label": "Bull moose — Unit 76",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -219665,6 +220537,10 @@
     "huntCode": "MM076S1X",
     "unit": "76",
     "label": "Bull moose — Unit 76, season S1",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -219979,6 +220855,10 @@
     "huntCode": "MM079O1X",
     "unit": "79",
     "label": "Bull moose — Unit 79",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -220119,6 +220999,10 @@
     "huntCode": "MM161O1X",
     "unit": "161",
     "label": "Bull moose — Unit 161",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 15,
@@ -220149,6 +221033,10 @@
     "huntCode": "MM171O1X",
     "unit": "171",
     "label": "Bull moose — Unit 171",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -220463,6 +221351,10 @@
     "huntCode": "MM361O1X",
     "unit": "361",
     "label": "Bull moose — Unit 361",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -220563,6 +221455,10 @@
     "huntCode": "MM501S1X",
     "unit": "501",
     "label": "Bull moose — Unit 501, season S1",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -220733,6 +221629,10 @@
     "huntCode": "MM551O1X",
     "unit": "551",
     "label": "Bull moose — Unit 551",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-14"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -220875,6 +221775,10 @@
     "huntCode": "SES01O1R",
     "unit": "S1",
     "label": "Either-sex bighorn sheep — Unit S1, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-11"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -221041,6 +221945,10 @@
     "huntCode": "SES19O1R",
     "unit": "S19",
     "label": "Either-sex bighorn sheep — Unit S19, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -221177,6 +222085,10 @@
     "huntCode": "SFS03O1A",
     "unit": "S3",
     "label": "Ewe bighorn sheep — Unit S3, archery",
+    "season": {
+     "open": "2026-08-08",
+     "close": "2026-08-21"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -221242,6 +222154,10 @@
     "huntCode": "SFS03O2R",
     "unit": "S3",
     "label": "Ewe bighorn sheep — Unit S3, season 2 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-12"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -221352,6 +222268,10 @@
     "huntCode": "SFS04O2R",
     "unit": "S4",
     "label": "Ewe bighorn sheep — Unit S4, season 2 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -221408,6 +222328,10 @@
     "huntCode": "SFS06O2R",
     "unit": "S6",
     "label": "Ewe bighorn sheep — Unit S6, season 2 rifle",
+    "season": {
+     "open": "2026-09-25",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -221474,6 +222398,10 @@
     "huntCode": "SFS09O1R",
     "unit": "S9",
     "label": "Ewe bighorn sheep — Unit S9, season 1 rifle",
+    "season": {
+     "open": "2026-09-15",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -221569,6 +222497,10 @@
     "huntCode": "SFS11O1R",
     "unit": "S11",
     "label": "Ewe bighorn sheep — Unit S11, season 1 rifle",
+    "season": {
+     "open": "2026-09-15",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -221620,6 +222552,10 @@
     "huntCode": "SFS12O1R",
     "unit": "S12",
     "label": "Ewe bighorn sheep — Unit S12, season 1 rifle",
+    "season": {
+     "open": "2026-09-15",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -221701,6 +222637,10 @@
     "huntCode": "SFS15O1R",
     "unit": "S15",
     "label": "Ewe bighorn sheep — Unit S15, season 1 rifle",
+    "season": {
+     "open": "2026-09-19",
+     "close": "2026-10-04"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -221786,6 +222726,10 @@
     "huntCode": "SFS16O1R",
     "unit": "S16",
     "label": "Ewe bighorn sheep — Unit S16, season 1 rifle",
+    "season": {
+     "open": "2026-09-19",
+     "close": "2026-10-04"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -221832,6 +222776,10 @@
     "huntCode": "SFS17O1R",
     "unit": "S17",
     "label": "Ewe bighorn sheep — Unit S17, season 1 rifle",
+    "season": {
+     "open": "2026-09-15",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -221878,6 +222826,10 @@
     "huntCode": "SFS21O1R",
     "unit": "S21",
     "label": "Ewe bighorn sheep — Unit S21, season 1 rifle",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -221963,6 +222915,10 @@
     "huntCode": "SFS21S1R",
     "unit": "S21",
     "label": "Ewe bighorn sheep — Unit S21, season S1 rifle",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -222019,6 +222975,10 @@
     "huntCode": "SFS22O1R",
     "unit": "S22",
     "label": "Ewe bighorn sheep — Unit S22, season 1 rifle",
+    "season": {
+     "open": "2026-09-11",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -222080,6 +223040,10 @@
     "huntCode": "SFS29O1R",
     "unit": "S29",
     "label": "Ewe bighorn sheep — Unit S29, season 1 rifle",
+    "season": {
+     "open": "2026-09-05",
+     "close": "2026-11-25"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -222146,6 +223110,10 @@
     "huntCode": "SFS32O1R",
     "unit": "S32",
     "label": "Ewe bighorn sheep — Unit S32, season 1 rifle",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-04"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -222212,6 +223180,10 @@
     "huntCode": "SFS32O2A",
     "unit": "S32",
     "label": "Ewe bighorn sheep — Unit S32, archery",
+    "season": {
+     "open": "2026-08-20",
+     "close": "2026-09-07"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -222263,6 +223235,10 @@
     "huntCode": "SFS33O1R",
     "unit": "S33",
     "label": "Ewe bighorn sheep — Unit S33, season 1 rifle",
+    "season": {
+     "open": "2026-09-05",
+     "close": "2026-09-17"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -222309,6 +223285,10 @@
     "huntCode": "SFS33O2R",
     "unit": "S33",
     "label": "Ewe bighorn sheep — Unit S33, season 2 rifle",
+    "season": {
+     "open": "2026-09-21",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -222361,6 +223341,10 @@
     "huntCode": "SFS33S1R",
     "unit": "S33",
     "label": "Ewe bighorn sheep — Unit S33, season S1 rifle",
+    "season": {
+     "open": "2026-09-05",
+     "close": "2026-09-17"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -222417,6 +223401,10 @@
     "huntCode": "SFS33S2R",
     "unit": "S33",
     "label": "Ewe bighorn sheep — Unit S33, season S2 rifle",
+    "season": {
+     "open": "2026-09-21",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -222473,6 +223461,10 @@
     "huntCode": "SFS34O1A",
     "unit": "S34",
     "label": "Ewe bighorn sheep — Unit S34, archery",
+    "season": {
+     "open": "2026-10-01",
+     "close": "2026-10-15"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -222534,6 +223526,10 @@
     "huntCode": "SFS36O1R",
     "unit": "S36",
     "label": "Ewe bighorn sheep — Unit S36, season 1 rifle",
+    "season": {
+     "open": "2026-09-11",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -222585,6 +223581,10 @@
     "huntCode": "SFS40O1R",
     "unit": "S40",
     "label": "Ewe bighorn sheep — Unit S40, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-11"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -222656,6 +223656,10 @@
     "huntCode": "SFS41O1R",
     "unit": "S41",
     "label": "Ewe bighorn sheep — Unit S41, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -222746,6 +223750,10 @@
     "huntCode": "SFS42O1R",
     "unit": "S42",
     "label": "Ewe bighorn sheep — Unit S42, season 1 rifle",
+    "season": {
+     "open": "2026-11-30",
+     "close": "2026-12-04"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -222792,6 +223800,10 @@
     "huntCode": "SFS42O2R",
     "unit": "S42",
     "label": "Ewe bighorn sheep — Unit S42, season 2 rifle",
+    "season": {
+     "open": "2026-12-07",
+     "close": "2026-12-11"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -222853,6 +223865,10 @@
     "huntCode": "SFS51O1R",
     "unit": "S51",
     "label": "Ewe bighorn sheep — Unit S51, season 1 rifle",
+    "season": {
+     "open": "2026-08-22",
+     "close": "2026-08-31"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -222909,6 +223925,10 @@
     "huntCode": "SFS53O1R",
     "unit": "S53",
     "label": "Ewe bighorn sheep — Unit S53, season 1 rifle",
+    "season": {
+     "open": "2026-09-11",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -222980,6 +224000,10 @@
     "huntCode": "SFS57O1A",
     "unit": "S57",
     "label": "Ewe bighorn sheep — Unit S57, archery",
+    "season": {
+     "open": "2026-12-08",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -223048,6 +224072,10 @@
     "huntCode": "SFS61S1R",
     "unit": "S61",
     "label": "Ewe bighorn sheep — Unit S61, season S1 rifle",
+    "season": {
+     "open": "2027-01-01",
+     "close": "2027-01-10"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -223094,6 +224122,10 @@
     "huntCode": "SFS61W1R",
     "unit": "S61",
     "label": "Ewe bighorn sheep — Unit S61, season W1 rifle",
+    "season": {
+     "open": "2027-01-04",
+     "close": "2027-01-14"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -223170,6 +224202,10 @@
     "huntCode": "SFS61W3R",
     "unit": "S61",
     "label": "Ewe bighorn sheep — Unit S61, season W3 rifle",
+    "season": {
+     "open": "2027-01-05",
+     "close": "2027-01-15"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -223221,6 +224257,10 @@
     "huntCode": "SFS66O1R",
     "unit": "S66",
     "label": "Ewe bighorn sheep — Unit S66, season 1 rifle",
+    "season": {
+     "open": "2026-09-15",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -223302,6 +224342,10 @@
     "huntCode": "SFS69O1R",
     "unit": "S69",
     "label": "Ewe bighorn sheep — Unit S69, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-09-22"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -223373,6 +224417,10 @@
     "huntCode": "SFS69O2R",
     "unit": "S69",
     "label": "Ewe bighorn sheep — Unit S69, season 2 rifle",
+    "season": {
+     "open": "2026-10-08",
+     "close": "2026-10-22"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -223429,6 +224477,10 @@
     "huntCode": "SFS73O1R",
     "unit": "S73",
     "label": "Ewe bighorn sheep — Unit S73, season 1 rifle",
+    "season": {
+     "open": "2026-10-11",
+     "close": "2026-10-24"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -223495,6 +224547,10 @@
     "huntCode": "SMS02O1R",
     "unit": "S2",
     "label": "Ram bighorn sheep — Unit S2, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -223745,6 +224801,10 @@
     "huntCode": "SMS03O1A",
     "unit": "S3",
     "label": "Ram bighorn sheep — Unit S3, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-21"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -223851,6 +224911,10 @@
     "huntCode": "SMS03O1R",
     "unit": "S3",
     "label": "Ram bighorn sheep — Unit S3, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-09-22"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -223885,6 +224949,10 @@
     "huntCode": "SMS03O2R",
     "unit": "S3",
     "label": "Ram bighorn sheep — Unit S3, season 2 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-12"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -224160,6 +225228,10 @@
     "huntCode": "SMS04O1R",
     "unit": "S4",
     "label": "Ram bighorn sheep — Unit S4, season 1 rifle",
+    "season": {
+     "open": "2026-08-03",
+     "close": "2026-08-19"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -224326,6 +225398,10 @@
     "huntCode": "SMS04O2R",
     "unit": "S4",
     "label": "Ram bighorn sheep — Unit S4, season 2 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -224447,6 +225523,10 @@
     "huntCode": "SMS05O1R",
     "unit": "S5",
     "label": "Ram bighorn sheep — Unit S5, season 1 rifle",
+    "season": {
+     "open": "2026-10-01",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -224588,6 +225668,10 @@
     "huntCode": "SMS06O1A",
     "unit": "S6",
     "label": "Ram bighorn sheep — Unit S6, archery",
+    "season": {
+     "open": "2026-11-10",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -224619,6 +225703,10 @@
     "huntCode": "SMS06O1R",
     "unit": "S6",
     "label": "Ram bighorn sheep — Unit S6, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-09-22"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -224785,6 +225873,10 @@
     "huntCode": "SMS06O2R",
     "unit": "S6",
     "label": "Ram bighorn sheep — Unit S6, season 2 rifle",
+    "season": {
+     "open": "2026-09-25",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -224941,6 +226033,10 @@
     "huntCode": "SMS07O1R",
     "unit": "S7",
     "label": "Ram bighorn sheep — Unit S7, season 1 rifle",
+    "season": {
+     "open": "2026-10-01",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -225097,6 +226193,10 @@
     "huntCode": "SMS08O1R",
     "unit": "S8",
     "label": "Ram bighorn sheep — Unit S8, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -225258,6 +226358,10 @@
     "huntCode": "SMS09O1A",
     "unit": "S9",
     "label": "Ram bighorn sheep — Unit S9, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-31"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -225508,6 +226612,10 @@
     "huntCode": "SMS09O1R",
     "unit": "S9",
     "label": "Ram bighorn sheep — Unit S9, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 8,
@@ -225823,6 +226931,10 @@
     "huntCode": "SMS10O1R",
     "unit": "S10",
     "label": "Ram bighorn sheep — Unit S10, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -225964,6 +227076,10 @@
     "huntCode": "SMS11O1R",
     "unit": "S11",
     "label": "Ram bighorn sheep — Unit S11, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -225998,6 +227114,10 @@
     "huntCode": "SMS12O1A",
     "unit": "S12",
     "label": "Ram bighorn sheep — Unit S12, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-31"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -226248,6 +227368,10 @@
     "huntCode": "SMS12O1R",
     "unit": "S12",
     "label": "Ram bighorn sheep — Unit S12, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -226578,6 +227702,10 @@
     "huntCode": "SMS13O1R",
     "unit": "S13",
     "label": "Ram bighorn sheep — Unit S13, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -226719,6 +227847,10 @@
     "huntCode": "SMS15O1R",
     "unit": "S15",
     "label": "Ram bighorn sheep — Unit S15, season 1 rifle",
+    "season": {
+     "open": "2026-08-22",
+     "close": "2026-09-02"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -227014,6 +228146,10 @@
     "huntCode": "SMS15O2R",
     "unit": "S15",
     "label": "Ram bighorn sheep — Unit S15, season 2 rifle",
+    "season": {
+     "open": "2026-09-05",
+     "close": "2026-10-04"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -227130,6 +228266,10 @@
     "huntCode": "SMS16O1R",
     "unit": "S16",
     "label": "Ram bighorn sheep — Unit S16, season 1 rifle",
+    "season": {
+     "open": "2026-08-22",
+     "close": "2026-09-02"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -227271,6 +228411,10 @@
     "huntCode": "SMS16O2R",
     "unit": "S16",
     "label": "Ram bighorn sheep — Unit S16, season 2 rifle",
+    "season": {
+     "open": "2026-09-05",
+     "close": "2026-10-04"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -227402,6 +228546,10 @@
     "huntCode": "SMS17O1R",
     "unit": "S17",
     "label": "Ram bighorn sheep — Unit S17, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -227682,6 +228830,10 @@
     "huntCode": "SMS20O1A",
     "unit": "S20",
     "label": "Ram bighorn sheep — Unit S20, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -227778,6 +228930,10 @@
     "huntCode": "SMS20O1R",
     "unit": "S20",
     "label": "Ram bighorn sheep — Unit S20, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -227889,6 +229045,10 @@
     "huntCode": "SMS21O1R",
     "unit": "S21",
     "label": "Ram bighorn sheep — Unit S21, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -228219,6 +229379,10 @@
     "huntCode": "SMS22O1R",
     "unit": "S22",
     "label": "Ram bighorn sheep — Unit S22, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -228534,6 +229698,10 @@
     "huntCode": "SMS23O1A",
     "unit": "S23",
     "label": "Ram bighorn sheep — Unit S23, archery",
+    "season": {
+     "open": "2026-11-01",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -228625,6 +229793,10 @@
     "huntCode": "SMS23O1R",
     "unit": "S23",
     "label": "Ram bighorn sheep — Unit S23, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -228781,6 +229953,10 @@
     "huntCode": "SMS24O1R",
     "unit": "S24",
     "label": "Ram bighorn sheep — Unit S24, season 1 rifle",
+    "season": {
+     "open": "2026-11-01",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -228957,6 +230133,10 @@
     "huntCode": "SMS25O1R",
     "unit": "S25",
     "label": "Ram bighorn sheep — Unit S25, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -229242,6 +230422,10 @@
     "huntCode": "SMS26O1A",
     "unit": "S26",
     "label": "Ram bighorn sheep — Unit S26, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -229353,6 +230537,10 @@
     "huntCode": "SMS28O1R",
     "unit": "S28",
     "label": "Ram bighorn sheep — Unit S28, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -229474,6 +230662,10 @@
     "huntCode": "SMS29O1R",
     "unit": "S29",
     "label": "Ram bighorn sheep — Unit S29, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -229625,6 +230817,10 @@
     "huntCode": "SMS31O1R",
     "unit": "S31",
     "label": "Ram bighorn sheep — Unit S31, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -229786,6 +230982,10 @@
     "huntCode": "SMS32O1A",
     "unit": "S32",
     "label": "Ram bighorn sheep — Unit S32, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-19"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -229907,6 +231107,10 @@
     "huntCode": "SMS32O1R",
     "unit": "S32",
     "label": "Ram bighorn sheep — Unit S32, season 1 rifle",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-04"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -230237,6 +231441,10 @@
     "huntCode": "SMS32O2A",
     "unit": "S32",
     "label": "Ram bighorn sheep — Unit S32, archery",
+    "season": {
+     "open": "2026-08-20",
+     "close": "2026-09-07"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -230353,6 +231561,10 @@
     "huntCode": "SMS33O1R",
     "unit": "S33",
     "label": "Ram bighorn sheep — Unit S33, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-17"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -230663,6 +231875,10 @@
     "huntCode": "SMS33O2R",
     "unit": "S33",
     "label": "Ram bighorn sheep — Unit S33, season 2 rifle",
+    "season": {
+     "open": "2026-09-18",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -230953,6 +232169,10 @@
     "huntCode": "SMS34O1A",
     "unit": "S34",
     "label": "Ram bighorn sheep — Unit S34, archery",
+    "season": {
+     "open": "2026-11-15",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -231258,6 +232478,10 @@
     "huntCode": "SMS34O2A",
     "unit": "S34",
     "label": "Ram bighorn sheep — Unit S34, archery",
+    "season": {
+     "open": "2026-12-07",
+     "close": "2026-12-21"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -231475,6 +232699,10 @@
     "huntCode": "SMS36O1R",
     "unit": "S36",
     "label": "Ram bighorn sheep — Unit S36, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -231631,6 +232859,10 @@
     "huntCode": "SMS37O1A",
     "unit": "S37",
     "label": "Ram bighorn sheep — Unit S37, archery",
+    "season": {
+     "open": "2026-10-31",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -231747,6 +232979,10 @@
     "huntCode": "SMS37O1R",
     "unit": "S37",
     "label": "Ram bighorn sheep — Unit S37, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -231868,6 +233104,10 @@
     "huntCode": "SMS38O1A",
     "unit": "S38",
     "label": "Ram bighorn sheep — Unit S38, archery",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -231994,6 +233234,10 @@
     "huntCode": "SMS39O1A",
     "unit": "S39",
     "label": "Ram bighorn sheep — Unit S39, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -232060,6 +233304,10 @@
     "huntCode": "SMS40O1R",
     "unit": "S40",
     "label": "Ram bighorn sheep — Unit S40, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-11"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -232196,6 +233444,10 @@
     "huntCode": "SMS40O2R",
     "unit": "S40",
     "label": "Ram bighorn sheep — Unit S40, season 2 rifle",
+    "season": {
+     "open": "2026-10-17",
+     "close": "2026-11-08"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -232322,6 +233574,10 @@
     "huntCode": "SMS41O1R",
     "unit": "S41",
     "label": "Ram bighorn sheep — Unit S41, season 1 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-11-15"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -232458,6 +233714,10 @@
     "huntCode": "SMS42O1R",
     "unit": "S42",
     "label": "Ram bighorn sheep — Unit S42, season 1 rifle",
+    "season": {
+     "open": "2026-11-30",
+     "close": "2026-12-04"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -232624,6 +233884,10 @@
     "huntCode": "SMS44O1A",
     "unit": "S44",
     "label": "Ram bighorn sheep — Unit S44, archery",
+    "season": {
+     "open": "2026-09-11",
+     "close": "2026-10-07"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -232735,6 +233999,10 @@
     "huntCode": "SMS44O1R",
     "unit": "S44",
     "label": "Ram bighorn sheep — Unit S44, season 1 rifle",
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -232861,6 +234129,10 @@
     "huntCode": "SMS47O1R",
     "unit": "S47",
     "label": "Ram bighorn sheep — Unit S47, season 1 rifle",
+    "season": {
+     "open": "2026-10-01",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -233032,6 +234304,10 @@
     "huntCode": "SMS49O1A",
     "unit": "S49",
     "label": "Ram bighorn sheep — Unit S49, archery",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-09-30"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -233262,6 +234538,10 @@
     "huntCode": "SMS49O1R",
     "unit": "S49",
     "label": "Ram bighorn sheep — Unit S49, season 1 rifle",
+    "season": {
+     "open": "2026-10-01",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -233438,6 +234718,10 @@
     "huntCode": "SMS50O1R",
     "unit": "S50",
     "label": "Ram bighorn sheep — Unit S50, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -233564,6 +234848,10 @@
     "huntCode": "SMS51O1A",
     "unit": "S51",
     "label": "Ram bighorn sheep — Unit S51, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-31"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -233645,6 +234933,10 @@
     "huntCode": "SMS51O1R",
     "unit": "S51",
     "label": "Ram bighorn sheep — Unit S51, season 1 rifle",
+    "season": {
+     "open": "2026-09-12",
+     "close": "2026-10-11"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -233796,6 +235088,10 @@
     "huntCode": "SMS51O2R",
     "unit": "S51",
     "label": "Ram bighorn sheep — Unit S51, season 2 rifle",
+    "season": {
+     "open": "2026-10-17",
+     "close": "2026-11-04"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -233907,6 +235203,10 @@
     "huntCode": "SMS53O1R",
     "unit": "S53",
     "label": "Ram bighorn sheep — Unit S53, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -234068,6 +235368,10 @@
     "huntCode": "SMS54O1A",
     "unit": "S54",
     "label": "Ram bighorn sheep — Unit S54, archery",
+    "season": {
+     "open": "2026-11-01",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -234099,6 +235403,10 @@
     "huntCode": "SMS54O1R",
     "unit": "S54",
     "label": "Ram bighorn sheep — Unit S54, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -234389,6 +235697,10 @@
     "huntCode": "SMS57O1A",
     "unit": "S57",
     "label": "Ram bighorn sheep — Unit S57, archery",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -234560,6 +235872,10 @@
     "huntCode": "SMS59O1R",
     "unit": "S59",
     "label": "Ram bighorn sheep — Unit S59, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -234728,6 +236044,10 @@
     "huntCode": "SMS61O1R",
     "unit": "S61",
     "label": "Ram bighorn sheep — Unit S61, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-20"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -235058,6 +236378,10 @@
     "huntCode": "SMS61S1R",
     "unit": "S61",
     "label": "Ram bighorn sheep — Unit S61, season S1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-20"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -235234,6 +236558,10 @@
     "huntCode": "SMS61W1R",
     "unit": "S61",
     "label": "Ram bighorn sheep — Unit S61, season W1 rifle",
+    "season": {
+     "open": "2026-10-12",
+     "close": "2026-11-15"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -235415,6 +236743,10 @@
     "huntCode": "SMS61W3R",
     "unit": "S61",
     "label": "Ram bighorn sheep — Unit S61, season W3 rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-30"
+    },
     "draw": {
      "resident": {
       "tags": 0,
@@ -235593,6 +236925,10 @@
     "huntCode": "SMS61W4R",
     "unit": "S61",
     "label": "Ram bighorn sheep — Unit S61, season W4 rifle",
+    "season": {
+     "open": "2026-11-01",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -235774,6 +237110,10 @@
     "huntCode": "SMS66O1A",
     "unit": "S66",
     "label": "Ram bighorn sheep — Unit S66, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -235870,6 +237210,10 @@
     "huntCode": "SMS66O1R",
     "unit": "S66",
     "label": "Ram bighorn sheep — Unit S66, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -236180,6 +237524,10 @@
     "huntCode": "SMS68O1R",
     "unit": "S68",
     "label": "Ram bighorn sheep — Unit S68, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -236286,6 +237634,10 @@
     "huntCode": "SMS69O1A",
     "unit": "S69",
     "label": "Ram bighorn sheep — Unit S69, archery",
+    "season": {
+     "open": "2026-08-01",
+     "close": "2026-08-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -236417,6 +237769,10 @@
     "huntCode": "SMS69O1R",
     "unit": "S69",
     "label": "Ram bighorn sheep — Unit S69, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -236593,6 +237949,10 @@
     "huntCode": "SMS69O2A",
     "unit": "S69",
     "label": "Ram bighorn sheep — Unit S69, archery",
+    "season": {
+     "open": "2026-11-01",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -236848,6 +238208,10 @@
     "huntCode": "SMS70O1R",
     "unit": "S70",
     "label": "Ram bighorn sheep — Unit S70, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-11-08"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -236949,6 +238313,10 @@
     "huntCode": "SMS71O1A",
     "unit": "S71",
     "label": "Ram bighorn sheep — Unit S71, archery",
+    "season": {
+     "open": "2026-08-22",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -237050,6 +238418,10 @@
     "huntCode": "SMS71O1R",
     "unit": "S71",
     "label": "Ram bighorn sheep — Unit S71, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -237181,6 +238553,10 @@
     "huntCode": "SMS73O1R",
     "unit": "S73",
     "label": "Ram bighorn sheep — Unit S73, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -237362,6 +238738,10 @@
     "huntCode": "SMS74O1R",
     "unit": "S74",
     "label": "Ram bighorn sheep — Unit S74, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -237393,6 +238773,10 @@
     "huntCode": "SMS75O1R",
     "unit": "S75",
     "label": "Ram bighorn sheep — Unit S75, season 1 rifle",
+    "season": {
+     "open": "2026-11-01",
+     "close": "2026-11-30"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -237574,6 +238958,10 @@
     "huntCode": "SMS77O1R",
     "unit": "S77",
     "label": "Ram bighorn sheep — Unit S77, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -237740,6 +239128,10 @@
     "huntCode": "SMS80O1R",
     "unit": "S80",
     "label": "Ram bighorn sheep — Unit S80, season 1 rifle",
+    "season": {
+     "open": "2026-12-01",
+     "close": "2026-12-31"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -237913,6 +239305,10 @@
     "huntCode": "GEG01O1A",
     "unit": "G1",
     "label": "Either-sex mountain goat — Unit G1, archery",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -238168,6 +239564,10 @@
     "huntCode": "GEG02O1R",
     "unit": "G2",
     "label": "Either-sex mountain goat — Unit G2, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -238344,6 +239744,10 @@
     "huntCode": "GEG03O1R",
     "unit": "G3",
     "label": "Either-sex mountain goat — Unit G3, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-09-22"
+    },
     "draw": {
      "resident": {
       "tags": 18,
@@ -238629,6 +240033,10 @@
     "huntCode": "GEG03O2R",
     "unit": "G3",
     "label": "Either-sex mountain goat — Unit G3, season 2 rifle",
+    "season": {
+     "open": "2026-09-23",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 18,
@@ -238919,6 +240327,10 @@
     "huntCode": "GEG04O1R",
     "unit": "G4",
     "label": "Either-sex mountain goat — Unit G4, season 1 rifle",
+    "season": {
+     "open": "2026-09-07",
+     "close": "2026-09-18"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -239080,6 +240492,10 @@
     "huntCode": "GEG04O2R",
     "unit": "G4",
     "label": "Either-sex mountain goat — Unit G4, season 2 rifle",
+    "season": {
+     "open": "2026-09-21",
+     "close": "2026-10-02"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -239236,6 +240652,10 @@
     "huntCode": "GEG04O3R",
     "unit": "G4",
     "label": "Either-sex mountain goat — Unit G4, season 3 rifle",
+    "season": {
+     "open": "2026-10-05",
+     "close": "2026-10-16"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -239526,6 +240946,10 @@
     "huntCode": "GEG05O1A",
     "unit": "G5",
     "label": "Either-sex mountain goat — Unit G5, archery",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 11,
@@ -239811,6 +241235,10 @@
     "huntCode": "GEG05O1R",
     "unit": "G5",
     "label": "Either-sex mountain goat — Unit G5, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-31"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -239972,6 +241400,10 @@
     "huntCode": "GEG06O1R",
     "unit": "G6",
     "label": "Either-sex mountain goat — Unit G6, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-01"
+    },
     "draw": {
      "resident": {
       "tags": 26,
@@ -240252,6 +241684,10 @@
     "huntCode": "GEG07O1R",
     "unit": "G7",
     "label": "Either-sex mountain goat — Unit G7, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-11"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -240562,6 +241998,10 @@
     "huntCode": "GEG07O2R",
     "unit": "G7",
     "label": "Either-sex mountain goat — Unit G7, season 2 rifle",
+    "season": {
+     "open": "2026-09-14",
+     "close": "2026-09-25"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -240847,6 +242287,10 @@
     "huntCode": "GEG07O3R",
     "unit": "G7",
     "label": "Either-sex mountain goat — Unit G7, season 3 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -240983,6 +242427,10 @@
     "huntCode": "GEG07O4R",
     "unit": "G7",
     "label": "Either-sex mountain goat — Unit G7, season 4 rifle",
+    "season": {
+     "open": "2026-10-12",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -241129,6 +242577,10 @@
     "huntCode": "GEG08O1A",
     "unit": "G8",
     "label": "Either-sex mountain goat — Unit G8, archery",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-11-01"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -241160,6 +242612,10 @@
     "huntCode": "GEG10O1R",
     "unit": "G10",
     "label": "Either-sex mountain goat — Unit G10, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-11"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -241306,6 +242762,10 @@
     "huntCode": "GEG10O2R",
     "unit": "G10",
     "label": "Either-sex mountain goat — Unit G10, season 2 rifle",
+    "season": {
+     "open": "2026-09-14",
+     "close": "2026-09-25"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -241457,6 +242917,10 @@
     "huntCode": "GEG10O3R",
     "unit": "G10",
     "label": "Either-sex mountain goat — Unit G10, season 3 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -241762,6 +243226,10 @@
     "huntCode": "GEG10O4R",
     "unit": "G10",
     "label": "Either-sex mountain goat — Unit G10, season 4 rifle",
+    "season": {
+     "open": "2026-10-12",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 4,
@@ -241913,6 +243381,10 @@
     "huntCode": "GEG11O1R",
     "unit": "G11",
     "label": "Either-sex mountain goat — Unit G11, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-11"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -242079,6 +243551,10 @@
     "huntCode": "GEG11S1R",
     "unit": "G11",
     "label": "Either-sex mountain goat — Unit G11, season S1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-11"
+    },
     "draw": {
      "resident": {
       "tags": 7,
@@ -242339,6 +243815,10 @@
     "huntCode": "GEG12O1R",
     "unit": "G12",
     "label": "Either-sex mountain goat — Unit G12, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-09-21"
+    },
     "draw": {
      "resident": {
       "tags": 13,
@@ -242594,6 +244074,10 @@
     "huntCode": "GEG12O2R",
     "unit": "G12",
     "label": "Either-sex mountain goat — Unit G12, season 2 rifle",
+    "season": {
+     "open": "2026-09-22",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 9,
@@ -242844,6 +244328,10 @@
     "huntCode": "GEG15O1R",
     "unit": "G15",
     "label": "Either-sex mountain goat — Unit G15, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-11"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -242945,6 +244433,10 @@
     "huntCode": "GEG15O2R",
     "unit": "G15",
     "label": "Either-sex mountain goat — Unit G15, season 2 rifle",
+    "season": {
+     "open": "2026-09-14",
+     "close": "2026-09-25"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -243041,6 +244533,10 @@
     "huntCode": "GEG15O3R",
     "unit": "G15",
     "label": "Either-sex mountain goat — Unit G15, season 3 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -243097,6 +244593,10 @@
     "huntCode": "GEG15O4R",
     "unit": "G15",
     "label": "Either-sex mountain goat — Unit G15, season 4 rifle",
+    "season": {
+     "open": "2026-10-12",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -243188,6 +244688,10 @@
     "huntCode": "GEG16O1R",
     "unit": "G16",
     "label": "Either-sex mountain goat — Unit G16, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-11"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -243349,6 +244853,10 @@
     "huntCode": "GEG16O2R",
     "unit": "G16",
     "label": "Either-sex mountain goat — Unit G16, season 2 rifle",
+    "season": {
+     "open": "2026-09-14",
+     "close": "2026-09-25"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -243654,6 +245162,10 @@
     "huntCode": "GEG16O3R",
     "unit": "G16",
     "label": "Either-sex mountain goat — Unit G16, season 3 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -243820,6 +245332,10 @@
     "huntCode": "GEG16O4R",
     "unit": "G16",
     "label": "Either-sex mountain goat — Unit G16, season 4 rifle",
+    "season": {
+     "open": "2026-10-12",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -243981,6 +245497,10 @@
     "huntCode": "GEG17O1R",
     "unit": "G17",
     "label": "Either-sex mountain goat — Unit G17, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 5,
@@ -244211,6 +245731,10 @@
     "huntCode": "GEG18O1R",
     "unit": "G18",
     "label": "Either-sex mountain goat — Unit G18, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 6,
@@ -244461,6 +245985,10 @@
     "huntCode": "GFG07O1R",
     "unit": "G7",
     "label": "Nanny mountain goat — Unit G7, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-11"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -244537,6 +246065,10 @@
     "huntCode": "GFG07O2R",
     "unit": "G7",
     "label": "Nanny mountain goat — Unit G7, season 2 rifle",
+    "season": {
+     "open": "2026-09-14",
+     "close": "2026-09-25"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -244608,6 +246140,10 @@
     "huntCode": "GFG07O3R",
     "unit": "G7",
     "label": "Nanny mountain goat — Unit G7, season 3 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -244694,6 +246230,10 @@
     "huntCode": "GFG07O4R",
     "unit": "G7",
     "label": "Nanny mountain goat — Unit G7, season 4 rifle",
+    "season": {
+     "open": "2026-10-12",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -244770,6 +246310,10 @@
     "huntCode": "GFG10O1R",
     "unit": "G10",
     "label": "Nanny mountain goat — Unit G10, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-11"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -244871,6 +246415,10 @@
     "huntCode": "GFG10O2R",
     "unit": "G10",
     "label": "Nanny mountain goat — Unit G10, season 2 rifle",
+    "season": {
+     "open": "2026-09-14",
+     "close": "2026-09-25"
+    },
     "draw": {
      "resident": {
       "tags": 3,
@@ -244982,6 +246530,10 @@
     "huntCode": "GFG10O3R",
     "unit": "G10",
     "label": "Nanny mountain goat — Unit G10, season 3 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -245147,6 +246699,10 @@
     "huntCode": "GFG10O4R",
     "unit": "G10",
     "label": "Nanny mountain goat — Unit G10, season 4 rifle",
+    "season": {
+     "open": "2026-10-12",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 2,
@@ -245332,6 +246888,10 @@
     "huntCode": "GFG12O1R",
     "unit": "G12",
     "label": "Nanny mountain goat — Unit G12, season 1 rifle",
+    "season": {
+     "open": "2026-09-08",
+     "close": "2026-09-21"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -245413,6 +246973,10 @@
     "huntCode": "GFG12O2R",
     "unit": "G12",
     "label": "Nanny mountain goat — Unit G12, season 2 rifle",
+    "season": {
+     "open": "2026-09-22",
+     "close": "2026-10-08"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -245494,6 +247058,10 @@
     "huntCode": "GFG15O1R",
     "unit": "G15",
     "label": "Nanny mountain goat — Unit G15, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -245550,6 +247118,10 @@
     "huntCode": "GFG16O1R",
     "unit": "G16",
     "label": "Nanny mountain goat — Unit G16, season 1 rifle",
+    "season": {
+     "open": "2026-09-01",
+     "close": "2026-09-11"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -245656,6 +247228,10 @@
     "huntCode": "GFG16O2R",
     "unit": "G16",
     "label": "Nanny mountain goat — Unit G16, season 2 rifle",
+    "season": {
+     "open": "2026-09-14",
+     "close": "2026-09-25"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -245752,6 +247328,10 @@
     "huntCode": "GFG16O3R",
     "unit": "G16",
     "label": "Nanny mountain goat — Unit G16, season 3 rifle",
+    "season": {
+     "open": "2026-09-28",
+     "close": "2026-10-09"
+    },
     "draw": {
      "resident": {
       "tags": 1,
@@ -245838,6 +247418,10 @@
     "huntCode": "GFG16O4R",
     "unit": "G16",
     "label": "Nanny mountain goat — Unit G16, season 4 rifle",
+    "season": {
+     "open": "2026-10-12",
+     "close": "2026-10-23"
+    },
     "draw": {
      "resident": {
       "tags": 1,
