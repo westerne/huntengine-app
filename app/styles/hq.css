@@ -432,3 +432,20 @@ textarea.hq-input.hq-ask__input { flex: 1; min-height: 44px; max-height: 140px; 
 .hq-fit { flex: none; display: inline-flex; flex-direction: column; align-items: center; min-width: 48px; padding: 4px 8px; border-radius: var(--r-md); background: var(--brand-tint); color: var(--ink-muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; line-height: 1.1; }
 .hq-fit .hq-data { font-size: 18px; font-weight: 700; letter-spacing: 0; color: var(--brand); }
 .hq-find-more > summary { cursor: pointer; font-size: 15px; font-weight: 700; color: var(--ink-soft); padding: 6px 0; }
+
+/* ── Map overlays ─────────────────────────────────────────────────────── */
+/* Chips over satellite imagery stay dark glass in both themes, so they read
+   against the photo rather than the page. Field Gold marks the unit. */
+.hq-mapchip { background: rgba(22, 34, 44, 0.84); backdrop-filter: blur(6px); color: #F4F6F7; border: 1px solid rgba(244, 246, 247, 0.16); border-radius: var(--r-md); padding: 6px 10px; font-size: 12px; line-height: 1.35; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); }
+.hq-mapchip__k { display: block; font-size: 11px; font-weight: 600; color: #B9C8D2; }
+.hq-mapchip__v { display: block; font-weight: 700; }
+.hq-mapchip--unit { border-color: rgba(226, 165, 60, 0.55); }
+.hq-mapchip--unit .hq-mapchip__v { color: #E2A53C; }
+.hq-mapchip--warn { border-color: rgba(226, 165, 60, 0.55); color: #ECB656; }
+.hq-mapchip--good { border-color: rgba(124, 196, 160, 0.6); }
+.hq-mapchip--stop { border-color: rgba(242, 139, 130, 0.6); }
+button.hq-mapchip { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 600; }
+button.hq-mapchip[aria-pressed="false"] { opacity: .65; }
+.hq-mapchip__dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.hq-map { background: var(--surface-sunk); }
+.hq-map-empty { height: 480px; display: grid; place-items: center; padding: 0 32px; text-align: center; background: var(--surface-sunk); color: var(--ink-muted); font-size: 14px; }

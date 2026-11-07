@@ -155,23 +155,13 @@ function FitBounds({ data }: { data: FeatureCollection }) {
 }
 
 const Placeholder = ({ children }: { children: React.ReactNode }) => (
-  <div className="h-[480px] w-full flex items-center justify-center bg-zinc-950 text-center px-8">
-    <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500 leading-relaxed max-w-md">
-      {children}
-    </p>
-  </div>
+  <div className="hq-map-empty"><p style={{ maxWidth: 420 }}>{children}</p></div>
 );
 
 const TogglePill = ({ on, color, label, onClick }: { on: boolean; color: string; label: string; onClick: () => void }) => (
-  <button
-    type="button"
-    onClick={onClick}
-    className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg border backdrop-blur transition-colors ${
-      on ? 'bg-black/80 border-zinc-600' : 'bg-black/50 border-zinc-800 opacity-60'
-    }`}
-  >
-    <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: on ? color : '#52525b' }} />
-    <span className="text-[9px] font-black uppercase tracking-widest text-zinc-200 leading-none">{label}</span>
+  <button type="button" onClick={onClick} aria-pressed={on} className="hq-mapchip">
+    <span className="hq-mapchip__dot" style={{ backgroundColor: on ? color : '#55687A' }} />
+    {label}
   </button>
 );
 
@@ -247,7 +237,7 @@ export default function UnitMap({ unit, state, species = '' }: { unit: string; s
         scrollWheelZoom
         zoomControl={false}
         style={{ height: 480, width: '100%' }}
-        className="bg-zinc-950"
+        className="hq-map"
       >
         <ZoomControl position="topright" />
         <TileLayer
@@ -275,7 +265,7 @@ export default function UnitMap({ unit, state, species = '' }: { unit: string; s
             <GeoJSON
               key={`${sc}-${species}-${unit}`}
               data={boundary}
-              style={{ color: '#f59e0b', weight: 3, fillColor: '#f59e0b', fillOpacity: 0.06 }}
+              style={{ color: '#E2A53C', weight: 3, fillColor: '#E2A53C', fillOpacity: 0.06 }}
             />
             <FitBounds data={boundary} />
           </>
@@ -301,69 +291,61 @@ export default function UnitMap({ unit, state, species = '' }: { unit: string; s
           <CircleMarker
             center={[identify.lat, identify.lng]}
             radius={6}
-            pathOptions={{ color: '#ffffff', weight: 2, fillColor: '#f59e0b', fillOpacity: 1 }}
+            pathOptions={{ color: '#ffffff', weight: 2, fillColor: '#E2A53C', fillOpacity: 1 }}
           />
         )}
       </MapContainer>
 
       {/* Unit label */}
-      <div className="absolute top-3 left-3 z-[400] bg-black/80 backdrop-blur px-3 py-2 rounded-lg border border-amber-700/40">
-        <p className="text-[9px] font-black uppercase tracking-widest text-amber-500 leading-none">{unitLabel}</p>
-        {subLabel && <p className="text-[9px] font-bold uppercase text-zinc-400 mt-1 leading-none">{subLabel}</p>}
+      <div className="absolute top-3 left-3 z-[400] hq-mapchip hq-mapchip--unit">
+        <span className="hq-mapchip__v">{unitLabel}</span>
+        {subLabel && <span className="hq-mapchip__k">{subLabel}</span>}
       </div>
 
       {/* Layer toggles */}
       <div className="absolute top-16 left-3 z-[400] flex flex-col gap-1.5 items-start">
-        <TogglePill on={showOwnership} color="#f59e0b" label="Public land" onClick={() => setShowOwnership((v) => !v)} />
-        <TogglePill on={showPoints} color="#38bdf8" label={`Access pts${accessPoints.length ? ` (${accessPoints.length})` : ''}`} onClick={() => setShowPoints((v) => !v)} />
+        <TogglePill on={showOwnership} color="#E2A53C" label="Public land" onClick={() => setShowOwnership((v) => !v)} />
+        <TogglePill on={showPoints} color="#38bdf8" label={`Access points${accessPoints.length ? ` (${accessPoints.length})` : ''}`} onClick={() => setShowPoints((v) => !v)} />
         <TogglePill on={showRoads} color="#fcd34d" label="Roads" onClick={() => setShowRoads((v) => !v)} />
       </div>
 
       {boundaryErr && (
-        <div className="absolute top-3 right-14 z-[400] bg-black/80 backdrop-blur px-3 py-2 rounded-lg border border-zinc-700 max-w-[220px]">
-          <p className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Couldn&apos;t locate boundary for &ldquo;{unit}&rdquo; in {sc} — showing state overview</p>
+        <div className="absolute top-3 right-14 z-[400] hq-mapchip hq-mapchip--warn max-w-[240px]">
+          We couldn&apos;t find the boundary for &ldquo;{unit}&rdquo; in {sc}, so this is the state overview.
         </div>
       )}
 
       {/* Roads zoom hint */}
       {showRoads && roadsTooFar && (
-        <div className="absolute bottom-14 left-1/2 -translate-x-1/2 z-[400] bg-black/80 backdrop-blur px-3 py-1.5 rounded-lg border border-yellow-700/40 pointer-events-none">
-          <p className="text-[9px] font-black uppercase tracking-widest text-yellow-500">Zoom in to load roads &amp; trails</p>
+        <div className="absolute bottom-14 left-1/2 -translate-x-1/2 z-[400] hq-mapchip hq-mapchip--warn pointer-events-none">
+          Zoom in to load roads and trails
         </div>
       )}
 
       {/* Tap-to-identify result */}
       {identify && (
         <div className="absolute bottom-3 left-3 right-3 z-[400] flex justify-center pointer-events-none">
-          <div className={`pointer-events-auto bg-black/85 backdrop-blur px-4 py-2.5 rounded-xl border flex items-center gap-3 shadow-2xl ${
-            identify.isPublic === true ? 'border-green-700/60' : identify.isPublic === false ? 'border-red-800/50' : 'border-zinc-700'
-          }`}>
+          <div className={`pointer-events-auto hq-mapchip flex items-center gap-3 ${identify.isPublic === true ? 'hq-mapchip--good' : identify.isPublic === false ? 'hq-mapchip--stop' : ''}`}>
             {!identify.loading && identify.isPublic !== null && (
-              <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${identify.isPublic ? 'bg-green-500' : 'bg-red-500'}`} />
+              <span className="hq-mapchip__dot" style={{ backgroundColor: identify.isPublic ? '#7CC4A0' : '#F28B82' }} />
             )}
             <div>
-              <p className="text-[8px] font-black uppercase tracking-widest text-zinc-500 leading-none mb-1">
-                {identify.loading ? 'Identifying' : identify.isPublic === true ? 'Public Land' : identify.isPublic === false ? 'Not Public' : 'Access Point'}
-              </p>
-              <p className="text-[11px] font-bold text-zinc-100 leading-none">{identify.label}</p>
+              <span className="hq-mapchip__k">
+                {identify.loading ? 'Identifying…' : identify.isPublic === true ? 'Public land' : identify.isPublic === false ? 'Not public' : 'Access point'}
+              </span>
+              <span className="hq-mapchip__v">{identify.label}</span>
             </div>
-            <button
-              type="button"
-              onClick={() => setIdentify(null)}
-              className="text-zinc-500 hover:text-white font-black leading-none text-base ml-1"
-              aria-label="Dismiss"
-            >×</button>
+            <button type="button" onClick={() => setIdentify(null)} aria-label="Dismiss"
+              style={{ background: 'none', border: 0, color: '#B9C8D2', fontSize: 18, lineHeight: 1, cursor: 'pointer', marginLeft: 4 }}>×</button>
           </div>
         </div>
       )}
 
       {/* Legend / instruction */}
       {!identify && (
-        <div className="absolute bottom-3 right-3 z-[400] bg-black/75 backdrop-blur px-3 py-2 rounded-lg border border-zinc-800 pointer-events-none">
-          <p className="text-[8px] font-black uppercase tracking-widest text-zinc-400 leading-relaxed">
-            <span className="text-amber-500">Shaded</span> = public · <span style={{ color: '#38bdf8' }}>●</span> parking · <span style={{ color: '#f97316' }}>●</span> gate · <span style={{ color: '#22c55e' }}>●</span> trailhead<br />
-            Tap any spot for the managing agency
-          </p>
+        <div className="absolute bottom-3 right-3 z-[400] hq-mapchip pointer-events-none">
+          <span className="hq-mapchip__k"><span style={{ color: '#E2A53C' }}>Shaded</span> = public · <span style={{ color: '#38bdf8' }}>●</span> parking · <span style={{ color: '#f97316' }}>●</span> gate · <span style={{ color: '#22c55e' }}>●</span> trailhead</span>
+          <span className="hq-mapchip__k">Tap any spot to see who manages it</span>
         </div>
       )}
     </div>

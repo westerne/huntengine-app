@@ -155,3 +155,22 @@ export function EmptyState({ icon, title, text, action }: { icon: ReactNode; tit
     </div>
   );
 }
+
+// ── Signed-out screens ──────────────────────────────────────────────────────
+// The one centered card sign in, password reset and join use.
+export function AuthCard({ title, sub, width = 400, children }: { title: string; sub?: ReactNode; width?: number; children: ReactNode }) {
+  return (
+    <main className="hq" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16 }}>
+      <Card className="hq-fade-up" style={{ width: '100%', maxWidth: width }}>
+        <div className="hq-stack">
+          <div style={{ display: 'flex', justifyContent: 'center' }}><Lockup size={28} tagline /></div>
+          <div style={{ textAlign: 'center' }}>
+            <h1 className="hq-h2">{title}</h1>
+            {sub && <p className="hq-small" style={{ marginTop: 4 }}>{sub}</p>}
+          </div>
+          {children}
+        </div>
+      </Card>
+    </main>
+  );
+}

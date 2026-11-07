@@ -6,8 +6,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { supabaseBrowser } from '@/lib/supabase/client';
 import { accountsEnabled } from '@/lib/supabase/config';
-
-const inputCls = 'w-full bg-black border border-zinc-800 p-4 rounded-xl text-zinc-100 font-bold outline-none focus:border-amber-500';
+import { AuthCard, Button } from '../ui';
 
 export default function LoginPage() {
   const [mode, setMode] = useState<'signin' | 'signup'>('signin');
@@ -17,7 +16,7 @@ export default function LoginPage() {
   const [message, setMessage] = useState<{ kind: 'error' | 'info'; text: string } | null>(null);
 
   if (!accountsEnabled()) {
-    return <main className="min-h-screen bg-black text-zinc-300 flex items-center justify-center p-6"><p>Accounts aren&apos;t set up yet.</p></main>;
+    return <AuthCard title="Accounts aren’t set up yet"><p className="hq-body" style={{ textAlign: 'center' }}>Check back soon.</p></AuthCard>;
   }
 
   const submit = async (e: React.FormEvent) => {
@@ -54,34 +53,22 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-zinc-100 flex items-center justify-center p-6">
-      <div className="w-full max-w-sm">
-        <h1 className="text-amber-500 font-black uppercase tracking-[0.25em] text-2xl text-center mb-2">HuntQuarters</h1>
-        <p className="text-zinc-500 text-xs text-center mb-8">{mode === 'signin' ? 'Sign in to your season.' : 'Create your account.'}</p>
-        <form onSubmit={submit} className="space-y-4" noValidate>
-          <div>
-            <label htmlFor="email" className="block text-[10px] font-black uppercase text-zinc-500 mb-2 tracking-widest">Email</label>
-            <input id="email" type="email" autoComplete="email" className={inputCls} value={email} onChange={(e) => setEmail(e.target.value)} />
-          </div>
-          <div>
-            <label htmlFor="password" className="block text-[10px] font-black uppercase text-zinc-500 mb-2 tracking-widest">Password</label>
-            <input id="password" type="password" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} className={inputCls} value={password} onChange={(e) => setPassword(e.target.value)} />
-          </div>
-          {message && (
-            <p role={message.kind === 'error' ? 'alert' : 'status'} className={`text-sm ${message.kind === 'error' ? 'text-red-400' : 'text-green-400'}`}>{message.text}</p>
-          )}
-          <button type="submit" disabled={busy} className="w-full bg-amber-600 text-white py-4 font-black rounded-xl hover:bg-amber-500 uppercase tracking-widest text-xs disabled:opacity-50">
-            {busy ? 'Working…' : mode === 'signin' ? 'Sign in' : 'Create account'}
-          </button>
-        </form>
-        <div className="mt-6 flex justify-between text-xs">
-          <button type="button" onClick={() => { setMode(mode === 'signin' ? 'signup' : 'signin'); setMessage(null); }} className="text-zinc-400 hover:text-white underline">
-            {mode === 'signin' ? 'Create an account' : 'I already have an account'}
-          </button>
-          {mode === 'signin' && <button type="button" onClick={forgot} className="text-zinc-500 hover:text-white underline">Forgot password?</button>}
-        </div>
-        <p className="mt-10 text-center text-[11px] text-zinc-600"><Link href="/" className="underline">Back to HuntQuarters</Link></p>
+    <AuthCard title={mode === 'signin' ? 'Sign in' : 'Create your account'} sub={mode === 'signin' ? 'Pick up your season where you left it.' : 'Then choose your membership.'}>
+      <form onSubmit={submit} className="hq-stack" noValidate>
+        <label className="hq-field"><span className="hq-label">Email</span>
+          <input id="email" type="email" autoComplete="email" className="hq-input" value={email} onChange={(e) => setEmail(e.target.value)} /></label>
+        <label className="hq-field"><span className="hq-label">Password</span>
+          <input id="password" type="password" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} className="hq-input" value={password} onChange={(e) => setPassword(e.target.value)} /></label>
+        {message && <p role={message.kind === 'error' ? 'alert' : 'status'} className={message.kind === 'error' ? 'hq-err' : 'hq-ok'}>{message.text}</p>}
+        <Button type="submit" disabled={busy} block>{busy ? 'Working…' : mode === 'signin' ? 'Sign in' : 'Create account'}</Button>
+      </form>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
+        <button type="button" className="hq-link hq-small" style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer' }} onClick={() => { setMode(mode === 'signin' ? 'signup' : 'signin'); setMessage(null); }}>
+          {mode === 'signin' ? 'Create an account' : 'I already have an account'}
+        </button>
+        {mode === 'signin' && <button type="button" className="hq-link hq-small" style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer' }} onClick={forgot}>Forgot password?</button>}
       </div>
-    </main>
+      <p className="hq-small" style={{ textAlign: 'center' }}><Link href="/" className="hq-link">Back to HuntQuarters</Link></p>
+    </AuthCard>
   );
 }
