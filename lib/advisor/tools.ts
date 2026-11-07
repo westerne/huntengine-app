@@ -302,8 +302,15 @@ export type UnitHunt = {
   huntCode: string; label: string | null; weapon: string | null;
   season: { open: string; close: string } | null; seasonMonths: string[] | null;
   pointsToDraw: number | null; chanceThisYear: number | null; hunterSuccess: number | string; privateLandOnly?: true;
+  overTheCounter?: string;
 };
-const unitHunt = (h: Hunt, residency: Residency, points: number): UnitHunt => ({
+const OTC_NOTE = 'Over the counter: no draw and no points needed. Buy the license when it goes on sale.';
+const unitHunt = (h: Hunt, residency: Residency, points: number): UnitHunt => h.otc ? {
+  huntCode: h.huntCode, label: h.label ?? null, weapon: h.weapon ?? null,
+  season: h.season ?? null, seasonMonths: seasonMonths(h.season),
+  pointsToDraw: 0, chanceThisYear: 100, overTheCounter: OTC_NOTE,
+  hunterSuccess: h.harvest && !(h.harvest.hunters != null && h.harvest.hunters < 10) ? h.harvest.successPct : 'not published, or too few hunters to judge',
+} : {
   huntCode: h.huntCode, label: h.label ?? null, weapon: h.weapon ?? null,
   season: h.season ?? null, seasonMonths: seasonMonths(h.season),
   pointsToDraw: pointsToDraw(h, residency),
@@ -311,14 +318,14 @@ const unitHunt = (h: Hunt, residency: Residency, points: number): UnitHunt => ({
   chanceThisYear: successAtPoints(h, residency, points) ?? (pointsSoldTo(h.state, h.species, residency) === false ? (residency === 'resident' ? h.draw.resident : h.draw.nonresident)?.successPct ?? null : null),
   hunterSuccess: h.harvest && !(h.harvest.hunters != null && h.harvest.hunters < 10) ? h.harvest.successPct : 'not published, or too few hunters to judge',
   ...(isPrivateOnly(h) ? { privateLandOnly: true as const } : {}),
-});
+};
 const normUnit = (u: string) => u.trim().toLowerCase().replace(/^(unit|gmu)\s+/, '').replace(/^0+(?=\d)/, '');
 
 // "What about unit 35?" A unit has several hunts (seasons, weapons, sexes), so
 // asking by unit lists them instead of failing.
 export type UnitHuntsData = {
   state: string; species: string; unit: string; residency: Residency; yourPoints: number | null;
-  hunts: UnitHunt[]; antlerlessLeftOut: number; privateLandOnlyLeftOut: number; howTheDrawWorks: string | null; herd?: HerdData;
+  hunts: UnitHunt[]; antlerlessLeftOut: number; privateLandOnlyLeftOut: number; notOpenToYouLeftOut: number; howTheDrawWorks: string | null; herd?: HerdData;
 };
 export function unitHunts(args: { state: string; species: string; unit: string }, sit: Situation): ToolResult<UnitHuntsData> {
   const r = resolve(args.state, args.species);
@@ -329,8 +336,10 @@ export function unitHunts(args: { state: string; species: string; unit: string }
   if (!all.length) return fail(`We couldn't find ${r.name} ${r.species.toLowerCase()} unit ${args.unit} in the draw data.`);
   const residency = residencyIn(sit, r.state);
   const pts = pointsFor(sit, r.state, r.key);
-  // Private-land-only hunts need the landowner's permission first: counted, not listed.
-  const open = all.filter((h) => !isPrivateOnly(h));
+  // Private-land-only hunts need the landowner's permission first, and a
+  // residents-only license isn't one a nonresident can buy: counted, not listed.
+  const yours = all.filter((h) => !h.openTo || h.openTo === residency);
+  const open = yours.filter((h) => !isPrivateOnly(h));
   const antlered = open.filter((h) => !isAntlerless(h));
   const sources: Source[] = [huntSource(r.state, all[0].drawYear)];
   if (pts != null) sources.push({ label: `your ${r.state} ${r.species.toLowerCase()} points (${pts})` });
@@ -340,7 +349,8 @@ export function unitHunts(args: { state: string; species: string; unit: string }
       state: r.state, species: r.species, unit: args.unit, residency, yourPoints: pts,
       hunts: (antlered.length ? antlered : open).slice(0, 15).map((h) => unitHunt(h, residency, pts ?? 0)),
       antlerlessLeftOut: antlered.length ? open.length - antlered.length : 0,
-      privateLandOnlyLeftOut: all.length - open.length,
+      privateLandOnlyLeftOut: yours.length - open.length,
+      notOpenToYouLeftOut: all.length - yours.length,
       howTheDrawWorks: drawRules(r.state),
       ...herdData(r.state, r.key, args.unit),
     },
@@ -386,7 +396,33 @@ export function compareHunts(args: { hunts: Array<{ state: string; species: stri
 // comes within reach if they keep applying. Antlered and antlerless are kept
 // apart, because mixing them makes a state look easier than it is.
 type Picked = Pick<ReachableHunt, 'unit' | 'huntCode' | 'label' | 'odds' | 'publishedRate' | 'hunterSuccess' | 'pointsNeeded' | 'season'> & { seasonMonths: string[] | null };
+// Over-the-counter hunts grouped by the license they'd buy: Colorado's 2nd
+// season bull license is one license good in 90 units, not 90 hunts.
+export type OtcLicense = { license: string; what: string; season: { open: string; close: string } | null; units: string[]; unitCount: number; residentsOnly?: true; note?: string };
+export type OtcSummary = { licenses: OtcLicense[]; note: string };
+function otcSummary(hunts: Hunt[], residency: Residency, weapon: Weapon): OtcSummary | null {
+  const otc = hunts.filter((h) => h.otc && (!h.openTo || h.openTo === residency) && (weapon === 'any' || !h.weapon || h.weapon === weapon));
+  if (!otc.length) return null;
+  const groups = new Map<string, Hunt[]>();
+  for (const h of otc) {
+    // CO: "EM000U2R-35" → "EM000U2R". Elsewhere one row is one unit's general season.
+    const key = h.state === 'CO' ? h.huntCode.split('-')[0] : `${h.weapon ?? 'any'}|${h.season?.open ?? ''}|${h.season?.close ?? ''}`;
+    groups.set(key, [...(groups.get(key) ?? []), h]);
+  }
+  const licenses = [...groups.values()].map((g) => {
+    const h = g[0];
+    const what = (h.label ?? '').replace(/ — Unit [^,]+,/, ' —').replace(/,? ?GMU \S+.*$/, '');
+    return {
+      license: h.state === 'CO' ? (h.label ?? '').match(/license ([A-Z]-[A-Z]-\d{3}-U\d-[A-Z])/)?.[1] ?? h.huntCode : what,
+      what, season: h.season ?? null, units: g.map((x) => x.unit).slice(0, 40), unitCount: g.length,
+      ...(h.openTo === 'resident' ? { residentsOnly: true as const } : {}),
+    };
+  }).sort((a, b) => b.unitCount - a.unitCount).slice(0, 8);
+  return { licenses, note: `${OTC_NOTE} Say how many units each license covers and its dates; list units only if they ask. Hunter success for these is not published by unit.` };
+}
+
 export type SearchData = {
+  overTheCounter?: OtcSummary;
   howTheDrawWorks: string | null;
   state: string; species: string; residency: Residency; yourPoints: number; weapon: Weapon;
   basis: DrawReality['basis']; oddsAreYours: boolean; oddsNote: string; dataYear: number | null;
@@ -494,6 +530,7 @@ export function searchHunts(
     ok: true,
     data: {
       state: r.state, species: r.species, residency, yourPoints: points, weapon, howTheDrawWorks: drawRules(r.state),
+      ...(() => { const o = otcSummary(mod.hunts(r.key as never), residency, weapon); return o ? { overTheCounter: o } : {}; })(),
       basis: re.basis, oddsAreYours: re.basis === 'your-points', dataYear: re.dataYear,
       oddsNote: re.basis === 'your-points' ? 'odds are at the hunter\'s own points'
         : re.basis === 'points-to-draw' ? 'only the fewest points that drew is published: within reach means their points clear it, not a sure draw'

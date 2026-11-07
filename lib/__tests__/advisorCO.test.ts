@@ -84,3 +84,36 @@ describe('Colorado herd sex ratios', () => {
     expect((unit.data as { herd?: { what: string } }).herd?.what).toBe('24 bucks per 100 does after the 2025 season');
   });
 });
+
+describe('Colorado over-the-counter licenses', () => {
+  const co = getStateModule('CO')!;
+  const nr: Situation = { home: 'WY', balances: [], years: [2027, 2028, 2029], seasonYear: 2027 };
+  const res: Situation = { ...nr, home: 'CO' };
+  it('reads each license, its dates and its units from the brochure', () => {
+    const second = co.hunts('ELK').filter((h) => h.huntCode.startsWith('EM000U2R-'));
+    expect(second.length).toBeGreaterThan(80);
+    expect(second.every((h) => h.otc && h.season?.open === '2026-10-24' && h.season.close === '2026-11-01')).toBe(true);
+    expect(co.hunts('ELK').find((h) => h.huntCode === 'EM128U5R-128')?.season).toEqual({ open: '2026-10-14', close: '2026-11-22' });
+    expect(co.hunts('ANTELOPE').find((h) => h.huntCode === 'AE000U1A-1')?.season).toEqual({ open: '2026-08-15', close: '2026-09-20' });
+    expect(co.hunts('ELK').find((h) => h.huntCode === 'EE000U1A-35')?.openTo).toBe('resident');
+  });
+  it('summarizes them by license in a search, and only the ones you can buy', () => {
+    const lic = (s: Situation) => {
+      const r = searchHunts({ state: 'CO', species: 'Elk' }, s);
+      if (!r.ok) throw new Error(r.reason);
+      return r.data.overTheCounter!.licenses;
+    };
+    const mine = lic(nr);
+    expect(mine.find((l) => l.license === 'E-M-000-U2-R')?.unitCount).toBeGreaterThan(80);
+    expect(mine.some((l) => l.license === 'E-E-000-U1-A')).toBe(false);
+    expect(lic(res).find((l) => l.license === 'E-E-000-U1-A')?.residentsOnly).toBe(true);
+  });
+  it('marks them in a unit list as no draw, and leaves out licenses not open to you', () => {
+    const r = getHunt({ state: 'CO', species: 'Elk', unit: '35' }, nr);
+    if (!r.ok) throw new Error(r.reason);
+    const d = r.data as { hunts: Array<{ huntCode: string; chanceThisYear: number | null; overTheCounter?: string }>; notOpenToYouLeftOut: number };
+    expect(d.hunts.find((h) => h.huntCode === 'EM000U2R-35')).toMatchObject({ chanceThisYear: 100, overTheCounter: expect.stringMatching(/no draw/) });
+    expect(d.hunts.some((h) => h.huntCode === 'EE000U1A-35')).toBe(false);
+    expect(d.notOpenToYouLeftOut).toBe(1);
+  });
+});

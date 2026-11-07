@@ -255,7 +255,9 @@ describe('harvest (Colorado)', () => {
     const co = getStateModule('CO')!;
     const elk = co.hunts('ELK');
     expect(elk.find((h) => h.huntCode === 'EE001E1R')!.harvest).toMatchObject({ hunters: 11, harvest: 6, successPct: 54.5, year: 2025, scope: 'hunt' });
-    expect(elk.filter((h) => h.harvest).length / elk.length).toBeGreaterThan(0.9);
+    // Drawn hunts; CPW reports over-the-counter harvest statewide only.
+    const drawn = elk.filter((h) => !h.otc);
+    expect(drawn.filter((h) => h.harvest).length / drawn.length).toBeGreaterThan(0.9);
     const { enrichScoutDataset } = await import('./harvest');
     const [entry] = enrichScoutDataset('CO', 'ELK', [{ unit: '1', huntCodes: ['EE001E1R'] }]);
     expect(entry).toMatchObject({ hunterSuccess: '54.5%', hunterSuccessScope: 'hunt' });

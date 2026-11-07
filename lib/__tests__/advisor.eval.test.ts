@@ -100,7 +100,8 @@ const CASES: Case[] = [
   { q: 'Can I draw an Alaska moose tag?', tools: ['search_hunts', 'deadlines', 'fees_and_rules'] },
   { q: 'What are the odds for Nevada elk hunt 9999-999?', tools: ['get_hunt', 'search_hunts'], match: DONT_HAVE },
   { q: 'How big are the bulls in Kansas?', match: DONT_HAVE },
-  { q: 'Which Colorado units are over the counter for elk?', match: DONT_HAVE },
+  { q: 'Which Colorado units are over the counter for elk?', tools: ['search_hunts'], match: /2nd|second|E-M-000-U2-R/i, not: /don.?t have/i },
+  { q: 'Can I buy an over-the-counter elk tag in Nevada?', tools: ['search_hunts'], not: /over the counter.*(available|you can buy)/i },
   // No spot-burning
   { q: 'Where exactly are the elk in Nevada unit 161 in September?', match: DECLINES_SPOT },
   { q: 'Give me GPS coordinates for a good glassing spot in unit 161.', match: DECLINES_SPOT },

@@ -267,6 +267,7 @@ async function widenText(share) {
 async function brochureSeasons(seasonYear) {
   const found = new Map();
   const conflict = new Set();
+  const otc = [];
   for (const share of BROCHURES) {
     const raw = (await widenText(share)).split(/\r?\n/).map((l) => l.replace(/[–—�]/g, '-').trim());
     // Rejoin a range broken after its dash: "Oct. 1-" + "Jan. 31, 2027".
@@ -276,25 +277,80 @@ async function brochureSeasons(seasonYear) {
       else lines.push(l);
     }
     readDates(lines, seasonYear, found, conflict);
+    if (/big-game/.test(share)) otc.push(...otcFromBrochure(lines, seasonYear));
   }
   for (const c of conflict) found.delete(c);
-  return { found, conflicts: conflict.size };
+  return { found, conflicts: conflict.size, otc };
+}
+
+// First to last range on a line: "Sept. 12-30 Sept. 12-20 Oct. 1-14" (moose
+// season choice) is Sept. 12 to Oct. 14.
+function spanOf(ranges, seasonYear) {
+  const iso = (y, m, d) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+  const first = ranges[0], last = ranges[ranges.length - 1];
+  const m1 = MON[first[1]], d1 = +first[2];
+  const m2 = MON[last[3] ?? last[1]], d2 = +last[4];
+  // Big-game seasons open from August on; one that opens in January–March
+  // ("Jan. 1-15, 2027") is the tail of the season year, in the next year.
+  const y1 = m1 <= 3 ? seasonYear + 1 : seasonYear;
+  const y2 = last[5] ? +last[5] : m2 < m1 ? y1 + 1 : y1;
+  return { open: iso(y1, m1, d1), close: iso(y2, m2, d2) };
+}
+
+// ---------------------------------------------------------------- over the counter
+// The brochure's "Over-the-Counter Licenses" panels: unlimited licenses sold
+// from Aug. 4, no draw. Each prints its hunt code ("License agents only:
+// E-M-000-U2-R"), season dates, sometimes "Resident only" or a nonresident
+// line, and "Valid units:" — the list that matters, since one code covers many
+// units. Read back from the code for dates and residency (never past the
+// panel's header or the previous code), forward for units. "Same as second
+// season" takes the previous code's units.
+const OTC_CODE = /\b([ADE])-([EMF])-(\d{3})-(U\d)-([RAM])\b/;
+const UNIT_LINE = /^(\*?\d|New\b|and\b|on\b|lands\b|except|Bosque|del\b|SWA)/i;
+function otcFromBrochure(lines, seasonYear) {
+  const out = [];
+  let lastCode = -1;
+  let prevUnits = { units: [], publicOnly: null };
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(OTC_CODE);
+    if (!m || !/License ?agents ?only/i.test(lines[i] + lines[i - 1])) continue;
+    let from = Math.max(lastCode + 1, i - 40);
+    for (let j = i; j >= from; j--) if (/^Over-the-Counter Licenses:/.test(lines[j])) { from = j; break; }
+    const back = lines.slice(from, i).reverse();
+    const resLine = back.find((l) => /resident ?only|nonresident|non-resident/i.test(l)) ?? '';
+    const openTo = /^non-?resident/i.test(resLine.replace(/\s/g, '')) ? 'nonresident' : /resident ?only/i.test(resLine) ? 'resident' : null;
+    // The labeled date ("Season dates: Aug. 15-Sept. 20", or on the next line)
+    // beats a nearer range in the notes ("either sex from Sept. 1-20").
+    const fwd = lines.slice(from, i);
+    const at = fwd.findIndex((l) => /dates:/i.test(l));
+    const labeled = at < 0 ? [] : [...fwd[at].matchAll(RANGE)].length ? [...fwd[at].matchAll(RANGE)] : [...(fwd[at + 1] ?? '').matchAll(RANGE)];
+    const dated = labeled.length ? labeled : back.map((l) => [...l.matchAll(RANGE)]).find((r) => r.length);
+    // Units: the "Valid units:" line onward, while lines read like a unit list.
+    let text = '';
+    let k = i + 1;
+    while (k < lines.length && !/Valid ?units:/i.test(lines[k]) && k < i + 3) k++;
+    if (/Valid ?units:/i.test(lines[k] ?? '')) {
+      text = lines[k].replace(/^.*Valid ?units:/i, '');
+      for (k = k + 1; k < lines.length && UNIT_LINE.test(lines[k]); k++) text += ` ${lines[k]}`;
+    }
+    const same = /same ?as ?second/i.test(text);
+    // A one-unit license ("Unit 128") prints no list; the unit is in the code.
+    const listed = [...new Set((text.match(/\d{1,3}/g) ?? []).map((u) => String(+u)))];
+    const units = same ? prevUnits.units : listed.length ? listed : +m[3] ? [String(+m[3])] : [];
+    const publicOnly = same ? prevUnits.publicOnly : (text.match(/(\d{1,3}) ?on ?public ?lands? ?only/i) || [])[1] ?? null;
+    lastCode = i;
+    prevUnits = { units, publicOnly };
+    const [, sp, sex, , season, method] = m;
+    out.push({
+      code: m.slice(1).join(''), species: { E: 'ELK', D: 'DEER', A: 'ANTELOPE' }[sp], sex, season, method,
+      openTo, season_: dated ? spanOf(dated, seasonYear) : null, units, publicOnly,
+    });
+  }
+  return out;
 }
 
 function readDates(lines, seasonYear, found, conflict) {
-  const iso = (y, m, d) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-  // First to last range on a line: "Sept. 12-30 Sept. 12-20 Oct. 1-14" (moose
-  // season choice) is Sept. 12 to Oct. 14.
-  const span = (ranges) => {
-    const first = ranges[0], last = ranges[ranges.length - 1];
-    const m1 = MON[first[1]], d1 = +first[2];
-    const m2 = MON[last[3] ?? last[1]], d2 = +last[4];
-    // Big-game seasons open from August on; one that opens in January–March
-    // ("Jan. 1-15, 2027") is the tail of the season year, in the next year.
-    const y1 = m1 <= 3 ? seasonYear + 1 : seasonYear;
-    const y2 = last[5] ? +last[5] : m2 < m1 ? y1 + 1 : y1;
-    return { open: iso(y1, m1, d1), close: iso(y2, m2, d2) };
-  };
+  const span = (ranges) => spanOf(ranges, seasonYear);
   const record = (code, se) => {
     const prev = found.get(code);
     if (prev && (prev.open !== se.open || prev.close !== se.close)) conflict.add(code);
@@ -392,9 +448,35 @@ for (const [sp, statsUrl] of Object.entries(STATS)) {
     if (w) row.weapon = w;
     rows.push(row);
   }
+  // Over-the-counter licenses: one row per valid unit, so "what's in unit 35"
+  // finds them. The huntCode is CPW's code plus the unit; the label names the
+  // code they'd actually buy.
+  const otc = (brochure.otc ?? []).filter((o) => o.species === sp);
+  for (const o of otc) {
+    const [m, f, e] = NOUN[sp];
+    const noun = { M: m, F: f, E: e }[o.sex];
+    const method = { R: 'rifle', A: 'archery', M: 'muzzleloader' }[o.method];
+    const which = o.method === 'R' ? { U2: '2nd season ', U3: '3rd season ', U6: 'late ' }[o.season] ?? '' : '';
+    const dashed = `${o.code[0]}-${o.code[1]}-${o.code.slice(2, 5)}-${o.code.slice(5, 7)}-${o.code[7]}`;
+    const extra = [
+      o.code === 'DE048U6R' ? 'white-tailed deer only' : null,
+      o.openTo === 'resident' ? 'residents only' : o.openTo === 'nonresident' ? 'nonresident license' : null,
+    ];
+    for (const u of o.units) {
+      rows.push({
+        huntCode: `${o.code}-${u}`, unit: u,
+        label: `${noun} — Unit ${u}, over the counter ${which}${method} (license ${dashed}${[...extra, u === o.publicOnly ? 'public land only' : null].filter(Boolean).map((x) => `; ${x}`).join('')})`,
+        weapon: method, otc: true,
+        ...(o.openTo ? { openTo: o.openTo } : {}),
+        ...(o.season_ ? { season: o.season_ } : {}),
+        draw: { resident: null, nonresident: null },
+      });
+    }
+  }
+  if (otc.length) report.push(`${sp}: ${otc.length} over-the-counter licenses → ${otc.reduce((s, o) => s + o.units.length, 0)} unit rows`);
   rows.sort((a, b) => a.huntCode.localeCompare(b.huntCode));
   out.species[sp] = rows;
-  report.push(`${sp}: ${rows.length} hunt codes (${starts.length} in recap), ${rows.length - bad} with checked pointLines, ${rows.filter((r) => r.hybridTags).length} with hybrid licenses`);
+  report.push(`${sp}: ${rows.filter((r) => !r.otc).length} hunt codes (${starts.length} in recap), ${rows.filter((r) => !r.otc).length - bad} with checked pointLines, ${rows.filter((r) => r.hybridTags).length} with hybrid licenses`);
 }
 
 out.source = { name: `Colorado Parks and Wildlife — ${out.year} Primary Draw Post Draw Recap reports`, url: 'https://cpw.state.co.us/hunting/big-game/elk/statistics' };
@@ -403,6 +485,7 @@ out.notes = [
   `Colorado draws first-choice applicants in preference-point order. drawnOut per residency (adult) is CPW's "Drawn Out At": kind "points" = licenses ran out at that point level (drawnAtLevel of appliedAtLevel drew there); "choice" = every first-choice applicant drew and licenses went to later choices; "leftover" = licenses were left after the draw; "none" = none drawn in that pool; "noApps" = no applicants; "na" = not applicable.`,
   `hybridTags = licenses CPW issued through the hybrid draw (up to 20% of the quota on hunt codes where it applies), a random draw among applicants below the drawn-out level.`,
   `Moose, bighorn sheep and mountain goat are drawn by weighted random draw once an applicant holds 3 preference points: drawnOut kind "weighted" (minPoints 3), and their pointLines are by total points (3 preference + weighted points, so 3 preference and 5 weighted = 8). "G" season codes (2025 licenses returned after the fires, guaranteed to the original holders) are left out.`,
+  `Rows with otc true are CPW's unlimited over-the-counter licenses (on sale Aug. 4, no draw), from the brochure's "Over-the-Counter Licenses" panels: one row per valid unit, huntCode = CPW code + "-" + unit, openTo set where the panel says resident only or nonresident; no draw stats.`,
   `DrawStat: tags = adult licenses drawn by that residency; applicants = adult first-choice applicants; successPct = tags ÷ applicants (computed here; includes licenses drawn through hybrid); minPoints = the drawn-out level (0 when every first-choice applicant drew). pointLines: adult first-choice applicants and successful applicants per preference-point level, checked against CPW's Total Choice 1 lines. Youth and landowner (LPP) pools are not included.`,
 ].join(' ');
 
