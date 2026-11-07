@@ -79,9 +79,9 @@ describe('states SCOUT still hand-builds', () => {
     expect(HAND_BUILT_SCOUT_STATES).toEqual(['WYOMING']);
   });
 
-  it('Utah returns every DWR bonus-draw hunt (was 36 hand-entered units)', () => {
+  it('Utah returns every DWR bonus-draw hunt plus its over-the-counter general elk (was 36 hand-entered units)', () => {
     const mod = getStateModule('UT')!;
-    const sizes: Record<string, number> = { DEER: 195, ELK: 210, ANTELOPE: 88, MOOSE: 36, BIGHORNSHEEP: 33 };
+    const sizes: Record<string, number> = { DEER: 195, ELK: 216, ANTELOPE: 88, MOOSE: 36, BIGHORNSHEEP: 33 };
     expect(mod.species).toEqual(Object.keys(sizes));
     for (const [species, n] of Object.entries(sizes)) {
       expect(buildGenericScoutDataset(mod, species as never, 'nonresident', 'any', 3)).toHaveLength(n);

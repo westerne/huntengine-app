@@ -1,0 +1,103 @@
+{
+ "state": "UT",
+ "year": 2026,
+ "source": {
+  "name": "Utah Division of Wildlife Resources — 2026 Utah Big Game Application Guidebook (season dates p. 9, permit numbers and sales dates p. 13, general-season bull elk unit map p. 41)",
+  "url": "https://wildlife.utah.gov/guidebooks/biggameapp.pdf"
+ },
+ "notes": "Over-the-counter general-season bull elk permits for Utah, 2026: no drawing, residents and nonresidents, sold at DWR offices, license agents and online. Archery on sale July 7, any bull July 9, spike bull July 16. Utah's general elk units are either any-bull units or spike-only units; DWR publishes which is which only as a map (guidebook p. 41, hunt.utah.gov), so these rows are statewide (unit \"General-season units\") and name the unit type in the label. Permit numbers: 15,000 for the early any-bull rifle and muzzleloader hunts combined; no cap on the late any-bull rifle hunt; 15,000 spike permits (up to 4,500 multiseason). Archery is one permit for both unit types, with spike units closing earlier; no general-season archery elk on the Paunsaugunt. Hand-entered from the guidebook; tags / applicants and draw stats are null by design. Permit fee: general any bull or spike bull elk $56 resident, $849 nonresident; multiseason spike $200 / $1,255 (fee table, p. 15). A valid hunting or combination license is required to buy (p. 13).",
+ "species": {
+  "ELK": [
+   {
+    "huntCode": "GEN-ELK-ARCHERY",
+    "unit": "General-season units",
+    "label": "General-season archery bull elk, statewide general units (over the counter from July 7; any bull on any-bull units through Sept. 16, spike only on spike units through Sept. 4; not on the Paunsaugunt)",
+    "weapon": "archery",
+    "otc": true,
+    "season": {
+     "open": "2026-08-15",
+     "close": "2026-09-16"
+    },
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-ELK-ANYBULL-RIFLE-EARLY",
+    "unit": "Any-bull units",
+    "label": "General-season any bull elk, early rifle, any-bull units (over the counter from July 9; 15,000 permits shared with the any-bull muzzleloader hunt)",
+    "weapon": "rifle",
+    "otc": true,
+    "season": {
+     "open": "2026-10-03",
+     "close": "2026-10-09"
+    },
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-ELK-ANYBULL-RIFLE-LATE",
+    "unit": "Any-bull units",
+    "label": "General-season any bull elk, late rifle, any-bull units (over the counter from July 9; no cap on permits)",
+    "weapon": "rifle",
+    "otc": true,
+    "season": {
+     "open": "2026-10-10",
+     "close": "2026-10-16"
+    },
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-ELK-ANYBULL-MUZZ",
+    "unit": "Any-bull units",
+    "label": "General-season any bull elk, muzzleloader, any-bull units (over the counter from July 9; 15,000 permits shared with the early any-bull rifle hunt)",
+    "weapon": "muzzleloader",
+    "otc": true,
+    "season": {
+     "open": "2026-10-28",
+     "close": "2026-11-05"
+    },
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-ELK-SPIKE-RIFLE",
+    "unit": "Spike units",
+    "label": "General-season spike bull elk, rifle, spike-only units (over the counter from July 16; 15,000 spike permits)",
+    "weapon": "rifle",
+    "otc": true,
+    "season": {
+     "open": "2026-10-03",
+     "close": "2026-10-15"
+    },
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   },
+   {
+    "huntCode": "GEN-ELK-SPIKE-MUZZ",
+    "unit": "Spike units",
+    "label": "General-season spike bull elk, muzzleloader, spike-only units (over the counter from July 16; 15,000 spike permits)",
+    "weapon": "muzzleloader",
+    "otc": true,
+    "season": {
+     "open": "2026-10-28",
+     "close": "2026-11-05"
+    },
+    "draw": {
+     "resident": null,
+     "nonresident": null
+    }
+   }
+  ]
+ }
+}

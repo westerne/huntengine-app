@@ -19,6 +19,7 @@ import orDraw from './draw/or.json';
 import sdDraw from './draw/sd.json';
 import akDraw from './draw/ak.json';
 import akGeneral from './draw/ak-general.json';
+import utGeneral from './draw/ut-general.json';
 
 // Every state on the roadmap. Live states have data wired in; planned states
 // are listed so the planner, landing page and deadline calendar can show what's
@@ -198,7 +199,7 @@ const DRAW_FILES: Partial<Record<StateCode, DrawFile>> = {
   KS: ksDraw as DrawFile,
   NV: nvDraw as DrawFile,
   CO: coDraw as DrawFile,
-  UT: utDraw as DrawFile,
+  UT: mergeDrawFiles(utDraw as DrawFile, utGeneral as DrawFile),
   OK: okDraw as DrawFile,
   CA: caDraw as DrawFile,
   WA: waDraw as DrawFile,

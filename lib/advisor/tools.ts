@@ -403,18 +403,21 @@ export type OtcSummary = { licenses: OtcLicense[]; note: string };
 function otcSummary(hunts: Hunt[], residency: Residency, weapon: Weapon): OtcSummary | null {
   const otc = hunts.filter((h) => h.otc && (!h.openTo || h.openTo === residency) && (weapon === 'any' || !h.weapon || h.weapon === weapon));
   if (!otc.length) return null;
+  // The label without its unit names the license: CO "Bull elk — Unit 35, over
+  // the counter 2nd season rifle (…)" and WA "General season … — Archery, GMU
+  // 101 Sherman" each group into one license good in many units.
+  const what = (h: Hunt) => (h.label ?? '').replace(/ — Unit [^,]+,/, ' —').replace(/,? ?GMU \S+.*$/, '');
   const groups = new Map<string, Hunt[]>();
   for (const h of otc) {
-    // CO: "EM000U2R-35" → "EM000U2R". Elsewhere one row is one unit's general season.
-    const key = h.state === 'CO' ? h.huntCode.split('-')[0] : `${h.weapon ?? 'any'}|${h.season?.open ?? ''}|${h.season?.close ?? ''}`;
+    // CO: "EM000U2R-35" → "EM000U2R".
+    const key = h.state === 'CO' ? h.huntCode.split('-')[0] : what(h);
     groups.set(key, [...(groups.get(key) ?? []), h]);
   }
   const licenses = [...groups.values()].map((g) => {
     const h = g[0];
-    const what = (h.label ?? '').replace(/ — Unit [^,]+,/, ' —').replace(/,? ?GMU \S+.*$/, '');
     return {
-      license: h.state === 'CO' ? (h.label ?? '').match(/license ([A-Z]-[A-Z]-\d{3}-U\d-[A-Z])/)?.[1] ?? h.huntCode : what,
-      what, season: h.season ?? null, units: g.map((x) => x.unit).slice(0, 40), unitCount: g.length,
+      license: h.state === 'CO' ? (h.label ?? '').match(/license ([A-Z]-[A-Z]-\d{3}-U\d-[A-Z])/)?.[1] ?? h.huntCode : g.length > 1 ? what(h) : h.huntCode,
+      what: what(h), season: h.season ?? null, units: g.map((x) => x.unit).slice(0, 40), unitCount: g.length,
       ...(h.openTo === 'resident' ? { residentsOnly: true as const } : {}),
     };
   }).sort((a, b) => b.unitCount - a.unitCount).slice(0, 8);
