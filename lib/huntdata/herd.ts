@@ -10,10 +10,12 @@
 //   AZ  scripts/draw/buildAZHerd.mjs  AZGFD survey summaries (by unit, with animals counted)
 //   UT  scripts/draw/buildUTHerd.mjs  DWR Big Game Annual Report (deer ratios; elk and
 //                                     pronghorn average harvest age, limited-entry units)
+//   WY  scripts/draw/buildWYHerd.mjs  WGFD Job Completion Reports (by herd, keyed by hunt area)
 
 import co from './herd/co.json';
 import az from './herd/az.json';
 import ut from './herd/ut.json';
+import wy from './herd/wy.json';
 
 type HerdUnit = {
   malesPer100?: number;
@@ -22,6 +24,7 @@ type HerdUnit = {
   herd?: string;        // the herd or report unit the figure is for ("herd unit (DAU) 12")
   population?: number;  // the herd's estimated size
   counted?: number;     // animals classified, where the figure is from a survey
+  when?: string;        // this unit's own "when", where it differs from the species'
 };
 type HerdFile = {
   source: { name: string; url: string };
@@ -29,8 +32,8 @@ type HerdFile = {
   species: Record<string, { year: number; when: string; units: Record<string, HerdUnit> }>;
 };
 
-const FILES: Record<string, HerdFile> = { CO: co as HerdFile, AZ: az as HerdFile, UT: ut as HerdFile };
-const AGENCY: Record<string, string> = { CO: 'CPW', AZ: 'AZGFD', UT: 'DWR' };
+const FILES: Record<string, HerdFile> = { CO: co as HerdFile, AZ: az as HerdFile, UT: ut as HerdFile, WY: wy as HerdFile };
+const AGENCY: Record<string, string> = { CO: 'CPW', AZ: 'AZGFD', UT: 'DWR', WY: 'WGFD' };
 export const HERD_STATES = Object.keys(FILES);
 
 const NAMES: Record<string, [string, string]> = {
@@ -66,8 +69,11 @@ export function herdFor(state: string, speciesKey: string, unit: string | null |
   const sp = FILES[state]?.species[speciesKey];
   const names = NAMES[speciesKey];
   if (!sp || !names || !unit) return null;
-  // Most states key by unit number; Utah keys by unit name.
-  const u = sp.units[normUnit(unit)] ?? sp.units[String(unit).trim()];
+  // Most states key by unit number; Utah keys by unit name. A hunt over
+  // several areas ("23-26") takes their herd when every area is in the same one.
+  const parts = String(unit).split('-').map(normUnit);
+  const shared = parts.length > 1 && parts.every((p) => sp.units[p] && sp.units[p].herd != null && sp.units[p].herd === sp.units[parts[0]].herd) ? sp.units[parts[0]] : undefined;
+  const u = sp.units[normUnit(unit)] ?? sp.units[String(unit).trim()] ?? shared;
   if (!u || (u.malesPer100 == null && u.avgAge == null)) return null;
   const [males, females] = names;
   const agency = AGENCY[state] ?? state;
@@ -87,8 +93,8 @@ export function herdFor(state: string, speciesKey: string, unit: string | null |
     source: FILES[state].source.name,
     agency,
     text: age
-      ? `harvested ${males} averaged ${u.avgAge} years old ${sp.when}${goal}`
-      : `${u.malesPer100} ${males} per 100 ${females} ${sp.when}${small}${goal}`,
+      ? `harvested ${males} averaged ${u.avgAge} years old ${u.when ?? sp.when}${goal}`
+      : `${u.malesPer100} ${males} per 100 ${females} ${u.when ?? sp.when}${small}${goal}`,
     caveat: age ? AGE_CAVEAT : HERD_CAVEAT,
   };
 }

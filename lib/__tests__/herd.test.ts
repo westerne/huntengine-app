@@ -41,3 +41,20 @@ describe('Utah: DWR annual report', () => {
     expect(herdFor('UT', 'ELK', 'Cache, Meadowville')?.avgAge).toBe(5.5);
   });
 });
+
+describe('Wyoming: WGFD Job Completion Reports', () => {
+  it('gives the herd ratio for a hunt area, named by herd', () => {
+    const h = herdFor('WY', 'ELK', '100')!;
+    expect(h.text).toBe("54 bulls per 100 cows in WGFD's 2025 herd count");
+    expect(h.herd).toBe('Steamboat herd (EL426)');
+  });
+  it('falls back to the 5-year average, and says so, when a herd went uncounted', () => {
+    expect(herdFor('WY', 'ELK', '15')!.text).toBe("31 bulls per 100 cows in WGFD's 2020-2024 average (no 2025 count)");
+  });
+  it('treats a 0 as no count, never as a herd without males', () => {
+    expect(herdFor('WY', 'ELK', '124')).toBeNull(); // Petition: "0 0"
+  });
+  it('gives a hunt over several areas their herd when they share one', () => {
+    expect(herdFor('WY', 'DEER', '23-26')?.malesPer100).toBe(45);
+  });
+});

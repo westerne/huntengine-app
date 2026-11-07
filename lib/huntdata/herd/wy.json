@@ -1,0 +1,1383 @@
+{
+ "state": "WY",
+ "year": 2025,
+ "source": {
+  "name": "Wyoming Game and Fish — 2025 Job Completion Reports",
+  "url": "https://wgfd.wyo.gov/hunting-trapping/job-completion-reports"
+ },
+ "notes": "WGFD 2025 Job Completion Reports (period 6/1/2025-5/31/2026), one per region: https://wgfd.wyo.gov/media/34071/download ; https://wgfd.wyo.gov/media/34072/download ; https://wgfd.wyo.gov/media/34073/download ; https://wgfd.wyo.gov/media/34074/download ; https://wgfd.wyo.gov/media/34075/download ; https://wgfd.wyo.gov/media/34076/download ; https://wgfd.wyo.gov/media/34077/download ; https://wgfd.wyo.gov/media/34078/download. Per hunt area: malesPer100 = the herd's 2025 males per 100 females from the JCR evaluation form; population = the herd's 2025 estimate; herd = herd name and code. Hunt areas in two herds of one species are left out.",
+ "species": {
+  "ELK": {
+   "year": 2025,
+   "when": "in WGFD's 2025 herd count",
+   "units": {
+    "2": {
+     "malesPer100": 40,
+     "herd": "Fortification herd (EL320)"
+    },
+    "6": {
+     "malesPer100": 31,
+     "herd": "Iron Mountain herd (EL531)",
+     "population": 4200
+    },
+    "7": {
+     "malesPer100": 56,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Laramie Peak/Muddy Mountain herd (EL741)",
+     "population": 7869
+    },
+    "8": {
+     "malesPer100": 23,
+     "herd": "Snowy Range herd (EL533)",
+     "population": 10200
+    },
+    "9": {
+     "malesPer100": 23,
+     "herd": "Snowy Range herd (EL533)",
+     "population": 10200
+    },
+    "10": {
+     "malesPer100": 23,
+     "herd": "Snowy Range herd (EL533)",
+     "population": 10200
+    },
+    "11": {
+     "malesPer100": 23,
+     "herd": "Snowy Range herd (EL533)",
+     "population": 10200
+    },
+    "12": {
+     "malesPer100": 23,
+     "herd": "Snowy Range herd (EL533)",
+     "population": 10200
+    },
+    "13": {
+     "malesPer100": 31,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Sierra Madre herd (EL425)"
+    },
+    "15": {
+     "malesPer100": 31,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Sierra Madre herd (EL425)"
+    },
+    "16": {
+     "malesPer100": 46,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Shirley Mountain herd (EL534)"
+    },
+    "19": {
+     "malesPer100": 56,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Laramie Peak/Muddy Mountain herd (EL741)",
+     "population": 7869
+    },
+    "21": {
+     "malesPer100": 31,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Sierra Madre herd (EL425)"
+    },
+    "22": {
+     "malesPer100": 27,
+     "herd": "Ferris herd (EL639)",
+     "population": 1025
+    },
+    "23": {
+     "malesPer100": 16,
+     "herd": "Rattlesnake herd (EL742)",
+     "population": 1506
+    },
+    "24": {
+     "malesPer100": 25,
+     "herd": "Green Mountain herd (EL638)"
+    },
+    "25": {
+     "malesPer100": 26,
+     "herd": "South Wind River herd (EL637)"
+    },
+    "27": {
+     "malesPer100": 26,
+     "herd": "South Wind River herd (EL637)"
+    },
+    "28": {
+     "malesPer100": 26,
+     "herd": "South Wind River herd (EL637)"
+    },
+    "30": {
+     "malesPer100": 52,
+     "herd": "South Rock Springs herd (EL424)"
+    },
+    "31": {
+     "malesPer100": 52,
+     "herd": "South Rock Springs herd (EL424)"
+    },
+    "32": {
+     "malesPer100": 52,
+     "herd": "South Rock Springs herd (EL424)"
+    },
+    "33": {
+     "malesPer100": 42,
+     "herd": "South Bighorn herd (EL322)"
+    },
+    "34": {
+     "malesPer100": 42,
+     "herd": "South Bighorn herd (EL322)"
+    },
+    "41": {
+     "malesPer100": 21,
+     "herd": "Medicine Lodge herd (EL211)"
+    },
+    "45": {
+     "malesPer100": 21,
+     "herd": "Medicine Lodge herd (EL211)"
+    },
+    "47": {
+     "malesPer100": 42,
+     "herd": "South Bighorn herd (EL322)"
+    },
+    "48": {
+     "malesPer100": 42,
+     "herd": "South Bighorn herd (EL322)"
+    },
+    "49": {
+     "malesPer100": 42,
+     "herd": "South Bighorn herd (EL322)"
+    },
+    "51": {
+     "malesPer100": 22,
+     "herd": "Clarks Fork herd (EL217)"
+    },
+    "54": {
+     "malesPer100": 22,
+     "herd": "Clarks Fork herd (EL217)"
+    },
+    "55": {
+     "malesPer100": 21,
+     "herd": "Cody herd (EL216)"
+    },
+    "56": {
+     "malesPer100": 21,
+     "herd": "Cody herd (EL216)"
+    },
+    "58": {
+     "malesPer100": 21,
+     "herd": "Cody herd (EL216)"
+    },
+    "59": {
+     "malesPer100": 21,
+     "herd": "Cody herd (EL216)"
+    },
+    "60": {
+     "malesPer100": 21,
+     "herd": "Cody herd (EL216)"
+    },
+    "61": {
+     "malesPer100": 21,
+     "herd": "Cody herd (EL216)"
+    },
+    "62": {
+     "malesPer100": 19,
+     "herd": "Gooseberry herd (EL214)"
+    },
+    "63": {
+     "malesPer100": 19,
+     "herd": "Gooseberry herd (EL214)"
+    },
+    "64": {
+     "malesPer100": 19,
+     "herd": "Gooseberry herd (EL214)"
+    },
+    "65": {
+     "malesPer100": 22,
+     "herd": "Clarks Fork herd (EL217)"
+    },
+    "66": {
+     "malesPer100": 21,
+     "herd": "Cody herd (EL216)"
+    },
+    "67": {
+     "malesPer100": 22,
+     "herd": "Wiggins Fork herd (EL635)"
+    },
+    "68": {
+     "malesPer100": 22,
+     "herd": "Wiggins Fork herd (EL635)"
+    },
+    "69": {
+     "malesPer100": 22,
+     "herd": "Wiggins Fork herd (EL635)"
+    },
+    "70": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "71": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "72": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "75": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "77": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "78": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "79": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "80": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "81": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "82": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "83": {
+     "malesPer100": 127,
+     "herd": "Jackson herd (EL102)"
+    },
+    "86": {
+     "malesPer100": 28,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Piney herd (EL106)"
+    },
+    "87": {
+     "malesPer100": 29,
+     "herd": "Upper Green River herd (EL107)"
+    },
+    "92": {
+     "malesPer100": 28,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Piney herd (EL106)"
+    },
+    "93": {
+     "malesPer100": 29,
+     "herd": "Upper Green River herd (EL107)"
+    },
+    "94": {
+     "malesPer100": 28,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Piney herd (EL106)"
+    },
+    "95": {
+     "malesPer100": 29,
+     "herd": "Upper Green River herd (EL107)"
+    },
+    "96": {
+     "malesPer100": 29,
+     "herd": "Upper Green River herd (EL107)"
+    },
+    "97": {
+     "malesPer100": 27,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Pinedale herd (EL108)"
+    },
+    "98": {
+     "malesPer100": 27,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Pinedale herd (EL108)"
+    },
+    "99": {
+     "malesPer100": 26,
+     "herd": "South Wind River herd (EL637)"
+    },
+    "100": {
+     "malesPer100": 54,
+     "herd": "Steamboat herd (EL426)",
+     "population": 1400
+    },
+    "102": {
+     "malesPer100": 18,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "West Green River herd (EL428)",
+     "population": 4152
+    },
+    "103": {
+     "malesPer100": 18,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "West Green River herd (EL428)",
+     "population": 4152
+    },
+    "104": {
+     "malesPer100": 18,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "West Green River herd (EL428)",
+     "population": 4152
+    },
+    "105": {
+     "malesPer100": 18,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "West Green River herd (EL428)",
+     "population": 4152
+    },
+    "106": {
+     "malesPer100": 20,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Uinta herd (EL423)",
+     "population": 2477
+    },
+    "107": {
+     "malesPer100": 20,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Uinta herd (EL423)",
+     "population": 2477
+    },
+    "108": {
+     "malesPer100": 31,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Sierra Madre herd (EL425)"
+    },
+    "110": {
+     "malesPer100": 23,
+     "herd": "Snowy Range herd (EL533)",
+     "population": 10200
+    },
+    "111": {
+     "malesPer100": 27,
+     "herd": "Ferris herd (EL639)",
+     "population": 1025
+    },
+    "113": {
+     "malesPer100": 34,
+     "herd": "Rochelle Hills herd (EL344)"
+    },
+    "120": {
+     "malesPer100": 42,
+     "herd": "South Bighorn herd (EL322)"
+    },
+    "122": {
+     "malesPer100": 28,
+     "herd": "Pine Ridge herd (EL743)",
+     "population": 1583
+    },
+    "123": {
+     "malesPer100": 34,
+     "herd": "Rochelle Hills herd (EL344)"
+    },
+    "125": {
+     "malesPer100": 23,
+     "herd": "Snowy Range herd (EL533)",
+     "population": 10200
+    },
+    "127": {
+     "malesPer100": 22,
+     "herd": "Wiggins Fork herd (EL635)"
+    },
+    "128": {
+     "malesPer100": 25,
+     "herd": "Green Mountain herd (EL638)"
+    },
+    "130": {
+     "malesPer100": 31,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Sierra Madre herd (EL425)"
+    }
+   }
+  },
+  "DEER": {
+   "year": 2025,
+   "when": "in WGFD's 2025 herd count",
+   "units": {
+    "1": {
+     "malesPer100": 20,
+     "herd": "Black Hills herd (MD751)",
+     "population": 12901
+    },
+    "2": {
+     "malesPer100": 20,
+     "herd": "Black Hills herd (MD751)",
+     "population": 12901
+    },
+    "3": {
+     "malesPer100": 20,
+     "herd": "Black Hills herd (MD751)",
+     "population": 12901
+    },
+    "4": {
+     "malesPer100": 20,
+     "herd": "Black Hills herd (MD751)",
+     "population": 12901
+    },
+    "5": {
+     "malesPer100": 20,
+     "herd": "Black Hills herd (MD751)",
+     "population": 12901
+    },
+    "6": {
+     "malesPer100": 20,
+     "herd": "Black Hills herd (MD751)",
+     "population": 12901
+    },
+    "7": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "8": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "9": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "10": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "11": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "12": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "13": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "14": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "15": {
+     "malesPer100": 32,
+     "herd": "Goshen Rim herd (MD534)",
+     "population": 6400
+    },
+    "17": {
+     "malesPer100": 45,
+     "herd": "Powder River herd (MD319)",
+     "population": 19500
+    },
+    "18": {
+     "malesPer100": 45,
+     "herd": "Powder River herd (MD319)",
+     "population": 19500
+    },
+    "19": {
+     "malesPer100": 48,
+     "herd": "Pumpkin Buttes herd (MD320)",
+     "population": 6100
+    },
+    "21": {
+     "malesPer100": 35,
+     "herd": "Cheyenne River herd (MD740)",
+     "population": 11113
+    },
+    "22": {
+     "malesPer100": 43,
+     "herd": "North Converse herd (MD755)",
+     "population": 5206
+    },
+    "23": {
+     "malesPer100": 45,
+     "herd": "Powder River herd (MD319)",
+     "population": 19500
+    },
+    "26": {
+     "malesPer100": 45,
+     "herd": "Powder River herd (MD319)",
+     "population": 19500
+    },
+    "29": {
+     "malesPer100": 48,
+     "herd": "Pumpkin Buttes herd (MD320)",
+     "population": 6100
+    },
+    "31": {
+     "malesPer100": 48,
+     "herd": "Pumpkin Buttes herd (MD320)",
+     "population": 6100
+    },
+    "34": {
+     "malesPer100": 43,
+     "herd": "North Natrona herd (MD759)",
+     "population": 1448
+    },
+    "35": {
+     "malesPer100": 30,
+     "herd": "Southwest Bighorns herd (MD208)",
+     "population": 9190
+    },
+    "36": {
+     "malesPer100": 30,
+     "herd": "Southwest Bighorns herd (MD208)",
+     "population": 9190
+    },
+    "37": {
+     "malesPer100": 30,
+     "herd": "Southwest Bighorns herd (MD208)",
+     "population": 9190
+    },
+    "39": {
+     "malesPer100": 30,
+     "herd": "Southwest Bighorns herd (MD208)",
+     "population": 9190
+    },
+    "40": {
+     "malesPer100": 30,
+     "herd": "Southwest Bighorns herd (MD208)",
+     "population": 9190
+    },
+    "41": {
+     "malesPer100": 29,
+     "herd": "Paintrock herd (MD207)",
+     "population": 5488
+    },
+    "46": {
+     "malesPer100": 29,
+     "herd": "Paintrock herd (MD207)",
+     "population": 5488
+    },
+    "47": {
+     "malesPer100": 29,
+     "herd": "Paintrock herd (MD207)",
+     "population": 5488
+    },
+    "59": {
+     "malesPer100": 52,
+     "herd": "Laramie Mountains herd (MD537)",
+     "population": 9900
+    },
+    "60": {
+     "malesPer100": 52,
+     "herd": "Laramie Mountains herd (MD537)",
+     "population": 9900
+    },
+    "61": {
+     "malesPer100": 25,
+     "herd": "Sheep Mountain herd (MD539)",
+     "population": 4200
+    },
+    "64": {
+     "malesPer100": 52,
+     "herd": "Laramie Mountains herd (MD537)",
+     "population": 9900
+    },
+    "65": {
+     "malesPer100": 38,
+     "herd": "South Converse herd (MD756)",
+     "population": 3962
+    },
+    "66": {
+     "malesPer100": 36,
+     "herd": "Bates Hole/Hat Six herd (MD757)",
+     "population": 3757
+    },
+    "67": {
+     "malesPer100": 36,
+     "herd": "Bates Hole/Hat Six herd (MD757)",
+     "population": 3757
+    },
+    "70": {
+     "malesPer100": 54,
+     "herd": "Shirley Mountain herd (MD540)",
+     "population": 2100
+    },
+    "74": {
+     "malesPer100": 25,
+     "herd": "Sheep Mountain herd (MD539)",
+     "population": 4200
+    },
+    "75": {
+     "malesPer100": 25,
+     "herd": "Sheep Mountain herd (MD539)",
+     "population": 4200
+    },
+    "76": {
+     "malesPer100": 25,
+     "herd": "Sheep Mountain herd (MD539)",
+     "population": 4200
+    },
+    "77": {
+     "malesPer100": 25,
+     "herd": "Sheep Mountain herd (MD539)",
+     "population": 4200
+    },
+    "78": {
+     "malesPer100": 31,
+     "herd": "Platte Valley herd (MD541)",
+     "population": 10500
+    },
+    "79": {
+     "malesPer100": 31,
+     "herd": "Platte Valley herd (MD541)",
+     "population": 10500
+    },
+    "80": {
+     "malesPer100": 31,
+     "herd": "Platte Valley herd (MD541)",
+     "population": 10500
+    },
+    "81": {
+     "malesPer100": 31,
+     "herd": "Platte Valley herd (MD541)",
+     "population": 10500
+    },
+    "82": {
+     "malesPer100": 29,
+     "herd": "Baggs herd (MD427)",
+     "population": 18108
+    },
+    "84": {
+     "malesPer100": 29,
+     "herd": "Baggs herd (MD427)",
+     "population": 18108
+    },
+    "87": {
+     "malesPer100": 44,
+     "herd": "Ferris herd (MD647)",
+     "population": 1216
+    },
+    "88": {
+     "malesPer100": 50,
+     "herd": "Rattlesnake herd (MD758)",
+     "population": 2269
+    },
+    "89": {
+     "malesPer100": 50,
+     "herd": "Rattlesnake herd (MD758)",
+     "population": 2269
+    },
+    "90": {
+     "malesPer100": 31,
+     "herd": "Beaver Rim herd (MD648)",
+     "population": 836
+    },
+    "92": {
+     "malesPer100": 30,
+     "herd": "South Wind River herd (MD644)",
+     "population": 4087
+    },
+    "94": {
+     "malesPer100": 30,
+     "herd": "South Wind River herd (MD644)",
+     "population": 4087
+    },
+    "96": {
+     "malesPer100": 26,
+     "herd": "Sweetwater herd (MD646)",
+     "population": 2922
+    },
+    "97": {
+     "malesPer100": 26,
+     "herd": "Sweetwater herd (MD646)",
+     "population": 2922
+    },
+    "100": {
+     "malesPer100": 29,
+     "herd": "Baggs herd (MD427)",
+     "population": 18108
+    },
+    "101": {
+     "malesPer100": 42,
+     "herd": "South Rock Springs herd (MD424)",
+     "population": 5000
+    },
+    "102": {
+     "malesPer100": 42,
+     "herd": "South Rock Springs herd (MD424)",
+     "population": 5000
+    },
+    "105": {
+     "malesPer100": 41,
+     "herd": "Clarks Fork herd (MD216)",
+     "population": 3900
+    },
+    "106": {
+     "malesPer100": 41,
+     "herd": "Clarks Fork herd (MD216)",
+     "population": 3900
+    },
+    "109": {
+     "malesPer100": 41,
+     "herd": "Clarks Fork herd (MD216)",
+     "population": 3900
+    },
+    "110": {
+     "malesPer100": 29,
+     "herd": "Upper Shoshone herd (MD215)",
+     "population": 9700
+    },
+    "111": {
+     "malesPer100": 29,
+     "herd": "Upper Shoshone herd (MD215)",
+     "population": 9700
+    },
+    "112": {
+     "malesPer100": 29,
+     "herd": "Upper Shoshone herd (MD215)",
+     "population": 9700
+    },
+    "113": {
+     "malesPer100": 29,
+     "herd": "Upper Shoshone herd (MD215)",
+     "population": 9700
+    },
+    "114": {
+     "malesPer100": 29,
+     "herd": "Upper Shoshone herd (MD215)",
+     "population": 9700
+    },
+    "115": {
+     "malesPer100": 29,
+     "herd": "Upper Shoshone herd (MD215)",
+     "population": 9700
+    },
+    "116": {
+     "malesPer100": 46,
+     "herd": "Owl Creek/Meeteetse herd (MD212)",
+     "population": 2335
+    },
+    "117": {
+     "malesPer100": 46,
+     "herd": "Owl Creek/Meeteetse herd (MD212)",
+     "population": 2335
+    },
+    "118": {
+     "malesPer100": 46,
+     "herd": "Owl Creek/Meeteetse herd (MD212)",
+     "population": 2335
+    },
+    "119": {
+     "malesPer100": 46,
+     "herd": "Owl Creek/Meeteetse herd (MD212)",
+     "population": 2335
+    },
+    "120": {
+     "malesPer100": 46,
+     "herd": "Owl Creek/Meeteetse herd (MD212)",
+     "population": 2335
+    },
+    "121": {
+     "malesPer100": 23,
+     "herd": "Shoshone River herd (MD211)",
+     "population": 1481
+    },
+    "122": {
+     "malesPer100": 23,
+     "herd": "Shoshone River herd (MD211)",
+     "population": 1481
+    },
+    "123": {
+     "malesPer100": 23,
+     "herd": "Shoshone River herd (MD211)",
+     "population": 1481
+    },
+    "124": {
+     "malesPer100": 44,
+     "herd": "Greybull River herd (MD210)",
+     "population": 643
+    },
+    "125": {
+     "malesPer100": 38,
+     "herd": "Basin herd (MD209)",
+     "population": 771
+    },
+    "127": {
+     "malesPer100": 38,
+     "herd": "Basin herd (MD209)",
+     "population": 771
+    },
+    "128": {
+     "malesPer100": 31,
+     "herd": "Dubois herd (MD642)",
+     "population": 4369
+    },
+    "130": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "131": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "132": {
+     "malesPer100": 36,
+     "herd": "Uinta herd (MD423)",
+     "population": 6219
+    },
+    "133": {
+     "malesPer100": 36,
+     "herd": "Uinta herd (MD423)",
+     "population": 6219
+    },
+    "138": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "139": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "140": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "141": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "142": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "148": {
+     "malesPer100": 29,
+     "herd": "Upper Shoshone herd (MD215)",
+     "population": 9700
+    },
+    "150": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "151": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "152": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "153": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "154": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "155": {
+     "malesPer100": 43,
+     "herd": "Sublette herd (MD104)",
+     "population": 22437
+    },
+    "156": {
+     "malesPer100": 31,
+     "herd": "Dubois herd (MD642)",
+     "population": 4369
+    },
+    "157": {
+     "malesPer100": 26,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Project herd (MD643)"
+    },
+    "160": {
+     "malesPer100": 30,
+     "herd": "South Wind River herd (MD644)",
+     "population": 4087
+    },
+    "164": {
+     "malesPer100": 30,
+     "herd": "Southwest Bighorns herd (MD208)",
+     "population": 9190
+    },
+    "165": {
+     "malesPer100": 44,
+     "herd": "Greybull River herd (MD210)",
+     "population": 643
+    },
+    "168": {
+     "malesPer100": 36,
+     "herd": "Uinta herd (MD423)",
+     "population": 6219
+    },
+    "171": {
+     "malesPer100": 26,
+     "when": "in WGFD's 2020-2024 average (no 2025 count)",
+     "herd": "Project herd (MD643)"
+    }
+   }
+  },
+  "ANTELOPE": {
+   "year": 2025,
+   "when": "in WGFD's 2025 herd count",
+   "units": {
+    "1": {
+     "malesPer100": 40,
+     "herd": "North Black Hills herd (PR339)",
+     "population": 12600
+    },
+    "2": {
+     "malesPer100": 40,
+     "herd": "North Black Hills herd (PR339)",
+     "population": 12600
+    },
+    "3": {
+     "malesPer100": 40,
+     "herd": "North Black Hills herd (PR339)",
+     "population": 12600
+    },
+    "4": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "5": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "6": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "7": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "8": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "9": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "11": {
+     "malesPer100": 42,
+     "herd": "Meadowdale herd (PR522)",
+     "population": 7400
+    },
+    "17": {
+     "malesPer100": 50,
+     "herd": "Gillette herd (PR351)",
+     "population": 5200
+    },
+    "18": {
+     "malesPer100": 40,
+     "herd": "North Black Hills herd (PR339)",
+     "population": 12600
+    },
+    "19": {
+     "malesPer100": 40,
+     "herd": "North Black Hills herd (PR339)",
+     "population": 12600
+    },
+    "20": {
+     "malesPer100": 61,
+     "herd": "Hazelton herd (PR320)"
+    },
+    "21": {
+     "malesPer100": 40,
+     "herd": "Middle Fork herd (PR352)",
+     "population": 3440
+    },
+    "22": {
+     "malesPer100": 68,
+     "herd": "Crazy Woman herd (PR318)",
+     "population": 10900
+    },
+    "23": {
+     "malesPer100": 53,
+     "herd": "Pumpkin Buttes herd (PR309)",
+     "population": 15000
+    },
+    "24": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "25": {
+     "malesPer100": 56,
+     "herd": "North Converse herd (PR748)",
+     "population": 25173
+    },
+    "26": {
+     "malesPer100": 56,
+     "herd": "North Converse herd (PR748)",
+     "population": 25173
+    },
+    "27": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "29": {
+     "malesPer100": 34,
+     "herd": "Black Thunder herd (PR750)",
+     "population": 37977
+    },
+    "30": {
+     "malesPer100": 54,
+     "herd": "Medicine Bow herd (PR525)",
+     "population": 41800
+    },
+    "31": {
+     "malesPer100": 54,
+     "herd": "Medicine Bow herd (PR525)",
+     "population": 41800
+    },
+    "32": {
+     "malesPer100": 54,
+     "herd": "Medicine Bow herd (PR525)",
+     "population": 41800
+    },
+    "34": {
+     "malesPer100": 48,
+     "herd": "Hawk Springs herd (PR521)",
+     "population": 7300
+    },
+    "37": {
+     "malesPer100": 31,
+     "herd": "Centennial herd (PR527)",
+     "population": 16100
+    },
+    "38": {
+     "malesPer100": 42,
+     "herd": "Iron Mountain herd (PR523)",
+     "population": 7200
+    },
+    "42": {
+     "malesPer100": 54,
+     "herd": "Medicine Bow herd (PR525)",
+     "population": 41800
+    },
+    "43": {
+     "malesPer100": 37,
+     "herd": "Cooper Lake herd (PR526)",
+     "population": 4800
+    },
+    "44": {
+     "malesPer100": 31,
+     "herd": "Centennial herd (PR527)",
+     "population": 16100
+    },
+    "45": {
+     "malesPer100": 31,
+     "herd": "Centennial herd (PR527)",
+     "population": 16100
+    },
+    "46": {
+     "malesPer100": 54,
+     "herd": "Medicine Bow herd (PR525)",
+     "population": 41800
+    },
+    "47": {
+     "malesPer100": 54,
+     "herd": "Medicine Bow herd (PR525)",
+     "population": 41800
+    },
+    "48": {
+     "malesPer100": 54,
+     "herd": "Medicine Bow herd (PR525)",
+     "population": 41800
+    },
+    "50": {
+     "malesPer100": 42,
+     "herd": "Elk Mountain herd (PR528)",
+     "population": 5600
+    },
+    "51": {
+     "malesPer100": 69,
+     "herd": "Big Creek herd (PR529)",
+     "population": 1200
+    },
+    "52": {
+     "malesPer100": 66,
+     "herd": "Iron Springs herd (PR630)",
+     "population": 6197
+    },
+    "53": {
+     "malesPer100": 46,
+     "herd": "Baggs herd (PR438)",
+     "population": 4264
+    },
+    "55": {
+     "malesPer100": 46,
+     "herd": "Baggs herd (PR438)",
+     "population": 4264
+    },
+    "56": {
+     "malesPer100": 66,
+     "herd": "Iron Springs herd (PR630)",
+     "population": 6197
+    },
+    "57": {
+     "malesPer100": 51,
+     "herd": "Bitter Creek herd (PR414)",
+     "population": 6968
+    },
+    "58": {
+     "malesPer100": 51,
+     "herd": "Bitter Creek herd (PR414)",
+     "population": 6968
+    },
+    "59": {
+     "malesPer100": 52,
+     "herd": "South Rock Springs herd (PR412)",
+     "population": 6000
+    },
+    "60": {
+     "malesPer100": 64,
+     "herd": "Red Desert herd (PR615)",
+     "population": 8502
+    },
+    "61": {
+     "malesPer100": 64,
+     "herd": "Red Desert herd (PR615)",
+     "population": 8502
+    },
+    "62": {
+     "malesPer100": 91,
+     "herd": "South Ferris herd (PR637)",
+     "population": 1387
+    },
+    "63": {
+     "malesPer100": 63,
+     "herd": "North Ferris herd (PR636)",
+     "population": 2566
+    },
+    "64": {
+     "malesPer100": 64,
+     "herd": "Red Desert herd (PR615)",
+     "population": 8502
+    },
+    "65": {
+     "malesPer100": 54,
+     "herd": "Beaver Rim herd (PR632)",
+     "population": 21625
+    },
+    "66": {
+     "malesPer100": 54,
+     "herd": "Beaver Rim herd (PR632)",
+     "population": 21625
+    },
+    "67": {
+     "malesPer100": 54,
+     "herd": "Beaver Rim herd (PR632)",
+     "population": 21625
+    },
+    "68": {
+     "malesPer100": 54,
+     "herd": "Beaver Rim herd (PR632)",
+     "population": 21625
+    },
+    "69": {
+     "malesPer100": 54,
+     "herd": "Beaver Rim herd (PR632)",
+     "population": 21625
+    },
+    "70": {
+     "malesPer100": 34,
+     "herd": "Rattlesnake herd (PR745)",
+     "population": 10270
+    },
+    "71": {
+     "malesPer100": 34,
+     "herd": "Rattlesnake herd (PR745)",
+     "population": 10270
+    },
+    "72": {
+     "malesPer100": 34,
+     "herd": "Rattlesnake herd (PR745)",
+     "population": 10270
+    },
+    "73": {
+     "malesPer100": 49,
+     "herd": "North Natrona herd (PR746)",
+     "population": 10515
+    },
+    "74": {
+     "malesPer100": 54,
+     "herd": "Beaver Rim herd (PR632)",
+     "population": 21625
+    },
+    "75": {
+     "malesPer100": 53,
+     "herd": "Badwater herd (PR634)",
+     "population": 3172
+    },
+    "78": {
+     "malesPer100": 39,
+     "herd": "Carter Mountain herd (PR205)",
+     "population": 7389
+    },
+    "80": {
+     "malesPer100": 33,
+     "herd": "Badger Basin herd (PR207)"
+    },
+    "81": {
+     "malesPer100": 39,
+     "herd": "Carter Mountain herd (PR205)",
+     "population": 7389
+    },
+    "82": {
+     "malesPer100": 39,
+     "herd": "Carter Mountain herd (PR205)",
+     "population": 7389
+    },
+    "84": {
+     "malesPer100": 24,
+     "herd": "Wind River herd (PR631)"
+    },
+    "85": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "86": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "87": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "88": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "89": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "90": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "91": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "92": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "93": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "94": {
+     "malesPer100": 55,
+     "herd": "Carter Lease herd (PR419)",
+     "population": 7310
+    },
+    "95": {
+     "malesPer100": 54,
+     "herd": "Uinta-Cedar Mountain herd (PR411)",
+     "population": 5687
+    },
+    "96": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "97": {
+     "malesPer100": 37,
+     "herd": "Project herd (PR635)"
+    },
+    "98": {
+     "malesPer100": 55,
+     "herd": "Carter Lease herd (PR419)",
+     "population": 7310
+    },
+    "99": {
+     "malesPer100": 54,
+     "herd": "Uinta-Cedar Mountain herd (PR411)",
+     "population": 5687
+    },
+    "100": {
+     "malesPer100": 55,
+     "herd": "Carter Lease herd (PR419)",
+     "population": 7310
+    },
+    "101": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "102": {
+     "malesPer100": 61,
+     "herd": "Hazelton herd (PR320)"
+    },
+    "103": {
+     "malesPer100": 51,
+     "herd": "Dwyer herd (PR524)",
+     "population": 4000
+    },
+    "106": {
+     "malesPer100": 54,
+     "herd": "Beaver Rim herd (PR632)",
+     "population": 21625
+    },
+    "107": {
+     "malesPer100": 48,
+     "herd": "Sublette herd (PR401)",
+     "population": 25250
+    },
+    "108": {
+     "malesPer100": 66,
+     "herd": "Iron Springs herd (PR630)",
+     "population": 6197
+    },
+    "111": {
+     "malesPer100": 25,
+     "herd": "Chalk Bluffs herd (PR520)"
+    },
+    "112": {
+     "malesPer100": 52,
+     "herd": "South Rock Springs herd (PR412)",
+     "population": 6000
+    },
+    "113": {
+     "malesPer100": 68,
+     "herd": "Crazy Woman herd (PR318)",
+     "population": 10900
+    },
+    "117": {
+     "malesPer100": 37,
+     "herd": "Project herd (PR635)"
+    }
+   }
+  }
+ }
+}
