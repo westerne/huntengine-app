@@ -259,13 +259,30 @@ export default function PlanView({ thisYear, years, hunts, points, homeKnown, lo
           {ahead.length > 0 && (
             <section style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <h2 className="hq-h2">Years ahead</h2>
-              {ahead.map((y) => {
+              {/* A run of empty years is one row ("2029–2031 open"), not a card
+                  each: three cards saying "Open" pushed the real hunts down. */}
+              {ahead.reduce<number[][]>((runs, y) => {
+                const empty = !hunts.some((h) => h.year === y && active(h));
+                const last = runs[runs.length - 1];
+                const lastEmpty = last && !hunts.some((h) => h.year === last[0] && active(h));
+                if (empty && lastEmpty && last[last.length - 1] === y - 1) last.push(y); else runs.push([y]);
+                return runs;
+              }, []).map((run) => {
+                const y = run[0];
                 const list = hunts.filter((h) => h.year === y && active(h));
+                if (!list.length) {
+                  const span = run.length > 1 ? `${run[0]}–${run[run.length - 1]}` : `${y}`;
+                  return (
+                    <div key={y} className="hq-open">
+                      <span><span className="hq-data" style={{ fontWeight: 700, color: 'var(--ink-soft)' }}>{span}</span> open: room for an OTC or bucket-list hunt.</span>
+                      <Button size="sm" variant="ghost" onClick={() => setAdding(true)}>Add</Button>
+                    </div>
+                  );
+                }
                 return (
                   <Card key={y} variant="flat" style={{ padding: '14px 18px' }}>
                     <p className="hq-eyebrow" style={{ marginBottom: 4 }}>{y}</p>
-                    {list.length ? <ul className="hq-list">{list.map((h) => <Row key={h.key} h={h} {...rowProps} />)}</ul>
-                      : <div className="hq-open" style={{ marginTop: 6 }}><span>Open — room for an OTC or bucket-list hunt.</span><Button size="sm" variant="ghost" onClick={() => setAdding(true)}>Add</Button></div>}
+                    <ul className="hq-list">{list.map((h) => <Row key={h.key} h={h} {...rowProps} />)}</ul>
                   </Card>
                 );
               })}

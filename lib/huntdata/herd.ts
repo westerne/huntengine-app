@@ -59,6 +59,7 @@ export type Herd = {
   source: string;
   agency: string;          // "CPW"
   text: string;            // "26 bulls per 100 cows after the 2025 season"
+  short: string;           // "26 bulls / 100 cows", "bulls avg 9.1 yrs"
   caveat: string;
 };
 
@@ -95,6 +96,7 @@ export function herdFor(state: string, speciesKey: string, unit: string | null |
     text: age
       ? `harvested ${males} averaged ${u.avgAge} years old ${u.when ?? sp.when}${goal}`
       : `${u.malesPer100} ${males} per 100 ${females} ${u.when ?? sp.when}${small}${goal}`,
+    short: age ? `harvested ${males} avg ${u.avgAge} yrs` : `${u.malesPer100} ${males} / 100 ${females}`,
     caveat: age ? AGE_CAVEAT : HERD_CAVEAT,
   };
 }

@@ -12,6 +12,7 @@ import type { Hunt, Residency, Weapon } from './schema';
 import { isAntlerless, isPrivateOnly, RESTRICTED } from './shortlist';
 import { cohortOf, matchWant } from './wants';
 import { ladderFor, ladderRows, chanceText } from './ladder';
+import { herdFor } from './herd';
 
 export type Weight = 0 | 1 | 2;                      // doesn't matter / nice / matters most
 export type Timing = 'rut' | 'early' | 'late' | null;
@@ -57,6 +58,7 @@ export type RankedHunt = {
   reasons: string[];                   // why, in plain words, best first
   unknown: string[];                   // what we couldn't score
   hunterSuccess: number | null;        // null: not published, or too few hunters to judge
+  herd: string | null;                 // the agency's herd figure, short ("26 bulls / 100 cows")
   general: boolean;
   draw: {
     now: number;                       // chance this year, 0–100
@@ -167,6 +169,7 @@ export function rankHunts(
     const likely = rows.find((r) => r.cumulative >= 50)?.year ?? null;
     return {
       huntCode: h.huntCode, unit: h.unit, label: h.label ?? null, weapon: h.weapon ?? null, season: h.season ?? null, hunterSuccess: success(h),
+      herd: herdFor(h.state, h.species, h.unit)?.short ?? null,
       fit, general: general(h),
       reasons: [...parts].sort((a, b) => b.w * b.score - a.w * a.score).map((p) => p.reason).filter(Boolean),
       unknown: unknown.filter(Boolean),

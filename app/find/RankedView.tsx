@@ -47,8 +47,8 @@ function Row({ h, r }: { h: RankedHunt; r: Result }) {
           <span className="hq-data">{h.fit}</span><span>fit</span>
         </span>
       </div>
-      <p className="hq-small" style={{ color: 'var(--ink-soft)' }}>{h.reasons.join(' · ')}</p>
-      {h.unknown.length > 0 && <p className="hq-small">Not published: {h.unknown.join(', ')}</p>}
+      <p className="hq-small" style={{ color: 'var(--ink-soft)' }}>{[...h.reasons, ...(h.herd ? [`Herd: ${h.herd}`] : [])].join(' · ')}</p>
+      {h.unknown.length > 0 && <p className="hq-small">{h.unknown.map((u, i) => (i ? u : u[0].toUpperCase() + u.slice(1))).join(' · ')}</p>}
       <p className="hq-small" style={{ color: 'var(--ink)', fontWeight: 600 }}>{drawLine(h, r.horizonYear)}</p>
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14, marginTop: 2 }}>
         <Link href={`/hunt/${encodeURIComponent(key)}`} className="hq-link hq-small">Odds as points build</Link>
