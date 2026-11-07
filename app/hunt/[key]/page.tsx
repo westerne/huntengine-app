@@ -9,7 +9,7 @@ import { getStateModule, STATE_INFO, toStateCode } from '@/lib/huntdata/registry
 import { successText } from '@/lib/huntdata/generic';
 import { ladderFor } from '@/lib/huntdata/ladder';
 import { howItDraws } from '@/lib/huntdata/weightedDraw';
-import { herdFor, HERD_CAVEAT } from '@/lib/huntdata/herd';
+import { herdFor, herdWhere, HERD_CAVEAT } from '@/lib/huntdata/herd';
 import { SPECIES_NAME, speciesKeyOf } from '@/lib/species';
 import { titleCaseState } from '@/lib/scoutData';
 import type { SpeciesKey } from '@/lib/huntdata/schema';
@@ -57,7 +57,7 @@ export default async function HuntPage({ params }: { params: Promise<{ key: stri
           hunterSuccess: hunt.harvest ? `${successText(hunt.harvest, hunt.tags)} (${hunt.harvest.year})` : null,
           drawYear: hunt.drawYear, openToYou: !hunt.openTo || hunt.openTo === residency,
           drawRules: info.drawSystemNote, howItDraws: howItDraws(hunt),
-          herd: herd ? { k: `${herd.males[0].toUpperCase()}${herd.males.slice(1)} / 100 ${herd.females}`, v: herd.malesPer100, n: `${herd.year}, CPW ${herd.herd}`, caveat: HERD_CAVEAT } : null, agencyUrl: info.agency?.url ?? null, agencyName: info.agency?.name ?? null,
+          herd: herd ? { k: `${herd.males[0].toUpperCase()}${herd.males.slice(1)} / 100 ${herd.females}`, v: herd.malesPer100, n: `${herd.year}, ${herdWhere(herd)}${herd.counted != null ? `, ${herd.counted} counted` : ''}`, caveat: herd.population != null ? `That ratio is ${herd.agency}'s estimate for the whole herd this unit belongs to. ${HERD_CAVEAT}` : `That ratio is from ${herd.agency}'s survey of this unit. ${HERD_CAVEAT}` } : null, agencyUrl: info.agency?.url ?? null, agencyName: info.agency?.name ?? null,
         }}
         residency={residency}
         ladder={ladderFor(hunt, residency)}

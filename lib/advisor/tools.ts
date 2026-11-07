@@ -21,7 +21,7 @@ import { isAntlerless, isPrivateOnly } from '../huntdata/shortlist';
 import { DEFAULT_PREFS, rankHunts, type HuntPrefs, type RankedHunt } from '../huntdata/fit';
 import { pointsSoldTo } from '../huntdata/apply';
 import { WEIGHTED_SPECIES, entryPointsFor } from '../huntdata/preferenceDraw';
-import { herdFor, HERD_CAVEAT } from '../huntdata/herd';
+import { herdFor, herdWhere, HERD_CAVEAT } from '../huntdata/herd';
 
 export type Source = { label: string; url?: string | null };
 export type ToolResult<T> = { ok: true; data: T; sources: Source[] } | { ok: false; reason: string };
@@ -248,10 +248,10 @@ export function harvestReporting(args: { state: string; species: string }): Tool
 export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; pointsNote?: string; howTheDrawWorks: string | null; applyOrBuild?: string; herd?: HerdData };
 // "Where are the bigger bulls?" The state's herd sex ratio is the honest answer
 // we have; antler size we don't.
-export type HerdData = { malesPer100: number; what: string; herd: string; herdSize: number; note: string };
+export type HerdData = { malesPer100: number; what: string; from: string; herdSize: number | null; note: string };
 const herdData = (state: string, key: string, unit: string | null | undefined): { herd?: HerdData } => {
   const h = herdFor(state, key, unit);
-  return h ? { herd: { malesPer100: h.malesPer100, what: h.text, herd: h.herd, herdSize: h.population, note: `CPW's estimate for the whole herd. ${HERD_CAVEAT}` } } : {};
+  return h ? { herd: { malesPer100: h.malesPer100, what: h.text, from: herdWhere(h), herdSize: h.population, note: `${h.population != null ? `${h.agency}'s estimate for the whole herd, not just this unit.` : `${h.agency}'s survey count.`} ${HERD_CAVEAT}` } } : {};
 };
 // The state's draw rules in plain words, so "burn points or keep building" is
 // answered for the state's actual system, not a preference draw by default.
@@ -506,7 +506,7 @@ function filterHunts(
     // Said in the data: the prompt rule alone still got one hunt back.
     howToAnswer: matches.length > 1
       ? `${matches.length} hunts match. Name the top two or three (unit, season dates, points it took to draw, their chance this year${byHerd ? ', males per 100 females' : ''}), lead with the best, and say how many matched.${byHerd ? ' Say the ratio is for the whole herd and is not antler size, and weigh it against their chance of drawing.' : ''}`
-      : matches.length ? 'One hunt matches. Say it is the only one.' : `Nothing matches. Say so, and which filter to loosen.${byHerd ? ' Herd ratios are published for Colorado elk, deer and pronghorn only.' : ''}`,
+      : matches.length ? 'One hunt matches. Say it is the only one.' : `Nothing matches. Say so, and which filter to loosen.${byHerd ? ' Herd ratios are loaded for Colorado and Arizona elk, deer and pronghorn only.' : ''}`,
   };
 }
 

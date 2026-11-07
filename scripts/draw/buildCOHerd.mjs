@@ -77,13 +77,14 @@ for (const [sp, statsUrl] of Object.entries(STATS)) {
   for (const h of herds) for (const u of h.units) seen.set(u, (seen.get(u) ?? 0) + 1);
   const twice = [...seen].filter(([, n]) => n > 1).map(([u]) => u);
   const units = {};
-  for (const h of herds) for (const u of h.units) if (!twice.includes(u)) units[u] = { dau: h.dau, population: h.population, malesPer100: h.malesPer100 };
-  out.species[sp] = { year: est.year, units };
+  for (const h of herds) for (const u of h.units) if (!twice.includes(u)) units[u] = { malesPer100: h.malesPer100, herd: `herd unit (DAU) ${h.dau}`, population: h.population };
+  // CPW counts pronghorn before the hunt, elk and deer after it.
+  out.species[sp] = { year: est.year, when: `${sp === 'ANTELOPE' ? 'before' : 'after'} the ${est.year} season`, units };
   report.push(`${sp} ${est.year}: ${herds.length} herds, ${Object.keys(units).length} units${twice.length ? `; left out (in two herds): ${twice.join(', ')}` : ''}`);
 }
 
 out.source = { name: `Colorado Parks and Wildlife — ${out.year} Population and Sex Ratio Estimates`, url: STATS.ELK };
-out.notes = `CPW's post-hunt herd estimates by DAU (a herd: one or more game management units), from ${sources.join(' ; ')}. Per unit: dau, population (CPW's estimate for the whole herd, not the unit) and malesPer100 (bulls per 100 cows for elk, bucks per 100 does for deer and pronghorn). Pronghorn figures are CPW's pre-hunt estimates. Units CPW lists under two herds are left out.`;
+out.notes = `CPW's post-hunt herd estimates by DAU (a herd: one or more game management units), from ${sources.join(' ; ')}. Per unit: herd (the DAU), population (CPW's estimate for the whole herd, not the unit) and malesPer100 (bulls per 100 cows for elk, bucks per 100 does for deer and pronghorn). Pronghorn figures are CPW's pre-hunt estimates. Units CPW lists under two herds are left out.`;
 
 writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 console.log(`wrote ${path.relative(ROOT, OUT)}`);

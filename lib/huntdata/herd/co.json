@@ -5,2240 +5,2243 @@
   "name": "Colorado Parks and Wildlife — 2025 Population and Sex Ratio Estimates",
   "url": "https://cpw.state.co.us/activities/hunting/big-game/hunting-elk/elk-statistics"
  },
- "notes": "CPW's post-hunt herd estimates by DAU (a herd: one or more game management units), from https://cpw.widen.net/s/fmhlcbms2w/2025-elk-population-and-sex-ratio-estimates ; https://cpw.widen.net/s/vxbh5s9kqg/2025-deer-population-and-sex-ratio-estimates ; https://cpw.widen.net/s/sc2cbbdgz6/2025-pronghorn-population-and-sex-ratio-estimates. Per unit: dau, population (CPW's estimate for the whole herd, not the unit) and malesPer100 (bulls per 100 cows for elk, bucks per 100 does for deer and pronghorn). Pronghorn figures are CPW's pre-hunt estimates. Units CPW lists under two herds are left out.",
+ "notes": "CPW's post-hunt herd estimates by DAU (a herd: one or more game management units), from https://cpw.widen.net/s/fmhlcbms2w/2025-elk-population-and-sex-ratio-estimates ; https://cpw.widen.net/s/vxbh5s9kqg/2025-deer-population-and-sex-ratio-estimates ; https://cpw.widen.net/s/sc2cbbdgz6/2025-pronghorn-population-and-sex-ratio-estimates. Per unit: herd (the DAU), population (CPW's estimate for the whole herd, not the unit) and malesPer100 (bulls per 100 cows for elk, bucks per 100 does for deer and pronghorn). Pronghorn figures are CPW's pre-hunt estimates. Units CPW lists under two herds are left out.",
  "species": {
   "ELK": {
    "year": 2025,
+   "when": "after the 2025 season",
    "units": {
     "2": {
-     "dau": "01",
-     "population": 1700,
-     "malesPer100": 140
+     "malesPer100": 140,
+     "herd": "herd unit (DAU) 01",
+     "population": 1700
     },
     "3": {
-     "dau": "02",
-     "population": 17070,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 02",
+     "population": 17070
     },
     "4": {
-     "dau": "02",
-     "population": 17070,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 02",
+     "population": 17070
     },
     "5": {
-     "dau": "02",
-     "population": 17070,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 02",
+     "population": 17070
     },
     "6": {
-     "dau": "03",
-     "population": 6510,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 03",
+     "population": 6510
     },
     "7": {
-     "dau": "04",
-     "population": 5550,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 04",
+     "population": 5550
     },
     "8": {
-     "dau": "04",
-     "population": 5550,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 04",
+     "population": 5550
     },
     "9": {
-     "dau": "04",
-     "population": 5550,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 04",
+     "population": 5550
     },
     "10": {
-     "dau": "21",
-     "population": 1970,
-     "malesPer100": 51
+     "malesPer100": 51,
+     "herd": "herd unit (DAU) 21",
+     "population": 1970
     },
     "11": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "12": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "13": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "14": {
-     "dau": "02",
-     "population": 17070,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 02",
+     "population": 17070
     },
     "15": {
-     "dau": "07",
-     "population": 3650,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 07",
+     "population": 3650
     },
     "16": {
-     "dau": "03",
-     "population": 6510,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 03",
+     "population": 6510
     },
     "17": {
-     "dau": "03",
-     "population": 6510,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 03",
+     "population": 6510
     },
     "18": {
-     "dau": "08",
-     "population": 3220,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 08",
+     "population": 3220
     },
     "19": {
-     "dau": "04",
-     "population": 5550,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 04",
+     "population": 5550
     },
     "20": {
-     "dau": "09",
-     "population": 2150,
-     "malesPer100": 41
+     "malesPer100": 41,
+     "herd": "herd unit (DAU) 09",
+     "population": 2150
     },
     "21": {
-     "dau": "10",
-     "population": 17890,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 10",
+     "population": 17890
     },
     "22": {
-     "dau": "10",
-     "population": 17890,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 10",
+     "population": 17890
     },
     "23": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "24": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "25": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "26": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "27": {
-     "dau": "07",
-     "population": 3650,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 07",
+     "population": 3650
     },
     "28": {
-     "dau": "13",
-     "population": 2660,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 13",
+     "population": 2660
     },
     "29": {
-     "dau": "38",
-     "population": 1560,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 38",
+     "population": 1560
     },
     "30": {
-     "dau": "10",
-     "population": 17890,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 10",
+     "population": 17890
     },
     "31": {
-     "dau": "10",
-     "population": 17890,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 10",
+     "population": 17890
     },
     "32": {
-     "dau": "10",
-     "population": 17890,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 10",
+     "population": 17890
     },
     "33": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "34": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "35": {
-     "dau": "12",
-     "population": 4370,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 12",
+     "population": 4370
     },
     "36": {
-     "dau": "12",
-     "population": 4370,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 12",
+     "population": 4370
     },
     "37": {
-     "dau": "13",
-     "population": 2660,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 13",
+     "population": 2660
     },
     "38": {
-     "dau": "38",
-     "population": 1560,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 38",
+     "population": 1560
     },
     "39": {
-     "dau": "39",
-     "population": 2180,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 39",
+     "population": 2180
     },
     "40": {
-     "dau": "19",
-     "population": 7080,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 19",
+     "population": 7080
     },
     "41": {
-     "dau": "14",
-     "population": 14840,
-     "malesPer100": 20
+     "malesPer100": 20,
+     "herd": "herd unit (DAU) 14",
+     "population": 14840
     },
     "42": {
-     "dau": "14",
-     "population": 14840,
-     "malesPer100": 20
+     "malesPer100": 20,
+     "herd": "herd unit (DAU) 14",
+     "population": 14840
     },
     "43": {
-     "dau": "15",
-     "population": 3770,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 15",
+     "population": 3770
     },
     "44": {
-     "dau": "16",
-     "population": 11930,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 16",
+     "population": 11930
     },
     "45": {
-     "dau": "16",
-     "population": 11930,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 16",
+     "population": 11930
     },
     "46": {
-     "dau": "39",
-     "population": 2180,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 39",
+     "population": 2180
     },
     "47": {
-     "dau": "16",
-     "population": 11930,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 16",
+     "population": 11930
     },
     "48": {
-     "dau": "17",
-     "population": 3470,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 17",
+     "population": 3470
     },
     "49": {
-     "dau": "22",
-     "population": 3500,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 22",
+     "population": 3500
     },
     "50": {
-     "dau": "18",
-     "population": 3300,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 18",
+     "population": 3300
     },
     "51": {
-     "dau": "51",
-     "population": 3480,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 51",
+     "population": 3480
     },
     "52": {
-     "dau": "14",
-     "population": 14840,
-     "malesPer100": 20
+     "malesPer100": 20,
+     "herd": "herd unit (DAU) 14",
+     "population": 14840
     },
     "53": {
-     "dau": "05",
-     "population": 10230,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 05",
+     "population": 10230
     },
     "54": {
-     "dau": "05",
-     "population": 10230,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 05",
+     "population": 10230
     },
     "55": {
-     "dau": "43",
-     "population": 6920,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 43",
+     "population": 6920
     },
     "56": {
-     "dau": "17",
-     "population": 3470,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 17",
+     "population": 3470
     },
     "57": {
-     "dau": "22",
-     "population": 3500,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 22",
+     "population": 3500
     },
     "58": {
-     "dau": "22",
-     "population": 3500,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 22",
+     "population": 3500
     },
     "59": {
-     "dau": "23",
-     "population": 4300,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 23",
+     "population": 4300
     },
     "60": {
-     "dau": "40",
-     "population": 1420,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 40",
+     "population": 1420
     },
     "61": {
-     "dau": "20",
-     "population": 16680,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 20",
+     "population": 16680
     },
     "62": {
-     "dau": "20",
-     "population": 16680,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 20",
+     "population": 16680
     },
     "63": {
-     "dau": "05",
-     "population": 10230,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 05",
+     "population": 10230
     },
     "66": {
-     "dau": "25",
-     "population": 6110,
-     "malesPer100": 13
+     "malesPer100": 13,
+     "herd": "herd unit (DAU) 25",
+     "population": 6110
     },
     "67": {
-     "dau": "25",
-     "population": 6110,
-     "malesPer100": 13
+     "malesPer100": 13,
+     "herd": "herd unit (DAU) 25",
+     "population": 6110
     },
     "68": {
-     "dau": "26",
-     "population": 5580,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 26",
+     "population": 5580
     },
     "69": {
-     "dau": "28",
-     "population": 2360,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 28",
+     "population": 2360
     },
     "70": {
-     "dau": "24",
-     "population": 30320,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 24",
+     "population": 30320
     },
     "71": {
-     "dau": "24",
-     "population": 30320,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 24",
+     "population": 30320
     },
     "72": {
-     "dau": "24",
-     "population": 30320,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 24",
+     "population": 30320
     },
     "73": {
-     "dau": "24",
-     "population": 30320,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 24",
+     "population": 30320
     },
     "74": {
-     "dau": "30",
-     "population": 6710,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 30",
+     "population": 6710
     },
     "75": {
-     "dau": "31",
-     "population": 32320,
-     "malesPer100": 13
+     "malesPer100": 13,
+     "herd": "herd unit (DAU) 31",
+     "population": 32320
     },
     "76": {
-     "dau": "34",
-     "population": 4460,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 34",
+     "population": 4460
     },
     "77": {
-     "dau": "31",
-     "population": 32320,
-     "malesPer100": 13
+     "malesPer100": 13,
+     "herd": "herd unit (DAU) 31",
+     "population": 32320
     },
     "78": {
-     "dau": "31",
-     "population": 32320,
-     "malesPer100": 13
+     "malesPer100": 13,
+     "herd": "herd unit (DAU) 31",
+     "population": 32320
     },
     "79": {
-     "dau": "34",
-     "population": 4460,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 34",
+     "population": 4460
     },
     "80": {
-     "dau": "32",
-     "population": 14860,
-     "malesPer100": 20
+     "malesPer100": 20,
+     "herd": "herd unit (DAU) 32",
+     "population": 14860
     },
     "81": {
-     "dau": "32",
-     "population": 14860,
-     "malesPer100": 20
+     "malesPer100": 20,
+     "herd": "herd unit (DAU) 32",
+     "population": 14860
     },
     "82": {
-     "dau": "11",
-     "population": 6080,
-     "malesPer100": 47
+     "malesPer100": 47,
+     "herd": "herd unit (DAU) 11",
+     "population": 6080
     },
     "83": {
-     "dau": "33",
-     "population": 14470,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 33",
+     "population": 14470
     },
     "84": {
-     "dau": "28",
-     "population": 2360,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 28",
+     "population": 2360
     },
     "85": {
-     "dau": "33",
-     "population": 14470,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 33",
+     "population": 14470
     },
     "86": {
-     "dau": "27",
-     "population": 3150,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 27",
+     "population": 3150
     },
     "104": {
-     "dau": "51",
-     "population": 3480,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 51",
+     "population": 3480
     },
     "105": {
-     "dau": "51",
-     "population": 3480,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 51",
+     "population": 3480
     },
     "106": {
-     "dau": "51",
-     "population": 3480,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 51",
+     "population": 3480
     },
     "110": {
-     "dau": "51",
-     "population": 3480,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 51",
+     "population": 3480
     },
     "111": {
-     "dau": "51",
-     "population": 3480,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 51",
+     "population": 3480
     },
     "131": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "133": {
-     "dau": "53",
-     "population": 1510,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 53",
+     "population": 1510
     },
     "134": {
-     "dau": "53",
-     "population": 1510,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 53",
+     "population": 1510
     },
     "135": {
-     "dau": "53",
-     "population": 1510,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 53",
+     "population": 1510
     },
     "140": {
-     "dau": "33",
-     "population": 14470,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 33",
+     "population": 14470
     },
     "141": {
-     "dau": "53",
-     "population": 1510,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 53",
+     "population": 1510
     },
     "142": {
-     "dau": "53",
-     "population": 1510,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 53",
+     "population": 1510
     },
     "161": {
-     "dau": "03",
-     "population": 6510,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 03",
+     "population": 6510
     },
     "171": {
-     "dau": "03",
-     "population": 6510,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 03",
+     "population": 6510
     },
     "181": {
-     "dau": "08",
-     "population": 3220,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 08",
+     "population": 3220
     },
     "191": {
-     "dau": "04",
-     "population": 5550,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 04",
+     "population": 5550
     },
     "201": {
-     "dau": "01",
-     "population": 1700,
-     "malesPer100": 140
+     "malesPer100": 140,
+     "herd": "herd unit (DAU) 01",
+     "population": 1700
     },
     "211": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "214": {
-     "dau": "02",
-     "population": 17070,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 02",
+     "population": 17070
     },
     "231": {
-     "dau": "06",
-     "population": 42470,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 06",
+     "population": 42470
     },
     "301": {
-     "dau": "02",
-     "population": 17070,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 02",
+     "population": 17070
     },
     "371": {
-     "dau": "13",
-     "population": 2660,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 13",
+     "population": 2660
     },
     "391": {
-     "dau": "39",
-     "population": 2180,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 39",
+     "population": 2180
     },
     "411": {
-     "dau": "14",
-     "population": 14840,
-     "malesPer100": 20
+     "malesPer100": 20,
+     "herd": "herd unit (DAU) 14",
+     "population": 14840
     },
     "421": {
-     "dau": "14",
-     "population": 14840,
-     "malesPer100": 20
+     "malesPer100": 20,
+     "herd": "herd unit (DAU) 14",
+     "population": 14840
     },
     "431": {
-     "dau": "15",
-     "population": 3770,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 15",
+     "population": 3770
     },
     "441": {
-     "dau": "02",
-     "population": 17070,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 02",
+     "population": 17070
     },
     "444": {
-     "dau": "16",
-     "population": 11930,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 16",
+     "population": 11930
     },
     "461": {
-     "dau": "39",
-     "population": 2180,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 39",
+     "population": 2180
     },
     "471": {
-     "dau": "15",
-     "population": 3770,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 15",
+     "population": 3770
     },
     "481": {
-     "dau": "17",
-     "population": 3470,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 17",
+     "population": 3470
     },
     "500": {
-     "dau": "18",
-     "population": 3300,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 18",
+     "population": 3300
     },
     "501": {
-     "dau": "18",
-     "population": 3300,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 18",
+     "population": 3300
     },
     "511": {
-     "dau": "23",
-     "population": 4300,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 23",
+     "population": 4300
     },
     "512": {
-     "dau": "23",
-     "population": 4300,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 23",
+     "population": 4300
     },
     "521": {
-     "dau": "14",
-     "population": 14840,
-     "malesPer100": 20
+     "malesPer100": 20,
+     "herd": "herd unit (DAU) 14",
+     "population": 14840
     },
     "551": {
-     "dau": "43",
-     "population": 6920,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 43",
+     "population": 6920
     },
     "561": {
-     "dau": "17",
-     "population": 3470,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 17",
+     "population": 3470
     },
     "581": {
-     "dau": "23",
-     "population": 4300,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 23",
+     "population": 4300
     },
     "591": {
-     "dau": "23",
-     "population": 4300,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 23",
+     "population": 4300
     },
     "681": {
-     "dau": "26",
-     "population": 5580,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 26",
+     "population": 5580
     },
     "682": {
-     "dau": "55",
-     "population": 150,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 55",
+     "population": 150
     },
     "691": {
-     "dau": "27",
-     "population": 3150,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 27",
+     "population": 3150
     },
     "711": {
-     "dau": "24",
-     "population": 30320,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 24",
+     "population": 30320
     },
     "741": {
-     "dau": "30",
-     "population": 6710,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 30",
+     "population": 6710
     },
     "751": {
-     "dau": "31",
-     "population": 32320,
-     "malesPer100": 13
+     "malesPer100": 13,
+     "herd": "herd unit (DAU) 31",
+     "population": 32320
     },
     "771": {
-     "dau": "31",
-     "population": 32320,
-     "malesPer100": 13
+     "malesPer100": 13,
+     "herd": "herd unit (DAU) 31",
+     "population": 32320
     },
     "791": {
-     "dau": "55",
-     "population": 150,
-     "malesPer100": 14
+     "malesPer100": 14,
+     "herd": "herd unit (DAU) 55",
+     "population": 150
     },
     "851": {
-     "dau": "33",
-     "population": 14470,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 33",
+     "population": 14470
     },
     "861": {
-     "dau": "27",
-     "population": 3150,
-     "malesPer100": 22
+     "malesPer100": 22,
+     "herd": "herd unit (DAU) 27",
+     "population": 3150
     }
    }
   },
   "DEER": {
    "year": 2025,
+   "when": "after the 2025 season",
    "units": {
     "1": {
-     "dau": "01",
-     "population": 1270,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 01",
+     "population": 1270
     },
     "2": {
-     "dau": "01",
-     "population": 1270,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 01",
+     "population": 1270
     },
     "3": {
-     "dau": "02",
-     "population": 24620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 02",
+     "population": 24620
     },
     "4": {
-     "dau": "02",
-     "population": 24620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 02",
+     "population": 24620
     },
     "5": {
-     "dau": "02",
-     "population": 24620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 02",
+     "population": 24620
     },
     "6": {
-     "dau": "03",
-     "population": 4830,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 03",
+     "population": 4830
     },
     "7": {
-     "dau": "04",
-     "population": 12350,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 04",
+     "population": 12350
     },
     "8": {
-     "dau": "04",
-     "population": 12350,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 04",
+     "population": 12350
     },
     "9": {
-     "dau": "04",
-     "population": 12350,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 04",
+     "population": 12350
     },
     "10": {
-     "dau": "06",
-     "population": 980,
-     "malesPer100": 41
+     "malesPer100": 41,
+     "herd": "herd unit (DAU) 06",
+     "population": 980
     },
     "11": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "12": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "13": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "14": {
-     "dau": "02",
-     "population": 24620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 02",
+     "population": 24620
     },
     "15": {
-     "dau": "08",
-     "population": 12790,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 08",
+     "population": 12790
     },
     "16": {
-     "dau": "03",
-     "population": 4830,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 03",
+     "population": 4830
     },
     "17": {
-     "dau": "03",
-     "population": 4830,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 03",
+     "population": 4830
     },
     "18": {
-     "dau": "09",
-     "population": 10700,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 09",
+     "population": 10700
     },
     "19": {
-     "dau": "04",
-     "population": 12350,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 04",
+     "population": 12350
     },
     "20": {
-     "dau": "10",
-     "population": 8840,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 10",
+     "population": 8840
     },
     "21": {
-     "dau": "11",
-     "population": 7970,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 11",
+     "population": 7970
     },
     "22": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "23": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "24": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "25": {
-     "dau": "43",
-     "population": 7900,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 43",
+     "population": 7900
     },
     "26": {
-     "dau": "43",
-     "population": 7900,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 43",
+     "population": 7900
     },
     "27": {
-     "dau": "09",
-     "population": 10700,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 09",
+     "population": 10700
     },
     "28": {
-     "dau": "09",
-     "population": 10700,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 09",
+     "population": 10700
     },
     "29": {
-     "dau": "27",
-     "population": 6630,
-     "malesPer100": 57
+     "malesPer100": 57,
+     "herd": "herd unit (DAU) 27",
+     "population": 6630
     },
     "30": {
-     "dau": "11",
-     "population": 7970,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 11",
+     "population": 7970
     },
     "31": {
-     "dau": "41",
-     "population": 5110,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 41",
+     "population": 5110
     },
     "32": {
-     "dau": "41",
-     "population": 5110,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 41",
+     "population": 5110
     },
     "33": {
-     "dau": "42",
-     "population": 5430,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 42",
+     "population": 5430
     },
     "34": {
-     "dau": "43",
-     "population": 7900,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 43",
+     "population": 7900
     },
     "35": {
-     "dau": "08",
-     "population": 12790,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 08",
+     "population": 12790
     },
     "36": {
-     "dau": "08",
-     "population": 12790,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 08",
+     "population": 12790
     },
     "37": {
-     "dau": "09",
-     "population": 10700,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 09",
+     "population": 10700
     },
     "38": {
-     "dau": "27",
-     "population": 6630,
-     "malesPer100": 57
+     "malesPer100": 57,
+     "herd": "herd unit (DAU) 27",
+     "population": 6630
     },
     "39": {
-     "dau": "17",
-     "population": 5620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 17",
+     "population": 5620
     },
     "40": {
-     "dau": "18",
-     "population": 4320,
-     "malesPer100": 35
+     "malesPer100": 35,
+     "herd": "herd unit (DAU) 18",
+     "population": 4320
     },
     "41": {
-     "dau": "12",
-     "population": 19030,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 12",
+     "population": 19030
     },
     "42": {
-     "dau": "12",
-     "population": 19030,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 12",
+     "population": 19030
     },
     "43": {
-     "dau": "13",
-     "population": 5470,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 13",
+     "population": 5470
     },
     "44": {
-     "dau": "14",
-     "population": 2540,
-     "malesPer100": 38
+     "malesPer100": 38,
+     "herd": "herd unit (DAU) 14",
+     "population": 2540
     },
     "45": {
-     "dau": "08",
-     "population": 12790,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 08",
+     "population": 12790
     },
     "46": {
-     "dau": "17",
-     "population": 5620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 17",
+     "population": 5620
     },
     "47": {
-     "dau": "13",
-     "population": 5470,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 13",
+     "population": 5470
     },
     "48": {
-     "dau": "15",
-     "population": 3580,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 15",
+     "population": 3580
     },
     "49": {
-     "dau": "16",
-     "population": 11030,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 16",
+     "population": 11030
     },
     "50": {
-     "dau": "38",
-     "population": 2660,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 38",
+     "population": 2660
     },
     "51": {
-     "dau": "17",
-     "population": 5620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 17",
+     "population": 5620
     },
     "52": {
-     "dau": "51",
-     "population": 9250,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 51",
+     "population": 9250
     },
     "53": {
-     "dau": "20",
-     "population": 8430,
-     "malesPer100": 38
+     "malesPer100": 38,
+     "herd": "herd unit (DAU) 20",
+     "population": 8430
     },
     "54": {
-     "dau": "57",
-     "population": 18730,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 57",
+     "population": 18730
     },
     "55": {
-     "dau": "57",
-     "population": 18730,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 57",
+     "population": 18730
     },
     "56": {
-     "dau": "15",
-     "population": 3580,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 15",
+     "population": 3580
     },
     "57": {
-     "dau": "16",
-     "population": 11030,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 16",
+     "population": 11030
     },
     "58": {
-     "dau": "16",
-     "population": 11030,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 16",
+     "population": 11030
     },
     "59": {
-     "dau": "50",
-     "population": 3800,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 50",
+     "population": 3800
     },
     "60": {
-     "dau": "23",
-     "population": 2120,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 23",
+     "population": 2120
     },
     "61": {
-     "dau": "19",
-     "population": 13580,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 19",
+     "population": 13580
     },
     "62": {
-     "dau": "19",
-     "population": 13580,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 19",
+     "population": 13580
     },
     "63": {
-     "dau": "20",
-     "population": 8430,
-     "malesPer100": 38
+     "malesPer100": 38,
+     "herd": "herd unit (DAU) 20",
+     "population": 8430
     },
     "64": {
-     "dau": "40",
-     "population": 7950,
-     "malesPer100": 36
+     "malesPer100": 36,
+     "herd": "herd unit (DAU) 40",
+     "population": 7950
     },
     "65": {
-     "dau": "40",
-     "population": 7950,
-     "malesPer100": 36
+     "malesPer100": 36,
+     "herd": "herd unit (DAU) 40",
+     "population": 7950
     },
     "66": {
-     "dau": "57",
-     "population": 18730,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 57",
+     "population": 18730
     },
     "67": {
-     "dau": "57",
-     "population": 18730,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 57",
+     "population": 18730
     },
     "68": {
-     "dau": "26",
-     "population": 5760,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 26",
+     "population": 5760
     },
     "69": {
-     "dau": "34",
-     "population": 13740,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 34",
+     "population": 13740
     },
     "70": {
-     "dau": "24",
-     "population": 21760,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 24",
+     "population": 21760
     },
     "71": {
-     "dau": "24",
-     "population": 21760,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 24",
+     "population": 21760
     },
     "72": {
-     "dau": "29",
-     "population": 10670,
-     "malesPer100": 36
+     "malesPer100": 36,
+     "herd": "herd unit (DAU) 29",
+     "population": 10670
     },
     "73": {
-     "dau": "29",
-     "population": 10670,
-     "malesPer100": 36
+     "malesPer100": 36,
+     "herd": "herd unit (DAU) 29",
+     "population": 10670
     },
     "74": {
-     "dau": "52",
-     "population": 5330,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 52",
+     "population": 5330
     },
     "75": {
-     "dau": "30",
-     "population": 25290,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 30",
+     "population": 25290
     },
     "76": {
-     "dau": "36",
-     "population": 3130,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 36",
+     "population": 3130
     },
     "77": {
-     "dau": "30",
-     "population": 25290,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 30",
+     "population": 25290
     },
     "78": {
-     "dau": "30",
-     "population": 25290,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 30",
+     "population": 25290
     },
     "79": {
-     "dau": "36",
-     "population": 3130,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 36",
+     "population": 3130
     },
     "80": {
-     "dau": "35",
-     "population": 7390,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 35",
+     "population": 7390
     },
     "81": {
-     "dau": "35",
-     "population": 7390,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 35",
+     "population": 7390
     },
     "82": {
-     "dau": "56",
-     "population": 4040,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 56",
+     "population": 4040
     },
     "83": {
-     "dau": "56",
-     "population": 4040,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 56",
+     "population": 4040
     },
     "84": {
-     "dau": "34",
-     "population": 13740,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 34",
+     "population": 13740
     },
     "85": {
-     "dau": "32",
-     "population": 8370,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 32",
+     "population": 8370
     },
     "86": {
-     "dau": "34",
-     "population": 13740,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 34",
+     "population": 13740
     },
     "87": {
-     "dau": "05",
-     "population": 2130,
-     "malesPer100": 38
+     "malesPer100": 38,
+     "herd": "herd unit (DAU) 05",
+     "population": 2130
     },
     "88": {
-     "dau": "05",
-     "population": 2130,
-     "malesPer100": 38
+     "malesPer100": 38,
+     "herd": "herd unit (DAU) 05",
+     "population": 2130
     },
     "89": {
-     "dau": "05",
-     "population": 2130,
-     "malesPer100": 38
+     "malesPer100": 38,
+     "herd": "herd unit (DAU) 05",
+     "population": 2130
     },
     "90": {
-     "dau": "05",
-     "population": 2130,
-     "malesPer100": 38
+     "malesPer100": 38,
+     "herd": "herd unit (DAU) 05",
+     "population": 2130
     },
     "91": {
-     "dau": "44",
-     "population": 3420,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 44",
+     "population": 3420
     },
     "92": {
-     "dau": "44",
-     "population": 3420,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 44",
+     "population": 3420
     },
     "93": {
-     "dau": "54",
-     "population": 3530,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 54",
+     "population": 3530
     },
     "94": {
-     "dau": "44",
-     "population": 3420,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 44",
+     "population": 3420
     },
     "95": {
-     "dau": "05",
-     "population": 2130,
-     "malesPer100": 38
+     "malesPer100": 38,
+     "herd": "herd unit (DAU) 05",
+     "population": 2130
     },
     "96": {
-     "dau": "44",
-     "population": 3420,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 44",
+     "population": 3420
     },
     "97": {
-     "dau": "54",
-     "population": 3530,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 54",
+     "population": 3530
     },
     "98": {
-     "dau": "54",
-     "population": 3530,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 54",
+     "population": 3530
     },
     "99": {
-     "dau": "54",
-     "population": 3530,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 54",
+     "population": 3530
     },
     "100": {
-     "dau": "54",
-     "population": 3530,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 54",
+     "population": 3530
     },
     "101": {
-     "dau": "55",
-     "population": 1990,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 55",
+     "population": 1990
     },
     "102": {
-     "dau": "55",
-     "population": 1990,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 55",
+     "population": 1990
     },
     "103": {
-     "dau": "47",
-     "population": 3340,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 47",
+     "population": 3340
     },
     "104": {
-     "dau": "49",
-     "population": 5250,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 49",
+     "population": 5250
     },
     "105": {
-     "dau": "49",
-     "population": 5250,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 49",
+     "population": 5250
     },
     "106": {
-     "dau": "49",
-     "population": 5250,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 49",
+     "population": 5250
     },
     "107": {
-     "dau": "46",
-     "population": 3930,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 46",
+     "population": 3930
     },
     "109": {
-     "dau": "47",
-     "population": 3340,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 47",
+     "population": 3340
     },
     "110": {
-     "dau": "48",
-     "population": 3770,
-     "malesPer100": 18
+     "malesPer100": 18,
+     "herd": "herd unit (DAU) 48",
+     "population": 3770
     },
     "111": {
-     "dau": "48",
-     "population": 3770,
-     "malesPer100": 18
+     "malesPer100": 18,
+     "herd": "herd unit (DAU) 48",
+     "population": 3770
     },
     "112": {
-     "dau": "46",
-     "population": 3930,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 46",
+     "population": 3930
     },
     "113": {
-     "dau": "46",
-     "population": 3930,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 46",
+     "population": 3930
     },
     "114": {
-     "dau": "46",
-     "population": 3930,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 46",
+     "population": 3930
     },
     "115": {
-     "dau": "46",
-     "population": 3930,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 46",
+     "population": 3930
     },
     "116": {
-     "dau": "47",
-     "population": 3340,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 47",
+     "population": 3340
     },
     "117": {
-     "dau": "47",
-     "population": 3340,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 47",
+     "population": 3340
     },
     "118": {
-     "dau": "48",
-     "population": 3770,
-     "malesPer100": 18
+     "malesPer100": 18,
+     "herd": "herd unit (DAU) 48",
+     "population": 3770
     },
     "119": {
-     "dau": "48",
-     "population": 3770,
-     "malesPer100": 18
+     "malesPer100": 18,
+     "herd": "herd unit (DAU) 48",
+     "population": 3770
     },
     "120": {
-     "dau": "46",
-     "population": 3930,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 46",
+     "population": 3930
     },
     "121": {
-     "dau": "46",
-     "population": 3930,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 46",
+     "population": 3930
     },
     "122": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "123": {
-     "dau": "48",
-     "population": 3770,
-     "malesPer100": 18
+     "malesPer100": 18,
+     "herd": "herd unit (DAU) 48",
+     "population": 3770
     },
     "124": {
-     "dau": "48",
-     "population": 3770,
-     "malesPer100": 18
+     "malesPer100": 18,
+     "herd": "herd unit (DAU) 48",
+     "population": 3770
     },
     "125": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "126": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "127": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "128": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "129": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "130": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "131": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "132": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "133": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "134": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "135": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "136": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "137": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "138": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "139": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "140": {
-     "dau": "32",
-     "population": 8370,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 32",
+     "population": 8370
     },
     "141": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "142": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "143": {
-     "dau": "33",
-     "population": 2350,
-     "malesPer100": 50
+     "malesPer100": 50,
+     "herd": "herd unit (DAU) 33",
+     "population": 2350
     },
     "144": {
-     "dau": "33",
-     "population": 2350,
-     "malesPer100": 50
+     "malesPer100": 50,
+     "herd": "herd unit (DAU) 33",
+     "population": 2350
     },
     "145": {
-     "dau": "33",
-     "population": 2350,
-     "malesPer100": 50
+     "malesPer100": 50,
+     "herd": "herd unit (DAU) 33",
+     "population": 2350
     },
     "146": {
-     "dau": "28",
-     "population": 6520,
-     "malesPer100": 23
+     "malesPer100": 23,
+     "herd": "herd unit (DAU) 28",
+     "population": 6520
     },
     "147": {
-     "dau": "45",
-     "population": 3530,
-     "malesPer100": 39
+     "malesPer100": 39,
+     "herd": "herd unit (DAU) 45",
+     "population": 3530
     },
     "161": {
-     "dau": "03",
-     "population": 4830,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 03",
+     "population": 4830
     },
     "171": {
-     "dau": "03",
-     "population": 4830,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 03",
+     "population": 4830
     },
     "181": {
-     "dau": "09",
-     "population": 10700,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 09",
+     "population": 10700
     },
     "191": {
-     "dau": "04",
-     "population": 12350,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 04",
+     "population": 12350
     },
     "201": {
-     "dau": "01",
-     "population": 1270,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 01",
+     "population": 1270
     },
     "211": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "214": {
-     "dau": "02",
-     "population": 24620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 02",
+     "population": 24620
     },
     "231": {
-     "dau": "07",
-     "population": 31170,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 07",
+     "population": 31170
     },
     "301": {
-     "dau": "02",
-     "population": 24620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 02",
+     "population": 24620
     },
     "371": {
-     "dau": "09",
-     "population": 10700,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 09",
+     "population": 10700
     },
     "391": {
-     "dau": "17",
-     "population": 5620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 17",
+     "population": 5620
     },
     "411": {
-     "dau": "51",
-     "population": 9250,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 51",
+     "population": 9250
     },
     "421": {
-     "dau": "12",
-     "population": 19030,
-     "malesPer100": 29
+     "malesPer100": 29,
+     "herd": "herd unit (DAU) 12",
+     "population": 19030
     },
     "431": {
-     "dau": "13",
-     "population": 5470,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 13",
+     "population": 5470
     },
     "441": {
-     "dau": "02",
-     "population": 24620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 02",
+     "population": 24620
     },
     "444": {
-     "dau": "53",
-     "population": 3590,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 53",
+     "population": 3590
     },
     "461": {
-     "dau": "17",
-     "population": 5620,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 17",
+     "population": 5620
     },
     "471": {
-     "dau": "13",
-     "population": 5470,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 13",
+     "population": 5470
     },
     "481": {
-     "dau": "15",
-     "population": 3580,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 15",
+     "population": 3580
     },
     "500": {
-     "dau": "38",
-     "population": 2660,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 38",
+     "population": 2660
     },
     "501": {
-     "dau": "38",
-     "population": 2660,
-     "malesPer100": 26
+     "malesPer100": 26,
+     "herd": "herd unit (DAU) 38",
+     "population": 2660
     },
     "511": {
-     "dau": "50",
-     "population": 3800,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 50",
+     "population": 3800
     },
     "512": {
-     "dau": "50",
-     "population": 3800,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 50",
+     "population": 3800
     },
     "521": {
-     "dau": "51",
-     "population": 9250,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 51",
+     "population": 9250
     },
     "551": {
-     "dau": "57",
-     "population": 18730,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 57",
+     "population": 18730
     },
     "561": {
-     "dau": "15",
-     "population": 3580,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 15",
+     "population": 3580
     },
     "581": {
-     "dau": "16",
-     "population": 11030,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 16",
+     "population": 11030
     },
     "591": {
-     "dau": "50",
-     "population": 3800,
-     "malesPer100": 30
+     "malesPer100": 30,
+     "herd": "herd unit (DAU) 50",
+     "population": 3800
     },
     "681": {
-     "dau": "26",
-     "population": 5760,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 26",
+     "population": 5760
     },
     "682": {
-     "dau": "26",
-     "population": 5760,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 26",
+     "population": 5760
     },
     "691": {
-     "dau": "34",
-     "population": 13740,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 34",
+     "population": 13740
     },
     "711": {
-     "dau": "24",
-     "population": 21760,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 24",
+     "population": 21760
     },
     "741": {
-     "dau": "52",
-     "population": 5330,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 52",
+     "population": 5330
     },
     "751": {
-     "dau": "30",
-     "population": 25290,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 30",
+     "population": 25290
     },
     "771": {
-     "dau": "30",
-     "population": 25290,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 30",
+     "population": 25290
     },
     "791": {
-     "dau": "36",
-     "population": 3130,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 36",
+     "population": 3130
     },
     "851": {
-     "dau": "32",
-     "population": 8370,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 32",
+     "population": 8370
     },
     "861": {
-     "dau": "34",
-     "population": 13740,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 34",
+     "population": 13740
     },
     "951": {
-     "dau": "44",
-     "population": 3420,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 44",
+     "population": 3420
     }
    }
   },
   "ANTELOPE": {
    "year": 2025,
+   "when": "before the 2025 season",
    "units": {
     "1": {
-     "dau": "11",
-     "population": 1380,
-     "malesPer100": 47
+     "malesPer100": 47,
+     "herd": "herd unit (DAU) 11",
+     "population": 1380
     },
     "2": {
-     "dau": "11",
-     "population": 1380,
-     "malesPer100": 47
+     "malesPer100": 47,
+     "herd": "herd unit (DAU) 11",
+     "population": 1380
     },
     "3": {
-     "dau": "09",
-     "population": 11160,
-     "malesPer100": 48
+     "malesPer100": 48,
+     "herd": "herd unit (DAU) 09",
+     "population": 11160
     },
     "4": {
-     "dau": "09",
-     "population": 11160,
-     "malesPer100": 48
+     "malesPer100": 48,
+     "herd": "herd unit (DAU) 09",
+     "population": 11160
     },
     "5": {
-     "dau": "09",
-     "population": 11160,
-     "malesPer100": 48
+     "malesPer100": 48,
+     "herd": "herd unit (DAU) 09",
+     "population": 11160
     },
     "6": {
-     "dau": "03",
-     "population": 1770,
-     "malesPer100": 56
+     "malesPer100": 56,
+     "herd": "herd unit (DAU) 03",
+     "population": 1770
     },
     "7": {
-     "dau": "36",
-     "population": 710,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 36",
+     "population": 710
     },
     "8": {
-     "dau": "36",
-     "population": 710,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 36",
+     "population": 710
     },
     "9": {
-     "dau": "33",
-     "population": 1190,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 33",
+     "population": 1190
     },
     "10": {
-     "dau": "21",
-     "population": 120,
-     "malesPer100": 82
+     "malesPer100": 82,
+     "herd": "herd unit (DAU) 21",
+     "population": 120
     },
     "11": {
-     "dau": "10",
-     "population": 630,
-     "malesPer100": 52
+     "malesPer100": 52,
+     "herd": "herd unit (DAU) 10",
+     "population": 630
     },
     "12": {
-     "dau": "34",
-     "population": 260,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 34",
+     "population": 260
     },
     "13": {
-     "dau": "09",
-     "population": 11160,
-     "malesPer100": 48
+     "malesPer100": 48,
+     "herd": "herd unit (DAU) 09",
+     "population": 11160
     },
     "14": {
-     "dau": "09",
-     "population": 11160,
-     "malesPer100": 48
+     "malesPer100": 48,
+     "herd": "herd unit (DAU) 09",
+     "population": 11160
     },
     "15": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "16": {
-     "dau": "03",
-     "population": 1770,
-     "malesPer100": 56
+     "malesPer100": 56,
+     "herd": "herd unit (DAU) 03",
+     "population": 1770
     },
     "17": {
-     "dau": "03",
-     "population": 1770,
-     "malesPer100": 56
+     "malesPer100": 56,
+     "herd": "herd unit (DAU) 03",
+     "population": 1770
     },
     "18": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "19": {
-     "dau": "33",
-     "population": 1190,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 33",
+     "population": 1190
     },
     "21": {
-     "dau": "21",
-     "population": 120,
-     "malesPer100": 82
+     "malesPer100": 82,
+     "herd": "herd unit (DAU) 21",
+     "population": 120
     },
     "23": {
-     "dau": "34",
-     "population": 260,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 34",
+     "population": 260
     },
     "26": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "27": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "28": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "37": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "48": {
-     "dau": "39",
-     "population": 270,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 39",
+     "population": 270
     },
     "49": {
-     "dau": "30",
-     "population": 1290,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 30",
+     "population": 1290
     },
     "50": {
-     "dau": "30",
-     "population": 1290,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 30",
+     "population": 1290
     },
     "51": {
-     "dau": "35",
-     "population": 3800,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 35",
+     "population": 3800
     },
     "56": {
-     "dau": "39",
-     "population": 270,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 39",
+     "population": 270
     },
     "57": {
-     "dau": "30",
-     "population": 1290,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 30",
+     "population": 1290
     },
     "58": {
-     "dau": "30",
-     "population": 1290,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 30",
+     "population": 1290
     },
     "59": {
-     "dau": "31",
-     "population": 220,
-     "malesPer100": 80
+     "malesPer100": 80,
+     "herd": "herd unit (DAU) 31",
+     "population": 220
     },
     "66": {
-     "dau": "23",
-     "population": 490,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 23",
+     "population": 490
     },
     "67": {
-     "dau": "23",
-     "population": 490,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 23",
+     "population": 490
     },
     "68": {
-     "dau": "14",
-     "population": 1950,
-     "malesPer100": 15
+     "malesPer100": 15,
+     "herd": "herd unit (DAU) 14",
+     "population": 1950
     },
     "69": {
-     "dau": "20",
-     "population": 3110,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 20",
+     "population": 3110
     },
     "79": {
-     "dau": "14",
-     "population": 1950,
-     "malesPer100": 15
+     "malesPer100": 15,
+     "herd": "herd unit (DAU) 14",
+     "population": 1950
     },
     "80": {
-     "dau": "16",
-     "population": 1360,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 16",
+     "population": 1360
     },
     "81": {
-     "dau": "16",
-     "population": 1360,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 16",
+     "population": 1360
     },
     "82": {
-     "dau": "14",
-     "population": 1950,
-     "malesPer100": 15
+     "malesPer100": 15,
+     "herd": "herd unit (DAU) 14",
+     "population": 1950
     },
     "83": {
-     "dau": "16",
-     "population": 1360,
-     "malesPer100": 37
+     "malesPer100": 37,
+     "herd": "herd unit (DAU) 16",
+     "population": 1360
     },
     "84": {
-     "dau": "20",
-     "population": 3110,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 20",
+     "population": 3110
     },
     "85": {
-     "dau": "20",
-     "population": 3110,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 20",
+     "population": 3110
     },
     "86": {
-     "dau": "20",
-     "population": 3110,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 20",
+     "population": 3110
     },
     "87": {
-     "dau": "01",
-     "population": 6100,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 01",
+     "population": 6100
     },
     "88": {
-     "dau": "01",
-     "population": 6100,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 01",
+     "population": 6100
     },
     "89": {
-     "dau": "01",
-     "population": 6100,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 01",
+     "population": 6100
     },
     "90": {
-     "dau": "01",
-     "population": 6100,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 01",
+     "population": 6100
     },
     "93": {
-     "dau": "04",
-     "population": 760,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 04",
+     "population": 760
     },
     "94": {
-     "dau": "01",
-     "population": 6100,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 01",
+     "population": 6100
     },
     "95": {
-     "dau": "01",
-     "population": 6100,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 01",
+     "population": 6100
     },
     "97": {
-     "dau": "04",
-     "population": 760,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 04",
+     "population": 760
     },
     "98": {
-     "dau": "04",
-     "population": 760,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 04",
+     "population": 760
     },
     "99": {
-     "dau": "02",
-     "population": 1160,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 02",
+     "population": 1160
     },
     "100": {
-     "dau": "02",
-     "population": 1160,
-     "malesPer100": 31
+     "malesPer100": 31,
+     "herd": "herd unit (DAU) 02",
+     "population": 1160
     },
     "101": {
-     "dau": "04",
-     "population": 760,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 04",
+     "population": 760
     },
     "102": {
-     "dau": "04",
-     "population": 760,
-     "malesPer100": 21
+     "malesPer100": 21,
+     "herd": "herd unit (DAU) 04",
+     "population": 760
     },
     "103": {
-     "dau": "19",
-     "population": 2670,
-     "malesPer100": 16
+     "malesPer100": 16,
+     "herd": "herd unit (DAU) 19",
+     "population": 2670
     },
     "104": {
-     "dau": "35",
-     "population": 3800,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 35",
+     "population": 3800
     },
     "105": {
-     "dau": "35",
-     "population": 3800,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 35",
+     "population": 3800
     },
     "106": {
-     "dau": "19",
-     "population": 2670,
-     "malesPer100": 16
+     "malesPer100": 16,
+     "herd": "herd unit (DAU) 19",
+     "population": 2670
     },
     "107": {
-     "dau": "19",
-     "population": 2670,
-     "malesPer100": 16
+     "malesPer100": 16,
+     "herd": "herd unit (DAU) 19",
+     "population": 2670
     },
     "109": {
-     "dau": "19",
-     "population": 2670,
-     "malesPer100": 16
+     "malesPer100": 16,
+     "herd": "herd unit (DAU) 19",
+     "population": 2670
     },
     "110": {
-     "dau": "08",
-     "population": 8730,
-     "malesPer100": 49
+     "malesPer100": 49,
+     "herd": "herd unit (DAU) 08",
+     "population": 8730
     },
     "111": {
-     "dau": "08",
-     "population": 8730,
-     "malesPer100": 49
+     "malesPer100": 49,
+     "herd": "herd unit (DAU) 08",
+     "population": 8730
     },
     "112": {
-     "dau": "06",
-     "population": 1950,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 06",
+     "population": 1950
     },
     "113": {
-     "dau": "06",
-     "population": 1950,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 06",
+     "population": 1950
     },
     "114": {
-     "dau": "06",
-     "population": 1950,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 06",
+     "population": 1950
     },
     "115": {
-     "dau": "06",
-     "population": 1950,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 06",
+     "population": 1950
     },
     "116": {
-     "dau": "12",
-     "population": 1970,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 12",
+     "population": 1970
     },
     "117": {
-     "dau": "12",
-     "population": 1970,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 12",
+     "population": 1970
     },
     "118": {
-     "dau": "08",
-     "population": 8730,
-     "malesPer100": 49
+     "malesPer100": 49,
+     "herd": "herd unit (DAU) 08",
+     "population": 8730
     },
     "119": {
-     "dau": "08",
-     "population": 8730,
-     "malesPer100": 49
+     "malesPer100": 49,
+     "herd": "herd unit (DAU) 08",
+     "population": 8730
     },
     "120": {
-     "dau": "05",
-     "population": 3600,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 05",
+     "population": 3600
     },
     "121": {
-     "dau": "05",
-     "population": 3600,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 05",
+     "population": 3600
     },
     "122": {
-     "dau": "12",
-     "population": 1970,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 12",
+     "population": 1970
     },
     "123": {
-     "dau": "08",
-     "population": 8730,
-     "malesPer100": 49
+     "malesPer100": 49,
+     "herd": "herd unit (DAU) 08",
+     "population": 8730
     },
     "124": {
-     "dau": "08",
-     "population": 8730,
-     "malesPer100": 49
+     "malesPer100": 49,
+     "herd": "herd unit (DAU) 08",
+     "population": 8730
     },
     "125": {
-     "dau": "05",
-     "population": 3600,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 05",
+     "population": 3600
     },
     "126": {
-     "dau": "05",
-     "population": 3600,
-     "malesPer100": 27
+     "malesPer100": 27,
+     "herd": "herd unit (DAU) 05",
+     "population": 3600
     },
     "127": {
-     "dau": "12",
-     "population": 1970,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 12",
+     "population": 1970
     },
     "128": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "129": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "130": {
-     "dau": "13",
-     "population": 3040,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 13",
+     "population": 3040
     },
     "132": {
-     "dau": "18",
-     "population": 1500,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 18",
+     "population": 1500
     },
     "133": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "134": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "135": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "136": {
-     "dau": "13",
-     "population": 3040,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 13",
+     "population": 3040
     },
     "137": {
-     "dau": "13",
-     "population": 3040,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 13",
+     "population": 3040
     },
     "138": {
-     "dau": "13",
-     "population": 3040,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 13",
+     "population": 3040
     },
     "139": {
-     "dau": "18",
-     "population": 1500,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 18",
+     "population": 1500
     },
     "140": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "141": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "142": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "143": {
-     "dau": "13",
-     "population": 3040,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 13",
+     "population": 3040
     },
     "144": {
-     "dau": "13",
-     "population": 3040,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 13",
+     "population": 3040
     },
     "145": {
-     "dau": "18",
-     "population": 1500,
-     "malesPer100": 40
+     "malesPer100": 40,
+     "herd": "herd unit (DAU) 18",
+     "population": 1500
     },
     "146": {
-     "dau": "13",
-     "population": 3040,
-     "malesPer100": 19
+     "malesPer100": 19,
+     "herd": "herd unit (DAU) 13",
+     "population": 3040
     },
     "147": {
-     "dau": "07",
-     "population": 8230,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 07",
+     "population": 8230
     },
     "161": {
-     "dau": "03",
-     "population": 1770,
-     "malesPer100": 56
+     "malesPer100": 56,
+     "herd": "herd unit (DAU) 03",
+     "population": 1770
     },
     "171": {
-     "dau": "03",
-     "population": 1770,
-     "malesPer100": 56
+     "malesPer100": 56,
+     "herd": "herd unit (DAU) 03",
+     "population": 1770
     },
     "181": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "191": {
-     "dau": "33",
-     "population": 1190,
-     "malesPer100": 32
+     "malesPer100": 32,
+     "herd": "herd unit (DAU) 33",
+     "population": 1190
     },
     "201": {
-     "dau": "11",
-     "population": 1380,
-     "malesPer100": 47
+     "malesPer100": 47,
+     "herd": "herd unit (DAU) 11",
+     "population": 1380
     },
     "211": {
-     "dau": "34",
-     "population": 260,
-     "malesPer100": 28
+     "malesPer100": 28,
+     "herd": "herd unit (DAU) 34",
+     "population": 260
     },
     "214": {
-     "dau": "09",
-     "population": 11160,
-     "malesPer100": 48
+     "malesPer100": 48,
+     "herd": "herd unit (DAU) 09",
+     "population": 11160
     },
     "231": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "301": {
-     "dau": "09",
-     "population": 11160,
-     "malesPer100": 48
+     "malesPer100": 48,
+     "herd": "herd unit (DAU) 09",
+     "population": 11160
     },
     "371": {
-     "dau": "37",
-     "population": 690,
-     "malesPer100": 71
+     "malesPer100": 71,
+     "herd": "herd unit (DAU) 37",
+     "population": 690
     },
     "441": {
-     "dau": "09",
-     "population": 11160,
-     "malesPer100": 48
+     "malesPer100": 48,
+     "herd": "herd unit (DAU) 09",
+     "population": 11160
     },
     "481": {
-     "dau": "39",
-     "population": 270,
-     "malesPer100": 24
+     "malesPer100": 24,
+     "herd": "herd unit (DAU) 39",
+     "population": 270
     },
     "500": {
-     "dau": "30",
-     "population": 1290,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 30",
+     "population": 1290
     },
     "501": {
-     "dau": "30",
-     "population": 1290,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 30",
+     "population": 1290
     },
     "511": {
-     "dau": "30",
-     "population": 1290,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 30",
+     "population": 1290
     },
     "551": {
-     "dau": "23",
-     "population": 490,
-     "malesPer100": 25
+     "malesPer100": 25,
+     "herd": "herd unit (DAU) 23",
+     "population": 490
     },
     "581": {
-     "dau": "30",
-     "population": 1290,
-     "malesPer100": 42
+     "malesPer100": 42,
+     "herd": "herd unit (DAU) 30",
+     "population": 1290
     },
     "591": {
-     "dau": "31",
-     "population": 220,
-     "malesPer100": 80
+     "malesPer100": 80,
+     "herd": "herd unit (DAU) 31",
+     "population": 220
     },
     "681": {
-     "dau": "14",
-     "population": 1950,
-     "malesPer100": 15
+     "malesPer100": 15,
+     "herd": "herd unit (DAU) 14",
+     "population": 1950
     },
     "682": {
-     "dau": "14",
-     "population": 1950,
-     "malesPer100": 15
+     "malesPer100": 15,
+     "herd": "herd unit (DAU) 14",
+     "population": 1950
     },
     "691": {
-     "dau": "20",
-     "population": 3110,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 20",
+     "population": 3110
     },
     "791": {
-     "dau": "14",
-     "population": 1950,
-     "malesPer100": 15
+     "malesPer100": 15,
+     "herd": "herd unit (DAU) 14",
+     "population": 1950
     },
     "851": {
-     "dau": "20",
-     "population": 3110,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 20",
+     "population": 3110
     },
     "861": {
-     "dau": "20",
-     "population": 3110,
-     "malesPer100": 34
+     "malesPer100": 34,
+     "herd": "herd unit (DAU) 20",
+     "population": 3110
     },
     "951": {
-     "dau": "01",
-     "population": 6100,
-     "malesPer100": 33
+     "malesPer100": 33,
+     "herd": "herd unit (DAU) 01",
+     "population": 6100
     }
    }
   }

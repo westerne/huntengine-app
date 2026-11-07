@@ -1,0 +1,421 @@
+{
+ "state": "AZ",
+ "year": 2025,
+ "source": {
+  "name": "Arizona Game and Fish Department — 2025 survey summaries",
+  "url": "https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/20154439/2025-AZ-Elk-Survey-Summary.pdf"
+ },
+ "notes": "AZGFD 2025 survey summaries by game management unit: https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/20154439/2025-AZ-Elk-Survey-Summary.pdf ; https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/20154930/2025-AZ-Mule-Deer-Survey-Summary.pdf ; https://azgfd-live-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/20154929/2025-AZ-Pronghorn-Survey-Summary.pdf. Per unit: malesPer100 (males per 100 females, from the survey's classification) and counted (animals classified). A row covering several units applies to each unless the unit has its own row.",
+ "species": {
+  "ELK": {
+   "year": 2025,
+   "when": "in AZGFD's 2025 survey",
+   "units": {
+    "1": {
+     "malesPer100": 20,
+     "counted": 1776
+    },
+    "9": {
+     "malesPer100": 43,
+     "counted": 264
+    },
+    "10": {
+     "malesPer100": 10,
+     "counted": 40
+    },
+    "22": {
+     "malesPer100": 22,
+     "counted": 398
+    },
+    "23": {
+     "malesPer100": 17,
+     "counted": 169
+    },
+    "27": {
+     "malesPer100": 28,
+     "counted": 758
+    },
+    "3A": {
+     "malesPer100": 16,
+     "counted": 279,
+     "herd": "surveyed together: units 3A, 3C"
+    },
+    "3C": {
+     "malesPer100": 25,
+     "counted": 132
+    },
+    "3B": {
+     "malesPer100": 21,
+     "counted": 185
+    },
+    "4A": {
+     "malesPer100": 17,
+     "counted": 339
+    },
+    "4B": {
+     "malesPer100": 40,
+     "counted": 151
+    },
+    "7E": {
+     "malesPer100": 100,
+     "counted": 101
+    },
+    "7W": {
+     "malesPer100": 48,
+     "counted": 435
+    },
+    "18A": {
+     "malesPer100": 44,
+     "counted": 60
+    }
+   }
+  },
+  "DEER": {
+   "year": 2025,
+   "when": "in AZGFD's 2025 survey",
+   "units": {
+    "1": {
+     "malesPer100": 14,
+     "counted": 191
+    },
+    "10": {
+     "malesPer100": 27,
+     "counted": 139
+    },
+    "21": {
+     "malesPer100": 23,
+     "counted": 143
+    },
+    "22": {
+     "malesPer100": 17,
+     "counted": 7
+    },
+    "23": {
+     "malesPer100": 23,
+     "counted": 111
+    },
+    "27": {
+     "malesPer100": 12,
+     "counted": 170
+    },
+    "28": {
+     "malesPer100": 33,
+     "counted": 41
+    },
+    "29": {
+     "malesPer100": 43,
+     "counted": 32
+    },
+    "31": {
+     "malesPer100": 100,
+     "counted": 1
+    },
+    "33": {
+     "malesPer100": 11,
+     "counted": 24
+    },
+    "39": {
+     "malesPer100": 7,
+     "counted": 61
+    },
+    "41": {
+     "malesPer100": 26,
+     "counted": 180
+    },
+    "42": {
+     "malesPer100": 19,
+     "counted": 23
+    },
+    "3A": {
+     "malesPer100": 27,
+     "counted": 142,
+     "herd": "surveyed together: units 3A, 3C"
+    },
+    "3C": {
+     "malesPer100": 27,
+     "counted": 142,
+     "herd": "surveyed together: units 3A, 3C"
+    },
+    "15A": {
+     "malesPer100": 32,
+     "counted": 105,
+     "herd": "surveyed together: units 15A, 15B, 15C"
+    },
+    "15B": {
+     "malesPer100": 32,
+     "counted": 105,
+     "herd": "surveyed together: units 15A, 15B, 15C"
+    },
+    "15C": {
+     "malesPer100": 32,
+     "counted": 105,
+     "herd": "surveyed together: units 15A, 15B, 15C"
+    },
+    "2B": {
+     "malesPer100": 11,
+     "counted": 55
+    },
+    "3B": {
+     "malesPer100": 60,
+     "counted": 62
+    },
+    "4B": {
+     "malesPer100": 36,
+     "counted": 23
+    },
+    "12A": {
+     "malesPer100": 42,
+     "counted": 195
+    },
+    "12AE": {
+     "malesPer100": 64,
+     "counted": 53
+    },
+    "12AW": {
+     "malesPer100": 36,
+     "counted": 412
+    },
+    "12B": {
+     "malesPer100": 35,
+     "counted": 435
+    },
+    "13A": {
+     "malesPer100": 37,
+     "counted": 42
+    },
+    "13B": {
+     "malesPer100": 42,
+     "counted": 153
+    },
+    "16A": {
+     "malesPer100": 19,
+     "counted": 115
+    },
+    "17A": {
+     "malesPer100": 22,
+     "counted": 132
+    },
+    "18A": {
+     "malesPer100": 22,
+     "counted": 114
+    },
+    "20A": {
+     "malesPer100": 19,
+     "counted": 178
+    },
+    "24A": {
+     "malesPer100": 31,
+     "counted": 42
+    },
+    "24B": {
+     "malesPer100": 25,
+     "counted": 72
+    },
+    "25M": {
+     "malesPer100": 16,
+     "counted": 133
+    },
+    "30A": {
+     "malesPer100": 19,
+     "counted": 179
+    },
+    "30B": {
+     "malesPer100": 14,
+     "counted": 23
+    },
+    "34B": {
+     "malesPer100": 40,
+     "counted": 70
+    },
+    "35A": {
+     "malesPer100": 50,
+     "counted": 3
+    },
+    "35B": {
+     "malesPer100": 44,
+     "counted": 15
+    },
+    "37A": {
+     "malesPer100": 28,
+     "counted": 161
+    },
+    "43A": {
+     "malesPer100": 12,
+     "counted": 24
+    },
+    "43B": {
+     "malesPer100": 13,
+     "counted": 40
+    }
+   }
+  },
+  "ANTELOPE": {
+   "year": 2025,
+   "when": "in AZGFD's 2025 survey",
+   "units": {
+    "1": {
+     "malesPer100": 46,
+     "counted": 186
+    },
+    "7": {
+     "malesPer100": 48,
+     "counted": 163
+    },
+    "8": {
+     "malesPer100": 32,
+     "counted": 77
+    },
+    "9": {
+     "malesPer100": 32,
+     "counted": 150
+    },
+    "10": {
+     "malesPer100": 28,
+     "counted": 151
+    },
+    "21": {
+     "malesPer100": 47,
+     "counted": 478
+    },
+    "27": {
+     "malesPer100": 19,
+     "counted": 46
+    },
+    "31": {
+     "malesPer100": 27,
+     "counted": 14
+    },
+    "32": {
+     "malesPer100": 39,
+     "counted": 42,
+     "herd": "surveyed together: units 31, 32"
+    },
+    "12A": {
+     "malesPer100": 56,
+     "counted": 105,
+     "herd": "surveyed together: units 12A, 12B"
+    },
+    "12B": {
+     "malesPer100": 56,
+     "counted": 105,
+     "herd": "surveyed together: units 12A, 12B"
+    },
+    "15A": {
+     "malesPer100": 24,
+     "counted": 32,
+     "herd": "surveyed together: units 15A, 15B"
+    },
+    "15B": {
+     "malesPer100": 24,
+     "counted": 32,
+     "herd": "surveyed together: units 15A, 15B"
+    },
+    "35A": {
+     "malesPer100": 29,
+     "counted": 154
+    },
+    "35B": {
+     "malesPer100": 43,
+     "counted": 35,
+     "herd": "surveyed together: units 35A, 35B"
+    },
+    "2A": {
+     "malesPer100": 33,
+     "counted": 138
+    },
+    "2B": {
+     "malesPer100": 17,
+     "counted": 80
+    },
+    "2C": {
+     "malesPer100": 23,
+     "counted": 80
+    },
+    "3A": {
+     "malesPer100": 17,
+     "counted": 97
+    },
+    "3B": {
+     "malesPer100": 45,
+     "counted": 87
+    },
+    "3C": {
+     "malesPer100": 48,
+     "counted": 62
+    },
+    "4A": {
+     "malesPer100": 24,
+     "counted": 95
+    },
+    "4B": {
+     "malesPer100": 35,
+     "counted": 253
+    },
+    "5A": {
+     "malesPer100": 37,
+     "counted": 171
+    },
+    "5B": {
+     "malesPer100": 35,
+     "counted": 237
+    },
+    "6A": {
+     "malesPer100": 21,
+     "counted": 57
+    },
+    "6B": {
+     "malesPer100": 28,
+     "counted": 68
+    },
+    "13A": {
+     "malesPer100": 30,
+     "counted": 138
+    },
+    "13B": {
+     "malesPer100": 38,
+     "counted": 122
+    },
+    "17A": {
+     "malesPer100": 115,
+     "counted": 32
+    },
+    "17B": {
+     "malesPer100": 59,
+     "counted": 66
+    },
+    "18A": {
+     "malesPer100": 51,
+     "counted": 172
+    },
+    "18B": {
+     "malesPer100": 78,
+     "counted": 137
+    },
+    "19A": {
+     "malesPer100": 26,
+     "counted": 439
+    },
+    "19B": {
+     "malesPer100": 71,
+     "counted": 101
+    },
+    "30A": {
+     "malesPer100": 85,
+     "counted": 50
+    },
+    "34B": {
+     "malesPer100": 62,
+     "counted": 82
+    },
+    "36B": {
+     "malesPer100": 53,
+     "counted": 26
+    },
+    "FTHU": {
+     "malesPer100": 33,
+     "counted": 9
+    }
+   }
+  }
+ }
+}

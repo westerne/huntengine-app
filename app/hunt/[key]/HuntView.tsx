@@ -159,7 +159,7 @@ export default function HuntView({ hunt, residency, ladder, usesPoints, startPoi
         { k: 'Hunter success', v: hunt.hunterSuccess?.match(/^[\d.]+%/)?.[0] ?? '—', n: hunt.hunterSuccess?.replace(/^[\d.]+%\s*/, '') || 'not published' },
         ...(hunt.herd ? [{ k: hunt.herd.k, v: hunt.herd.v, n: hunt.herd.n }] : []),
       ]} />
-      {hunt.herd && <p className="hq-small" style={{ marginTop: -6 }}>That ratio is CPW&apos;s estimate for the whole herd this unit belongs to. {hunt.herd.caveat}</p>}
+      {hunt.herd && <p className="hq-small" style={{ marginTop: -6 }}>{hunt.herd.caveat}</p>}
 
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
         {hunt.openToYou && <AddToPlan target={{ state: hunt.state, species: hunt.species, unit: hunt.unit, huntCode: hunt.huntCode, label: hunt.label, year: half?.year ?? seasonYear }} />}

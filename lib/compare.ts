@@ -8,7 +8,7 @@ import { cutoffIsADate } from './huntdata/drawSystem';
 import { howItDraws } from './huntdata/weightedDraw';
 import { drawOutlook, type Outlook } from './calendar';
 import { SPECIES_NAME } from './species';
-import { herdFor, HERD_CAVEAT } from './huntdata/herd';
+import { herdFor, herdWhere, HERD_CAVEAT } from './huntdata/herd';
 
 export const MAX_COMPARE = 4;
 
@@ -127,7 +127,7 @@ export function compareColumn(
     publicLand: null,
     trophy: (() => {
       const herd = herdFor(hunt.state, hunt.species, hunt.unit);
-      return herd ? `Herd: ${herd.text} (CPW, ${herd.herd}). ${HERD_CAVEAT}` : 'No trophy data published';
+      return herd ? `Herd: ${herd.text} (${herdWhere(herd)}). ${HERD_CAVEAT}` : 'No trophy data published';
     })(),
     cost: 'Not researched yet — check the agency',
   };
