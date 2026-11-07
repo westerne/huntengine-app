@@ -66,11 +66,11 @@ describe('Colorado season dates from the brochures', () => {
 describe('Colorado herd sex ratios', () => {
   const elkSit: Situation = { home: 'WY', balances: [{ state: 'CO', species: 'Elk', points: 3 }], years: [2027, 2028, 2029], seasonYear: 2027 };
   it('ranks hunts by bulls per 100 cows when asked for bigger bulls', () => {
-    const r = searchHunts({ state: 'CO', species: 'Elk', sortBy: 'malesPer100' }, elkSit);
+    const r = searchHunts({ state: 'CO', species: 'Elk', sortBy: 'herd' }, elkSit);
     if (!r.ok) throw new Error(r.reason);
     const f = r.data.filtered!;
     expect(f.sortedBy).toMatch(/not a measure of antler size/);
-    const ratios = f.matches.map((m) => m.malesPer100!);
+    const ratios = f.matches.map((m) => m.herdScore!);
     expect(ratios.length).toBeGreaterThan(2);
     expect([...ratios].sort((a, b) => b - a)).toEqual(ratios);
     expect(f.howToAnswer).toMatch(/not antler size/);

@@ -21,7 +21,7 @@ import { isAntlerless, isPrivateOnly } from '../huntdata/shortlist';
 import { DEFAULT_PREFS, rankHunts, type HuntPrefs, type RankedHunt } from '../huntdata/fit';
 import { pointsSoldTo } from '../huntdata/apply';
 import { WEIGHTED_SPECIES, entryPointsFor } from '../huntdata/preferenceDraw';
-import { herdFor, herdWhere, HERD_CAVEAT } from '../huntdata/herd';
+import { herdFor, herdWhere, HERD_STATES } from '../huntdata/herd';
 
 export type Source = { label: string; url?: string | null };
 export type ToolResult<T> = { ok: true; data: T; sources: Source[] } | { ok: false; reason: string };
@@ -248,10 +248,10 @@ export function harvestReporting(args: { state: string; species: string }): Tool
 export type HuntData = Omit<CompareColumn, 'publicLand' | 'trophy' | 'cost'> & { yourPoints: number | null; pointsNote?: string; howTheDrawWorks: string | null; applyOrBuild?: string; herd?: HerdData };
 // "Where are the bigger bulls?" The state's herd sex ratio is the honest answer
 // we have; antler size we don't.
-export type HerdData = { malesPer100: number; what: string; from: string; herdSize: number | null; note: string };
+export type HerdData = { malesPer100: number | null; avgHarvestAge: number | null; what: string; from: string; herdSize: number | null; note: string };
 const herdData = (state: string, key: string, unit: string | null | undefined): { herd?: HerdData } => {
   const h = herdFor(state, key, unit);
-  return h ? { herd: { malesPer100: h.malesPer100, what: h.text, from: herdWhere(h), herdSize: h.population, note: `${h.population != null ? `${h.agency}'s estimate for the whole herd, not just this unit.` : `${h.agency}'s survey count.`} ${HERD_CAVEAT}` } } : {};
+  return h ? { herd: { malesPer100: h.malesPer100, avgHarvestAge: h.avgAge, what: h.text, from: herdWhere(h), herdSize: h.population, note: `${h.population != null ? `${h.agency}'s estimate for the whole herd, not just this unit.` : h.avgAge != null ? `${h.agency}'s harvest records.` : `${h.agency}'s survey count.`} ${h.caveat}` } } : {};
 };
 // The state's draw rules in plain words, so "burn points or keep building" is
 // answered for the state's actual system, not a preference draw by default.
@@ -465,7 +465,7 @@ const pick = (h: ReachableHunt): Picked => ({
 });
 // "A November hunt I can draw every 2-3 years": filters, not prompts. Drawing
 // every N years means drawing at N-1 points (a draw resets them to 0).
-export type FilteredHunt = UnitHunt & { unit: string; fit: number | null; malesPer100?: number };
+export type FilteredHunt = UnitHunt & { unit: string; fit: number | null; herd?: string; herdScore?: number };
 export type Filtered = { month: string | null; maxPointsToDraw: number | null; sortedBy?: string; matches: FilteredHunt[]; matched: number; noSeasonDates: number; noPointsFigure: number; howToAnswer: string };
 function filterHunts(
   hunts: Hunt[], args: { month?: string | null; maxPointsToDraw?: number | null; sortBy?: string | null },
@@ -492,21 +492,23 @@ function filterHunts(
     }
     return true;
   });
-  const byHerd = args.sortBy === 'malesPer100';
+  const byHerd = args.sortBy === 'herd' || args.sortBy === 'malesPer100';
+  let caveat = '';
   const matches = hits
     .map((h) => {
       const herd = herdFor(h.state, h.species, h.unit);
-      return { ...unitHunt(h, residency, points), unit: h.unit, fit: fit.get(h.huntCode) ?? null, ...(herd ? { malesPer100: herd.malesPer100 } : {}) };
+      if (herd) caveat = herd.caveat;
+      return { ...unitHunt(h, residency, points), unit: h.unit, fit: fit.get(h.huntCode) ?? null, ...(herd ? { herd: herd.text, herdScore: herd.score } : {}) };
     })
-    .filter((m) => !byHerd || m.malesPer100 != null)
-    .sort((a, b) => (byHerd ? (b.malesPer100 ?? -1) - (a.malesPer100 ?? -1) : 0) || (b.fit ?? -1) - (a.fit ?? -1) || (Number(b.hunterSuccess) || 0) - (Number(a.hunterSuccess) || 0));
+    .filter((m) => !byHerd || m.herdScore != null)
+    .sort((a, b) => (byHerd ? (b.herdScore ?? -1) - (a.herdScore ?? -1) : 0) || (b.fit ?? -1) - (a.fit ?? -1) || (Number(b.hunterSuccess) || 0) - (Number(a.hunterSuccess) || 0));
   return {
-    month, maxPointsToDraw: maxPts, ...(byHerd ? { sortedBy: `males per 100 females in the herd (CPW estimate). ${HERD_CAVEAT}` } : {}),
+    month, maxPointsToDraw: maxPts, ...(byHerd ? { sortedBy: `the agency's herd figure for each unit (in herd: males per 100 females, or the average age of harvested males), highest first. ${caveat}` } : {}),
     matches: matches.slice(0, 10), matched: matches.length, noSeasonDates, noPointsFigure,
     // Said in the data: the prompt rule alone still got one hunt back.
     howToAnswer: matches.length > 1
-      ? `${matches.length} hunts match. Name the top two or three (unit, season dates, points it took to draw, their chance this year${byHerd ? ', males per 100 females' : ''}), lead with the best, and say how many matched.${byHerd ? ' Say the ratio is for the whole herd and is not antler size, and weigh it against their chance of drawing.' : ''}`
-      : matches.length ? 'One hunt matches. Say it is the only one.' : `Nothing matches. Say so, and which filter to loosen.${byHerd ? ' Herd ratios are loaded for Colorado and Arizona elk, deer and pronghorn only.' : ''}`,
+      ? `${matches.length} hunts match. Name the top two or three (unit, season dates, points it took to draw, their chance this year${byHerd ? ', the herd figure' : ''}), lead with the best, and say how many matched.${byHerd ? ' Say the herd figure is not antler size, and weigh it against their chance of drawing.' : ''}`
+      : matches.length ? 'One hunt matches. Say it is the only one.' : `Nothing matches. Say so, and which filter to loosen.${byHerd ? ` Herd figures are loaded for ${HERD_STATES.join(', ')} elk, deer and pronghorn only.` : ''}`,
   };
 }
 
@@ -561,7 +563,7 @@ export function searchHunts(
           leftOut: { antlerless: k.hidden.antlerless, otherWeapon: k.hidden.weapon },
         };
       })(),
-      ...(args.month || typeof args.maxPointsToDraw === 'number' || args.sortBy === 'malesPer100'
+      ...(args.month || typeof args.maxPointsToDraw === 'number' || args.sortBy === 'herd' || args.sortBy === 'malesPer100'
         ? { filtered: filterHunts(mod.hunts(r.key as never), args, residency, points, weapon, ranked) }
         : {}),
     },

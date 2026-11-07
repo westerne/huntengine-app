@@ -60,7 +60,7 @@ Each tool is a thin wrapper over a function the screens already use — one sour
 
 Not in v1 (the data isn't ready — SPEC_KNOWLEDGE P1/P2): OTC/leftover catalog, trophy potential, land access beyond public-land %, tactics/gear library. When asked, it says so plainly.
 
-Herd quality (added 2026-11-06): bulls per 100 cows and bucks per 100 does, from each agency's own report (`lib/huntdata/herd.ts`): Colorado (CPW herd estimates, `scripts/draw/buildCOHerd.mjs`) and Arizona (AZGFD unit surveys, `scripts/draw/buildAZHerd.mjs`). `get_hunt` carries it, and `search_hunts` with `sortBy: "malesPer100"` ranks by it for "bigger bulls" questions. Every place it appears says it's the whole herd's figure and not antler size. Antler size and trophy scores are still not in our data.
+Herd quality (added 2026-11-06): bulls per 100 cows and bucks per 100 does, from each agency's own report (`lib/huntdata/herd.ts`): Colorado (CPW herd estimates, `scripts/draw/buildCOHerd.mjs`) Arizona (AZGFD unit surveys, `scripts/draw/buildAZHerd.mjs`) and Utah (DWR annual report: deer ratios, and for limited-entry elk and pronghorn the average age of harvested males, `scripts/draw/buildUTHerd.mjs`). `get_hunt` carries it, and `search_hunts` with `sortBy: "malesPer100"` ranks by it for "bigger bulls" questions. Every place it appears says it's the whole herd's figure and not antler size. Antler size and trophy scores are still not in our data.
 
 ## 6. How it runs
 - **Server route** `POST /api/advisor` (members only). Streams newline-delimited JSON: a `status` line per lookup ("Checking deadlines"), then one `answer` (text, sources, actions) **after** the answer check — nothing unchecked is ever on screen.

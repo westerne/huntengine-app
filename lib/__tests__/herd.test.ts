@@ -25,3 +25,19 @@ describe('herd sex ratios by state', () => {
     expect(herdFor('AZ', 'BIGHORNSHEEP', '22')).toBeNull();
   });
 });
+
+describe('Utah: DWR annual report', () => {
+  it('gives deer bucks per 100 does by unit name, with the unit goal', () => {
+    const h = herdFor('UT', 'DEER', 'Henry Mtns')!;
+    expect(h.malesPer100).toBe(46);
+    expect(h.text).toBe("46 bucks per 100 does after the season (2022-2024 average); DWR's goal for the unit is 40-55");
+  });
+  it('gives limited-entry elk as the average age of harvested bulls', () => {
+    const h = herdFor('UT', 'ELK', 'Beaver, East')!;
+    expect(h).toMatchObject({ avgAge: 9.1, malesPer100: null, score: 9.1, label: 'Avg. bull age' });
+    expect(h.text).toMatch(/^harvested bulls averaged 9.1 years old/);
+    expect(h.caveat).toMatch(/age is not a measure of antler size/);
+    expect(herdFor('UT', 'ELK', 'San Juan')?.avgAge).toBe(7.9);
+    expect(herdFor('UT', 'ELK', 'Cache, Meadowville')?.avgAge).toBe(5.5);
+  });
+});

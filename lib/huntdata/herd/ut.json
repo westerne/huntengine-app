@@ -1,0 +1,502 @@
+{
+ "state": "UT",
+ "year": 2024,
+ "source": {
+  "name": "Utah Division of Wildlife Resources — 2024 Big Game Annual Report",
+  "url": "https://wildlife.utah.gov/hunting/reports"
+ },
+ "notes": "DWR 2024 Big Game Annual Report (https://wildlife.utah.gov/pdf/annual-reports/big-game/24_bg_report.pdf), 3-year averages 2022-2024. DEER: postseason bucks per 100 does by unit (malesPer100). ELK and ANTELOPE: average age in years of harvested bulls / bucks on limited-entry units (avgAge). objective = DWR's goal for that unit. Keyed by DWR's unit name.",
+ "species": {
+  "DEER": {
+   "year": 2024,
+   "measure": "ratio",
+   "units": {
+    "Beaver": {
+     "malesPer100": 19,
+     "objective": "18-20",
+     "herd": "DWR unit 22"
+    },
+    "Boulder/Kaiparowits": {
+     "malesPer100": 27,
+     "objective": "18-20",
+     "herd": "DWR unit 25C/26"
+    },
+    "Box Elder": {
+     "malesPer100": 23,
+     "objective": "15-17",
+     "herd": "DWR unit 1"
+    },
+    "Cache": {
+     "malesPer100": 19,
+     "objective": "15-17",
+     "herd": "DWR unit 2"
+    },
+    "Fillmore": {
+     "malesPer100": 21,
+     "objective": "18-20",
+     "herd": "DWR unit 21"
+    },
+    "Fishlake": {
+     "malesPer100": 23,
+     "objective": "18-20",
+     "herd": "DWR unit 25A"
+    },
+    "Kamas": {
+     "malesPer100": 21,
+     "objective": "18-20",
+     "herd": "DWR unit 7"
+    },
+    "La Sal, La Sal Mtns": {
+     "malesPer100": 24,
+     "objective": "15-17",
+     "herd": "DWR unit 13A"
+    },
+    "Manti/San Rafael": {
+     "malesPer100": 20,
+     "objective": "15-17",
+     "herd": "DWR unit 16B/12"
+    },
+    "Monroe": {
+     "malesPer100": 21,
+     "objective": "18-20",
+     "herd": "DWR unit 23"
+    },
+    "Mt Dutton": {
+     "malesPer100": 21,
+     "objective": "18-20",
+     "herd": "DWR unit 24"
+    },
+    "Nebo": {
+     "malesPer100": 19,
+     "objective": "15-17",
+     "herd": "DWR unit 16A"
+    },
+    "Nine Mile": {
+     "malesPer100": 20,
+     "objective": "18-20",
+     "herd": "DWR unit 11"
+    },
+    "North Slope, Three Corners/West Daggett": {
+     "malesPer100": 20,
+     "objective": "18-20",
+     "herd": "DWR unit 8"
+    },
+    "Oquirrh-Stansbury": {
+     "malesPer100": 25,
+     "objective": "15-17",
+     "herd": "DWR unit 18"
+    },
+    "Panguitch Lake": {
+     "malesPer100": 21,
+     "objective": "18-20",
+     "herd": "DWR unit 28"
+    },
+    "Pine Valley": {
+     "malesPer100": 22,
+     "objective": "18-20",
+     "herd": "DWR unit 30"
+    },
+    "San Juan, Abajo Mtns": {
+     "malesPer100": 20,
+     "objective": "18-20",
+     "herd": "DWR unit 14A"
+    },
+    "Southwest Desert": {
+     "malesPer100": 22,
+     "objective": "18-20",
+     "herd": "DWR unit 20"
+    },
+    "Thousand Lakes": {
+     "malesPer100": 22,
+     "objective": "18-20",
+     "herd": "DWR unit 25B"
+    },
+    "Vernal/Bonanza": {
+     "malesPer100": 17,
+     "objective": "15-17",
+     "herd": "DWR unit 9BD"
+    },
+    "Wasatch Mtns, East": {
+     "malesPer100": 24,
+     "objective": "18-20",
+     "herd": "DWR unit 17BC"
+    },
+    "Wasatch Mtns, West": {
+     "malesPer100": 16,
+     "objective": "15-17",
+     "herd": "DWR unit 17A"
+    },
+    "Yellowstone": {
+     "malesPer100": 19,
+     "objective": "18-20",
+     "herd": "DWR unit 9A"
+    },
+    "Zion": {
+     "malesPer100": 22,
+     "objective": "18-20",
+     "herd": "DWR unit 29"
+    },
+    "Chalk Creek": {
+     "malesPer100": 28,
+     "objective": "18-20",
+     "herd": "DWR unit 6"
+    },
+    "East Canyon": {
+     "malesPer100": 26,
+     "objective": "18-20",
+     "herd": "DWR unit 5"
+    },
+    "Morgan-South Rich": {
+     "malesPer100": 26,
+     "objective": "18-20",
+     "herd": "DWR unit 4"
+    },
+    "Ogden": {
+     "malesPer100": 21,
+     "objective": "18-20",
+     "herd": "DWR unit 3"
+    },
+    "Book Cliffs": {
+     "malesPer100": 37,
+     "objective": "25-35",
+     "herd": "DWR unit 10"
+    },
+    "Cache, Crawford Mtn": {
+     "malesPer100": 22,
+     "objective": "25-35",
+     "herd": "DWR unit 2B"
+    },
+    "Diamond Mtn": {
+     "malesPer100": 30,
+     "objective": "25-35",
+     "herd": "DWR unit 9C"
+    },
+    "Fillmore, Oak Creek LE": {
+     "malesPer100": 38,
+     "objective": "25-35",
+     "herd": "DWR unit 21C"
+    },
+    "La Sal, Dolores Triangle": {
+     "malesPer100": 28,
+     "objective": "25-35",
+     "herd": "DWR unit 13B"
+    },
+    "San Juan, Elk Ridge": {
+     "malesPer100": 36,
+     "objective": "25-35",
+     "herd": "DWR unit 14B"
+    },
+    "West Desert, Vernon": {
+     "malesPer100": 33,
+     "objective": "25-35",
+     "herd": "DWR unit 19B"
+    },
+    "Henry Mtns": {
+     "malesPer100": 46,
+     "objective": "40-55",
+     "herd": "DWR unit 15"
+    },
+    "Paunsaugunt": {
+     "malesPer100": 46,
+     "objective": "40-55",
+     "herd": "DWR unit 26"
+    }
+   },
+   "when": "after the season (2022-2024 average)"
+  },
+  "ELK": {
+   "year": 2024,
+   "measure": "age",
+   "units": {
+    "Barney Top/Kaiparowits": {
+     "avgAge": 7.8,
+     "objective": "3.5-4.5",
+     "herd": "DWR unit 25C/26"
+    },
+    "Beaver, East": {
+     "avgAge": 9.1,
+     "objective": "6.5-7.0",
+     "herd": "DWR unit 22B"
+    },
+    "Book Cliffs, Bitter Creek/East": {
+     "avgAge": 6.3,
+     "objective": "6.0-6.5",
+     "herd": "DWR unit 10AB"
+    },
+    "Book Cliffs, Little Creek Roadless": {
+     "avgAge": 7.7,
+     "objective": "6.5-7.0",
+     "herd": "DWR unit 10C"
+    },
+    "Boulder": {
+     "avgAge": 8.1,
+     "objective": "6.5-7.0",
+     "herd": "DWR unit 25C"
+    },
+    "Box Elder, Grouse Creek": {
+     "avgAge": 5.3,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 1A"
+    },
+    "Box Elder, Pilot Mtn": {
+     "avgAge": 6.9,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 1C"
+    },
+    "Cache, Meadowville": {
+     "avgAge": 5.5,
+     "objective": "6.0-6.5",
+     "herd": "DWR unit 2C"
+    },
+    "Cache, North": {
+     "avgAge": 6.7,
+     "objective": "3.5-4.5",
+     "herd": "DWR unit 2A"
+    },
+    "Cache, South": {
+     "avgAge": 6.7,
+     "objective": "6.0-6.5",
+     "herd": "DWR unit 2B"
+    },
+    "Diamond Mtn": {
+     "avgAge": 7.3,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 9C"
+    },
+    "Fillmore, Pahvant": {
+     "avgAge": 8.1,
+     "objective": "6.5-7.0",
+     "herd": "DWR unit 21B"
+    },
+    "Fishlake/Thousand Lakes": {
+     "avgAge": 7.1,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 25AB"
+    },
+    "La Sal, Dolores Triangle": {
+     "avgAge": 9,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 13B"
+    },
+    "La Sal, La Sal Mtns": {
+     "avgAge": 6.2,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 13A"
+    },
+    "Manti": {
+     "avgAge": 6.3,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 16B"
+    },
+    "Monroe": {
+     "avgAge": 8.3,
+     "objective": "6.0-6.5",
+     "herd": "DWR unit 23"
+    },
+    "Mt Dutton": {
+     "avgAge": 7.8,
+     "objective": "6.0-6.5",
+     "herd": "DWR unit 24"
+    },
+    "Nebo/San Pitch Mtns": {
+     "avgAge": 7.1,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 16A"
+    },
+    "North Slope, Three Corners": {
+     "avgAge": 5.3,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 8C"
+    },
+    "Panguitch Lake": {
+     "avgAge": 7.8,
+     "objective": "6.0-6.5",
+     "herd": "DWR unit 28"
+    },
+    "San Juan": {
+     "avgAge": 7.9,
+     "objective": "6.5-7.0",
+     "herd": "DWR unit 14A"
+    },
+    "Southwest Desert, North": {
+     "avgAge": 8.4,
+     "objective": "3.5-4.5",
+     "herd": "DWR unit 20A"
+    },
+    "Southwest Desert, South": {
+     "avgAge": 8.3,
+     "objective": "6.0-6.5",
+     "herd": "DWR unit 20B"
+    },
+    "Wasatch Mtns": {
+     "avgAge": 5.3,
+     "objective": "5.5-6.0",
+     "herd": "DWR unit 17"
+    },
+    "West Desert, Deep Creek": {
+     "avgAge": 7.3,
+     "objective": "3.5-4.5",
+     "herd": "DWR unit 19A"
+    }
+   },
+   "when": "(2022-2024 average)"
+  },
+  "ANTELOPE": {
+   "year": 2024,
+   "measure": "age",
+   "units": {
+    "Beaver": {
+     "avgAge": 4.7,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 22"
+    },
+    "Book Cliffs, Bitter Creek": {
+     "avgAge": 4.5,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 10"
+    },
+    "Book Cliffs, South": {
+     "avgAge": 4.6,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 10"
+    },
+    "Box Elder, Promontory": {
+     "avgAge": 3.7,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 1"
+    },
+    "Box Elder, Puddle Valley": {
+     "avgAge": 3.3,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 1"
+    },
+    "Box Elder, Snowville": {
+     "avgAge": 3.2,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 1"
+    },
+    "Box Elder, West": {
+     "avgAge": 3.3,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 1"
+    },
+    "Cache": {
+     "avgAge": 2.7,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 2"
+    },
+    "Cache/Morgan-South Rich/Ogden": {
+     "avgAge": 2.8,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 2/3/4"
+    },
+    "Diamond Mtn/Bonanza": {
+     "avgAge": 3.9,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 9CD"
+    },
+    "Fillmore, Oak Creek": {
+     "avgAge": 4.8,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 21"
+    },
+    "Kaiparowits": {
+     "avgAge": 5,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 26"
+    },
+    "La Sal, Potash/South Cisco": {
+     "avgAge": 3.7,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 13"
+    },
+    "Morgan-South Rich": {
+     "avgAge": 3.2,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 4"
+    },
+    "Mt Dutton/Paunsaugunt": {
+     "avgAge": 3.4,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 24/27"
+    },
+    "Nine Mile, Anthro-Myton Bench": {
+     "avgAge": 3.6,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 11"
+    },
+    "Nine Mile, Range Creek": {
+     "avgAge": 4.7,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 11"
+    },
+    "North Slope, Summit": {
+     "avgAge": 5,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 8"
+    },
+    "North Slope, Three Corners/West Daggett": {
+     "avgAge": 4,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 8"
+    },
+    "Panguitch Lake/Zion, North": {
+     "avgAge": 3,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 28/29"
+    },
+    "Parker Mtn": {
+     "avgAge": 3,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 25C"
+    },
+    "Pine Valley": {
+     "avgAge": 3.2,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 30"
+    },
+    "San Juan, Hatch Point": {
+     "avgAge": 4,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 14"
+    },
+    "San Rafael, Desert": {
+     "avgAge": 4,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 12"
+    },
+    "San Rafael, North": {
+     "avgAge": 4,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 12"
+    },
+    "Southwest Desert": {
+     "avgAge": 4.1,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 20"
+    },
+    "Vernal": {
+     "avgAge": 4.2,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 9B"
+    },
+    "West Desert, Riverbed": {
+     "avgAge": 3.9,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 19"
+    },
+    "West Desert, Rush Valley": {
+     "avgAge": 3.6,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 19"
+    },
+    "West Desert, Snake Valley": {
+     "avgAge": 4.8,
+     "objective": "2.0-3.0",
+     "herd": "DWR unit 19"
+    }
+   },
+   "when": "(2022-2024 average)"
+  }
+ }
+}
