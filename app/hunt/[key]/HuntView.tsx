@@ -88,9 +88,10 @@ export default function HuntView({ hunt, residency, ladder, usesPoints, startPoi
         <Eyebrow>{hunt.stateName} {sp} · {res}</Eyebrow>
         <h1 className="hq-h1" style={{ marginTop: 4 }}>{huntTitle(hunt.unit, hunt.huntCode)}</h1>
         {hunt.label && <p className="hq-body" style={{ marginTop: 6 }}>{labelText(hunt.label)}</p>}
-        {(hunt.season || hunt.weapon) && (
+        {/* The weapon only where the label doesn't already say it. */}
+        {(hunt.season || (hunt.weapon && !new RegExp(hunt.weapon, 'i').test(hunt.label ?? ''))) && (
           <p className="hq-small" style={{ marginTop: 4 }}>
-            {[hunt.weapon && hunt.weapon[0].toUpperCase() + hunt.weapon.slice(1), hunt.season && `${fmtDate(hunt.season.open)} – ${fmtDate(hunt.season.close)} (${hunt.drawYear ?? ''} season)`].filter(Boolean).join(' · ')}
+            {[hunt.weapon && !new RegExp(hunt.weapon, 'i').test(hunt.label ?? '') && hunt.weapon[0].toUpperCase() + hunt.weapon.slice(1), hunt.season && `${fmtDate(hunt.season.open)} – ${fmtDate(hunt.season.close)} (${hunt.drawYear ?? ''} season)`].filter(Boolean).join(' · ')}
           </p>
         )}
       </div>

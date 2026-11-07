@@ -19,7 +19,7 @@ export default async function AppNav() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           {viewer.member && <Advisor />}
           <ThemeToggle />
-          {viewer.userId ? <SignOutButton /> : <Link href="/login" className="hq-btn hq-btn--secondary hq-btn--sm">Sign in</Link>}
+          {viewer.userId ? <SignOutButton className="hq-btn hq-btn--ghost hq-btn--sm hq-header__signout" /> : <Link href="/login" className="hq-btn hq-btn--secondary hq-btn--sm">Sign in</Link>}
         </div>
       </header>
       {viewer.member && <TabBar />}

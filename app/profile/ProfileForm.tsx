@@ -6,6 +6,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import AdvisorKnows from './AdvisorKnows';
+import SignOutButton from '../components/SignOutButton';
 import { useState } from 'react';
 import { Plus } from 'lucide-react';
 import { ALL_SPECIES, FITNESS_LEVELS, SPECIES, STATES, STYLE_OPTIONS, EXPERIENCE_OPTIONS } from '../planner/constants';
@@ -160,6 +161,7 @@ export default function ProfileForm({ email, profile, points: initialPoints }: {
       <section aria-label="Account" style={{ borderTop: '1px solid var(--divider)', paddingTop: 20, display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14 }}>
         <span className="hq-small">Signed in as {email}</span>
         <button type="button" onClick={manageBilling} className="hq-link hq-small" style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer' }}>Manage membership and billing</button>
+        <SignOutButton className="hq-btn hq-btn--secondary hq-btn--sm" />
       </section>
     </main>
   );

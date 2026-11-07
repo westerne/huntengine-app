@@ -166,6 +166,8 @@
   background: var(--surface); color: var(--ink-soft); font-size: 14px; font-weight: 600; cursor: pointer;
 }
 .hq-chip[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+/* Selected says so in more than color. */
+.hq-chip[aria-pressed="true"]::before { content: "\2713"; font-weight: 800; font-size: 13px; }
 
 /* ── Segmented control (theme switch) ─────────────────────────────── */
 .hq-seg { display: inline-flex; padding: 3px; gap: 2px; border-radius: var(--r-pill); background: var(--surface-sunk); border: 1px solid var(--border); }
@@ -323,6 +325,8 @@
 
 /* Narrow phones: the theme switch lives on the Me page instead of the header. */
 @media (max-width: 479px) { .hq-header .hq-seg { display: none; } }
+/* Phones: sign out lives on Me, with the theme switch. */
+@media (max-width: 899px) { .hq-header__signout { display: none; } }
 
 /* ── Panels & forms (hunt page) ───────────────────────────────────────── */
 .hq-stack { display: flex; flex-direction: column; gap: 16px; }
